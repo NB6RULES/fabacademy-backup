@@ -1,0 +1,11 @@
+image: busybox
+
+pages:
+  stage: deploy
+  script:
+    - echo "No commands to run, just upload the public folder to Pages."
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
