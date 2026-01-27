@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on Nadec FAB Academy Portfolio</title>
-    <link>http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/</link>
+    <link>https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/</link>
     <description>Recent content in Docs on Nadec FAB Academy Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
