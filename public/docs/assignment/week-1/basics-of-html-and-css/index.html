@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -15,7 +15,7 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Basics of HTML and CSS">
   <meta property="og:description" content="Basics of HTML and CSS#Disclaimer#All the steps and explanations in this documentation are written specifically for users on the Windows operating system.
@@ -36,177 +36,19 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
 <title>Basics of HTML and CSS | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
-<link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/">
+<link rel="canonical" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/">
 <link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.50314c0c8d62c5d9efa978f31fb1d8e92e825972eb5c0a8f4a3886350492dfa0.css" integrity="sha256-UDFMDI1ixdnvqXjzH7HY6S6CWXLrXAqPSjiGNQSS36A=" crossorigin="anonymous">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.c80c66078e5a228588f4e66a2308cc2e04faf7dd371db84a892c4354b1cc7a24.js" integrity="sha256-yAxmB45aIoWI9OZqIwjMLgT69903HbhKiSxDVLHMeiQ=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.feb8a210832385b33ea81bc9c1d24f24e16f320ae40065c6d92ba70a3de9d9fe.js" integrity="sha256-/riiEIMjhbM&#43;qBvJwdJPJOFvMgrkAGXG2SunCj3p2f4=" crossorigin="anonymous"></script>
 
 
-<link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/index.xml" title="Nadec FAB Academy Portfolio" />
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/index.xml" title="Nadec FAB Academy Portfolio" />
 
   
 </head>
 <body dir="ltr" class="book-kind-section book-type-docs">
-  
-  <nav class="custom-navbar">
-    <div class="navbar-container">
-      <div class="navbar-brand">
-        <a href="/2026/labs/kochi/students/nadec-biju/" class="brand-link">
-          <span class="brand-name">Nadec Biju</span>
-        </a>
-      </div>
-      <div class="navbar-menu">
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/" class="nav-link">About Me</a>
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/" class="nav-link">Assignments</a>
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="nav-link">Final Project</a>
-        <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju" target="_blank" class="nav-link gitlab-link">GitLab</a>
-      </div>
-    </div>
-  </nav>
-
-  <style>
-  .custom-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #1a1a1a;
-    backdrop-filter: blur(10px);
-    z-index: 2000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .navbar-container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 16px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-  }
-
-  .brand-link {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-  }
-
-  .brand-name {
-    color: #fff;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 0.5px;
-  }
-
-  .brand-link:hover .brand-name {
-    color: #00d4ff;
-  }
-
-  .navbar-menu {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-left: auto;
-  }
-
-  .nav-link {
-    color: #b0b0b0;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 8px 0;
-  }
-
-  .nav-link:hover {
-    color: #00d4ff;
-  }
-
-  .gitlab-link {
-    background: #1abc9c;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    margin-left: 10px;
-  }
-
-  .gitlab-link:hover {
-    background: #16a085;
-    transform: translateY(-2px);
-  }
-
-  body {
-    padding-top: 60px;
-  }
-
-  @media (max-width: 768px) {
-    .navbar-container {
-      padding: 12px 15px;
-      gap: 20px;
-    }
-
-    .navbar-menu {
-      gap: 15px;
-      font-size: 14px;
-    }
-
-    .nav-link {
-      padding: 6px 0;
-    }
-
-    .gitlab-link {
-      padding: 6px 12px;
-      font-size: 13px;
-    }
-
-    .brand-name {
-      font-size: 16px;
-    }
-
-    body {
-      padding-top: 55px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .navbar-menu {
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .brand-name {
-      font-size: 14px;
-    }
-
-    .nav-link {
-      font-size: 13px;
-    }
-
-    body {
-      padding-top: 50px;
-    }
-  }
-
-  :root.dark .custom-navbar,
-  .dark .custom-navbar {
-    background: #0f0f0f;
-  }
-  </style>
-
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
@@ -215,14 +57,14 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
   <div class="book-menu-content">
     
   <nav>
-<h2 class="book-brand">
+<div class="book-brand">
   <a class="flex align-center" href="/2026/labs/kochi/students/nadec-biju/"><span>Nadec FAB Academy Portfolio</span>
   </a>
-</h2>
+</div>
 
-<div style="display: flex; justify-content: flex-end; padding: 8px 16px;">
-  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; padding: 4px 8px; display: flex; align-items: center; justify-content: center; color: currentColor; width: 32px; height: 32px; border-radius: 4px; transition: background-color 0.2s;" aria-label="Toggle dark mode" title="Toggle dark mode">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 8px 0;">
+  <button id="theme-toggle" style="background: rgba(128,128,128,0.15); border: 1px solid rgba(128,128,128,0.3); cursor: pointer; padding: 8px 12px; display: flex; align-items: center; justify-content: center; gap: 6px; color: currentColor; border-radius: 6px; transition: all 0.2s; font-size: 13px;" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -233,6 +75,10 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
       <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
     </svg>
+    <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+    <span id="theme-label">Light</span>
   </button>
 </div>
 
@@ -240,11 +86,26 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
 (function() {
   const htmlElement = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('theme-icon-sun');
+  const moonIcon = document.getElementById('theme-icon-moon');
+  const themeLabel = document.getElementById('theme-label');
   
   function getCurrentTheme() {
     const stored = localStorage.getItem('book-theme');
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  
+  function updateIcons(theme) {
+    if (theme === 'dark') {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+      if (themeLabel) themeLabel.textContent = 'Light';
+    } else {
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+      if (themeLabel) themeLabel.textContent = 'Dark';
+    }
   }
   
   function setTheme(theme) {
@@ -257,6 +118,7 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
       htmlElement.classList.add('light');
     }
     localStorage.setItem('book-theme', theme);
+    updateIcons(theme);
   }
   
   const currentTheme = getCurrentTheme();
@@ -271,11 +133,11 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
     });
     
     themeToggle.addEventListener('mouseenter', function() {
-      this.style.backgroundColor = 'rgba(0,0,0,0.05)';
+      this.style.backgroundColor = 'rgba(128,128,128,0.3)';
     });
     
     themeToggle.addEventListener('mouseleave', function() {
-      this.style.backgroundColor = 'transparent';
+      this.style.backgroundColor = 'rgba(128,128,128,0.15)';
     });
   }
 })();
@@ -385,7 +247,7 @@ Writing documentation (Markdown / HTML) Editing configuration files Managing pro
     <input type="checkbox" id="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="toggle" checked />
     <label for="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="flex">
       <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/" class="">
-        Week 01 - Project management</a>
+        Week 01 - Principles and Practices , Project management</a>
       <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
@@ -1967,7 +1829,7 @@ This website was created purely for testing and learning purposes. It will <stro
     
       <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/" class="book-prev-next__item book-prev-next__prev">
         <span class="book-prev-next__label">Previous</span>
-        <span class="book-prev-next__title">&laquo; Week 01 - Project management</span>
+        <span class="book-prev-next__title">&laquo; Week 01 - Principles and Practices , Project management</span>
       </a>
     
 
@@ -2290,8 +2152,16 @@ aside.book-toc .book-toc-content {
 }
 .book-menu {
   position: sticky !important;
-  top: 0 !important;
-  height: 100vh !important;
+  top: 60px !important;
+  height: calc(100vh - 60px) !important;
+  overflow-y: auto !important;
+}
+.book-menu .book-menu-content {
+  position: fixed !important;
+  top: 60px !important;
+  bottom: 0 !important;
+  height: auto !important;
+  padding-top: 1rem !important;
   overflow-y: auto !important;
 }
 .book-header {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -11,7 +11,7 @@ https://github.com/alex-shpak/hugo-book
 <meta name="description" content="">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/micropython/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/micropython/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="4. Micropython">
   <meta property="og:locale" content="en_us">
@@ -23,15 +23,15 @@ https://github.com/alex-shpak/hugo-book
 <title>4. Micropython | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
-<link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/micropython/">
+<link rel="canonical" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/micropython/">
 <link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.50314c0c8d62c5d9efa978f31fb1d8e92e825972eb5c0a8f4a3886350492dfa0.css" integrity="sha256-UDFMDI1ixdnvqXjzH7HY6S6CWXLrXAqPSjiGNQSS36A=" crossorigin="anonymous">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.c80c66078e5a228588f4e66a2308cc2e04faf7dd371db84a892c4354b1cc7a24.js" integrity="sha256-yAxmB45aIoWI9OZqIwjMLgT69903HbhKiSxDVLHMeiQ=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.feb8a210832385b33ea81bc9c1d24f24e16f320ae40065c6d92ba70a3de9d9fe.js" integrity="sha256-/riiEIMjhbM&#43;qBvJwdJPJOFvMgrkAGXG2SunCj3p2f4=" crossorigin="anonymous"></script>
 
 
-<link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/micropython/index.xml" title="Nadec FAB Academy Portfolio" />
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/micropython/index.xml" title="Nadec FAB Academy Portfolio" />
 
   
 </head>
@@ -202,14 +202,11 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-menu-content">
     
   <nav>
-<h2 class="book-brand">
+<div class="book-brand" style="display: flex; align-items: center; justify-content: space-between;">
   <a class="flex align-center" href="/2026/labs/kochi/students/nadec-biju/"><span>Nadec FAB Academy Portfolio</span>
   </a>
-</h2>
-
-<div style="display: flex; justify-content: flex-end; padding: 8px 16px;">
-  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; padding: 4px 8px; display: flex; align-items: center; justify-content: center; color: currentColor; width: 32px; height: 32px; border-radius: 4px; transition: background-color 0.2s;" aria-label="Toggle dark mode" title="Toggle dark mode">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; padding: 6px; display: flex; align-items: center; justify-content: center; color: currentColor; border-radius: 4px; transition: background-color 0.2s; flex-shrink: 0;" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -220,6 +217,9 @@ https://github.com/alex-shpak/hugo-book
       <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
     </svg>
+    <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
   </button>
 </div>
 
@@ -227,11 +227,23 @@ https://github.com/alex-shpak/hugo-book
 (function() {
   const htmlElement = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('theme-icon-sun');
+  const moonIcon = document.getElementById('theme-icon-moon');
   
   function getCurrentTheme() {
     const stored = localStorage.getItem('book-theme');
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  
+  function updateIcons(theme) {
+    if (theme === 'dark') {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    } else {
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    }
   }
   
   function setTheme(theme) {
@@ -244,6 +256,7 @@ https://github.com/alex-shpak/hugo-book
       htmlElement.classList.add('light');
     }
     localStorage.setItem('book-theme', theme);
+    updateIcons(theme);
   }
   
   const currentTheme = getCurrentTheme();
@@ -258,7 +271,7 @@ https://github.com/alex-shpak/hugo-book
     });
     
     themeToggle.addEventListener('mouseenter', function() {
-      this.style.backgroundColor = 'rgba(0,0,0,0.05)';
+      this.style.backgroundColor = 'rgba(128,128,128,0.2)';
     });
     
     themeToggle.addEventListener('mouseleave', function() {
@@ -372,7 +385,7 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" id="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="toggle"  />
     <label for="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="flex">
       <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/" class="">
-        Week 01 - Project management</a>
+        Week 01 - Principles and Practices , Project management</a>
       <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
