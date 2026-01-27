@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
+<head>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -14,7 +14,7 @@ What I Learned This Week#During this week, I explored the following topics:
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Week 01 - Principles and Practices , Project management">
   <meta property="og:description" content="Week 01 - Principles and Practices , Project management#Week 01 marks the beginning of Fab Academy 2026. This week focuses on understanding the structure of the course and learning the fundamentals of project management, which involves planning, organizing, and tracking work effectively over time.
@@ -30,24 +30,213 @@ Rather than making physical artifacts, this week is about setting up a workflow 
 What I Learned This Week#During this week, I explored the following topics:">
   <meta itemprop="datePublished" content="2026-01-22T21:00:00+05:30">
   <meta itemprop="dateModified" content="2026-01-22T21:00:00+05:30">
-  <meta itemprop="wordCount" content="309">
+  <meta itemprop="wordCount" content="328">
 
 <title>Week 01 - Principles and Practices , Project management | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
-<link rel="canonical" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/">
+<link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/">
 <link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.50314c0c8d62c5d9efa978f31fb1d8e92e825972eb5c0a8f4a3886350492dfa0.css" integrity="sha256-UDFMDI1ixdnvqXjzH7HY6S6CWXLrXAqPSjiGNQSS36A=" crossorigin="anonymous">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.feb8a210832385b33ea81bc9c1d24f24e16f320ae40065c6d92ba70a3de9d9fe.js" integrity="sha256-/riiEIMjhbM&#43;qBvJwdJPJOFvMgrkAGXG2SunCj3p2f4=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.4293349357d139e1df858bae1e817912a2aa7a1840219b82895c2bbdc9708d51.js" integrity="sha256-QpM0k1fROeHfhYuuHoF5EqKqehhAIZuCiVwrvclwjVE=" crossorigin="anonymous"></script>
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/index.xml" title="Nadec FAB Academy Portfolio" />
+<link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/index.xml" title="Nadec FAB Academy Portfolio" />
 
   
 </head>
 <body dir="ltr" class="book-kind-section book-type-docs">
+  
+  <nav class="custom-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="/2026/labs/kochi/students/nadec-biju/" class="brand-link">
+          <span class="brand-name">Nadec Biju</span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/" class="nav-link">About Me</a>
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/" class="nav-link">Assignments</a>
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="nav-link">Final Project</a>
+        <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju" target="_blank" class="nav-link gitlab-link">GitLab</a>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+  .custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .brand-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .brand-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .brand-link:hover .brand-name {
+    color: #00d4ff;
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+  }
+
+  .nav-link {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+  }
+
+  .nav-link:hover {
+    color: #00d4ff;
+  }
+
+  .gitlab-link {
+    background: #1abc9c;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+
+  .gitlab-link:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+  }
+
+  body {
+    padding-top: 60px;
+  }
+
+  .book-menu {
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .book-menu .book-menu-content {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      padding: 12px 15px;
+      gap: 20px;
+    }
+
+    .navbar-menu {
+      gap: 15px;
+      font-size: 14px;
+    }
+
+    .nav-link {
+      padding: 6px 0;
+    }
+
+    .gitlab-link {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+
+    .brand-name {
+      font-size: 16px;
+    }
+
+    body {
+      padding-top: 55px;
+    }
+
+    .book-menu {
+      top: 55px;
+      height: calc(100vh - 55px);
+    }
+
+    .book-menu .book-menu-content {
+      top: 55px;
+      height: calc(100vh - 55px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .navbar-menu {
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .brand-name {
+      font-size: 14px;
+    }
+
+    .nav-link {
+      font-size: 13px;
+    }
+
+    body {
+      padding-top: 50px;
+    }
+
+    .book-menu {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
+
+    .book-menu .book-menu-content {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
+  }
+
+  :root.dark .custom-navbar,
+  .dark .custom-navbar {
+    background: #0f0f0f;
+  }
+  </style>
+
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
@@ -314,6 +503,30 @@ What I Learned This Week#During this week, I explored the following topics:">
     <label for="section-779d9e451b26fdef36ee67030d149e22" class="flex">
       <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/" class="">
         Getting Started With Documentation</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-d8fa8182d267a0a202c64106e84ea88e" class="toggle"  />
+    <label for="section-d8fa8182d267a0a202c64106e84ea88e" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/planning-final-project/" class="">
+        Planning Final Project</a>
       <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
@@ -1601,6 +1814,10 @@ Learning how to track changes, manage versions, and maintain a clean repository 
 <li>
 <p><a href="getting_started_with_documentation/">Getting Started With Documentation</a>
 Understanding Fab Academy documentation standards and how to clearly communicate process, progress, and learning.</p>
+</li>
+<li>
+<p><a href="planning-final-project/">Planning Potential Final Projects</a>
+Brainstorming and sketching ideas for a final project that aligns with my interests and skills.</p>
 </li>
 </ol>
 <h2 id="assignments">Assignments<a class="anchor" href="#assignments">#</a></h2>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
+<head>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -15,7 +15,7 @@ This marked the transition from a basic HTML-only approach to a more structured 
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Getting Started With Documentation">
   <meta property="og:description" content="Getting Started with Documentation#After creating a basic HTML website to understand how webpages work, I explored better ways to manage and scale documentation for Fab Academy.
@@ -36,15 +36,15 @@ This marked the transition from a basic HTML-only approach to a more structured 
 <title>Getting Started With Documentation | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
-<link rel="canonical" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/">
+<link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/">
 <link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.50314c0c8d62c5d9efa978f31fb1d8e92e825972eb5c0a8f4a3886350492dfa0.css" integrity="sha256-UDFMDI1ixdnvqXjzH7HY6S6CWXLrXAqPSjiGNQSS36A=" crossorigin="anonymous">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.feb8a210832385b33ea81bc9c1d24f24e16f320ae40065c6d92ba70a3de9d9fe.js" integrity="sha256-/riiEIMjhbM&#43;qBvJwdJPJOFvMgrkAGXG2SunCj3p2f4=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.4293349357d139e1df858bae1e817912a2aa7a1840219b82895c2bbdc9708d51.js" integrity="sha256-QpM0k1fROeHfhYuuHoF5EqKqehhAIZuCiVwrvclwjVE=" crossorigin="anonymous"></script>
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/index.xml" title="Nadec FAB Academy Portfolio" />
+<link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/index.xml" title="Nadec FAB Academy Portfolio" />
 
   
 </head>
@@ -153,6 +153,17 @@ This marked the transition from a basic HTML-only approach to a more structured 
     padding-top: 60px;
   }
 
+  .book-menu {
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .book-menu .book-menu-content {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
   @media (max-width: 768px) {
     .navbar-container {
       padding: 12px 15px;
@@ -180,6 +191,16 @@ This marked the transition from a basic HTML-only approach to a more structured 
     body {
       padding-top: 55px;
     }
+
+    .book-menu {
+      top: 55px;
+      height: calc(100vh - 55px);
+    }
+
+    .book-menu .book-menu-content {
+      top: 55px;
+      height: calc(100vh - 55px);
+    }
   }
 
   @media (max-width: 600px) {
@@ -199,6 +220,16 @@ This marked the transition from a basic HTML-only approach to a more structured 
     body {
       padding-top: 50px;
     }
+
+    .book-menu {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
+
+    .book-menu .book-menu-content {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
   }
 
   :root.dark .custom-navbar,
@@ -215,11 +246,14 @@ This marked the transition from a basic HTML-only approach to a more structured 
   <div class="book-menu-content">
     
   <nav>
-<div class="book-brand" style="display: flex; align-items: center; justify-content: space-between;">
+<div class="book-brand">
   <a class="flex align-center" href="/2026/labs/kochi/students/nadec-biju/"><span>Nadec FAB Academy Portfolio</span>
   </a>
-  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; padding: 6px; display: flex; align-items: center; justify-content: center; color: currentColor; border-radius: 4px; transition: background-color 0.2s; flex-shrink: 0;" aria-label="Toggle dark mode" title="Toggle dark mode">
-    <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding: 8px 0;">
+  <button id="theme-toggle" style="background: rgba(128,128,128,0.15); border: 1px solid rgba(128,128,128,0.3); cursor: pointer; padding: 8px 12px; display: flex; align-items: center; justify-content: center; gap: 6px; color: currentColor; border-radius: 6px; transition: all 0.2s; font-size: 13px;" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -230,9 +264,10 @@ This marked the transition from a basic HTML-only approach to a more structured 
       <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
     </svg>
-    <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+    <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
     </svg>
+    <span id="theme-label">Light</span>
   </button>
 </div>
 
@@ -242,6 +277,7 @@ This marked the transition from a basic HTML-only approach to a more structured 
   const themeToggle = document.getElementById('theme-toggle');
   const sunIcon = document.getElementById('theme-icon-sun');
   const moonIcon = document.getElementById('theme-icon-moon');
+  const themeLabel = document.getElementById('theme-label');
   
   function getCurrentTheme() {
     const stored = localStorage.getItem('book-theme');
@@ -253,9 +289,11 @@ This marked the transition from a basic HTML-only approach to a more structured 
     if (theme === 'dark') {
       sunIcon.style.display = 'block';
       moonIcon.style.display = 'none';
+      if (themeLabel) themeLabel.textContent = 'Light';
     } else {
       sunIcon.style.display = 'none';
       moonIcon.style.display = 'block';
+      if (themeLabel) themeLabel.textContent = 'Dark';
     }
   }
   
@@ -284,11 +322,11 @@ This marked the transition from a basic HTML-only approach to a more structured 
     });
     
     themeToggle.addEventListener('mouseenter', function() {
-      this.style.backgroundColor = 'rgba(128,128,128,0.2)';
+      this.style.backgroundColor = 'rgba(128,128,128,0.3)';
     });
     
     themeToggle.addEventListener('mouseleave', function() {
-      this.style.backgroundColor = 'transparent';
+      this.style.backgroundColor = 'rgba(128,128,128,0.15)';
     });
   }
 })();
@@ -466,6 +504,30 @@ This marked the transition from a basic HTML-only approach to a more structured 
     <label for="section-779d9e451b26fdef36ee67030d149e22" class="flex">
       <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/" class="active">
         Getting Started With Documentation</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-d8fa8182d267a0a202c64106e84ea88e" class="toggle"  />
+    <label for="section-d8fa8182d267a0a202c64106e84ea88e" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/planning-final-project/" class="">
+        Planning Final Project</a>
       <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
@@ -2436,9 +2498,9 @@ Any manual edits inside <code>public</code> may be overwritten the next time <co
     
 
     
-      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-2/" class="book-prev-next__item book-prev-next__next">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/planning-final-project/" class="book-prev-next__item book-prev-next__next">
         <span class="book-prev-next__label">Next</span>
-        <span class="book-prev-next__title">Week 02 - Computer Aided design &raquo;</span>
+        <span class="book-prev-next__title">Planning Final Project &raquo;</span>
       </a>
     
   </div>
@@ -2784,8 +2846,16 @@ aside.book-toc .book-toc-content {
 }
 .book-menu {
   position: sticky !important;
-  top: 0 !important;
-  height: 100vh !important;
+  top: 60px !important;
+  height: calc(100vh - 60px) !important;
+  overflow-y: auto !important;
+}
+.book-menu .book-menu-content {
+  position: fixed !important;
+  top: 60px !important;
+  bottom: 0 !important;
+  height: auto !important;
+  padding-top: 1rem !important;
   overflow-y: auto !important;
 }
 .book-header {
