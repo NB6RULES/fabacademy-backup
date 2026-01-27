@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Basics of HTML and CSS#Disclaimer#All the steps and explanations in this documentation are written specifically for users on the Windows operating system.
+While Git itself is cross-platform, certain installation steps, paths, and UI elements may differ on Linux or macOS.
+Choosing a Text Editor#Before working with Git or documentation files, a text editor is required. A text editor is essential for:
+Writing documentation (Markdown / HTML) Editing configuration files Managing project files efficiently Some commonly used text editors on Windows include:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/">
+  <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
+  <meta property="og:title" content="Basics of HTML and CSS">
+  <meta property="og:description" content="Basics of HTML and CSS#Disclaimer#All the steps and explanations in this documentation are written specifically for users on the Windows operating system.
+While Git itself is cross-platform, certain installation steps, paths, and UI elements may differ on Linux or macOS.
+Choosing a Text Editor#Before working with Git or documentation files, a text editor is required. A text editor is essential for:
+Writing documentation (Markdown / HTML) Editing configuration files Managing project files efficiently Some commonly used text editors on Windows include:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta itemprop="name" content="Basics of HTML and CSS">
+  <meta itemprop="description" content="Basics of HTML and CSS#Disclaimer#All the steps and explanations in this documentation are written specifically for users on the Windows operating system.
+While Git itself is cross-platform, certain installation steps, paths, and UI elements may differ on Linux or macOS.
+Choosing a Text Editor#Before working with Git or documentation files, a text editor is required. A text editor is essential for:
+Writing documentation (Markdown / HTML) Editing configuration files Managing project files efficiently Some commonly used text editors on Windows include:">
+  <meta itemprop="wordCount" content="810">
+
+<title>Basics of HTML and CSS | Nadec FAB Academy Portfolio</title>
+<link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
+<link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
+<link rel="canonical" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/">
+<link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.50314c0c8d62c5d9efa978f31fb1d8e92e825972eb5c0a8f4a3886350492dfa0.css" integrity="sha256-UDFMDI1ixdnvqXjzH7HY6S6CWXLrXAqPSjiGNQSS36A=" crossorigin="anonymous">
+
+
+  <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.bbb194c6bb633dbf90d55b2253416ef12394aa6688fa39b2e0ea396de9cbf00a.js" integrity="sha256-u7GUxrtjPb&#43;Q1VsiU0Fu8SOUqmaI&#43;jmy4Oo5benL8Ao=" crossorigin="anonymous"></script>
+
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/index.xml" title="Nadec FAB Academy Portfolio" />
+
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  
+  <nav class="custom-navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="/2026/labs/kochi/students/nadec-biju/" class="brand-link">
+          <span class="brand-name">Nadec Biju</span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/" class="nav-link">About Me</a>
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/" class="nav-link">Assignments</a>
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="nav-link">Final Project</a>
+        <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju" target="_blank" class="nav-link gitlab-link">GitLab</a>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+  .custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .brand-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .brand-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .brand-link:hover .brand-name {
+    color: #00d4ff;
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+  }
+
+  .nav-link {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+  }
+
+  .nav-link:hover {
+    color: #00d4ff;
+  }
+
+  .gitlab-link {
+    background: #1abc9c;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+
+  .gitlab-link:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+  }
+
+  body {
+    padding-top: 60px;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      padding: 12px 15px;
+      gap: 20px;
+    }
+
+    .navbar-menu {
+      gap: 15px;
+      font-size: 14px;
+    }
+
+    .nav-link {
+      padding: 6px 0;
+    }
+
+    .gitlab-link {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+
+    .brand-name {
+      font-size: 16px;
+    }
+
+    body {
+      padding-top: 55px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .navbar-menu {
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .brand-name {
+      font-size: 14px;
+    }
+
+    .nav-link {
+      font-size: 13px;
+    }
+
+    body {
+      padding-top: 50px;
+    }
+  }
+
+  :root.dark .custom-navbar,
+  .dark .custom-navbar {
+    background: #0f0f0f;
+  }
+  </style>
+
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/2026/labs/kochi/students/nadec-biju/"><span>Nadec FAB Academy Portfolio</span>
+  </a>
+</h2>
+
+<div style="display: flex; justify-content: flex-end; padding: 8px 16px;">
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; padding: 4px 8px; display: flex; align-items: center; justify-content: center; color: currentColor; width: 32px; height: 32px; border-radius: 4px; transition: background-color 0.2s;" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </button>
+</div>
+
+<script>
+(function() {
+  const htmlElement = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  function getCurrentTheme() {
+    const stored = localStorage.getItem('book-theme');
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  
+  function setTheme(theme) {
+    htmlElement.style.colorScheme = theme;
+    if (theme === 'dark') {
+      htmlElement.classList.remove('light');
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+      htmlElement.classList.add('light');
+    }
+    localStorage.setItem('book-theme', theme);
+  }
+  
+  const currentTheme = getCurrentTheme();
+  setTheme(currentTheme);
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const theme = getCurrentTheme();
+      const newTheme = theme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+    
+    themeToggle.addEventListener('mouseenter', function() {
+      this.style.backgroundColor = 'rgba(0,0,0,0.05)';
+    });
+    
+    themeToggle.addEventListener('mouseleave', function() {
+      this.style.backgroundColor = 'transparent';
+    });
+  }
+})();
+</script>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-97616e823a9bb7fd860003d8fe914057" class="toggle"  />
+    <label for="section-97616e823a9bb7fd860003d8fe914057" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/" class="">
+        About Me</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-abe75c17917ae806512ef8a26bcad0b3" class="toggle"  />
+    <label for="section-abe75c17917ae806512ef8a26bcad0b3" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/agreement/" class="">
+        Agreement</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-92872379edbefa5a3d1b44d43367ce60" class="toggle" checked />
+    <label for="section-92872379edbefa5a3d1b44d43367ce60" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/" class="">
+        Assignments</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="toggle" checked />
+    <label for="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/" class="">
+        Week 01 - Project management</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-5e0ce0cad47d541767ae30716a2594f5" class="toggle" checked />
+    <label for="section-5e0ce0cad47d541767ae30716a2594f5" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/basics-of-html-and-css/" class="active">
+        Basics of HTML and CSS</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-3ac529c8c6f28039aea058ea005bcb01" class="toggle"  />
+    <label for="section-3ac529c8c6f28039aea058ea005bcb01" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/git/" class="">
+        Git Tutorial</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-779d9e451b26fdef36ee67030d149e22" class="toggle"  />
+    <label for="section-779d9e451b26fdef36ee67030d149e22" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/getting_started_with_documentation/" class="">
+        Getting Started With Documentation</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-e301771eff8acb2b417416a4fa12da51" class="toggle"  />
+    <label for="section-e301771eff8acb2b417416a4fa12da51" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-2/" class="">
+        Week 02 - Computer Aided design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-8b4f606b6299f7d73bb2a25ee78ac585" class="toggle"  />
+    <label for="section-8b4f606b6299f7d73bb2a25ee78ac585" class="flex">
+      <a role="button" class="">
+        1. 2D Design Software</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-96c8556dd845cb986d27ea8ce49b118e" class="toggle"  />
+    <label for="section-96c8556dd845cb986d27ea8ce49b118e" class="flex">
+      <a role="button" class="">
+        2. 3D Design Software</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-c2c5d6c4c478a7097dfcc28cf703044f" class="toggle"  />
+    <label for="section-c2c5d6c4c478a7097dfcc28cf703044f" class="flex">
+      <a role="button" class="">
+        3. Compression</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-5add97b663844fa146909282dccb1637" class="toggle"  />
+    <label for="section-5add97b663844fa146909282dccb1637" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/" class="">
+        Week 03 - Computer Controlled Cutting</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-de68fe9d63807b893dea4f7f04c00b18" class="toggle"  />
+    <label for="section-de68fe9d63807b893dea4f7f04c00b18" class="flex">
+      <a role="button" class="">
+        1. Laser Cutting</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-d4e9866336eb19e7ae853af1fef6f4dd" class="toggle"  />
+    <label for="section-d4e9866336eb19e7ae853af1fef6f4dd" class="flex">
+      <a role="button" class="">
+        2. Vinyl Cutting</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-437838ab6ac07fcfc84f7ba2c7f5810f" class="toggle"  />
+    <label for="section-437838ab6ac07fcfc84f7ba2c7f5810f" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/" class="">
+        Week 04 - Embedded Programming</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-fbf40150082b2bb5855b157090503873" class="toggle"  />
+    <label for="section-fbf40150082b2bb5855b157090503873" class="flex">
+      <a role="button" class="">
+        1. Datasheet</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-1bb249ac6081163bc57388bf49af69a3" class="toggle"  />
+    <label for="section-1bb249ac6081163bc57388bf49af69a3" class="flex">
+      <a role="button" class="">
+        2. Simulation</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-e5b703f87f22474ccace5b1de6421082" class="toggle"  />
+    <label for="section-e5b703f87f22474ccace5b1de6421082" class="flex">
+      <a role="button" class="">
+        3. Arduino &amp; IDF</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-945027b729d855a4c66e65115d9d60c0" class="toggle"  />
+    <label for="section-945027b729d855a4c66e65115d9d60c0" class="flex">
+      <a role="button" class="">
+        4. Micropython</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-364f1bfa51cd02ea2b178cd9a2992047" class="toggle"  />
+    <label for="section-364f1bfa51cd02ea2b178cd9a2992047" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/" class="">
+        Week 05 - 3D Scanning and Printing</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-c0b110279e704d136cff421452c42e8e" class="toggle"  />
+    <label for="section-c0b110279e704d136cff421452c42e8e" class="flex">
+      <a role="button" class="">
+        1. Design and 3D printing</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-fea234cb6de3d6eff6500c1c6d32a11d" class="toggle"  />
+    <label for="section-fea234cb6de3d6eff6500c1c6d32a11d" class="flex">
+      <a role="button" class="">
+        2. 3D scanning</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-24761c17a417f4b9a8ba2be1d1e29423" class="toggle"  />
+    <label for="section-24761c17a417f4b9a8ba2be1d1e29423" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/" class="">
+        Week 06 - Electronics Design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-86f174dd832b2cb5d11c150da7c1e7dc" class="toggle"  />
+    <label for="section-86f174dd832b2cb5d11c150da7c1e7dc" class="flex">
+      <a role="button" class="">
+        1. Electronics Design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-02996a5564dcd731b5e0406af28cc766" class="toggle"  />
+    <label for="section-02996a5564dcd731b5e0406af28cc766" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/" class="">
+        Week 07 - Computer Controlled Machining</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-217b57919136d0729f7e997146b3c9ab" class="toggle"  />
+    <label for="section-217b57919136d0729f7e997146b3c9ab" class="flex">
+      <a role="button" class="">
+        1. Computer Controlled Machining</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-3302bdb70b306104b27c94c2911dae91" class="toggle"  />
+    <label for="section-3302bdb70b306104b27c94c2911dae91" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-8/" class="">
+        Week 08 - Electronics Production</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-e30ba781f11de7c615a5978d91a07c61" class="toggle"  />
+    <label for="section-e30ba781f11de7c615a5978d91a07c61" class="flex">
+      <a role="button" class="">
+        1. Electronics Manufacturing</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-119554c24fd498a87c8820ff1c05761f" class="toggle"  />
+    <label for="section-119554c24fd498a87c8820ff1c05761f" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-9/" class="">
+        Week 09 - Input Devices</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-0c947df7ccf7493f5abddfe2af148cbe" class="toggle"  />
+    <label for="section-0c947df7ccf7493f5abddfe2af148cbe" class="flex">
+      <a role="button" class="">
+        1. Input Devices</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-26f07475b15ab38efd1e08f34c8a252a" class="toggle"  />
+    <label for="section-26f07475b15ab38efd1e08f34c8a252a" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-10/" class="">
+        Week 10 - Output Devices</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-983a473d3bc2c16c347ba6f6b55389f8" class="toggle"  />
+    <label for="section-983a473d3bc2c16c347ba6f6b55389f8" class="flex">
+      <a role="button" class="">
+        1. Output Devices</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-44c6b33bbde2e5b5c5ab13c95f2652e9" class="toggle"  />
+    <label for="section-44c6b33bbde2e5b5c5ab13c95f2652e9" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-11/" class="">
+        Week 11 - Networking and Communications</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-1165352eea60f87a0d5c29cdc3e5a9dc" class="toggle"  />
+    <label for="section-1165352eea60f87a0d5c29cdc3e5a9dc" class="flex">
+      <a role="button" class="">
+        1. Networking and Communications</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-26890a7e8a8284e7cd0ef698580861ae" class="toggle"  />
+    <label for="section-26890a7e8a8284e7cd0ef698580861ae" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-12/" class="">
+        Week 12 - Mechanical Design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-2e0cbfde239c6bf174f012ca48da5b95" class="toggle"  />
+    <label for="section-2e0cbfde239c6bf174f012ca48da5b95" class="flex">
+      <a role="button" class="">
+        1. Individual Contribution</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-39712f761bce03a7f481d5c72245a149" class="toggle"  />
+    <label for="section-39712f761bce03a7f481d5c72245a149" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/" class="">
+        Week 13 - Break, Midterm Review</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-b499846af137c9eb062b613e245e11ac" class="toggle"  />
+    <label for="section-b499846af137c9eb062b613e245e11ac" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-14/" class="">
+        Week 14 - Molding and Casting</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-2792bf14f03e2cd6b791010781424a68" class="toggle"  />
+    <label for="section-2792bf14f03e2cd6b791010781424a68" class="flex">
+      <a role="button" class="">
+        1. Molding and Casting</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-924ddce82b124658a158206f06468b71" class="toggle"  />
+    <label for="section-924ddce82b124658a158206f06468b71" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-15/" class="">
+        Week 15 - Interface and Application Programming</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-370c8f1aa2be89e469ee36bba62de9d5" class="toggle"  />
+    <label for="section-370c8f1aa2be89e469ee36bba62de9d5" class="flex">
+      <a role="button" class="">
+        1. Interface and Application Programming</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-9fd8d20837a7d42921e5c927508016f6" class="toggle"  />
+    <label for="section-9fd8d20837a7d42921e5c927508016f6" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-16/" class="">
+        Week 16 - System Integration</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-e504eb09a4c3f5ef52b8650153ebc84c" class="toggle"  />
+    <label for="section-e504eb09a4c3f5ef52b8650153ebc84c" class="flex">
+      <a role="button" class="">
+        1. System Integration</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-f83e86b72da6f61da0a3f42b11f3e539" class="toggle"  />
+    <label for="section-f83e86b72da6f61da0a3f42b11f3e539" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-17/" class="">
+        Week 17 - Wildcard Week</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-7da61d03db4dd97fea858f77cc90d1a2" class="toggle"  />
+    <label for="section-7da61d03db4dd97fea858f77cc90d1a2" class="flex">
+      <a role="button" class="">
+        1. RPA</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-0cb1e01e85bf0320ddc1db7247ee4943" class="toggle"  />
+    <label for="section-0cb1e01e85bf0320ddc1db7247ee4943" class="flex">
+      <a role="button" class="">
+        2. Machine Learning</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-94c785dc7f6a5c0f737128b6fb7b72f6" class="toggle"  />
+    <label for="section-94c785dc7f6a5c0f737128b6fb7b72f6" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-18/" class="">
+        Week 18 - Applications and Implications</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-c97bf4148db02526a8177ee946293cb0" class="toggle"  />
+    <label for="section-c97bf4148db02526a8177ee946293cb0" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-19/" class="">
+        Week 19 - Invention, Intellectual Property, And Income</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-7f03e9d4bb142f407be7af39ec167717" class="toggle"  />
+    <label for="section-7f03e9d4bb142f407be7af39ec167717" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-20/" class="">
+        Week 20 - Final project presentation</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-014b3c606e83be6881782c3306be8ebe" class="toggle"  />
+    <label for="section-014b3c606e83be6881782c3306be8ebe" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="">
+        Final Project</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-8e40c4394353ebace0eabde9c9550461" class="toggle"  />
+    <label for="section-8e40c4394353ebace0eabde9c9550461" class="flex">
+      <a role="button" class="">
+        1. Idea</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-29fb1b6c2417e5f1d9ad11ca3d3efebe" class="toggle"  />
+    <label for="section-29fb1b6c2417e5f1d9ad11ca3d3efebe" class="flex">
+      <a role="button" class="">
+        2. Hardware</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-b326ad3947324a695f3cc5249dca4c96" class="toggle"  />
+    <label for="section-b326ad3947324a695f3cc5249dca4c96" class="flex">
+      <a role="button" class="">
+        3. Software</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-64cfcb5b7e396476943d7dff08b4d0b2" class="toggle"  />
+    <label for="section-64cfcb5b7e396476943d7dff08b4d0b2" class="flex">
+      <a role="button" class="">
+        4. Enclosure</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-c308305cdbf1499091438a145c3502e4" class="toggle"  />
+    <label for="section-c308305cdbf1499091438a145c3502e4" class="flex">
+      <a role="button" class="">
+        5. Integration</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-2cf3aa447f580779c4d506bbbeb83dc0" class="toggle"  />
+    <label for="section-2cf3aa447f580779c4d506bbbeb83dc0" class="flex">
+      <a role="button" class="">
+        6. Presentation</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/2026/labs/kochi/students/nadec-biju/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Basics of HTML and CSS</h3>
+
+  <label for="toc-control">
+    
+    <img src="/2026/labs/kochi/students/nadec-biju/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#disclaimer">Disclaimer</a></li>
+    <li><a href="#choosing-a-text-editor">Choosing a Text Editor</a></li>
+    <li><a href="#selecting-a-text-editor">Selecting a Text Editor</a></li>
+    <li><a href="#downloading-visual-studio-code">Downloading Visual Studio Code</a></li>
+    <li><a href="#installing-visual-studio-code">Installing Visual Studio Code</a></li>
+    <li><a href="#installing-useful-vs-code-extensions">Installing Useful VS Code Extensions</a>
+      <ul>
+        <li><a href="#live-server-extension">Live Server Extension</a></li>
+        <li><a href="#save-typing--auto-save">Save Typing / Auto Save</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-started-with-html">Getting Started with HTML</a></li>
+    <li><a href="#creating-a-new-project-in-vs-code">Creating a New Project in VS Code</a></li>
+    <li><a href="#creating-a-new-html-file">Creating a New HTML File</a></li>
+    <li><a href="#basic-html-structure">Basic HTML Structure</a></li>
+    <li><a href="#brief-explanation-of-the-code">Brief Explanation of the Code</a>
+      <ul>
+        <li><a href="#doctype-html"><code>&lt;!DOCTYPE html&gt;</code></a></li>
+        <li><a href="#html"><code>&lt;html&gt;</code></a></li>
+        <li><a href="#head"><code>&lt;head&gt;</code></a></li>
+        <li><a href="#title"><code>&lt;title&gt;</code></a></li>
+        <li><a href="#body"><code>&lt;body&gt;</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#common-html-elements">Common HTML Elements</a>
+      <ul>
+        <li><a href="#headings-and-paragraphs">Headings and Paragraphs</a></li>
+      </ul>
+    </li>
+    <li><a href="#hyperlinks">Hyperlinks</a></li>
+    <li><a href="#introduction-to-basic-css">Introduction to Basic CSS</a></li>
+    <li><a href="#website-and-source-files">Website and Source Files</a></li>
+    <li><a href="#test-website">Test Website</a></li>
+    <li><a href="#main-documentation-website">Main Documentation Website</a></li>
+    <li><a href="#source-code-repository">Source Code Repository</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="basics-of-html-and-css">Basics of HTML and CSS<a class="anchor" href="#basics-of-html-and-css">#</a></h1>
+<h2 id="disclaimer">Disclaimer<a class="anchor" href="#disclaimer">#</a></h2>
+<p>All the steps and explanations in this documentation are written <strong>specifically for users on the Windows operating system</strong>.<br>
+While Git itself is cross-platform, certain installation steps, paths, and UI elements may differ on Linux or macOS.</p>
+<hr>
+<h2 id="choosing-a-text-editor">Choosing a Text Editor<a class="anchor" href="#choosing-a-text-editor">#</a></h2>
+<p>Before working with Git or documentation files, a <strong>text editor</strong> is required. A text editor is essential for:</p>
+<ul>
+<li>Writing documentation (Markdown / HTML)</li>
+<li>Editing configuration files</li>
+<li>Managing project files efficiently</li>
+</ul>
+<p>Some commonly used text editors on Windows include:</p>
+<ul>
+<li>Visual Studio Code</li>
+<li>Sublime Text</li>
+<li>Notepad++</li>
+<li>Atom</li>
+</ul>
+<hr>
+<h2 id="selecting-a-text-editor">Selecting a Text Editor<a class="anchor" href="#selecting-a-text-editor">#</a></h2>
+<p>For my workflow, I decided to use <strong>Visual Studio Code (VS Code)</strong> because:</p>
+<ul>
+<li>I am already familiar with it</li>
+<li>It has a clean and intuitive interface</li>
+<li>It offers excellent Git integration</li>
+<li>It supports extensions for almost every language</li>
+</ul>
+<p>However, you are free to choose any text editor you are comfortable with.</p>
+<hr>
+<h2 id="downloading-visual-studio-code">Downloading Visual Studio Code<a class="anchor" href="#downloading-visual-studio-code">#</a></h2>
+<p>To download Visual Studio Code:</p>
+<ol>
+<li>Open <strong>Google Chrome</strong></li>
+<li>Go to the official Visual Studio Code website</li>
+<li>Download the <strong>latest Windows <code>.exe</code> installer</strong></li>
+</ol>
+<p>Always make sure to download the installer from the <strong>official website</strong>.</p>
+<hr>
+<h2 id="installing-visual-studio-code">Installing Visual Studio Code<a class="anchor" href="#installing-visual-studio-code">#</a></h2>
+<p>During installation, most default options can be kept unchanged.<br>
+However, ensure that the following option is selected:</p>
+<ul>
+<li>✅ <strong>Add &ldquo;Open with Code&rdquo; action to Windows Explorer</strong></li>
+</ul>
+<p>This allows Visual Studio Code to be opened directly from the File Explorer using the right-click menu.</p>
+<p>After installation, Visual Studio Code is ready for use.</p>
+<h2 id="installing-useful-vs-code-extensions">Installing Useful VS Code Extensions<a class="anchor" href="#installing-useful-vs-code-extensions">#</a></h2>
+<p>After installing Visual Studio Code, the next step is to install a few helpful extensions that make web development and documentation easier.</p>
+<h3 id="live-server-extension">Live Server Extension<a class="anchor" href="#live-server-extension">#</a></h3>
+<p>The <strong>Live Server</strong> extension allows you to:</p>
+<ul>
+<li>Launch a local development server</li>
+<li>Automatically refresh the browser when files are saved</li>
+</ul>
+<p>Steps to install:</p>
+<ol>
+<li>Open Visual Studio Code</li>
+<li>Go to the <strong>Extensions</strong> tab (Ctrl + Shift + X)</li>
+<li>Search for <strong>Live Server</strong></li>
+<li>Click <strong>Install</strong></li>
+</ol>
+<hr>
+<h3 id="save-typing--auto-save">Save Typing / Auto Save<a class="anchor" href="#save-typing--auto-save">#</a></h3>
+<p>To avoid losing changes and to improve workflow, <strong>Auto Save</strong> can be enabled:</p>
+<ol>
+<li>Click on <strong>File</strong></li>
+<li>Select <strong>Auto Save</strong></li>
+</ol>
+<p>This ensures files are saved automatically while typing.</p>
+<hr>
+<h2 id="getting-started-with-html">Getting Started with HTML<a class="anchor" href="#getting-started-with-html">#</a></h2>
+<p>With the editor and extensions ready, the next step is to try the basics of <strong>HTML (HyperText Markup Language)</strong>.</p>
+<hr>
+<h2 id="creating-a-new-project-in-vs-code">Creating a New Project in VS Code<a class="anchor" href="#creating-a-new-project-in-vs-code">#</a></h2>
+<ol>
+<li>Open Visual Studio Code</li>
+<li>Click on <strong>File → Open Folder</strong></li>
+<li>Create a new folder and give it a name (for example: <code>html-basics</code>)</li>
+<li>Select the folder and click <strong>Open</strong></li>
+</ol>
+<p>This folder will act as your project workspace.</p>
+<hr>
+<h2 id="creating-a-new-html-file">Creating a New HTML File<a class="anchor" href="#creating-a-new-html-file">#</a></h2>
+<ol>
+<li>Inside the opened folder, create a new file</li>
+<li>Name the file <code>index.html</code></li>
+</ol>
+<hr>
+<h2 id="basic-html-structure">Basic HTML Structure<a class="anchor" href="#basic-html-structure">#</a></h2>
+<p>Below is a basic HTML template:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">title</span>&gt;Page Title&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">h1</span>&gt;This is a Heading&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;This is a paragraph.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;</span></span></code></pre></div><h2 id="brief-explanation-of-the-code">Brief Explanation of the Code<a class="anchor" href="#brief-explanation-of-the-code">#</a></h2>
+<h3 id="doctype-html"><code>&lt;!DOCTYPE html&gt;</code><a class="anchor" href="#doctype-html">#</a></h3>
+<p>Declares the document type and ensures proper rendering in modern web browsers.</p>
+<h3 id="html"><code>&lt;html&gt;</code><a class="anchor" href="#html">#</a></h3>
+<p>The root element of an HTML page.</p>
+<h3 id="head"><code>&lt;head&gt;</code><a class="anchor" href="#head">#</a></h3>
+<p>Contains metadata about the document, such as the page title.</p>
+<h3 id="title"><code>&lt;title&gt;</code><a class="anchor" href="#title">#</a></h3>
+<p>Sets the title shown on the browser tab.</p>
+<h3 id="body"><code>&lt;body&gt;</code><a class="anchor" href="#body">#</a></h3>
+<p>Contains all the visible content of the webpage.</p>
+<hr>
+<h2 id="common-html-elements">Common HTML Elements<a class="anchor" href="#common-html-elements">#</a></h2>
+<h3 id="headings-and-paragraphs">Headings and Paragraphs<a class="anchor" href="#headings-and-paragraphs">#</a></h3>
+<ul>
+<li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> are used for headings (largest to smallest)</li>
+<li><code>&lt;p&gt;</code> is used for paragraphs</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;Main Heading&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;This is a paragraph of text.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Images in HTML
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Images are added using the `&lt;<span style="color:#f92672">img</span>&gt;` tag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```html
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Sample Image&#34;</span>&gt;</span></span></code></pre></div><ul>
+<li><code>src</code> specifies the image file path</li>
+<li><code>alt</code> provides alternative text if the image cannot be displayed</li>
+</ul>
+<hr>
+<h2 id="hyperlinks">Hyperlinks<a class="anchor" href="#hyperlinks">#</a></h2>
+<p>Links are created using the <code>&lt;a&gt;</code> tag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://fabacademy.org&#34;</span>&gt;Fab Academy&lt;/<span style="color:#f92672">a</span>&gt;</span></span></code></pre></div><ul>
+<li><code>href</code> specifies the URL of the link destination</li>
+</ul>
+<h2 id="introduction-to-basic-css">Introduction to Basic CSS<a class="anchor" href="#introduction-to-basic-css">#</a></h2>
+<p>CSS (Cascading Style Sheets) is used to style HTML elements.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">lightgray</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">h1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">blue</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;</span></span></code></pre></div><p>This CSS changes the background color of the page and the color of the heading.</p>
+<hr>
+<h2 id="website-and-source-files">Website and Source Files<a class="anchor" href="#website-and-source-files">#</a></h2>
+<p>As part of this week, I created a basic HTML webpage to understand the structure of a simple website and how HTML files are rendered in a browser.</p>
+<hr>
+<h2 id="test-website">Test Website<a class="anchor" href="#test-website">#</a></h2>
+<p>A test website was created using only basic HTML as a learning exercise:</p>
+<ul>
+<li>🌐 <strong>Test Site:</strong><br>
+<a href="https://nb6rules.github.io/fab-purely-html-site/">https://nb6rules.github.io/fab-purely-html-site/</a></li>
+</ul>
+<p>⚠️ <strong>Note:</strong><br>
+This website was created purely for testing and learning purposes. It will <strong>not be regularly updated</strong> and does not represent the final structure of my Fab Academy documentation.</p>
+<hr>
+<h2 id="main-documentation-website">Main Documentation Website<a class="anchor" href="#main-documentation-website">#</a></h2>
+<p>The actual Fab Academy documentation website, which will be continuously updated and contain detailed weekly documentation, is hosted at:</p>
+<ul>
+<li>🌐 <strong>Fab Academy Site:</strong><br>
+<a href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/">https://fabacademy.org/2026/labs/kochi/students/nadec-biju/</a></li>
+</ul>
+<p>More details about the structure, workflow, and documentation approach are explained in the <strong>Getting Started with Documentation</strong> page.</p>
+<hr>
+<h2 id="source-code-repository">Source Code Repository<a class="anchor" href="#source-code-repository">#</a></h2>
+<p>All HTML source files used for the test website and documentation are maintained using Git for version control.</p>
+<ul>
+<li>📂 <strong>GitHub Repository:</strong><br>
+<a href="https://github.com/NB6RULES/fab-purely-html-site/deployments/github-pages">https://github.com/NB6RULES/fab-purely-html-site/deployments/github-pages</a></li>
+</ul>
+<p>The repository allows downloading the HTML source files and tracking changes over time.</p>
+<hr>
+<h2 id="reference">Reference<a class="anchor" href="#reference">#</a></h2>
+<p>For a more detailed introduction to HTML and CSS, refer to:</p>
+<ul>
+<li><a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">https://developer.mozilla.org/en-US/docs/Web/HTML</a></li>
+<li><a href="https://www.w3schools.com/css/">https://www.w3schools.com/css/</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="book-prev-next">
+    
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/" class="book-prev-next__item book-prev-next__prev">
+        <span class="book-prev-next__label">Previous</span>
+        <span class="book-prev-next__title">&laquo; Week 01 - Project management</span>
+      </a>
+    
+
+    
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/git/" class="book-prev-next__item book-prev-next__next">
+        <span class="book-prev-next__label">Next</span>
+        <span class="book-prev-next__title">Git Tutorial &raquo;</span>
+      </a>
+    
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#disclaimer">Disclaimer</a></li>
+    <li><a href="#choosing-a-text-editor">Choosing a Text Editor</a></li>
+    <li><a href="#selecting-a-text-editor">Selecting a Text Editor</a></li>
+    <li><a href="#downloading-visual-studio-code">Downloading Visual Studio Code</a></li>
+    <li><a href="#installing-visual-studio-code">Installing Visual Studio Code</a></li>
+    <li><a href="#installing-useful-vs-code-extensions">Installing Useful VS Code Extensions</a>
+      <ul>
+        <li><a href="#live-server-extension">Live Server Extension</a></li>
+        <li><a href="#save-typing--auto-save">Save Typing / Auto Save</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-started-with-html">Getting Started with HTML</a></li>
+    <li><a href="#creating-a-new-project-in-vs-code">Creating a New Project in VS Code</a></li>
+    <li><a href="#creating-a-new-html-file">Creating a New HTML File</a></li>
+    <li><a href="#basic-html-structure">Basic HTML Structure</a></li>
+    <li><a href="#brief-explanation-of-the-code">Brief Explanation of the Code</a>
+      <ul>
+        <li><a href="#doctype-html"><code>&lt;!DOCTYPE html&gt;</code></a></li>
+        <li><a href="#html"><code>&lt;html&gt;</code></a></li>
+        <li><a href="#head"><code>&lt;head&gt;</code></a></li>
+        <li><a href="#title"><code>&lt;title&gt;</code></a></li>
+        <li><a href="#body"><code>&lt;body&gt;</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#common-html-elements">Common HTML Elements</a>
+      <ul>
+        <li><a href="#headings-and-paragraphs">Headings and Paragraphs</a></li>
+      </ul>
+    </li>
+    <li><a href="#hyperlinks">Hyperlinks</a></li>
+    <li><a href="#introduction-to-basic-css">Introduction to Basic CSS</a></li>
+    <li><a href="#website-and-source-files">Website and Source Files</a></li>
+    <li><a href="#test-website">Test Website</a></li>
+    <li><a href="#main-documentation-website">Main Documentation Website</a></li>
+    <li><a href="#source-code-repository">Source Code Repository</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+<nav class="custom-navbar" id="custom-navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a href="/2026/labs/kochi/students/nadec-biju/" class="brand-link">
+        <span class="brand-name">Nadec Biju</span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/" class="nav-link">About Me</a>
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/" class="nav-link">Assignments</a>
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="nav-link">Final Project</a>
+      <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju" target="_blank" class="nav-link gitlab-link">GitLab</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.brand-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.brand-link:hover .brand-name {
+  color: #00d4ff;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: auto;
+}
+
+.nav-link {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: #00d4ff;
+}
+
+.gitlab-link {
+  background: #1abc9c;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.gitlab-link:hover {
+  background: #16a085;
+  transform: translateY(-2px);
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+body {
+  padding-top: 0 !important;
+}
+
+main.container {
+  margin-top: 100px !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 12px 15px;
+    gap: 20px;
+  }
+
+  .navbar-menu {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .nav-link {
+    padding: 6px 0;
+  }
+
+  .gitlab-link {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+
+  main.container {
+    margin-top: 90px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-menu {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+
+  main.container {
+    margin-top: 80px !important;
+  }
+}
+
+:root.dark .custom-navbar {
+  background: #0f0f0f;
+}
+
+ 
+.book-brand {
+  display: none !important;
+}
+
+ 
+aside.book-toc {
+  top: 70px !important;
+}
+
+aside.book-toc .book-toc-content {
+  top: 70px !important;
+  padding-top: 16px !important;
+}
+
+@media (max-width: 768px) {
+  aside.book-toc,
+  aside.book-toc .book-toc-content {
+    top: 60px !important;
+  }
+}
+</style>
+
+
+<button id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+<style>
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+#back-to-top:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+#back-to-top.visible {
+  display: flex;
+}
+.book-menu {
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+}
+.book-header {
+  position: sticky !important;
+  top: 0 !important;
+  background: var(--body-background, #fff) !important;
+  z-index: 100 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+</style>
+
+<script>
+(function() {
+  var btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
