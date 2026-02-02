@@ -35,7 +35,7 @@ I love that moment when an idea goes from being just a thought to something you 
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.f81d97c1a095d5677372e8b882a6e411d917fb52eb316a8bfffb95a8491946c8.js" integrity="sha256-&#43;B2XwaCV1Wdzcui4gqbkEdkX&#43;1LrMWqL//uVqEkZRsg=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.7b2b88561df388b392c2f8c3211b447483f2de4559aebaceea492101d63aec41.js" integrity="sha256-eyuIVh3ziLOSwvjDIRtEdIPy3kVZrrrO6kkhAdY67EE=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/about-me/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -1153,6 +1153,9 @@ I love that moment when an idea goes from being just a thought to something you 
     <div class="project-carousel-slide fade">
       <img src="../../images/about-me/hermes-4.jpg" alt="Hermes 4">
     </div>
+    <div class="project-carousel-slide fade">
+      <img src="../../images/about-me/hermes-5.jpg" alt="Hermes 5">
+    </div>
   </div>
   <a class="project-carousel-prev" onclick="changeProjectSlide('hermes-carousel', -1)">❮</a>
   <a class="project-carousel-next" onclick="changeProjectSlide('hermes-carousel', 1)">❯</a>
@@ -1194,6 +1197,12 @@ I love that moment when an idea goes from being just a thought to something you 
     </div>
     <div class="project-carousel-slide fade">
       <img src="../../images/about-me/fab-4.jpg" alt="Fablab 4">
+    </div>
+    <div class="project-carousel-slide fade">
+      <img src="../../images/about-me/fab-5.jpg" alt="Fablab 5">
+    </div>
+    <div class="project-carousel-slide fade">
+      <img src="../../images/about-me/fab-6.jpg" alt="Fablab 6">
     </div>
   </div>
   <a class="project-carousel-prev" onclick="changeProjectSlide('fablab-carousel', -1)">❮</a>
@@ -1632,7 +1641,82 @@ document.addEventListener('DOMContentLoaded', initProjectCarousels);
 </div>
   
  
+        <style>
+ 
+.highlight {
+  position: relative;
+}
+
+.highlight pre {
+  position: relative;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  background: #3d3d3d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  z-index: 10;
+}
+
+.highlight:hover .copy-code-button {
+  opacity: 1;
+}
+
+.copy-code-button:hover {
+  background: #007bff;
+}
+
+.copy-code-button.copied {
+  background: #28a745;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  const codeBlocks = document.querySelectorAll('.highlight');
+  
+  codeBlocks.forEach(function(codeBlock) {
+    
+    const copyButton = document.createElement('button');
+    copyButton.className = 'copy-code-button';
+    copyButton.textContent = 'Copy';
+    
+    
+    codeBlock.style.position = 'relative';
+    codeBlock.appendChild(copyButton);
+    
+    
+    copyButton.addEventListener('click', function() {
+      const code = codeBlock.querySelector('code');
+      const text = code ? code.innerText : codeBlock.innerText;
+      
+      navigator.clipboard.writeText(text).then(function() {
+        copyButton.textContent = 'Copied!';
+        copyButton.classList.add('copied');
         
+        setTimeout(function() {
+          copyButton.textContent = 'Copy';
+          copyButton.classList.remove('copied');
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Failed to copy:', err);
+        copyButton.textContent = 'Error';
+      });
+    });
+  });
+});
+</script>
+
         
   
  
