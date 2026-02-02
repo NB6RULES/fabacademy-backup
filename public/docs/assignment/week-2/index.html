@@ -31,7 +31,7 @@ What I Learned This Week#2D Design#Difference between raster and vector images
 The main goal was to understand how designs move from 2D to 3D, learn the difference between raster and vector images, and explore different 3D modeling approaches such as B-Rep and F-Rep.
 Rather than focusing on a single software, this week emphasized understanding design workflows, file types, and how design decisions affect fabrication.
 What I Learned This Week#2D Design#Difference between raster and vector images Raster editing tools: Photopea Affinity Vector design tools: Inkscape Affinity Designer 3D Design#Different types of 3D modeling: Boundary Representation (B-Rep) Function Representation (F-Rep) Introduction to parametric and non-parametric workflows Focused learning on: Fusion 360 SolidWorks Blender Software Used#2D Tools#Affinity Designer Photopea Inkscape 3D Tools#Fusion 360 SolidWorks Blender Other Tools#HandBrake (for video compression) Licensing and Software Access#Fab Academy provided access to both Fusion 360 and SolidWorks as part of the course.">
-  <meta itemprop="wordCount" content="1773">
+  <meta itemprop="wordCount" content="1949">
 
 <title>Week 02 - Computer Aided design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
@@ -41,7 +41,7 @@ What I Learned This Week#2D Design#Difference between raster and vector images
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.c08e9d986e96c0f5c992092a720411224add2af48cfaa10a7bb6a0090a27240b.js" integrity="sha256-wI6dmG6WwPXJkgkqcgQRIkrdKvSM&#43;qEKe7agCQonJAs=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.dcdd01441b7b3d90b2334762b38ee091fc404ff1d91f9e8f9b7792fe1e9fca0e.js" integrity="sha256-3N0BRBt7PZCyM0dis47gkfxAT/HZH56Pm3eS/h6fyg4=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-2/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -1049,7 +1049,13 @@ What I Learned This Week#2D Design#Difference between raster and vector images
         <li><a href="#media-compression">Media Compression</a></li>
       </ul>
     </li>
-    <li><a href="#2d-vector-design-using-inkscape">2D Vector Design Using Inkscape</a></li>
+    <li><a href="#2d-designing">2D Designing</a>
+      <ul>
+        <li><a href="#vector-design--inkscape">Vector Design – Inkscape</a></li>
+        <li><a href="#raster-design--photopea">Raster Design – Photopea</a></li>
+        <li><a href="#2d-rendering-for-final-project--affinity">2D Rendering for Final Project – Affinity</a></li>
+      </ul>
+    </li>
     <li><a href="#3d-designing">3D Designing</a></li>
     <li><a href="#fusion-360--parametric-modeling-comfort-zone">Fusion 360 – Parametric Modeling (Comfort Zone)</a></li>
     <li><a href="#tea-cup-modeling-video-tutorial">Tea Cup Modeling Video Tutorial</a>
@@ -1330,36 +1336,39 @@ The main goal was to understand how designs move from <strong>2D to 3D</strong>,
 </ul>
 <p><img src="../../../images/week-2/handbrake-interface.jpg" alt="HandBrake Interface" /></p>
 <hr>
-<h2 id="2d-vector-design-using-inkscape">2D Vector Design Using Inkscape<a class="anchor" href="#2d-vector-design-using-inkscape">#</a></h2>
-<p>I began my vector design learning using <strong>Inkscape</strong>.<br>
-This was my first structured exposure to vector-based workflows, including:</p>
+<h2 id="2d-designing">2D Designing<a class="anchor" href="#2d-designing">#</a></h2>
+<h3 id="vector-design--inkscape">Vector Design – Inkscape<a class="anchor" href="#vector-design--inkscape">#</a></h3>
+<p>I started my 2D design exploration with <strong>Inkscape</strong>, focusing on vector-based workflows.<br>
+As a fun and relatable exercise, I decided to create a <strong>meme related to Formula 1</strong>, specifically referencing <strong>Lewis Hamilton, Ferrari, and their race strategy</strong>.</p>
+<p>I downloaded a few reference images from the internet and experimented with:</p>
 <ul>
-<li>Creating and editing paths</li>
-<li>Working with nodes</li>
-<li>Boolean operations</li>
-<li>Exporting files in SVG and DXF formats
-.
-.
-.
-.
-.
-.
-.
-.</li>
+<li><strong>Trace Bitmap</strong></li>
+<li>Adjusting thresholds</li>
+<li>Cleaning up paths and nodes</li>
 </ul>
-<p>.
-.
-.
-.
-.
-.</p>
-<p>.
-.
-.
-.
-.
-.
-.</p>
+<p>This helped me understand how raster images can be converted into vectors and how editable paths behave in a vector environment.</p>
+<p><strong>Inkscape Meme Output:</strong></p>
+<img src="../../../images/week-2/inkscape-meme.jpg" alt="Inkscape Meme" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 20px 0;">
+<hr>
+<h3 id="raster-design--photopea">Raster Design – Photopea<a class="anchor" href="#raster-design--photopea">#</a></h3>
+<p>Next, I moved on to exploring raster graphics using <strong>Photopea</strong>.<br>
+Since I had some prior experience with Photopea, it felt intuitive and easy to work with.</p>
+<p>I recreated the <strong>same meme</strong> using raster tools to clearly understand the difference between:</p>
+<ul>
+<li>Pixel-based editing</li>
+<li>Resolution dependency</li>
+<li>Raster manipulation workflows</li>
+</ul>
+<p>This exercise helped me directly compare raster vs vector approaches for the same design.</p>
+<p><strong>Photopea Meme Output:</strong></p>
+<img src="../../../images/week-2/photopea-meme.jpg" alt="Photopea Meme" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 20px 0;">
+<hr>
+<h3 id="2d-rendering-for-final-project--affinity">2D Rendering for Final Project – Affinity<a class="anchor" href="#2d-rendering-for-final-project--affinity">#</a></h3>
+<p>For the <strong>2D render of my final project</strong>, I shifted to using <strong>Affinity</strong> based on the recommendation of a close friend,<br>
+<strong>Adithyan Pramod</strong>, who is an experienced graphic designer.</p>
+<p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/adithyan-pramod/">https://www.linkedin.com/in/adithyan-pramod/</a></p>
+<p>Affinity provided a smooth workflow for combining both <strong>vector and raster elements</strong>, making it suitable for producing cleaner and more polished renders compared to my earlier experiments.</p>
+<p>This tool felt especially useful for final outputs where visual clarity and presentation matter.</p>
 <hr>
 <h2 id="3d-designing">3D Designing<a class="anchor" href="#3d-designing">#</a></h2>
 <p>This week, I explored <strong>3D design</strong> using multiple tools to understand different modeling philosophies:</p>
@@ -1768,7 +1777,13 @@ document.addEventListener('DOMContentLoaded', function() {
         <li><a href="#media-compression">Media Compression</a></li>
       </ul>
     </li>
-    <li><a href="#2d-vector-design-using-inkscape">2D Vector Design Using Inkscape</a></li>
+    <li><a href="#2d-designing">2D Designing</a>
+      <ul>
+        <li><a href="#vector-design--inkscape">Vector Design – Inkscape</a></li>
+        <li><a href="#raster-design--photopea">Raster Design – Photopea</a></li>
+        <li><a href="#2d-rendering-for-final-project--affinity">2D Rendering for Final Project – Affinity</a></li>
+      </ul>
+    </li>
     <li><a href="#3d-designing">3D Designing</a></li>
     <li><a href="#fusion-360--parametric-modeling-comfort-zone">Fusion 360 – Parametric Modeling (Comfort Zone)</a></li>
     <li><a href="#tea-cup-modeling-video-tutorial">Tea Cup Modeling Video Tutorial</a>
