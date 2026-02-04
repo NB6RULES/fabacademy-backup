@@ -31,7 +31,7 @@ What I Learned This Week#2D Design#Difference between raster and vector images
 The main goal was to understand how designs move from 2D to 3D, learn the difference between raster and vector images, and explore different 3D modeling approaches such as B-Rep and F-Rep.
 Rather than focusing on a single software, this week emphasized understanding design workflows, file types, and how design decisions affect fabrication.
 What I Learned This Week#2D Design#Difference between raster and vector images Raster editing tools: Photopea Affinity Vector design tools: Inkscape Affinity Designer 3D Design#Different types of 3D modeling: Boundary Representation (B-Rep) Function Representation (F-Rep) Introduction to parametric and non-parametric workflows Focused learning on: Fusion 360 SolidWorks Blender Software Used#2D Tools#Affinity Designer Photopea Inkscape 3D Tools#Fusion 360 SolidWorks Blender Other Tools#HandBrake (for video compression) Licensing and Software Access#Fab Academy provided access to both Fusion 360 and SolidWorks as part of the course.">
-  <meta itemprop="wordCount" content="1949">
+  <meta itemprop="wordCount" content="2432">
 
 <title>Week 02 - Computer Aided design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
@@ -41,7 +41,7 @@ What I Learned This Week#2D Design#Difference between raster and vector images
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.dcdd01441b7b3d90b2334762b38ee091fc404ff1d91f9e8f9b7792fe1e9fca0e.js" integrity="sha256-3N0BRBt7PZCyM0dis47gkfxAT/HZH56Pm3eS/h6fyg4=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.2c145c509385d3f138096f6fa8b2f9223fc39f4de7be3a6a4362d00491ffb43a.js" integrity="sha256-LBRcUJOF0/E4CW9vqLL5Ij/Dn03nvjpqQ2LQBJH/tDo=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-2/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -1053,7 +1053,14 @@ What I Learned This Week#2D Design#Difference between raster and vector images
       <ul>
         <li><a href="#vector-design--inkscape">Vector Design – Inkscape</a></li>
         <li><a href="#raster-design--photopea">Raster Design – Photopea</a></li>
-        <li><a href="#2d-rendering-for-final-project--affinity">2D Rendering for Final Project – Affinity</a></li>
+      </ul>
+    </li>
+    <li><a href="#2d-designing-using-affinity">2D Designing Using Affinity</a>
+      <ul>
+        <li><a href="#creating-the-base-sketch-in-fusion-360">Creating the Base Sketch in Fusion 360</a></li>
+        <li><a href="#importing-the-dxf-into-affinity">Importing the DXF into Affinity</a></li>
+        <li><a href="#building-shapes-and-cleaning-geometry">Building Shapes and Cleaning Geometry</a></li>
+        <li><a href="#applying-colors">Applying Colors</a></li>
       </ul>
     </li>
     <li><a href="#3d-designing">3D Designing</a></li>
@@ -1066,6 +1073,22 @@ What I Learned This Week#2D Design#Difference between raster and vector images
     <li><a href="#static-structural-analysis-in-fusion-360">Static Structural Analysis in Fusion 360</a>
       <ul>
         <li></li>
+      </ul>
+    </li>
+    <li><a href="#3d-designing-using-3d-builder">3D Designing Using 3D Builder</a>
+      <ul>
+        <li><a href="#creating-a-model-in-3d-builder">Creating a Model in 3D Builder</a></li>
+        <li><a href="#creating-the-cup-body">Creating the Cup Body</a></li>
+        <li><a href="#creating-the-handle">Creating the Handle</a></li>
+        <li><a href="#boolean-operations-and-final-model">Boolean Operations and Final Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#3d-designing-using-openscad">3D Designing Using OpenSCAD</a>
+      <ul>
+        <li><a href="#opening-openscad">Opening OpenSCAD</a></li>
+        <li><a href="#creating-the-model-using-code">Creating the Model Using Code</a></li>
+        <li><a href="#openscad-code">OpenSCAD Code</a></li>
+        <li><a href="#rendering-the-model">Rendering the Model</a></li>
       </ul>
     </li>
     <li><a href="#blender--non-parametric-modeling-out-of-comfort-zone">Blender – Non-Parametric Modeling (Out of Comfort Zone)</a>
@@ -1324,6 +1347,16 @@ The main goal was to understand how designs move from <strong>2D to 3D</strong>,
 </li>
 </ul>
 <p><img src="../../../images/week-2/blender-install.jpg" alt="Blender Install" /></p>
+<ul>
+<li><strong>OpenSCAD</strong>
+<ul>
+<li>Downloaded from: <a href="https://openscad.org/downloads.html">https://openscad.org/downloads.html</a></li>
+<li>Installed using the Windows installer</li>
+<li>Used for script-based, parametric 3D modeling</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../../images/week-2/openscad-1.jpg" alt="OpenSCAD Install" /></p>
 <h3 id="media-compression">Media Compression<a class="anchor" href="#media-compression">#</a></h3>
 <ul>
 <li><strong>HandBrake</strong>
@@ -1363,12 +1396,53 @@ Since I had some prior experience with Photopea, it felt intuitive and easy to w
 <p><strong>Photopea Meme Output:</strong></p>
 <img src="../../../images/week-2/photopea-meme.jpg" alt="Photopea Meme" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 20px 0;">
 <hr>
-<h3 id="2d-rendering-for-final-project--affinity">2D Rendering for Final Project – Affinity<a class="anchor" href="#2d-rendering-for-final-project--affinity">#</a></h3>
-<p>For the <strong>2D render of my final project</strong>, I shifted to using <strong>Affinity</strong> based on the recommendation of a close friend,<br>
-<strong>Adithyan Pramod</strong>, who is an experienced graphic designer.</p>
-<p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/adithyan-pramod/">https://www.linkedin.com/in/adithyan-pramod/</a></p>
-<p>Affinity provided a smooth workflow for combining both <strong>vector and raster elements</strong>, making it suitable for producing cleaner and more polished renders compared to my earlier experiments.</p>
-<p>This tool felt especially useful for final outputs where visual clarity and presentation matter.</p>
+<h2 id="2d-designing-using-affinity">2D Designing Using Affinity<a class="anchor" href="#2d-designing-using-affinity">#</a></h2>
+<p>For my 2D design workflow using <strong>Affinity</strong>, I decided to start with a precise sketch created in <strong>Fusion 360</strong> and then refine and stylize it inside Affinity.</p>
+<hr>
+<h3 id="creating-the-base-sketch-in-fusion-360">Creating the Base Sketch in Fusion 360<a class="anchor" href="#creating-the-base-sketch-in-fusion-360">#</a></h3>
+<p>I began by sketching a <strong>bike model</strong> using the <strong>Fusion 360 sketch tools</strong>.<br>
+This allowed me to create clean, dimensionally accurate geometry before moving to a 2D design environment.</p>
+<p>Once the sketch was complete, I exported it as a <strong>DXF file</strong> for use in Affinity.</p>
+<p><strong>Fusion 360 Sketch Export:</strong><br>
+<img src="../../../images/week-2/affinity-1.jpg" alt="Affinity DXF Import" /></p>
+<hr>
+<h3 id="importing-the-dxf-into-affinity">Importing the DXF into Affinity<a class="anchor" href="#importing-the-dxf-into-affinity">#</a></h3>
+<p>I then opened <strong>Affinity</strong> and imported the DXF file:</p>
+<ul>
+<li>
+<p>Opened Affinity<br>
+<img src="../../../images/week-2/affinity-2.jpg" alt="Affinity Open" /></p>
+</li>
+<li>
+<p>Navigated to <strong>File → Open</strong></p>
+</li>
+<li>
+<p>Selected the DXF file exported from Fusion 360</p>
+</li>
+</ul>
+<p><strong>DXF Import into Affinity:</strong><br>
+<img src="../../../images/week-2/affinity-3.jpg" alt="Affinity Import Step 1" />
+<img src="../../../images/week-2/affinity-4.jpg" alt="Affinity Import Step 2" /></p>
+<p>After importing, I repositioned the geometry and <strong>mirrored the DXF</strong> to achieve the required orientation.</p>
+<p><strong>Mirroring and Positioning the DXF:</strong><br>
+<img src="../../../images/week-2/affinity-5.jpg" alt="Affinity Mirroring" /></p>
+<hr>
+<h3 id="building-shapes-and-cleaning-geometry">Building Shapes and Cleaning Geometry<a class="anchor" href="#building-shapes-and-cleaning-geometry">#</a></h3>
+<p>With the DXF correctly positioned, I used the <strong>Shape Builder Tool</strong> to:</p>
+<ul>
+<li>Combine required regions</li>
+<li>Remove unnecessary construction lines</li>
+<li>Convert raw sketch geometry into clean, closed shapes</li>
+</ul>
+<p>This step helped transform the technical sketch into a usable 2D design.</p>
+<p><strong>Shape Building and Cleanup:</strong><br>
+<img src="../../../images/week-2/affinity-6.jpg" alt="Affinity Shape Builder" /></p>
+<hr>
+<h3 id="applying-colors">Applying Colors<a class="anchor" href="#applying-colors">#</a></h3>
+<p>Finally, I applied colors to the required areas to improve visual clarity and presentation.<br>
+This step helped finalize the 2D render and made the design more readable and visually appealing.</p>
+<p><strong>Final Colored Output:</strong><br>
+<img src="../../../images/week-2/affinity-7.jpg" alt="Affinity Final Color" /></p>
 <hr>
 <h2 id="3d-designing">3D Designing<a class="anchor" href="#3d-designing">#</a></h2>
 <p>This week, I explored <strong>3D design</strong> using multiple tools to understand different modeling philosophies:</p>
@@ -1435,6 +1509,91 @@ This allowed me to focus on <strong>design intent</strong> rather than learning 
 </div>
 <h4 id="this-video-showcases-the-process-of-setting-up-and-running-a-static-structural-analysis-in-fusion-360-demonstrating-how-to-evaluate-stress-and-displacement-in-a-designed-part">This video showcases the process of setting up and running a static structural analysis in Fusion 360, demonstrating how to evaluate stress and displacement in a designed part.<a class="anchor" href="#this-video-showcases-the-process-of-setting-up-and-running-a-static-structural-analysis-in-fusion-360-demonstrating-how-to-evaluate-stress-and-displacement-in-a-designed-part">#</a></h4>
 <hr>
+<h2 id="3d-designing-using-3d-builder">3D Designing Using 3D Builder<a class="anchor" href="#3d-designing-using-3d-builder">#</a></h2>
+<p><strong>3D Builder</strong> is another 3D CAD software I was already familiar with.<br>
+It comes bundled with <strong>Windows</strong>, making it quick to access and easy to experiment with basic solid modeling workflows.</p>
+<hr>
+<h3 id="creating-a-model-in-3d-builder">Creating a Model in 3D Builder<a class="anchor" href="#creating-a-model-in-3d-builder">#</a></h3>
+<ul>
+<li>Opened <strong>3D Builder</strong></li>
+<li>Selected <strong>New Scene</strong></li>
+</ul>
+<p><img src="../../../images/week-2/3Dbuilder-1.jpg" alt="3D Builder Opening" /></p>
+<hr>
+<h3 id="creating-the-cup-body">Creating the Cup Body<a class="anchor" href="#creating-the-cup-body">#</a></h3>
+<ul>
+<li>Created a <strong>cylinder</strong> to form the outer body of the cup</li>
+</ul>
+<p><img src="../../../images/week-2/3Dbuilder-2.jpg" alt="3D Builder Cylinder" /></p>
+<ul>
+<li>Created another <strong>cylinder</strong></li>
+<li>Scaled it down so it could be subtracted from the first cylinder</li>
+<li>Positioned it inside the outer cylinder to create a <strong>hollow cup</strong></li>
+</ul>
+<p><img src="../../../images/week-2/3Dbuilder-3.jpg" alt="3D Builder Hollow Cup Step 1" />
+<img src="../../../images/week-2/3Dbuilder-4.jpg" alt="3D Builder Hollow Cup Step 2" /></p>
+<hr>
+<h3 id="creating-the-handle">Creating the Handle<a class="anchor" href="#creating-the-handle">#</a></h3>
+<ul>
+<li>Imported two additional cylinders</li>
+<li>Rotated and positioned them appropriately to form the <strong>handle shape</strong></li>
+</ul>
+<p><img src="../../../images/week-2/3Dbuilder-5.jpg" alt="3D Builder Handle" /></p>
+<hr>
+<h3 id="boolean-operations-and-final-model">Boolean Operations and Final Model<a class="anchor" href="#boolean-operations-and-final-model">#</a></h3>
+<ul>
+<li>Used <strong>subtract</strong> and <strong>merge</strong> operations</li>
+<li>Combined all components to generate the final cup model</li>
+</ul>
+<p><img src="../../../images/week-2/3Dbuilder-6.jpg" alt="3D Builder Final Model" /></p>
+<hr>
+<h2 id="3d-designing-using-openscad">3D Designing Using OpenSCAD<a class="anchor" href="#3d-designing-using-openscad">#</a></h2>
+<p>To explore <strong>script-based parametric modeling</strong>, I used <strong>OpenSCAD</strong>, where geometry is created using code rather than a graphical interface.</p>
+<hr>
+<h3 id="opening-openscad">Opening OpenSCAD<a class="anchor" href="#opening-openscad">#</a></h3>
+<ul>
+<li>Opened <strong>OpenSCAD</strong> after installation</li>
+</ul>
+<p><img src="../../../images/week-2/openscad-1.jpg" alt="OpenSCAD Interface" /></p>
+<hr>
+<h3 id="creating-the-model-using-code">Creating the Model Using Code<a class="anchor" href="#creating-the-model-using-code">#</a></h3>
+<p>I created the required code to generate a <strong>simple cylindrical coffee mug</strong> with a handle.<br>
+The code was generated with the help of <strong>ChatGPT</strong>.</p>
+<h4 id="chatgpt-prompt-used">ChatGPT Prompt Used<a class="anchor" href="#chatgpt-prompt-used">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Write OpenSCAD code to create a simple cylindrical coffee mug that is hollow inside.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- Height: 90 mm
+</span></span><span style="display:flex;"><span>- Outer radius: 35 mm
+</span></span><span style="display:flex;"><span>- Wall thickness: about 5 mm
+</span></span><span style="display:flex;"><span>- Include a curved side handle</span></span></code></pre></div><h3 id="openscad-code">OpenSCAD Code<a class="anchor" href="#openscad-code">#</a></h3>
+<p>The following OpenSCAD script was used to create a <strong>simple cylindrical coffee mug</strong> with a hollow body and a curved handle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scad" data-lang="scad"><span style="display:flex;"><span><span style="color:#75715e">// -------- TORUS (HANDLE SHAPE) MODULE --------
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">module</span> torus(R, r) {
+</span></span><span style="display:flex;"><span>    rotate_extrude($fn<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>)
+</span></span><span style="display:flex;"><span>        translate([R, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>            circle(r<span style="color:#f92672">=</span>r, $fn<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// -------- COMPLETE MUG (BODY + HANDLE) --------
+</span></span></span><span style="display:flex;"><span>union() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ---- HOLLOW MUG BODY ----
+</span></span></span><span style="display:flex;"><span>    difference() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Outer shell
+</span></span></span><span style="display:flex;"><span>        cylinder(h <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span>, r <span style="color:#f92672">=</span> <span style="color:#ae81ff">35</span>, $fn<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Inner hollow space
+</span></span></span><span style="display:flex;"><span>        translate([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>])
+</span></span><span style="display:flex;"><span>            cylinder(h <span style="color:#f92672">=</span> <span style="color:#ae81ff">84</span>, r <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>, $fn<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ---- HANDLE ----
+</span></span></span><span style="display:flex;"><span>    translate([<span style="color:#ae81ff">35</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">30</span>])
+</span></span><span style="display:flex;"><span>    rotate([<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        torus(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="rendering-the-model">Rendering the Model<a class="anchor" href="#rendering-the-model">#</a></h3>
+<p>The model was rendered in OpenSCAD using the <strong>Render</strong> function.</p>
+<p><img src="../../../images/week-2/openscad-3.jpg" alt="OpenSCAD Rendered Mug" /></p>
 <h2 id="blender--non-parametric-modeling-out-of-comfort-zone">Blender – Non-Parametric Modeling (Out of Comfort Zone)<a class="anchor" href="#blender--non-parametric-modeling-out-of-comfort-zone">#</a></h2>
 <p>Blender was a completely different vibe.</p>
 <p>Coming from engineering CAD tools like Fusion 360, SolidWorks, Siemens NX, CATIA, Creo, and Onshape, Blender initially felt:</p>
@@ -1781,7 +1940,14 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul>
         <li><a href="#vector-design--inkscape">Vector Design – Inkscape</a></li>
         <li><a href="#raster-design--photopea">Raster Design – Photopea</a></li>
-        <li><a href="#2d-rendering-for-final-project--affinity">2D Rendering for Final Project – Affinity</a></li>
+      </ul>
+    </li>
+    <li><a href="#2d-designing-using-affinity">2D Designing Using Affinity</a>
+      <ul>
+        <li><a href="#creating-the-base-sketch-in-fusion-360">Creating the Base Sketch in Fusion 360</a></li>
+        <li><a href="#importing-the-dxf-into-affinity">Importing the DXF into Affinity</a></li>
+        <li><a href="#building-shapes-and-cleaning-geometry">Building Shapes and Cleaning Geometry</a></li>
+        <li><a href="#applying-colors">Applying Colors</a></li>
       </ul>
     </li>
     <li><a href="#3d-designing">3D Designing</a></li>
@@ -1794,6 +1960,22 @@ document.addEventListener('DOMContentLoaded', function() {
     <li><a href="#static-structural-analysis-in-fusion-360">Static Structural Analysis in Fusion 360</a>
       <ul>
         <li></li>
+      </ul>
+    </li>
+    <li><a href="#3d-designing-using-3d-builder">3D Designing Using 3D Builder</a>
+      <ul>
+        <li><a href="#creating-a-model-in-3d-builder">Creating a Model in 3D Builder</a></li>
+        <li><a href="#creating-the-cup-body">Creating the Cup Body</a></li>
+        <li><a href="#creating-the-handle">Creating the Handle</a></li>
+        <li><a href="#boolean-operations-and-final-model">Boolean Operations and Final Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#3d-designing-using-openscad">3D Designing Using OpenSCAD</a>
+      <ul>
+        <li><a href="#opening-openscad">Opening OpenSCAD</a></li>
+        <li><a href="#creating-the-model-using-code">Creating the Model Using Code</a></li>
+        <li><a href="#openscad-code">OpenSCAD Code</a></li>
+        <li><a href="#rendering-the-model">Rendering the Model</a></li>
       </ul>
     </li>
     <li><a href="#blender--non-parametric-modeling-out-of-comfort-zone">Blender – Non-Parametric Modeling (Out of Comfort Zone)</a>
