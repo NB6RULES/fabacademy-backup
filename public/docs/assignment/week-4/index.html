@@ -8,20 +8,30 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Week 04 - Embedded Programming#">
+<meta name="description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
+The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
+This week built on Week 3 (computer-controlled cutting) and prepared for electronics production and design in upcoming weeks.
+Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Week 04 - Embedded Programming">
-  <meta property="og:description" content="Week 04 - Embedded Programming#">
+  <meta property="og:description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
+The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
+This week built on Week 3 (computer-controlled cutting) and prepared for electronics production and design in upcoming weeks.
+Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
 
   <meta itemprop="name" content="Week 04 - Embedded Programming">
-  <meta itemprop="description" content="Week 04 - Embedded Programming#">
-  <meta itemprop="wordCount" content="5">
+  <meta itemprop="description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
+The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
+This week built on Week 3 (computer-controlled cutting) and prepared for electronics production and design in upcoming weeks.
+Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals">
+  <meta itemprop="wordCount" content="170">
 
 <title>Week 04 - Embedded Programming | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
@@ -31,7 +41,7 @@ https://github.com/alex-shpak/hugo-book
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.3617a398e4e5b0cefd33f812a61a96f689b2b37de432349cec9a57171da48e7c.js" integrity="sha256-NhejmOTlsM79M/gSphqW9omys33kMjSc7JpXFx2kjnw=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.46862cd81e8409216d5b34774c7b22361b63f1d01ad5e935b989cd823950e0bf.js" integrity="sha256-RoYs2B6ECSFtWzR3THsiNhtj8dAa1ek1uYnNgjlQ4L8=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -742,7 +752,7 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" id="section-39712f761bce03a7f481d5c72245a149" class="toggle"  />
     <label for="section-39712f761bce03a7f481d5c72245a149" class="flex">
       <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/" class="">
-        Week 13 - Break, Midterm Review</a>
+        Week 13 - Machine Design</a>
       <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
@@ -992,11 +1002,30 @@ https://github.com/alex-shpak/hugo-book
 
   <label for="toc-control">
     
+    <img src="/2026/labs/kochi/students/nadec-biju/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
   </label>
 </div>
 
 
 
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#group-assignment">Group Assignment</a></li>
+    <li><a href="#individual-assignment">Individual Assignment</a></li>
+    <li><a href="#what-i-learned">What I Learned</a></li>
+    <li><a href="#software-used">Software Used</a></li>
+    <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
   
  
       </header>
@@ -1004,6 +1033,74 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown book-article"><h1 id="week-04---embedded-programming">Week 04 - Embedded Programming<a class="anchor" href="#week-04---embedded-programming">#</a></h1>
+<p>Week 4 focused on <strong>embedded programming</strong>, learning to program microcontrollers and understand how software controls hardware at a low level.<br>
+The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.</p>
+<p>This week built on <strong>Week 3 (computer-controlled cutting)</strong> and prepared for electronics production and design in upcoming weeks.</p>
+<hr>
+<h2 id="group-assignment">Group Assignment<a class="anchor" href="#group-assignment">#</a></h2>
+<ul>
+<li>Demonstrate and compare the <strong>toolchains and development workflows</strong> for available embedded architectures</li>
+</ul>
+<h2 id="individual-assignment">Individual Assignment<a class="anchor" href="#individual-assignment">#</a></h2>
+<ul>
+<li>Browse through the <strong>data sheet</strong> for a microcontroller</li>
+<li>Write and test a <strong>program for an embedded system</strong> using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections</li>
+</ul>
+<p><strong>Extra Credit Goals</strong></p>
+<ul>
+<li>Try different programming <strong>languages</strong> &amp;/or <strong>development environments</strong></li>
+</ul>
+<hr>
+<h2 id="what-i-learned">What I Learned<a class="anchor" href="#what-i-learned">#</a></h2>
+<hr>
+<h2 id="software-used">Software Used<a class="anchor" href="#software-used">#</a></h2>
+<ul>
+<li><strong>Arduino IDE</strong> for programming</li>
+<li><strong>Development environment</strong> for the microcontroller</li>
+<li><strong>Serial monitor</strong> for debugging and communication</li>
+<li><strong>Browser + Git</strong> for documentation</li>
+</ul>
+<hr>
+<h2 id="weekly-schedule">Weekly Schedule<a class="anchor" href="#weekly-schedule">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Day</th>
+          <th>What I Did</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>WED</td>
+          <td>Lecture on embedded programming</td>
+      </tr>
+      <tr>
+          <td>THU</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>FRI</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>SAT</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>SUN</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>MON</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>TUE</td>
+          <td>Regional review</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
 </article>
  
       
@@ -1146,6 +1243,25 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#group-assignment">Group Assignment</a></li>
+    <li><a href="#individual-assignment">Individual Assignment</a></li>
+    <li><a href="#what-i-learned">What I Learned</a></li>
+    <li><a href="#software-used">Software Used</a></li>
+    <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
   
  
   </main>

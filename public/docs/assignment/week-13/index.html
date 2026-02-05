@@ -8,22 +8,31 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Week 13 - Break, Midterm Review#">
+<meta name="description" content="Week 13 - Machine Design (Machine Week - Part 2)#Week 13 focused on machine design, completing the machine building project by adding actuation and automation.
+The aim was to integrate electronics, programming, and mechanical systems into a working automated machine.
+This is the second part of the two-week machine design project.
+Group Assignment#Actuate and automate your machine Document the group project and your individual contribution Prepare a demonstration of your machines Individual Contribution#Document your specific role in automation and integration Explain the electronics and programming you contributed What I Learned#Software Used#Arduino IDE or development environment Motor control software CAD Software for any design updates Browser &#43; Git for documentation Weekly Schedule#Day What I Did WED Machine integration and testing THU FRI SAT SUN MON TUE Machine demonstrations ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
-  <meta property="og:title" content="Week 13 - Break, Midterm Review">
-  <meta property="og:description" content="Week 13 - Break, Midterm Review#">
+  <meta property="og:title" content="Week 13 - Machine Design">
+  <meta property="og:description" content="Week 13 - Machine Design (Machine Week - Part 2)#Week 13 focused on machine design, completing the machine building project by adding actuation and automation.
+The aim was to integrate electronics, programming, and mechanical systems into a working automated machine.
+This is the second part of the two-week machine design project.
+Group Assignment#Actuate and automate your machine Document the group project and your individual contribution Prepare a demonstration of your machines Individual Contribution#Document your specific role in automation and integration Explain the electronics and programming you contributed What I Learned#Software Used#Arduino IDE or development environment Motor control software CAD Software for any design updates Browser &#43; Git for documentation Weekly Schedule#Day What I Did WED Machine integration and testing THU FRI SAT SUN MON TUE Machine demonstrations">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
 
-  <meta itemprop="name" content="Week 13 - Break, Midterm Review">
-  <meta itemprop="description" content="Week 13 - Break, Midterm Review#">
-  <meta itemprop="wordCount" content="6">
+  <meta itemprop="name" content="Week 13 - Machine Design">
+  <meta itemprop="description" content="Week 13 - Machine Design (Machine Week - Part 2)#Week 13 focused on machine design, completing the machine building project by adding actuation and automation.
+The aim was to integrate electronics, programming, and mechanical systems into a working automated machine.
+This is the second part of the two-week machine design project.
+Group Assignment#Actuate and automate your machine Document the group project and your individual contribution Prepare a demonstration of your machines Individual Contribution#Document your specific role in automation and integration Explain the electronics and programming you contributed What I Learned#Software Used#Arduino IDE or development environment Motor control software CAD Software for any design updates Browser &#43; Git for documentation Weekly Schedule#Day What I Did WED Machine integration and testing THU FRI SAT SUN MON TUE Machine demonstrations">
+  <meta itemprop="wordCount" content="133">
 
-<title>Week 13 - Break, Midterm Review | Nadec FAB Academy Portfolio</title>
+<title>Week 13 - Machine Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.png" >
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
 <link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/">
@@ -31,7 +40,7 @@ https://github.com/alex-shpak/hugo-book
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.3617a398e4e5b0cefd33f812a61a96f689b2b37de432349cec9a57171da48e7c.js" integrity="sha256-NhejmOTlsM79M/gSphqW9omys33kMjSc7JpXFx2kjnw=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.46862cd81e8409216d5b34774c7b22361b63f1d01ad5e935b989cd823950e0bf.js" integrity="sha256-RoYs2B6ECSFtWzR3THsiNhtj8dAa1ek1uYnNgjlQ4L8=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -742,7 +751,7 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" id="section-39712f761bce03a7f481d5c72245a149" class="toggle" checked />
     <label for="section-39712f761bce03a7f481d5c72245a149" class="flex">
       <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/" class="active">
-        Week 13 - Break, Midterm Review</a>
+        Week 13 - Machine Design</a>
       <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
     </label>
   
@@ -988,9 +997,11 @@ https://github.com/alex-shpak/hugo-book
     <img src="/2026/labs/kochi/students/nadec-biju/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Week 13 - Break, Midterm Review</h3>
+  <h3>Week 13 - Machine Design</h3>
 
   <label for="toc-control">
+    
+    <img src="/2026/labs/kochi/students/nadec-biju/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -998,12 +1009,95 @@ https://github.com/alex-shpak/hugo-book
 
 
   
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#group-assignment">Group Assignment</a></li>
+    <li><a href="#individual-contribution">Individual Contribution</a></li>
+    <li><a href="#what-i-learned">What I Learned</a></li>
+    <li><a href="#software-used">Software Used</a></li>
+    <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
  
       </header>
 
       
       
-  <article class="markdown book-article"><h1 id="week-13---break-midterm-review">Week 13 - Break, Midterm Review<a class="anchor" href="#week-13---break-midterm-review">#</a></h1>
+  <article class="markdown book-article"><h1 id="week-13---machine-design-machine-week---part-2">Week 13 - Machine Design (Machine Week - Part 2)<a class="anchor" href="#week-13---machine-design-machine-week---part-2">#</a></h1>
+<p>Week 13 focused on <strong>machine design</strong>, completing the machine building project by adding actuation and automation.<br>
+The aim was to integrate electronics, programming, and mechanical systems into a working automated machine.</p>
+<p>This is the second part of the two-week machine design project.</p>
+<hr>
+<h2 id="group-assignment">Group Assignment<a class="anchor" href="#group-assignment">#</a></h2>
+<ul>
+<li><strong>Actuate and automate</strong> your machine</li>
+<li>Document the group project and your <strong>individual contribution</strong></li>
+<li>Prepare a <strong>demonstration</strong> of your machines</li>
+</ul>
+<h2 id="individual-contribution">Individual Contribution<a class="anchor" href="#individual-contribution">#</a></h2>
+<ul>
+<li>Document your specific role in automation and integration</li>
+<li>Explain the electronics and programming you contributed</li>
+</ul>
+<hr>
+<h2 id="what-i-learned">What I Learned<a class="anchor" href="#what-i-learned">#</a></h2>
+<hr>
+<h2 id="software-used">Software Used<a class="anchor" href="#software-used">#</a></h2>
+<ul>
+<li><strong>Arduino IDE</strong> or development environment</li>
+<li><strong>Motor control software</strong></li>
+<li><strong>CAD Software</strong> for any design updates</li>
+<li><strong>Browser + Git</strong> for documentation</li>
+</ul>
+<hr>
+<h2 id="weekly-schedule">Weekly Schedule<a class="anchor" href="#weekly-schedule">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Day</th>
+          <th>What I Did</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>WED</td>
+          <td>Machine integration and testing</td>
+      </tr>
+      <tr>
+          <td>THU</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>FRI</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>SAT</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>SUN</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>MON</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>TUE</td>
+          <td>Machine demonstrations</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
 </article>
  
       
@@ -1146,6 +1240,25 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#group-assignment">Group Assignment</a></li>
+    <li><a href="#individual-contribution">Individual Contribution</a></li>
+    <li><a href="#what-i-learned">What I Learned</a></li>
+    <li><a href="#software-used">Software Used</a></li>
+    <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
   
  
   </main>
