@@ -8,24 +8,22 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Laser Gauge Tool#This is a parametric SVG generator for creating laser cutting test gauges. Use it to find the optimal kerf adjustment and power settings for your material.
-Material &amp; KerfMaterial thickness (mm) ">
+<meta name="description" content="Parametric GeneratorLaser Gauge ToolGenerate precision laser-cut test gauges to dial in kerf and power settings for any material.
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Laser Gauge Tool">
-  <meta property="og:description" content="Laser Gauge Tool#This is a parametric SVG generator for creating laser cutting test gauges. Use it to find the optimal kerf adjustment and power settings for your material.
-Material &amp; KerfMaterial thickness (mm)">
+  <meta property="og:description" content="Parametric GeneratorLaser Gauge ToolGenerate precision laser-cut test gauges to dial in kerf and power settings for any material.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="Laser Gauge Tool">
-  <meta itemprop="description" content="Laser Gauge Tool#This is a parametric SVG generator for creating laser cutting test gauges. Use it to find the optimal kerf adjustment and power settings for your material.
-Material &amp; KerfMaterial thickness (mm)">
-  <meta itemprop="wordCount" content="76">
+  <meta itemprop="description" content="Parametric GeneratorLaser Gauge ToolGenerate precision laser-cut test gauges to dial in kerf and power settings for any material.">
+  <meta itemprop="wordCount" content="81">
 
 <title>Laser Gauge Tool | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +37,7 @@ Material &amp; KerfMaterial thickness (mm)">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.314a212055e969fa8b24dabb439c7b8a48b5b6bd3f6e016e46f3554782fbad26.js" integrity="sha256-MUohIFXpafqLJNq7Q5x7iki1tr0/bgFuRvNVR4L7rSY=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.0b657b43ce8d8eaba7da44d5455f4e179cc7ae9842b91ddeb8f3123a3497cd68.js" integrity="sha256-C2V7Q86Njqun2kTVRV9OF5zHrphCuR3euPMSOjSXzWg=" crossorigin="anonymous"></script>
 
 
 
@@ -841,117 +839,340 @@ Material &amp; KerfMaterial thickness (mm)">
 
       
       
-  <article class="markdown book-article"><h1 id="laser-gauge-tool">Laser Gauge Tool<a class="anchor" href="#laser-gauge-tool">#</a></h1>
-<p>This is a parametric SVG generator for creating laser cutting test gauges. Use it to find the optimal kerf adjustment and power settings for your material.</p>
-<style>
-/* ===== Gauge Tool — Liquid Glass Theme ===== */
+  <article class="markdown book-article"><style>
+/* ===== Gauge Tool — Apple Liquid Glass 2.0 ===== */
+
+/* --- Keyframes --- */
+@keyframes gt-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gt-fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gt-glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+@keyframes gt-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* --- Hero --- */
+.gt-hero {
+  text-align: center;
+  padding: 2.5rem 1.5rem 1.8rem;
+  position: relative;
+  animation: gt-fadeUp 0.6s ease both;
+}
+
+.gt-hero::before {
+  content: "";
+  position: absolute;
+  top: -40px; left: 50%; transform: translateX(-50%);
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--link-rgb), 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+  animation: gt-glow-pulse 4s ease-in-out infinite;
+}
+
+.gt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(var(--link-rgb), 1);
+  background: rgba(var(--link-rgb), 0.1);
+  border: 1px solid rgba(var(--link-rgb), 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.gt-badge svg { width: 14px; height: 14px; }
+
+.gt-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 0 0 0.6rem;
+  background: linear-gradient(135deg, var(--body-font-color) 40%, rgba(var(--link-rgb), 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gt-hero p {
+  font-size: 1.05rem;
+  color: var(--gray-500);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* --- Main Layout --- */
 .gauge-tool {
-  margin: 1.5rem 0;
+  margin: 0.5rem 0 2rem;
+  animation: gt-fadeUp 0.7s ease 0.15s both;
 }
 
 .gauge-layout {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 360px 1fr;
   grid-template-rows: 1fr auto;
   gap: 1.25rem;
   align-items: start;
 }
 
 @media (max-width: 960px) {
-  .gauge-layout {
-    grid-template-columns: 1fr;
-  }
-  .gauge-tool .preview-area { grid-column: 1; grid-row: 2; }
+  .gauge-layout { grid-template-columns: 1fr; }
+  .gauge-tool .preview-wrap { grid-column: 1; grid-row: 2; }
   .gauge-tool .button-group { grid-column: 1; }
 }
 
-/* ---- Glass Panel (left) ---- */
-.gauge-tool .panel {
-  grid-column: 1;
-  grid-row: 1;
-  background: linear-gradient(135deg, var(--glass-bg-strong), var(--glass-bg));
+/* --- macOS Window Chrome --- */
+.gt-window {
+  position: relative;
+  background: linear-gradient(145deg, var(--glass-bg-strong), var(--glass-bg));
   border: 1px solid var(--glass-stroke);
-  border-radius: var(--glass-radius);
-  padding: 1.25rem;
-  box-shadow: var(--shadow-elev-2);
+  border-radius: calc(var(--glass-radius) + 2px);
+  box-shadow: var(--shadow-elev-2),
+              0 0 0 0.5px rgba(255,255,255,0.08) inset;
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   overflow: hidden;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-/* ---- Section cards ---- */
+.gt-window:hover {
+  box-shadow: var(--shadow-elev-1),
+              0 0 0 0.5px rgba(255,255,255,0.12) inset;
+}
+
+/* Titlebar with traffic lights */
+.gt-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent);
+  border-bottom: 1px solid var(--glass-stroke);
+  user-select: none;
+}
+
+html.dark .gt-titlebar {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+}
+
+.gt-traffic {
+  display: flex;
+  gap: 7px;
+  margin-right: 0.5rem;
+}
+
+.gt-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 -1px 2px rgba(0,0,0,0.15),
+              0 1px 2px rgba(0,0,0,0.08);
+}
+
+.gt-dot--red    { background: linear-gradient(180deg, #ff6058, #e0443e); }
+.gt-dot--yellow { background: linear-gradient(180deg, #ffbd2e, #dea123); }
+.gt-dot--green  { background: linear-gradient(180deg, #27c93f, #1aab29); }
+
+.gt-titlebar-text {
+  flex: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  letter-spacing: -0.005em;
+}
+
+/* --- Panel Body --- */
+.gt-body {
+  padding: 1.25rem;
+}
+
+/* --- Section cards inside panel --- */
 .gauge-tool .section {
   position: relative;
   border: 1px solid var(--glass-stroke);
-  border-radius: calc(var(--glass-radius) - 0.25rem);
+  border-radius: 1rem;
   padding: 1rem 1.15rem;
   margin-bottom: 1rem;
   background: var(--glass-bg-soft);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
+.gauge-tool .section:last-child { margin-bottom: 0; }
+
 .gauge-tool .section:hover {
-  border-color: rgba(var(--link-rgb), 0.3);
-  box-shadow: 0 0 0 1px rgba(var(--link-rgb), 0.1);
+  border-color: rgba(var(--link-rgb), 0.35);
+  box-shadow: 0 0 0 1px rgba(var(--link-rgb), 0.08),
+              0 8px 24px rgba(var(--link-rgb), 0.06);
+  transform: translateY(-1px);
 }
 
 .gauge-tool .section h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.9rem;
+  margin: 0 0 0.35rem 0;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--body-font-color);
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
-.gauge-tool .section h3::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(var(--link-rgb), 0.6);
+.gt-section-icon {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-/* ---- Labels & Inputs ---- */
-.gauge-tool label {
-  display: block;
-  margin-top: 0.65rem;
-  font-size: 0.8rem;
-  color: var(--gray-500);
-  font-weight: 500;
-  letter-spacing: 0.01em;
+.gt-section-icon svg { width: 14px; height: 14px; }
+
+.gt-section-icon--blue   { background: rgba(0,122,255,0.14); color: #007aff; }
+.gt-section-icon--orange { background: rgba(255,159,10,0.14); color: #ff9f0a; }
+.gt-section-icon--purple { background: rgba(175,82,222,0.14); color: #af52de; }
+
+html.dark .gt-section-icon--blue   { background: rgba(10,132,255,0.2); color: #0a84ff; }
+html.dark .gt-section-icon--orange { background: rgba(255,159,10,0.2); color: #ff9f0a; }
+html.dark .gt-section-icon--purple { background: rgba(191,90,242,0.2); color: #bf5af2; }
+
+/* --- iOS-style form rows --- */
+.gt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--glass-stroke);
 }
 
-.gauge-tool input {
-  width: 100%;
-  padding: 0.55rem 0.75rem;
-  margin-top: 0.3rem;
+.gt-row:last-child { border-bottom: none; }
+
+.gt-row label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--body-font-color);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.gauge-tool input[type="number"] {
+  width: 90px;
+  padding: 0.45rem 0.6rem;
+  margin: 0;
   border: 1px solid var(--glass-stroke);
-  border-radius: 0.6rem;
+  border-radius: 0.55rem;
   background: var(--gray-100);
   color: var(--body-font-color);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: right;
   box-sizing: border-box;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -moz-appearance: textfield;
+  font-family: "SF Mono", "Fira Code", ui-monospace, monospace;
 }
 
-html.dark .gauge-tool input {
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+.gauge-tool input[type="number"]::-webkit-inner-spin-button,
+.gauge-tool input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.5;
 }
 
-.gauge-tool input:focus {
+html.dark .gauge-tool input[type="number"] {
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.gauge-tool input[type="number"]:focus {
   outline: none;
   border-color: rgba(var(--link-rgb), 0.6);
-  box-shadow: 0 0 0 3px rgba(var(--link-rgb), 0.15),
-              inset 0 0 0 1px rgba(var(--link-rgb), 0.1);
+  box-shadow: 0 0 0 3.5px rgba(var(--link-rgb), 0.12),
+              inset 0 1px 2px rgba(0,0,0,0.04);
 }
 
-/* ---- Buttons row ---- */
+.gt-unit {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  min-width: 28px;
+}
+
+/* --- Preview Window --- */
+.gauge-tool .preview-wrap {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.gauge-tool #preview {
+  flex: 1;
+  border: 1px solid var(--glass-stroke);
+  border-radius: 0.85rem;
+  padding: 1.25rem;
+  background: var(--gray-100);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  min-height: 380px;
+  position: relative;
+}
+
+html.dark .gauge-tool #preview {
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.gauge-tool #preview svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Placeholder with animated icon */
+.gt-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--gray-500);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.gt-placeholder svg {
+  width: 48px; height: 48px;
+  opacity: 0.35;
+  animation: gt-float 3s ease-in-out infinite;
+}
+
+.gt-placeholder span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* --- Buttons --- */
 .gauge-tool .button-group {
   grid-column: 1 / -1;
   grid-row: 2;
@@ -961,151 +1182,248 @@ html.dark .gauge-tool input {
 }
 
 .gauge-tool button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.85rem 1.2rem;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 0.85rem;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 650;
   cursor: pointer;
-  transition: transform 150ms cubic-bezier(.4,0,.2,1),
-              box-shadow 200ms ease,
-              background 180ms ease;
+  letter-spacing: -0.01em;
+  transition: transform 0.2s cubic-bezier(.4,0,.2,1),
+              box-shadow 0.25s ease,
+              background 0.2s ease,
+              filter 0.2s ease;
 }
 
+.gauge-tool button svg { width: 18px; height: 18px; }
+
 .gauge-tool button.generate-btn {
-  background: linear-gradient(135deg, rgba(var(--link-rgb), 0.9), #5856d6);
+  background: linear-gradient(135deg, rgba(var(--link-rgb), 0.92), #5856d6);
   color: white;
-  box-shadow: 0 6px 20px rgba(var(--link-rgb), 0.3),
-              inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 6px 22px rgba(var(--link-rgb), 0.32),
+              inset 0 1px 0 rgba(255,255,255,0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.gauge-tool button.generate-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.12) 45%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.12) 55%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: gt-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .gauge-tool button.generate-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(var(--link-rgb), 0.4),
-              inset 0 1px 0 rgba(255,255,255,0.2);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 32px rgba(var(--link-rgb), 0.42),
+              inset 0 1px 0 rgba(255,255,255,0.22);
+  filter: brightness(1.08);
 }
 
 .gauge-tool button.generate-btn:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 14px rgba(var(--link-rgb), 0.25),
+              inset 0 1px 0 rgba(255,255,255,0.22);
 }
 
 .gauge-tool button.download-btn {
-  background: linear-gradient(135deg, var(--glass-bg-strong), var(--glass-bg));
+  background: linear-gradient(145deg, var(--glass-bg-strong), var(--glass-bg));
   color: var(--color-link);
   border: 1px solid var(--glass-stroke-strong);
-  box-shadow: var(--shadow-elev-2);
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--shadow-elev-2),
+              inset 0 1px 0 rgba(255,255,255,0.1);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 }
 
 .gauge-tool button.download-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(var(--link-rgb), 0.4);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  transform: translateY(-2px) scale(1.01);
+  border-color: rgba(var(--link-rgb), 0.45);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.14),
+              inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
-/* ---- Preview area (right) ---- */
-.gauge-tool .preview-area {
-  grid-column: 2;
-  grid-row: 1;
-  background: linear-gradient(135deg, var(--glass-bg-strong), var(--glass-bg));
-  border: 1px solid var(--glass-stroke);
-  border-radius: var(--glass-radius);
-  padding: 1.25rem;
-  box-shadow: var(--shadow-elev-1);
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  display: flex;
-  flex-direction: column;
-  min-height: 420px;
+.gauge-tool button.download-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
-.gauge-tool .preview-area h3 {
-  margin: 0 0 1rem 0;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--body-font-color);
-}
-
-.gauge-tool #preview {
-  flex: 1;
-  border: 1px solid var(--glass-stroke);
-  border-radius: calc(var(--glass-radius) - 0.25rem);
-  padding: 1.25rem;
-  background: var(--gray-100);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+/* --- Status Toast --- */
+.gt-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(40,40,40,0.88);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  backdrop-filter: blur(20px) saturate(1.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: auto;
+  gap: 0.4rem;
 }
 
-html.dark .gauge-tool #preview {
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+html.dark .gt-toast {
+  background: rgba(60,60,60,0.9);
 }
 
-.gauge-tool #preview svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.gt-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
-.gauge-tool .preview-placeholder {
-  color: var(--gray-500);
-  font-size: 0.85rem;
+/* --- Footer Tip --- */
+.gt-footer {
   text-align: center;
-  padding: 2rem 0;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  border-radius: var(--glass-radius);
+  background: linear-gradient(135deg, rgba(var(--link-rgb), 0.04), rgba(var(--link-rgb), 0.01));
+  border: 1px solid rgba(var(--link-rgb), 0.12);
+  animation: gt-fadeUp 0.8s ease 0.3s both;
+}
+
+.gt-footer p {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.gt-footer strong { color: var(--color-link); }
+
+/* --- Responsive tweaks --- */
+@media (max-width: 960px) {
+  .gt-hero { padding: 1.5rem 1rem 1.2rem; }
+  .gt-hero h1 { font-size: 1.8rem; }
+  .gauge-layout { gap: 1rem; }
+  .gauge-tool .button-group { grid-template-columns: 1fr; }
 }
 </style>
+<div class="gt-hero">
+<div class="gt-badge">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+Parametric Generator
+</div>
+<h1>Laser Gauge Tool</h1>
+<p>Generate precision laser-cut test gauges to dial in kerf and power settings for any material.</p>
+</div>
 <div class="gauge-tool">
 <div class="gauge-layout">
-<!-- LEFT PANEL -->
-<div class="panel">
+<div class="gt-window">
+<div class="gt-titlebar">
+<div class="gt-traffic">
+<span class="gt-dot gt-dot--red"></span>
+<span class="gt-dot gt-dot--yellow"></span>
+<span class="gt-dot gt-dot--green"></span>
+</div>
+<span class="gt-titlebar-text">Parameters</span>
+</div>
+<div class="gt-body">
 <div class="section">
-<h3>Material & Kerf</h3>
-<p><label>Material thickness (mm)</label>
-<input id="t" type="number" value="3" step="0.01"></p>
-<p><label>Kerf start (mm)</label>
-<input id="kStart" type="number" value="0" step="0.01"></p>
-<p><label>Kerf end (mm)</label>
-<input id="kEnd" type="number" value="-0.5" step="0.01"></p>
-<p><label>Number of kerf notches</label>
-<input id="nKerf" type="number" value="6" step="1"></p>
+<h3>
+<span class="gt-section-icon gt-section-icon--blue">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+</span>
+Material &amp; Kerf
+</h3>
+<div class="gt-row"><label>Thickness</label><input id="t" type="number" value="3" step="0.01"><span class="gt-unit">mm</span></div>
+<div class="gt-row"><label>Kerf start</label><input id="kStart" type="number" value="0" step="0.01"><span class="gt-unit">mm</span></div>
+<div class="gt-row"><label>Kerf end</label><input id="kEnd" type="number" value="-0.5" step="0.01"><span class="gt-unit">mm</span></div>
+<div class="gt-row"><label>Notch count</label><input id="nKerf" type="number" value="6" step="1"><span class="gt-unit">&nbsp;</span></div>
 </div>
 <div class="section">
-<h3>Power Scale</h3>
-<p><label>Power step (%)</label>
-<input id="pStep" type="number" value="10" step="5"></p>
+<h3>
+<span class="gt-section-icon gt-section-icon--orange">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+</span>
+Power Scale
+</h3>
+<div class="gt-row"><label>Power step</label><input id="pStep" type="number" value="10" step="5"><span class="gt-unit">%</span></div>
 </div>
 <div class="section">
-<h3>Board</h3>
-<p><label>Board width (mm)</label>
-<input id="bw" type="number" value="200" step="1"></p>
-<p><label>Board height (mm)</label>
-<input id="bh" type="number" value="90" step="1"></p>
-<p><label>Corner radius (mm)</label>
-<input id="r" type="number" value="3" step="0.5"></p>
-<p><label>Hole diameter (mm)</label>
-<input id="hd" type="number" value="5" step="0.5"></p>
+<h3>
+<span class="gt-section-icon gt-section-icon--purple">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/></svg>
+</span>
+Board Dimensions
+</h3>
+<div class="gt-row"><label>Width</label><input id="bw" type="number" value="200" step="1"><span class="gt-unit">mm</span></div>
+<div class="gt-row"><label>Height</label><input id="bh" type="number" value="90" step="1"><span class="gt-unit">mm</span></div>
+<div class="gt-row"><label>Corner radius</label><input id="r" type="number" value="3" step="0.5"><span class="gt-unit">mm</span></div>
+<div class="gt-row"><label>Hole diameter</label><input id="hd" type="number" value="5" step="0.5"><span class="gt-unit">mm</span></div>
 </div>
 </div>
-<!-- PREVIEW -->
-<div class="preview-area">
-<h3>SVG Preview</h3>
+</div>
+<div class="gt-window preview-wrap">
+<div class="gt-titlebar">
+<div class="gt-traffic">
+<span class="gt-dot gt-dot--red"></span>
+<span class="gt-dot gt-dot--yellow"></span>
+<span class="gt-dot gt-dot--green"></span>
+</div>
+<span class="gt-titlebar-text">SVG Preview</span>
+</div>
+<div class="gt-body" style="display:flex;flex-direction:column;min-height:400px;">
 <div id="preview">
-<span class="preview-placeholder">Click Generate Preview to see your gauge</span>
+<div class="gt-placeholder">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+<span>Click <strong>Generate Preview</strong> to see your gauge</span>
+</div>
+</div>
 </div>
 </div>
 <div class="button-group">
-<button class="generate-btn" onclick="generateSVG()">Generate Preview</button>
-<button class="download-btn" onclick="downloadSVG()">Download SVG</button>
+<button class="generate-btn" onclick="generateSVG()">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+Generate Preview
+</button>
+<button class="download-btn" onclick="downloadSVG()">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Download SVG
+</button>
 </div>
 </div>
+</div>
+<div class="gt-toast" id="gtToast"></div>
+<div class="gt-footer">
+<p><strong>Tip:</strong> Start with a kerf of 0 and step down in small increments. The notch that fits snugly without force is your ideal kerf compensation.</p>
 </div>
 <script>
 let currentSVG = "";
+
+/* --- Toast helper --- */
+function showToast(msg, icon) {
+  const t = document.getElementById("gtToast");
+  t.innerHTML = (icon || "") + " " + msg;
+  t.classList.add("show");
+  clearTimeout(t._tid);
+  t._tid = setTimeout(() => t.classList.remove("show"), 2400);
+}
 
 function generateSVG(){
 
@@ -1119,27 +1437,11 @@ const bh = parseFloat(document.getElementById("bh").value);
 const r = parseFloat(document.getElementById("r").value);
 const hd = parseFloat(document.getElementById("hd").value);
 
-
-/* ===== POWER BAR COLORS — FROM YOUR STRIP (BLACK & RED REMOVED) ===== */
 const powerColors = [
-  "#0b2bff",   // Color 3 — deep blue
-  "#1f7bff",   // Color 4 — blue
-  "#2fd6ff",   // Color 5 — cyan/teal
-  "#3bff7a",   // Color 6 — bright green
-  "#2cbf4f",   // Color 7 — green
-  "#1f7a3a",   // Color 8 — dark green
-  "#9fb52f",   // Color 9 — olive
-  "#c87a22",   // Color 10 — amber/brown
-  "#8b4a1a",   // Color 11 — dark brown
-  "#7a1a8c",   // Color 12 — purple
-  "#c517d9",   // Color 13 — magenta
-  "#ff1fd6",   // Color 14 — hot pink
-  "#ff5f15",   // Color 15 — orange
-  "#ffd61a"    // Color 16 — yellow
+  "#0b2bff","#1f7bff","#2fd6ff","#3bff7a","#2cbf4f",
+  "#1f7a3a","#9fb52f","#c87a22","#8b4a1a","#7a1a8c",
+  "#c517d9","#ff1fd6","#ff5f15","#ffd61a"
 ];
-/* ================================================================ */
-
-/* ============================ */
 
 let svg = `
 <svg xmlns="http://www.w3.org/2000/svg"
@@ -1148,17 +1450,9 @@ viewBox="0 0 ${bw} ${bh}">
 <g fill="none" stroke="black" stroke-width="0.1">
 `;
 
-/* ---- OUTER FRAME ---- */
-svg += `
-<rect x="5" y="5"
-width="${bw-10}" height="${bh-10}"
-rx="${r}" ry="${r}"/>
-`;
-
-/* Mounting hole */
+svg += `<rect x="5" y="5" width="${bw-10}" height="${bh-10}" rx="${r}" ry="${r}"/>`;
 svg += `<circle cx="15" cy="15" r="${hd/2}"/>`;
 
-/* ---- EVENLY SPACED NOTCHES ---- */
 const notchDepth = 25;
 const topY = 5;
 const kStep = (kEnd - kStart)/(nKerf-1);
@@ -1178,110 +1472,56 @@ for(let i=0;i<nKerf;i++){
 const leftMargin = 20;
 const usableWidth = bw - 40;
 const gap = (usableWidth - totalNotchWidth) / (nKerf - 1);
-
 let x = leftMargin;
 
 for(let i=0;i<nKerf;i++){
-  svg += `
-  <rect x="${x}" y="${topY}"
-        width="${widths[i]}"
-        height="${notchDepth}"/>
-  `;
-
-  svg += `
-  <text x="${x}"
-        y="${topY + notchDepth + 6}"
-        font-size="4"
-        fill="red"
-        stroke="none">
-  a=${kerfValues[i].toFixed(2)}
-  </text>
-  `;
+  svg += `<rect x="${x}" y="${topY}" width="${widths[i]}" height="${notchDepth}"/>`;
+  svg += `<text x="${x}" y="${topY + notchDepth + 6}" font-size="4" fill="red" stroke="none">a=${kerfValues[i].toFixed(2)}</text>`;
   x += widths[i] + gap;
 }
 
-/* Thickness & Kerf info */
-svg += `
-<text x="${leftMargin}"
-      y="${topY + notchDepth + 14}"
-      font-size="5"
-      fill="red"
-      stroke="none">
-Thickness = ${t.toFixed(2)} mm
-</text>
-`;
+svg += `<text x="${leftMargin}" y="${topY + notchDepth + 14}" font-size="5" fill="red" stroke="none">Thickness = ${t.toFixed(2)} mm</text>`;
+svg += `<text x="${leftMargin}" y="${topY + notchDepth + 20}" font-size="5" fill="red" stroke="none">Kerf range: ${kStart.toFixed(2)} → ${kEnd.toFixed(2)}</text>`;
 
-svg += `
-<text x="${leftMargin}"
-      y="${topY + notchDepth + 20}"
-      font-size="5"
-      fill="red"
-      stroke="none">
-Kerf range: ${kStart.toFixed(2)} → ${kEnd.toFixed(2)}
-</text>
-`;
-
-/* ---- POWER BARS (FILL ONLY) ---- */
 let nBars = Math.floor(100 / pStep) + 1;
 let barHeight = bh * 0.20;
 let barGap = 2;
-
 let usableBarWidth = bw - 40;
 let barWidth = (usableBarWidth - (nBars-1)*barGap) / nBars;
-
 let bottomMargin = 8;
 let labelGap = 5;
 let barTop = bh - bottomMargin - barHeight - labelGap;
-
 let px = 20;
 let colorIndex = 0;
 
-/* 🔴 UPDATED LINE — speed text REMOVED */
-svg += `
-<text x="20"
-      y="${barTop - 5}"
-      font-size="5"
-      fill="red"
-      stroke="none">
-POWER
-</text>
-`;
+svg += `<text x="20" y="${barTop - 5}" font-size="5" fill="red" stroke="none">POWER</text>`;
 
 for(let p=0; p<=100; p+=pStep){
   let color = powerColors[colorIndex % powerColors.length];
-
-  svg += `
-  <rect x="${px}"
-        y="${barTop}"
-        width="${barWidth}"
-        height="${barHeight}"
-        fill="${color}"
-        stroke="none"/>
-  `;
-
-  svg += `
-  <text x="${px + barWidth/2}"
-        y="${barTop + barHeight + labelGap}"
-        text-anchor="middle"
-        font-size="4"
-        fill="red"
-        stroke="none">
-  ${p}%
-  </text>
-  `;
-
+  svg += `<rect x="${px}" y="${barTop}" width="${barWidth}" height="${barHeight}" fill="${color}" stroke="none"/>`;
+  svg += `<text x="${px + barWidth/2}" y="${barTop + barHeight + labelGap}" text-anchor="middle" font-size="4" fill="red" stroke="none">${p}%</text>`;
   px += barWidth + barGap;
   colorIndex++;
 }
 
 svg += `</g></svg>`;
 currentSVG = svg;
-document.getElementById("preview").innerHTML = svg;
+
+/* Smooth appear */
+const el = document.getElementById("preview");
+el.style.opacity = "0";
+el.innerHTML = svg;
+requestAnimationFrame(() => {
+  el.style.transition = "opacity 0.4s ease";
+  el.style.opacity = "1";
+});
+
+showToast("Gauge generated — " + nKerf + " notches, " + nBars + " power bars", "✨");
 }
 
 function downloadSVG(){
   if (!currentSVG) {
-    alert("Please generate a preview first!");
+    showToast("Generate a preview first!", "⚠️");
     return;
   }
   const blob = new Blob([currentSVG], {type:"image/svg+xml"});
@@ -1293,6 +1533,7 @@ function downloadSVG(){
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+  showToast("SVG downloaded!", "📥");
 }
 </script></article>
  
