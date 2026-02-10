@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" LASERGAUGE
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge/">
+  <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
+  <meta property="og:title" content="Laser Gauge Tool">
+  <meta property="og:description" content="LASERGAUGE">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Laser Gauge Tool">
+  <meta itemprop="description" content="LASERGAUGE">
+  <meta itemprop="wordCount" content="97">
+
+<title>Laser Gauge Tool | Nadec FAB Academy Portfolio</title>
+<link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/2026/labs/kochi/students/nadec-biju/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/2026/labs/kochi/students/nadec-biju/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/2026/labs/kochi/students/nadec-biju/apple-touch-icon.png">
+
+<link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
+<link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge/">
+<link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.3055f46a74d50b15a29ff239ded63d14ef769bbd9f2424a41b95ef18f51cbc64.css" integrity="sha256-MFX0anTVCxWin/I53tY9FO92m72fJCSkG5XvGPUcvGQ=" crossorigin="anonymous">
+
+
+  <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.60e0bf4088c34ac648dab732a849041d1765f2b3ba11b749f9787f2c4ad25bc4.js" integrity="sha256-YOC/QIjDSsZI2rcyqEkEHRdl8rO6EbdJ&#43;Xh/LErSW8Q=" crossorigin="anonymous"></script>
+
+
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f2f7">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nadec FAB">
+
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  
+  <nav class="custom-navbar" id="custom-navbar">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        <label for="menu-control" class="nav-icon nav-icon--menu" aria-label="Menu" title="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </label>
+
+        <a href="/2026/labs/kochi/students/nadec-biju/" class="brand-link" aria-label="Home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="brand-name">Nadec Biju</span>
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/" class="nav-link">About Me</a>
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/" class="nav-link">Assignments</a>
+        <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="nav-link">Final Project</a>
+        <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju" target="_blank" class="nav-link gitlab-link">GitLab</a>
+      </div>
+
+      <div class="navbar-right">
+        
+        <button id="navbar-theme-toggle" class="nav-icon" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg id="navbar-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="navbar-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <label for="toc-control" class="nav-icon nav-icon--toc" aria-label="Table of contents" title="Table of contents">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+        </label>
+      </div>
+    </div>
+  </nav>
+
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<div class="book-brand">
+  <a class="flex align-center" href="/2026/labs/kochi/students/nadec-biju/"><span>Nadec FAB Academy Portfolio</span>
+  </a>
+</div>
+
+
+<div class="home-link" style="margin-bottom: 12px;">
+  <a href="/2026/labs/kochi/students/nadec-biju/" style="display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: rgba(124, 58, 237, 0.1); border-radius: 6px; text-decoration: none; color: #7c3aed; font-weight: 500; transition: all 0.2s;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+    <span>Home</span>
+  </a>
+</div>
+<style>
+  .home-link a:hover {
+    background: rgba(124, 58, 237, 0.2) !important;
+    transform: translateX(3px);
+  }
+  :root.dark .home-link a {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+  }
+  :root.dark .home-link a:hover {
+    background: rgba(168, 85, 247, 0.25) !important;
+  }
+</style>
+
+
+<script>
+(function() {
+  
+  const htmlElement = document.documentElement;
+  
+  function getCurrentTheme() {
+    const stored = localStorage.getItem('book-theme');
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  
+  function setTheme(theme) {
+    htmlElement.style.colorScheme = theme;
+    if (theme === 'dark') {
+      htmlElement.classList.remove('light');
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+      htmlElement.classList.add('light');
+    }
+    localStorage.setItem('book-theme', theme);
+  }
+  
+  setTheme(getCurrentTheme());
+})();
+</script>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-97616e823a9bb7fd860003d8fe914057" class="toggle"  />
+    <label for="section-97616e823a9bb7fd860003d8fe914057" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/" class="">
+        About Me</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-abe75c17917ae806512ef8a26bcad0b3" class="toggle"  />
+    <label for="section-abe75c17917ae806512ef8a26bcad0b3" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/agreement/" class="">
+        Agreement</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-92872379edbefa5a3d1b44d43367ce60" class="toggle" checked />
+    <label for="section-92872379edbefa5a3d1b44d43367ce60" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/" class="">
+        Assignments</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="toggle"  />
+    <label for="section-cabeb8b0ebe6aec84f14c162aa8338e3" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/" class="">
+        Week 01 - Principles and Practices , Project management</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-e301771eff8acb2b417416a4fa12da51" class="toggle"  />
+    <label for="section-e301771eff8acb2b417416a4fa12da51" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-2/" class="">
+        Week 02 - Computer Aided design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-5add97b663844fa146909282dccb1637" class="toggle" checked />
+    <label for="section-5add97b663844fa146909282dccb1637" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/" class="">
+        Week 03 - Computer Controlled Cutting</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/" class="">
+      Laser Gauge Tool</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge/" class="active">
+      Laser Gauge Tool</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-437838ab6ac07fcfc84f7ba2c7f5810f" class="toggle"  />
+    <label for="section-437838ab6ac07fcfc84f7ba2c7f5810f" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/" class="">
+        Week 04 - Embedded Programming</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-364f1bfa51cd02ea2b178cd9a2992047" class="toggle"  />
+    <label for="section-364f1bfa51cd02ea2b178cd9a2992047" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/" class="">
+        Week 05 - 3D Scanning and Printing</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-24761c17a417f4b9a8ba2be1d1e29423" class="toggle"  />
+    <label for="section-24761c17a417f4b9a8ba2be1d1e29423" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/" class="">
+        Week 06 - Electronics Design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-02996a5564dcd731b5e0406af28cc766" class="toggle"  />
+    <label for="section-02996a5564dcd731b5e0406af28cc766" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/" class="">
+        Week 07 - Computer Controlled Machining</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-3302bdb70b306104b27c94c2911dae91" class="toggle"  />
+    <label for="section-3302bdb70b306104b27c94c2911dae91" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-8/" class="">
+        Week 08 - Electronics Production</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-119554c24fd498a87c8820ff1c05761f" class="toggle"  />
+    <label for="section-119554c24fd498a87c8820ff1c05761f" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-9/" class="">
+        Week 09 - Input Devices</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-26f07475b15ab38efd1e08f34c8a252a" class="toggle"  />
+    <label for="section-26f07475b15ab38efd1e08f34c8a252a" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-10/" class="">
+        Week 10 - Output Devices</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-44c6b33bbde2e5b5c5ab13c95f2652e9" class="toggle"  />
+    <label for="section-44c6b33bbde2e5b5c5ab13c95f2652e9" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-11/" class="">
+        Week 11 - Networking and Communications</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-26890a7e8a8284e7cd0ef698580861ae" class="toggle"  />
+    <label for="section-26890a7e8a8284e7cd0ef698580861ae" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-12/" class="">
+        Week 12 - Mechanical Design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-39712f761bce03a7f481d5c72245a149" class="toggle"  />
+    <label for="section-39712f761bce03a7f481d5c72245a149" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/" class="">
+        Week 13 - Machine Design</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-b499846af137c9eb062b613e245e11ac" class="toggle"  />
+    <label for="section-b499846af137c9eb062b613e245e11ac" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-14/" class="">
+        Week 14 - Molding and Casting</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-924ddce82b124658a158206f06468b71" class="toggle"  />
+    <label for="section-924ddce82b124658a158206f06468b71" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-15/" class="">
+        Week 15 - Interface and Application Programming</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-9fd8d20837a7d42921e5c927508016f6" class="toggle"  />
+    <label for="section-9fd8d20837a7d42921e5c927508016f6" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-16/" class="">
+        Week 16 - System Integration</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-f83e86b72da6f61da0a3f42b11f3e539" class="toggle"  />
+    <label for="section-f83e86b72da6f61da0a3f42b11f3e539" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-17/" class="">
+        Week 17 - Wildcard Week</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-94c785dc7f6a5c0f737128b6fb7b72f6" class="toggle"  />
+    <label for="section-94c785dc7f6a5c0f737128b6fb7b72f6" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-18/" class="">
+        Week 18 - Applications and Implications</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-c97bf4148db02526a8177ee946293cb0" class="toggle"  />
+    <label for="section-c97bf4148db02526a8177ee946293cb0" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-19/" class="">
+        Week 19 - Invention, Intellectual Property, And Income</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-014b3c606e83be6881782c3306be8ebe" class="toggle"  />
+    <label for="section-014b3c606e83be6881782c3306be8ebe" class="flex">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="">
+        Final Project</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    
+    <input type="checkbox" id="section-8e40c4394353ebace0eabde9c9550461" class="toggle"  />
+    <label for="section-8e40c4394353ebace0eabde9c9550461" class="flex">
+      <a role="button" class="">
+        1. Idea</a>
+      <img src="/2026/labs/kochi/students/nadec-biju/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/2026/labs/kochi/students/nadec-biju/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Laser Gauge Tool</h3>
+
+  <div class="book-header-right">
+    <button id="mobile-theme-toggle" class="mobile-theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg id="mobile-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg id="mobile-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+    <label for="toc-control">
+      
+    </label>
+  </div>
+</div>
+
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+ 
+.lg-wrap {
+  --bg:          #0d0d0d;
+  --surface:     #141414;
+  --panel:       #1a1a1a;
+  --border:      #2e2e2e;
+  --border-hi:   #444;
+  --orange:      #ff6a00;
+  --orange-dim:  #7a3200;
+  --orange-glow: rgba(255,106,0,0.18);
+  --green:       #00ff88;
+  --text:        #e8e8e8;
+  --muted:       #666;
+  --mono:        "IBM Plex Mono", "Share Tech Mono", monospace;
+  --head:        "Barlow Condensed", sans-serif;
+  --scan-line:   rgba(255,255,255,0.018);
+
+  font-family: var(--mono);
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+  background-size: 28px 28px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.lg-wrap *, .lg-wrap *::before, .lg-wrap *::after {
+  box-sizing: border-box;
+}
+
+ 
+.lg-wrap::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    var(--scan-line) 3px, var(--scan-line) 4px
+  );
+  pointer-events: none;
+  z-index: 100;
+}
+
+ 
+.lg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,106,0,0.04), transparent);
+  position: relative;
+}
+.lg-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  opacity: 0.5;
+}
+.lg-logo { display: flex; align-items: center; gap: 0.9rem; }
+.lg-logo-icon {
+  width: 34px; height: 34px;
+  border: 1.5px solid var(--orange);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; flex-shrink: 0;
+}
+.lg-logo-icon::before {
+  content: "";
+  position: absolute;
+  width: 100%; height: 2px;
+  background: var(--orange);
+  top: 50%; left: -100%;
+  animation: lg-laser 2.5s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--orange);
+}
+@keyframes lg-laser {
+  0%   { left: -100%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+.lg-logo-icon svg { width: 16px; height: 16px; color: var(--orange); }
+.lg-logo-text {
+  font-family: var(--head);
+  font-weight: 900; font-size: 1.4rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text); margin: 0;
+}
+.lg-logo-text span { color: var(--orange); }
+.lg-header-meta {
+  font-family: var(--mono); font-size: 0.66rem;
+  color: var(--muted); text-align: right;
+  letter-spacing: 0.04em; line-height: 1.7;
+}
+.lg-status-dot {
+  display: inline-block; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--green);
+  margin-right: 5px; box-shadow: 0 0 6px var(--green);
+  animation: lg-blink 2s ease-in-out infinite;
+}
+@keyframes lg-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+ 
+.lg-main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+}
+
+ 
+.lg-params {
+  border-right: 1px solid var(--border);
+  padding: 1.25rem;
+  background: var(--surface);
+  display: flex; flex-direction: column; gap: 0.9rem;
+}
+.lg-section-title {
+  font-family: var(--head); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 0.5rem;
+  margin: 0;
+}
+.lg-accent-bar {
+  display: inline-block; width: 3px; height: 13px;
+  background: var(--orange); border-radius: 2px; flex-shrink: 0;
+}
+.lg-param-group {
+  border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+}
+.lg-param-row {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  gap: 0.75rem; transition: background 0.15s;
+}
+.lg-param-row:last-child { border-bottom: none; }
+.lg-param-row:hover { background: rgba(255,255,255,0.025); }
+.lg-param-label {
+  font-size: 0.72rem; color: var(--muted);
+  letter-spacing: 0.04em; white-space: nowrap;
+  font-family: var(--mono); text-transform: uppercase;
+}
+.lg-input-wrap { display: flex; align-items: center; gap: 0.4rem; }
+
+.lg-wrap input[type="number"] {
+  width: 80px; padding: 0.35rem 0.5rem;
+  background: var(--bg); border: 1px solid var(--border-hi);
+  border-radius: 3px; color: var(--green);
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+  text-align: right; outline: none;
+  -moz-appearance: textfield;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lg-wrap input[type="number"]::-webkit-inner-spin-button,
+.lg-wrap input[type="number"]::-webkit-outer-spin-button { opacity: 0.4; }
+.lg-wrap input[type="number"]:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 2px var(--orange-glow);
+  color: var(--orange);
+}
+.lg-unit {
+  font-size: 0.66rem; color: var(--muted);
+  font-family: var(--mono); min-width: 22px;
+}
+
+ 
+.lg-btn-area {
+  margin-top: auto; padding-top: 0.9rem;
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.lg-btn {
+  width: 100%; padding: 0.8rem; border: none; border-radius: 4px;
+  font-family: var(--head); font-size: 0.88rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  transition: transform 0.15s, box-shadow 0.2s, filter 0.15s;
+  position: relative; overflow: hidden;
+}
+.lg-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+.lg-btn-gen {
+  background: var(--orange); color: #000;
+  box-shadow: 0 0 20px rgba(255,106,0,0.3), 0 4px 12px rgba(255,106,0,0.2);
+}
+.lg-btn-gen::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%);
+  background-size: 200% 100%;
+  animation: lg-shimmer 3s ease-in-out infinite;
+}
+@keyframes lg-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.lg-btn-gen:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255,106,0,0.5), 0 6px 20px rgba(255,106,0,0.3);
+  filter: brightness(1.1);
+}
+.lg-btn-gen:active { transform: scale(0.98); }
+.lg-btn-dl {
+  background: transparent; color: var(--orange);
+  border: 1px solid var(--orange-dim);
+}
+.lg-btn-dl:hover {
+  background: var(--orange-glow); border-color: var(--orange);
+  transform: translateY(-1px); box-shadow: 0 0 12px var(--orange-glow);
+}
+.lg-btn-dl:active { transform: scale(0.98); }
+
+ 
+.lg-preview-panel {
+  display: flex; flex-direction: column;
+  background: var(--panel); min-height: 520px;
+}
+.lg-preview-toolbar {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex-wrap: wrap; gap: 0.5rem;
+}
+.lg-preview-title {
+  font-family: var(--head); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.lg-preview-stats {
+  display: flex; gap: 1.2rem;
+  font-family: var(--mono); font-size: 0.63rem; color: var(--muted);
+}
+.lg-preview-stats span { color: var(--orange); }
+.lg-badge {
+  font-family: var(--mono); font-size: 0.63rem; color: var(--orange);
+  background: var(--orange-glow); border: 1px solid var(--orange-dim);
+  padding: 0.12rem 0.5rem; border-radius: 2px; letter-spacing: 0.08em;
+}
+.lg-badge.off { color: var(--muted); background: transparent; border-color: var(--border); }
+
+.lg-preview-area {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem; overflow: auto; position: relative;
+}
+.lg-preview-area::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px; opacity: 0.4; pointer-events: none;
+}
+#lg-preview {
+  position: relative; z-index: 1; max-width: 100%;
+  transition: opacity 0.35s ease;
+}
+#lg-preview svg {
+  max-width: 100%; height: auto; display: block;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+ 
+.lg-empty {
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+  color: var(--muted); text-align: center; position: relative; z-index: 1;
+}
+.lg-reticle {
+  width: 72px; height: 72px; border: 1.5px solid var(--border-hi);
+  border-radius: 50%; position: relative;
+  animation: lg-rot 12s linear infinite; flex-shrink: 0;
+}
+.lg-reticle::before, .lg-reticle::after {
+  content: ""; position: absolute; background: var(--border-hi);
+}
+.lg-reticle::before { width: 1px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+.lg-reticle::after  { height: 1px; width: 100%; top: 50%; left: 0; transform: translateY(-50%); }
+.lg-reticle-inner {
+  position: absolute; width: 36px; height: 36px;
+  border: 1px solid var(--orange-dim); border-radius: 50%;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  animation: lg-rot-r 6s linear infinite;
+}
+.lg-reticle-dot {
+  position: absolute; width: 5px; height: 5px;
+  background: var(--orange); border-radius: 50%;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  box-shadow: 0 0 8px var(--orange);
+  animation: lg-blink 1.5s ease-in-out infinite;
+}
+@keyframes lg-rot   { to { transform: rotate(360deg); } }
+@keyframes lg-rot-r { to { transform: translate(-50%,-50%) rotate(-360deg); } }
+.lg-empty p {
+  font-family: var(--mono); font-size: 0.76rem;
+  letter-spacing: 0.06em; line-height: 1.6; margin: 0;
+}
+.lg-empty p strong { color: var(--orange); }
+
+ 
+.lg-footer {
+  border-top: 1px solid var(--border); padding: 0.65rem 2rem;
+  background: var(--surface); font-family: var(--mono);
+  font-size: 0.63rem; color: var(--muted); letter-spacing: 0.04em;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.lg-footer strong { color: var(--orange); }
+
+ 
+.lg-toast {
+  position: fixed; bottom: 2rem; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--panel); border: 1px solid var(--orange-dim);
+  border-radius: 3px; padding: 0.55rem 1.2rem;
+  font-family: var(--mono); font-size: 0.73rem; color: var(--orange);
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 20px rgba(255,106,0,0.15), 0 8px 30px rgba(0,0,0,0.5);
+  opacity: 0; pointer-events: none; z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.lg-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+ 
+@media (max-width: 780px) {
+  .lg-main { grid-template-columns: 1fr; }
+  .lg-params { border-right: none; border-bottom: 1px solid var(--border); }
+  .lg-header { padding: 1rem 1.25rem; }
+  .lg-header-meta { display: none; }
+  .lg-footer { padding: 0.65rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+}
+</style>
+
+<div class="lg-wrap">
+
+  <div class="lg-header">
+    <div class="lg-logo">
+      <div class="lg-logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        </svg>
+      </div>
+      <p class="lg-logo-text">LASER<span>GAUGE</span></p>
+    </div>
+    <div class="lg-header-meta">
+      <span class="lg-status-dot"></span>SYSTEM READY<br>
+      PARAMETRIC SVG GENERATOR v2.0
+    </div>
+  </div>
+
+  <div class="lg-main">
+
+    <aside class="lg-params">
+
+      <p class="lg-section-title"><span class="lg-accent-bar"></span>Material &amp; Kerf</p>
+      <div class="lg-param-group">
+        <div class="lg-param-row">
+          <span class="lg-param-label">Thickness</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-t" value="3" step="0.01">
+            <span class="lg-unit">mm</span>
+          </div>
+        </div>
+        <div class="lg-param-row">
+          <span class="lg-param-label">Kerf Value</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-kerf" value="0.10" step="0.01">
+            <span class="lg-unit">mm</span>
+          </div>
+        </div>
+        <div class="lg-param-row">
+          <span class="lg-param-label">Compression Incr.</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-cStep" value="0.02" step="0.005">
+            <span class="lg-unit">mm</span>
+          </div>
+        </div>
+        <div class="lg-param-row">
+          <span class="lg-param-label">Notch Count</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-nKerf" value="6" step="1">
+            <span class="lg-unit">&nbsp;</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="lg-section-title"><span class="lg-accent-bar"></span>Power Scale</p>
+      <div class="lg-param-group">
+        <div class="lg-param-row">
+          <span class="lg-param-label">Power Step</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-pStep" value="10" step="5">
+            <span class="lg-unit">%</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="lg-section-title"><span class="lg-accent-bar"></span>Board Dimensions</p>
+      <div class="lg-param-group">
+        <div class="lg-param-row">
+          <span class="lg-param-label">Width</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-bw" value="200" step="1">
+            <span class="lg-unit">mm</span>
+          </div>
+        </div>
+        <div class="lg-param-row">
+          <span class="lg-param-label">Height</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-bh" value="90" step="1">
+            <span class="lg-unit">mm</span>
+          </div>
+        </div>
+        <div class="lg-param-row">
+          <span class="lg-param-label">Corner Radius</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-r" value="3" step="0.5">
+            <span class="lg-unit">mm</span>
+          </div>
+        </div>
+        <div class="lg-param-row">
+          <span class="lg-param-label">Hole Diameter</span>
+          <div class="lg-input-wrap">
+            <input type="number" id="lg-hd" value="5" step="0.5">
+            <span class="lg-unit">mm</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg-btn-area">
+        <button class="lg-btn lg-btn-gen" onclick="lgGenerate()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Generate Preview
+        </button>
+        <button class="lg-btn lg-btn-dl" onclick="lgDownload()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download SVG
+        </button>
+      </div>
+
+    </aside>
+
+    <section class="lg-preview-panel">
+      <div class="lg-preview-toolbar">
+        <div class="lg-preview-title">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          SVG Preview
+        </div>
+        <div class="lg-preview-stats">
+          <div>NOTCHES: <span id="lg-stat-n">—</span></div>
+          <div>BARS: <span id="lg-stat-b">—</span></div>
+          <div>SIZE: <span id="lg-stat-s">—</span></div>
+        </div>
+        <div class="lg-badge off" id="lg-badge">NO PREVIEW</div>
+      </div>
+      <div class="lg-preview-area">
+        <div id="lg-preview">
+          <div class="lg-empty">
+            <div class="lg-reticle">
+              <div class="lg-reticle-inner"></div>
+              <div class="lg-reticle-dot"></div>
+            </div>
+            <p>Configure parameters and click<br><strong>GENERATE PREVIEW</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="lg-footer">
+    <span><strong>TIP:</strong> Slot 1 = t (baseline) · Slot 2 = t−k (kerf ref) · Slot 3+ adds compression steps. Pick the tightest slot you can press by hand.</span>
+    <span>SVG units are millimetres · 1:1 scale for laser cutter import</span>
+  </div>
+
+</div>
+
+<div class="lg-toast" id="lg-toast"></div>
+
+<script>
+(function () {
+  var lgSVG = "";
+
+  function lgToast(msg) {
+    var el = document.getElementById("lg-toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(el._t);
+    el._t = setTimeout(function () { el.classList.remove("show"); }, 2600);
+  }
+
+  window.lgGenerate = function () {
+    var t     = parseFloat(document.getElementById("lg-t").value);
+    var kerf  = parseFloat(document.getElementById("lg-kerf").value);
+    var cStep = parseFloat(document.getElementById("lg-cStep").value);
+    var nKerf = Math.max(2, parseInt(document.getElementById("lg-nKerf").value));
+    var pStep = parseFloat(document.getElementById("lg-pStep").value);
+    var bw    = parseFloat(document.getElementById("lg-bw").value);
+    var bh    = parseFloat(document.getElementById("lg-bh").value);
+    var r     = parseFloat(document.getElementById("lg-r").value);
+    var hd    = parseFloat(document.getElementById("lg-hd").value);
+
+    var powerColors = [
+      "#0b2bff","#1f7bff","#2fd6ff","#3bff7a","#2cbf4f",
+      "#1f7a3a","#9fb52f","#c87a22","#8b4a1a","#7a1a8c",
+      "#c517d9","#ff1fd6","#ff5f15","#ffd61a"
+    ];
+
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg"'
+            + ' width="' + bw + 'mm" height="' + bh + 'mm"'
+            + ' viewBox="0 0 ' + bw + ' ' + bh + '">'
+            + '\n<g fill="none" stroke="black" stroke-width="0.1">';
+
+    svg += '\n<rect x="5" y="5" width="' + (bw-10) + '" height="' + (bh-10) + '" rx="' + r + '" ry="' + r + '"/>';
+    svg += '\n<circle cx="15" cy="15" r="' + (hd/2) + '"/>';
+
+    
+
+    var notchDepth = 25, topY = 5;
+    var widths = [], labels = [], totalW = 0;
+
+    for (var i = 0; i < nKerf; i++) {
+      var w, label;
+      if (i === 0) {
+        w = t; label = "t";
+      } else if (i === 1) {
+        w = t - kerf; label = "t\u2212k";
+      } else {
+        var n = i - 1;
+        w = t - kerf - n * cStep;
+        label = "t\u2212k\u2212" + (n === 1 ? "" : n) + "c";
+      }
+      widths.push(w); labels.push(label); totalW += w;
+    }
+
+    var leftMargin = 20;
+    var gap = ((bw - 40) - totalW) / (nKerf - 1);
+    var x = leftMargin;
+
+    for (var i = 0; i < nKerf; i++) {
+      svg += '\n<rect x="' + x.toFixed(3) + '" y="' + topY + '" width="' + widths[i].toFixed(3) + '" height="' + notchDepth + '"/>';
+      svg += '\n<text x="' + x.toFixed(3) + '" y="' + (topY + notchDepth + 6) + '" font-size="4" fill="red" stroke="none">' + labels[i] + '</text>';
+      x += widths[i] + gap;
+    }
+
+    svg += '\n<text x="' + leftMargin + '" y="' + (topY + notchDepth + 14) + '" font-size="5" fill="red" stroke="none">'
+         + 't=' + t.toFixed(2) + 'mm  k=' + kerf.toFixed(2) + 'mm  c=' + cStep.toFixed(3) + 'mm</text>';
+
+     
+    var nBars  = Math.floor(100 / pStep) + 1;
+    var barH   = bh * 0.20;
+    var barGap = 2;
+    var barW   = ((bw - 40) - (nBars - 1) * barGap) / nBars;
+    var barTop = bh - 8 - barH - 5;
+    var px     = 20;
+
+    svg += '\n<text x="20" y="' + (barTop - 5).toFixed(2) + '" font-size="5" fill="red" stroke="none">POWER</text>';
+
+    for (var p = 0, ci = 0; p <= 100; p += pStep, ci++) {
+      var col = powerColors[ci % powerColors.length];
+      svg += '\n<rect x="' + px.toFixed(3) + '" y="' + barTop.toFixed(3) + '" width="' + barW.toFixed(3) + '" height="' + barH.toFixed(3) + '" fill="' + col + '" stroke="none"/>';
+      svg += '\n<text x="' + (px + barW/2).toFixed(3) + '" y="' + (barTop + barH + 5).toFixed(3) + '" text-anchor="middle" font-size="4" fill="red" stroke="none">' + p + '%</text>';
+      px += barW + barGap;
+    }
+
+    svg += '\n</g></svg>';
+    lgSVG = svg;
+
+    var el = document.getElementById("lg-preview");
+    el.style.opacity = "0";
+    el.innerHTML = svg;
+    requestAnimationFrame(function () {
+      el.style.transition = "opacity 0.4s ease";
+      el.style.opacity = "1";
+    });
+
+    document.getElementById("lg-stat-n").textContent = nKerf;
+    document.getElementById("lg-stat-b").textContent = nBars;
+    document.getElementById("lg-stat-s").textContent = bw + "\u00d7" + bh + "mm";
+    var badge = document.getElementById("lg-badge");
+    badge.textContent = "READY";
+    badge.classList.remove("off");
+
+    lgToast("\u2713 GENERATED \u2014 " + nKerf + " notches \u00b7 " + nBars + " power bars");
+  };
+
+  window.lgDownload = function () {
+    if (!lgSVG) { lgToast("\u26a0 Generate a preview first"); return; }
+    var blob = new Blob([lgSVG], { type: "image/svg+xml" });
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement("a");
+    a.href = url; a.download = "laser-gauge.svg";
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+    lgToast("\u2193 SVG DOWNLOADED");
+  };
+})();
+</script>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="book-prev-next">
+    
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/" class="book-prev-next__item book-prev-next__prev">
+        <span class="book-prev-next__label">Previous</span>
+        <span class="book-prev-next__title">‹ Laser Gauge Tool</span>
+      </a>
+    
+
+    
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/" class="book-prev-next__item book-prev-next__next">
+        <span class="book-prev-next__label">Next</span>
+        <span class="book-prev-next__title">Week 04 - Embedded Programming ›</span>
+      </a>
+    
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".highlight").forEach(function (codeBlock) {
+    if (codeBlock.querySelector(".copy-code-button")) return;
+
+    var copyButton = document.createElement("button");
+    copyButton.type = "button";
+    copyButton.className = "copy-code-button";
+    copyButton.textContent = "Copy";
+    copyButton.setAttribute("aria-label", "Copy code");
+
+    codeBlock.style.position = "relative";
+    codeBlock.appendChild(copyButton);
+
+    copyButton.addEventListener("click", function () {
+      var code = codeBlock.querySelector("code");
+      var text = code ? code.innerText : codeBlock.innerText;
+
+      function setState(label, className) {
+        copyButton.textContent = label;
+        copyButton.classList.remove("copied", "error");
+        if (className) copyButton.classList.add(className);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard
+          .writeText(text)
+          .then(function () {
+            setState("Copied", "copied");
+            setTimeout(function () { setState("Copy"); }, 1600);
+          })
+          .catch(function () {
+            setState("Error", "error");
+            setTimeout(function () { setState("Copy"); }, 1600);
+          });
+        return;
+      }
+
+      
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        setState("Copied", "copied");
+      } catch (e) {
+        setState("Error", "error");
+      }
+      document.body.removeChild(ta);
+      setTimeout(function () { setState("Copy"); }, 1600);
+    });
+  });
+});
+</script>
+
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+ 
+  </main>
+
+  
+<button id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+<script>
+(function () {
+  var btn = document.getElementById("back-to-top");
+  if (!btn) return;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) btn.classList.add("visible");
+    else btn.classList.remove("visible");
+  });
+
+  btn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+</script>
+
+
+
+  
+  <button id="back-to-top" aria-label="Scroll to top" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script>
+    (function() {
+      const backToTop = document.getElementById('back-to-top');
+      if (!backToTop) return;
+
+      
+      function toggleButton() {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }
+
+      
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      window.addEventListener('scroll', toggleButton, { passive: true });
+      backToTop.addEventListener('click', scrollToTop);
+
+      
+      toggleButton();
+    })();
+
+    
+    (function() {
+      const htmlElement = document.documentElement;
+      const navbarToggle = document.getElementById('navbar-theme-toggle');
+      const navbarSunIcon = document.getElementById('navbar-icon-sun');
+      const navbarMoonIcon = document.getElementById('navbar-icon-moon');
+      
+      
+      const sidebarToggle = document.getElementById('theme-toggle');
+      const sidebarSunIcon = document.getElementById('theme-icon-sun');
+      const sidebarMoonIcon = document.getElementById('theme-icon-moon');
+      const sidebarLabel = document.getElementById('theme-label');
+      
+      function getCurrentTheme() {
+        const stored = localStorage.getItem('book-theme');
+        if (stored) return stored;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      
+      
+      const mobileToggle = document.getElementById('mobile-theme-toggle');
+      const mobileSun = document.getElementById('mobile-icon-sun');
+      const mobileMoon = document.getElementById('mobile-icon-moon');
+
+      function updateAllIcons(theme) {
+        
+        if (navbarSunIcon && navbarMoonIcon) {
+          if (theme === 'dark') {
+            navbarSunIcon.style.display = 'block';
+            navbarMoonIcon.style.display = 'none';
+          } else {
+            navbarSunIcon.style.display = 'none';
+            navbarMoonIcon.style.display = 'block';
+          }
+        }
+        
+        if (mobileSun && mobileMoon) {
+          if (theme === 'dark') {
+            mobileSun.style.display = 'block';
+            mobileMoon.style.display = 'none';
+          } else {
+            mobileSun.style.display = 'none';
+            mobileMoon.style.display = 'block';
+          }
+        }
+        
+        if (sidebarSunIcon && sidebarMoonIcon) {
+          if (theme === 'dark') {
+            sidebarSunIcon.style.display = 'block';
+            sidebarMoonIcon.style.display = 'none';
+            if (sidebarLabel) sidebarLabel.textContent = 'Light';
+          } else {
+            sidebarSunIcon.style.display = 'none';
+            sidebarMoonIcon.style.display = 'block';
+            if (sidebarLabel) sidebarLabel.textContent = 'Dark';
+          }
+        }
+      }
+      
+      function setTheme(theme) {
+        htmlElement.style.colorScheme = theme;
+        if (theme === 'dark') {
+          htmlElement.classList.remove('light');
+          htmlElement.classList.add('dark');
+        } else {
+          htmlElement.classList.remove('dark');
+          htmlElement.classList.add('light');
+        }
+        localStorage.setItem('book-theme', theme);
+        updateAllIcons(theme);
+      }
+      
+      
+      const currentTheme = getCurrentTheme();
+      setTheme(currentTheme);
+      
+      
+      if (navbarToggle) {
+        navbarToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const theme = getCurrentTheme();
+          setTheme(theme === 'dark' ? 'light' : 'dark');
+        });
+      }
+
+      
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const theme = getCurrentTheme();
+          setTheme(theme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
