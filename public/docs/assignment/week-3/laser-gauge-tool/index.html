@@ -23,7 +23,7 @@ https://github.com/alex-shpak/hugo-book
 
   <meta itemprop="name" content="Laser Gauge Tool">
   <meta itemprop="description" content="Parametric GeneratorLaser Gauge ToolGenerate precision laser-cut test gauges to dial in kerf and power settings for any material.">
-  <meta itemprop="wordCount" content="81">
+  <meta itemprop="wordCount" content="91">
 
 <title>Laser Gauge Tool | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -37,7 +37,7 @@ https://github.com/alex-shpak/hugo-book
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.09b2f9b006a91f825e48c5844cee6df6ac0421ba90afb5dc5389d12f812a1dff.js" integrity="sha256-CbL5sAapH4JeSMWETO5t9qwEIbqQr7XcU4nRL4EqHf8=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.1f19ffa0654e338fe028ab74ab6d30f3970724991b1a5e77ea863aed1065b3aa.js" integrity="sha256-Hxn/oGVOM4/gKKt0q20w85cHJJkbGl536oY67RBls6o=" crossorigin="anonymous"></script>
 
 
 
@@ -340,20 +340,6 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/" class="active">
-      Laser Gauge Tool</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge/" class="">
       Laser Gauge Tool</a>
   
 
@@ -1125,6 +1111,14 @@ html.dark .gt-section-icon--purple { background: rgba(191,90,242,0.2); color: #b
   letter-spacing: -0.005em;
   white-space: nowrap;
   margin: 0;
+  flex: 1;
+}
+
+.gt-row-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
 }
 
 .gauge-tool input[type="number"] {
@@ -1377,7 +1371,6 @@ html.dark .gt-toast {
   .gauge-tool .gt-body { padding: 1rem; }
   .gt-placeholder span { font-size: 0.78rem; }
 }
-}
 </style>
 <div class="gt-hero">
 <div class="gt-badge">
@@ -1406,10 +1399,10 @@ Parametric Generator
 </span>
 Material &amp; Kerf
 </h3>
-<div class="gt-row"><label>Thickness</label><input id="t" type="number" value="3" step="0.01"><span class="gt-unit">mm</span></div>
-<div class="gt-row"><label>Kerf start</label><input id="kStart" type="number" value="0" step="0.01"><span class="gt-unit">mm</span></div>
-<div class="gt-row"><label>Kerf end</label><input id="kEnd" type="number" value="-0.5" step="0.01"><span class="gt-unit">mm</span></div>
-<div class="gt-row"><label>Notch count</label><input id="nKerf" type="number" value="6" step="1"><span class="gt-unit">&nbsp;</span></div>
+<div class="gt-row"><label>Thickness</label><div class="gt-row-input-group"><input id="t" type="number" value="3" step="0.01"><span class="gt-unit">mm</span></div></div>
+<div class="gt-row"><label>Kerf</label><div class="gt-row-input-group"><input id="ker" type="number" value="0.1" step="0.01"><span class="gt-unit">mm</span></div></div>
+<div class="gt-row"><label>Compression increment</label><div class="gt-row-input-group"><input id="compInc" type="number" value="0.05" step="0.01"><span class="gt-unit">mm</span></div></div>
+<div class="gt-row"><label>Notch count</label><div class="gt-row-input-group"><input id="nKerf" type="number" value="6" step="1"><span class="gt-unit">&nbsp;</span></div></div>
 </div>
 <div class="section">
 <h3>
@@ -1418,7 +1411,7 @@ Material &amp; Kerf
 </span>
 Power Scale
 </h3>
-<div class="gt-row"><label>Power step</label><input id="pStep" type="number" value="10" step="5"><span class="gt-unit">%</span></div>
+<div class="gt-row"><label>Power step</label><div class="gt-row-input-group"><input id="pStep" type="number" value="10" step="5"><span class="gt-unit">%</span></div></div>
 </div>
 <div class="section">
 <h3>
@@ -1427,10 +1420,10 @@ Power Scale
 </span>
 Board Dimensions
 </h3>
-<div class="gt-row"><label>Width</label><input id="bw" type="number" value="200" step="1"><span class="gt-unit">mm</span></div>
-<div class="gt-row"><label>Height</label><input id="bh" type="number" value="90" step="1"><span class="gt-unit">mm</span></div>
-<div class="gt-row"><label>Corner radius</label><input id="r" type="number" value="3" step="0.5"><span class="gt-unit">mm</span></div>
-<div class="gt-row"><label>Hole diameter</label><input id="hd" type="number" value="5" step="0.5"><span class="gt-unit">mm</span></div>
+<div class="gt-row"><label>Width</label><div class="gt-row-input-group"><input id="bw" type="number" value="170" step="1"><span class="gt-unit">mm</span></div></div>
+<div class="gt-row"><label>Height</label><div class="gt-row-input-group"><input id="bh" type="number" value="80" step="1"><span class="gt-unit">mm</span></div></div>
+<div class="gt-row"><label>Corner radius</label><div class="gt-row-input-group"><input id="r" type="number" value="3" step="0.5"><span class="gt-unit">mm</span></div></div>
+<div class="gt-row"><label>Hole diameter</label><div class="gt-row-input-group"><input id="hd" type="number" value="5" step="0.5"><span class="gt-unit">mm</span></div></div>
 </div>
 </div>
 </div>
@@ -1466,7 +1459,7 @@ Download SVG
 </div>
 <div class="gt-toast" id="gtToast"></div>
 <div class="gt-footer">
-<p><strong>Tip:</strong> Start with a kerf of 0 and step down in small increments. The notch that fits snugly without force is your ideal kerf compensation.</p>
+<p><strong>Tip:</strong> The first slot is thickness (t), then each subsequent slot decreases by kerf (k) and compression increment (c): t, t-k, t-k-c, t-k-2c, etc. The slot that fits snugly without force is your ideal setting.</p>
 </div>
 <script>
 let currentSVG = "";
@@ -1483,8 +1476,8 @@ function showToast(msg, icon) {
 function generateSVG(){
 
 const t = parseFloat(document.getElementById("t").value);
-const kStart = parseFloat(document.getElementById("kStart").value);
-const kEnd = parseFloat(document.getElementById("kEnd").value);
+const ker = parseFloat(document.getElementById("ker").value);
+const compInc = parseFloat(document.getElementById("compInc").value);
 const nKerf = parseInt(document.getElementById("nKerf").value);
 const pStep = parseFloat(document.getElementById("pStep").value);
 const bw = parseFloat(document.getElementById("bw").value);
@@ -1510,18 +1503,22 @@ svg += `<circle cx="15" cy="15" r="${hd/2}"/>`;
 
 const notchDepth = 25;
 const topY = 5;
-const kStep = (kEnd - kStart)/(nKerf-1);
 
 let totalNotchWidth = 0;
 let widths = [];
-let kerfValues = [];
+let slotValues = [];
 
-for(let i=0;i<nKerf;i++){
-  let k = kStart + i*kStep;
-  let w = t + k;
-  widths.push(w);
-  kerfValues.push(k);
-  totalNotchWidth += w;
+// Calculate slot widths: t, t-k, t-k-c, t-k-2c, ...
+for(let i=0; i<nKerf; i++){
+  let slotWidth;
+  if(i === 0) {
+    slotWidth = t;
+  } else {
+    slotWidth = t - ker - (i-1) * compInc;
+  }
+  widths.push(slotWidth);
+  slotValues.push(slotWidth);
+  totalNotchWidth += slotWidth;
 }
 
 const leftMargin = 20;
@@ -1529,17 +1526,29 @@ const usableWidth = bw - 40;
 const gap = (usableWidth - totalNotchWidth) / (nKerf - 1);
 let x = leftMargin;
 
-for(let i=0;i<nKerf;i++){
+for(let i=0; i<nKerf; i++){
   svg += `<rect x="${x}" y="${topY}" width="${widths[i]}" height="${notchDepth}"/>`;
-  svg += `<text x="${x}" y="${topY + notchDepth + 6}" font-size="4" fill="red" stroke="none">a=${kerfValues[i].toFixed(2)}</text>`;
+  
+  // Generate label based on position
+  let formulaText;
+  if(i === 0) {
+    formulaText = `t`;
+  } else if(i === 1) {
+    formulaText = `t-k`;
+  } else {
+    formulaText = `t-k-${i-1}c`;
+  }
+  
+  let centerX = x + widths[i] / 2;
+  svg += `<text x="${centerX}" y="${topY + notchDepth + 6}" font-size="4" font-weight="bold" fill="red" stroke="none" text-anchor="middle">${formulaText}</text>`;
+  svg += `<text x="${centerX}" y="${topY + notchDepth + 11}" font-size="3.5" font-weight="bold" fill="red" stroke="none" text-anchor="middle">${slotValues[i].toFixed(2)}</text>`;
   x += widths[i] + gap;
 }
 
-svg += `<text x="${leftMargin}" y="${topY + notchDepth + 14}" font-size="5" fill="red" stroke="none">Thickness = ${t.toFixed(2)} mm</text>`;
-svg += `<text x="${leftMargin}" y="${topY + notchDepth + 20}" font-size="5" fill="red" stroke="none">Kerf range: ${kStart.toFixed(2)} → ${kEnd.toFixed(2)}</text>`;
+svg += `<text x="${leftMargin}" y="${topY + notchDepth + 18}" font-size="5" font-weight="bold" fill="red" stroke="none">Thickness = ${t.toFixed(2)} mm, Kerf = ${ker.toFixed(2)} mm, Comp. Inc. = ${compInc.toFixed(2)} mm</text>`;
 
 let nBars = Math.floor(100 / pStep) + 1;
-let barHeight = bh * 0.20;
+let barHeight = bh * 0.12;
 let barGap = 2;
 let usableBarWidth = bw - 40;
 let barWidth = (usableBarWidth - (nBars-1)*barGap) / nBars;
@@ -1549,12 +1558,12 @@ let barTop = bh - bottomMargin - barHeight - labelGap;
 let px = 20;
 let colorIndex = 0;
 
-svg += `<text x="20" y="${barTop - 5}" font-size="5" fill="red" stroke="none">POWER</text>`;
+svg += `<text x="20" y="${barTop - 5}" font-size="5" font-weight="bold" fill="red" stroke="none">POWER</text>`;
 
 for(let p=0; p<=100; p+=pStep){
   let color = powerColors[colorIndex % powerColors.length];
   svg += `<rect x="${px}" y="${barTop}" width="${barWidth}" height="${barHeight}" fill="${color}" stroke="none"/>`;
-  svg += `<text x="${px + barWidth/2}" y="${barTop + barHeight + labelGap}" text-anchor="middle" font-size="4" fill="red" stroke="none">${p}%</text>`;
+  svg += `<text x="${px + barWidth/2}" y="${barTop + barHeight + labelGap}" text-anchor="middle" font-size="4" font-weight="bold" fill="red" stroke="none">${p}%</text>`;
   px += barWidth + barGap;
   colorIndex++;
 }
@@ -1590,7 +1599,7 @@ function downloadSVG(){
   URL.revokeObjectURL(url);
   showToast("SVG downloaded!", "📥");
 }
-</script></article>
+</script>1</article>
  
       
 
@@ -1624,9 +1633,9 @@ function downloadSVG(){
     
 
     
-      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge/" class="book-prev-next__item book-prev-next__next">
+      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/" class="book-prev-next__item book-prev-next__next">
         <span class="book-prev-next__label">Next</span>
-        <span class="book-prev-next__title">Laser Gauge Tool ›</span>
+        <span class="book-prev-next__title">Week 04 - Embedded Programming ›</span>
       </a>
     
   </div>
