@@ -31,7 +31,7 @@ The aim was to understand how digital designs translate into precise physical pa
 also im lowkey a fan of multiples of 3 so lets go with that.
 Week 3 focused on computer-controlled cutting, specifically using the laser cutter and vinyl cutter.
 The aim was to understand how digital designs translate into precise physical parts, and how machine parameters like kerf, speed, and power directly affect accuracy and fit.">
-  <meta itemprop="wordCount" content="1641">
+  <meta itemprop="wordCount" content="2242">
 
 <title>Week 03 - Computer Controlled Cutting | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ The aim was to understand how digital designs translate into precise physical pa
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.7e9a46cfa7e2d0108709732a8292eb398bfa1f7e0eea4b48bdf0f8fa9d6820de.js" integrity="sha256-fppGz6fi0BCHCXMqgpLrOYv6H34O6ktIvfD4&#43;p1oIN4=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.46538a0efef0282409a858471745f1cab97d2234daba316f4780cf2717378a4b.js" integrity="sha256-RlOKDv7wKCQJqFhHF0Xxyrl9IjTaujFvR4DPJxc3iks=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -903,17 +903,36 @@ The aim was to understand how digital designs translate into precise physical pa
         <li><a href="#loading-file-and-cutting">Loading File and Cutting</a></li>
       </ul>
     </li>
+    <li><a href="#laser-cutting">Laser Cutting</a>
+      <ul>
+        <li><a href="#machine-used-1">Machine Used</a></li>
+        <li><a href="#machine-controls-1">Machine Controls</a></li>
+        <li><a href="#setup-process-1">Setup Process</a></li>
+        <li><a href="#materials-commonly-used">Materials Commonly Used</a></li>
+      </ul>
+    </li>
     <li><a href="#parametric-designing">Parametric Designing</a>
       <ul>
         <li><a href="#parametric-construction-kit">Parametric Construction Kit</a></li>
         <li><a href="#parametric-construction-kit--detailed-workflow">Parametric Construction Kit – Detailed Workflow</a></li>
         <li><a href="#preparing-the-dxf-in-inkscape">Preparing the DXF in Inkscape</a></li>
         <li><a href="#nesting-using-deepnest">Nesting Using Deepnest</a></li>
-        <li><a href="#laser-cutting">Laser Cutting</a></li>
+        <li><a href="#laser-cutting-1">Laser Cutting</a></li>
         <li><a href="#final-output">Final Output</a></li>
       </ul>
     </li>
     <li><a href="#compression-testing-comb-fusion-360">Compression Testing Comb (Fusion 360)</a></li>
+    <li><a href="#making-a-laser-cut-layered-statue">Making a Laser Cut Layered Statue</a>
+      <ul>
+        <li><a href="#step-1--generating-the-3d-model">Step 1 – Generating the 3D Model</a></li>
+        <li><a href="#step-2--modifying-the-model-in-3d-builder">Step 2 – Modifying the Model in 3D Builder</a></li>
+        <li><a href="#step-3--slicing-for-laser-cutting-kirimoto">Step 3 – Slicing for Laser Cutting (Kiri:Moto)</a></li>
+        <li><a href="#step-4--organizing-layers-in-inkscape">Step 4 – Organizing Layers in Inkscape</a></li>
+        <li><a href="#step-5--nesting-in-deepnest">Step 5 – Nesting in Deepnest</a></li>
+        <li><a href="#step-6--laser-cutting">Step 6 – Laser Cutting</a></li>
+        <li><a href="#final-assembly--hero-shots">Final Assembly – Hero Shots</a></li>
+      </ul>
+    </li>
     <li><a href="#final-reflection">Final Reflection</a></li>
   </ul>
 </nav>
@@ -982,6 +1001,8 @@ The aim was to understand how digital designs translate into precise physical pa
 <li><strong>Inkscape</strong> for preparing cutting files</li>
 <li><strong>Fusion 360</strong> for parametric modeling</li>
 <li><strong>Deepnest</strong> for nesting the construction kit parts <a href="https://deepnest.io/">https://deepnest.io/</a></li>
+<li><strong>Bambu Studio</strong> for creating the 3d model of a human from image <a href="https://www.bambulab.com/bambu-studio">https://www.bambulab.com/bambu-studio</a></li>
+<li><strong>kiri:moto</strong> for slcing 3d model into the svg files for laser cutting <a href="https://grid.space/kiri">https://grid.space/kiri</a></li>
 </ul>
 <a href="laser-gauge-tool/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 12px 20px; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.2s; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);">
   🛠️ Open Laser Gauge Tool
@@ -1048,7 +1069,7 @@ So you need to treat the machines with <strong>mutual respect</strong> and be ex
 <li>Be aware of emergency stops, fire extinguishers, first-aid kits, and eyewash stations</li>
 </ul>
 <p>The locations of the fire extinguisher, emergency exits, and the lab floor plan were also clearly explained.</p>
-<p><strong>INSERT IMAGE – fire extinguisher</strong></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/safety-1.jpg" alt="extinguisher" /></p>
 <hr>
 <h3 id="co-laser-cutter-safety">CO₂ Laser Cutter Safety<a class="anchor" href="#co-laser-cutter-safety">#</a></h3>
 <p>The CO₂ laser cutter is a powerful machine used for cutting and engraving. Because of the high-intensity laser beam, it poses risks such as fire hazards, eye injury, and exposure to toxic fumes.</p>
@@ -1063,8 +1084,8 @@ So you need to treat the machines with <strong>mutual respect</strong> and be ex
 <li>The material should be secured on the bed</li>
 <li>Room temperature should be maintained for safe operation</li>
 </ul>
-<p><strong>INSERT IMAGE – exhaust system</strong><br>
-<strong>INSERT IMAGE – temperature monitor</strong></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/trotec-2.jpg" alt="exhaust system" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/trotec-3.jpg" alt="temperature monitor" /></p>
 <p>During cutting, the machine must be continuously monitored to prevent fires. If a fire occurs, the machine should be paused immediately while keeping the lid closed. A CO₂ fire extinguisher should be used if required.</p>
 <hr>
 <h3 id="what-to-do-if-a-fire-starts-in-the-laser-cutter">What to Do If a Fire Starts in the Laser Cutter<a class="anchor" href="#what-to-do-if-a-fire-starts-in-the-laser-cutter">#</a></h3>
@@ -1097,7 +1118,8 @@ So you need to treat the machines with <strong>mutual respect</strong> and be ex
 <ul>
 <li>Roll or sheet selection</li>
 <li>Maximum cutting force</li>
-<li>Cutting tool and blade depth</li>
+<li>Cutting tool and blade depth<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/roland-1.jpg" alt="Vinyl controls" /></li>
 </ul>
 <h3 id="setup-process">Setup Process<a class="anchor" href="#setup-process">#</a></h3>
 <ul>
@@ -1173,7 +1195,49 @@ So you need to treat the machines with <strong>mutual respect</strong> and be ex
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-3/vinyl-10.jpg" alt="Final Sticker 1" />
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-3/vinyl-11.jpg" alt="Final Sticker 2" /></p>
 <hr>
-<h2 id="parametric-designing">Parametric Designing<a class="anchor" href="#parametric-designing">#</a></h2>
+<h2 id="laser-cutting">Laser Cutting<a class="anchor" href="#laser-cutting">#</a></h2>
+<h3 id="machine-used-1">Machine Used<a class="anchor" href="#machine-used-1">#</a></h3>
+<p><strong>Trotec Speedy 100 – Laser Cutter &amp; Engraver</strong><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/trotec-1.jpg" alt="Trotec Speedy 100" /></p>
+<p>A laser cutter is a computer-controlled machine that uses a focused laser beam to cut, engrave, or mark materials such as wood, acrylic, paper, leather, and certain plastics with high precision.</p>
+<p>Buy / Product link:<br>
+<a href="https://www.troteclaser.com/en/laser-machines/laser-engravers-speedy-series">https://www.troteclaser.com/en/laser-machines/laser-engravers-speedy-series</a></p>
+<hr>
+<h3 id="machine-controls-1">Machine Controls<a class="anchor" href="#machine-controls-1">#</a></h3>
+<ul>
+<li>Laser power (%)</li>
+<li>Cutting speed (mm/s)</li>
+<li>Frequency / PPI</li>
+<li>Focus height</li>
+<li>Air assist and exhaust control</li>
+<li>Job origin and alignment<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/trotec-5.jpg" alt="Machine Controls 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/trotec-4.jpg" alt="Machine Controls 2" /></li>
+</ul>
+<hr>
+<h3 id="setup-process-1">Setup Process<a class="anchor" href="#setup-process-1">#</a></h3>
+<ol>
+<li>Place material on the cutting bed (honeycomb or flat bed).</li>
+<li>Adjust focus using the focus tool or autofocus.</li>
+<li>Set origin (usually top-left or center).</li>
+<li>Select material preset or manually set power &amp; speed.</li>
+<li>Run a small test cut.</li>
+<li>Start full job and monitor cutting.</li>
+<li>Turn on exhaust and air assist during operation.</li>
+</ol>
+<hr>
+<h3 id="materials-commonly-used">Materials Commonly Used<a class="anchor" href="#materials-commonly-used">#</a></h3>
+<ul>
+<li>Plywood / MDF</li>
+<li>Acrylic (PMMA)</li>
+<li>Cardboard</li>
+<li>Leather</li>
+<li>Paper</li>
+<li>Fabric</li>
+</ul>
+<blockquote class='book-hint '>
+<p>⚠️ Do NOT cut PVC or vinyl — toxic chlorine gas is released.</p>
+</blockquote><h2 id="parametric-designing">Parametric Designing<a class="anchor" href="#parametric-designing">#</a></h2>
 <p>This week’s individual assignment was to design a <strong>parametric construction kit</strong> that could be laser cut and assembled.<br>
 The design had to account for <strong>laser kerf</strong> to ensure proper fit and function.</p>
 <p><strong>Things to consider from group assignment:</strong></p>
@@ -1271,7 +1335,7 @@ The design was fully parametric so it could adapt to:</p>
 </li>
 </ul>
 <hr>
-<h3 id="laser-cutting">Laser Cutting<a class="anchor" href="#laser-cutting">#</a></h3>
+<h3 id="laser-cutting-1">Laser Cutting<a class="anchor" href="#laser-cutting-1">#</a></h3>
 <ul>
 <li>
 <p>Imported the nested SVG into <strong>Trotec Job Control</strong> and set the required power and speed values</p>
@@ -1289,7 +1353,14 @@ The design was fully parametric so it could adapt to:</p>
 <h3 id="final-output">Final Output<a class="anchor" href="#final-output">#</a></h3>
 <p><strong>Hero shot of the completed construction kit:</strong><br>
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-3/construction-kit-19.jpg" alt="Construction Kit Final" /></p>
-<hr>
+<p><strong>Hero shots of the assembled construction kit:</strong><br>
+Take a look at what i had build</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/construction-kit-191.jpg" alt="Construction Kit artillery gun" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/construction-kit-20.jpg" alt="Construction Kit Assembled 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/construction-kit-21.jpg" alt="Construction Kit Assembled 2" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/construction-kit-22.jpg" alt="Construction Kit Assembled 3" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/construction-kit-23.jpg" alt="Construction Kit Assembled 2" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/construction-kit-24.jpg" alt="Construction Kit Assembled 3" /></p>
 <h2 id="compression-testing-comb-fusion-360">Compression Testing Comb (Fusion 360)<a class="anchor" href="#compression-testing-comb-fusion-360">#</a></h2>
 <p>My first design task this week was creating a <strong>compression testing comb</strong> as part of the group-related work.<br>
 I flipped a coin between SolidWorks and Fusion 360, and <strong>Fusion 360</strong> won.</p>
@@ -1319,6 +1390,72 @@ I flipped a coin between SolidWorks and Fusion 360, and <strong>Fusion 360</stro
 </ul>
 <p>I then sent the file to the <strong>Trotec laser cutter</strong>, adjusted power and speed values in the Job Control software, and completed the cut and engraving.</p>
 <p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/kerf-test.jpg" alt="Parametric Inkscape" /></p>
+<hr>
+<h2 id="making-a-laser-cut-layered-statue">Making a Laser Cut Layered Statue<a class="anchor" href="#making-a-laser-cut-layered-statue">#</a></h2>
+<p>After completing the assignments for the week, I planned to make something additional — a <strong>laser-cut layered statue</strong>.</p>
+<p>The idea was to create a 3D model composed of multiple 2D laser-cut layers stacked together, similar in concept to how a 3D printer builds objects layer by layer.</p>
+<hr>
+<h3 id="step-1--generating-the-3d-model">Step 1 – Generating the 3D Model<a class="anchor" href="#step-1--generating-the-3d-model">#</a></h3>
+<p>First, I needed a 3D model. I thought it would be interesting to make a statue of <strong>Neil</strong>.</p>
+<p>I searched online and found a suitable image of him.</p>
+<p>Then I opened <strong>Bambu Studio</strong>, navigated to the <strong>Maker Lab</strong> section, and selected the <strong>“Make My Statue”</strong> option. I uploaded the image of Neil into the tool.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-1.jpg" alt="Neil Upload" /></p>
+<p>The software then began processing the image into a 3D model.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-2.jpg" alt="Neil Processing 1" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-3.jpg" alt="Neil Processing 2" /></p>
+<p>After processing, it generated a rendered 3D output, which I exported as an <strong>STL file</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-4.jpg" alt="Neil Rendered STL" /></p>
+<hr>
+<h3 id="step-2--modifying-the-model-in-3d-builder">Step 2 – Modifying the Model in 3D Builder<a class="anchor" href="#step-2--modifying-the-model-in-3d-builder">#</a></h3>
+<p>Next, I imported the STL file into <strong>3D Builder</strong> (which I had previously used in Week 2).</p>
+<p>To allow structural support during assembly, I created:</p>
+<ul>
+<li>Two cylinders</li>
+<li>200 mm height</li>
+<li>8 mm diameter</li>
+</ul>
+<p>These were positioned inside the model.</p>
+<p>Then I performed a <strong>Boolean subtraction</strong> to remove the volume of the cylinders from the statue. This created two internal holes that would later allow threaded rods to pass through and hold the stacked layers together.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-5.jpg" alt="Cylinder Boolean 1" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-6.jpg" alt="Cylinder Boolean 2" /></p>
+<p>After completing this modification, I saved the updated STL file.</p>
+<hr>
+<h3 id="step-3--slicing-for-laser-cutting-kirimoto">Step 3 – Slicing for Laser Cutting (Kiri:Moto)<a class="anchor" href="#step-3--slicing-for-laser-cutting-kirimoto">#</a></h3>
+<p>I then imported the modified STL into <strong>Kiri:Moto</strong> and switched to <strong>Laser Mode</strong>.</p>
+<p>Material used:</p>
+<ul>
+<li>2 mm thick cardboard</li>
+<li>Kerf value set to 0.3 mm</li>
+</ul>
+<p>After entering the material thickness and kerf values, I sliced the model into layers.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-7.jpg" alt="Kiri Moto Setup" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-8.jpg" alt="Kiri Moto Slicing" /></p>
+<p>The slices were exported as <strong>SVG files</strong>.</p>
+<hr>
+<h3 id="step-4--organizing-layers-in-inkscape">Step 4 – Organizing Layers in Inkscape<a class="anchor" href="#step-4--organizing-layers-in-inkscape">#</a></h3>
+<p>The exported SVG files were opened in <strong>Inkscape</strong>.</p>
+<p>To make assembly easier, I labeled the individual layers numerically (1, 2, 3… up to 78).</p>
+<p>This numbering system helped during stacking and alignment.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-9.jpg" alt="Layer Numbering" /></p>
+<hr>
+<h3 id="step-5--nesting-in-deepnest">Step 5 – Nesting in Deepnest<a class="anchor" href="#step-5--nesting-in-deepnest">#</a></h3>
+<p>The labeled SVG files were then imported into <strong>Deepnest</strong> for nesting.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-10.jpg" alt="Deepnest Import" /></p>
+<p>After nesting was completed, the optimized layout files were exported.</p>
+<hr>
+<h3 id="step-6--laser-cutting">Step 6 – Laser Cutting<a class="anchor" href="#step-6--laser-cutting">#</a></h3>
+<p>The nested SVG file was opened in <strong>Trotec Job Control</strong>.</p>
+<p>The 2 mm cardboard sheet was placed on the laser bed, and appropriate power and speed values were set.</p>
+<p>The cutting process was then started.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-11.jpg" alt="Laser Cutting 1" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-12.jpg" alt="Laser Cutting 2" /></p>
+<hr>
+<h3 id="final-assembly--hero-shots">Final Assembly – Hero Shots<a class="anchor" href="#final-assembly--hero-shots">#</a></h3>
+<p>After cutting all the layers, the pieces were stacked in order and aligned using the threaded rods inserted through the internal holes.</p>
+<p>Final assembled layered statue:</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-13.jpg" alt="Final Statue 1" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-14.jpg" alt="Final Statue 2" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-15.jpg" alt="Final Statue 3" /></p>
 <hr>
 <h2 id="final-reflection">Final Reflection<a class="anchor" href="#final-reflection">#</a></h2>
 <p>This week made it very clear that <strong>designing is only half the job</strong>.<br>
@@ -1498,17 +1635,36 @@ document.addEventListener("DOMContentLoaded", function () {
         <li><a href="#loading-file-and-cutting">Loading File and Cutting</a></li>
       </ul>
     </li>
+    <li><a href="#laser-cutting">Laser Cutting</a>
+      <ul>
+        <li><a href="#machine-used-1">Machine Used</a></li>
+        <li><a href="#machine-controls-1">Machine Controls</a></li>
+        <li><a href="#setup-process-1">Setup Process</a></li>
+        <li><a href="#materials-commonly-used">Materials Commonly Used</a></li>
+      </ul>
+    </li>
     <li><a href="#parametric-designing">Parametric Designing</a>
       <ul>
         <li><a href="#parametric-construction-kit">Parametric Construction Kit</a></li>
         <li><a href="#parametric-construction-kit--detailed-workflow">Parametric Construction Kit – Detailed Workflow</a></li>
         <li><a href="#preparing-the-dxf-in-inkscape">Preparing the DXF in Inkscape</a></li>
         <li><a href="#nesting-using-deepnest">Nesting Using Deepnest</a></li>
-        <li><a href="#laser-cutting">Laser Cutting</a></li>
+        <li><a href="#laser-cutting-1">Laser Cutting</a></li>
         <li><a href="#final-output">Final Output</a></li>
       </ul>
     </li>
     <li><a href="#compression-testing-comb-fusion-360">Compression Testing Comb (Fusion 360)</a></li>
+    <li><a href="#making-a-laser-cut-layered-statue">Making a Laser Cut Layered Statue</a>
+      <ul>
+        <li><a href="#step-1--generating-the-3d-model">Step 1 – Generating the 3D Model</a></li>
+        <li><a href="#step-2--modifying-the-model-in-3d-builder">Step 2 – Modifying the Model in 3D Builder</a></li>
+        <li><a href="#step-3--slicing-for-laser-cutting-kirimoto">Step 3 – Slicing for Laser Cutting (Kiri:Moto)</a></li>
+        <li><a href="#step-4--organizing-layers-in-inkscape">Step 4 – Organizing Layers in Inkscape</a></li>
+        <li><a href="#step-5--nesting-in-deepnest">Step 5 – Nesting in Deepnest</a></li>
+        <li><a href="#step-6--laser-cutting">Step 6 – Laser Cutting</a></li>
+        <li><a href="#final-assembly--hero-shots">Final Assembly – Hero Shots</a></li>
+      </ul>
+    </li>
     <li><a href="#final-reflection">Final Reflection</a></li>
   </ul>
 </nav>
