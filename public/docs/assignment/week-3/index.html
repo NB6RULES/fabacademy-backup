@@ -31,7 +31,7 @@ The aim was to understand how digital designs translate into precise physical pa
 also im lowkey a fan of multiples of 3 so lets go with that.
 Week 3 focused on computer-controlled cutting, specifically using the laser cutter and vinyl cutter.
 The aim was to understand how digital designs translate into precise physical parts, and how machine parameters like kerf, speed, and power directly affect accuracy and fit.">
-  <meta itemprop="wordCount" content="2242">
+  <meta itemprop="wordCount" content="2422">
 
 <title>Week 03 - Computer Controlled Cutting | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ The aim was to understand how digital designs translate into precise physical pa
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.46538a0efef0282409a858471745f1cab97d2234daba316f4780cf2717378a4b.js" integrity="sha256-RlOKDv7wKCQJqFhHF0Xxyrl9IjTaujFvR4DPJxc3iks=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.6316f549a260f5541d17f3021de5345b808a7f942053cf2eaf8d34bf5941fc24.js" integrity="sha256-Yxb1SaJg9VQdF/MCHeU0W4CKf5QgU88ur400v1lB/CQ=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -933,6 +933,13 @@ The aim was to understand how digital designs translate into precise physical pa
         <li><a href="#final-assembly--hero-shots">Final Assembly – Hero Shots</a></li>
       </ul>
     </li>
+    <li><a href="#creating-the-base-for-the-statue">Creating the Base for the Statue</a>
+      <ul>
+        <li><a href="#editing-in-inkscape">Editing in Inkscape</a></li>
+        <li><a href="#laser-cutting-and-assembly">Laser Cutting and Assembly</a></li>
+        <li><a href="#final-base--statue--hero-shots">Final Base + Statue – Hero Shots</a></li>
+      </ul>
+    </li>
     <li><a href="#final-reflection">Final Reflection</a></li>
   </ul>
 </nav>
@@ -1457,6 +1464,44 @@ I flipped a coin between SolidWorks and Fusion 360, and <strong>Fusion 360</stro
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-14.jpg" alt="Final Statue 2" /><br>
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-15.jpg" alt="Final Statue 3" /></p>
 <hr>
+<hr>
+<h2 id="creating-the-base-for-the-statue">Creating the Base for the Statue<a class="anchor" href="#creating-the-base-for-the-statue">#</a></h2>
+<p>The next step was designing and fabricating the <strong>base</strong> for the layered statue.</p>
+<p>First, I measured the required dimensions for the box that would hold and support the statue. Based on those dimensions, I used the following parametric box generator:</p>
+<p>🔗 <a href="https://cuttle.xyz/@cuttle/Open-Box-with-Finger-Joints-D2ugGEvYUNfd">https://cuttle.xyz/@cuttle/Open-Box-with-Finger-Joints-D2ugGEvYUNfd</a></p>
+<p>Using this tool, I entered:</p>
+<ul>
+<li>Required length</li>
+<li>Width</li>
+<li>Height</li>
+<li>Material thickness</li>
+</ul>
+<p>The tool automatically generated an <strong>open box with finger joints</strong>, which was suitable for laser cutting.</p>
+<p>After generating the box layout, I exported the design as an <strong>SVG file</strong>.</p>
+<hr>
+<h3 id="editing-in-inkscape">Editing in Inkscape<a class="anchor" href="#editing-in-inkscape">#</a></h3>
+<p>The exported SVG was opened in <strong>Inkscape</strong>, where:</p>
+<ul>
+<li>I added the required text on the base</li>
+<li>Ensured all cut paths were strokes</li>
+<li>Verified stroke width was suitable for laser cutting</li>
+</ul>
+<p>Once the design was finalized, the file was sent to the <strong>Trotec laser cutter</strong>.</p>
+<hr>
+<h3 id="laser-cutting-and-assembly">Laser Cutting and Assembly<a class="anchor" href="#laser-cutting-and-assembly">#</a></h3>
+<p>The box parts were laser cut from cardboard using the appropriate power and speed settings.</p>
+<p>After cutting:</p>
+<ul>
+<li>The finger joints were aligned</li>
+<li>The box was assembled manually</li>
+<li>The statue was mounted onto the base</li>
+</ul>
+<hr>
+<h3 id="final-base--statue--hero-shots">Final Base + Statue – Hero Shots<a class="anchor" href="#final-base--statue--hero-shots">#</a></h3>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-hero-1.jpg" alt="Statue Base 1" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-hero-2.jpg" alt="Statue Base 2" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-3/neil-hero-3.jpg" alt="Statue Base 3" /></p>
+<hr>
 <h2 id="final-reflection">Final Reflection<a class="anchor" href="#final-reflection">#</a></h2>
 <p>This week made it very clear that <strong>designing is only half the job</strong>.<br>
 Understanding machine behavior, safety, kerf, and material limitations is just as important.<br>
@@ -1663,6 +1708,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <li><a href="#step-5--nesting-in-deepnest">Step 5 – Nesting in Deepnest</a></li>
         <li><a href="#step-6--laser-cutting">Step 6 – Laser Cutting</a></li>
         <li><a href="#final-assembly--hero-shots">Final Assembly – Hero Shots</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-the-base-for-the-statue">Creating the Base for the Statue</a>
+      <ul>
+        <li><a href="#editing-in-inkscape">Editing in Inkscape</a></li>
+        <li><a href="#laser-cutting-and-assembly">Laser Cutting and Assembly</a></li>
+        <li><a href="#final-base--statue--hero-shots">Final Base + Statue – Hero Shots</a></li>
       </ul>
     </li>
     <li><a href="#final-reflection">Final Reflection</a></li>
