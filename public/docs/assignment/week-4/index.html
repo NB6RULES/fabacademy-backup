@@ -31,7 +31,7 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
 The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
 This week built on Week 3 (computer-controlled cutting) and prepared for electronics production and design in upcoming weeks.
 Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals">
-  <meta itemprop="wordCount" content="259">
+  <meta itemprop="wordCount" content="458">
 
 <title>Week 04 - Embedded Programming | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.3c830b5834b334a7bb80676e74416ab94290378a6d5ab58eac77c02f2ba802bf.js" integrity="sha256-PIMLWDSzNKe7gGdudEFquUKQN4ptWrWOrHfALyuoAr8=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.c8d122022e3dbbb910fef05368ee012a1552ca97ce01b8e912f36d8f92175462.js" integrity="sha256-yNEiAi49u7kQ/vBTaO4BKhVSypfOAbjpEvNtj5IXVGI=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -954,6 +954,7 @@ The aim was to read data sheets, write code for embedded systems, and establish 
   </tbody>
 </table>
 <hr>
+<p>blink</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_R 17 </span><span style="color:#75715e">// defined the xiao pin to the chip pin 
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
 </span></span><span style="display:flex;"><span>  pinMode(USER_LED_R, OUTPUT); <span style="color:#75715e">// intialised the red pin as output , so the power will be provided
@@ -963,7 +964,54 @@ The aim was to read data sheets, write code for embedded systems, and establish 
 </span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      <span style="color:#75715e">// wait for a second
 </span></span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, LOW);   <span style="color:#75715e">// turn the LED off by making the voltage LOW
 </span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      <span style="color:#75715e">// wait for a second
-</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div></article>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>airbus blink</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_R 17 </span><span style="color:#75715e">// defined the xiao pin to the chip pin 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_B 25
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_G 16
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  pinMode(USER_LED_R, OUTPUT); <span style="color:#75715e">// intialised the red pin as output , so the power will be provided
+</span></span></span><span style="display:flex;"><span>  pinMode(USER_LED_G, OUTPUT);
+</span></span><span style="display:flex;"><span>  pinMode(USER_LED_B, OUTPUT);
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_G, HIGH);
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_B, HIGH);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, LOW);  <span style="color:#75715e">// turn the LED on (HIGH is the voltage level)
+</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">100</span>);                      <span style="color:#75715e">// wait for a second
+</span></span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, HIGH);   <span style="color:#75715e">// turn the LED off by making the voltage LOW
+</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">100</span>);        
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, LOW);  <span style="color:#75715e">// turn the LED on (HIGH is the voltage level)
+</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">100</span>);                      <span style="color:#75715e">// wait for a second
+</span></span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, HIGH);   <span style="color:#75715e">// turn the LED off by making the voltage LOW
+</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                  <span style="color:#75715e">// wait for a second
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>neopixel test</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;Adafruit_NeoPixel.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define PIN_NEOPIXEL 12  </span><span style="color:#75715e">// Data pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define PIN_POWER    11  </span><span style="color:#75715e">// Power pin (Enable)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define NUM_PIXELS   1   </span><span style="color:#75715e">// XIAO has 1 built-in NeoPixel
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Initialize the library
+</span></span></span><span style="display:flex;"><span>Adafruit_NeoPixel <span style="color:#a6e22e">pixel</span>(NUM_PIXELS, PIN_NEOPIXEL, NEO_GRB <span style="color:#f92672">+</span> NEO_KHZ800);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  pinMode(PIN_POWER, OUTPUT);
+</span></span><span style="display:flex;"><span>  digitalWrite(PIN_POWER, HIGH); <span style="color:#75715e">// Power on the NeoPixel
+</span></span></span><span style="display:flex;"><span>  pixel.begin();
+</span></span><span style="display:flex;"><span>  pixel.setBrightness(<span style="color:#ae81ff">50</span>); <span style="color:#75715e">// 0-255
+</span></span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// Red
+</span></span></span><span style="display:flex;"><span>  pixel.show();
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// Green
+</span></span></span><span style="display:flex;"><span>  pixel.show();
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">255</span>)); <span style="color:#75715e">// Blue
+</span></span></span><span style="display:flex;"><span>  pixel.show();
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></article>
  
       
 
@@ -1014,64 +1062,7 @@ The aim was to read data sheets, write code for embedded systems, and establish 
 </div>
   
  
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".highlight").forEach(function (codeBlock) {
-    if (codeBlock.querySelector(".copy-code-button")) return;
-
-    var copyButton = document.createElement("button");
-    copyButton.type = "button";
-    copyButton.className = "copy-code-button";
-    copyButton.textContent = "Copy";
-    copyButton.setAttribute("aria-label", "Copy code");
-
-    codeBlock.style.position = "relative";
-    codeBlock.appendChild(copyButton);
-
-    copyButton.addEventListener("click", function () {
-      var code = codeBlock.querySelector("code");
-      var text = code ? code.innerText : codeBlock.innerText;
-
-      function setState(label, className) {
-        copyButton.textContent = label;
-        copyButton.classList.remove("copied", "error");
-        if (className) copyButton.classList.add(className);
-      }
-
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard
-          .writeText(text)
-          .then(function () {
-            setState("Copied", "copied");
-            setTimeout(function () { setState("Copy"); }, 1600);
-          })
-          .catch(function () {
-            setState("Error", "error");
-            setTimeout(function () { setState("Copy"); }, 1600);
-          });
-        return;
-      }
-
-      
-      var ta = document.createElement("textarea");
-      ta.value = text;
-      ta.setAttribute("readonly", "");
-      ta.style.position = "absolute";
-      ta.style.left = "-9999px";
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand("copy");
-        setState("Copied", "copied");
-      } catch (e) {
-        setState("Error", "error");
-      }
-      document.body.removeChild(ta);
-      setTimeout(function () { setState("Copy"); }, 1600);
-    });
-  });
-});
-</script>
+        
 
         
   
