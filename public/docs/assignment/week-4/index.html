@@ -10,7 +10,6 @@ https://github.com/alex-shpak/hugo-book
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
 The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
-This week built on Week 3 (computer-controlled cutting) and prepared for electronics production and design in upcoming weeks.
 Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
@@ -20,7 +19,6 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
   <meta property="og:title" content="Week 04 - Embedded Programming">
   <meta property="og:description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
 The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
-This week built on Week 3 (computer-controlled cutting) and prepared for electronics production and design in upcoming weeks.
 Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
@@ -29,9 +27,8 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
   <meta itemprop="name" content="Week 04 - Embedded Programming">
   <meta itemprop="description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
 The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
-This week built on Week 3 (computer-controlled cutting) and prepared for electronics production and design in upcoming weeks.
 Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals">
-  <meta itemprop="wordCount" content="458">
+  <meta itemprop="wordCount" content="4123">
 
 <title>Week 04 - Embedded Programming | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -41,11 +38,11 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
 
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
 <link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/">
-<link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.9fb789d173a464dd606c3921d8e78a367debc74507aeceb1ee96ab711662cd30.css" integrity="sha256-n7eJ0XOkZN1gbDkh2OeKNn3rx0UHrs6x7parcRZizTA=" crossorigin="anonymous">
+<link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.70dd0af74ab02e40209b498a045148b2ef44317eb72201bcd1c7e0543f9ea812.css" integrity="sha256-cN0K90qwLkAgm0mKBFFIsu9EMX63IgG80cfgVD&#43;eqBI=" crossorigin="anonymous">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.c8d122022e3dbbb910fef05368ee012a1552ca97ce01b8e912f36d8f92175462.js" integrity="sha256-yNEiAi49u7kQ/vBTaO4BKhVSypfOAbjpEvNtj5IXVGI=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.6768592adf708ffc57522c7dd93bdb8f1a7a0552029e5e51ba0fd7c6c9b32c45.js" integrity="sha256-Z2hZKt9wj/xXUix92Tvbjxp6BVICnl5Rug/XxsmzLEU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -873,6 +870,116 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+    <li><a href="#-introduction--what-is-embedded-programming">🧠 Introduction – What is Embedded Programming?</a></li>
+    <li><a href="#-hardware-fundamentals--from-physics-to-logic">🔬 Hardware Fundamentals – From Physics to Logic</a></li>
+    <li><a href="#-transistors--the-building-blocks-of-everything">🔌 Transistors – The Building Blocks of Everything</a>
+      <ul>
+        <li><a href="#water-tap-analogy">Water Tap Analogy:</a></li>
+      </ul>
+    </li>
+    <li><a href="#logic-gates--decision-making-using-transistors">Logic Gates – Decision Making Using Transistors</a>
+      <ul>
+        <li><a href="#-and-gate">🔹 AND Gate</a></li>
+        <li><a href="#-or-gate">🔹 OR Gate</a></li>
+        <li><a href="#-not-gate">🔹 NOT Gate</a></li>
+        <li><a href="#-xor-gate-exclusive-or">🔹 XOR Gate (Exclusive OR)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-binary-adders--how-computers-perform-arithmetic">➕ Binary Adders – How Computers Perform Arithmetic</a>
+      <ul>
+        <li><a href="#half-adder">Half Adder</a></li>
+        <li><a href="#full-adder">Full Adder</a></li>
+      </ul>
+    </li>
+    <li><a href="#-bits-bytes-and-memory">🔢 Bits, Bytes and Memory</a></li>
+    <li><a href="#-datasheet-study--rp2040">📘 Datasheet Study – RP2040</a>
+      <ul>
+        <li><a href="#rp2040-overview">RP2040 Overview</a></li>
+        <li><a href="#architecture-breakdown">Architecture Breakdown</a></li>
+        <li><a href="#-memory-architecture">🧠 Memory Architecture</a></li>
+        <li><a href="#gpio--peripheral-system">GPIO &amp; Peripheral System</a></li>
+      </ul>
+    </li>
+    <li><a href="#basics-of-embedded-programming-arduino-style">Basics of Embedded Programming (Arduino Style)</a>
+      <ul>
+        <li><a href="#void-setup">void setup()</a></li>
+        <li><a href="#void-loop">void loop()</a></li>
+        <li><a href="#define">#define</a></li>
+        <li><a href="#int">int</a></li>
+        <li><a href="#float">float</a></li>
+        <li><a href="#bool">bool</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#delay">delay()</a></li>
+        <li><a href="#serialprint">Serial.print()</a></li>
+      </ul>
+    </li>
+    <li><a href="#-additional-important-programming-concepts">🔑 Additional Important Programming Concepts</a>
+      <ul>
+        <li><a href="#pinmode">pinMode()</a></li>
+        <li><a href="#digitalread">digitalRead()</a></li>
+        <li><a href="#digitalwrite">digitalWrite()</a></li>
+        <li><a href="#analogread">analogRead()</a></li>
+        <li><a href="#pwm-pulse-width-modulation">PWM (Pulse Width Modulation)</a></li>
+        <li><a href="#conditional-statements">Conditional Statements</a></li>
+        <li><a href="#loops">Loops</a></li>
+        <li><a href="#interrupts">Interrupts</a></li>
+      </ul>
+    </li>
+    <li><a href="#my-journey-through-embedded-programming">My Journey Through Embedded Programming</a>
+      <ul>
+        <li></li>
+        <li><a href="#-part-1--rp2040-using-arduino-ide">🟣 Part 1 – RP2040 Using Arduino IDE</a></li>
+      </ul>
+    </li>
+    <li><a href="#-development-workflow-arduino--rp2040">🔄 Development Workflow (Arduino + RP2040)</a></li>
+    <li><a href="#-experiments-with-rp2040-using-arduino-ide">🧪 Experiments with RP2040 Using Arduino IDE</a>
+      <ul>
+        <li><a href="#-1-modified-blink-code-rp2040">🔹 1️⃣ Modified Blink Code (RP2040)</a></li>
+        <li><a href="#-2-boeing-vs-airbus-light-pattern-simulation">✈️ 2️⃣ Boeing vs Airbus Light Pattern Simulation</a></li>
+        <li><a href="#-3-police-lights-using-built-in-neopixel">🚨 3️⃣ Police Lights Using Built-in NeoPixel</a></li>
+        <li><a href="#-4-external-leds--button--serial-monitor">🔵⚪🔴 4️⃣ External LEDs + Button + Serial Monitor</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-step-1--installing-thonny">🛠 Step 1 – Installing Thonny</a></li>
+    <li><a href="#-step-2--flashing-micropython-firmware">🔌 Step 2 – Flashing MicroPython Firmware</a></li>
+    <li><a href="#-step-3--configuring-thonny">⚙️ Step 3 – Configuring Thonny</a></li>
+    <li><a href="#-first-program--blink-using-micropython">💡 First Program – Blink Using MicroPython</a>
+      <ul>
+        <li><a href="#-code-4">💻 Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#output">Output</a></li>
+    <li><a href="#-arduino-vs-micropython-workflow-difference">🔄 Arduino vs MicroPython Workflow Difference</a>
+      <ul>
+        <li><a href="#arduino-ide">Arduino IDE:</a></li>
+        <li><a href="#micropython-thonny">MicroPython (Thonny):</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-3---arduino-q-uno-q">Part 3 - Arduino Q (UNO Q)</a>
+      <ul>
+        <li><a href="#-setting-up-arduino-q-uno-q">🛠 Setting Up Arduino Q (UNO Q)</a></li>
+        <li><a href="#-example-1--blink-led-with-ui">💡 Example 1 — Blink LED with UI</a></li>
+        <li><a href="#-arduino-ide-programming">💻 Arduino IDE Programming</a></li>
+        <li><a href="#-example-2--led-matrix-animation--text">🟢 Example 2 — LED Matrix Animation + Text</a></li>
+        <li><a href="#-custom-led-matrix-project">🧪 Custom LED Matrix Project</a></li>
+      </ul>
+    </li>
+    <li><a href="#-returning-to-app-lab-basic-blink-no-ui">🔄 Returning to App Lab: Basic Blink (No UI)</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#part-1-the-origin-story">Part 1: The Origin Story</a></li>
+        <li><a href="#part-2-from-breadboard-to-pcb">Part 2: From Breadboard to PCB</a></li>
+        <li><a href="#part-3-the-qpad-integration">Part 3: The Qpad Integration</a></li>
+        <li><a href="#part-4-cloud-integration--high-scores">Part 4: Cloud Integration &amp; High Scores</a></li>
+      </ul>
+    </li>
+    <li><a href="#full-gameplay">Full Gameplay</a></li>
   </ul>
 </nav>
 
@@ -888,7 +995,6 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
   <article class="markdown book-article"><h1 id="week-04---embedded-programming">Week 04 - Embedded Programming<a class="anchor" href="#week-04---embedded-programming">#</a></h1>
 <p>Week 4 focused on <strong>embedded programming</strong>, learning to program microcontrollers and understand how software controls hardware at a low level.<br>
 The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.</p>
-<p>This week built on <strong>Week 3 (computer-controlled cutting)</strong> and prepared for electronics production and design in upcoming weeks.</p>
 <hr>
 <h2 id="group-assignment">Group Assignment<a class="anchor" href="#group-assignment">#</a></h2>
 <ul>
@@ -901,6 +1007,7 @@ The aim was to read data sheets, write code for embedded systems, and establish 
 </ul>
 <p><strong>Extra Credit Goals</strong></p>
 <ul>
+<li>Assemble your own embedded system</li>
 <li>Try different programming <strong>languages</strong> &amp;/or <strong>development environments</strong></li>
 </ul>
 <hr>
@@ -911,7 +1018,9 @@ The aim was to read data sheets, write code for embedded systems, and establish 
 <li><strong>Arduino IDE</strong> for programming</li>
 <li><strong>Development environment</strong> for the microcontroller</li>
 <li><strong>Serial monitor</strong> for debugging and communication</li>
-<li><strong>Browser + Git</strong> for documentation</li>
+<li><strong>Visual Studio Code + Git</strong> for documentation</li>
+<li><strong>App Lab</strong> for programming in App Lab</li>
+<li><strong>Thonypython</strong> for programming in MicroPython</li>
 </ul>
 <hr>
 <h2 id="weekly-schedule">Weekly Schedule<a class="anchor" href="#weekly-schedule">#</a></h2>
@@ -933,19 +1042,19 @@ The aim was to read data sheets, write code for embedded systems, and establish 
       </tr>
       <tr>
           <td>FRI</td>
-          <td>Programming a Seeedstudio Xiao RP2040</td>
+          <td>Going through the data sheet of microcontroller</td>
       </tr>
       <tr>
           <td>SAT</td>
-          <td></td>
+          <td>Cretating Embedded Program for SeedStudio Xiao RP2040</td>
       </tr>
       <tr>
           <td>SUN</td>
-          <td></td>
+          <td>Figuring out MicroPython on RP2040 and playing around with Arduino Q</td>
       </tr>
       <tr>
           <td>MON</td>
-          <td></td>
+          <td>Assembling and testing a simple Embedded system</td>
       </tr>
       <tr>
           <td>TUE</td>
@@ -954,7 +1063,522 @@ The aim was to read data sheets, write code for embedded systems, and establish 
   </tbody>
 </table>
 <hr>
-<p>blink</p>
+<h2 id="-introduction--what-is-embedded-programming">🧠 Introduction – What is Embedded Programming?<a class="anchor" href="#-introduction--what-is-embedded-programming">#</a></h2>
+<p>This week started with understanding what <strong>embedded programming</strong> really is.</p>
+<p>Embedded programming is the process of writing software that runs on a <strong>microcontroller or embedded system</strong> designed to perform a dedicated task.</p>
+<p>Unlike general-purpose computers (like laptops or desktops), embedded systems:</p>
+<ul>
+<li>Are built for <strong>specific applications</strong></li>
+<li>Directly interact with <strong>hardware components</strong></li>
+<li>Have <strong>limited memory and processing power</strong></li>
+<li>Often operate in <strong>real-time environments</strong></li>
+<li>Must be efficient, stable, and reliable**</li>
+</ul>
+<p>Examples of embedded systems include:</p>
+<ul>
+<li>Washing machine controllers</li>
+<li>Car engine control units (ECUs)</li>
+<li>Smart watches</li>
+<li>Remote controls</li>
+<li>Industrial automation systems</li>
+<li>IoT sensor nodes</li>
+</ul>
+<p>Embedded programming connects the <strong>physical world (sensors, motors, voltage signals)</strong> with <strong>digital logic and code execution</strong>.</p>
+<hr>
+<h2 id="-hardware-fundamentals--from-physics-to-logic">🔬 Hardware Fundamentals – From Physics to Logic<a class="anchor" href="#-hardware-fundamentals--from-physics-to-logic">#</a></h2>
+<p>To truly understand embedded programming, I must understand the hardware foundation beneath it.</p>
+<hr>
+<h2 id="-transistors--the-building-blocks-of-everything">🔌 Transistors – The Building Blocks of Everything<a class="anchor" href="#-transistors--the-building-blocks-of-everything">#</a></h2>
+<p>A transistor can be compared to a <strong>water tap</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/transistor-1.jpg" alt="Transistor Diagram" /></p>
+<p>It typically has three terminals:</p>
+<ul>
+<li>Input</li>
+<li>Output</li>
+<li>Control (Gate/Base)</li>
+</ul>
+<h3 id="water-tap-analogy">Water Tap Analogy:<a class="anchor" href="#water-tap-analogy">#</a></h3>
+<ul>
+<li>Input → Water source</li>
+<li>Output → Flowing water</li>
+<li>Control → Tap handle</li>
+</ul>
+<p>When the control is activated → current flows.<br>
+When the control is inactive → no current flows.</p>
+<p>Therefore, a transistor acts like a <strong>switch</strong>.</p>
+<p>It has two states:</p>
+<ul>
+<li>ON → 1</li>
+<li>OFF → 0</li>
+</ul>
+<p>This is called <strong>binary logic</strong>.</p>
+<p>Modern microcontrollers contain <strong>millions or even billions of transistors</strong>, all working together as tiny switches.</p>
+<hr>
+<h2 id="logic-gates--decision-making-using-transistors">Logic Gates – Decision Making Using Transistors<a class="anchor" href="#logic-gates--decision-making-using-transistors">#</a></h2>
+<p>When multiple transistors are connected in series or parallel configurations, they form <strong>logic gates</strong>.</p>
+<p>Logic gates take binary inputs and produce binary outputs.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/logic-gate.jpg" alt="Logic Gates" /></p>
+<hr>
+<h3 id="-and-gate">🔹 AND Gate<a class="anchor" href="#-and-gate">#</a></h3>
+<p>Output is 1 only if both inputs are 1.</p>
+<table>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>Output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="-or-gate">🔹 OR Gate<a class="anchor" href="#-or-gate">#</a></h3>
+<p>Output is 1 if at least one input is 1.</p>
+<table>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>Output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="-not-gate">🔹 NOT Gate<a class="anchor" href="#-not-gate">#</a></h3>
+<p>Inverts the input.</p>
+<table>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>Output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="-xor-gate-exclusive-or">🔹 XOR Gate (Exclusive OR)<a class="anchor" href="#-xor-gate-exclusive-or">#</a></h3>
+<p>Output is 1 only when inputs are different.</p>
+<table>
+  <thead>
+      <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>Output</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-binary-adders--how-computers-perform-arithmetic">➕ Binary Adders – How Computers Perform Arithmetic<a class="anchor" href="#-binary-adders--how-computers-perform-arithmetic">#</a></h2>
+<p>Inside a CPU, arithmetic is done using logic gates.</p>
+<h3 id="half-adder">Half Adder<a class="anchor" href="#half-adder">#</a></h3>
+<p><a href="https://www.geeksforgeeks.org/digital-logic/half-adder-in-digital-logic/">https://www.geeksforgeeks.org/digital-logic/half-adder-in-digital-logic/</a></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/half-adder.jpg" alt="Half Adder" /></p>
+<p>Inputs:</p>
+<ul>
+<li>A</li>
+<li>B</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>Sum</li>
+<li>Carry</li>
+</ul>
+<p>Logic:</p>
+<ul>
+<li>Sum = A XOR B</li>
+<li>Carry = A AND B</li>
+</ul>
+<hr>
+<h3 id="full-adder">Full Adder<a class="anchor" href="#full-adder">#</a></h3>
+<p><a href="https://www.geeksforgeeks.org/digital-logic/full-adder-in-digital-logic/">https://www.geeksforgeeks.org/digital-logic/full-adder-in-digital-logic/</a></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/full-adder.jpg" alt="Full Adder" /></p>
+<p>Adds:</p>
+<ul>
+<li>A</li>
+<li>B</li>
+<li>Carry-in</li>
+</ul>
+<p>This allows addition of multi-bit numbers by chaining full adders together.</p>
+<p>This is the foundation of arithmetic inside processors.</p>
+<hr>
+<h2 id="-bits-bytes-and-memory">🔢 Bits, Bytes and Memory<a class="anchor" href="#-bits-bytes-and-memory">#</a></h2>
+<ul>
+<li>1 bit = 0 or 1</li>
+<li>8 bits = 1 byte</li>
+<li>1024 bytes = 1 KB</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>1 byte stores values from 0–255</li>
+<li>4 bytes (32 bits) store larger integers</li>
+<li>Memory in microcontrollers is measured in KB, not GB</li>
+</ul>
+<p>Memory is limited and must be used efficiently.</p>
+<hr>
+<h2 id="-datasheet-study--rp2040">📘 Datasheet Study – RP2040<a class="anchor" href="#-datasheet-study--rp2040">#</a></h2>
+<p>This week I explored the datasheet of the <strong>RP2040 microcontroller</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/RP2040.jpg" alt="RP2040 Microcontroller" /></p>
+<p>Official Datasheet:<br>
+<a href="https://pip-assets.raspberrypi.com/categories/814-rp2040/documents/RP-008371-DS-1-rp2040-datasheet.pdf">https://pip-assets.raspberrypi.com/categories/814-rp2040/documents/RP-008371-DS-1-rp2040-datasheet.pdf</a></p>
+<hr>
+<h3 id="rp2040-overview">RP2040 Overview<a class="anchor" href="#rp2040-overview">#</a></h3>
+<ul>
+<li>Dual-core ARM Cortex-M0+ microcontroller</li>
+<li>Designed by Raspberry Pi</li>
+<li>Used in Raspberry Pi Pico and many custom boards</li>
+<li>133 MHz maximum clock frequency</li>
+<li>264 KB SRAM</li>
+<li>External QSPI Flash</li>
+<li>No built-in WiFi or Bluetooth</li>
+<li>Rich peripheral set</li>
+</ul>
+<hr>
+<h3 id="architecture-breakdown">Architecture Breakdown<a class="anchor" href="#architecture-breakdown">#</a></h3>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/rp2040-architecture.jpg" alt="RP2040 Architecture" /></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/rp2040-floorplan.jpg" alt="RP2040 Floorplan" /></p>
+<h4 id="dual-arm-cortex-m0-cores">Dual ARM Cortex-M0+ Cores<a class="anchor" href="#dual-arm-cortex-m0-cores">#</a></h4>
+<ul>
+<li>Two processors running up to 133 MHz</li>
+<li>Can execute tasks in parallel</li>
+<li>Share memory and peripherals</li>
+</ul>
+<hr>
+<h4 id="shared-sram">Shared SRAM<a class="anchor" href="#shared-sram">#</a></h4>
+<ul>
+<li>264 KB SRAM divided into banks</li>
+<li>Accessible by both cores</li>
+<li>Stores runtime variables, stack and heap</li>
+</ul>
+<hr>
+<h4 id="bus-fabric">Bus Fabric<a class="anchor" href="#bus-fabric">#</a></h4>
+<ul>
+<li>Connects CPU cores, memory and peripherals</li>
+<li>Manages internal data flow</li>
+</ul>
+<hr>
+<h4 id="dma-controller">DMA Controller<a class="anchor" href="#dma-controller">#</a></h4>
+<ul>
+<li>Direct Memory Access</li>
+<li>Transfers data without CPU involvement</li>
+<li>Improves efficiency and reduces processing load</li>
+</ul>
+<hr>
+<h4 id="usb-controller">USB Controller<a class="anchor" href="#usb-controller">#</a></h4>
+<ul>
+<li>USB 1.1 device support</li>
+<li>Enables serial communication and USB-based applications</li>
+</ul>
+<hr>
+<h4 id="pio-programmable-io">PIO (Programmable I/O)<a class="anchor" href="#pio-programmable-io">#</a></h4>
+<p>Unique RP2040 feature:</p>
+<ul>
+<li>2 PIO blocks</li>
+<li>4 state machines each</li>
+<li>Allows custom hardware protocols</li>
+<li>Used for advanced interfaces like NeoPixels or VGA output</li>
+</ul>
+<hr>
+<h4 id="adc">ADC<a class="anchor" href="#adc">#</a></h4>
+<ul>
+<li>12-bit resolution</li>
+<li>Converts analog voltage to digital data</li>
+</ul>
+<hr>
+<h4 id="timers">Timers<a class="anchor" href="#timers">#</a></h4>
+<p>Used for:</p>
+<ul>
+<li>Delays</li>
+<li>PWM generation</li>
+<li>Scheduling and timing operations</li>
+</ul>
+<hr>
+<h3 id="-memory-architecture">🧠 Memory Architecture<a class="anchor" href="#-memory-architecture">#</a></h3>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/memory-architecture.jpg" alt="Memory Architecture" /></p>
+<p>From the datasheet:</p>
+<ul>
+<li>264 KB SRAM divided into banks</li>
+<li>No internal flash</li>
+<li>Uses external QSPI flash</li>
+<li>Supports XIP (Execute in Place)</li>
+</ul>
+<h4 id="explanation">Explanation<a class="anchor" href="#explanation">#</a></h4>
+<ul>
+<li>Program code runs directly from external flash (XIP)</li>
+<li>SRAM stores stack, heap and variables</li>
+<li>Peripherals are memory-mapped</li>
+</ul>
+<p>Memory-mapped means hardware registers appear as memory addresses.</p>
+<p>Writing to specific memory locations controls hardware directly.</p>
+<hr>
+<h3 id="gpio--peripheral-system">GPIO &amp; Peripheral System<a class="anchor" href="#gpio--peripheral-system">#</a></h3>
+<h4 id="gpio">GPIO<a class="anchor" href="#gpio">#</a></h4>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/gpio.jpg" alt="GPIO Pins" /></p>
+<ul>
+<li>30 GPIO pins (on Pico board)</li>
+<li>Multiple alternate functions per pin</li>
+<li>Digital input/output</li>
+<li>PWM capable</li>
+<li>Interrupt capable</li>
+</ul>
+<hr>
+<h4 id="available-peripherals">Available Peripherals<a class="anchor" href="#available-peripherals">#</a></h4>
+<ul>
+<li>2 × UART</li>
+<li>2 × SPI</li>
+<li>2 × I2C</li>
+<li>USB 1.1 controller</li>
+<li>12-bit ADC</li>
+<li>16 PWM channels</li>
+<li>DMA controller</li>
+</ul>
+<p>These peripherals allow communication and interaction with external hardware devices.</p>
+<hr>
+<h2 id="basics-of-embedded-programming-arduino-style">Basics of Embedded Programming (Arduino Style)<a class="anchor" href="#basics-of-embedded-programming-arduino-style">#</a></h2>
+<h3 id="void-setup">void setup()<a class="anchor" href="#void-setup">#</a></h3>
+<ul>
+<li>Runs once at startup</li>
+<li>Used for initialization</li>
+<li>Configures pins and peripherals</li>
+</ul>
+<hr>
+<h3 id="void-loop">void loop()<a class="anchor" href="#void-loop">#</a></h3>
+<ul>
+<li>Runs continuously after setup</li>
+<li>Contains main program logic</li>
+</ul>
+<hr>
+<h3 id="define">#define<a class="anchor" href="#define">#</a></h3>
+<ul>
+<li>Preprocessor directive</li>
+<li>Defines constants before compilation</li>
+</ul>
+<hr>
+<h3 id="int">int<a class="anchor" href="#int">#</a></h3>
+<ul>
+<li>Stores integer values</li>
+<li>Typically 32-bit on RP2040</li>
+</ul>
+<hr>
+<h3 id="float">float<a class="anchor" href="#float">#</a></h3>
+<ul>
+<li>Stores decimal values</li>
+<li>Uses more memory than int</li>
+</ul>
+<hr>
+<h3 id="bool">bool<a class="anchor" href="#bool">#</a></h3>
+<ul>
+<li>Stores true or false</li>
+<li>Used for logical conditions and state control</li>
+</ul>
+<hr>
+<h3 id="functions">Functions<a class="anchor" href="#functions">#</a></h3>
+<p>Reusable blocks of code that improve modularity and organization.</p>
+<hr>
+<h3 id="delay">delay()<a class="anchor" href="#delay">#</a></h3>
+<p>Pauses execution for specified milliseconds.<br>
+Note: It blocks CPU execution.</p>
+<hr>
+<h3 id="serialprint">Serial.print()<a class="anchor" href="#serialprint">#</a></h3>
+<p>Used for debugging and monitoring via Serial Monitor.</p>
+<hr>
+<h2 id="-additional-important-programming-concepts">🔑 Additional Important Programming Concepts<a class="anchor" href="#-additional-important-programming-concepts">#</a></h2>
+<h3 id="pinmode">pinMode()<a class="anchor" href="#pinmode">#</a></h3>
+<p>Configures pin as INPUT or OUTPUT.</p>
+<h3 id="digitalread">digitalRead()<a class="anchor" href="#digitalread">#</a></h3>
+<p>Reads digital value from a pin.</p>
+<h3 id="digitalwrite">digitalWrite()<a class="anchor" href="#digitalwrite">#</a></h3>
+<p>Writes HIGH or LOW to a pin.</p>
+<h3 id="analogread">analogRead()<a class="anchor" href="#analogread">#</a></h3>
+<p>Reads analog input via ADC.</p>
+<h3 id="pwm-pulse-width-modulation">PWM (Pulse Width Modulation)<a class="anchor" href="#pwm-pulse-width-modulation">#</a></h3>
+<p>Simulates analog output using digital pulses.</p>
+<h3 id="conditional-statements">Conditional Statements<a class="anchor" href="#conditional-statements">#</a></h3>
+<p>if, else statements control logic flow.</p>
+<h3 id="loops">Loops<a class="anchor" href="#loops">#</a></h3>
+<p>for and while loops repeat instructions.</p>
+<h3 id="interrupts">Interrupts<a class="anchor" href="#interrupts">#</a></h3>
+<p>Allow hardware events to interrupt normal code execution.</p>
+<hr>
+<h2 id="my-journey-through-embedded-programming">My Journey Through Embedded Programming<a class="anchor" href="#my-journey-through-embedded-programming">#</a></h2>
+<h4 id="platforms-explored">Platforms Explored<a class="anchor" href="#platforms-explored">#</a></h4>
+<ol>
+<li>RP2040 using Arduino IDE</li>
+<li>RP2040 using MicroPython</li>
+<li>Arduino UNO Q</li>
+<li>ESP32-C6</li>
+</ol>
+<hr>
+<h3 id="-part-1--rp2040-using-arduino-ide">🟣 Part 1 – RP2040 Using Arduino IDE<a class="anchor" href="#-part-1--rp2040-using-arduino-ide">#</a></h3>
+<p>I started off with the <strong>RP2040 using the Arduino IDE</strong>, since I already had Arduino IDE installed and was familiar with its workflow.</p>
+<hr>
+<h4 id="step-1--installing-arduino-ide">Step 1 – Installing Arduino IDE<a class="anchor" href="#step-1--installing-arduino-ide">#</a></h4>
+<p>Since I already had it installed, I directly opened it.</p>
+<p>If not installed, the software can be downloaded from the official Arduino website:</p>
+<p><a href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a></p>
+<p>After downloading:</p>
+<ul>
+<li>Install the IDE</li>
+<li>Open it</li>
+<li>Verify it launches correctly</li>
+</ul>
+<hr>
+<h4 id="step-2--adding-rp2040-board-support">Step 2 – Adding RP2040 Board Support<a class="anchor" href="#step-2--adding-rp2040-board-support">#</a></h4>
+<p>By default, Arduino IDE does not include RP2040 board definitions.<br>
+I need to install the required board package.</p>
+<p>For this, I referred to the <strong>Seeed Studio Getting Started Guide</strong> for:</p>
+<ul>
+<li>XIAO RP2040</li>
+<li>XIAO ESP32-C6</li>
+</ul>
+<p>Guide used:</p>
+<p>👉 <a href="https://wiki.seeedstudio.com/XIAO-RP2040/">https://wiki.seeedstudio.com/XIAO-RP2040/</a></p>
+<hr>
+<h4 id="steps-to-add-board-configuration">Steps to Add Board Configuration<a class="anchor" href="#steps-to-add-board-configuration">#</a></h4>
+<ol>
+<li>Open <strong>Arduino IDE</strong></li>
+<li>Go to: <strong>File</strong> → <strong>Preferences</strong></li>
+<li>In the <strong>Additional Boards Manager URLs</strong> field, add:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>https:<span style="color:#75715e">//github.com/Seeed-Studio/Arduino_Boards/raw/master/Seeed%20RP2040/package_seeed_board_index.json
+</span></span></span></code></pre></div></li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/ide-1.jpg" alt="Arduino IDE Preferences" /></p>
+<ol start="5">
+<li>Go to: <strong>Tools</strong> → <strong>Board</strong> → <strong>Boards Manager</strong></li>
+<li>Search for &ldquo;RP2040&rdquo; and install the board package</li>
+</ol>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/ide-2.jpg" alt="Arduino IDE Boards Manager" /></p>
+<h4 id="selecting-the-correct-board">Selecting the Correct Board<a class="anchor" href="#selecting-the-correct-board">#</a></h4>
+<p>After installing the required board package:</p>
+<ul>
+<li>
+<p>Go to:<br>
+<strong>Tools → Board</strong></p>
+</li>
+<li>
+<p>Select:<br>
+<strong>Seeed XIAO RP2040</strong></p>
+</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li>Connect the board via USB</li>
+<li>Select the correct COM port from:<br>
+<strong>Tools → Port</strong></li>
+</ul>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/ide-3.jpg" alt="Selecting Board" /></p>
+<p>Make sure the correct port appears after plugging in the board. If it does not appear, check:</p>
+<ul>
+<li>USB cable (data cable, not power-only)</li>
+<li>Drivers</li>
+<li>Bootloader mode (if needed)</li>
+</ul>
+<hr>
+<h2 id="-development-workflow-arduino--rp2040">🔄 Development Workflow (Arduino + RP2040)<a class="anchor" href="#-development-workflow-arduino--rp2040">#</a></h2>
+<p>The development workflow followed:</p>
+<ol>
+<li>Write code</li>
+<li>Verify (compile)</li>
+<li>Upload</li>
+<li>Monitor output using Serial Monitor</li>
+</ol>
+<p>This workflow is:</p>
+<ul>
+<li>Simple</li>
+<li>Structured</li>
+<li>Beginner-friendly</li>
+<li>Fast for prototyping</li>
+</ul>
+<hr>
+<h2 id="-experiments-with-rp2040-using-arduino-ide">🧪 Experiments with RP2040 Using Arduino IDE<a class="anchor" href="#-experiments-with-rp2040-using-arduino-ide">#</a></h2>
+<p>After successfully setting up the RP2040 with the Arduino IDE, I started experimenting with different programs to better understand GPIO control, timing patterns, RGB LEDs, button input, and serial communication.</p>
+<p>Below are the experiments I carried out during this process.</p>
+<hr>
+<h3 id="-1-modified-blink-code-rp2040">🔹 1️⃣ Modified Blink Code (RP2040)<a class="anchor" href="#-1-modified-blink-code-rp2040">#</a></h3>
+<p>The first thing I did was modify the existing Arduino <strong>Blink example</strong> to work properly with the RP2040 board.</p>
+<p>Since different boards may have different built-in LED pin definitions, I adjusted the code accordingly to ensure compatibility with the RP2040.</p>
+<p>This helped me understand:</p>
+<ul>
+<li>How <code>pinMode()</code> configures a pin as OUTPUT</li>
+<li>How <code>digitalWrite()</code> controls HIGH and LOW states</li>
+<li>How <code>delay()</code> controls timing</li>
+<li>The compile → upload → test workflow</li>
+</ul>
+<h4 id="-code">💻 Code<a class="anchor" href="#-code">#</a></h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_R 17 </span><span style="color:#75715e">// defined the xiao pin to the chip pin 
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
 </span></span><span style="display:flex;"><span>  pinMode(USER_LED_R, OUTPUT); <span style="color:#75715e">// intialised the red pin as output , so the power will be provided
@@ -964,27 +1588,79 @@ The aim was to read data sheets, write code for embedded systems, and establish 
 </span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      <span style="color:#75715e">// wait for a second
 </span></span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, LOW);   <span style="color:#75715e">// turn the LED off by making the voltage LOW
 </span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      <span style="color:#75715e">// wait for a second
-</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>airbus blink</p>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h4 id="-output">📸 Output<a class="anchor" href="#-output">#</a></h4>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/blink.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>The onboard LED blinked successfully, confirming that:</p>
+<ul>
+<li>The board configuration was correct</li>
+<li>The upload process was working</li>
+<li>The microcontroller was executing the program properly</li>
+</ul>
+<hr>
+<h3 id="-2-boeing-vs-airbus-light-pattern-simulation">✈️ 2️⃣ Boeing vs Airbus Light Pattern Simulation<a class="anchor" href="#-2-boeing-vs-airbus-light-pattern-simulation">#</a></h3>
+<p>After this, I had a conversation with my instructor <strong>Mr. Saheen Palayi</strong>.</p>
+<p>He mentioned an interesting real-world observation:</p>
+<blockquote class='book-hint '>
+<p>The blinking patterns of aircraft lights differ between planes manufactured by Boeing and Airbus.</p>
+</blockquote><p>This encouraged me to experiment with different blinking sequences and simulate unique light signatures using timing variations.</p>
+<p>The idea was to replicate:</p>
+<ul>
+<li>Fast double-blink patterns</li>
+<li>Slower single-blink patterns</li>
+<li>Different delay intervals to mimic real aircraft lighting styles</li>
+</ul>
+<p>This exercise helped me understand how embedded systems can be used to create recognizable signal patterns through precise timing control.</p>
+<h4 id="-code-1">💻 Code<a class="anchor" href="#-code-1">#</a></h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_R 17 </span><span style="color:#75715e">// defined the xiao pin to the chip pin 
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_B 25
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define USER_LED_G 16
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
 </span></span><span style="display:flex;"><span>  pinMode(USER_LED_R, OUTPUT); <span style="color:#75715e">// intialised the red pin as output , so the power will be provided
-</span></span></span><span style="display:flex;"><span>  pinMode(USER_LED_G, OUTPUT);
-</span></span><span style="display:flex;"><span>  pinMode(USER_LED_B, OUTPUT);
-</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_G, HIGH);
-</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_B, HIGH);
+</span></span></span><span style="display:flex;"><span>  pinMode(USER_LED_B, OUTPUT);
+</span></span><span style="display:flex;"><span>  pinMode(USER_LED_G, OUTPUT);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
-</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, LOW);  <span style="color:#75715e">// turn the LED on (HIGH is the voltage level)
-</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">100</span>);                      <span style="color:#75715e">// wait for a second
-</span></span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, HIGH);   <span style="color:#75715e">// turn the LED off by making the voltage LOW
-</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">100</span>);        
-</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, LOW);  <span style="color:#75715e">// turn the LED on (HIGH is the voltage level)
-</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">100</span>);                      <span style="color:#75715e">// wait for a second
-</span></span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, HIGH);   <span style="color:#75715e">// turn the LED off by making the voltage LOW
-</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                  <span style="color:#75715e">// wait for a second
-</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>neopixel test</p>
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, HIGH);  <span style="color:#75715e">// turn the LED on (HIGH is the voltage level)
+</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      <span style="color:#75715e">// wait for a second
+</span></span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_R, LOW);   <span style="color:#75715e">// turn the LED off by making the voltage LOW
+</span></span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      <span style="color:#75715e">// wait for a second
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_B, HIGH);  
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_B, LOW);   
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_G, HIGH);  
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);                      
+</span></span><span style="display:flex;"><span>  digitalWrite(USER_LED_G, LOW);   
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h4 id="-output-1">📸 Output<a class="anchor" href="#-output-1">#</a></h4>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/airbus.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>Through this experiment, I learned:</p>
+<ul>
+<li>Timing precision is important in embedded systems</li>
+<li>Human perception can distinguish between subtle blinking differences</li>
+<li>Delay-based pattern design is simple but powerful</li>
+</ul>
+<hr>
+<h3 id="-3-police-lights-using-built-in-neopixel">🚨 3️⃣ Police Lights Using Built-in NeoPixel<a class="anchor" href="#-3-police-lights-using-built-in-neopixel">#</a></h3>
+<p>Next, I experimented with the <strong>built-in NeoPixel</strong> available on the RP2040 board.</p>
+<p>The goal was to simulate police lights using alternating red and blue colors.</p>
+<p>This introduced new concepts such as:</p>
+<ul>
+<li>RGB color control</li>
+<li>Using external libraries (NeoPixel library)</li>
+<li>Managing timing for visual effects</li>
+<li>Controlling addressable LEDs</li>
+</ul>
+<p>Instead of just turning an LED ON or OFF, this allowed color mixing and more dynamic light behavior.</p>
+<h4 id="-code-2">💻 Code<a class="anchor" href="#-code-2">#</a></h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;Adafruit_NeoPixel.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#define PIN_NEOPIXEL 12  </span><span style="color:#75715e">// Data pin
@@ -998,20 +1674,593 @@ The aim was to read data sheets, write code for embedded systems, and establish 
 </span></span><span style="display:flex;"><span>  pinMode(PIN_POWER, OUTPUT);
 </span></span><span style="display:flex;"><span>  digitalWrite(PIN_POWER, HIGH); <span style="color:#75715e">// Power on the NeoPixel
 </span></span></span><span style="display:flex;"><span>  pixel.begin();
-</span></span><span style="display:flex;"><span>  pixel.setBrightness(<span style="color:#ae81ff">50</span>); <span style="color:#75715e">// 0-255
+</span></span><span style="display:flex;"><span>  pixel.setBrightness(<span style="color:#ae81ff">55</span>); <span style="color:#75715e">// 0-255
 </span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
 </span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// Red
 </span></span></span><span style="display:flex;"><span>  pixel.show();
 </span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">500</span>);
-</span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// Green
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// Green ← Fixed!
 </span></span></span><span style="display:flex;"><span>  pixel.show();
 </span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">255</span>)); <span style="color:#75715e">// Blue
 </span></span></span><span style="display:flex;"><span>  pixel.show();
 </span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">500</span>);
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></article>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  pixel.setPixelColor(<span style="color:#ae81ff">0</span>, pixel.Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)); <span style="color:#75715e">// Off
+</span></span></span><span style="display:flex;"><span>  pixel.show();
+</span></span><span style="display:flex;"><span>  delay(<span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h4 id="-output-2">📸 Output<a class="anchor" href="#-output-2">#</a></h4>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/police-light.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>This experiment helped me understand:</p>
+<ul>
+<li>How RGB values combine to create different colors</li>
+<li>How embedded systems control smart LEDs</li>
+<li>How libraries abstract low-level hardware control</li>
+</ul>
+<hr>
+<h3 id="-4-external-leds--button--serial-monitor">🔵⚪🔴 4️⃣ External LEDs + Button + Serial Monitor<a class="anchor" href="#-4-external-leds--button--serial-monitor">#</a></h3>
+<p>After working with the onboard components, I moved to external hardware.</p>
+<p>I connected:</p>
+<ul>
+<li>🔵 Blue LED</li>
+<li>⚪ White LED</li>
+<li>🔴 Red LED</li>
+</ul>
+<p>These represent the French flag colors.</p>
+<p>Each LED was connected with a <strong>1kΩ resistor</strong> as a current-limiting resistor to protect the LEDs from excessive current.</p>
+<p>I also added:</p>
+<ul>
+<li>A push button as digital input</li>
+<li>Serial Monitor for debugging and output feedback</li>
+</ul>
+<h4 id="working-logic">Working Logic<a class="anchor" href="#working-logic">#</a></h4>
+<ul>
+<li>Initially, one LED is ON</li>
+<li>When the button is pressed, the active LED changes</li>
+<li>The sequence cycles through: Blue → White → Red → repeat</li>
+<li>Serial Monitor displays the current state</li>
+</ul>
+<p>This experiment introduced:</p>
+<ul>
+<li>Digital input using a button</li>
+<li>Debouncing considerations</li>
+<li>State management using variables</li>
+<li>Serial debugging</li>
+<li>Multi-output control</li>
+</ul>
+<h4 id="-code-3">💻 Code<a class="anchor" href="#-code-3">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Pin definitions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LED1 D0    </span><span style="color:#75715e">// D0 → first LED (this one gonna shine first)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LED2 D1    </span><span style="color:#75715e">// D1 → second LED
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LED3 D2    </span><span style="color:#75715e">// D2 → third LED
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define BUTTON D3  </span><span style="color:#75715e">// D3 → button input (main trigger)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Variables
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> currentLED <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;           
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// tracks which LED is active rn (0,1,2) and 3 = all off 😴
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> lastButtonState <span style="color:#f92672">=</span> HIGH;  
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// previous button state (HIGH = not pressed, chill state)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> buttonState <span style="color:#f92672">=</span> HIGH;      
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// current confirmed button state after debounce
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> lastDebounceTime <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// last time the button changed (used to filter noise)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> debounceDelay <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 50ms cooldown so button doesn’t spam fake presses
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  Serial.begin(<span style="color:#ae81ff">9600</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// start serial → for printing debug stuff to console
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Set LED pins as outputs
+</span></span></span><span style="display:flex;"><span>  pinMode(LED1, OUTPUT);
+</span></span><span style="display:flex;"><span>  pinMode(LED2, OUTPUT);
+</span></span><span style="display:flex;"><span>  pinMode(LED3, OUTPUT);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// LEDs → output because I control them
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Set button pin as input with internal pull-up
+</span></span></span><span style="display:flex;"><span>  pinMode(BUTTON, INPUT_PULLUP);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// default = HIGH, press = LOW (inverted logic but stable af)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Turn off all LEDs initially
+</span></span></span><span style="display:flex;"><span>  digitalWrite(LED1, LOW);
+</span></span><span style="display:flex;"><span>  digitalWrite(LED2, LOW);
+</span></span><span style="display:flex;"><span>  digitalWrite(LED3, LOW);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// clean start, no random glowing nonsense
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.println(<span style="color:#e6db74">&#34;System ready. Press button to cycle LEDs.&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// just letting you know it’s alive 😎
+</span></span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Read the button state
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">bool</span> reading <span style="color:#f92672">=</span> digitalRead(BUTTON);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// grab live button value
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check if button state changed (debounce trigger)
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">!=</span> lastButtonState) {
+</span></span><span style="display:flex;"><span>    lastDebounceTime <span style="color:#f92672">=</span> millis();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// state changed → start debounce timer
+</span></span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> ((millis() <span style="color:#f92672">-</span> lastDebounceTime) <span style="color:#f92672">&gt;</span> debounceDelay) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// if stable for 50ms → legit press
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">!=</span> buttonState) {
+</span></span><span style="display:flex;"><span>      buttonState <span style="color:#f92672">=</span> reading;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// update official button state
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// If button was just pressed (HIGH → LOW)
+</span></span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (buttonState <span style="color:#f92672">==</span> LOW) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// button press detected 🔘
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Turn off all LEDs first (reset everything)
+</span></span></span><span style="display:flex;"><span>        digitalWrite(LED1, LOW);
+</span></span><span style="display:flex;"><span>        digitalWrite(LED2, LOW);
+</span></span><span style="display:flex;"><span>        digitalWrite(LED3, LOW);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Move to next LED
+</span></span></span><span style="display:flex;"><span>        currentLED<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// go to next stage in the cycle
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (currentLED <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>) {
+</span></span><span style="display:flex;"><span>          currentLED <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; 
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// loop back → infinite cycle 🔁
+</span></span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Turn on the selected LED
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span>(currentLED) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            digitalWrite(LED1, HIGH);
+</span></span><span style="display:flex;"><span>            Serial.println(<span style="color:#e6db74">&#34;LED 1 ON&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// LED1 glow mode ✨
+</span></span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            digitalWrite(LED2, HIGH);
+</span></span><span style="display:flex;"><span>            Serial.println(<span style="color:#e6db74">&#34;LED 2 ON&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// LED2 turn 🔥
+</span></span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            digitalWrite(LED3, HIGH);
+</span></span><span style="display:flex;"><span>            Serial.println(<span style="color:#e6db74">&#34;LED 3 ON&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// LED3 flex 😎
+</span></span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>            Serial.println(<span style="color:#e6db74">&#34;All LEDs OFF&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// everyone off → nap time 😴
+</span></span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  lastButtonState <span style="color:#f92672">=</span> reading;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// store current reading for next loop
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h4 id="-output-3">📸 Output<a class="anchor" href="#-output-3">#</a></h4>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/french-flag.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>This final experiment combined:</p>
+<ul>
+<li>Input (button)</li>
+<li>Output (multiple LEDs)</li>
+<li>Communication (Serial Monitor)</li>
+</ul>
+<p>It demonstrated a complete embedded interaction system.</p>
+<hr>
+<h1 id="-part-2--rp2040-using-thonny-micropython">🟣 Part 2 – RP2040 Using Thonny (MicroPython)<a class="anchor" href="#-part-2--rp2040-using-thonny-micropython">#</a></h1>
+<p>After working with the RP2040 using the Arduino IDE, I wanted to explore a different development workflow.</p>
+<p>This time, I used <strong>MicroPython</strong> with the <strong>Thonny IDE</strong>.</p>
+<hr>
+<h2 id="-step-1--installing-thonny">🛠 Step 1 – Installing Thonny<a class="anchor" href="#-step-1--installing-thonny">#</a></h2>
+<p>I referred to the Seeed Studio wiki guide for setting up MicroPython on the XIAO RP2040.</p>
+<p>Resources used:</p>
+<ul>
+<li>
+<p>Thonny Official Website:<br>
+<a href="https://thonny.org/">https://thonny.org/</a></p>
+</li>
+<li>
+<p>Seeed Studio MicroPython Guide:<br>
+<a href="https://wiki.seeedstudio.com/XIAO-RP2040-with-MicroPython/">https://wiki.seeedstudio.com/XIAO-RP2040-with-MicroPython/</a></p>
+</li>
+</ul>
+<p>I downloaded Thonny from the official website and installed it.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start;">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-1.jpg" alt="Thonny Installation" style="width: 200px; border-radius: 8px;">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-2.jpg" alt="Thonny Setup" style="width: 200px; border-radius: 8px;">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-3.jpg" alt="Thonny Configuration" style="width: 200px; border-radius: 8px;">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-4.jpg" alt="Thonny Board Selection" style="width: 200px; border-radius: 8px;">
+</div>
+<hr>
+<h2 id="-step-2--flashing-micropython-firmware">🔌 Step 2 – Flashing MicroPython Firmware<a class="anchor" href="#-step-2--flashing-micropython-firmware">#</a></h2>
+<p>Following the Seeed Studio guide step by step:</p>
+<ul>
+<li>Connected the RP2040 while holding the BOOT button</li>
+<li>The board entered bootloader mode</li>
+<li>A new storage device appeared</li>
+<li>Downloaded the appropriate MicroPython firmware file</li>
+<li>Dragged and dropped the firmware file onto the board</li>
+</ul>
+<p>After this, the board rebooted with MicroPython installed.</p>
+<hr>
+<h2 id="-step-3--configuring-thonny">⚙️ Step 3 – Configuring Thonny<a class="anchor" href="#-step-3--configuring-thonny">#</a></h2>
+<p>Inside Thonny:</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start;">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-5.jpg" alt="Thonny Options Menu" style="width: 200px; border-radius: 8px;">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-6.jpg" alt="Thonny Interpreter Selection" style="width: 200px; border-radius: 8px;">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-7.jpg" alt="Thonny Port Configuration" style="width: 200px; border-radius: 8px;">
+</div>
+<ul>
+<li>Went to <strong>Tools → Options → Interpreter</strong></li>
+<li>Selected <strong>MicroPython (Raspberry Pi Pico)</strong></li>
+<li>Selected the correct COM port</li>
+</ul>
+<p>Once configured correctly, I was able to access the REPL (interactive Python shell).</p>
+<hr>
+<h2 id="-first-program--blink-using-micropython">💡 First Program – Blink Using MicroPython<a class="anchor" href="#-first-program--blink-using-micropython">#</a></h2>
+<p>After setting up everything, I followed the guide and implemented the basic <strong>Blink</strong> example.</p>
+<p>&lt;img src=&quot;/2026/labs/kochi/students/nadec-biju/images/week-4/thonny-8.jpg&quot; alt=&quot;MicroPython Blink Code&quot; style=&quot;width: 300px; border-radius: 8px;&quot;&gt;</p>
+<p>This was my first MicroPython program running on the RP2040.</p>
+<h3 id="-code-4">💻 Code<a class="anchor" href="#-code-4">#</a></h3>
+<pre tabindex="0"><code>from machine import Pin, Timer
+ 
+led = Pin(25, Pin.OUT)
+Counter = 0
+Fun_Num = 0
+ 
+def fun(tim):
+    global Counter
+    Counter = Counter + 1
+    print(Counter)
+    led.value(Counter%2)
+ 
+tim = Timer(-1)
+tim.init(period=1000, mode=Timer.PERIODIC, callback=fun)</code></pre><hr>
+<h2 id="output">Output<a class="anchor" href="#output">#</a></h2>
+<p>The onboard LED blinked successfully, confirming:</p>
+<ul>
+<li>MicroPython firmware was installed correctly</li>
+<li>Thonny was properly configured</li>
+<li>Communication between PC and board was working</li>
+</ul>
+<hr>
+<h2 id="-arduino-vs-micropython-workflow-difference">🔄 Arduino vs MicroPython Workflow Difference<a class="anchor" href="#-arduino-vs-micropython-workflow-difference">#</a></h2>
+<h3 id="arduino-ide">Arduino IDE:<a class="anchor" href="#arduino-ide">#</a></h3>
+<ul>
+<li>Write code</li>
+<li>Compile</li>
+<li>Upload</li>
+<li>Run</li>
+</ul>
+<h3 id="micropython-thonny">MicroPython (Thonny):<a class="anchor" href="#micropython-thonny">#</a></h3>
+<ul>
+<li>Write Python script</li>
+<li>Run directly on board</li>
+<li>No compilation step</li>
+<li>Immediate execution</li>
+</ul>
+<hr>
+<h2 id="part-3---arduino-q-uno-q">Part 3 - Arduino Q (UNO Q)<a class="anchor" href="#part-3---arduino-q-uno-q">#</a></h2>
+<p><strong>Arduino Q</strong> (also referred to as the <strong>Arduino UNO Q</strong> or <strong>UNO R4 WiFi</strong>) is a microcontroller development board that combines the simplicity of Arduino with the power of an industrial-grade microprocessor. It features a unique <strong>&ldquo;Dual-Brain&rdquo;</strong> architecture:</p>
+<ul>
+<li><strong>A Microprocessor (MPU):</strong> Powered by the <strong>Qualcomm® QRB2210</strong> (Quad-core ARM® Cortex®-A53). It runs a full <strong>Debian-based Linux OS</strong>, allowing for advanced tasks like Edge AI, Python scripting, and robust WiFi management.</li>
+<li><strong>A Microcontroller (MCU):</strong> The <strong>STM32U585</strong> (ARM® Cortex®-M33). This handles real-time hardware control, precise timing for pins, and the built-in LED matrix.</li>
+</ul>
+<p>Unlike traditional Arduino boards, the UNO Q integrates a Linux-capable processor with AI acceleration, making its development workflow closer to embedded Linux systems than microcontroller-only platforms.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-1.jpg" alt="WhatsApp Image" /></p>
+<hr>
+<h3 id="-setting-up-arduino-q-uno-q">🛠 Setting Up Arduino Q (UNO Q)<a class="anchor" href="#-setting-up-arduino-q-uno-q">#</a></h3>
+<p>For full functionality—especially for WiFi and cloud control—I use <strong>Arduino Cloud / App Lab</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-2.jpg" alt="Arduino Cloud" /></p>
+<h4 id="-installation-steps">📥 Installation Steps<a class="anchor" href="#-installation-steps">#</a></h4>
+<ol>
+<li><strong>Download:</strong> Go to the <a href="https://www.arduino.cc/en/software/#app-lab-section">Arduino Software page</a> and download <strong>Arduino App Lab / Arduino Cloud Agent</strong>.</li>
+</ol>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-3.jpg" alt="App Lab Download" /></p>
+<ol>
+<li><strong>Open Application:</strong> Launch the application on your computer.</li>
+</ol>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-4.jpg" alt="App Launch" /></p>
+<ol>
+<li>
+<p><strong>Connect:</strong> Plug in the <strong>Arduino Q (UNO R4 WiFi)</strong> using a USB-C cable.</p>
+</li>
+<li>
+<p><strong>Auto-Detection:</strong> The board should be auto-detected by the software.</p>
+</li>
+<li>
+<p><strong>Configuration:</strong></p>
+<ul>
+<li>Set <strong>Device Name</strong>.</li>
+</ul>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-5.jpg" alt="Device Name Setup" /></p>
+<ul>
+<li>Enter <strong>WiFi SSID</strong> and <strong>Password</strong>.</li>
+</ul>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-6.jpg" alt="WiFi Configuration" /></p>
+</li>
+<li>
+<p><strong>Firmware Update:</strong> Check for firmware updates and update if prompted.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-7.jpg" alt="Firmware Update Check" /></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-8.jpg" alt="Firmware Update Progress" /></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-9.jpg" alt="Firmware Installation" /></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-10.jpg" alt="Firmware Completion" /></p>
+</li>
+<li>
+<p><strong>Linux Setup:</strong> Setup the Linux credentials.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-11.jpg" alt="Linux Credentials Setup" /></p>
+</li>
+</ol>
+<p>After setup, the board is ready for App Lab based programming.</p>
+<hr>
+<h3 id="-example-1--blink-led-with-ui">💡 Example 1 — Blink LED with UI<a class="anchor" href="#-example-1--blink-led-with-ui">#</a></h3>
+<p>I tested the cloud functionality by running a basic blink sketch.</p>
+<ol>
+<li>
+<p>Select a built-in <strong>Blink example</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-12.jpg" alt="Blink Example Selection" /></p>
+</li>
+<li>
+<p>Click <strong>Run</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-13.jpg" alt="Run Button" /></p>
+</li>
+<li>
+<p>Code compiles automatically.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-14.jpg" alt="Code Compilation" /></p>
+</li>
+<li>
+<p>A webpage opens where the LED can be controlled from the browser.</p>
+ <video controls width="400" style="border-radius: 8px; max-width: 100%;">
+   <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-15.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+ </video>
+</li>
+</ol>
+<hr>
+<h3 id="-arduino-ide-programming">💻 Arduino IDE Programming<a class="anchor" href="#-arduino-ide-programming">#</a></h3>
+<p>Even though Cloud is available, the board can also be programmed using the Arduino IDE.</p>
+<h4 id="step-1--install-board-package">Step 1 — Install Board Package<a class="anchor" href="#step-1--install-board-package">#</a></h4>
+<ol>
+<li>
+<p>Open <strong>Board Manager</strong>.</p>
+</li>
+<li>
+<p>Install <strong>Arduino UNO Q Boards</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-16.jpg" alt="Board Manager" /></p>
+</li>
+</ol>
+<h4 id="step-2--install-required-libraries">Step 2 — Install Required Libraries<a class="anchor" href="#step-2--install-required-libraries">#</a></h4>
+<p>Install the following libraries to use the display:</p>
+<ul>
+<li>
+<p><code>#include &quot;ArduinoGraphics.h&quot;</code></p>
+</li>
+<li>
+<p><code>#include &quot;Arduino_LED_Matrix.h&quot;</code></p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-17.jpg" alt="Library Installation" /></p>
+</li>
+</ul>
+<hr>
+<h3 id="-example-2--led-matrix-animation--text">🟢 Example 2 — LED Matrix Animation + Text<a class="anchor" href="#-example-2--led-matrix-animation--text">#</a></h3>
+<p>Open the example code and select the <strong>Matrix Basic Code</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-18.jpg" alt="Matrix Example Code" /></p>
+<p>Code</p>
+<pre tabindex="0"><code>#include &#34;ArduinoGraphics.h&#34;
+#include &#34;Arduino_LED_Matrix.h&#34;
+
+Arduino_LED_Matrix matrix;
+
+void setup() {
+  matrix.begin();
+  matrix.textFont(Font_5x7);
+  matrix.textScrollSpeed(100);
+  matrix.clear();
+  Serial.begin(115200);
+}
+
+uint8_t shades[104] = {
+  0,0,0,0,0,0,0,0,0,0,0,0,0,
+  1,1,1,1,1,1,1,1,1,1,1,1,1,
+  2,2,2,2,2,2,2,2,2,2,2,2,2,
+  3,3,3,3,3,3,3,3,3,3,3,3,3,
+  4,4,4,4,4,4,4,4,4,4,4,4,4,
+  5,5,5,5,5,5,5,5,5,5,5,5,5,
+  6,6,6,6,6,6,6,6,6,6,6,6,6,
+  7,7,7,7,7,7,7,7,7,7,7,7,7,
+};
+
+const uint32_t animation[][5] = {
+  {0x38022020,0x810408a0,0x2200e800,0x20000000,66},
+  {0x1c011010,0x40820450,0x11007400,0x10000000,66},
+  {0x0e008808,0x20410228,0x08803a00,0x08000000,66},
+  {0x07004404,0x10208114,0x04401d00,0x04000000,66},
+  {0x03802202,0x0810408a,0x02200e80,0x02000000,66},
+  {0x01c01101,0x04082045,0x01100740,0x01000000,66},
+  {0x00e00880,0x82041022,0x808803a0,0x00000000,66},
+  {0x00700440,0x40020011,0x004401c0,0x00000000,66},
+  {0x00380200,0x20010008,0x802000e0,0x00000000,66},
+  {0x00180100,0x10008004,0x00100060,0x00000000,66},
+  {0x00080080,0x08004002,0x00080020,0x00000000,66},
+  {0x00000040,0x04002001,0x00040000,0x00000000,66},
+  {0x00000000,0x02001000,0x80000000,0x00000000,66},
+  {0x00000000,0x00000000,0x00000000,0x00000000,66}
+};
+
+void loop() {
+
+  matrix.beginText(0, 0, 127, 0, 0);
+  matrix.print(&#34;      arduino.cc/uno-q      &#34;);
+  matrix.endText(SCROLL_LEFT);
+
+  delay(1000);
+
+  matrix.setGrayscaleBits(3);
+  matrix.draw(shades);
+
+  delay(1000);
+
+  matrix.clear();
+
+  matrix.loadSequence(animation);
+  for (int i = 0; i &lt; 10; i++) {
+    matrix.playSequence();
+  }
+}</code></pre><p><strong>Action:</strong> I hit <strong>Compile</strong> and <strong>Upload</strong>.</p>
+<p><strong>Output:</strong>
+This example demonstrates:</p>
+<ul>
+<li>
+<p>Scrolling text</p>
+</li>
+<li>
+<p>Custom animation</p>
+  <video controls width="400" style="border-radius: 8px; max-width: 100%;">
+    <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-19.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</li>
+</ul>
+<hr>
+<h3 id="-custom-led-matrix-project">🧪 Custom LED Matrix Project<a class="anchor" href="#-custom-led-matrix-project">#</a></h3>
+<p>The next thing I tried out was printing on the LED matrix my own <strong>Custom Message</strong>. Below is the code for that.</p>
+<p>Code</p>
+<pre tabindex="0"><code>#include &#34;ArduinoGraphics.h&#34;
+#include &#34;Arduino_LED_Matrix.h&#34;
+Arduino_LED_Matrix matrix;
+
+void setup() {
+matrix.begin();
+matrix.textFont(Font_5x7);
+matrix.textScrollSpeed(60);
+matrix.clear();
+}
+
+void loop() {
+matrix.beginText(0, 0, 127, 0, 0);
+matrix.print(&#34;   SUPERFABLAB KOCHI   FabAcademy 26   &#34;);
+matrix.endText(SCROLL_LEFT);
+
+delay(500);
+}</code></pre><p><strong>Output:</strong>
+The matrix displayed our custom group message.</p>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-20.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<hr>
+<h2 id="-returning-to-app-lab-basic-blink-no-ui">🔄 Returning to App Lab: Basic Blink (No UI)<a class="anchor" href="#-returning-to-app-lab-basic-blink-no-ui">#</a></h2>
+<p>Then I got back to the <strong>App Lab</strong> and tested another basic blink—the one <strong>without any UI</strong>.</p>
+<p><strong>Action:</strong></p>
+<ol>
+<li>Open Arduino App Lab.</li>
+</ol>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-21.jpg" alt="App Lab Open" /></p>
+<ol>
+<li>Select the <strong>Basic Blink</strong> example (the version without the Cloud/Web Switch).</li>
+<li>Click <strong>Run</strong>.</li>
+</ol>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-22.jpg" alt="Basic Blink Example" /></p>
+<p><strong>Output:</strong>
+The board reset and the LED started blinking immediately.</p>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/arduino-q-23.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h1 id="assembling-my-own-embedded-system-the-esp32-c6-game-console">Assembling My Own Embedded System: The ESP32-C6 Game Console<a class="anchor" href="#assembling-my-own-embedded-system-the-esp32-c6-game-console">#</a></h1>
+<h3 id="part-1-the-origin-story">Part 1: The Origin Story<a class="anchor" href="#part-1-the-origin-story">#</a></h3>
+<p>It all started out as a joke. I was playing around with a NeoPixel matrix and thought, <em>&ldquo;What is something fun I could do with this?&rdquo;</em> I realized the hardware had more than enough capability to run Snake.</p>
+<p>I started having a &ldquo;vibe coding&rdquo; session with <strong>Claude</strong>, and guess what? It gave me the code. I connected everything to a breadboard, and I actually got it working!</p>
+<h4 id="the-hardware">The Hardware<a class="anchor" href="#the-hardware">#</a></h4>
+<ul>
+<li><strong>Microcontroller:</strong> Seeed Studio XIAO ESP32-C6</li>
+<li><strong>Display:</strong> NeoPixel Matrix &amp; OLED Display</li>
+<li><strong>Audio:</strong> Passive Buzzer</li>
+<li><strong>Connectivity:</strong> ESP-NOW &amp; WiFi</li>
+</ul>
+<h4 id="the-game-library">The Game Library<a class="anchor" href="#the-game-library">#</a></h4>
+<p>What started as just Snake evolved into a massive library of games:</p>
+<ul>
+<li><strong>Classics:</strong> Snake (Wall), Snake (Wrap), Tetris</li>
+<li><strong>Arcade:</strong> Flappy Bird (Easy &amp; Hard), Asteroids (Hard), Pac-Man (Easy &amp; Hard), Space Shooter, Breakout</li>
+<li><strong>Strategy/Board:</strong> TicTacToe (AI &amp; 2P), Checkers (AI &amp; 2P), Minesweeper</li>
+<li><strong>Multiplayer:</strong> Pong (Air Hockey), Tug of War (2P)</li>
+<li><strong>Extras:</strong> Dino Game</li>
+</ul>
+<hr>
+<h3 id="part-2-from-breadboard-to-pcb">Part 2: From Breadboard to PCB<a class="anchor" href="#part-2-from-breadboard-to-pcb">#</a></h3>
+<p>That night, I was hanging out at a local makerspace called <a href="https://tinkerspace.in/">Tinkerspace</a>.</p>
+<p>After handing the breadboard prototype to a few fellow makers and asking what they thought, I got motivated to add more games to it. I realized it needed a permanent body rather than a bunch of stray wires that are prone to disconnect at any moment.</p>
+<h4 id="the-build-process">The Build Process<a class="anchor" href="#the-build-process">#</a></h4>
+<ol>
+<li><strong>Soldering:</strong> I soldered up a PCB on a perfboard to make it sturdy.</li>
+</ol>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/soldering-gameboy.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<ol start="2">
+<li><strong>Vibe Coding:</strong> I got back to coding, adding a buzzer for sound.</li>
+<li><strong>Iterative Design:</strong> I added each game one by one.</li>
+<li><strong>Alpha Testing:</strong> I handed it over to the makers at Tinkerspace for testing, made revisions based on their feedback, and kept adding games.</li>
+</ol>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/alpha-testers.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<ol start="5">
+<li><strong>UI Upgrade:</strong> I added an OLED display to show the game score and a selection menu.</li>
+</ol>
+<video controls width="400" style="border-radius: 8px; max-width: 100%;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/full-gameplay.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<hr>
+<h3 id="part-3-the-qpad-integration">Part 3: The Qpad Integration<a class="anchor" href="#part-3-the-qpad-integration">#</a></h3>
+<p>I eventually got bored and was going through the <strong>Fab Academy schedule</strong> when I came across the <strong>Qpad</strong> assignment. That motivated me to create a Qpad from scratch.</p>
+<p>I soldered up everything again and went into another vibe coding session with Claude. I decided to turn the Qpad into a <strong>remote controller</strong> so I could play the 2-player games easily, rather than shifting the GameBoy unit from one hand to another.</p>
+<h4 id="how-it-works-esp-now">How it Works (ESP-NOW)<a class="anchor" href="#how-it-works-esp-now">#</a></h4>
+<ul>
+<li><strong>Protocol:</strong> It uses the <strong>ESP-NOW</strong> protocol to communicate between the Qpad and the main GameBoy unit.</li>
+<li><strong>Functionality:</strong> It relays the moves from the remote to the console.</li>
+<li><strong>Sync:</strong> It takes the required data and displays the exact same content (scores/menu) on the OLED screens of <em>both</em> the Qpad and the GameBoy simultaneously.</li>
+</ul>
+<hr>
+<h3 id="part-4-cloud-integration--high-scores">Part 4: Cloud Integration &amp; High Scores<a class="anchor" href="#part-4-cloud-integration--high-scores">#</a></h3>
+<p>Then it got me wondering: <em>Why not push my high scores to my Fab Academy website?</em></p>
+<p>I jumped onto <strong>Firebase</strong>, set up a Realtime Database, and added the API keys to my GameBoy code so that it can push the latest &ldquo;Top 3&rdquo; high scores to my site.</p>
+<h4 id="the-logic-flow">The Logic Flow<a class="anchor" href="#the-logic-flow">#</a></h4>
+<p>The system manages connectivity intelligently to avoid interrupting gameplay:</p>
+<ol>
+<li><strong>Check for High Score:</strong> The system constantly monitors if a new high score has been set.</li>
+<li><strong>Check Connection Mode:</strong>
+<ul>
+<li><strong>If playing via ESP-NOW (Qpad connected):</strong> It stores the score locally for later (to avoid breaking the low-latency link).</li>
+<li><strong>If NOT in ESP-NOW:</strong> It connects to my phone&rsquo;s personal hotspot.</li>
+</ul>
+</li>
+<li><strong>Push Data:</strong> It pushes the score into the Firebase Realtime Database.</li>
+<li><strong>Website Update:</strong> My personal website pulls the value from the JSON string in the database and updates the leaderboard automatically.</li>
+</ol>
+<h2 id="full-gameplay">Full Gameplay<a class="anchor" href="#full-gameplay">#</a></h2>
+<p>insert full-gameplay.mp4 here</p>
+<hr>
+<h1 id="ill-be-adding-the-code-and-output-for-this-section-soon">ill be adding the code and output for this section soon<a class="anchor" href="#ill-be-adding-the-code-and-output-for-this-section-soon">#</a></h1>
+</article>
  
       
 
@@ -1091,6 +2340,116 @@ The aim was to read data sheets, write code for embedded systems, and establish 
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+    <li><a href="#-introduction--what-is-embedded-programming">🧠 Introduction – What is Embedded Programming?</a></li>
+    <li><a href="#-hardware-fundamentals--from-physics-to-logic">🔬 Hardware Fundamentals – From Physics to Logic</a></li>
+    <li><a href="#-transistors--the-building-blocks-of-everything">🔌 Transistors – The Building Blocks of Everything</a>
+      <ul>
+        <li><a href="#water-tap-analogy">Water Tap Analogy:</a></li>
+      </ul>
+    </li>
+    <li><a href="#logic-gates--decision-making-using-transistors">Logic Gates – Decision Making Using Transistors</a>
+      <ul>
+        <li><a href="#-and-gate">🔹 AND Gate</a></li>
+        <li><a href="#-or-gate">🔹 OR Gate</a></li>
+        <li><a href="#-not-gate">🔹 NOT Gate</a></li>
+        <li><a href="#-xor-gate-exclusive-or">🔹 XOR Gate (Exclusive OR)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-binary-adders--how-computers-perform-arithmetic">➕ Binary Adders – How Computers Perform Arithmetic</a>
+      <ul>
+        <li><a href="#half-adder">Half Adder</a></li>
+        <li><a href="#full-adder">Full Adder</a></li>
+      </ul>
+    </li>
+    <li><a href="#-bits-bytes-and-memory">🔢 Bits, Bytes and Memory</a></li>
+    <li><a href="#-datasheet-study--rp2040">📘 Datasheet Study – RP2040</a>
+      <ul>
+        <li><a href="#rp2040-overview">RP2040 Overview</a></li>
+        <li><a href="#architecture-breakdown">Architecture Breakdown</a></li>
+        <li><a href="#-memory-architecture">🧠 Memory Architecture</a></li>
+        <li><a href="#gpio--peripheral-system">GPIO &amp; Peripheral System</a></li>
+      </ul>
+    </li>
+    <li><a href="#basics-of-embedded-programming-arduino-style">Basics of Embedded Programming (Arduino Style)</a>
+      <ul>
+        <li><a href="#void-setup">void setup()</a></li>
+        <li><a href="#void-loop">void loop()</a></li>
+        <li><a href="#define">#define</a></li>
+        <li><a href="#int">int</a></li>
+        <li><a href="#float">float</a></li>
+        <li><a href="#bool">bool</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#delay">delay()</a></li>
+        <li><a href="#serialprint">Serial.print()</a></li>
+      </ul>
+    </li>
+    <li><a href="#-additional-important-programming-concepts">🔑 Additional Important Programming Concepts</a>
+      <ul>
+        <li><a href="#pinmode">pinMode()</a></li>
+        <li><a href="#digitalread">digitalRead()</a></li>
+        <li><a href="#digitalwrite">digitalWrite()</a></li>
+        <li><a href="#analogread">analogRead()</a></li>
+        <li><a href="#pwm-pulse-width-modulation">PWM (Pulse Width Modulation)</a></li>
+        <li><a href="#conditional-statements">Conditional Statements</a></li>
+        <li><a href="#loops">Loops</a></li>
+        <li><a href="#interrupts">Interrupts</a></li>
+      </ul>
+    </li>
+    <li><a href="#my-journey-through-embedded-programming">My Journey Through Embedded Programming</a>
+      <ul>
+        <li></li>
+        <li><a href="#-part-1--rp2040-using-arduino-ide">🟣 Part 1 – RP2040 Using Arduino IDE</a></li>
+      </ul>
+    </li>
+    <li><a href="#-development-workflow-arduino--rp2040">🔄 Development Workflow (Arduino + RP2040)</a></li>
+    <li><a href="#-experiments-with-rp2040-using-arduino-ide">🧪 Experiments with RP2040 Using Arduino IDE</a>
+      <ul>
+        <li><a href="#-1-modified-blink-code-rp2040">🔹 1️⃣ Modified Blink Code (RP2040)</a></li>
+        <li><a href="#-2-boeing-vs-airbus-light-pattern-simulation">✈️ 2️⃣ Boeing vs Airbus Light Pattern Simulation</a></li>
+        <li><a href="#-3-police-lights-using-built-in-neopixel">🚨 3️⃣ Police Lights Using Built-in NeoPixel</a></li>
+        <li><a href="#-4-external-leds--button--serial-monitor">🔵⚪🔴 4️⃣ External LEDs + Button + Serial Monitor</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-step-1--installing-thonny">🛠 Step 1 – Installing Thonny</a></li>
+    <li><a href="#-step-2--flashing-micropython-firmware">🔌 Step 2 – Flashing MicroPython Firmware</a></li>
+    <li><a href="#-step-3--configuring-thonny">⚙️ Step 3 – Configuring Thonny</a></li>
+    <li><a href="#-first-program--blink-using-micropython">💡 First Program – Blink Using MicroPython</a>
+      <ul>
+        <li><a href="#-code-4">💻 Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#output">Output</a></li>
+    <li><a href="#-arduino-vs-micropython-workflow-difference">🔄 Arduino vs MicroPython Workflow Difference</a>
+      <ul>
+        <li><a href="#arduino-ide">Arduino IDE:</a></li>
+        <li><a href="#micropython-thonny">MicroPython (Thonny):</a></li>
+      </ul>
+    </li>
+    <li><a href="#part-3---arduino-q-uno-q">Part 3 - Arduino Q (UNO Q)</a>
+      <ul>
+        <li><a href="#-setting-up-arduino-q-uno-q">🛠 Setting Up Arduino Q (UNO Q)</a></li>
+        <li><a href="#-example-1--blink-led-with-ui">💡 Example 1 — Blink LED with UI</a></li>
+        <li><a href="#-arduino-ide-programming">💻 Arduino IDE Programming</a></li>
+        <li><a href="#-example-2--led-matrix-animation--text">🟢 Example 2 — LED Matrix Animation + Text</a></li>
+        <li><a href="#-custom-led-matrix-project">🧪 Custom LED Matrix Project</a></li>
+      </ul>
+    </li>
+    <li><a href="#-returning-to-app-lab-basic-blink-no-ui">🔄 Returning to App Lab: Basic Blink (No UI)</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#part-1-the-origin-story">Part 1: The Origin Story</a></li>
+        <li><a href="#part-2-from-breadboard-to-pcb">Part 2: From Breadboard to PCB</a></li>
+        <li><a href="#part-3-the-qpad-integration">Part 3: The Qpad Integration</a></li>
+        <li><a href="#part-4-cloud-integration--high-scores">Part 4: Cloud Integration &amp; High Scores</a></li>
+      </ul>
+    </li>
+    <li><a href="#full-gameplay">Full Gameplay</a></li>
   </ul>
 </nav>
 
