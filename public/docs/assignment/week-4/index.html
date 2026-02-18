@@ -28,7 +28,7 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
   <meta itemprop="description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
 The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
 Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals">
-  <meta itemprop="wordCount" content="4266">
+  <meta itemprop="wordCount" content="4109">
 
 <title>Week 04 - Embedded Programming | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -42,7 +42,7 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.555578be29ba0838a1b09f0151439ce7343f788c1959057b7052020e34cf2c9b.js" integrity="sha256-VVV4vim6CDihsJ8BUUOc5zQ/eIwZWQV7cFICDjTPLJs=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.3f2037cb43acd7efba06e7e7a70fafabf99f36d41a2105004ca8f8ebf7cc16f3.js" integrity="sha256-PyA3y0Os1&#43;&#43;6Bufnpw&#43;vq/mfNtQaIQUATKj46/fMFvM=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -982,6 +982,16 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
       </ul>
     </li>
     <li><a href="#-returning-to-app-lab-basic-blink-no-ui">🔄 Returning to App Lab: Basic Blink (No UI)</a></li>
+    <li><a href="#running-arduino-q-as-a-standalone-system">Running Arduino Q as a Standalone System</a>
+      <ul>
+        <li><a href="#step-1-connect-peripherals">Step 1: Connect Peripherals</a></li>
+        <li><a href="#step-2-login">Step 2: Login</a></li>
+        <li><a href="#step-3-open-applab">Step 3: Open AppLab</a></li>
+        <li><a href="#step-4-select-qr-code-detection-app">Step 4: Select QR Code Detection App</a></li>
+        <li><a href="#step-5-run-the-app">Step 5: Run the App</a></li>
+        <li><a href="#step-6-scan-qr-code">Step 6: Scan QR Code</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -2198,6 +2208,26 @@ The board reset and the LED started blinking immediately.</p>
   <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/Arduino-Q-23.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+<h2 id="running-arduino-q-as-a-standalone-system">Running Arduino Q as a Standalone System<a class="anchor" href="#running-arduino-q-as-a-standalone-system">#</a></h2>
+<p>Running Arduino Q as a standalone system and running apps from within instead of using IDE or external PC.</p>
+<h3 id="step-1-connect-peripherals">Step 1: Connect Peripherals<a class="anchor" href="#step-1-connect-peripherals">#</a></h3>
+<p>Connect the Arduino Q to a USB hub along with a monitor, keyboard, and mouse.<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/linux-0.jpg" alt="Setup" /></p>
+<h3 id="step-2-login">Step 2: Login<a class="anchor" href="#step-2-login">#</a></h3>
+<p>Login to the Arduino Q.</p>
+<h3 id="step-3-open-applab">Step 3: Open AppLab<a class="anchor" href="#step-3-open-applab">#</a></h3>
+<p>Open the AppLab.<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/linux-1.jpg" alt="AppLab" /></p>
+<h3 id="step-4-select-qr-code-detection-app">Step 4: Select QR Code Detection App<a class="anchor" href="#step-4-select-qr-code-detection-app">#</a></h3>
+<p>Select the QR code detection app.<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/linux-2.jpg" alt="QR App Selection" /></p>
+<h3 id="step-5-run-the-app">Step 5: Run the App<a class="anchor" href="#step-5-run-the-app">#</a></h3>
+<p>Run the application.<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/linux-3.jpg" alt="Run App" /><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/linux-4.jpg" alt="Run App Continued" /></p>
+<h3 id="step-6-scan-qr-code">Step 6: Scan QR Code<a class="anchor" href="#step-6-scan-qr-code">#</a></h3>
+<p>Scan the QR code on the browser.<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-4/linux-5.jpg" alt="QR Scan" /></p>
 <h1 id="assembling-my-own-embedded-system-the-esp32-c6-game-console">Assembling My Own Embedded System: The ESP32-C6 Game Console<a class="anchor" href="#assembling-my-own-embedded-system-the-esp32-c6-game-console">#</a></h1>
 <h3 id="part-1-the-origin-story">Part 1: The Origin Story<a class="anchor" href="#part-1-the-origin-story">#</a></h3>
 <p>It all started out as a joke. I was playing around with a NeoPixel matrix and thought, <em>&ldquo;What is something fun I could do with this?&rdquo;</em> I realized the hardware had more than enough capability to run Snake.</p>
@@ -2278,86 +2308,36 @@ The board reset and the LED started blinking immediately.</p>
   <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/Full-Gameplay.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-<div style="display: flex; justify-content: center; margin: 40px 0; perspective: 1000px;">
-  <div style="position: relative; padding: 20px;">
-    <!-- Arcade cabinet frame -->
-    <div style="
-      position: absolute;
-      top: -8px;
-      left: -8px;
-      right: -8px;
-      bottom: -8px;
-      background: linear-gradient(135deg, #FF00FF, #00FFFF);
-      border-radius: 6px;
-      opacity: 0.3;
-      filter: blur(8px);
-      z-index: 0;
-      animation: neon-glow 3s ease-in-out infinite;
-    "></div>
-<pre><code>&lt;style&gt;
-  @keyframes neon-glow {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
-  }
-&lt;/style&gt;
-
-&lt;a href=&quot;nb6-boy/&quot; style=&quot;
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 48px;
-  background: linear-gradient(180deg, #00DD00 0%, #00AA00 50%, #006600 100%);
-  border: 4px solid #000;
-  border-radius: 12px;
-  font-family: 'Courier New', 'OCR A', monospace;
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: #000;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
-  box-shadow: 
-    0 0 20px rgba(0,255,0,0.6),
-    0 12px 0 rgba(0,0,0,0.5),
-    inset 0 2px 0 rgba(255,255,255,0.4),
-    inset 0 -3px 0 rgba(0,0,0,0.4);
-  transform: translateY(0);
-  transition: all 0.08s cubic-bezier(0.34, 1.56, 0.64, 1);
-  cursor: pointer;
-  overflow: hidden;
-&quot; onmouseover=&quot;this.style.transform='translateY(6px)'; this.style.boxShadow='0 0 30px rgba(0,255,0,0.8), 0 6px 0 rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.4), inset 0 -3px 0 rgba(0,0,0,0.4)';&quot; onmouseout=&quot;this.style.transform='translateY(0)'; this.style.boxShadow='0 0 20px rgba(0,255,0,0.6), 0 12px 0 rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.4), inset 0 -3px 0 rgba(0,0,0,0.4)';&quot;&gt;
-  &lt;!-- Arcade corner decorations --&gt;
-  &lt;span style=&quot;position: absolute; top: 4px; left: 4px; font-size: 14px; color: rgba(255,0,255,0.6);&quot;&gt;▲&lt;/span&gt;
-  &lt;span style=&quot;position: absolute; top: 4px; right: 4px; font-size: 14px; color: rgba(0,255,255,0.6);&quot;&gt;▲&lt;/span&gt;
-  &lt;span style=&quot;position: absolute; bottom: 4px; left: 4px; font-size: 14px; color: rgba(0,255,255,0.6);&quot;&gt;▼&lt;/span&gt;
-  &lt;span style=&quot;position: absolute; bottom: 4px; right: 4px; font-size: 14px; color: rgba(255,0,255,0.6);&quot;&gt;▼&lt;/span&gt;
-  
-  &lt;!-- Button text with arcade flair --&gt;
-  &lt;span style=&quot;position: relative; z-index: 2;&quot;&gt;🕹️ INSERT COIN 🕹️&lt;/span&gt;
-  
-  &lt;!-- CRT scanlines --&gt;
-  &lt;svg style=&quot;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.15;
-  &quot; width=&quot;100%&quot; height=&quot;100%&quot; preserveAspectRatio=&quot;none&quot;&gt;
-    &lt;defs&gt;
-      &lt;pattern id=&quot;scanlines-arcade&quot; x=&quot;0&quot; y=&quot;2&quot; width=&quot;100%&quot; height=&quot;4&quot; patternUnits=&quot;userSpaceOnUse&quot;&gt;
-        &lt;line x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;100%&quot; y2=&quot;0&quot; stroke=&quot;#000&quot; stroke-width=&quot;2&quot;/&gt;
-      &lt;/pattern&gt;
-    &lt;/defs&gt;
-    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;url(#scanlines-arcade)&quot;/&gt;
-  &lt;/svg&gt;
-&lt;/a&gt;
-</code></pre>
-  </div>
+<div style="display: flex; justify-content: center; margin: 40px 0;">
+  <a href="nb6-boy/" style="
+    position: relative;
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(180deg, #00DD00 0%, #00AA00 100%);
+    border: 3px solid #000;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    transform: translateY(0);
+    transition: all 0.08s;
+    overflow: hidden;
+  " onmouseover="this.style.transform='translateY(3px)'; this.style.boxShadow='0 3px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3)';">
+    🕹️ LEADERBOARD
+    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.1;" width="100%" height="100%" preserveAspectRatio="none">
+      <defs>
+        <pattern id="scanlines" x="0" y="2" width="100%" height="4" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="100%" y2="0" stroke="#000" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#scanlines)"/>
+    </svg>
+  </a>
 </div>
 <hr>
 <h1 id="qpad-project">Qpad Project<a class="anchor" href="#qpad-project">#</a></h1>
@@ -2556,6 +2536,16 @@ The board reset and the LED started blinking immediately.</p>
       </ul>
     </li>
     <li><a href="#-returning-to-app-lab-basic-blink-no-ui">🔄 Returning to App Lab: Basic Blink (No UI)</a></li>
+    <li><a href="#running-arduino-q-as-a-standalone-system">Running Arduino Q as a Standalone System</a>
+      <ul>
+        <li><a href="#step-1-connect-peripherals">Step 1: Connect Peripherals</a></li>
+        <li><a href="#step-2-login">Step 2: Login</a></li>
+        <li><a href="#step-3-open-applab">Step 3: Open AppLab</a></li>
+        <li><a href="#step-4-select-qr-code-detection-app">Step 4: Select QR Code Detection App</a></li>
+        <li><a href="#step-5-run-the-app">Step 5: Run the App</a></li>
+        <li><a href="#step-6-scan-qr-code">Step 6: Scan QR Code</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
