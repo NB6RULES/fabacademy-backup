@@ -28,7 +28,7 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
   <meta itemprop="description" content="Week 04 - Embedded Programming#Week 4 focused on embedded programming, learning to program microcontrollers and understand how software controls hardware at a low level.
 The aim was to read data sheets, write code for embedded systems, and establish communication between the microcontroller and input/output devices.
 Group Assignment#Demonstrate and compare the toolchains and development workflows for available embedded architectures Individual Assignment#Browse through the data sheet for a microcontroller Write and test a program for an embedded system using a microcontroller to interact with local input &amp;/or output devices and communicate with remote wired or wireless connections Extra Credit Goals">
-  <meta itemprop="wordCount" content="4120">
+  <meta itemprop="wordCount" content="4011">
 
 <title>Week 04 - Embedded Programming | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -42,7 +42,7 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.5550879bed0226ca6dbeac31297b6c2b99fd5d081637e22dedc2112a1a49b2cc.js" integrity="sha256-VVCHm&#43;0CJsptvqwxKXtsK5n9XQgWN&#43;It7cIRKhpJssw=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.369bd35add02fdf64d0b87ddc33b31c10e0bf7bdfde81be9aaf0d6985f73424c.js" integrity="sha256-NpvTWt0C/fZNC4fdwzsxwQ4L97396BvpqvDWmF9zQkw=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -975,11 +975,14 @@ Group Assignment#Demonstrate and compare the toolchains and development workflo
       <ul>
         <li><a href="#part-1-the-origin-story">Part 1: The Origin Story</a></li>
         <li><a href="#part-2-from-breadboard-to-pcb">Part 2: From Breadboard to PCB</a></li>
-        <li><a href="#part-3-the-qpad-integration">Part 3: The Qpad Integration</a></li>
-        <li><a href="#part-4-cloud-integration--high-scores">Part 4: Cloud Integration &amp; High Scores</a></li>
+        <li><a href="#part-3-cloud-integration--high-scores">Part 3: Cloud Integration &amp; High Scores</a></li>
       </ul>
     </li>
     <li><a href="#full-gameplay">Full Gameplay</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#qpad-gameplay">Qpad Gameplay</a></li>
   </ul>
 </nav>
 
@@ -2185,12 +2188,13 @@ The board reset and the LED started blinking immediately.</p>
 <h3 id="part-1-the-origin-story">Part 1: The Origin Story<a class="anchor" href="#part-1-the-origin-story">#</a></h3>
 <p>It all started out as a joke. I was playing around with a NeoPixel matrix and thought, <em>&ldquo;What is something fun I could do with this?&rdquo;</em> I realized the hardware had more than enough capability to run Snake.</p>
 <p>I started having a &ldquo;vibe coding&rdquo; session with <strong>Claude</strong>, and guess what? It gave me the code. I connected everything to a breadboard, and I actually got it working!</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/nb6-boy-1.jpg" alt="NB6 Boy GameBoy 1" /></p>
 <h4 id="the-hardware">The Hardware<a class="anchor" href="#the-hardware">#</a></h4>
 <ul>
 <li><strong>Microcontroller:</strong> Seeed Studio XIAO ESP32-C6</li>
 <li><strong>Display:</strong> NeoPixel Matrix &amp; OLED Display</li>
 <li><strong>Audio:</strong> Passive Buzzer</li>
-<li><strong>Connectivity:</strong> ESP-NOW &amp; WiFi</li>
+<li><strong>Connectivity:</strong> WiFi</li>
 </ul>
 <h4 id="the-game-library">The Game Library<a class="anchor" href="#the-game-library">#</a></h4>
 <p>What started as just Snake evolved into a massive library of games:</p>
@@ -2201,7 +2205,21 @@ The board reset and the LED started blinking immediately.</p>
 <li><strong>Multiplayer:</strong> Pong (Air Hockey), Tug of War (2P)</li>
 <li><strong>Extras:</strong> Dino Game</li>
 </ul>
-<hr>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; justify-items: center;">
+  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <img src="/2026/labs/kochi/students/nadec-biju/images/week-4/nb6-boy-2.jpg" alt="NB6 Boy GameBoy 2" style="width: 100%; height: auto; display: block;">
+  </div>
+  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <img src="/2026/labs/kochi/students/nadec-biju/images/week-4/nb6-boy-3.jpg" alt="NB6 Boy GameBoy 3" style="width: 100%; height: auto; display: block;">
+  </div>
+  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <img src="/2026/labs/kochi/students/nadec-biju/images/week-4/nb6-boy-4.jpg" alt="NB6 Boy GameBoy 4" style="width: 100%; height: auto; display: block;">
+  </div>
+  <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <img src="/2026/labs/kochi/students/nadec-biju/images/week-4/nb6-boy-5.jpg" alt="NB6 Boy GameBoy 5" style="width: 100%; height: auto; display: block;">
+  </div>
+</div>
+---
 <h3 id="part-2-from-breadboard-to-pcb">Part 2: From Breadboard to PCB<a class="anchor" href="#part-2-from-breadboard-to-pcb">#</a></h3>
 <p>That night, I was hanging out at a local makerspace called <a href="https://tinkerspace.in/">Tinkerspace</a>.</p>
 <p>After handing the breadboard prototype to a few fellow makers and asking what they thought, I got motivated to add more games to it. I realized it needed a permanent body rather than a bunch of stray wires that are prone to disconnect at any moment.</p>
@@ -2226,18 +2244,7 @@ The board reset and the LED started blinking immediately.</p>
 <li><strong>UI Upgrade:</strong> I added an OLED display to show the game score and a selection menu.</li>
 </ol>
 <hr>
-<h3 id="part-3-the-qpad-integration">Part 3: The Qpad Integration<a class="anchor" href="#part-3-the-qpad-integration">#</a></h3>
-<p>I eventually got bored and was going through the <strong>Fab Academy schedule</strong> when I came across the <strong>Qpad</strong> assignment. That motivated me to create a Qpad from scratch.</p>
-<p>I soldered up everything again and went into another vibe coding session with Claude. I decided to turn the Qpad into a <strong>remote controller</strong> so I could play the 2-player games easily, rather than shifting the GameBoy unit from one hand to another.</p>
-<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/qpad.jpg" alt="qpad" /></p>
-<h4 id="how-it-works-esp-now">How it Works (ESP-NOW)<a class="anchor" href="#how-it-works-esp-now">#</a></h4>
-<ul>
-<li><strong>Protocol:</strong> It uses the <strong>ESP-NOW</strong> protocol to communicate between the Qpad and the main GameBoy unit.</li>
-<li><strong>Functionality:</strong> It relays the moves from the remote to the console.</li>
-<li><strong>Sync:</strong> It takes the required data and displays the exact same content (scores/menu) on the OLED screens of <em>both</em> the Qpad and the GameBoy simultaneously.</li>
-</ul>
-<hr>
-<h3 id="part-4-cloud-integration--high-scores">Part 4: Cloud Integration &amp; High Scores<a class="anchor" href="#part-4-cloud-integration--high-scores">#</a></h3>
+<h3 id="part-3-cloud-integration--high-scores">Part 3: Cloud Integration &amp; High Scores<a class="anchor" href="#part-3-cloud-integration--high-scores">#</a></h3>
 <p>Then it got me wondering: <em>Why not push my high scores to my Fab Academy website?</em></p>
 <p>I jumped onto <strong>Firebase</strong>, set up a Realtime Database, and added the API keys to my GameBoy code so that it can push the latest &ldquo;Top 3&rdquo; high scores to my site.</p>
 <h4 id="the-logic-flow">The Logic Flow<a class="anchor" href="#the-logic-flow">#</a></h4>
@@ -2246,8 +2253,7 @@ The board reset and the LED started blinking immediately.</p>
 <li><strong>Check for High Score:</strong> The system constantly monitors if a new high score has been set.</li>
 <li><strong>Check Connection Mode:</strong>
 <ul>
-<li><strong>If playing via ESP-NOW (Qpad connected):</strong> It stores the score locally for later (to avoid breaking the low-latency link).</li>
-<li><strong>If NOT in ESP-NOW:</strong> It connects to my phone&rsquo;s personal hotspot.</li>
+<li>Connects to my phone&rsquo;s personal hotspot.</li>
 </ul>
 </li>
 <li><strong>Push Data:</strong> It pushes the score into the Firebase Realtime Database.</li>
@@ -2259,7 +2265,24 @@ The board reset and the LED started blinking immediately.</p>
   Your browser does not support the video tag.
 </video>
 <hr>
-<h1 id="ill-be-adding-the-code-and-output-for-this-section-soon">ill be adding the code and output for this section soon<a class="anchor" href="#ill-be-adding-the-code-and-output-for-this-section-soon">#</a></h1>
+<h1 id="qpad-project">Qpad Project<a class="anchor" href="#qpad-project">#</a></h1>
+<p>While going through the <strong>Fab Academy schedule</strong>, I came across the <strong>Qpad</strong> assignment. I referred to the documentation:
+<a href="https://gitlab.cba.mit.edu/quentinbolsee/qpad-xiao">https://gitlab.cba.mit.edu/quentinbolsee/qpad-xiao</a></p>
+<p>I built my own Qpad as a <strong>separate project</strong> using a <strong>Raspberry Pi-based setup</strong>.</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-4/qpad.jpg" alt="qpad" /></p>
+<h2 id="qpad-gameplay">Qpad Gameplay<a class="anchor" href="#qpad-gameplay">#</a></h2>
+<p>prompt used to generate the games:</p>
+<pre tabindex="0"><code>https://claude.ai/share/b8900a25-de2e-4065-bad0-c78baf9f22c8</code></pre><video controls muted width="400" style="border-radius: 8px; max-width: 100%; display: block; margin: 0 auto;">
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-4/qpad-games.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<hr>
+<div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+  <a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: white; color: #667eea; font-weight: bold; font-size: 16px; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)';">
+    ⬇️ Download All Files from Week 4
+  </a>
+</div>
+<hr>
 </article>
  
       
@@ -2445,11 +2468,14 @@ The board reset and the LED started blinking immediately.</p>
       <ul>
         <li><a href="#part-1-the-origin-story">Part 1: The Origin Story</a></li>
         <li><a href="#part-2-from-breadboard-to-pcb">Part 2: From Breadboard to PCB</a></li>
-        <li><a href="#part-3-the-qpad-integration">Part 3: The Qpad Integration</a></li>
-        <li><a href="#part-4-cloud-integration--high-scores">Part 4: Cloud Integration &amp; High Scores</a></li>
+        <li><a href="#part-3-cloud-integration--high-scores">Part 3: Cloud Integration &amp; High Scores</a></li>
       </ul>
     </li>
     <li><a href="#full-gameplay">Full Gameplay</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#qpad-gameplay">Qpad Gameplay</a></li>
   </ul>
 </nav>
 
