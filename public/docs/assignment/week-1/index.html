@@ -27,7 +27,7 @@ Instead of actually making stuff this week, we’re setting up all the tools and
 Instead of actually making stuff this week, we’re setting up all the tools and systems we’ll use for the rest of the program.">
   <meta itemprop="datePublished" content="2026-01-22T21:00:00+05:30">
   <meta itemprop="dateModified" content="2026-01-22T21:00:00+05:30">
-  <meta itemprop="wordCount" content="4500">
+  <meta itemprop="wordCount" content="4516">
 
 <title>Week 01 - Principles and Practices , Project management | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -41,7 +41,7 @@ Instead of actually making stuff this week, we’re setting up all the tools and
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.9ad70099de7dbfb7e917b94200d07fe2de905c137757983943d16a23a43f0a41.js" integrity="sha256-mtcAmd59v7fpF7lCANB/4t6QXBN3V5g5Q9FqI6Q/CkE=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.4b578cf21383d5eb3fd07cf729e9351d859bcc8e6d3d001d1e759176a5362fce.js" integrity="sha256-S1eM8hOD1es/0Hz3Kek1HYWbzI5tPQAdHnWRdqU2L84=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -1540,14 +1540,17 @@ This part is about how I logged in to GitLab, got my repository, and set up SSH 
 <hr>
 <h2 id="how-i-downloaded-my-repository">How I Downloaded My Repository<a class="anchor" href="#how-i-downloaded-my-repository">#</a></h2>
 <p>I went to the folder where I wanted my project and typed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git@gitlab.com:username/repository-name.git</span></span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git@gitlab.com:username/repository-name.git</span></span></code></pre></div><p><img src="/2026/labs/kochi/students/nadec-biju/images/week-1/git-clone.jpg" alt="git clone output" /></p>
+<hr>
 <h1 id="what-i-do-with-git-every-day">What I Do With Git Every Day<a class="anchor" href="#what-i-do-with-git-every-day">#</a></h1>
 <p>After I set everything up the first time, here&rsquo;s what I do every day to update my documentation and files.</p>
 <p>First I check what changed:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status </span></span></code></pre></div><p>Then I add all my changes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .</span></span></code></pre></div><p>Save my changes with a note about what I did:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Week 01 documentation update&#34;</span></span></span></code></pre></div><p>And finally upload everything to GitLab:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push</span></span></code></pre></div><h1 id="how-i-started-making-my-documentation-website">How I Started Making My Documentation Website<a class="anchor" href="#how-i-started-making-my-documentation-website">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push</span></span></code></pre></div><p><img src="/2026/labs/kochi/students/nadec-biju/images/week-1/git-push.jpg" alt="git push output" /></p>
+<hr>
+<h1 id="how-i-started-making-my-documentation-website">How I Started Making My Documentation Website<a class="anchor" href="#how-i-started-making-my-documentation-website">#</a></h1>
 <p>So I made a basic HTML website first to understand how websites work. But then I wanted something better for my Fab Academy stuff.</p>
 <p>I talked to my friend <strong>Rishi Krishna</strong> (<a href="https://rishikrishna.com/">https://rishikrishna.com/</a>) and he told me about this cool thing called <strong>Hugo</strong>. It&rsquo;s way easier than writing HTML for everything!</p>
 <hr>
@@ -2134,6 +2137,8 @@ So if you edit something directly in <code>public</code>, it&rsquo;ll get delete
 <li>I copied the text of the Student Agreement into that file.</li>
 <li>I added a link to the Student Agreement in my agreement page under a button.</li>
 </ol>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/Student-agreement-1.jpg" alt="Student Agreement" />
+I have also pushed the agreement file to GitLab so it&rsquo;s all saved and online.</p>
 <h2 id="websites-that-helped-me">Websites That Helped Me<a class="anchor" href="#websites-that-helped-me">#</a></h2>
 <p>These websites helped me figure out how to do all this:</p>
 <ul>
