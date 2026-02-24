@@ -31,7 +31,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 The aim was to understand design rules for 3D printing, test printer capabilities, and explore 3D scanning workflows.
 This week continued the digital fabrication journey, adding additive manufacturing to the subtractive processes learned earlier.
 Group Assignment#Test the design rules for your 3D printers Characterize your printer(s): Dimensions Tolerances Surface quality Support requirements Individual Assignment#Design and 3D print an object that could not be easily made subtractively 3D scan an object, try to prepare it for printing Extra Credit Goals">
-  <meta itemprop="wordCount" content="900">
+  <meta itemprop="wordCount" content="1278">
 
 <title>Week 05 - 3D Scanning and Printing | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.f9c9630f7953f6c7327056db58427a88da732227e4a902fe05ddd149c4f6cd75.js" integrity="sha256-&#43;cljD3lT9scycFbbWEJ6iNpzIifkqQL&#43;Bd3RScT2zXU=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.ffc469a11d9f2f567cfdff204624cf60fb33514948d777c83f9a180467fe82a0.js" integrity="sha256-/8RpoR2fL1Z8/f8gRiTPYPszUUlI13fIP5oYBGf&#43;gqA=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -928,6 +928,31 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
         <li><a href="#why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively</a></li>
       </ul>
     </li>
+    <li><a href="#item-3--print-in-place-engine-model">Item 3 – Print-in-Place Engine Model</a>
+      <ul>
+        <li><a href="#concept-selection">Concept Selection</a></li>
+        <li><a href="#design-process-1">Design Process</a></li>
+        <li><a href="#key-design-considerations">Key Design Considerations</a></li>
+        <li><a href="#why-this-cannot-be-made-subtractively-1">Why This Cannot Be Made Subtractively</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#workflow-1--artec-leo-3d-scanner">Workflow 1 – Artec Leo 3D Scanner</a>
+      <ul>
+        <li><a href="#observations">Observations</a></li>
+        <li><a href="#status">Status</a></li>
+      </ul>
+    </li>
+    <li><a href="#workflow-2--kiri-engine-mobile-app">Workflow 2 – Kiri Engine (Mobile App)</a>
+      <ul>
+        <li><a href="#scan-subject">Scan Subject</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#observations-1">Observations</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
 
@@ -1211,6 +1236,133 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
 </ul>
 <p>Additive manufacturing allows it to be printed as a single articulated object.</p>
 <hr>
+<h2 id="item-3--print-in-place-engine-model">Item 3 – Print-in-Place Engine Model<a class="anchor" href="#item-3--print-in-place-engine-model">#</a></h2>
+<p>For the third item, my instructor <strong>Saheen</strong> asked me to design something that combines:</p>
+<ul>
+<li><strong>Clearances</strong></li>
+<li><strong>Bridging</strong></li>
+<li><strong>Print-in-place mechanisms</strong></li>
+</ul>
+<h3 id="concept-selection">Concept Selection<a class="anchor" href="#concept-selection">#</a></h3>
+<p>Initially, I considered designing a <strong>car model</strong>, but I decided to push further and create something more mechanically meaningful.</p>
+<p>I chose to design a <strong>simple engine model</strong> that includes:</p>
+<ul>
+<li>Multiple moving parts</li>
+<li>Tight clearances</li>
+<li>Internal mechanisms assembled in a single print</li>
+</ul>
+<h3 id="design-process-1">Design Process<a class="anchor" href="#design-process-1">#</a></h3>
+<ul>
+<li>Used <strong>Fusion 360</strong> in <strong>hybrid modeling mode</strong></li>
+<li>Designed multiple components as part of a single system:
+<ul>
+<li><strong>Crankshaft</strong></li>
+<li><strong>Piston</strong></li>
+<li><strong>Connecting Rod</strong></li>
+<li><strong>Outer Casing</strong></li>
+</ul>
+</li>
+</ul>
+<p>All components were designed such that they:</p>
+<ul>
+<li>Exist within the same assembly</li>
+<li>Have <strong>precise clearances</strong> to allow motion after printing</li>
+<li>Do not require post-assembly</li>
+</ul>
+<h3 id="key-design-considerations">Key Design Considerations<a class="anchor" href="#key-design-considerations">#</a></h3>
+<h4 id="clearances">Clearances<a class="anchor" href="#clearances">#</a></h4>
+<ul>
+<li>Small gaps were introduced between moving parts</li>
+<li>Ensured parts do not fuse during printing</li>
+<li>Critical for motion in:
+<ul>
+<li>Crank rotation</li>
+<li>Piston sliding</li>
+</ul>
+</li>
+</ul>
+<h4 id="bridging">Bridging<a class="anchor" href="#bridging">#</a></h4>
+<ul>
+<li>Internal features required unsupported spans</li>
+<li>Bridge lengths were kept within tested limits (~20 mm)</li>
+<li>Ensured clean formation without sagging</li>
+</ul>
+<h4 id="print-in-place-mechanism">Print-in-Place Mechanism<a class="anchor" href="#print-in-place-mechanism">#</a></h4>
+<ul>
+<li>Entire engine is printed as a <strong>single unit</strong></li>
+<li>No assembly required</li>
+<li>Moving parts function immediately after print</li>
+</ul>
+<h3 id="why-this-cannot-be-made-subtractively-1">Why This Cannot Be Made Subtractively<a class="anchor" href="#why-this-cannot-be-made-subtractively-1">#</a></h3>
+<ul>
+<li>Internal mechanisms are enclosed within the casing</li>
+<li>Tools cannot access internal features</li>
+<li>Would require splitting into multiple parts and assembling</li>
+</ul>
+<p>This makes it a strong example of <strong>additive manufacturing advantage</strong></p>
+<hr>
+<h1 id="3d-scanning">3D Scanning<a class="anchor" href="#3d-scanning">#</a></h1>
+<p>For the scanning part of the assignment, I explored <strong>two different workflows</strong>:</p>
+<hr>
+<h2 id="workflow-1--artec-leo-3d-scanner">Workflow 1 – Artec Leo 3D Scanner<a class="anchor" href="#workflow-1--artec-leo-3d-scanner">#</a></h2>
+<ul>
+<li>Used the <strong>Artec Leo</strong> handheld 3D scanner</li>
+<li>Scanned a <strong>stool</strong></li>
+</ul>
+<h3 id="observations">Observations<a class="anchor" href="#observations">#</a></h3>
+<ul>
+<li>Very high accuracy</li>
+<li>Real-time feedback while scanning</li>
+<li>Good for large and medium-sized objects</li>
+</ul>
+<h3 id="status">Status<a class="anchor" href="#status">#</a></h3>
+<ul>
+<li>Scan completed successfully</li>
+<li><strong>Post-processing is pending</strong></li>
+</ul>
+<hr>
+<h2 id="workflow-2--kiri-engine-mobile-app">Workflow 2 – Kiri Engine (Mobile App)<a class="anchor" href="#workflow-2--kiri-engine-mobile-app">#</a></h2>
+<ul>
+<li>Used my phone with the <strong>Kiri Engine</strong> app</li>
+<li>Captured multiple images around the subject</li>
+</ul>
+<h3 id="scan-subject">Scan Subject<a class="anchor" href="#scan-subject">#</a></h3>
+<ul>
+<li>My classmate <strong>Merin</strong></li>
+</ul>
+<h3 id="process">Process<a class="anchor" href="#process">#</a></h3>
+<ul>
+<li>Took multiple photos from different angles</li>
+<li>Uploaded to Kiri Engine for processing</li>
+<li>Generated a 3D model using photogrammetry</li>
+</ul>
+<h3 id="observations-1">Observations<a class="anchor" href="#observations-1">#</a></h3>
+<ul>
+<li>Easy to use and accessible</li>
+<li>Good results for human subjects</li>
+<li>Quality depends on:
+<ul>
+<li>Lighting</li>
+<li>Image coverage</li>
+<li>Stability while capturing</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="next-steps">Next Steps<a class="anchor" href="#next-steps">#</a></h2>
+<ul>
+<li>Clean up the scan of Merin</li>
+<li>Fix mesh artifacts and noise</li>
+<li>Prepare it for printing</li>
+<li><strong>3D print a scaled model</strong></li>
+</ul>
+<hr>
+<p>This concludes my work for this week, covering:</p>
+<ul>
+<li>Group assignment (design rules testing)</li>
+<li>Three self-designed 3D printed objects</li>
+<li>Two different 3D scanning workflows</li>
+</ul>
 </article>
  
       
@@ -1332,6 +1484,31 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
         <li><a href="#why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively</a></li>
       </ul>
     </li>
+    <li><a href="#item-3--print-in-place-engine-model">Item 3 – Print-in-Place Engine Model</a>
+      <ul>
+        <li><a href="#concept-selection">Concept Selection</a></li>
+        <li><a href="#design-process-1">Design Process</a></li>
+        <li><a href="#key-design-considerations">Key Design Considerations</a></li>
+        <li><a href="#why-this-cannot-be-made-subtractively-1">Why This Cannot Be Made Subtractively</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#workflow-1--artec-leo-3d-scanner">Workflow 1 – Artec Leo 3D Scanner</a>
+      <ul>
+        <li><a href="#observations">Observations</a></li>
+        <li><a href="#status">Status</a></li>
+      </ul>
+    </li>
+    <li><a href="#workflow-2--kiri-engine-mobile-app">Workflow 2 – Kiri Engine (Mobile App)</a>
+      <ul>
+        <li><a href="#scan-subject">Scan Subject</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#observations-1">Observations</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
 
