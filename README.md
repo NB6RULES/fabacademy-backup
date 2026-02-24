@@ -154,9 +154,7 @@ A **multi-disciplinary system** integrating:
 ## 🧑‍💼 Experience Highlights
 
 - **Team Captain – Tarusa Motorsports**  
-  - AIR 1 Overall  
 - **Design Lead – Hermes CUSAT**  
-  - Best Design Winner  
 - **Intern – Indian Racing League / Formula 4**  
 - **Founding Intern – Pre6 (AI Startup)**  
 
