@@ -31,7 +31,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 The aim was to understand design rules for 3D printing, test printer capabilities, and explore 3D scanning workflows.
 This week continued the digital fabrication journey, adding additive manufacturing to the subtractive processes learned earlier.
 Group Assignment#Test the design rules for your 3D printers Characterize your printer(s): Dimensions Tolerances Surface quality Support requirements Individual Assignment#Design and 3D print an object that could not be easily made subtractively 3D scan an object, try to prepare it for printing Extra Credit Goals">
-  <meta itemprop="wordCount" content="1354">
+  <meta itemprop="wordCount" content="1100">
 
 <title>Week 05 - 3D Scanning and Printing | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.35e1cc5fb16433abf1284bd96a97847f97532ce4eddaeeac3ade3ea607eb2a38.js" integrity="sha256-NeHMX7FkM6vxKEvZapeEf5dTLOTt2u6sOt4&#43;pgfrKjg=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.e93f0dab565d5fce527b9dd3b74ef02c055f26ada944e26b83a653c494deb716.js" integrity="sha256-6T8Nq1ZdX85Se53Tt07wLAVfJq2pROJrg6ZTxJTetxY=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -892,21 +892,22 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
   <ul>
     <li><a href="#group-assignment-1">Group Assignment</a>
       <ul>
-        <li><a href="#testing-the-design-rules-for-our-3d-printers">Testing the Design Rules for Our 3D Printers</a></li>
-        <li><a href="#key-findings">Key Findings</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#observations-and-learnings">Observations and Learnings</a></li>
+        <li><a href="#importance">Importance</a></li>
       </ul>
     </li>
-    <li><a href="#quick-comparison-subtractive-vs-additive-manufacturing">Quick Comparison: Subtractive vs Additive Manufacturing</a>
+    <li><a href="#subtractive-vs-additive-manufacturing">Subtractive vs Additive Manufacturing</a>
       <ul>
-        <li><a href="#why-this-matters">Why This Matters</a></li>
+        <li><a href="#key-insight">Key Insight</a></li>
       </ul>
     </li>
   </ul>
 
   <ul>
-    <li><a href="#printer-and-material-used">Printer and Material Used</a>
+    <li><a href="#machine-and-material">Machine and Material</a>
       <ul>
-        <li><a href="#filament-specifications">Filament Specifications:</a></li>
+        <li><a href="#filament-specifications">Filament Specifications</a></li>
       </ul>
     </li>
   </ul>
@@ -915,44 +916,48 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
     <li><a href="#item-1--3d-octagonal-lattice-structure">Item 1 – 3D Octagonal Lattice Structure</a>
       <ul>
         <li><a href="#design-process">Design Process</a></li>
-        <li><a href="#design-considerations-based-on-group-assignment">Design Considerations (Based on Group Assignment)</a></li>
-        <li><a href="#why-these-constraints-matter">Why These Constraints Matter</a></li>
-        <li><a href="#why-this-object-cannot-be-made-subtractively">Why This Object Cannot Be Made Subtractively</a></li>
+        <li><a href="#design-considerations">Design Considerations</a></li>
+        <li><a href="#printing-process">Printing Process</a></li>
+        <li><a href="#hero-shots">Hero Shots</a></li>
       </ul>
     </li>
     <li><a href="#item-2--goblin-flexi-toy">Item 2 – Goblin Flexi Toy</a>
       <ul>
-        <li><a href="#initial-approach">Initial Approach</a></li>
-        <li><a href="#cutter-design-process">Cutter Design Process</a></li>
-        <li><a href="#boolean-workflow-in-bambu-studio">Boolean Workflow in Bambu Studio</a></li>
-        <li><a href="#why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#design-workflow">Design Workflow</a></li>
+        <li><a href="#printing-process-1">Printing Process</a></li>
+        <li><a href="#hero-shots-1">Hero Shots</a></li>
       </ul>
     </li>
+    <li><a href="#goblin-printing-4"><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-7.jpg" alt="Goblin Printing 1"> <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-8.jpg" alt="Goblin Printing 2"> <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-9.jpg" alt="Goblin Printing 3"> <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-10.jpg" alt="Goblin Printing 4"></a></li>
     <li><a href="#item-3--print-in-place-engine-model">Item 3 – Print-in-Place Engine Model</a>
       <ul>
-        <li><a href="#concept-selection">Concept Selection</a></li>
+        <li><a href="#concept">Concept</a></li>
         <li><a href="#design-process-1">Design Process</a></li>
-        <li><a href="#key-design-considerations">Key Design Considerations</a></li>
-        <li><a href="#why-this-cannot-be-made-subtractively-1">Why This Cannot Be Made Subtractively</a></li>
+        <li><a href="#key-considerations">Key Considerations</a></li>
+        <li><a href="#printing-process-2">Printing Process</a></li>
+        <li><a href="#hero-shots-2">Hero Shots</a></li>
       </ul>
     </li>
+    <li><a href="#conclusion-3d-printing">Conclusion (3D Printing)</a></li>
   </ul>
 
   <ul>
-    <li><a href="#workflow-1--artec-leo-3d-scanner">Workflow 1 – Artec Leo 3D Scanner</a>
+    <li><a href="#workflow-1--artec-leo-scanner">Workflow 1 – Artec Leo Scanner</a>
       <ul>
-        <li><a href="#observations">Observations</a></li>
+        <li><a href="#process-1">Process</a></li>
+        <li><a href="#object-scanned">Object Scanned</a></li>
         <li><a href="#status">Status</a></li>
       </ul>
     </li>
-    <li><a href="#workflow-2--kiri-engine-mobile-app">Workflow 2 – Kiri Engine (Mobile App)</a>
+    <li><a href="#workflow-2--kiri-engine-mobile">Workflow 2 – Kiri Engine (Mobile)</a>
       <ul>
-        <li><a href="#scan-subject">Scan Subject</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#observations-1">Observations</a></li>
+        <li><a href="#process-2">Process</a></li>
+        <li><a href="#object-scanned-1">Object Scanned</a></li>
+        <li><a href="#next-plan">Next Plan</a></li>
       </ul>
     </li>
-    <li><a href="#next-steps">Next Steps</a></li>
+    <li><a href="#final-summary">Final Summary</a></li>
   </ul>
 </nav>
 
@@ -1052,33 +1057,48 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
 <hr>
 <h2 id="group-assignment-1">Group Assignment<a class="anchor" href="#group-assignment-1">#</a></h2>
 <p>🔗 <a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week05/">https://fabacademy.org/2026/labs/kochi/group_assignmetns/week05/</a></p>
-<h3 id="testing-the-design-rules-for-our-3d-printers">Testing the Design Rules for Our 3D Printers<a class="anchor" href="#testing-the-design-rules-for-our-3d-printers">#</a></h3>
-<p>For the group assignment, we focused on <strong>understanding the limitations and capabilities of our 3D printers</strong> by printing standardized test models.</p>
-<p>Some of the key parameters we evaluated:</p>
+<h3 id="overview">Overview<a class="anchor" href="#overview">#</a></h3>
+<p>As part of the group assignment, we focused on <strong>understanding the design rules and physical limitations of our 3D printers</strong> by printing and analyzing test geometries.</p>
+<p>The goal was to experimentally determine:</p>
 <ul>
-<li><strong>Overhang angles</strong></li>
-<li><strong>Bridging distances</strong></li>
-<li><strong>Wall thickness</strong></li>
-<li><strong>Clearances / tolerances</strong></li>
-<li><strong>Support performance</strong></li>
-<li><strong>Dimensional accuracy</strong></li>
+<li>Maximum <strong>bridging length</strong></li>
+<li>Maximum <strong>overhang angle without supports</strong></li>
+<li>Minimum <strong>clearance between moving parts</strong></li>
+<li>Wall thickness limits</li>
+<li>Dimensional accuracy</li>
 </ul>
-<p>This testing helped us determine:</p>
+<h3 id="observations-and-learnings">Observations and Learnings<a class="anchor" href="#observations-and-learnings">#</a></h3>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/group-1.jpg" alt="Group Assignment Test 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/group-2.jpg" alt="Group Assignment Test 2" /></p>
 <ul>
-<li>The maximum unsupported <strong>bridge length</strong></li>
-<li>The maximum printable <strong>overhang angle without support</strong></li>
-<li>Minimum feature sizes</li>
-<li>Tolerance values for press-fit or movable assemblies</li>
+<li>
+<p><strong>Bridging:</strong><br>
+The printer was able to handle bridges up to ~20 mm effectively. Beyond this, sagging and stringing began to occur.</p>
+</li>
+<li>
+<p><strong>Overhangs:</strong><br>
+Angles up to <strong>45°</strong> printed cleanly without supports. Angles beyond this required support structures for good surface quality.</p>
+</li>
+<li>
+<p><strong>Clearances:</strong><br>
+Small gaps are critical for moving parts. Insufficient clearance leads to fused components. Generally keep the <strong>clearance greater than 0.3mm</strong> for PLA.</p>
+</li>
+<li>
+<p><strong>Supports and Orientation:</strong><br>
+Print orientation plays a major role in reducing the need for supports and improving surface finish.</p>
+</li>
 </ul>
-<h3 id="key-findings">Key Findings<a class="anchor" href="#key-findings">#</a></h3>
+<h3 id="importance">Importance<a class="anchor" href="#importance">#</a></h3>
+<p>This testing directly influenced my individual designs, ensuring:</p>
 <ul>
-<li>Bridges performed reliably up to ~20 mm without sagging.</li>
-<li>Overhangs were clean up to around <strong>45°</strong> without support.</li>
-<li>Clearances below certain thresholds resulted in fused parts.</li>
+<li>No unnecessary supports</li>
+<li>Better print quality</li>
+<li>Functional print-in-place mechanisms</li>
 </ul>
-<p>These results directly influenced the design decisions in my individual assignment.</p>
 <hr>
-<h2 id="quick-comparison-subtractive-vs-additive-manufacturing">Quick Comparison: Subtractive vs Additive Manufacturing<a class="anchor" href="#quick-comparison-subtractive-vs-additive-manufacturing">#</a></h2>
+<h2 id="subtractive-vs-additive-manufacturing">Subtractive vs Additive Manufacturing<a class="anchor" href="#subtractive-vs-additive-manufacturing">#</a></h2>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/manufacturing-1.jpg" alt="Subtractive vs Additive Manufacturing" />
+img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-manufacturing/">https://www.radsourcing.com/blog/additive-and-subtractive-manufacturing/</a></p>
 <table>
   <thead>
       <tr>
@@ -1088,280 +1108,284 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
   </thead>
   <tbody>
       <tr>
-          <td>Material is <strong>removed</strong> from a solid block</td>
-          <td>Material is <strong>added layer by layer</strong></td>
+          <td>Material is removed from a block</td>
+          <td>Material is added layer by layer</td>
       </tr>
       <tr>
-          <td>Examples: CNC milling, turning</td>
+          <td>Examples: CNC, milling, turning</td>
           <td>Example: FDM 3D printing</td>
       </tr>
       <tr>
-          <td>Limited by tool access</td>
-          <td>Can create complex internal geometries</td>
+          <td>Limited by tool accessibility</td>
+          <td>Can create internal geometries</td>
       </tr>
       <tr>
-          <td>More material waste</td>
+          <td>Generates material waste</td>
           <td>Minimal waste</td>
       </tr>
       <tr>
-          <td>Stronger bulk properties (depending on process)</td>
-          <td>Layer-dependent strength</td>
+          <td>Requires multiple setups for complex parts</td>
+          <td>Can produce complex parts in one go</td>
       </tr>
   </tbody>
 </table>
-<h3 id="why-this-matters">Why This Matters<a class="anchor" href="#why-this-matters">#</a></h3>
-<p>Subtractive methods <strong>cannot create fully enclosed internal cavities, complex lattices, or interlocked parts in one piece</strong> without assembly.</p>
+<h3 id="key-insight">Key Insight<a class="anchor" href="#key-insight">#</a></h3>
 <p>Additive manufacturing enables:</p>
 <ul>
-<li>Internal lattice structures</li>
-<li>Print-in-place mechanisms</li>
-<li>Complex organic geometries</li>
-<li>Topology-optimized forms</li>
+<li>Internal cavities</li>
+<li>Lattice structures</li>
+<li>Print-in-place assemblies</li>
 </ul>
+<p>These are <strong>impossible or extremely difficult</strong> using subtractive methods.</p>
 <hr>
 <h1 id="individual-assignment-1">Individual Assignment<a class="anchor" href="#individual-assignment-1">#</a></h1>
-<h2 id="printer-and-material-used">Printer and Material Used<a class="anchor" href="#printer-and-material-used">#</a></h2>
-<p>I used my personal <strong>Bambu Lab A1</strong> 3D printer along with <strong>WOL3D PLA filament</strong>.</p>
-<h3 id="filament-specifications">Filament Specifications:<a class="anchor" href="#filament-specifications">#</a></h3>
+<h2 id="machine-and-material">Machine and Material<a class="anchor" href="#machine-and-material">#</a></h2>
+<p>I used my personal <strong>Bambu Lab A1</strong> 3D printer along with <strong>WOL3D PLA filament</strong>.
+<a href="https://bambulab.com/en-in/a1">https://bambulab.com/en-in/a1</a></p>
+<h3 id="filament-specifications">Filament Specifications<a class="anchor" href="#filament-specifications">#</a></h3>
+<p><a href="https://wol3d.com/product/pla-black-3/">https://wol3d.com/product/pla-black-3/</a></p>
 <ul>
 <li>Print Temperature: <strong>190°C – 220°C</strong></li>
 <li>Bed Temperature: <strong>50–60°C</strong></li>
 <li>Shrinkage / Warping: Minimal</li>
 <li>Diameter: <strong>1.75 mm</strong></li>
 </ul>
-<p>Since I am very familiar with both the printer and filament, the workflow was smooth. I used the <strong>default Generic PLA settings</strong> available in Bambu Studio.</p>
+<p>Since I am very familiar with both the printer and filament, the process was smooth. I used the <strong>default Generic PLA settings</strong> in Bambu Studio.</p>
 <hr>
 <h1 id="items-designed-and-printed">Items Designed and Printed<a class="anchor" href="#items-designed-and-printed">#</a></h1>
-<p>I designed and 3D printed <strong>three items</strong> this week.</p>
+<p>I designed and 3D printed <strong>three items</strong>.</p>
 <hr>
 <h2 id="item-1--3d-octagonal-lattice-structure">Item 1 – 3D Octagonal Lattice Structure<a class="anchor" href="#item-1--3d-octagonal-lattice-structure">#</a></h2>
 <h3 id="design-process">Design Process<a class="anchor" href="#design-process">#</a></h3>
-<ol>
-<li>Opened SolidWorks.</li>
-<li>Created a <strong>single octagonal unit cell</strong> based on my design choice.</li>
-<li>Imported the part into Assembly.</li>
-<li>Used <strong>linear patterning</strong> to replicate the cell and form the entire lattice structure.</li>
-</ol>
-<h3 id="design-considerations-based-on-group-assignment">Design Considerations (Based on Group Assignment)<a class="anchor" href="#design-considerations-based-on-group-assignment">#</a></h3>
-<p>From our printer testing:</p>
 <ul>
-<li><strong>All bridge lengths were kept below 20 mm</strong></li>
-<li><strong>All overhang angles were kept below 45°</strong></li>
+<li>Opened <strong>SolidWorks</strong></li>
+<li>Created a <strong>single octagonal unit cell</strong></li>
 </ul>
-<h3 id="why-these-constraints-matter">Why These Constraints Matter<a class="anchor" href="#why-these-constraints-matter">#</a></h3>
-<h4 id="bridging--20-mm">Bridging (&lt; 20 mm)<a class="anchor" href="#bridging--20-mm">#</a></h4>
-<p>Bridging refers to printing across a gap without support underneath.</p>
-<p>If the bridge is too long:</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/solid-1.jpg" alt="SolidWorks Octagonal Unit Cell" /></p>
 <ul>
-<li>Filament sags</li>
-<li>Surface becomes rough</li>
-<li>Structural integrity reduces</li>
+<li>Used <strong>linear patterning in assembly</strong> to form the full lattice</li>
 </ul>
-<p>By keeping bridge lengths under 20 mm:</p>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/solid-2.jpg" alt="SolidWorks Linear Patterned Assembly" /></p>
+<h3 id="design-considerations">Design Considerations<a class="anchor" href="#design-considerations">#</a></h3>
+<p>From group assignment results:</p>
 <ul>
-<li>The extruded filament could span the gap cleanly</li>
-<li>Minimal drooping occurred</li>
-<li>No supports were required</li>
+<li><strong>Bridge lengths &lt; 20 mm</strong></li>
+<li><strong>Overhang angles &lt; 45°</strong></li>
 </ul>
-<h4 id="overhangs--45">Overhangs (&lt; 45°)<a class="anchor" href="#overhangs--45">#</a></h4>
-<p>Overhang angle is measured from vertical.</p>
+<h4 id="bridging-detailed">Bridging (Detailed)<a class="anchor" href="#bridging-detailed">#</a></h4>
+<p>Bridging occurs when filament is extruded across a gap with no support.</p>
 <ul>
-<li>Below 45° → Each new layer is sufficiently supported by the previous layer.</li>
-<li>Above 45° → The layer begins to print into air, causing sagging.</li>
-</ul>
-<p>By keeping overhang angles below 45°:</p>
+<li>If too long → filament sags due to gravity</li>
+<li>Keeping it under 20 mm ensures:
 <ul>
-<li>No support structures were required</li>
-<li>Surface finish remained clean</li>
-<li>Print time was reduced</li>
+<li>Clean spans</li>
+<li>Minimal drooping</li>
+<li>Structural integrity</li>
 </ul>
-<h3 id="why-this-object-cannot-be-made-subtractively">Why This Object Cannot Be Made Subtractively<a class="anchor" href="#why-this-object-cannot-be-made-subtractively">#</a></h3>
-<p>This lattice structure contains:</p>
+</li>
+</ul>
+<h4 id="overhangs-detailed">Overhangs (Detailed)<a class="anchor" href="#overhangs-detailed">#</a></h4>
+<p>Overhang angle determines how much of a layer is supported.</p>
 <ul>
-<li>Repeating internal geometry</li>
-<li>Interconnected voids</li>
-<li>Internal unsupported features</li>
+<li>Below 45° → each layer is supported by the previous one</li>
+<li>Above 45° → material prints into air → poor finish</li>
 </ul>
-<p>A subtractive tool (like a milling cutter) <strong>cannot reach internal cavities without splitting the part into multiple pieces</strong>.</p>
-<p>Additive manufacturing enables this in a single print.</p>
+<p>By keeping within limits:</p>
+<ul>
+<li>No supports required</li>
+<li>Faster print</li>
+<li>Cleaner output</li>
+</ul>
+<h3 id="printing-process">Printing Process<a class="anchor" href="#printing-process">#</a></h3>
+<ul>
+<li>Imported into <strong>Bambu Studio</strong>
+<a href="https://bambulab.com/en-in/download/studio">https://bambulab.com/en-in/download/studio</a></li>
+<li>Arranged model on build plate
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/lattice-01.jpg" alt="Lattice on Build Plate 1" /></li>
+<li>Sliced using:
+<ul>
+<li><strong>0.2 mm layer height</strong></li>
+<li><strong>No supports</strong></li>
+</ul>
+</li>
+<li>Sent to printer via <strong>Print Plate</strong>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/lattice-02.jpg" alt="Lattice Build Plate Setup" /></li>
+<li>Print started</li>
+</ul>
+<h3 id="hero-shots">Hero Shots<a class="anchor" href="#hero-shots">#</a></h3>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/lattice-03.jpg" alt="Lattice Printing 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/lattice-04.jpg" alt="Lattice Printing 2" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/lattice-1.jpg" alt="Lattice Final Result 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/lattice-2.jpg" alt="Lattice Final Result 2" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/lattice-3.jpg" alt="Lattice Final Result 3" /></p>
 <hr>
 <h2 id="item-2--goblin-flexi-toy">Item 2 – Goblin Flexi Toy<a class="anchor" href="#item-2--goblin-flexi-toy">#</a></h2>
-<p>While scrolling through Instagram, I came across an account called <strong>PIODEER</strong>:</p>
+<p>While scrolling through Instagram, I came across:</p>
 <p>🔗 <a href="https://www.instagram.com/piodeer.stl/">https://www.instagram.com/piodeer.stl/</a></p>
-<p>They had posted a reel about making a flexi toy, which inspired me.</p>
-<p>That gave me the idea to convert the <strong>Goblin model I created in Week 2 using Blender</strong> into a flexi toy.</p>
-<h3 id="initial-approach">Initial Approach<a class="anchor" href="#initial-approach">#</a></h3>
+<p>They had posted a reel on making a <strong>flexi toy</strong>, which inspired me.</p>
+<p>I decided to convert the <strong>Goblin model I created in Week 2 (Blender)</strong> into a flexi toy.</p>
+<h3 id="process">Process<a class="anchor" href="#process">#</a></h3>
 <ul>
-<li>I reached out to the Instagram account admin.</li>
-<li>They shared the STL file of the cutter used to make the flexi mechanism.</li>
+<li>Contacted the creator and obtained a cutter file</li>
+<li>Discussed with instructor <strong>Saheen</strong></li>
+<li>Was instructed to <strong>design my own cutter</strong></li>
 </ul>
-<p>After discussing this with my instructor <strong>Saheen</strong>, he asked me to:</p>
-<blockquote class='book-hint '>
-<p>Design the cutter from scratch instead of directly using the provided file.</p>
-</blockquote><h3 id="cutter-design-process">Cutter Design Process<a class="anchor" href="#cutter-design-process">#</a></h3>
-<ol>
-<li>Studied the cutter design shared by PIODEER.</li>
-<li>Understood the mechanism logic.</li>
-<li>Drew inspiration from it.</li>
-<li>Designed my own cutter from scratch.</li>
-</ol>
-<h3 id="boolean-workflow-in-bambu-studio">Boolean Workflow in Bambu Studio<a class="anchor" href="#boolean-workflow-in-bambu-studio">#</a></h3>
+<h3 id="design-workflow">Design Workflow<a class="anchor" href="#design-workflow">#</a></h3>
 <ul>
-<li>Imported both STL files:
+<li>Studied the reference cutter</li>
+<li>Designed my own version from scratch</li>
+<li>Imported both files into <strong>Bambu Studio</strong>:
 <ul>
-<li>Goblin model → <strong>Positive body</strong></li>
-<li>Cutter model → <strong>Negative body</strong></li>
+<li>
+<p>Goblin → <strong>Positive body</strong>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-1.jpg" alt="Goblin Model 1" /></p>
+</li>
+<li>
+<p>Cutter → <strong>Negative body</strong>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-2.jpg" alt="Goblin Model 2" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-3.jpg" alt="Goblin Model 3" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-4.jpg" alt="Goblin Model 4" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-5.jpg" alt="Goblin Model 5" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-6.jpg" alt="Goblin Model 6" /></p>
+</li>
 </ul>
 </li>
-<li>Used boolean merging:
+<li>Performed boolean merge</li>
+</ul>
+<h3 id="printing-process-1">Printing Process<a class="anchor" href="#printing-process-1">#</a></h3>
 <ul>
-<li>Subtracted the cutter geometry from the goblin.</li>
+<li>Sliced the model</li>
+<li>Selected <strong>Print Plate</strong></li>
+<li>Sent to printer</li>
+<li>Print started</li>
 </ul>
-</li>
-<li>Generated the final flexi model.</li>
-<li>Printed the result.</li>
-</ul>
-<h3 id="why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively<a class="anchor" href="#why-this-cannot-be-made-subtractively">#</a></h3>
-<p>The flexi toy contains:</p>
-<ul>
-<li>Print-in-place moving segments</li>
-<li>Internal clearances</li>
-<li>Interlocked geometry</li>
-</ul>
-<p>Such geometry would require:</p>
-<ul>
-<li>Multiple part fabrication</li>
-<li>Assembly</li>
-<li>Additional fastening</li>
-</ul>
-<p>Additive manufacturing allows it to be printed as a single articulated object.</p>
-<hr>
+<h3 id="hero-shots-1">Hero Shots<a class="anchor" href="#hero-shots-1">#</a></h3>
+<h2 id="goblin-printing-4"><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-7.jpg" alt="Goblin Printing 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-8.jpg" alt="Goblin Printing 2" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-9.jpg" alt="Goblin Printing 3" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-10.jpg" alt="Goblin Printing 4" /><a class="anchor" href="#goblin-printing-4">#</a></h2>
 <h2 id="item-3--print-in-place-engine-model">Item 3 – Print-in-Place Engine Model<a class="anchor" href="#item-3--print-in-place-engine-model">#</a></h2>
-<p>For the third item, my instructor <strong>Saheen</strong> asked me to design something that combines:</p>
+<p>I was asked by <strong>Saheen</strong> to design something that combines:</p>
 <ul>
 <li><strong>Clearances</strong></li>
 <li><strong>Bridging</strong></li>
-<li><strong>Print-in-place mechanisms</strong></li>
+<li><strong>Print-in-place functionality</strong></li>
 </ul>
-<h3 id="concept-selection">Concept Selection<a class="anchor" href="#concept-selection">#</a></h3>
-<p>Initially, I considered designing a <strong>car model</strong>, but I decided to push further and create something more mechanically meaningful.</p>
-<p>I chose to design a <strong>simple engine model</strong> that includes:</p>
+<h3 id="concept">Concept<a class="anchor" href="#concept">#</a></h3>
+<p>Initially planned a car, but instead designed a <strong>simple engine model</strong> with:</p>
 <ul>
-<li>Multiple moving parts</li>
-<li>Tight clearances</li>
-<li>Internal mechanisms assembled in a single print</li>
+<li>Crankshaft</li>
+<li>Piston</li>
+<li>Connecting rod</li>
+<li>Casing</li>
 </ul>
 <h3 id="design-process-1">Design Process<a class="anchor" href="#design-process-1">#</a></h3>
 <ul>
-<li>Used <strong>Fusion 360</strong> in <strong>hybrid modeling mode</strong></li>
-<li>Designed multiple components as part of a single system:
+<li>Used <strong>Fusion 360 (hybrid modeling)</strong></li>
+<li>Created multiple interacting components</li>
+<li>Ensured all parts are printable as a single assembly</li>
+</ul>
+<video width="100%" height="auto" controls>
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-5/engine-1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h3 id="key-considerations">Key Considerations<a class="anchor" href="#key-considerations">#</a></h3>
 <ul>
-<li><strong>Crankshaft</strong></li>
-<li><strong>Piston</strong></li>
-<li><strong>Connecting Rod</strong></li>
-<li><strong>Outer Casing</strong></li>
+<li><strong>Clearances:</strong> Prevent fusion of moving parts</li>
+<li><strong>Bridging:</strong> Maintain unsupported spans within limits</li>
+<li><strong>Assembly-free:</strong> Fully print-in-place</li>
+</ul>
+<h3 id="printing-process-2">Printing Process<a class="anchor" href="#printing-process-2">#</a></h3>
+<ul>
+<li>Imported into <strong>Bambu Studio</strong></li>
+<li>Arranged on plate</li>
+<li>Sliced with:
+<ul>
+<li><strong>0.2 mm layer height</strong></li>
+<li><strong>tree supports</strong></li>
 </ul>
 </li>
+<li>Sent to printer and printed
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/engine-01.jpg" alt="Engine Printing 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/engine-02.jpg" alt="Engine Printing 2" /></li>
 </ul>
-<p>All components were designed such that they:</p>
-<ul>
-<li>Exist within the same assembly</li>
-<li>Have <strong>precise clearances</strong> to allow motion after printing</li>
-<li>Do not require post-assembly</li>
-</ul>
-<h3 id="key-design-considerations">Key Design Considerations<a class="anchor" href="#key-design-considerations">#</a></h3>
-<h4 id="clearances">Clearances<a class="anchor" href="#clearances">#</a></h4>
-<ul>
-<li>Small gaps were introduced between moving parts</li>
-<li>Ensured parts do not fuse during printing</li>
-<li>Critical for motion in:
-<ul>
-<li>Crank rotation</li>
-<li>Piston sliding</li>
-</ul>
-</li>
-</ul>
-<h4 id="bridging">Bridging<a class="anchor" href="#bridging">#</a></h4>
-<ul>
-<li>Internal features required unsupported spans</li>
-<li>Bridge lengths were kept within tested limits (~20 mm)</li>
-<li>Ensured clean formation without sagging</li>
-</ul>
-<h4 id="print-in-place-mechanism">Print-in-Place Mechanism<a class="anchor" href="#print-in-place-mechanism">#</a></h4>
-<ul>
-<li>Entire engine is printed as a <strong>single unit</strong></li>
-<li>No assembly required</li>
-<li>Moving parts function immediately after print</li>
-</ul>
-<h3 id="why-this-cannot-be-made-subtractively-1">Why This Cannot Be Made Subtractively<a class="anchor" href="#why-this-cannot-be-made-subtractively-1">#</a></h3>
-<ul>
-<li>Internal mechanisms are enclosed within the casing</li>
-<li>Tools cannot access internal features</li>
-<li>Would require splitting into multiple parts and assembling</li>
-</ul>
-<p>This makes it a strong example of <strong>additive manufacturing advantage</strong></p>
+<h3 id="hero-shots-2">Hero Shots<a class="anchor" href="#hero-shots-2">#</a></h3>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/engine-2.jpg" alt="Engine Hero Shot 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/engine-3.jpg" alt="Engine Hero Shot 2" /></p>
+<video width="100%" height="auto" controls>
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-5/engine-4.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="conclusion-3d-printing">Conclusion (3D Printing)<a class="anchor" href="#conclusion-3d-printing">#</a></h2>
+<p>This completes my three designed prints:</p>
+<ol>
+<li>Lattice structure</li>
+<li>Flexi goblin toy</li>
+<li>Print-in-place engine</li>
+</ol>
+<p>Each demonstrates different strengths of additive manufacturing.</p>
 <hr>
 <h1 id="3d-scanning">3D Scanning<a class="anchor" href="#3d-scanning">#</a></h1>
-<p>For the scanning part of the assignment, I explored <strong>two different workflows</strong>:</p>
+<p>I explored <strong>two different workflows</strong>:</p>
 <hr>
-<h2 id="workflow-1--artec-leo-3d-scanner">Workflow 1 – Artec Leo 3D Scanner<a class="anchor" href="#workflow-1--artec-leo-3d-scanner">#</a></h2>
+<h2 id="workflow-1--artec-leo-scanner">Workflow 1 – Artec Leo Scanner<a class="anchor" href="#workflow-1--artec-leo-scanner">#</a></h2>
+<h3 id="process-1">Process<a class="anchor" href="#process-1">#</a></h3>
+<ol>
+<li>Turned on the <strong>Artec Leo scanner</strong></li>
+<li>Selected <strong>New Project</strong></li>
+<li>Adjusted distance to avoid background capture</li>
+<li>Started scanning
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-1.jpg" alt="Artec Scan 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-2.jpg" alt="Artec Scan 2" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-3.jpg" alt="Artec Scan 3" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-4.jpg" alt="Artec Scan 4" /></li>
+<li>Completed scan</li>
+<li>Exported to <strong>Artec Studio</strong> for post-processing</li>
+</ol>
+<h3 id="object-scanned">Object Scanned<a class="anchor" href="#object-scanned">#</a></h3>
 <ul>
-<li>Used the <strong>Artec Leo</strong> handheld 3D scanner</li>
-<li>Scanned a <strong>stool</strong></li>
-</ul>
-<h3 id="observations">Observations<a class="anchor" href="#observations">#</a></h3>
-<ul>
-<li>Very high accuracy</li>
-<li>Real-time feedback while scanning</li>
-<li>Good for large and medium-sized objects</li>
+<li>Stool</li>
 </ul>
 <h3 id="status">Status<a class="anchor" href="#status">#</a></h3>
 <ul>
-<li>Scan completed successfully</li>
-<li><strong>Post-processing is pending</strong></li>
+<li>Scan complete</li>
+<li>Post-processing pending</li>
 </ul>
 <hr>
-<h2 id="workflow-2--kiri-engine-mobile-app">Workflow 2 – Kiri Engine (Mobile App)<a class="anchor" href="#workflow-2--kiri-engine-mobile-app">#</a></h2>
-<ul>
-<li>Used my phone with the <strong>Kiri Engine</strong> app</li>
-<li>Captured multiple images around the subject</li>
-</ul>
-<h3 id="scan-subject">Scan Subject<a class="anchor" href="#scan-subject">#</a></h3>
+<h2 id="workflow-2--kiri-engine-mobile">Workflow 2 – Kiri Engine (Mobile)<a class="anchor" href="#workflow-2--kiri-engine-mobile">#</a></h2>
+<h3 id="process-2">Process<a class="anchor" href="#process-2">#</a></h3>
+<ol>
+<li>Opened the app</li>
+<li>Selected <strong>New Project</strong>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-5.jpg" height="300px" alt="Kiri Engine App Screenshot 1"></li>
+<li>Selected <strong>LiDAR Scan</strong><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-6.jpg" height="300px" alt="Kiri Engine LiDAR Selection"></li>
+<li>Selected <strong>Object Scan</strong><br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-7.jpg" height="300px" alt="Kiri Engine Object Scan"></li>
+<li>Followed on-screen instructions<br>
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-8.jpg" height="300px" alt="Kiri Engine Scan Process 1">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-9.jpg" height="300px" alt="Kiri Engine Scan Process 2">
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-10.jpg" height="300px" alt="Kiri Engine Scan Process 3"></li>
+<li>Completed scan</li>
+</ol>
+<h3 id="object-scanned-1">Object Scanned<a class="anchor" href="#object-scanned-1">#</a></h3>
 <ul>
 <li>My classmate <strong>Merin</strong></li>
 </ul>
-<h3 id="process">Process<a class="anchor" href="#process">#</a></h3>
+<h3 id="next-plan">Next Plan<a class="anchor" href="#next-plan">#</a></h3>
 <ul>
-<li>Took multiple photos from different angles</li>
-<li>Uploaded to Kiri Engine for processing</li>
-<li>Generated a 3D model using photogrammetry</li>
-</ul>
-<h3 id="observations-1">Observations<a class="anchor" href="#observations-1">#</a></h3>
-<ul>
-<li>Easy to use and accessible</li>
-<li>Good results for human subjects</li>
-<li>Quality depends on:
-<ul>
-<li>Lighting</li>
-<li>Image coverage</li>
-<li>Stability while capturing</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="next-steps">Next Steps<a class="anchor" href="#next-steps">#</a></h2>
-<ul>
-<li>Clean up the scan of Merin</li>
-<li>Fix mesh artifacts and noise</li>
-<li>Prepare it for printing</li>
+<li>Clean the mesh</li>
+<li>Fix artifacts</li>
 <li><strong>3D print a scaled model</strong></li>
 </ul>
 <hr>
-<p>This concludes my work for this week, covering:</p>
+<h2 id="final-summary">Final Summary<a class="anchor" href="#final-summary">#</a></h2>
+<p>This week covered:</p>
 <ul>
-<li>Group assignment (design rules testing)</li>
-<li>Three self-designed 3D printed objects</li>
-<li>Two different 3D scanning workflows</li>
+<li>Understanding printer limits through group testing</li>
+<li>Designing complex, non-subtractive geometries</li>
+<li>Printing functional, print-in-place mechanisms</li>
+<li>Exploring professional and mobile 3D scanning workflows</li>
 </ul>
 </article>
  
@@ -1448,21 +1472,22 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
   <ul>
     <li><a href="#group-assignment-1">Group Assignment</a>
       <ul>
-        <li><a href="#testing-the-design-rules-for-our-3d-printers">Testing the Design Rules for Our 3D Printers</a></li>
-        <li><a href="#key-findings">Key Findings</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#observations-and-learnings">Observations and Learnings</a></li>
+        <li><a href="#importance">Importance</a></li>
       </ul>
     </li>
-    <li><a href="#quick-comparison-subtractive-vs-additive-manufacturing">Quick Comparison: Subtractive vs Additive Manufacturing</a>
+    <li><a href="#subtractive-vs-additive-manufacturing">Subtractive vs Additive Manufacturing</a>
       <ul>
-        <li><a href="#why-this-matters">Why This Matters</a></li>
+        <li><a href="#key-insight">Key Insight</a></li>
       </ul>
     </li>
   </ul>
 
   <ul>
-    <li><a href="#printer-and-material-used">Printer and Material Used</a>
+    <li><a href="#machine-and-material">Machine and Material</a>
       <ul>
-        <li><a href="#filament-specifications">Filament Specifications:</a></li>
+        <li><a href="#filament-specifications">Filament Specifications</a></li>
       </ul>
     </li>
   </ul>
@@ -1471,44 +1496,48 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
     <li><a href="#item-1--3d-octagonal-lattice-structure">Item 1 – 3D Octagonal Lattice Structure</a>
       <ul>
         <li><a href="#design-process">Design Process</a></li>
-        <li><a href="#design-considerations-based-on-group-assignment">Design Considerations (Based on Group Assignment)</a></li>
-        <li><a href="#why-these-constraints-matter">Why These Constraints Matter</a></li>
-        <li><a href="#why-this-object-cannot-be-made-subtractively">Why This Object Cannot Be Made Subtractively</a></li>
+        <li><a href="#design-considerations">Design Considerations</a></li>
+        <li><a href="#printing-process">Printing Process</a></li>
+        <li><a href="#hero-shots">Hero Shots</a></li>
       </ul>
     </li>
     <li><a href="#item-2--goblin-flexi-toy">Item 2 – Goblin Flexi Toy</a>
       <ul>
-        <li><a href="#initial-approach">Initial Approach</a></li>
-        <li><a href="#cutter-design-process">Cutter Design Process</a></li>
-        <li><a href="#boolean-workflow-in-bambu-studio">Boolean Workflow in Bambu Studio</a></li>
-        <li><a href="#why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#design-workflow">Design Workflow</a></li>
+        <li><a href="#printing-process-1">Printing Process</a></li>
+        <li><a href="#hero-shots-1">Hero Shots</a></li>
       </ul>
     </li>
+    <li><a href="#goblin-printing-4"><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-7.jpg" alt="Goblin Printing 1"> <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-8.jpg" alt="Goblin Printing 2"> <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-9.jpg" alt="Goblin Printing 3"> <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/goblin-10.jpg" alt="Goblin Printing 4"></a></li>
     <li><a href="#item-3--print-in-place-engine-model">Item 3 – Print-in-Place Engine Model</a>
       <ul>
-        <li><a href="#concept-selection">Concept Selection</a></li>
+        <li><a href="#concept">Concept</a></li>
         <li><a href="#design-process-1">Design Process</a></li>
-        <li><a href="#key-design-considerations">Key Design Considerations</a></li>
-        <li><a href="#why-this-cannot-be-made-subtractively-1">Why This Cannot Be Made Subtractively</a></li>
+        <li><a href="#key-considerations">Key Considerations</a></li>
+        <li><a href="#printing-process-2">Printing Process</a></li>
+        <li><a href="#hero-shots-2">Hero Shots</a></li>
       </ul>
     </li>
+    <li><a href="#conclusion-3d-printing">Conclusion (3D Printing)</a></li>
   </ul>
 
   <ul>
-    <li><a href="#workflow-1--artec-leo-3d-scanner">Workflow 1 – Artec Leo 3D Scanner</a>
+    <li><a href="#workflow-1--artec-leo-scanner">Workflow 1 – Artec Leo Scanner</a>
       <ul>
-        <li><a href="#observations">Observations</a></li>
+        <li><a href="#process-1">Process</a></li>
+        <li><a href="#object-scanned">Object Scanned</a></li>
         <li><a href="#status">Status</a></li>
       </ul>
     </li>
-    <li><a href="#workflow-2--kiri-engine-mobile-app">Workflow 2 – Kiri Engine (Mobile App)</a>
+    <li><a href="#workflow-2--kiri-engine-mobile">Workflow 2 – Kiri Engine (Mobile)</a>
       <ul>
-        <li><a href="#scan-subject">Scan Subject</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#observations-1">Observations</a></li>
+        <li><a href="#process-2">Process</a></li>
+        <li><a href="#object-scanned-1">Object Scanned</a></li>
+        <li><a href="#next-plan">Next Plan</a></li>
       </ul>
     </li>
-    <li><a href="#next-steps">Next Steps</a></li>
+    <li><a href="#final-summary">Final Summary</a></li>
   </ul>
 </nav>
 
