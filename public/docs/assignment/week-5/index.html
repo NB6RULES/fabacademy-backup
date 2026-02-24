@@ -31,7 +31,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 The aim was to understand design rules for 3D printing, test printer capabilities, and explore 3D scanning workflows.
 This week continued the digital fabrication journey, adding additive manufacturing to the subtractive processes learned earlier.
 Group Assignment#Test the design rules for your 3D printers Characterize your printer(s): Dimensions Tolerances Surface quality Support requirements Individual Assignment#Design and 3D print an object that could not be easily made subtractively 3D scan an object, try to prepare it for printing Extra Credit Goals">
-  <meta itemprop="wordCount" content="1100">
+  <meta itemprop="wordCount" content="1424">
 
 <title>Week 05 - 3D Scanning and Printing | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.e93f0dab565d5fce527b9dd3b74ef02c055f26ada944e26b83a653c494deb716.js" integrity="sha256-6T8Nq1ZdX85Se53Tt07wLAVfJq2pROJrg6ZTxJTetxY=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.86edfa0ef827e94f69db052bbfcb99612e30dfdcb46553cd03e238df76a78b22.js" integrity="sha256-hu36Dvgn6U9p2wUrv8uZYS4w39y0ZVPNA&#43;I433aniyI=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -943,17 +943,34 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
   </ul>
 
   <ul>
+    <li><a href="#failure-1--power-failure-during-print">Failure 1 – Power Failure During Print</a>
+      <ul>
+        <li><a href="#issue">Issue</a></li>
+        <li><a href="#why-this-happened">Why This Happened</a></li>
+        <li><a href="#learning">Learning</a></li>
+      </ul>
+    </li>
+    <li><a href="#failure-2--improper-support-at-crankshaft">Failure 2 – Improper Support at Crankshaft</a>
+      <ul>
+        <li><a href="#issue-1">Issue</a></li>
+        <li><a href="#why-this-happened-1">Why This Happened</a></li>
+        <li><a href="#learning-1">Learning</a></li>
+      </ul>
+    </li>
+    <li><a href="#key-takeaways">Key Takeaways</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#workflow-1--artec-leo-scanner">Workflow 1 – Artec Leo Scanner</a>
       <ul>
-        <li><a href="#process-1">Process</a></li>
         <li><a href="#object-scanned">Object Scanned</a></li>
         <li><a href="#status">Status</a></li>
       </ul>
     </li>
     <li><a href="#workflow-2--kiri-engine-mobile">Workflow 2 – Kiri Engine (Mobile)</a>
       <ul>
-        <li><a href="#process-2">Process</a></li>
-        <li><a href="#object-scanned-1">Object Scanned</a></li>
+        <li><a href="#process-1">Process</a></li>
+        <li><a href="#object--people-scanned">Object / People Scanned</a></li>
         <li><a href="#next-plan">Next Plan</a></li>
       </ul>
     </li>
@@ -1325,11 +1342,116 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
 </ol>
 <p>Each demonstrates different strengths of additive manufacturing.</p>
 <hr>
+<h1 id="failures-and-learnings">Failures and Learnings<a class="anchor" href="#failures-and-learnings">#</a></h1>
+<p>Coming to the most important part of my 3D printing week — <strong>failures and what I learned from them</strong>.</p>
+<p>Most of the issues I faced were during the <strong>engine model print</strong>, which involved complex geometry, clearances, and print-in-place mechanisms.</p>
+<hr>
+<h2 id="failure-1--power-failure-during-print">Failure 1 – Power Failure During Print<a class="anchor" href="#failure-1--power-failure-during-print">#</a></h2>
+<p>During one of the prints, there was a <strong>power cut</strong>, and although the printer resumed the job, it resulted in a visible defect.</p>
+<h3 id="issue">Issue<a class="anchor" href="#issue">#</a></h3>
+<ul>
+<li>The print resumed after interruption</li>
+<li>The layer at the restart point <strong>did not adhere properly</strong></li>
+<li>A clear layer line / weak interface was visible</li>
+</ul>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/fail-1.jpg" alt="Power Failure Print Defect" /></p>
+<h3 id="why-this-happened">Why This Happened<a class="anchor" href="#why-this-happened">#</a></h3>
+<ul>
+<li>The previously printed layer had <strong>cooled down</strong></li>
+<li>When printing resumed:
+<ul>
+<li>Poor interlayer bonding occurred</li>
+<li>Slight misalignment may have been introduced</li>
+</ul>
+</li>
+<li>Resulted in:
+<ul>
+<li>Weak structural region</li>
+<li>Visible surface defect</li>
+</ul>
+</li>
+</ul>
+<h3 id="learning">Learning<a class="anchor" href="#learning">#</a></h3>
+<ul>
+<li>Power interruptions can significantly affect print integrity</li>
+<li>Critical prints should ideally:
+<ul>
+<li>Be done with <strong>stable power</strong></li>
+<li>Or use <strong>power backup systems (UPS)</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="failure-2--improper-support-at-crankshaft">Failure 2 – Improper Support at Crankshaft<a class="anchor" href="#failure-2--improper-support-at-crankshaft">#</a></h2>
+<p>Another major issue occurred at the <strong>crankshaft region</strong> of the engine model.</p>
+<h3 id="issue-1">Issue<a class="anchor" href="#issue-1">#</a></h3>
+<ul>
+<li>Insufficient support under certain features</li>
+<li>Resulted in:
+<ul>
+<li>Sagging</li>
+<li>Deformation</li>
+<li>Poor surface finish</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/fail-2.jpg" alt="Crankshaft Sagging 1" />
+<img src="/2026/labs/kochi/students/nadec-biju/images/week-5/fail-3.jpg" alt="Crankshaft Sagging 2" /></p>
+<video width="100%" height="auto" controls>
+  <source src="/2026/labs/kochi/students/nadec-biju/images/week-5/fail-4.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>  
+<h3 id="why-this-happened-1">Why This Happened<a class="anchor" href="#why-this-happened-1">#</a></h3>
+<ul>
+<li>Some areas exceeded:
+<ul>
+<li>Safe overhang limits</li>
+<li>Safe bridging limits</li>
+</ul>
+</li>
+<li>Lack of support led to:
+<ul>
+<li>Unsupported extrusion</li>
+<li>Gravity-induced deformation</li>
+</ul>
+</li>
+</ul>
+<h3 id="learning-1">Learning<a class="anchor" href="#learning-1">#</a></h3>
+<ul>
+<li>Even when designing for <strong>no supports</strong>, careful inspection is needed</li>
+<li>Important to:
+<ul>
+<li>Analyze model orientation</li>
+<li>Identify hidden overhangs</li>
+<li>Balance between design constraints and printability</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="anchor" href="#key-takeaways">#</a></h2>
+<ul>
+<li>Real-world printing is not just about design — <strong>execution matters equally</strong></li>
+<li>Failures provided deeper insights into:
+<ul>
+<li>Material behavior</li>
+<li>Machine limitations</li>
+<li>Design-for-print principles</li>
+</ul>
+</li>
+</ul>
+<p>These failures helped refine my understanding of:</p>
+<ul>
+<li>Bridging limits</li>
+<li>Overhang handling</li>
+<li>Importance of print stability</li>
+</ul>
+<hr>
+<p>Overall, these mistakes were extremely valuable and helped me improve both my <strong>design approach</strong> and <strong>printing strategy</strong> for future projects.</p>
 <h1 id="3d-scanning">3D Scanning<a class="anchor" href="#3d-scanning">#</a></h1>
 <p>I explored <strong>two different workflows</strong>:</p>
 <hr>
 <h2 id="workflow-1--artec-leo-scanner">Workflow 1 – Artec Leo Scanner<a class="anchor" href="#workflow-1--artec-leo-scanner">#</a></h2>
-<h3 id="process-1">Process<a class="anchor" href="#process-1">#</a></h3>
+<p><a href="https://www.artec3d.com/portable-3d-scanners/artec-leo/">https://www.artec3d.com/portable-3d-scanners/artec-leo/</a></p>
 <ol>
 <li>Turned on the <strong>Artec Leo scanner</strong></li>
 <li>Selected <strong>New Project</strong></li>
@@ -1340,7 +1462,7 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-3.jpg" alt="Artec Scan 3" />
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-4.jpg" alt="Artec Scan 4" /></li>
 <li>Completed scan</li>
-<li>Exported to <strong>Artec Studio</strong> for post-processing</li>
+<li>Exported to <strong>Artec Studio</strong> for post-processing <a href="https://www.artec3d.com/3d-software/artec-studio">https://www.artec3d.com/3d-software/artec-studio</a></li>
 </ol>
 <h3 id="object-scanned">Object Scanned<a class="anchor" href="#object-scanned">#</a></h3>
 <ul>
@@ -1353,7 +1475,7 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
 </ul>
 <hr>
 <h2 id="workflow-2--kiri-engine-mobile">Workflow 2 – Kiri Engine (Mobile)<a class="anchor" href="#workflow-2--kiri-engine-mobile">#</a></h2>
-<h3 id="process-2">Process<a class="anchor" href="#process-2">#</a></h3>
+<h3 id="process-1">Process<a class="anchor" href="#process-1">#</a></h3>
 <ol>
 <li>Opened the app</li>
 <li>Selected <strong>New Project</strong>
@@ -1368,9 +1490,16 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
 <img src="/2026/labs/kochi/students/nadec-biju/images/week-5/scan-10.jpg" height="300px" alt="Kiri Engine Scan Process 3"></li>
 <li>Completed scan</li>
 </ol>
-<h3 id="object-scanned-1">Object Scanned<a class="anchor" href="#object-scanned-1">#</a></h3>
+<h3 id="object--people-scanned">Object / People Scanned<a class="anchor" href="#object--people-scanned">#</a></h3>
 <ul>
 <li>My classmate <strong>Merin</strong></li>
+</ul>
+<p><img src="/2026/labs/kochi/students/nadec-biju/images/week-5/merin.jpg" alt="Merin 3D Scan" /></p>
+  <div class="sketchfab-embed-wrapper"> <iframe title="3D Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ebbdd0b9cea443b3a295ef729f4eeb10/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/3d-model-ebbdd0b9cea443b3a295ef729f4eeb10?utm_medium=embed&utm_campaign=share-popup&utm_content=ebbdd0b9cea443b3a295ef729f4eeb10" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> 3D Model </a> by <a href="https://sketchfab.com/Nb6_rules?utm_medium=embed&utm_campaign=share-popup&utm_content=ebbdd0b9cea443b3a295ef729f4eeb10" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Nb6_rules </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=ebbdd0b9cea443b3a295ef729f4eeb10" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+<ul>
+<li>My Gaming Handheld Device from Week 4
+<div class="sketchfab-embed-wrapper"> <iframe title="3DModel" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/d4f678c853f443a5b6a53789a23d36c4/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/3dmodel-d4f678c853f443a5b6a53789a23d36c4?utm_medium=embed&utm_campaign=share-popup&utm_content=d4f678c853f443a5b6a53789a23d36c4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> 3DModel </a> by <a href="https://sketchfab.com/Nb6_rules?utm_medium=embed&utm_campaign=share-popup&utm_content=d4f678c853f443a5b6a53789a23d36c4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Nb6_rules </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=d4f678c853f443a5b6a53789a23d36c4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+</li>
 </ul>
 <h3 id="next-plan">Next Plan<a class="anchor" href="#next-plan">#</a></h3>
 <ul>
@@ -1387,7 +1516,12 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
 <li>Printing functional, print-in-place mechanisms</li>
 <li>Exploring professional and mobile 3D scanning workflows</li>
 </ul>
-</article>
+<hr>
+<div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+  <a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: white; color: #667eea; font-weight: bold; font-size: 16px; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)';">
+    ⬇️ Download All Files from Week 5
+  </a>
+</div>  </article>
  
       
 
@@ -1523,17 +1657,34 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
   </ul>
 
   <ul>
+    <li><a href="#failure-1--power-failure-during-print">Failure 1 – Power Failure During Print</a>
+      <ul>
+        <li><a href="#issue">Issue</a></li>
+        <li><a href="#why-this-happened">Why This Happened</a></li>
+        <li><a href="#learning">Learning</a></li>
+      </ul>
+    </li>
+    <li><a href="#failure-2--improper-support-at-crankshaft">Failure 2 – Improper Support at Crankshaft</a>
+      <ul>
+        <li><a href="#issue-1">Issue</a></li>
+        <li><a href="#why-this-happened-1">Why This Happened</a></li>
+        <li><a href="#learning-1">Learning</a></li>
+      </ul>
+    </li>
+    <li><a href="#key-takeaways">Key Takeaways</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#workflow-1--artec-leo-scanner">Workflow 1 – Artec Leo Scanner</a>
       <ul>
-        <li><a href="#process-1">Process</a></li>
         <li><a href="#object-scanned">Object Scanned</a></li>
         <li><a href="#status">Status</a></li>
       </ul>
     </li>
     <li><a href="#workflow-2--kiri-engine-mobile">Workflow 2 – Kiri Engine (Mobile)</a>
       <ul>
-        <li><a href="#process-2">Process</a></li>
-        <li><a href="#object-scanned-1">Object Scanned</a></li>
+        <li><a href="#process-1">Process</a></li>
+        <li><a href="#object--people-scanned">Object / People Scanned</a></li>
         <li><a href="#next-plan">Next Plan</a></li>
       </ul>
     </li>
