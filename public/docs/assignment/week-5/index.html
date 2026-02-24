@@ -31,7 +31,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 The aim was to understand design rules for 3D printing, test printer capabilities, and explore 3D scanning workflows.
 This week continued the digital fabrication journey, adding additive manufacturing to the subtractive processes learned earlier.
 Group Assignment#Test the design rules for your 3D printers Characterize your printer(s): Dimensions Tolerances Surface quality Support requirements Individual Assignment#Design and 3D print an object that could not be easily made subtractively 3D scan an object, try to prepare it for printing Extra Credit Goals">
-  <meta itemprop="wordCount" content="165">
+  <meta itemprop="wordCount" content="900">
 
 <title>Week 05 - 3D Scanning and Printing | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.4b578cf21383d5eb3fd07cf729e9351d859bcc8e6d3d001d1e759176a5362fce.js" integrity="sha256-S1eM8hOD1es/0Hz3Kek1HYWbzI5tPQAdHnWRdqU2L84=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.f9c9630f7953f6c7327056db58427a88da732227e4a902fe05ddd149c4f6cd75.js" integrity="sha256-&#43;cljD3lT9scycFbbWEJ6iNpzIifkqQL&#43;Bd3RScT2zXU=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -888,6 +888,47 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#group-assignment-1">Group Assignment</a>
+      <ul>
+        <li><a href="#testing-the-design-rules-for-our-3d-printers">Testing the Design Rules for Our 3D Printers</a></li>
+        <li><a href="#key-findings">Key Findings</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-comparison-subtractive-vs-additive-manufacturing">Quick Comparison: Subtractive vs Additive Manufacturing</a>
+      <ul>
+        <li><a href="#why-this-matters">Why This Matters</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#printer-and-material-used">Printer and Material Used</a>
+      <ul>
+        <li><a href="#filament-specifications">Filament Specifications:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#item-1--3d-octagonal-lattice-structure">Item 1 – 3D Octagonal Lattice Structure</a>
+      <ul>
+        <li><a href="#design-process">Design Process</a></li>
+        <li><a href="#design-considerations-based-on-group-assignment">Design Considerations (Based on Group Assignment)</a></li>
+        <li><a href="#why-these-constraints-matter">Why These Constraints Matter</a></li>
+        <li><a href="#why-this-object-cannot-be-made-subtractively">Why This Object Cannot Be Made Subtractively</a></li>
+      </ul>
+    </li>
+    <li><a href="#item-2--goblin-flexi-toy">Item 2 – Goblin Flexi Toy</a>
+      <ul>
+        <li><a href="#initial-approach">Initial Approach</a></li>
+        <li><a href="#cutter-design-process">Cutter Design Process</a></li>
+        <li><a href="#boolean-workflow-in-bambu-studio">Boolean Workflow in Bambu Studio</a></li>
+        <li><a href="#why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 
 
@@ -977,6 +1018,199 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
   </tbody>
 </table>
 <hr>
+<h1 id="week-05--3d-printing-and-scanning">Week 05 – 3D Printing and Scanning<a class="anchor" href="#week-05--3d-printing-and-scanning">#</a></h1>
+<p>The assignment for this week was to:</p>
+<ul>
+<li><strong>Design, document, and 3D print an object that could not be made subtractively</strong></li>
+<li><strong>3D scan an object and optionally 3D print it</strong></li>
+</ul>
+<hr>
+<h2 id="group-assignment-1">Group Assignment<a class="anchor" href="#group-assignment-1">#</a></h2>
+<p>🔗 <a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week05/">https://fabacademy.org/2026/labs/kochi/group_assignmetns/week05/</a></p>
+<h3 id="testing-the-design-rules-for-our-3d-printers">Testing the Design Rules for Our 3D Printers<a class="anchor" href="#testing-the-design-rules-for-our-3d-printers">#</a></h3>
+<p>For the group assignment, we focused on <strong>understanding the limitations and capabilities of our 3D printers</strong> by printing standardized test models.</p>
+<p>Some of the key parameters we evaluated:</p>
+<ul>
+<li><strong>Overhang angles</strong></li>
+<li><strong>Bridging distances</strong></li>
+<li><strong>Wall thickness</strong></li>
+<li><strong>Clearances / tolerances</strong></li>
+<li><strong>Support performance</strong></li>
+<li><strong>Dimensional accuracy</strong></li>
+</ul>
+<p>This testing helped us determine:</p>
+<ul>
+<li>The maximum unsupported <strong>bridge length</strong></li>
+<li>The maximum printable <strong>overhang angle without support</strong></li>
+<li>Minimum feature sizes</li>
+<li>Tolerance values for press-fit or movable assemblies</li>
+</ul>
+<h3 id="key-findings">Key Findings<a class="anchor" href="#key-findings">#</a></h3>
+<ul>
+<li>Bridges performed reliably up to ~20 mm without sagging.</li>
+<li>Overhangs were clean up to around <strong>45°</strong> without support.</li>
+<li>Clearances below certain thresholds resulted in fused parts.</li>
+</ul>
+<p>These results directly influenced the design decisions in my individual assignment.</p>
+<hr>
+<h2 id="quick-comparison-subtractive-vs-additive-manufacturing">Quick Comparison: Subtractive vs Additive Manufacturing<a class="anchor" href="#quick-comparison-subtractive-vs-additive-manufacturing">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Subtractive Manufacturing</th>
+          <th>Additive Manufacturing</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Material is <strong>removed</strong> from a solid block</td>
+          <td>Material is <strong>added layer by layer</strong></td>
+      </tr>
+      <tr>
+          <td>Examples: CNC milling, turning</td>
+          <td>Example: FDM 3D printing</td>
+      </tr>
+      <tr>
+          <td>Limited by tool access</td>
+          <td>Can create complex internal geometries</td>
+      </tr>
+      <tr>
+          <td>More material waste</td>
+          <td>Minimal waste</td>
+      </tr>
+      <tr>
+          <td>Stronger bulk properties (depending on process)</td>
+          <td>Layer-dependent strength</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="why-this-matters">Why This Matters<a class="anchor" href="#why-this-matters">#</a></h3>
+<p>Subtractive methods <strong>cannot create fully enclosed internal cavities, complex lattices, or interlocked parts in one piece</strong> without assembly.</p>
+<p>Additive manufacturing enables:</p>
+<ul>
+<li>Internal lattice structures</li>
+<li>Print-in-place mechanisms</li>
+<li>Complex organic geometries</li>
+<li>Topology-optimized forms</li>
+</ul>
+<hr>
+<h1 id="individual-assignment-1">Individual Assignment<a class="anchor" href="#individual-assignment-1">#</a></h1>
+<h2 id="printer-and-material-used">Printer and Material Used<a class="anchor" href="#printer-and-material-used">#</a></h2>
+<p>I used my personal <strong>Bambu Lab A1</strong> 3D printer along with <strong>WOL3D PLA filament</strong>.</p>
+<h3 id="filament-specifications">Filament Specifications:<a class="anchor" href="#filament-specifications">#</a></h3>
+<ul>
+<li>Print Temperature: <strong>190°C – 220°C</strong></li>
+<li>Bed Temperature: <strong>50–60°C</strong></li>
+<li>Shrinkage / Warping: Minimal</li>
+<li>Diameter: <strong>1.75 mm</strong></li>
+</ul>
+<p>Since I am very familiar with both the printer and filament, the workflow was smooth. I used the <strong>default Generic PLA settings</strong> available in Bambu Studio.</p>
+<hr>
+<h1 id="items-designed-and-printed">Items Designed and Printed<a class="anchor" href="#items-designed-and-printed">#</a></h1>
+<p>I designed and 3D printed <strong>three items</strong> this week.</p>
+<hr>
+<h2 id="item-1--3d-octagonal-lattice-structure">Item 1 – 3D Octagonal Lattice Structure<a class="anchor" href="#item-1--3d-octagonal-lattice-structure">#</a></h2>
+<h3 id="design-process">Design Process<a class="anchor" href="#design-process">#</a></h3>
+<ol>
+<li>Opened SolidWorks.</li>
+<li>Created a <strong>single octagonal unit cell</strong> based on my design choice.</li>
+<li>Imported the part into Assembly.</li>
+<li>Used <strong>linear patterning</strong> to replicate the cell and form the entire lattice structure.</li>
+</ol>
+<h3 id="design-considerations-based-on-group-assignment">Design Considerations (Based on Group Assignment)<a class="anchor" href="#design-considerations-based-on-group-assignment">#</a></h3>
+<p>From our printer testing:</p>
+<ul>
+<li><strong>All bridge lengths were kept below 20 mm</strong></li>
+<li><strong>All overhang angles were kept below 45°</strong></li>
+</ul>
+<h3 id="why-these-constraints-matter">Why These Constraints Matter<a class="anchor" href="#why-these-constraints-matter">#</a></h3>
+<h4 id="bridging--20-mm">Bridging (&lt; 20 mm)<a class="anchor" href="#bridging--20-mm">#</a></h4>
+<p>Bridging refers to printing across a gap without support underneath.</p>
+<p>If the bridge is too long:</p>
+<ul>
+<li>Filament sags</li>
+<li>Surface becomes rough</li>
+<li>Structural integrity reduces</li>
+</ul>
+<p>By keeping bridge lengths under 20 mm:</p>
+<ul>
+<li>The extruded filament could span the gap cleanly</li>
+<li>Minimal drooping occurred</li>
+<li>No supports were required</li>
+</ul>
+<h4 id="overhangs--45">Overhangs (&lt; 45°)<a class="anchor" href="#overhangs--45">#</a></h4>
+<p>Overhang angle is measured from vertical.</p>
+<ul>
+<li>Below 45° → Each new layer is sufficiently supported by the previous layer.</li>
+<li>Above 45° → The layer begins to print into air, causing sagging.</li>
+</ul>
+<p>By keeping overhang angles below 45°:</p>
+<ul>
+<li>No support structures were required</li>
+<li>Surface finish remained clean</li>
+<li>Print time was reduced</li>
+</ul>
+<h3 id="why-this-object-cannot-be-made-subtractively">Why This Object Cannot Be Made Subtractively<a class="anchor" href="#why-this-object-cannot-be-made-subtractively">#</a></h3>
+<p>This lattice structure contains:</p>
+<ul>
+<li>Repeating internal geometry</li>
+<li>Interconnected voids</li>
+<li>Internal unsupported features</li>
+</ul>
+<p>A subtractive tool (like a milling cutter) <strong>cannot reach internal cavities without splitting the part into multiple pieces</strong>.</p>
+<p>Additive manufacturing enables this in a single print.</p>
+<hr>
+<h2 id="item-2--goblin-flexi-toy">Item 2 – Goblin Flexi Toy<a class="anchor" href="#item-2--goblin-flexi-toy">#</a></h2>
+<p>While scrolling through Instagram, I came across an account called <strong>PIODEER</strong>:</p>
+<p>🔗 <a href="https://www.instagram.com/piodeer.stl/">https://www.instagram.com/piodeer.stl/</a></p>
+<p>They had posted a reel about making a flexi toy, which inspired me.</p>
+<p>That gave me the idea to convert the <strong>Goblin model I created in Week 2 using Blender</strong> into a flexi toy.</p>
+<h3 id="initial-approach">Initial Approach<a class="anchor" href="#initial-approach">#</a></h3>
+<ul>
+<li>I reached out to the Instagram account admin.</li>
+<li>They shared the STL file of the cutter used to make the flexi mechanism.</li>
+</ul>
+<p>After discussing this with my instructor <strong>Saheen</strong>, he asked me to:</p>
+<blockquote class='book-hint '>
+<p>Design the cutter from scratch instead of directly using the provided file.</p>
+</blockquote><h3 id="cutter-design-process">Cutter Design Process<a class="anchor" href="#cutter-design-process">#</a></h3>
+<ol>
+<li>Studied the cutter design shared by PIODEER.</li>
+<li>Understood the mechanism logic.</li>
+<li>Drew inspiration from it.</li>
+<li>Designed my own cutter from scratch.</li>
+</ol>
+<h3 id="boolean-workflow-in-bambu-studio">Boolean Workflow in Bambu Studio<a class="anchor" href="#boolean-workflow-in-bambu-studio">#</a></h3>
+<ul>
+<li>Imported both STL files:
+<ul>
+<li>Goblin model → <strong>Positive body</strong></li>
+<li>Cutter model → <strong>Negative body</strong></li>
+</ul>
+</li>
+<li>Used boolean merging:
+<ul>
+<li>Subtracted the cutter geometry from the goblin.</li>
+</ul>
+</li>
+<li>Generated the final flexi model.</li>
+<li>Printed the result.</li>
+</ul>
+<h3 id="why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively<a class="anchor" href="#why-this-cannot-be-made-subtractively">#</a></h3>
+<p>The flexi toy contains:</p>
+<ul>
+<li>Print-in-place moving segments</li>
+<li>Internal clearances</li>
+<li>Interlocked geometry</li>
+</ul>
+<p>Such geometry would require:</p>
+<ul>
+<li>Multiple part fabrication</li>
+<li>Assembly</li>
+<li>Additional fastening</li>
+</ul>
+<p>Additive manufacturing allows it to be printed as a single articulated object.</p>
+<hr>
 </article>
  
       
@@ -1057,6 +1291,47 @@ The aim was to understand design rules for 3D printing, test printer capabilitie
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#group-assignment-1">Group Assignment</a>
+      <ul>
+        <li><a href="#testing-the-design-rules-for-our-3d-printers">Testing the Design Rules for Our 3D Printers</a></li>
+        <li><a href="#key-findings">Key Findings</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-comparison-subtractive-vs-additive-manufacturing">Quick Comparison: Subtractive vs Additive Manufacturing</a>
+      <ul>
+        <li><a href="#why-this-matters">Why This Matters</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#printer-and-material-used">Printer and Material Used</a>
+      <ul>
+        <li><a href="#filament-specifications">Filament Specifications:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#item-1--3d-octagonal-lattice-structure">Item 1 – 3D Octagonal Lattice Structure</a>
+      <ul>
+        <li><a href="#design-process">Design Process</a></li>
+        <li><a href="#design-considerations-based-on-group-assignment">Design Considerations (Based on Group Assignment)</a></li>
+        <li><a href="#why-these-constraints-matter">Why These Constraints Matter</a></li>
+        <li><a href="#why-this-object-cannot-be-made-subtractively">Why This Object Cannot Be Made Subtractively</a></li>
+      </ul>
+    </li>
+    <li><a href="#item-2--goblin-flexi-toy">Item 2 – Goblin Flexi Toy</a>
+      <ul>
+        <li><a href="#initial-approach">Initial Approach</a></li>
+        <li><a href="#cutter-design-process">Cutter Design Process</a></li>
+        <li><a href="#boolean-workflow-in-bambu-studio">Boolean Workflow in Bambu Studio</a></li>
+        <li><a href="#why-this-cannot-be-made-subtractively">Why This Cannot Be Made Subtractively</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
