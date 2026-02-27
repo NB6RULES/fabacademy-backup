@@ -31,7 +31,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 The aim was to understand design rules for 3D printing, test printer capabilities, and explore 3D scanning workflows.
 This week continued the digital fabrication journey, adding additive manufacturing to the subtractive processes learned earlier.
 Group Assignment#Test the design rules for your 3D printers Characterize your printer(s): Dimensions Tolerances Surface quality Support requirements Individual Assignment#Design and 3D print an object that could not be easily made subtractively 3D scan an object, try to prepare it for printing Extra Credit Goals">
-  <meta itemprop="wordCount" content="1662">
+  <meta itemprop="wordCount" content="1874">
 
 <title>Week 05 - 3D Scanning and Printing | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +45,7 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.67683f71577d784c5fc9ca9fc2581cd9e0b9cbfd882d4bbc934a56a009b04e8b.js" integrity="sha256-Z2g/cVd9eExfycqfwlgc2eC5y/2ILUu8k0pWoAmwTos=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.03aaa32bfb4da4cd4fdecca9ba51d7c3245a1074b6a45771845763319fa6e82d.js" integrity="sha256-A6qjK/tNpM1P3sypulHXwyRaEHS2pFdxhFdjMZ&#43;m6C0=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -939,6 +939,13 @@ Group Assignment#Test the design rules for your 3D printers Characterize your p
       </ul>
     </li>
     <li><a href="#conclusion-3d-printing">Conclusion (3D Printing)</a></li>
+    <li><a href="#why-these-designs-cannot-be-made-subtractively">Why These Designs Cannot Be Made Subtractively</a>
+      <ul>
+        <li><a href="#item-1--octagonal-lattice-structure">Item 1 – Octagonal Lattice Structure</a></li>
+        <li><a href="#item-2--goblin-flexi-toy-1">Item 2 – Goblin Flexi Toy</a></li>
+        <li><a href="#item-3--print-in-place-engine-model-1">Item 3 – Print-in-Place Engine Model</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -1340,6 +1347,49 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
 </ol>
 <p>Each demonstrates different strengths of additive manufacturing.</p>
 <hr>
+<h2 id="why-these-designs-cannot-be-made-subtractively">Why These Designs Cannot Be Made Subtractively<a class="anchor" href="#why-these-designs-cannot-be-made-subtractively">#</a></h2>
+<h3 id="item-1--octagonal-lattice-structure">Item 1 – Octagonal Lattice Structure<a class="anchor" href="#item-1--octagonal-lattice-structure">#</a></h3>
+<p><strong>Why subtractive doesn&rsquo;t work:</strong></p>
+<ul>
+<li>Has <strong>hollow sections inside</strong> that can&rsquo;t be reached by cutting tools</li>
+<li>Making it with subtractive methods would waste ~90% of the material</li>
+<li>Multiple cuts would weaken the connections between lattice pieces</li>
+</ul>
+<p><strong>Why 3D printing works:</strong></p>
+<ul>
+<li>Builds the structure layer-by-layer with hollow spaces already in place</li>
+<li>No material waste</li>
+<li>All connections stay strong</li>
+</ul>
+<hr>
+<h3 id="item-2--goblin-flexi-toy-1">Item 2 – Goblin Flexi Toy<a class="anchor" href="#item-2--goblin-flexi-toy-1">#</a></h3>
+<p><strong>Why subtractive doesn&rsquo;t work:</strong></p>
+<ul>
+<li>Needs <strong>thin, flexible walls</strong> that would break during cutting</li>
+<li>Requires precise channels for movement—hard to cut without damaging the model</li>
+<li>All the articulation channels need to be part of one piece</li>
+</ul>
+<p><strong>Why 3D printing works:</strong></p>
+<ul>
+<li>Prints as one complete piece with all flex channels built in</li>
+<li>The walls stay intact during printing</li>
+<li>Flexible right after printing</li>
+</ul>
+<hr>
+<h3 id="item-3--print-in-place-engine-model-1">Item 3 – Print-in-Place Engine Model<a class="anchor" href="#item-3--print-in-place-engine-model-1">#</a></h3>
+<p><strong>Why subtractive doesn&rsquo;t work:</strong></p>
+<ul>
+<li>Has <strong>moving parts inside</strong> (crankshaft, piston) that need to work together</li>
+<li>Can&rsquo;t mill all parts together—each piece would need to be made separately and then assembled</li>
+<li>Hard to get exact clearances between moving parts when assembling by hand</li>
+</ul>
+<p><strong>Why 3D printing works:</strong></p>
+<ul>
+<li>Prints as one complete assembly with everything in the right place</li>
+<li>Clearances are already built into the design</li>
+<li>Engine works immediately after printing—no assembly needed</li>
+</ul>
+<hr>
 <h1 id="failures-and-learnings">Failures and Learnings<a class="anchor" href="#failures-and-learnings">#</a></h1>
 <p>Coming to the most important part of my 3D printing week — <strong>failures and what I learned from them</strong>.</p>
 <p>Most of the issues I faced were during the <strong>engine model print</strong>, which involved complex geometry, clearances, and print-in-place mechanisms.</p>
@@ -1670,6 +1720,13 @@ img source : <a href="https://www.radsourcing.com/blog/additive-and-subtractive-
       </ul>
     </li>
     <li><a href="#conclusion-3d-printing">Conclusion (3D Printing)</a></li>
+    <li><a href="#why-these-designs-cannot-be-made-subtractively">Why These Designs Cannot Be Made Subtractively</a>
+      <ul>
+        <li><a href="#item-1--octagonal-lattice-structure">Item 1 – Octagonal Lattice Structure</a></li>
+        <li><a href="#item-2--goblin-flexi-toy-1">Item 2 – Goblin Flexi Toy</a></li>
+        <li><a href="#item-3--print-in-place-engine-model-1">Item 3 – Print-in-Place Engine Model</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
