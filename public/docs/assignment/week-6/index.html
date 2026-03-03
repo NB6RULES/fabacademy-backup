@@ -8,30 +8,24 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Week 06 - Electronics Design#Week 6 focused on electronics design, learning to design circuits, use EDA (Electronic Design Automation) tools, and simulate circuit behavior.
-The aim was to understand circuit theory, use design tools effectively, and create schematic and PCB layouts.
-This week built on the embedded programming knowledge from Week 4 and prepared for electronics production.
-Group Assignment#Use the test equipment in your lab to observe the operation of an embedded microcontroller Individual Assignment#Simulate a circuit Use an EDA tool to design an embedded microcontroller system using parts from the inventory Check design rules for fabrication Extra Credit Goals
+<meta name="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
+I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Week 06 - Electronics Design">
-  <meta property="og:description" content="Week 06 - Electronics Design#Week 6 focused on electronics design, learning to design circuits, use EDA (Electronic Design Automation) tools, and simulate circuit behavior.
-The aim was to understand circuit theory, use design tools effectively, and create schematic and PCB layouts.
-This week built on the embedded programming knowledge from Week 4 and prepared for electronics production.
-Group Assignment#Use the test equipment in your lab to observe the operation of an embedded microcontroller Individual Assignment#Simulate a circuit Use an EDA tool to design an embedded microcontroller system using parts from the inventory Check design rules for fabrication Extra Credit Goals">
+  <meta property="og:description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
+I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
 
   <meta itemprop="name" content="Week 06 - Electronics Design">
-  <meta itemprop="description" content="Week 06 - Electronics Design#Week 6 focused on electronics design, learning to design circuits, use EDA (Electronic Design Automation) tools, and simulate circuit behavior.
-The aim was to understand circuit theory, use design tools effectively, and create schematic and PCB layouts.
-This week built on the embedded programming knowledge from Week 4 and prepared for electronics production.
-Group Assignment#Use the test equipment in your lab to observe the operation of an embedded microcontroller Individual Assignment#Simulate a circuit Use an EDA tool to design an embedded microcontroller system using parts from the inventory Check design rules for fabrication Extra Credit Goals">
-  <meta itemprop="wordCount" content="171">
+  <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
+I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
+  <meta itemprop="wordCount" content="2966">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -45,7 +39,7 @@ Group Assignment#Use the test equipment in your lab to observe the operation of
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.03aaa32bfb4da4cd4fdecca9ba51d7c3245a1074b6a45771845763319fa6e82d.js" integrity="sha256-A6qjK/tNpM1P3sypulHXwyRaEHS2pFdxhFdjMZ&#43;m6C0=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.d4589ac946b773a8695be8b4e1aee98c0684a5e393d4175c86a4e96c23c96b37.js" integrity="sha256-1FiayUa3c6hpW&#43;i04a7pjAaEpeOT1BdchqTpbCPJazc=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -888,6 +882,68 @@ Group Assignment#Use the test equipment in your lab to observe the operation of
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#-what-is-wokwi">🖥️ What is Wokwi?</a></li>
+    <li><a href="#-creating-an-account-and-new-project">🆕 Creating an Account and New Project</a></li>
+    <li><a href="#-adding-components-in-the-diagramjson">➕ Adding Components in the diagram.json</a></li>
+    <li><a href="#-pasting-the-code-and-simulating">💻 Pasting the Code and Simulating</a></li>
+    <li><a href="#-switching-to-the-wokwi-vs-code-plugin">🔌 Switching to the Wokwi VS Code Plugin</a>
+      <ul>
+        <li><a href="#installing-the-extension">Installing the Extension</a></li>
+        <li><a href="#setting-up-the-project">Setting Up the Project</a></li>
+        <li><a href="#running-the-simulation">Running the Simulation</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-installing-kicad">📥 Installing KiCad</a></li>
+    <li><a href="#-importing-the-fab-academy-kicad-library">📚 Importing the Fab Academy KiCad Library</a></li>
+    <li><a href="#-creating-a-new-project">🆕 Creating a New Project</a></li>
+    <li><a href="#-building-the-schematic">📐 Building the Schematic</a>
+      <ul>
+        <li><a href="#adding-components">Adding Components</a></li>
+        <li><a href="#drawing-wires">Drawing Wires</a></li>
+        <li><a href="#why-i-added-extra-jst-connectors">Why I Added Extra JST Connectors</a></li>
+      </ul>
+    </li>
+    <li><a href="#-running-the-erc-electrical-rules-check">✅ Running the ERC (Electrical Rules Check)</a></li>
+    <li><a href="#-assigning-footprints">🔗 Assigning Footprints</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-what-is-snapmagic">🔍 What is SnapMagic?</a></li>
+    <li><a href="#-downloading-a-component-from-snapmagic">📥 Downloading a Component from SnapMagic</a></li>
+    <li><a href="#-importing-into-kicad">📦 Importing into KiCad</a>
+      <ul>
+        <li><a href="#importing-the-symbol">Importing the Symbol</a></li>
+        <li><a href="#importing-the-footprint">Importing the Footprint</a></li>
+        <li><a href="#adding-the-3d-model">Adding the 3D Model</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-opening-the-pcb-editor">📂 Opening the PCB Editor</a></li>
+    <li><a href="#-setting-design-rules">⚙️ Setting Design Rules</a></li>
+    <li><a href="#-defining-the-board-outline">📏 Defining the Board Outline</a></li>
+    <li><a href="#-placing-components">🧩 Placing Components</a></li>
+    <li><a href="#-routing-traces">🔀 Routing Traces</a></li>
+    <li><a href="#-running-the-drc-design-rules-check">🔍 Running the DRC (Design Rules Check)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-viewing-the-pcb-in-3d">🖼️ Viewing the PCB in 3D</a></li>
+    <li><a href="#-exporting-the-step-file">📤 Exporting the STEP File</a></li>
+    <li><a href="#-importing-into-fusion-360-for-casing-design">🏠 Importing into Fusion 360 for Casing Design</a>
+      <ul>
+        <li><a href="#building-the-casing">Building the Casing</a></li>
+      </ul>
+    </li>
+    <li><a href="#files">Files</a></li>
+    <li><a href="#helpful-websites">Helpful Websites</a></li>
+  </ul>
 </nav>
 
 
@@ -899,35 +955,37 @@ Group Assignment#Use the test equipment in your lab to observe the operation of
 
       
       
-  <article class="markdown book-article"><h1 id="week-06---electronics-design">Week 06 - Electronics Design<a class="anchor" href="#week-06---electronics-design">#</a></h1>
-<p>Week 6 focused on <strong>electronics design</strong>, learning to design circuits, use EDA (Electronic Design Automation) tools, and simulate circuit behavior.<br>
-The aim was to understand circuit theory, use design tools effectively, and create schematic and PCB layouts.</p>
-<p>This week built on the embedded programming knowledge from Week 4 and prepared for electronics production.</p>
+  <article class="markdown book-article"><h1 id="week-06--electronics-design">Week 06 – Electronics Design<a class="anchor" href="#week-06--electronics-design">#</a></h1>
+<p>Week 6 is all about <strong>Electronics Design</strong> — which basically means this is the week where we stop connecting stuff on breadboards and start actually <em>designing</em> the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.</p>
+<p>I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.</p>
 <hr>
 <h2 id="group-assignment">Group Assignment<a class="anchor" href="#group-assignment">#</a></h2>
 <ul>
-<li>Use the <strong>test equipment</strong> in your lab to observe the operation of an embedded microcontroller</li>
+<li>Use the test equipment in your lab to observe the operation of a microcontroller circuit board</li>
 </ul>
 <h2 id="individual-assignment">Individual Assignment<a class="anchor" href="#individual-assignment">#</a></h2>
 <ul>
-<li><strong>Simulate</strong> a circuit</li>
-<li>Use an <strong>EDA tool</strong> to design an embedded microcontroller system using parts from the inventory</li>
-<li><strong>Check design rules</strong> for fabrication</li>
-</ul>
-<p><strong>Extra Credit Goals</strong></p>
-<ul>
-<li>Try <strong>another design workflow</strong></li>
-<li>Design a <strong>case</strong> for your board</li>
+<li>Use an <strong>EDA tool</strong> to design a development board that can interact with and send data to an embedded microcontroller</li>
+<li>Extra Credit: Try different tools</li>
 </ul>
 <hr>
 <h2 id="what-i-learned">What I Learned<a class="anchor" href="#what-i-learned">#</a></h2>
+<p>This week helped me understand the full electronics design pipeline — from how a circuit is <em>simulated</em> before it’s built, all the way through to how you <em>route a PCB</em> and visualise it in 3D.</p>
+<p>Key things I picked up:</p>
+<ul>
+<li>How Wokwi works as a circuit simulator and why the VS Code plugin is better for complex projects</li>
+<li>How to create a full schematic in KiCad with proper symbols and net connections</li>
+<li>How to import custom component footprints from SnapMagic when the standard library doesn’t have what I need</li>
+<li>How ERC/DRC checks can save you from expensive mistakes</li>
+<li>How to go from a KiCad PCB all the way into Fusion 360 for casing design using a STEP file export</li>
+</ul>
 <hr>
 <h2 id="software-used">Software Used<a class="anchor" href="#software-used">#</a></h2>
 <ul>
-<li><strong>KiCad / Eagle / Fusion 360</strong> for schematic and PCB design</li>
-<li><strong>Simulation software</strong> for circuit simulation</li>
-<li><strong>Test equipment</strong> (oscilloscope, multimeter, power supply)</li>
-<li><strong>Browser + Git</strong> for documentation</li>
+<li><strong>Wokwi</strong> (browser + VS Code plugin) — circuit simulation</li>
+<li><strong>KiCad</strong> — schematic and PCB design</li>
+<li><strong>SnapMagic</strong> — importing custom component footprints</li>
+<li><strong>Fusion 360</strong> — 3D casing design using exported STEP file</li>
 </ul>
 <hr>
 <h2 id="weekly-schedule">Weekly Schedule<a class="anchor" href="#weekly-schedule">#</a></h2>
@@ -941,27 +999,27 @@ The aim was to understand circuit theory, use design tools effectively, and crea
   <tbody>
       <tr>
           <td>WED</td>
-          <td>Lecture on electronics design</td>
+          <td>Lecture on electronics design with Neil</td>
       </tr>
       <tr>
           <td>THU</td>
-          <td></td>
+          <td>Wokwi browser simulation — building the NB6-Boy circuit</td>
       </tr>
       <tr>
           <td>FRI</td>
-          <td></td>
+          <td>Switching to Wokwi VS Code plugin, getting simulation working</td>
       </tr>
       <tr>
           <td>SAT</td>
-          <td></td>
+          <td>KiCad install, Fab library setup, starting the schematic</td>
       </tr>
       <tr>
           <td>SUN</td>
-          <td></td>
+          <td>Completing schematic, ERC check, assigning footprints</td>
       </tr>
       <tr>
           <td>MON</td>
-          <td></td>
+          <td>PCB layout, routing, DRC, 3D view and STEP export</td>
       </tr>
       <tr>
           <td>TUE</td>
@@ -970,11 +1028,496 @@ The aim was to understand circuit theory, use design tools effectively, and crea
   </tbody>
 </table>
 <hr>
-<div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
-  <a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: white; color: #667eea; font-weight: bold; font-size: 16px; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.25);'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15);'">
-    ⬇️ Download All Files from Week 6
-  </a>
-</div>
+<h1 id="part-1--circuit-simulation-with-wokwi">Part 1 – Circuit Simulation with Wokwi<a class="anchor" href="#part-1--circuit-simulation-with-wokwi">#</a></h1>
+<h2 id="-what-is-wokwi">🖥️ What is Wokwi?<a class="anchor" href="#-what-is-wokwi">#</a></h2>
+<p><strong><a href="https://wokwi.com/">Wokwi</a></strong> is a free, browser-based electronics simulator that lets you test circuits and code <em>before</em> you ever touch actual hardware.</p>
+<p>It supports a ton of microcontrollers (ESP32, RP2040, Arduino, etc.) and common components — and it’s completely free to use. Think of it like a virtual breadboard + compiler combo.</p>
+<p>This is actually really useful because you can catch wiring mistakes and code bugs without burning components or wasting time debugging hardware.</p>
+<hr>
+<h2 id="-creating-an-account-and-new-project">🆕 Creating an Account and New Project<a class="anchor" href="#-creating-an-account-and-new-project">#</a></h2>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Go to <a href="https://wokwi.com/">wokwi.com</a></li>
+<li>Click <strong>Sign Up</strong> and create a free account (you can use email or GitHub)</li>
+<li>Once logged in, click <strong>New Project</strong></li>
+<li>From the template picker, select <strong>ESP32</strong> as the starting board</li>
+</ol>
+<p><img src="../../../images/week-6/wokwi-new-project.jpg" alt="Wokwi New Project" /></p>
+<blockquote class='book-hint '>
+<p><strong>Why ESP32?</strong> — My NB6-Boy from Week 4 was built on the Seeed Studio XIAO ESP32-C6, so simulating it on the ESP32 let me use the exact same code and wiring.</p>
+</blockquote><hr>
+<h2 id="-adding-components-in-the-diagramjson">➕ Adding Components in the diagram.json<a class="anchor" href="#-adding-components-in-the-diagramjson">#</a></h2>
+<p>Wokwi stores your circuit inside a file called <strong><code>diagram.json</code></strong>. You can either edit it as JSON directly or use the visual drag-and-drop interface — I used the visual interface since it’s way easier.</p>
+<p><strong>Components I added for the NB6-Boy:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Quantity</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ESP32</td>
+          <td>1</td>
+          <td>Main microcontroller</td>
+      </tr>
+      <tr>
+          <td>Push Buttons</td>
+          <td>6</td>
+          <td>Game controls (Up, Down, Left, Right, A, B)</td>
+      </tr>
+      <tr>
+          <td>Passive Buzzer</td>
+          <td>1</td>
+          <td>Sound effects and audio feedback</td>
+      </tr>
+      <tr>
+          <td>OLED Display (SSD1306)</td>
+          <td>1</td>
+          <td>Game display</td>
+      </tr>
+      <tr>
+          <td>NeoPixel LED Matrix</td>
+          <td>1</td>
+          <td>Visual effects and score display</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>How to add components:</strong></p>
+<ol>
+<li>Click the <strong>&quot;+&quot;</strong> button (Add Component) in the top toolbar</li>
+<li>Search by name — e.g. type <code>pushbutton</code>, <code>buzzer</code>, or <code>SSD1306</code></li>
+<li>Click to place it on the canvas</li>
+<li>Drag it to wherever makes sense in your layout</li>
+<li>Click on a pin to start drawing a wire, then click the destination pin to finish the connection</li>
+<li>Repeat for all your components until everything is wired up</li>
+</ol>
+<p><img src="../../../images/week-6/wokwi-components.jpg" alt="Wokwi Components Added" /></p>
+<hr>
+<h2 id="-pasting-the-code-and-simulating">💻 Pasting the Code and Simulating<a class="anchor" href="#-pasting-the-code-and-simulating">#</a></h2>
+<p>Once the wiring was done:</p>
+<ol>
+<li>Click the <strong>code editor tab</strong> on the left panel — this is the <code>.ino</code> file section</li>
+<li>Paste in the full NB6-Boy code from Week 4</li>
+<li>Hit the <strong>▶ Simulate</strong> button</li>
+</ol>
+<p><strong>Problem:</strong> The online compiler timed out with a long string of <code>000...</code> errors and couldn’t finish compiling. This was almost definitely because of the complexity of the libraries (NeoPixel, SSD1306, etc.) that the browser-based compiler just couldn’t handle.</p>
+<p><img src="../../../images/week-6/wokwi-error.jpg" alt="Wokwi Compile Error" /></p>
+<p>At this point I had to shift to a different approach.</p>
+<hr>
+<h2 id="-switching-to-the-wokwi-vs-code-plugin">🔌 Switching to the Wokwi VS Code Plugin<a class="anchor" href="#-switching-to-the-wokwi-vs-code-plugin">#</a></h2>
+<p>The <strong>Wokwi VS Code extension</strong> solves the compilation issue entirely — it uses your <em>local</em> compiler instead of the browser’s online one, so complex multi-library projects just work.</p>
+<h3 id="installing-the-extension">Installing the Extension<a class="anchor" href="#installing-the-extension">#</a></h3>
+<ol>
+<li>Open <strong>VS Code</strong> and go to the Extensions panel (<code>Ctrl+Shift+X</code>)</li>
+<li>Search for <strong>Wokwi</strong> and install the official <strong>Wokwi Simulator</strong> extension</li>
+</ol>
+<p><img src="../../../images/week-6/wokwi-vscode-extension.jpg" alt="Wokwi VS Code Extension" /></p>
+<ol>
+<li>Once installed, you’ll be prompted to activate it — click the link and follow the steps on the <a href="https://docs.wokwi.com/vscode/getting-started">official Wokwi VS Code docs</a> to get your free licence key</li>
+<li>Paste the key into VS Code when prompted and you’re good to go</li>
+</ol>
+<hr>
+<h3 id="setting-up-the-project">Setting Up the Project<a class="anchor" href="#setting-up-the-project">#</a></h3>
+<ol>
+<li>Open your project folder in VS Code (the one containing your <code>.ino</code> or PlatformIO source)</li>
+<li>Create a <code>wokwi.toml</code> file in the root of your project:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">wokwi</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">version</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">elf</span> = <span style="color:#e6db74">&#34;.pio/build/esp32dev/firmware.elf&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">firmware</span> = <span style="color:#e6db74">&#34;.pio/build/esp32dev/firmware.bin&#34;</span></span></span></code></pre></div><ol>
+<li>Copy the <code>diagram.json</code> file you built on the Wokwi website into the same project folder</li>
+<li>Make sure your source code is in the <code>src/</code> folder (if using PlatformIO) or directly in the project root (if using Arduino CLI)</li>
+</ol>
+<hr>
+<h3 id="running-the-simulation">Running the Simulation<a class="anchor" href="#running-the-simulation">#</a></h3>
+<ol>
+<li>Press <strong><code>F1</code></strong> and type <strong>Wokwi: Start Simulator</strong> — or click the Wokwi icon in the sidebar</li>
+<li>VS Code compiles the code locally first</li>
+<li>Once done, the simulation window opens</li>
+</ol>
+<p><img src="../../../images/week-6/wokwi-vscode-running.jpg" alt="Wokwi VS Code Running" /></p>
+<p><strong>Result:</strong> The NB6-Boy simulation worked perfectly! 🎮</p>
+<p>The OLED display booted up, all six buttons were responsive, the NeoPixel matrix lit up, and the buzzer fired sounds exactly like it does on the physical hardware.</p>
+<blockquote class='book-hint '>
+<p><strong>Tip:</strong> The VS Code plugin is 100% the way to go for complex projects. The browser version is great for quick tests, but once you have multiple libraries it just can’t keep up.</p>
+</blockquote><hr>
+<h1 id="part-2--schematic-design-with-kicad">Part 2 – Schematic Design with KiCad<a class="anchor" href="#part-2--schematic-design-with-kicad">#</a></h1>
+<h2 id="-installing-kicad">📥 Installing KiCad<a class="anchor" href="#-installing-kicad">#</a></h2>
+<p><strong><a href="https://www.kicad.org/">KiCad</a></strong> is the open-source EDA (Electronic Design Automation) tool used across Fab Academy for schematic capture and PCB design.</p>
+<ol>
+<li>Go to the <strong><a href="https://www.kicad.org/download/">official KiCad download page</a></strong></li>
+<li>Select <strong>Windows</strong> and download the installer</li>
+<li>Run it and go through the <strong>KiCad Installation Manager</strong></li>
+<li>Keep the default library selections — you can always add more later</li>
+</ol>
+<p><img src="../../../images/week-6/kicad-download.jpg" alt="KiCad Download" /></p>
+<p><img src="../../../images/week-6/kicad-install.jpg" alt="KiCad Install" /></p>
+<hr>
+<h2 id="-importing-the-fab-academy-kicad-library">📚 Importing the Fab Academy KiCad Library<a class="anchor" href="#-importing-the-fab-academy-kicad-library">#</a></h2>
+<p>The standard KiCad library is great, but Fab Academy has its own library of components with footprints specifically sized and optimised for the Roland SRM-20 milling machine we use in the lab.</p>
+<ol>
+<li>Download the <strong>Fab Academy KiCad library</strong> from:<br>
+<a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">https://gitlab.fabcloud.org/pub/libraries/electronics/kicad</a></li>
+<li>Open KiCad and go to <strong>Preferences → Manage Symbol Libraries</strong></li>
+<li>Click <strong>Add Existing</strong> and navigate to the downloaded <code>.kicad_sym</code> file</li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p><img src="../../../images/week-6/kicad-symbol-library.jpg" alt="KiCad Symbol Library" /></p>
+<ol>
+<li>Now go to <strong>Preferences → Manage Footprint Libraries</strong></li>
+<li>Add the downloaded <code>.pretty</code> folder the same way</li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p>The Fab library is now available — you’ll see it listed as <code>fab</code> in all library searches from here on.</p>
+<hr>
+<h2 id="-creating-a-new-project">🆕 Creating a New Project<a class="anchor" href="#-creating-a-new-project">#</a></h2>
+<ol>
+<li>In the KiCad project manager, click <strong>New Project</strong></li>
+<li>Give it a name — I called mine <code>NB6-Boy-PCB</code></li>
+<li>Choose a project folder and click <strong>Save</strong></li>
+<li>This creates a <code>.kicad_sch</code> schematic file and a <code>.kicad_pcb</code> PCB file</li>
+</ol>
+<hr>
+<h2 id="-building-the-schematic">📐 Building the Schematic<a class="anchor" href="#-building-the-schematic">#</a></h2>
+<p>Double-click the <strong>Schematic Editor</strong> (<code>.kicad_sch</code>) to open it.</p>
+<p>The schematic is the <em>logical</em> map of your circuit — it shows what connects to what, using standardised symbols. It doesn’t care about physical size or position yet, that comes later in the PCB editor.</p>
+<h3 id="adding-components">Adding Components<a class="anchor" href="#adding-components">#</a></h3>
+<p>Press <strong><code>A</code></strong> to open the <strong>Add Symbol</strong> dialog, search for your component, and click to place it.</p>
+<p><strong>Components I added for the NB6-Boy PCB:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Symbol Source</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RP2040</td>
+          <td>Fab Library</td>
+          <td>Main MCU</td>
+      </tr>
+      <tr>
+          <td>Push Buttons ×6</td>
+          <td>Fab Library</td>
+          <td>Game controls</td>
+      </tr>
+      <tr>
+          <td>OLED Display (SSD1306)</td>
+          <td>Fab Library</td>
+          <td>I²C — SDA/SCL</td>
+      </tr>
+      <tr>
+          <td>NeoPixel Matrix</td>
+          <td>Fab Library</td>
+          <td>Single data pin control</td>
+      </tr>
+      <tr>
+          <td>Passive Buzzer</td>
+          <td>Fab Library</td>
+          <td>PWM audio output</td>
+      </tr>
+      <tr>
+          <td>Decoupling Capacitors</td>
+          <td>KiCad Default</td>
+          <td>100nF across VCC/GND</td>
+      </tr>
+      <tr>
+          <td>JST Connector (SDA/SCL)</td>
+          <td>Fab Library</td>
+          <td>Expansion header</td>
+      </tr>
+      <tr>
+          <td>JST Connector (RX/TX)</td>
+          <td>Fab Library</td>
+          <td>Expansion header</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="../../../images/week-6/kicad-add-components.jpg" alt="KiCad Schematic Adding Components" /></p>
+<h3 id="drawing-wires">Drawing Wires<a class="anchor" href="#drawing-wires">#</a></h3>
+<p>Press <strong><code>W</code></strong> to start the <strong>Wire</strong> tool.</p>
+<ul>
+<li>Click a pin to start the wire</li>
+<li>Click the destination pin to finish it</li>
+<li>Use <strong>Power Symbols</strong> (<code>PWR</code>, <code>GND</code>, <code>VCC</code>) from the Add Symbol dialog to label power nets cleanly — this avoids having to draw wires all the way across the schematic</li>
+</ul>
+<h3 id="why-i-added-extra-jst-connectors">Why I Added Extra JST Connectors<a class="anchor" href="#why-i-added-extra-jst-connectors">#</a></h3>
+<p>I added JST expansion connectors broken out for:</p>
+<ul>
+<li><strong>SDA / SCL</strong> — so I can plug in extra I²C peripherals later (sensors, displays, etc.)</li>
+<li><strong>RX / TX</strong> — for UART debugging or future wireless module integration</li>
+</ul>
+<p>This makes the development board way more useful beyond just the NB6-Boy. If I want to use the same board for a different project down the line, those connectors are already there.</p>
+<p><img src="../../../images/week-6/kicad-schematic-complete.jpg" alt="KiCad Schematic Complete" /></p>
+<hr>
+<h2 id="-running-the-erc-electrical-rules-check">✅ Running the ERC (Electrical Rules Check)<a class="anchor" href="#-running-the-erc-electrical-rules-check">#</a></h2>
+<p>Before moving to PCB layout, you run the <strong>ERC</strong> to check for any logical errors in your schematic.</p>
+<ol>
+<li>Go to <strong>Inspect → Electrical Rules Checker</strong></li>
+<li>Click <strong>Run ERC</strong></li>
+<li>Go through the list of any errors or warnings</li>
+</ol>
+<p><strong>Common things to fix:</strong></p>
+<ul>
+<li>Unconnected pins → add a <code>PWR_FLAG</code> or connect to a net</li>
+<li>Missing power pins → make sure all VCC and GND pins are connected</li>
+<li>Pin direction conflicts → double check that outputs aren’t connected to outputs</li>
+</ul>
+<p>Keep fixing until it shows <strong>0 errors, 0 warnings</strong>.</p>
+<p><img src="../../../images/week-6/kicad-erc.jpg" alt="KiCad ERC Check" /></p>
+<hr>
+<h2 id="-assigning-footprints">🔗 Assigning Footprints<a class="anchor" href="#-assigning-footprints">#</a></h2>
+<p>Once the schematic is clean, each symbol needs to be linked to a physical footprint — basically, the actual copper pads and silkscreen outline that will appear on the PCB.</p>
+<ol>
+<li>Go to <strong>Tools → Assign Footprints</strong></li>
+<li>For each component, pick the matching footprint from the Fab library or KiCad default library</li>
+<li>Make sure pad count, pitch, and package size match your actual components</li>
+<li>Click <strong>Apply and Save</strong></li>
+</ol>
+<hr>
+<h1 id="part-3--importing-components-not-in-the-fab-library-using-snapmagic">Part 3 – Importing Components Not in the Fab Library Using SnapMagic<a class="anchor" href="#part-3--importing-components-not-in-the-fab-library-using-snapmagic">#</a></h1>
+<h2 id="-what-is-snapmagic">🔍 What is SnapMagic?<a class="anchor" href="#-what-is-snapmagic">#</a></h2>
+<p>Sometimes the component you need — a specific display driver, a non-standard IC, a particular connector — just isn’t in the Fab library or the KiCad default library.</p>
+<p><strong><a href="https://www.snapeda.com/">SnapMagic</a></strong> (also known as SnapEDA) is a website with a massive database of free, ready-to-use KiCad symbols, footprints, and 3D models for real electronic components. You can find almost anything there.</p>
+<hr>
+<h2 id="-downloading-a-component-from-snapmagic">📥 Downloading a Component from SnapMagic<a class="anchor" href="#-downloading-a-component-from-snapmagic">#</a></h2>
+<ol>
+<li>Go to <strong><a href="https://www.snapeda.com/">snapeda.com</a></strong></li>
+<li>In the search bar, type the exact part number (e.g. <code>SSD1306</code>, <code>WS2812B</code>, <code>AMS1117-3.3</code>)</li>
+</ol>
+<p><img src="../../../images/week-6/snapmagic-search.jpg" alt="SnapMagic Search" /></p>
+<ol>
+<li>Select the correct result from the list — double-check the package type and pin count</li>
+<li>Click <strong>Download Symbol &amp; Footprint</strong></li>
+<li>Choose <strong>KiCad</strong> from the format dropdown</li>
+<li>Click <strong>Download</strong> — this gives you a <code>.zip</code> file</li>
+</ol>
+<p>Inside the zip you’ll find:</p>
+<ul>
+<li>A <code>.kicad_sym</code> file — the schematic symbol</li>
+<li>A <code>.kicad_mod</code> file — the PCB footprint</li>
+<li>A <code>.step</code> file — a 3D model (super useful for the 3D viewer later!)</li>
+</ul>
+<hr>
+<h2 id="-importing-into-kicad">📦 Importing into KiCad<a class="anchor" href="#-importing-into-kicad">#</a></h2>
+<p>Extract the zip somewhere sensible — I made a <code>custom-components/</code> folder inside my KiCad project folder.</p>
+<h3 id="importing-the-symbol">Importing the Symbol<a class="anchor" href="#importing-the-symbol">#</a></h3>
+<ol>
+<li>In KiCad, go to <strong>Preferences → Manage Symbol Libraries → Add Existing</strong></li>
+<li>Navigate to the <code>.kicad_sym</code> file and select it</li>
+<li>Give it a nickname like <code>snapmagic_custom</code></li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p>The component now shows up when you press <code>A</code> in the schematic editor — just filter by the library name you gave it.</p>
+<p><img src="../../../images/week-6/snapmagic-symbol-import.jpg" alt="SnapMagic Symbol Import" /></p>
+<h3 id="importing-the-footprint">Importing the Footprint<a class="anchor" href="#importing-the-footprint">#</a></h3>
+<ol>
+<li>Go to <strong>Preferences → Manage Footprint Libraries → Add Existing</strong></li>
+<li>Navigate to the folder containing the <code>.kicad_mod</code> file</li>
+<li>Add the folder and give it a nickname</li>
+<li>Click <strong>OK</strong></li>
+</ol>
+<p>When assigning footprints, filter by your new library name and the component will appear in the list.</p>
+<h3 id="adding-the-3d-model">Adding the 3D Model<a class="anchor" href="#adding-the-3d-model">#</a></h3>
+<ol>
+<li>Copy the <code>.step</code> file into your project folder (e.g. inside a <code>3d-models/</code> subfolder)</li>
+<li>Open the <strong>Footprint Editor</strong> for that component</li>
+<li>Go to the <strong>3D Models</strong> tab</li>
+<li>Click <strong>Add</strong> and point it to the <code>.step</code> file</li>
+</ol>
+<p>Now when you open the 3D PCB viewer, the component shows as a proper 3D model instead of just a blank box — which is honestly really satisfying.</p>
+<blockquote class='book-hint '>
+<p><strong>Important tip:</strong> Always double-check the footprint dimensions against the component’s actual datasheet. Compare pad pitch and courtyard size carefully before you start routing — a footprint mismatch is one of the most painful mistakes to discover after fabrication.</p>
+</blockquote><hr>
+<h1 id="part-4--pcb-layout-and-routing">Part 4 – PCB Layout and Routing<a class="anchor" href="#part-4--pcb-layout-and-routing">#</a></h1>
+<h2 id="-opening-the-pcb-editor">📂 Opening the PCB Editor<a class="anchor" href="#-opening-the-pcb-editor">#</a></h2>
+<ol>
+<li>From the KiCad project manager, click the <strong>PCB Editor</strong> (<code>.kicad_pcb</code>)</li>
+<li>Go to <strong>Tools → Update PCB from Schematic</strong></li>
+<li>This imports all your components as footprints and shows the <strong>ratsnest</strong> — the thin lines connecting pins that still need to be routed</li>
+</ol>
+<hr>
+<h2 id="-setting-design-rules">⚙️ Setting Design Rules<a class="anchor" href="#-setting-design-rules">#</a></h2>
+<p>Before placing anything, set your design constraints based on what the Roland SRM-20 can actually mill.</p>
+<p>Go to <strong>File → Board Setup → Design Rules</strong>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Minimum Track Width</td>
+          <td>0.4 mm</td>
+      </tr>
+      <tr>
+          <td>Minimum Clearance</td>
+          <td>0.4 mm</td>
+      </tr>
+      <tr>
+          <td>Minimum Via Diameter</td>
+          <td>0.8 mm</td>
+      </tr>
+      <tr>
+          <td>Copper Pour Clearance</td>
+          <td>0.5 mm</td>
+      </tr>
+  </tbody>
+</table>
+<p><img src="../../../images/week-6/kicad-design-rules.jpg" alt="KiCad Design Rules" /></p>
+<hr>
+<h2 id="-defining-the-board-outline">📏 Defining the Board Outline<a class="anchor" href="#-defining-the-board-outline">#</a></h2>
+<ol>
+<li>Select the <strong>Edge.Cuts</strong> layer from the layer panel on the right</li>
+<li>Use <strong>Place → Rectangle</strong> to draw the board outline</li>
+<li>The dimensions were set to fit the available blank PCB stock in the lab — <strong>70 mm × [height] mm</strong></li>
+<li>Make sure it’s a complete closed loop — any gaps will cause issues later</li>
+</ol>
+<hr>
+<h2 id="-placing-components">🧩 Placing Components<a class="anchor" href="#-placing-components">#</a></h2>
+<p>All the imported footprints start as a messy cluster outside the board boundary.</p>
+<ol>
+<li>Click and drag each component inside the board outline</li>
+<li>Press <strong><code>R</code></strong> to rotate</li>
+<li>Think about the layout logically:</li>
+</ol>
+<ul>
+<li>MCU in the centre</li>
+<li>Buttons along the edges (where thumbs would naturally reach on the game console)</li>
+<li>Connectors at one end for easy cable access</li>
+<li>Passive components (capacitors, resistors) close to the relevant power pins</li>
+</ul>
+<ol>
+<li>Try to minimise ratsnest line crossings before routing — the cleaner it looks now, the easier routing will be</li>
+</ol>
+<p><img src="../../../images/week-6/kicad-placement.jpg" alt="KiCad Component Placement" /></p>
+<hr>
+<h2 id="-routing-traces">🔀 Routing Traces<a class="anchor" href="#-routing-traces">#</a></h2>
+<ol>
+<li>Press <strong><code>X</code></strong> to activate the <strong>Route Tracks</strong> tool</li>
+<li>Click a pad to start, then click the destination pad to finish the trace</li>
+<li>All traces go on the <strong>F.Cu</strong> (front copper) layer since this is a single-sided board</li>
+<li>For any unavoidable crossings, use a <strong>0Ω resistor as a jumper</strong> instead of a via — the SRM-20 can’t drill vias</li>
+</ol>
+<p><strong>Routing order:</strong></p>
+<ul>
+<li>Route <strong>power</strong> (VCC, GND) first with wider traces (0.8 mm+) since they carry more current</li>
+<li>Then route <strong>signal traces</strong> at standard width (0.4 mm)</li>
+</ul>
+<p><img src="../../../images/week-6/kicad-routing.jpg" alt="KiCad Routing" /></p>
+<hr>
+<h2 id="-running-the-drc-design-rules-check">🔍 Running the DRC (Design Rules Check)<a class="anchor" href="#-running-the-drc-design-rules-check">#</a></h2>
+<p>After routing everything, run the DRC to catch any physical problems:</p>
+<ol>
+<li>Go to <strong>Inspect → Design Rules Checker</strong></li>
+<li>Click <strong>Run DRC</strong></li>
+<li>Fix any clearance violations, unrouted nets, or silkscreen overlaps</li>
+<li>Keep going until you have <strong>0 errors</strong></li>
+</ol>
+<p><img src="../../../images/week-6/kicad-drc.jpg" alt="KiCad DRC" /></p>
+<hr>
+<h1 id="part-5--3d-visualisation-and-casing-design">Part 5 – 3D Visualisation and Casing Design<a class="anchor" href="#part-5--3d-visualisation-and-casing-design">#</a></h1>
+<h2 id="-viewing-the-pcb-in-3d">🖼️ Viewing the PCB in 3D<a class="anchor" href="#-viewing-the-pcb-in-3d">#</a></h2>
+<p>Before doing anything else, I wanted to see what the board actually looked like physically.</p>
+<ol>
+<li>In the PCB Editor, press <strong><code>Alt+3</code></strong> or go to <strong>View → 3D Viewer</strong></li>
+<li>The viewer renders all components with their assigned 3D models — including the ones imported from SnapMagic</li>
+<li>Rotate and zoom to check for physical conflicts, component clearances, and overall layout quality</li>
+</ol>
+<p>This is genuinely satisfying to look at after spending hours staring at 2D traces lol.</p>
+<p><img src="../../../images/week-6/kicad-3d-viewer.jpg" alt="KiCad 3D Viewer" /></p>
+<hr>
+<h2 id="-exporting-the-step-file">📤 Exporting the STEP File<a class="anchor" href="#-exporting-the-step-file">#</a></h2>
+<p>To use the PCB as a reference for the enclosure in Fusion 360, I exported it as a STEP file:</p>
+<ol>
+<li>In the PCB Editor, go to <strong>File → Export → STEP</strong></li>
+<li>Set the output path and filename: <code>NB6-Boy-PCB.step</code></li>
+<li>Click <strong>Export</strong></li>
+</ol>
+<p>This generates a full 3D model of the populated PCB — components and all.</p>
+<hr>
+<h2 id="-importing-into-fusion-360-for-casing-design">🏠 Importing into Fusion 360 for Casing Design<a class="anchor" href="#-importing-into-fusion-360-for-casing-design">#</a></h2>
+<ol>
+<li>Open <strong>Autodesk Fusion 360</strong></li>
+<li>Go to <strong>File → Open → Open from my Computer</strong></li>
+<li>Select the <code>NB6-Boy-PCB.step</code> file</li>
+</ol>
+<p>The PCB loads as a solid body with all components in their exact positions.</p>
+<h3 id="building-the-casing">Building the Casing<a class="anchor" href="#building-the-casing">#</a></h3>
+<ol>
+<li>Create a new <strong>component</strong> for the casing (keep it separate from the PCB body — good practice)</li>
+<li>Use <strong>Offset Plane</strong> above the PCB surface to define the height of the enclosure walls</li>
+<li>Create a <strong>Sketch</strong> on the XY plane and trace the board outline</li>
+<li><strong>Extrude</strong> the walls upward to create the bottom shell</li>
+<li>Use the component positions on the PCB as guides to add cutouts:</li>
+</ol>
+<ul>
+<li>Cutouts for each of the 6 buttons to poke through</li>
+<li>A rectangular window for the OLED display</li>
+<li>A small hole for the buzzer</li>
+<li>A slot for the USB connector</li>
+</ul>
+<ol>
+<li>Create the <strong>lid</strong> as a separate body using the same board outline</li>
+<li>Apply <strong>Fillets</strong> to all sharp edges for better ergonomics and easier 3D printing</li>
+<li>Export as <code>.stl</code> for 3D printing (that’s covered in Week 05!)</li>
+</ol>
+<p><img src="../../../images/week-6/fusion-casing.jpg" alt="Fusion 360 Casing" /></p>
+<blockquote class='book-hint '>
+<p>This KiCad → STEP → Fusion 360 workflow is honestly one of the coolest things I’ve learned this week. Going seamlessly from a PCB layout to a mechanically accurate enclosure design, where everything fits without guesswork, is super powerful.</p>
+</blockquote><hr>
+<h2 id="files">Files<a class="anchor" href="#files">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>File</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>diagram.json</code></td>
+          <td>Wokwi circuit diagram for NB6-Boy simulation</td>
+      </tr>
+      <tr>
+          <td><code>NB6-Boy-PCB.kicad_sch</code></td>
+          <td>KiCad schematic file</td>
+      </tr>
+      <tr>
+          <td><code>NB6-Boy-PCB.kicad_pcb</code></td>
+          <td>KiCad PCB layout file</td>
+      </tr>
+      <tr>
+          <td><code>NB6-Boy-PCB.step</code></td>
+          <td>3D model exported from KiCad for casing design</td>
+      </tr>
+  </tbody>
+</table>
+<p><a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files">⬇️ Download All Files from Week 6</a></p>
+<hr>
+<h2 id="helpful-websites">Helpful Websites<a class="anchor" href="#helpful-websites">#</a></h2>
+<ul>
+<li>Wokwi Simulator — <a href="https://wokwi.com/">https://wokwi.com/</a></li>
+<li>Wokwi VS Code Docs — <a href="https://docs.wokwi.com/vscode/getting-started">https://docs.wokwi.com/vscode/getting-started</a></li>
+<li>KiCad Official Site — <a href="https://www.kicad.org/">https://www.kicad.org/</a></li>
+<li>Fab Academy KiCad Library — <a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">https://gitlab.fabcloud.org/pub/libraries/electronics/kicad</a></li>
+<li>SnapMagic (SnapEDA) — <a href="https://www.snapeda.com/">https://www.snapeda.com/</a></li>
+</ul>
+<hr>
+<h1 id="reflection">Reflection<a class="anchor" href="#reflection">#</a></h1>
+<p>Going into this week I honestly wasn’t sure how much depth there was here — I figured it was just &ldquo;draw some circles and lines on a PCB.&rdquo; But it’s way more than that.</p>
+<p>Understanding <em>why</em> you set clearances a certain way, <em>why</em> you route power before signal traces, <em>why</em> the ERC catches errors that your eyes would totally miss — all of that context made the process feel intentional rather than just randomly clicking around in software.</p>
+<p>Also, designing a board that I <em>actually want</em> — one directly tied to the NB6-Boy project — made it way easier to stay motivated through the whole process.</p>
+<p>Next up: actually fabricating this board during Electronics Production week. Cannot wait to see this thing as a physical PCB 😎</p>
+<hr>
 </article>
  
       
@@ -1055,6 +1598,68 @@ The aim was to understand circuit theory, use design tools effectively, and crea
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-what-is-wokwi">🖥️ What is Wokwi?</a></li>
+    <li><a href="#-creating-an-account-and-new-project">🆕 Creating an Account and New Project</a></li>
+    <li><a href="#-adding-components-in-the-diagramjson">➕ Adding Components in the diagram.json</a></li>
+    <li><a href="#-pasting-the-code-and-simulating">💻 Pasting the Code and Simulating</a></li>
+    <li><a href="#-switching-to-the-wokwi-vs-code-plugin">🔌 Switching to the Wokwi VS Code Plugin</a>
+      <ul>
+        <li><a href="#installing-the-extension">Installing the Extension</a></li>
+        <li><a href="#setting-up-the-project">Setting Up the Project</a></li>
+        <li><a href="#running-the-simulation">Running the Simulation</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-installing-kicad">📥 Installing KiCad</a></li>
+    <li><a href="#-importing-the-fab-academy-kicad-library">📚 Importing the Fab Academy KiCad Library</a></li>
+    <li><a href="#-creating-a-new-project">🆕 Creating a New Project</a></li>
+    <li><a href="#-building-the-schematic">📐 Building the Schematic</a>
+      <ul>
+        <li><a href="#adding-components">Adding Components</a></li>
+        <li><a href="#drawing-wires">Drawing Wires</a></li>
+        <li><a href="#why-i-added-extra-jst-connectors">Why I Added Extra JST Connectors</a></li>
+      </ul>
+    </li>
+    <li><a href="#-running-the-erc-electrical-rules-check">✅ Running the ERC (Electrical Rules Check)</a></li>
+    <li><a href="#-assigning-footprints">🔗 Assigning Footprints</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-what-is-snapmagic">🔍 What is SnapMagic?</a></li>
+    <li><a href="#-downloading-a-component-from-snapmagic">📥 Downloading a Component from SnapMagic</a></li>
+    <li><a href="#-importing-into-kicad">📦 Importing into KiCad</a>
+      <ul>
+        <li><a href="#importing-the-symbol">Importing the Symbol</a></li>
+        <li><a href="#importing-the-footprint">Importing the Footprint</a></li>
+        <li><a href="#adding-the-3d-model">Adding the 3D Model</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-opening-the-pcb-editor">📂 Opening the PCB Editor</a></li>
+    <li><a href="#-setting-design-rules">⚙️ Setting Design Rules</a></li>
+    <li><a href="#-defining-the-board-outline">📏 Defining the Board Outline</a></li>
+    <li><a href="#-placing-components">🧩 Placing Components</a></li>
+    <li><a href="#-routing-traces">🔀 Routing Traces</a></li>
+    <li><a href="#-running-the-drc-design-rules-check">🔍 Running the DRC (Design Rules Check)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#-viewing-the-pcb-in-3d">🖼️ Viewing the PCB in 3D</a></li>
+    <li><a href="#-exporting-the-step-file">📤 Exporting the STEP File</a></li>
+    <li><a href="#-importing-into-fusion-360-for-casing-design">🏠 Importing into Fusion 360 for Casing Design</a>
+      <ul>
+        <li><a href="#building-the-casing">Building the Casing</a></li>
+      </ul>
+    </li>
+    <li><a href="#files">Files</a></li>
+    <li><a href="#helpful-websites">Helpful Websites</a></li>
   </ul>
 </nav>
 
