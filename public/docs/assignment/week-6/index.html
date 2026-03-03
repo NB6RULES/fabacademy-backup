@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
+<head>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -13,7 +13,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Week 06 - Electronics Design">
   <meta property="og:description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
@@ -25,7 +25,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <meta itemprop="name" content="Week 06 - Electronics Design">
   <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
 I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
-  <meta itemprop="wordCount" content="3010">
+  <meta itemprop="wordCount" content="3448">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -34,15 +34,15 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <link rel="apple-touch-icon" sizes="180x180" href="/2026/labs/kochi/students/nadec-biju/apple-touch-icon.png">
 
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
-<link rel="canonical" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
+<link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
 <link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.70dd0af74ab02e40209b498a045148b2ef44317eb72201bcd1c7e0543f9ea812.css" integrity="sha256-cN0K90qwLkAgm0mKBFFIsu9EMX63IgG80cfgVD&#43;eqBI=" crossorigin="anonymous">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.d4589ac946b773a8695be8b4e1aee98c0684a5e393d4175c86a4e96c23c96b37.js" integrity="sha256-1FiayUa3c6hpW&#43;i04a7pjAaEpeOT1BdchqTpbCPJazc=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.5be6eaa7474b178ab436b809c0eb73a447791c91508f7188a6deb1e3c5bba1da.js" integrity="sha256-W&#43;bqp0dLF4q0NrgJwOtzpEd5HJFQj3GIpt6x48W7odo=" crossorigin="anonymous"></script>
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
+<link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f2f7">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0f">
@@ -881,6 +881,14 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a>
+      <ul>
+        <li><a href="#-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)</a></li>
+        <li><a href="#-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)</a></li>
+        <li><a href="#-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)</a></li>
+        <li><a href="#-bench-power-supply">⚡ Bench Power Supply</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -1026,6 +1034,41 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   </tbody>
 </table>
 <hr>
+<h2 id="group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations<a class="anchor" href="#group-assignment---test-equipment-and-observations">#</a></h2>
+<p>For the group assignment this week, we explored the essential test equipment available in the lab and used them to observe and analyse a working microcontroller circuit. The goal was to go beyond theoretical knowledge and actually <em>see</em> how signals behave in real electronic systems.</p>
+<p>Here&rsquo;s a quick rundown of the equipment we worked with:</p>
+<h3 id="-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)<a class="anchor" href="#-multimeter-zoyi-zt301">#</a></h3>
+<p>The multimeter was used for the basics — checking continuity across PCB traces, measuring voltage on the 3.3V and 5V rails, and verifying resistor values. Honestly one of the most useful tools in the lab because it&rsquo;s so fast to grab and check if something is actually connected or powered.</p>
+<p>Key tests we ran:</p>
+<ul>
+<li><strong>Continuity check</strong> — to verify traces and solder joints before powering anything up (beep = connected, no beep = check your soldering lol)</li>
+<li><strong>Voltage measurement</strong> — confirmed 3.3V and 5V rails were correct on the microcontroller board</li>
+<li><strong>Resistance measurement</strong> — verified component values matched what was on the schematic</li>
+</ul>
+<h3 id="-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)<a class="anchor" href="#-oscilloscope-owon-tao3104a">#</a></h3>
+<p>This is where it got really interesting. We used a <strong>Seeed Studio XIAO RP2040</strong> as a software-defined function generator to output different waveforms via PWM, and then observed them live on the oscilloscope.</p>
+<p>Waveforms we generated and captured:</p>
+<ul>
+<li>Sine wave</li>
+<li>Square wave (50% duty cycle)</li>
+<li>Triangle wave</li>
+<li>Sawtooth / Ramp</li>
+<li>Pulse 25% and Pulse 10%</li>
+</ul>
+<blockquote class='book-hint '>
+<p><strong>Important note:</strong> Since the RP2040 outputs digital PWM signals, waveforms like sine and triangle are <em>approximations</em> — the shape is created by rapidly varying the pulse width over time. You need to zoom out on the time/div scale to see the overall envelope rather than individual pulses.</p>
+</blockquote><h3 id="-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)<a class="anchor" href="#-logic-analyser-saleae-logic-8">#</a></h3>
+<p>We also used the <strong>Saleae Logic 8</strong> to capture and decode real communication protocols from the RP2040. This was genuinely eye-opening — seeing actual bytes being transmitted and automatically decoded in the software is a completely different experience from just reading about protocols in theory.</p>
+<ul>
+<li><strong>UART capture</strong> — decoded &ldquo;hello world!&rdquo; transmitted via Serial1 at 9600 baud</li>
+<li><strong>I²C capture</strong> — captured the communication between the RP2040 and an SSD1306 OLED display, including the START condition, 7-bit device address (0x3C → 0x78 on the bus), ACK bits, and data bytes</li>
+</ul>
+<h3 id="-bench-power-supply">⚡ Bench Power Supply<a class="anchor" href="#-bench-power-supply">#</a></h3>
+<p>Used to provide clean, regulated DC power to circuits during testing — set the voltage, set a current limit to protect the board, and you&rsquo;re good to go. Way safer than just plugging things into USB when you&rsquo;re not sure if your circuit is correct yet.</p>
+<hr>
+<p>Check out the full group documentation for all the waveform captures, code, and protocol decoding breakdowns:<br>
+🔗 <a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week06/">https://fabacademy.org/2026/labs/kochi/group_assignmetns/week06/</a></p>
+<hr>
 <h1 id="part-1--circuit-simulation-with-wokwi">Part 1 – Circuit Simulation with Wokwi<a class="anchor" href="#part-1--circuit-simulation-with-wokwi">#</a></h1>
 <h2 id="-what-is-wokwi">🖥️ What is Wokwi?<a class="anchor" href="#-what-is-wokwi">#</a></h2>
 <p><strong><a href="https://wokwi.com/">Wokwi</a></strong> is a free, browser-based electronics simulator that lets you test circuits and code <em>before</em> you ever touch actual hardware.</p>
@@ -1102,7 +1145,6 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Hit the <strong>▶ Simulate</strong> button</li>
 </ol>
 <p><strong>Problem:</strong> The online compiler timed out with a long string of <code>000...</code> errors and couldn&rsquo;t finish compiling. This was because Wokwi&rsquo;s compilation server was being heavily utilised by a lot of other users at the time.</p>
-<p><img src="../../../images/week-6/wokwi-error.jpg" alt="Wokwi Compile Error" /></p>
 <p>Since I couldn&rsquo;t simulate on that day, I decided to switch to a different approach while waiting — the Wokwi VS Code plugin.</p>
 <p><strong>Update:</strong> After 2 days, I tried the browser simulation again and it worked perfectly! The server load had gone down and my circuit simulated without any issues.</p>
 <iframe
@@ -1577,6 +1619,14 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a>
+      <ul>
+        <li><a href="#-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)</a></li>
+        <li><a href="#-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)</a></li>
+        <li><a href="#-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)</a></li>
+        <li><a href="#-bench-power-supply">⚡ Bench Power Supply</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
