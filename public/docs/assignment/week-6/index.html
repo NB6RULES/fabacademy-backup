@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head>
+<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
   <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -13,7 +13,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
   <meta property="og:site_name" content="Nadec FAB Academy Portfolio">
   <meta property="og:title" content="Week 06 - Electronics Design">
   <meta property="og:description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
@@ -25,7 +25,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <meta itemprop="name" content="Week 06 - Electronics Design">
   <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
 I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
-  <meta itemprop="wordCount" content="2966">
+  <meta itemprop="wordCount" content="3010">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -34,7 +34,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <link rel="apple-touch-icon" sizes="180x180" href="/2026/labs/kochi/students/nadec-biju/apple-touch-icon.png">
 
 <link rel="manifest" href="/2026/labs/kochi/students/nadec-biju/manifest.json">
-<link rel="canonical" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
+<link rel="canonical" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/">
 <link rel="stylesheet" href="/2026/labs/kochi/students/nadec-biju/book.min.70dd0af74ab02e40209b498a045148b2ef44317eb72201bcd1c7e0543f9ea812.css" integrity="sha256-cN0K90qwLkAgm0mKBFFIsu9EMX63IgG80cfgVD&#43;eqBI=" crossorigin="anonymous">
 
 
@@ -42,7 +42,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.d4589ac946b773a8695be8b4e1aee98c0684a5e393d4175c86a4e96c23c96b37.js" integrity="sha256-1FiayUa3c6hpW&#43;i04a7pjAaEpeOT1BdchqTpbCPJazc=" crossorigin="anonymous"></script>
 
 
-<link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f2f2f7">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0f">
@@ -905,11 +905,10 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
       <ul>
         <li><a href="#adding-components">Adding Components</a></li>
         <li><a href="#drawing-wires">Drawing Wires</a></li>
-        <li><a href="#why-i-added-extra-jst-connectors">Why I Added Extra JST Connectors</a></li>
+        <li><a href="#why-i-added-extra-connectors">Why I Added Extra Connectors</a></li>
       </ul>
     </li>
     <li><a href="#-running-the-erc-electrical-rules-check">✅ Running the ERC (Electrical Rules Check)</a></li>
-    <li><a href="#-assigning-footprints">🔗 Assigning Footprints</a></li>
   </ul>
 
   <ul>
@@ -941,7 +940,6 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
         <li><a href="#building-the-casing">Building the Casing</a></li>
       </ul>
     </li>
-    <li><a href="#files">Files</a></li>
     <li><a href="#helpful-websites">Helpful Websites</a></li>
   </ul>
 </nav>
@@ -1040,11 +1038,11 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Go to <a href="https://wokwi.com/">wokwi.com</a></li>
 <li>Click <strong>Sign Up</strong> and create a free account (you can use email or GitHub)</li>
 <li>Once logged in, click <strong>New Project</strong></li>
-<li>From the template picker, select <strong>ESP32</strong> as the starting board</li>
+<li>From the template picker, select <strong>XIAO ESP32-C6</strong> as the starting board</li>
 </ol>
 <p><img src="../../../images/week-6/wokwi-new-project.jpg" alt="Wokwi New Project" /></p>
 <blockquote class='book-hint '>
-<p><strong>Why ESP32?</strong> — My NB6-Boy from Week 4 was built on the Seeed Studio XIAO ESP32-C6, so simulating it on the ESP32 let me use the exact same code and wiring.</p>
+<p><strong>Why XIAO ESP32-C6?</strong> — My NB6-Boy from Week 4 was built on the Seeed Studio XIAO ESP32-C6, so I needed to simulate with the exact same board to use the same code and wiring.</p>
 </blockquote><hr>
 <h2 id="-adding-components-in-the-diagramjson">➕ Adding Components in the diagram.json<a class="anchor" href="#-adding-components-in-the-diagramjson">#</a></h2>
 <p>Wokwi stores your circuit inside a file called <strong><code>diagram.json</code></strong>. You can either edit it as JSON directly or use the visual drag-and-drop interface — I used the visual interface since it’s way easier.</p>
@@ -1059,7 +1057,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   </thead>
   <tbody>
       <tr>
-          <td>ESP32</td>
+          <td>XIAO ESP32-C6</td>
           <td>1</td>
           <td>Main microcontroller</td>
       </tr>
@@ -1103,18 +1101,26 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Paste in the full NB6-Boy code from Week 4</li>
 <li>Hit the <strong>▶ Simulate</strong> button</li>
 </ol>
-<p><strong>Problem:</strong> The online compiler timed out with a long string of <code>000...</code> errors and couldn’t finish compiling. This was almost definitely because of the complexity of the libraries (NeoPixel, SSD1306, etc.) that the browser-based compiler just couldn’t handle.</p>
+<p><strong>Problem:</strong> The online compiler timed out with a long string of <code>000...</code> errors and couldn&rsquo;t finish compiling. This was because Wokwi&rsquo;s compilation server was being heavily utilised by a lot of other users at the time.</p>
 <p><img src="../../../images/week-6/wokwi-error.jpg" alt="Wokwi Compile Error" /></p>
-<p>At this point I had to shift to a different approach.</p>
+<p>Since I couldn&rsquo;t simulate on that day, I decided to switch to a different approach while waiting — the Wokwi VS Code plugin.</p>
+<p><strong>Update:</strong> After 2 days, I tried the browser simulation again and it worked perfectly! The server load had gone down and my circuit simulated without any issues.</p>
+<iframe
+  src="https://wokwi.com/projects/457467088374687745"
+  width="100%"
+  height="400"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 <hr>
 <h2 id="-switching-to-the-wokwi-vs-code-plugin">🔌 Switching to the Wokwi VS Code Plugin<a class="anchor" href="#-switching-to-the-wokwi-vs-code-plugin">#</a></h2>
-<p>The <strong>Wokwi VS Code extension</strong> solves the compilation issue entirely — it uses your <em>local</em> compiler instead of the browser’s online one, so complex multi-library projects just work.</p>
+<p>While waiting for the browser compiler to become available, I decided to try the <strong>Wokwi VS Code extension</strong> — it uses your <em>local</em> compiler instead of the browser&rsquo;s online one, so you&rsquo;re not dependent on server availability.</p>
 <h3 id="installing-the-extension">Installing the Extension<a class="anchor" href="#installing-the-extension">#</a></h3>
 <ol>
 <li>Open <strong>VS Code</strong> and go to the Extensions panel (<code>Ctrl+Shift+X</code>)</li>
 <li>Search for <strong>Wokwi</strong> and install the official <strong>Wokwi Simulator</strong> extension</li>
 </ol>
-<p><img src="../../../images/week-6/wokwi-vscode-extension.jpg" alt="Wokwi VS Code Extension" /></p>
+<p><img src="../../../images/week-6/wokwi-vscode.jpg" alt="Wokwi VS Code Extension" /></p>
 <ol>
 <li>Once installed, you’ll be prompted to activate it — click the link and follow the steps on the <a href="https://docs.wokwi.com/vscode/getting-started">official Wokwi VS Code docs</a> to get your free licence key</li>
 <li>Paste the key into VS Code when prompted and you’re good to go</li>
@@ -1139,11 +1145,14 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>VS Code compiles the code locally first</li>
 <li>Once done, the simulation window opens</li>
 </ol>
-<p><img src="../../../images/week-6/wokwi-vscode-running.jpg" alt="Wokwi VS Code Running" /></p>
-<p><strong>Result:</strong> The NB6-Boy simulation worked perfectly! 🎮</p>
+<video width="100%" controls>
+  <source src="../../../images/week-6/wokwi-vscode-running.mkv" type="video/x-matroska">
+  Your browser does not support the video tag.
+</video>
+<p><strong>Result:</strong> The NB6-Boy simulation worked perfectly in VS Code! 🎮</p>
 <p>The OLED display booted up, all six buttons were responsive, the NeoPixel matrix lit up, and the buzzer fired sounds exactly like it does on the physical hardware.</p>
 <blockquote class='book-hint '>
-<p><strong>Tip:</strong> The VS Code plugin is 100% the way to go for complex projects. The browser version is great for quick tests, but once you have multiple libraries it just can’t keep up.</p>
+<p><strong>Tip:</strong> The VS Code plugin is a great alternative when the browser compiler is busy or unavailable. It also gives you better control over your build environment since compilation happens locally.</p>
 </blockquote><hr>
 <h1 id="part-2--schematic-design-with-kicad">Part 2 – Schematic Design with KiCad<a class="anchor" href="#part-2--schematic-design-with-kicad">#</a></h1>
 <h2 id="-installing-kicad">📥 Installing KiCad<a class="anchor" href="#-installing-kicad">#</a></h2>
@@ -1155,29 +1164,26 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Keep the default library selections — you can always add more later</li>
 </ol>
 <p><img src="../../../images/week-6/kicad-download.jpg" alt="KiCad Download" /></p>
-<p><img src="../../../images/week-6/kicad-install.jpg" alt="KiCad Install" /></p>
+<p><img src="../../../images/week-6/kicad-installation.jpg" alt="KiCad Install" /></p>
 <hr>
 <h2 id="-importing-the-fab-academy-kicad-library">📚 Importing the Fab Academy KiCad Library<a class="anchor" href="#-importing-the-fab-academy-kicad-library">#</a></h2>
 <p>The standard KiCad library is great, but Fab Academy has its own library of components with footprints specifically sized and optimised for the Roland SRM-20 milling machine we use in the lab.</p>
+<p>You can clone the library from GitLab if you prefer:<br>
+<a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">https://gitlab.fabcloud.org/pub/libraries/electronics/kicad</a></p>
+<p>But the easiest way is to install it directly through KiCad&rsquo;s built-in plugin manager:</p>
 <ol>
-<li>Download the <strong>Fab Academy KiCad library</strong> from:<br>
-<a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">https://gitlab.fabcloud.org/pub/libraries/electronics/kicad</a></li>
-<li>Open KiCad and go to <strong>Preferences → Manage Symbol Libraries</strong></li>
-<li>Click <strong>Add Existing</strong> and navigate to the downloaded <code>.kicad_sym</code> file</li>
-<li>Click <strong>OK</strong></li>
+<li>Open KiCad and go to <strong>Plugin and Content Manager</strong> (from the main window)</li>
+<li>In the search bar, type <strong>KiCad FabLib</strong></li>
+<li>Select it from the results and click <strong>Install</strong></li>
+<li>Wait for the installation to complete and click <strong>Apply Changes</strong></li>
 </ol>
-<p><img src="../../../images/week-6/kicad-symbol-library.jpg" alt="KiCad Symbol Library" /></p>
-<ol>
-<li>Now go to <strong>Preferences → Manage Footprint Libraries</strong></li>
-<li>Add the downloaded <code>.pretty</code> folder the same way</li>
-<li>Click <strong>OK</strong></li>
-</ol>
+<p><img src="../../../images/week-6/kicad-fab-plugin-1.jpg" alt="KiCad Fab Library Plugin" /></p>
 <p>The Fab library is now available — you’ll see it listed as <code>fab</code> in all library searches from here on.</p>
 <hr>
 <h2 id="-creating-a-new-project">🆕 Creating a New Project<a class="anchor" href="#-creating-a-new-project">#</a></h2>
 <ol>
 <li>In the KiCad project manager, click <strong>New Project</strong></li>
-<li>Give it a name — I called mine <code>NB6-Boy-PCB</code></li>
+<li>Give it a name — I called mine <code>gameboy less gooiii</code></li>
 <li>Choose a project folder and click <strong>Save</strong></li>
 <li>This creates a <code>.kicad_sch</code> schematic file and a <code>.kicad_pcb</code> PCB file</li>
 </ol>
@@ -1198,48 +1204,50 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   </thead>
   <tbody>
       <tr>
-          <td>RP2040</td>
+          <td>XIAO RP2040</td>
           <td>Fab Library</td>
           <td>Main MCU</td>
       </tr>
       <tr>
           <td>Push Buttons ×6</td>
           <td>Fab Library</td>
-          <td>Game controls</td>
+          <td>Game controls (UP, DOWN, LEFT, RIGHT, MENU, PAUSE)</td>
       </tr>
       <tr>
-          <td>OLED Display (SSD1306)</td>
-          <td>Fab Library</td>
-          <td>I²C — SDA/SCL</td>
-      </tr>
-      <tr>
-          <td>NeoPixel Matrix</td>
-          <td>Fab Library</td>
-          <td>Single data pin control</td>
-      </tr>
-      <tr>
-          <td>Passive Buzzer</td>
+          <td>Speaker (LS1)</td>
           <td>Fab Library</td>
           <td>PWM audio output</td>
       </tr>
       <tr>
-          <td>Decoupling Capacitors</td>
+          <td>Capacitors ×2 (C_1206)</td>
           <td>KiCad Default</td>
-          <td>100nF across VCC/GND</td>
+          <td>Decoupling capacitors</td>
       </tr>
       <tr>
-          <td>JST Connector (SDA/SCL)</td>
-          <td>Fab Library</td>
-          <td>Expansion header</td>
+          <td>JST S4B-PH-SM4-TB ×4</td>
+          <td>SnapEDA</td>
+          <td>4-pin horizontal JST connectors (J2, J3, J9, J10)</td>
       </tr>
       <tr>
-          <td>JST Connector (RX/TX)</td>
-          <td>Fab Library</td>
-          <td>Expansion header</td>
+          <td>JST S3B-PH-SM4-TB</td>
+          <td>SnapEDA</td>
+          <td>3-pin horizontal JST connector for matrix (P1)</td>
+      </tr>
+      <tr>
+          <td>Pin Socket 01x04 (J4)</td>
+          <td>KiCad Default</td>
+          <td>I²C breakout header</td>
+      </tr>
+      <tr>
+          <td>Pin Socket 01x07 ×2 (J7, J8)</td>
+          <td>KiCad Default</td>
+          <td>GPIO expansion headers</td>
       </tr>
   </tbody>
 </table>
-<p><img src="../../../images/week-6/kicad-add-components.jpg" alt="KiCad Schematic Adding Components" /></p>
+<blockquote class='book-hint '>
+<p><strong>Note:</strong> I used JST connectors from SnapEDA instead of the Fab Library because I needed horizontal (side-entry) connectors, and the Fab Library only has vertical ones.</p>
+</blockquote><p><img src="../../../images/week-6/kicad-add-components.jpg" alt="KiCad Schematic Adding Components" /></p>
 <h3 id="drawing-wires">Drawing Wires<a class="anchor" href="#drawing-wires">#</a></h3>
 <p>Press <strong><code>W</code></strong> to start the <strong>Wire</strong> tool.</p>
 <ul>
@@ -1247,14 +1255,15 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Click the destination pin to finish it</li>
 <li>Use <strong>Power Symbols</strong> (<code>PWR</code>, <code>GND</code>, <code>VCC</code>) from the Add Symbol dialog to label power nets cleanly — this avoids having to draw wires all the way across the schematic</li>
 </ul>
-<h3 id="why-i-added-extra-jst-connectors">Why I Added Extra JST Connectors<a class="anchor" href="#why-i-added-extra-jst-connectors">#</a></h3>
-<p>I added JST expansion connectors broken out for:</p>
+<h3 id="why-i-added-extra-connectors">Why I Added Extra Connectors<a class="anchor" href="#why-i-added-extra-connectors">#</a></h3>
+<p>I added multiple expansion connectors broken out for:</p>
 <ul>
-<li><strong>SDA / SCL</strong> — so I can plug in extra I²C peripherals later (sensors, displays, etc.)</li>
-<li><strong>RX / TX</strong> — for UART debugging or future wireless module integration</li>
+<li><strong>I²C (SDA / SCL)</strong> — via J2, J3, J9, J10 JST connectors, so I can plug in extra I²C peripherals later (sensors, displays, etc.)</li>
+<li><strong>GPIO expansion</strong> — via J7 and J8 pin headers for additional connections</li>
+<li><strong>Matrix connector</strong> — P1 for the NeoPixel LED matrix</li>
 </ul>
 <p>This makes the development board way more useful beyond just the NB6-Boy. If I want to use the same board for a different project down the line, those connectors are already there.</p>
-<p><img src="../../../images/week-6/kicad-schematic-complete.jpg" alt="KiCad Schematic Complete" /></p>
+<p><img src="../../../images/week-6/kicad-schematic.jpg" alt="KiCad Schematic Complete" /></p>
 <hr>
 <h2 id="-running-the-erc-electrical-rules-check">✅ Running the ERC (Electrical Rules Check)<a class="anchor" href="#-running-the-erc-electrical-rules-check">#</a></h2>
 <p>Before moving to PCB layout, you run the <strong>ERC</strong> to check for any logical errors in your schematic.</p>
@@ -1270,16 +1279,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Pin direction conflicts → double check that outputs aren’t connected to outputs</li>
 </ul>
 <p>Keep fixing until it shows <strong>0 errors, 0 warnings</strong>.</p>
-<p><img src="../../../images/week-6/kicad-erc.jpg" alt="KiCad ERC Check" /></p>
-<hr>
-<h2 id="-assigning-footprints">🔗 Assigning Footprints<a class="anchor" href="#-assigning-footprints">#</a></h2>
-<p>Once the schematic is clean, each symbol needs to be linked to a physical footprint — basically, the actual copper pads and silkscreen outline that will appear on the PCB.</p>
-<ol>
-<li>Go to <strong>Tools → Assign Footprints</strong></li>
-<li>For each component, pick the matching footprint from the Fab library or KiCad default library</li>
-<li>Make sure pad count, pitch, and package size match your actual components</li>
-<li>Click <strong>Apply and Save</strong></li>
-</ol>
+<p><img src="../../../images/week-6/kicad-schematic-erc.jpg" alt="KiCad ERC Check" /></p>
 <hr>
 <h1 id="part-3--importing-components-not-in-the-fab-library-using-snapmagic">Part 3 – Importing Components Not in the Fab Library Using SnapMagic<a class="anchor" href="#part-3--importing-components-not-in-the-fab-library-using-snapmagic">#</a></h1>
 <h2 id="-what-is-snapmagic">🔍 What is SnapMagic?<a class="anchor" href="#-what-is-snapmagic">#</a></h2>
@@ -1291,7 +1291,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Go to <strong><a href="https://www.snapeda.com/">snapeda.com</a></strong></li>
 <li>In the search bar, type the exact part number (e.g. <code>SSD1306</code>, <code>WS2812B</code>, <code>AMS1117-3.3</code>)</li>
 </ol>
-<p><img src="../../../images/week-6/snapmagic-search.jpg" alt="SnapMagic Search" /></p>
+<p><img src="../../../images/week-6/snapmagic.jpg" alt="SnapMagic Search" /></p>
 <ol>
 <li>Select the correct result from the list — double-check the package type and pin count</li>
 <li>Click <strong>Download Symbol &amp; Footprint</strong></li>
@@ -1398,7 +1398,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <ol>
 <li>Try to minimise ratsnest line crossings before routing — the cleaner it looks now, the easier routing will be</li>
 </ol>
-<p><img src="../../../images/week-6/kicad-placement.jpg" alt="KiCad Component Placement" /></p>
+<p><img src="../../../images/week-6/kicad-component-placement.jpg" alt="KiCad Component Placement" /></p>
 <hr>
 <h2 id="-routing-traces">🔀 Routing Traces<a class="anchor" href="#-routing-traces">#</a></h2>
 <ol>
@@ -1433,22 +1433,23 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Rotate and zoom to check for physical conflicts, component clearances, and overall layout quality</li>
 </ol>
 <p>This is genuinely satisfying to look at after spending hours staring at 2D traces lol.</p>
-<p><img src="../../../images/week-6/kicad-3d-viewer.jpg" alt="KiCad 3D Viewer" /></p>
+<p><img src="../../../images/week-6/kicad-3dviewer.jpg" alt="KiCad 3D Viewer" /></p>
 <hr>
 <h2 id="-exporting-the-step-file">📤 Exporting the STEP File<a class="anchor" href="#-exporting-the-step-file">#</a></h2>
 <p>To use the PCB as a reference for the enclosure in Fusion 360, I exported it as a STEP file:</p>
 <ol>
 <li>In the PCB Editor, go to <strong>File → Export → STEP</strong></li>
-<li>Set the output path and filename: <code>NB6-Boy-PCB.step</code></li>
+<li>Set the output path and filename: <code>gameboy less gooiii.step</code></li>
 <li>Click <strong>Export</strong></li>
 </ol>
+<p><img src="../../../images/week-6/kicad-stepexport.jpg" alt="KiCad STEP Export" /></p>
 <p>This generates a full 3D model of the populated PCB — components and all.</p>
 <hr>
 <h2 id="-importing-into-fusion-360-for-casing-design">🏠 Importing into Fusion 360 for Casing Design<a class="anchor" href="#-importing-into-fusion-360-for-casing-design">#</a></h2>
 <ol>
 <li>Open <strong>Autodesk Fusion 360</strong></li>
 <li>Go to <strong>File → Open → Open from my Computer</strong></li>
-<li>Select the <code>NB6-Boy-PCB.step</code> file</li>
+<li>Select the <code>gameboy less gooiii.step</code> file</li>
 </ol>
 <p>The PCB loads as a solid body with all components in their exact positions.</p>
 <h3 id="building-the-casing">Building the Casing<a class="anchor" href="#building-the-casing">#</a></h3>
@@ -1470,39 +1471,10 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Apply <strong>Fillets</strong> to all sharp edges for better ergonomics and easier 3D printing</li>
 <li>Export as <code>.stl</code> for 3D printing (that’s covered in Week 05!)</li>
 </ol>
-<p><img src="../../../images/week-6/fusion-casing.jpg" alt="Fusion 360 Casing" /></p>
+<iframe src="https://a360.co/4aVolC1" width="100%" height="600" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 <blockquote class='book-hint '>
 <p>This KiCad → STEP → Fusion 360 workflow is honestly one of the coolest things I’ve learned this week. Going seamlessly from a PCB layout to a mechanically accurate enclosure design, where everything fits without guesswork, is super powerful.</p>
 </blockquote><hr>
-<h2 id="files">Files<a class="anchor" href="#files">#</a></h2>
-<table>
-  <thead>
-      <tr>
-          <th>File</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>diagram.json</code></td>
-          <td>Wokwi circuit diagram for NB6-Boy simulation</td>
-      </tr>
-      <tr>
-          <td><code>NB6-Boy-PCB.kicad_sch</code></td>
-          <td>KiCad schematic file</td>
-      </tr>
-      <tr>
-          <td><code>NB6-Boy-PCB.kicad_pcb</code></td>
-          <td>KiCad PCB layout file</td>
-      </tr>
-      <tr>
-          <td><code>NB6-Boy-PCB.step</code></td>
-          <td>3D model exported from KiCad for casing design</td>
-      </tr>
-  </tbody>
-</table>
-<p><a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files">⬇️ Download All Files from Week 6</a></p>
-<hr>
 <h2 id="helpful-websites">Helpful Websites<a class="anchor" href="#helpful-websites">#</a></h2>
 <ul>
 <li>Wokwi Simulator — <a href="https://wokwi.com/">https://wokwi.com/</a></li>
@@ -1517,6 +1489,13 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <p>Understanding <em>why</em> you set clearances a certain way, <em>why</em> you route power before signal traces, <em>why</em> the ERC catches errors that your eyes would totally miss — all of that context made the process feel intentional rather than just randomly clicking around in software.</p>
 <p>Also, designing a board that I <em>actually want</em> — one directly tied to the NB6-Boy project — made it way easier to stay motivated through the whole process.</p>
 <p>Next up: actually fabricating this board during Electronics Production week. Cannot wait to see this thing as a physical PCB 😎</p>
+<hr>
+<hr>
+<div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+  <a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: white; color: #667eea; font-weight: bold; font-size: 16px; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)';">
+    ⬇️ Download All Files from Week 6
+  </a>
+</div>
 <hr>
 </article>
  
@@ -1622,11 +1601,10 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
       <ul>
         <li><a href="#adding-components">Adding Components</a></li>
         <li><a href="#drawing-wires">Drawing Wires</a></li>
-        <li><a href="#why-i-added-extra-jst-connectors">Why I Added Extra JST Connectors</a></li>
+        <li><a href="#why-i-added-extra-connectors">Why I Added Extra Connectors</a></li>
       </ul>
     </li>
     <li><a href="#-running-the-erc-electrical-rules-check">✅ Running the ERC (Electrical Rules Check)</a></li>
-    <li><a href="#-assigning-footprints">🔗 Assigning Footprints</a></li>
   </ul>
 
   <ul>
@@ -1658,7 +1636,6 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
         <li><a href="#building-the-casing">Building the Casing</a></li>
       </ul>
     </li>
-    <li><a href="#files">Files</a></li>
     <li><a href="#helpful-websites">Helpful Websites</a></li>
   </ul>
 </nav>
