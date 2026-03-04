@@ -25,7 +25,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <meta itemprop="name" content="Week 06 - Electronics Design">
   <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
 I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
-  <meta itemprop="wordCount" content="3448">
+  <meta itemprop="wordCount" content="3551">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.5be6eaa7474b178ab436b809c0eb73a447791c91508f7188a6deb1e3c5bba1da.js" integrity="sha256-W&#43;bqp0dLF4q0NrgJwOtzpEd5HJFQj3GIpt6x48W7odo=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.5151575ee87b9fd954aea3310a12a3cca9a03ebccf37401924ebcdd02ea026d0.js" integrity="sha256-UVFXXuh7n9lUrqMxChKjzKmgPrzPN0AZJOvN0C6gJtA=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -906,6 +906,13 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   </ul>
 
   <ul>
+    <li><a href="#recreating-neils-attiny412-example-design">Recreating Neil&rsquo;s ATtiny412 Example Design</a>
+      <ul>
+        <li><a href="#schematic">Schematic</a></li>
+        <li><a href="#pcb-layout">PCB Layout</a></li>
+        <li><a href="#3d-view">3D View</a></li>
+      </ul>
+    </li>
     <li><a href="#-installing-kicad">📥 Installing KiCad</a></li>
     <li><a href="#-importing-the-fab-academy-kicad-library">📚 Importing the Fab Academy KiCad Library</a></li>
     <li><a href="#-creating-a-new-project">🆕 Creating a New Project</a></li>
@@ -1197,6 +1204,18 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <p><strong>Tip:</strong> The VS Code plugin is a great alternative when the browser compiler is busy or unavailable. It also gives you better control over your build environment since compilation happens locally.</p>
 </blockquote><hr>
 <h1 id="part-2--schematic-design-with-kicad">Part 2 – Schematic Design with KiCad<a class="anchor" href="#part-2--schematic-design-with-kicad">#</a></h1>
+<h2 id="recreating-neils-attiny412-example-design">Recreating Neil&rsquo;s ATtiny412 Example Design<a class="anchor" href="#recreating-neils-attiny412-example-design">#</a></h2>
+<p>This week, I went through the <strong><a href="https://fabacademy.org/2026/classes/embedded_programming/index.html">Fab Academy Embedded Programming class notes</a></strong> — Neil covers a ton of processor families, architectures, and example designs in there, and I wanted to actually apply some of it rather than just reading through it.</p>
+<p>One of the designs Neil references is a minimal <strong>ATtiny412</strong> board, so I used that as a starting point and recreated my own version of it in KiCad — a clean, simple development board built around the ATtiny412 (8-bit AVR 1-series, runs at up to 20 MHz, single-wire UPDI programming).</p>
+<h3 id="schematic">Schematic<a class="anchor" href="#schematic">#</a></h3>
+<p><img src="../../../images/week-6/attiny412-schematic.jpg" alt="ATtiny412 Schematic" /></p>
+<h3 id="pcb-layout">PCB Layout<a class="anchor" href="#pcb-layout">#</a></h3>
+<p><img src="../../../images/week-6/attiny412-pcb.jpg" alt="ATtiny412 PCB" /></p>
+<h3 id="3d-view">3D View<a class="anchor" href="#3d-view">#</a></h3>
+<p><img src="../../../images/week-6/attiny412-3d.jpg" alt="ATtiny412 3D" /></p>
+<blockquote class='book-hint '>
+<p>Reference: <a href="https://fabacademy.org/2026/classes/embedded_programming/index.html">https://fabacademy.org/2026/classes/embedded_programming/index.html</a></p>
+</blockquote><hr>
 <h2 id="-installing-kicad">📥 Installing KiCad<a class="anchor" href="#-installing-kicad">#</a></h2>
 <p><strong><a href="https://www.kicad.org/">KiCad</a></strong> is the open-source EDA (Electronic Design Automation) tool used across Fab Academy for schematic capture and PCB design.</p>
 <ol>
@@ -1644,6 +1663,13 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   </ul>
 
   <ul>
+    <li><a href="#recreating-neils-attiny412-example-design">Recreating Neil&rsquo;s ATtiny412 Example Design</a>
+      <ul>
+        <li><a href="#schematic">Schematic</a></li>
+        <li><a href="#pcb-layout">PCB Layout</a></li>
+        <li><a href="#3d-view">3D View</a></li>
+      </ul>
+    </li>
     <li><a href="#-installing-kicad">📥 Installing KiCad</a></li>
     <li><a href="#-importing-the-fab-academy-kicad-library">📚 Importing the Fab Academy KiCad Library</a></li>
     <li><a href="#-creating-a-new-project">🆕 Creating a New Project</a></li>
