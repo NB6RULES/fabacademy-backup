@@ -25,7 +25,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <meta itemprop="name" content="Week 06 - Electronics Design">
   <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
 I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
-  <meta itemprop="wordCount" content="3551">
+  <meta itemprop="wordCount" content="4397">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.5151575ee87b9fd954aea3310a12a3cca9a03ebccf37401924ebcdd02ea026d0.js" integrity="sha256-UVFXXuh7n9lUrqMxChKjzKmgPrzPN0AZJOvN0C6gJtA=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.2e41142b54d1d59e721c95d9737d4afd981286a11794ee7b991869ceecc10660.js" integrity="sha256-LkEUK1TR1Z5yHJXZc31K/ZgShqEXlO57mRhpzuzBBmA=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -955,6 +955,28 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
         <li><a href="#building-the-casing">Building the Casing</a></li>
       </ul>
     </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-exporting-gerber-files-from-kicad">📤 Exporting Gerber Files from KiCad</a>
+      <ul>
+        <li><a href="#steps-to-export-gerber-files">Steps to Export Gerber Files:</a></li>
+        <li><a href="#exporting-the-drill-file">Exporting the Drill File:</a></li>
+        <li><a href="#packaging-for-submission">Packaging for Submission:</a></li>
+      </ul>
+    </li>
+    <li><a href="#-viewing-gerbers-in-pcbways-online-gerber-viewer">🔍 Viewing Gerbers in PCBWay&rsquo;s Online Gerber Viewer</a>
+      <ul>
+        <li><a href="#steps-to-view-your-gerbers">Steps to View Your Gerbers:</a></li>
+        <li><a href="#generating-a-manufacturing-quote">Generating a Manufacturing Quote:</a></li>
+      </ul>
+    </li>
+    <li><a href="#-converting-gerber-to-png-with-gerber2png-fablab-kerala">🖼️ Converting Gerber to PNG with Gerber2PNG (FabLab Kerala)</a>
+      <ul>
+        <li><a href="#how-to-use-gerber2png">How to Use Gerber2PNG:</a></li>
+        <li><a href="#files-youll-typically-convert">Files You&rsquo;ll Typically Convert:</a></li>
+      </ul>
+    </li>
     <li><a href="#helpful-websites">Helpful Websites</a></li>
   </ul>
 </nav>
@@ -1308,8 +1330,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </table>
 <blockquote class='book-hint '>
 <p><strong>Note:</strong> I used JST connectors from SnapEDA instead of the Fab Library because I needed horizontal (side-entry) connectors, and the Fab Library only has vertical ones.</p>
-</blockquote><p><img src="../../../images/week-6/kicad-add-components.jpg" alt="KiCad Schematic Adding Components" /></p>
-<h3 id="drawing-wires">Drawing Wires<a class="anchor" href="#drawing-wires">#</a></h3>
+</blockquote><h3 id="drawing-wires">Drawing Wires<a class="anchor" href="#drawing-wires">#</a></h3>
 <p>Press <strong><code>W</code></strong> to start the <strong>Wire</strong> tool.</p>
 <ul>
 <li>Click a pin to start the wire</li>
@@ -1480,10 +1501,11 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <ol>
 <li>Go to <strong>Inspect → Design Rules Checker</strong></li>
 <li>Click <strong>Run DRC</strong></li>
-<li>Fix any clearance violations, unrouted nets, or silkscreen overlaps</li>
-<li>Keep going until you have <strong>0 errors</strong></li>
+<li>Review any clearance violations, unrouted nets, or silkscreen overlaps</li>
 </ol>
 <p><img src="../../../images/week-6/kicad-drc.jpg" alt="KiCad DRC" /></p>
+<p><strong>About the warnings:</strong> The warnings shown in DRC were related to <strong>silkscreen</strong> elements — text and labels overlapping pads or being too close to board edges. Since we&rsquo;re <strong>milling our boards</strong> in the lab using the Roland SRM-20, we won&rsquo;t have a silkscreen layer at all, so these warnings can be safely ignored.</p>
+<p><strong>About the excluded errors:</strong> Some errors flagged the <strong>JST connectors being too close to the board edge</strong>. These were <strong>intentionally placed</strong> that way — the connectors need to be at the edge so cables can plug in easily from the side of the enclosure. I reviewed these and excluded them from the error list since the placement was a deliberate design choice, not a mistake.</p>
 <hr>
 <h1 id="part-5--3d-visualisation-and-casing-design">Part 5 – 3D Visualisation and Casing Design<a class="anchor" href="#part-5--3d-visualisation-and-casing-design">#</a></h1>
 <h2 id="-viewing-the-pcb-in-3d">🖼️ Viewing the PCB in 3D<a class="anchor" href="#-viewing-the-pcb-in-3d">#</a></h2>
@@ -1536,6 +1558,131 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <blockquote class='book-hint '>
 <p>This KiCad → STEP → Fusion 360 workflow is honestly one of the coolest things I’ve learned this week. Going seamlessly from a PCB layout to a mechanically accurate enclosure design, where everything fits without guesswork, is super powerful.</p>
 </blockquote><hr>
+<h1 id="part-6--getting-files-ready-for-fabrication">Part 6 – Getting Files Ready for Fabrication<a class="anchor" href="#part-6--getting-files-ready-for-fabrication">#</a></h1>
+<p>Once the PCB design is complete, the next step is to export the manufacturing files. These files tell the manufacturer (or the milling machine in the lab) exactly how to produce the board.</p>
+<hr>
+<h2 id="-exporting-gerber-files-from-kicad">📤 Exporting Gerber Files from KiCad<a class="anchor" href="#-exporting-gerber-files-from-kicad">#</a></h2>
+<p><strong>Gerber files</strong> are the industry-standard format for PCB manufacturing. They contain all the layer information — copper traces, solder mask, silkscreen, drill holes, and board outline — in a format that any fabrication house can read.</p>
+<h3 id="steps-to-export-gerber-files">Steps to Export Gerber Files:<a class="anchor" href="#steps-to-export-gerber-files">#</a></h3>
+<ol>
+<li>In the PCB Editor, go to <strong>File → Fabrication Outputs → Gerbers (.gbr)</strong></li>
+<li>In the <strong>Plot</strong> dialog:
+<ul>
+<li>Set the <strong>Output Directory</strong> — I used a <code>gerber/</code> subfolder in my project</li>
+<li>Select the layers you need:
+<ul>
+<li><strong>F.Cu</strong> — Front copper (your traces)</li>
+<li><strong>B.Cu</strong> — Back copper (if doing a 2-layer board)</li>
+<li><strong>F.Silkscreen</strong> — Front silkscreen labels</li>
+<li><strong>F.Mask</strong> — Front solder mask</li>
+<li><strong>Edge.Cuts</strong> — Board outline</li>
+</ul>
+</li>
+<li>Make sure <strong>Use Protel filename extensions</strong> is checked (for compatibility)</li>
+</ul>
+</li>
+<li>Click <strong>Plot</strong> to generate the Gerber files</li>
+</ol>
+<p><img src="../../../images/week-6/gerber-export.jpg" alt="KiCad Gerber Export" /></p>
+<h3 id="exporting-the-drill-file">Exporting the Drill File:<a class="anchor" href="#exporting-the-drill-file">#</a></h3>
+<ol>
+<li>Still in the Plot dialog, click <strong>Generate Drill Files</strong></li>
+<li>In the <strong>Drill File</strong> dialog:
+<ul>
+<li>Set the same output directory as the Gerbers</li>
+<li>Keep <strong>Excellon</strong> format selected (standard drill format)</li>
+<li>Check <strong>PTH and NPTH in single file</strong> unless you need them separate</li>
+</ul>
+</li>
+<li>Click <strong>Generate Drill File</strong></li>
+</ol>
+<h3 id="packaging-for-submission">Packaging for Submission:<a class="anchor" href="#packaging-for-submission">#</a></h3>
+<p>Most manufacturers expect a single <code>.zip</code> file containing all your Gerber and drill files:</p>
+<ol>
+<li>Navigate to your <code>gerber/</code> output folder</li>
+<li>Select all the generated files (<code>.gbr</code>, <code>.drl</code>, etc.)</li>
+<li>Right-click and <strong>Compress to ZIP</strong></li>
+<li>This zip is now ready to upload to any PCB manufacturer</li>
+</ol>
+<hr>
+<h2 id="-viewing-gerbers-in-pcbways-online-gerber-viewer">🔍 Viewing Gerbers in PCBWay&rsquo;s Online Gerber Viewer<a class="anchor" href="#-viewing-gerbers-in-pcbways-online-gerber-viewer">#</a></h2>
+<p>Before sending files off for fabrication — or even before milling in the lab — it&rsquo;s always a good idea to <strong>preview your Gerber files</strong> in a third-party viewer. This catches any export mistakes that might not be obvious in KiCad.</p>
+<p><strong><a href="https://www.pcbway.com/">PCBWay</a></strong> has a free online Gerber viewer that&rsquo;s super easy to use:</p>
+<h3 id="steps-to-view-your-gerbers">Steps to View Your Gerbers:<a class="anchor" href="#steps-to-view-your-gerbers">#</a></h3>
+<ol>
+<li>Go to <a href="https://www.pcbway.com/project/OnlineGerberViewer.html">https://www.pcbway.com/project/OnlineGerberViewer.html</a></li>
+<li>Click <strong>Add Gerber Files</strong> or drag-and-drop your <code>.zip</code> file</li>
+<li>The viewer renders your board with all layers — you can toggle each layer on/off to inspect them individually</li>
+<li>Check for:
+<ul>
+<li>Any missing traces or broken connections</li>
+<li>Correct board outline</li>
+<li>Drill holes in the right positions</li>
+<li>Silkscreen text readable and not overlapping pads</li>
+</ul>
+</li>
+</ol>
+<p><img src="../../../images/week-6/pcbway-gerber.jpg" alt="PCBWay Gerber Viewer" /></p>
+<h3 id="generating-a-manufacturing-quote">Generating a Manufacturing Quote:<a class="anchor" href="#generating-a-manufacturing-quote">#</a></h3>
+<p>PCBWay also lets you get an instant quote for professional fabrication:</p>
+<ol>
+<li>After viewing your Gerbers, click <strong>Quote Now</strong> or go to <a href="https://www.pcbway.com/orderonline.aspx">https://www.pcbway.com/orderonline.aspx</a></li>
+<li>Upload your Gerber zip file</li>
+<li>Configure your board options:
+<ul>
+<li><strong>Quantity</strong> — how many boards you need</li>
+<li><strong>Layers</strong> — 1-layer, 2-layer, etc.</li>
+<li><strong>Thickness</strong> — standard is 1.6 mm</li>
+<li><strong>Surface Finish</strong> — HASL, ENIG, OSP, etc.</li>
+<li><strong>Solder Mask Colour</strong> — green, black, blue, red, etc.</li>
+</ul>
+</li>
+<li>Click <strong>Calculate</strong> to see the price and lead time</li>
+<li>If satisfied, you can proceed to order — or just use this as a reference</li>
+</ol>
+<p><img src="../../../images/week-6/pcbway-quoting.jpg" alt="PCBWay Quote Generator" /></p>
+<blockquote class='book-hint '>
+<p><strong>Tip:</strong> Even if you&rsquo;re milling your board in the lab, getting a quote from a manufacturer gives you a sense of what professional fabrication would cost — useful if you ever want to scale up your project.</p>
+</blockquote><hr>
+<h2 id="-converting-gerber-to-png-with-gerber2png-fablab-kerala">🖼️ Converting Gerber to PNG with Gerber2PNG (FabLab Kerala)<a class="anchor" href="#-converting-gerber-to-png-with-gerber2png-fablab-kerala">#</a></h2>
+<p>For Fab Academy, we often need <strong>PNG images</strong> of our PCB traces and outlines — especially for the upcoming <strong>Electronics Production</strong> week where we use the Roland SRM-20 to mill our own boards. The milling software requires high-contrast black-and-white PNG images.</p>
+<p><strong><a href="https://gerber2png.fablabkerala.in/">Gerber2PNG</a></strong> is an awesome free tool created by <strong>FabLab Kerala</strong> specifically for this purpose.</p>
+<h3 id="how-to-use-gerber2png">How to Use Gerber2PNG:<a class="anchor" href="#how-to-use-gerber2png">#</a></h3>
+<ol>
+<li>Go to <a href="https://gerber2png.fablabkerala.in/">https://gerber2png.fablabkerala.in/</a></li>
+<li>Click <strong>Choose File</strong> or drag-and-drop your Gerber file (typically the <code>F.Cu</code> copper layer <code>.gbr</code> file)</li>
+<li>The tool automatically generates a high-resolution PNG image of your traces</li>
+<li>Adjust settings if needed:
+<ul>
+<li><strong>DPI</strong> — higher DPI = finer detail (1000 DPI is usually good for milling)</li>
+<li><strong>Invert</strong> — toggle if you need white traces on black or vice versa</li>
+</ul>
+</li>
+<li>Click <strong>Download PNG</strong> to save the image</li>
+</ol>
+<p><img src="../../../images/week-6/gerber-2-png.jpg" alt="Gerber2PNG Tool" /></p>
+<h3 id="files-youll-typically-convert">Files You&rsquo;ll Typically Convert:<a class="anchor" href="#files-youll-typically-convert">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Gerber Layer</th>
+          <th>PNG Use Case</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>F.Cu (Front Copper)</td>
+          <td>Traces PNG for milling</td>
+      </tr>
+      <tr>
+          <td>Edge.Cuts</td>
+          <td>Outline/cutout PNG for cutting the board boundary</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote class='book-hint '>
+<p><strong>Why this matters:</strong> The mods project software we use in the lab for Roland SRM-20 milling requires PNG input — not Gerber. This tool bridges that gap perfectly and is a real time-saver compared to manually exporting and processing images in image editing software.</p>
+</blockquote><hr>
 <h2 id="helpful-websites">Helpful Websites<a class="anchor" href="#helpful-websites">#</a></h2>
 <ul>
 <li>Wokwi Simulator — <a href="https://wokwi.com/">https://wokwi.com/</a></li>
@@ -1543,6 +1690,9 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>KiCad Official Site — <a href="https://www.kicad.org/">https://www.kicad.org/</a></li>
 <li>Fab Academy KiCad Library — <a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">https://gitlab.fabcloud.org/pub/libraries/electronics/kicad</a></li>
 <li>SnapMagic (SnapEDA) — <a href="https://www.snapeda.com/">https://www.snapeda.com/</a></li>
+<li>PCBWay Online Gerber Viewer — <a href="https://www.pcbway.com/project/OnlineGerberViewer.html">https://www.pcbway.com/project/OnlineGerberViewer.html</a></li>
+<li>PCBWay PCB Quote — <a href="https://www.pcbway.com/orderonline.aspx">https://www.pcbway.com/orderonline.aspx</a></li>
+<li>Gerber2PNG (FabLab Kerala) — <a href="https://gerber2png.fablabkerala.in/">https://gerber2png.fablabkerala.in/</a></li>
 </ul>
 <hr>
 <h1 id="reflection">Reflection<a class="anchor" href="#reflection">#</a></h1>
@@ -1710,6 +1860,28 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
     <li><a href="#-importing-into-fusion-360-for-casing-design">🏠 Importing into Fusion 360 for Casing Design</a>
       <ul>
         <li><a href="#building-the-casing">Building the Casing</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#-exporting-gerber-files-from-kicad">📤 Exporting Gerber Files from KiCad</a>
+      <ul>
+        <li><a href="#steps-to-export-gerber-files">Steps to Export Gerber Files:</a></li>
+        <li><a href="#exporting-the-drill-file">Exporting the Drill File:</a></li>
+        <li><a href="#packaging-for-submission">Packaging for Submission:</a></li>
+      </ul>
+    </li>
+    <li><a href="#-viewing-gerbers-in-pcbways-online-gerber-viewer">🔍 Viewing Gerbers in PCBWay&rsquo;s Online Gerber Viewer</a>
+      <ul>
+        <li><a href="#steps-to-view-your-gerbers">Steps to View Your Gerbers:</a></li>
+        <li><a href="#generating-a-manufacturing-quote">Generating a Manufacturing Quote:</a></li>
+      </ul>
+    </li>
+    <li><a href="#-converting-gerber-to-png-with-gerber2png-fablab-kerala">🖼️ Converting Gerber to PNG with Gerber2PNG (FabLab Kerala)</a>
+      <ul>
+        <li><a href="#how-to-use-gerber2png">How to Use Gerber2PNG:</a></li>
+        <li><a href="#files-youll-typically-convert">Files You&rsquo;ll Typically Convert:</a></li>
       </ul>
     </li>
     <li><a href="#helpful-websites">Helpful Websites</a></li>
