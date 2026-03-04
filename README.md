@@ -38,12 +38,15 @@ This portfolio documents my **weekly progress, builds, failures, and learnings**
 
 ### 🟢 Week 01 – Principles & Project Management  
 - Introduction to Fab Academy workflow  
-- Documentation practices  
-- Project planning  
+- Git version control and documentation practices  
+- Hugo static site setup  
+- Project planning and ideation  
 
 ### 🟢 Week 02 – Computer Aided Design  
-- Parametric modeling  
-- Design workflows  
+- Parametric modeling in Fusion 360  
+- 2D design with Inkscape  
+- 3D modeling workflows  
+- Rendering and visualization  
 
 ### 🟢 Week 03 – Computer Controlled Cutting  
 - Laser cutting & vinyl cutting  
@@ -52,72 +55,92 @@ This portfolio documents my **weekly progress, builds, failures, and learnings**
 - **Key Learning:** Machine parameters directly affect precision  
 
 ### 🟢 Week 04 – Embedded Programming  
-- Microcontroller programming  
-- Custom embedded applications  
+- NB6-Boy handheld game console project  
+- XIAO ESP32-C6 microcontroller programming  
+- OLED display, buttons, buzzer, NeoPixel integration  
+- Custom game development in Arduino  
 
 ### 🟢 Week 05 – 3D Scanning & Printing  
-- Additive manufacturing  
+- FDM 3D printing with Creality Ender  
+- Print parameter optimization  
 - 3D scanning workflows  
+- Designing for additive manufacturing  
 
 ### 🟢 Week 06 – Electronics Design  
-- Circuit design using EDA tools  
-- PCB schematic + layout  
-- Simulation workflows  
+- Circuit simulation with Wokwi (browser + VS Code)  
+- KiCad schematic and PCB design for NB6-Boy  
+- Custom footprint import from SnapMagic  
+- ERC/DRC validation and Gerber export  
+- **Extra Credit:** 3D casing design in Fusion 360, EasyEDA workflow  
 
-### 🟢 Week 07 – Computer Controlled Machining  
+### ⏳ Week 07 – Computer Controlled Machining  
 - CNC machining basics  
+- *Coming soon*  
 
-### 🟢 Week 08 – Electronics Production  
+### ⏳ Week 08 – Electronics Production  
 - PCB fabrication & soldering  
+- *Coming soon*  
 
-### 🟢 Week 09 – Input Devices  
+### ⏳ Week 09 – Input Devices  
 - Sensor integration  
+- *Coming soon*  
 
-### 🟢 Week 10 – Output Devices  
+### ⏳ Week 10 – Output Devices  
 - Actuators and display systems  
+- *Coming soon*  
 
-### 🟢 Week 11 – Networking & Communications  
+### ⏳ Week 11 – Networking & Communications  
 - Device communication protocols  
+- *Coming soon*  
 
-### 🟢 Week 12 – Mechanical Design  
+### ⏳ Week 12 – Mechanical Design  
 - Mechanisms and assemblies  
+- *Coming soon*  
 
-### 🟢 Week 13 – Machine Design  
+### ⏳ Week 13 – Machine Design  
 - System-level mechanical design  
+- *Coming soon*  
 
-### 🟢 Week 14 – Molding & Casting  
+### ⏳ Week 14 – Molding & Casting  
 - Mold design and material workflows  
+- *Coming soon*  
 
-### 🟢 Week 15 – Interface & Application Programming  
+### ⏳ Week 15 – Interface & Application Programming  
 - UI + software integration  
+- *Coming soon*  
 
-### 🟢 Week 16 – System Integration  
+### ⏳ Week 16 – System Integration  
 - Combining electronics, mechanics, and software  
+- *Coming soon*  
 
-### 🟢 Week 17 – Wildcard Week  
+### ⏳ Week 17 – Wildcard Week  
 - Exploration and experimentation  
+- *Coming soon*  
 
-### 🟢 Week 18 – Applications & Implications  
+### ⏳ Week 18 – Applications & Implications  
 - Final project planning  
 - System architecture and feasibility  
-- **Goal:** Integrate all learned skills into one system  
+- *Coming soon*  
 
-### 🟢 Week 19 – Invention, IP & Income  
+### ⏳ Week 19 – Invention, IP & Income  
 - Product thinking  
 - Intellectual property  
+- *Coming soon*  
 
 ---
 
 ## 🛠️ Key Projects
 
+### 🔹 NB6-Boy Handheld Game Console  
+- Custom handheld gaming device built on XIAO ESP32-C6  
+- Features: OLED display, 6-button input, buzzer audio, NeoPixel LED matrix  
+- Full PCB design in KiCad with custom enclosure  
+
 ### 🔹 Laser Gauge Tool  
 - Precision measurement tool using digital fabrication  
 
-### 🔹 NB6-Boy (Embedded Project)  
-- Custom embedded system project  
-
 ### 🔹 Parametric Construction Kit  
-- Laser-cut modular design system  
+- Laser-cut modular design system with press-fit joints  
 
 ---
 
