@@ -25,7 +25,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <meta itemprop="name" content="Week 06 - Electronics Design">
   <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
 I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
-  <meta itemprop="wordCount" content="4397">
+  <meta itemprop="wordCount" content="4062">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.2e41142b54d1d59e721c95d9737d4afd981286a11794ee7b991869ceecc10660.js" integrity="sha256-LkEUK1TR1Z5yHJXZc31K/ZgShqEXlO57mRhpzuzBBmA=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.4e31af15f14e22ff0b1ec48c1095c298f0a3147a241d7cf1183ad8cf700f90a3.js" integrity="sha256-TjGvFfFOIv8LHsSMEJXCmPCjFHokHXzxGDrYz3APkKM=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -881,14 +881,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
-    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a>
-      <ul>
-        <li><a href="#-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)</a></li>
-        <li><a href="#-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)</a></li>
-        <li><a href="#-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)</a></li>
-        <li><a href="#-bench-power-supply">⚡ Bench Power Supply</a></li>
-      </ul>
-    </li>
+    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a></li>
   </ul>
 
   <ul>
@@ -1064,38 +1057,14 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </table>
 <hr>
 <h2 id="group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations<a class="anchor" href="#group-assignment---test-equipment-and-observations">#</a></h2>
-<p>For the group assignment this week, we explored the essential test equipment available in the lab and used them to observe and analyse a working microcontroller circuit. The goal was to go beyond theoretical knowledge and actually <em>see</em> how signals behave in real electronic systems.</p>
-<p>Here&rsquo;s a quick rundown of the equipment we worked with:</p>
-<h3 id="-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)<a class="anchor" href="#-multimeter-zoyi-zt301">#</a></h3>
-<p>The multimeter was used for the basics — checking continuity across PCB traces, measuring voltage on the 3.3V and 5V rails, and verifying resistor values. Honestly one of the most useful tools in the lab because it&rsquo;s so fast to grab and check if something is actually connected or powered.</p>
-<p>Key tests we ran:</p>
+<p>For the group assignment, we explored the lab&rsquo;s test equipment to observe and analyse a working microcontroller circuit:</p>
 <ul>
-<li><strong>Continuity check</strong> — to verify traces and solder joints before powering anything up (beep = connected, no beep = check your soldering lol)</li>
-<li><strong>Voltage measurement</strong> — confirmed 3.3V and 5V rails were correct on the microcontroller board</li>
-<li><strong>Resistance measurement</strong> — verified component values matched what was on the schematic</li>
+<li><strong>Multimeter (ZOYI ZT301)</strong> — continuity checks, voltage measurements (3.3V/5V rails), resistance verification</li>
+<li><strong>Oscilloscope (OWON TAO3104A)</strong> — captured PWM waveforms (sine, square, triangle, sawtooth) from a XIAO RP2040 acting as a function generator</li>
+<li><strong>Logic Analyser (Saleae Logic 8)</strong> — decoded UART and I²C communication protocols in real-time</li>
+<li><strong>Bench Power Supply</strong> — provided regulated DC power with current limiting for safe testing</li>
 </ul>
-<h3 id="-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)<a class="anchor" href="#-oscilloscope-owon-tao3104a">#</a></h3>
-<p>This is where it got really interesting. We used a <strong>Seeed Studio XIAO RP2040</strong> as a software-defined function generator to output different waveforms via PWM, and then observed them live on the oscilloscope.</p>
-<p>Waveforms we generated and captured:</p>
-<ul>
-<li>Sine wave</li>
-<li>Square wave (50% duty cycle)</li>
-<li>Triangle wave</li>
-<li>Sawtooth / Ramp</li>
-<li>Pulse 25% and Pulse 10%</li>
-</ul>
-<blockquote class='book-hint '>
-<p><strong>Important note:</strong> Since the RP2040 outputs digital PWM signals, waveforms like sine and triangle are <em>approximations</em> — the shape is created by rapidly varying the pulse width over time. You need to zoom out on the time/div scale to see the overall envelope rather than individual pulses.</p>
-</blockquote><h3 id="-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)<a class="anchor" href="#-logic-analyser-saleae-logic-8">#</a></h3>
-<p>We also used the <strong>Saleae Logic 8</strong> to capture and decode real communication protocols from the RP2040. This was genuinely eye-opening — seeing actual bytes being transmitted and automatically decoded in the software is a completely different experience from just reading about protocols in theory.</p>
-<ul>
-<li><strong>UART capture</strong> — decoded &ldquo;hello world!&rdquo; transmitted via Serial1 at 9600 baud</li>
-<li><strong>I²C capture</strong> — captured the communication between the RP2040 and an SSD1306 OLED display, including the START condition, 7-bit device address (0x3C → 0x78 on the bus), ACK bits, and data bytes</li>
-</ul>
-<h3 id="-bench-power-supply">⚡ Bench Power Supply<a class="anchor" href="#-bench-power-supply">#</a></h3>
-<p>Used to provide clean, regulated DC power to circuits during testing — set the voltage, set a current limit to protect the board, and you&rsquo;re good to go. Way safer than just plugging things into USB when you&rsquo;re not sure if your circuit is correct yet.</p>
-<hr>
-<p>Check out the full group documentation for all the waveform captures, code, and protocol decoding breakdowns:<br>
+<p>Check out the full group documentation for waveform captures and protocol decoding breakdowns:<br>
 🔗 <a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week06/">https://fabacademy.org/2026/labs/kochi/group_assignmetns/week06/</a></p>
 <hr>
 <h1 id="part-1--circuit-simulation-with-wokwi">Part 1 – Circuit Simulation with Wokwi<a class="anchor" href="#part-1--circuit-simulation-with-wokwi">#</a></h1>
@@ -1165,6 +1134,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Repeat for all your components until everything is wired up</li>
 </ol>
 <p><img src="../../../images/week-6/wokwi-components.jpg" alt="Wokwi Components Added" /></p>
+<p><img src="../../../images/week-6/wokwi-components-1.jpg" alt="Wokwi Components Added" /></p>
 <hr>
 <h2 id="-pasting-the-code-and-simulating">💻 Pasting the Code and Simulating<a class="anchor" href="#-pasting-the-code-and-simulating">#</a></h2>
 <p>Once the wiring was done:</p>
@@ -1227,8 +1197,8 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </blockquote><hr>
 <h1 id="part-2--schematic-design-with-kicad">Part 2 – Schematic Design with KiCad<a class="anchor" href="#part-2--schematic-design-with-kicad">#</a></h1>
 <h2 id="recreating-neils-attiny412-example-design">Recreating Neil&rsquo;s ATtiny412 Example Design<a class="anchor" href="#recreating-neils-attiny412-example-design">#</a></h2>
-<p>This week, I went through the <strong><a href="https://fabacademy.org/2026/classes/embedded_programming/index.html">Fab Academy Embedded Programming class notes</a></strong> — Neil covers a ton of processor families, architectures, and example designs in there, and I wanted to actually apply some of it rather than just reading through it.</p>
-<p>One of the designs Neil references is a minimal <strong>ATtiny412</strong> board, so I used that as a starting point and recreated my own version of it in KiCad — a clean, simple development board built around the ATtiny412 (8-bit AVR 1-series, runs at up to 20 MHz, single-wire UPDI programming).</p>
+<p>As part of our KiCad training, our instructor <strong>Saheen Palayi</strong> guided us through recreating one of Neil&rsquo;s example designs. I went through the <strong><a href="https://fabacademy.org/2026/classes/embedded_programming/index.html">Fab Academy Embedded Programming class notes</a></strong> — Neil covers a ton of processor families, architectures, and example designs in there, and this training session helped me actually apply the concepts rather than just reading through them.</p>
+<p>One of the designs Neil references is a minimal <strong>ATtiny412</strong> board, so under Saheen&rsquo;s guidance, I recreated my own version of it in KiCad — a clean, simple development board built around the ATtiny412 (8-bit AVR 1-series, runs at up to 20 MHz, single-wire UPDI programming).</p>
 <h3 id="schematic">Schematic<a class="anchor" href="#schematic">#</a></h3>
 <p><img src="../../../images/week-6/attiny412-schematic.jpg" alt="ATtiny412 Schematic" /></p>
 <h3 id="pcb-layout">PCB Layout<a class="anchor" href="#pcb-layout">#</a></h3>
@@ -1247,10 +1217,14 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Keep the default library selections — you can always add more later</li>
 </ol>
 <p><img src="../../../images/week-6/kicad-download.jpg" alt="KiCad Download" /></p>
+<p><img src="../../../images/week-6/kicad-download-1.jpg" alt="KiCad Download" /></p>
 <p><img src="../../../images/week-6/kicad-installation.jpg" alt="KiCad Install" /></p>
+<p><img src="../../../images/week-6/kicad-installation-2.jpg" alt="KiCad Install" /></p>
+<p><img src="../../../images/week-6/kicad-installation-3.jpg" alt="KiCad Install" /></p>
+<p><img src="../../../images/week-6/kicad-installation-4.jpg" alt="KiCad Install" /></p>
 <hr>
 <h2 id="-importing-the-fab-academy-kicad-library">📚 Importing the Fab Academy KiCad Library<a class="anchor" href="#-importing-the-fab-academy-kicad-library">#</a></h2>
-<p>The standard KiCad library is great, but Fab Academy has its own library of components with footprints specifically sized and optimised for the Roland SRM-20 milling machine we use in the lab.</p>
+<p>The standard KiCad library is great, but Fab Academy has its own library of components with footprints specifically sized and optimised for PCB milling.</p>
 <p>You can clone the library from GitLab if you prefer:<br>
 <a href="https://gitlab.fabcloud.org/pub/libraries/electronics/kicad">https://gitlab.fabcloud.org/pub/libraries/electronics/kicad</a></p>
 <p>But the easiest way is to install it directly through KiCad&rsquo;s built-in plugin manager:</p>
@@ -1261,6 +1235,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Wait for the installation to complete and click <strong>Apply Changes</strong></li>
 </ol>
 <p><img src="../../../images/week-6/kicad-fab-plugin-1.jpg" alt="KiCad Fab Library Plugin" /></p>
+<p><img src="../../../images/week-6/kicad-fab-plugin-2.jpg" alt="KiCad Fab Library Plugin" /></p>
 <p>The Fab library is now available — you’ll see it listed as <code>fab</code> in all library searches from here on.</p>
 <hr>
 <h2 id="-creating-a-new-project">🆕 Creating a New Project<a class="anchor" href="#-creating-a-new-project">#</a></h2>
@@ -1426,7 +1401,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </ol>
 <hr>
 <h2 id="-setting-design-rules">⚙️ Setting Design Rules<a class="anchor" href="#-setting-design-rules">#</a></h2>
-<p>Before placing anything, set your design constraints based on what the Roland SRM-20 can actually mill.</p>
+<p>Before placing anything, set your design constraints based on what the milling machine can actually mill.</p>
 <p>Go to <strong>File → Board Setup → Design Rules</strong>:</p>
 <table>
   <thead>
@@ -1437,20 +1412,40 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   </thead>
   <tbody>
       <tr>
-          <td>Minimum Track Width</td>
-          <td>0.4 mm</td>
-      </tr>
-      <tr>
           <td>Minimum Clearance</td>
           <td>0.4 mm</td>
       </tr>
       <tr>
-          <td>Minimum Via Diameter</td>
-          <td>0.8 mm</td>
+          <td>Minimum Track Width</td>
+          <td>0.4 mm</td>
       </tr>
       <tr>
-          <td>Copper Pour Clearance</td>
+          <td>Minimum Connection Width</td>
+          <td>0.4 mm</td>
+      </tr>
+      <tr>
+          <td>Minimum Annular Width</td>
+          <td>0.275 mm</td>
+      </tr>
+      <tr>
+          <td>Minimum Via Diameter</td>
+          <td>1.4 mm</td>
+      </tr>
+      <tr>
+          <td>Copper to Hole Clearance</td>
+          <td>0.25 mm</td>
+      </tr>
+      <tr>
+          <td>Copper to Edge Clearance</td>
           <td>0.5 mm</td>
+      </tr>
+      <tr>
+          <td>Minimum Through Hole</td>
+          <td>0.85 mm</td>
+      </tr>
+      <tr>
+          <td>Hole to Hole Clearance</td>
+          <td>0.95 mm</td>
       </tr>
   </tbody>
 </table>
@@ -1487,7 +1482,6 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Press <strong><code>X</code></strong> to activate the <strong>Route Tracks</strong> tool</li>
 <li>Click a pad to start, then click the destination pad to finish the trace</li>
 <li>All traces go on the <strong>F.Cu</strong> (front copper) layer since this is a single-sided board</li>
-<li>For any unavoidable crossings, use a <strong>0Ω resistor as a jumper</strong> instead of a via — the SRM-20 can’t drill vias</li>
 </ol>
 <p><strong>Routing order:</strong></p>
 <ul>
@@ -1504,7 +1498,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Review any clearance violations, unrouted nets, or silkscreen overlaps</li>
 </ol>
 <p><img src="../../../images/week-6/kicad-drc.jpg" alt="KiCad DRC" /></p>
-<p><strong>About the warnings:</strong> The warnings shown in DRC were related to <strong>silkscreen</strong> elements — text and labels overlapping pads or being too close to board edges. Since we&rsquo;re <strong>milling our boards</strong> in the lab using the Roland SRM-20, we won&rsquo;t have a silkscreen layer at all, so these warnings can be safely ignored.</p>
+<p><strong>About the warnings:</strong> The warnings shown in DRC were related to <strong>silkscreen</strong> elements — text and labels overlapping pads or being too close to board edges. Since we&rsquo;re <strong>milling our boards</strong> in the lab, we won&rsquo;t have a silkscreen layer at all, so these warnings can be safely ignored.</p>
 <p><strong>About the excluded errors:</strong> Some errors flagged the <strong>JST connectors being too close to the board edge</strong>. These were <strong>intentionally placed</strong> that way — the connectors need to be at the edge so cables can plug in easily from the side of the enclosure. I reviewed these and excluded them from the error list since the placement was a deliberate design choice, not a mistake.</p>
 <hr>
 <h1 id="part-5--3d-visualisation-and-casing-design">Part 5 – 3D Visualisation and Casing Design<a class="anchor" href="#part-5--3d-visualisation-and-casing-design">#</a></h1>
@@ -1517,6 +1511,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </ol>
 <p>This is genuinely satisfying to look at after spending hours staring at 2D traces lol.</p>
 <p><img src="../../../images/week-6/kicad-3dviewer.jpg" alt="KiCad 3D Viewer" /></p>
+<p><img src="../../../images/week-6/kicad-3dviewer-1.jpg" alt="KiCad 3D Viewer" /></p>
 <hr>
 <h2 id="-exporting-the-step-file">📤 Exporting the STEP File<a class="anchor" href="#-exporting-the-step-file">#</a></h2>
 <p>To use the PCB as a reference for the enclosure in Fusion 360, I exported it as a STEP file:</p>
@@ -1584,6 +1579,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <li>Click <strong>Plot</strong> to generate the Gerber files</li>
 </ol>
 <p><img src="../../../images/week-6/gerber-export.jpg" alt="KiCad Gerber Export" /></p>
+<p><img src="../../../images/week-6/gerber-export-1.jpg" alt="KiCad Gerber Export" /></p>
 <h3 id="exporting-the-drill-file">Exporting the Drill File:<a class="anchor" href="#exporting-the-drill-file">#</a></h3>
 <ol>
 <li>Still in the Plot dialog, click <strong>Generate Drill Files</strong></li>
@@ -1596,6 +1592,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </li>
 <li>Click <strong>Generate Drill File</strong></li>
 </ol>
+<p><img src="../../../images/week-6/generate-drill-files.jpg" alt="Generate Drill Files" /></p>
 <h3 id="packaging-for-submission">Packaging for Submission:<a class="anchor" href="#packaging-for-submission">#</a></h3>
 <p>Most manufacturers expect a single <code>.zip</code> file containing all your Gerber and drill files:</p>
 <ol>
@@ -1645,7 +1642,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <p><strong>Tip:</strong> Even if you&rsquo;re milling your board in the lab, getting a quote from a manufacturer gives you a sense of what professional fabrication would cost — useful if you ever want to scale up your project.</p>
 </blockquote><hr>
 <h2 id="-converting-gerber-to-png-with-gerber2png-fablab-kerala">🖼️ Converting Gerber to PNG with Gerber2PNG (FabLab Kerala)<a class="anchor" href="#-converting-gerber-to-png-with-gerber2png-fablab-kerala">#</a></h2>
-<p>For Fab Academy, we often need <strong>PNG images</strong> of our PCB traces and outlines — especially for the upcoming <strong>Electronics Production</strong> week where we use the Roland SRM-20 to mill our own boards. The milling software requires high-contrast black-and-white PNG images.</p>
+<p>For Fab Academy, we often need <strong>PNG images</strong> of our PCB traces and outlines — especially for the upcoming <strong>Electronics Production</strong> week where we mill our own boards. The milling software requires high-contrast black-and-white PNG images.</p>
 <p><strong><a href="https://gerber2png.fablabkerala.in/">Gerber2PNG</a></strong> is an awesome free tool created by <strong>FabLab Kerala</strong> specifically for this purpose.</p>
 <h3 id="how-to-use-gerber2png">How to Use Gerber2PNG:<a class="anchor" href="#how-to-use-gerber2png">#</a></h3>
 <ol>
@@ -1681,7 +1678,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   </tbody>
 </table>
 <blockquote class='book-hint '>
-<p><strong>Why this matters:</strong> The mods project software we use in the lab for Roland SRM-20 milling requires PNG input — not Gerber. This tool bridges that gap perfectly and is a real time-saver compared to manually exporting and processing images in image editing software.</p>
+<p><strong>Why this matters:</strong> The mods project software we use in the lab for PCB milling requires PNG input — not Gerber. This tool bridges that gap perfectly and is a real time-saver compared to manually exporting and processing images in image editing software.</p>
 </blockquote><hr>
 <h2 id="helpful-websites">Helpful Websites<a class="anchor" href="#helpful-websites">#</a></h2>
 <ul>
@@ -1788,14 +1785,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
-    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a>
-      <ul>
-        <li><a href="#-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)</a></li>
-        <li><a href="#-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)</a></li>
-        <li><a href="#-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)</a></li>
-        <li><a href="#-bench-power-supply">⚡ Bench Power Supply</a></li>
-      </ul>
-    </li>
+    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a></li>
   </ul>
 
   <ul>
