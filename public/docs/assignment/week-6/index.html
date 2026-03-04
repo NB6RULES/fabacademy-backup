@@ -25,7 +25,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <meta itemprop="name" content="Week 06 - Electronics Design">
   <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
 I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
-  <meta itemprop="wordCount" content="4062">
+  <meta itemprop="wordCount" content="4400">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.4e31af15f14e22ff0b1ec48c1095c298f0a3147a241d7cf1183ad8cf700f90a3.js" integrity="sha256-TjGvFfFOIv8LHsSMEJXCmPCjFHokHXzxGDrYz3APkKM=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.f9afa6fbfdcdb2b9f226c61c280ec6eeaa4ba67cd608596a636fcaeb017cf351.js" integrity="sha256-&#43;a&#43;m&#43;/3NsrnyJsYcKA7G7qpLpnzWCFlqY2/K6wF881E=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -881,7 +881,14 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
-    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a></li>
+    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a>
+      <ul>
+        <li><a href="#-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)</a></li>
+        <li><a href="#-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)</a></li>
+        <li><a href="#-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)</a></li>
+        <li><a href="#-bench-power-supply">⚡ Bench Power Supply</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -1057,14 +1064,38 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </table>
 <hr>
 <h2 id="group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations<a class="anchor" href="#group-assignment---test-equipment-and-observations">#</a></h2>
-<p>For the group assignment, we explored the lab&rsquo;s test equipment to observe and analyse a working microcontroller circuit:</p>
+<p>For the group assignment this week, we explored the essential test equipment available in the lab and used them to observe and analyse a working microcontroller circuit. The goal was to go beyond theoretical knowledge and actually <em>see</em> how signals behave in real electronic systems.</p>
+<p>Here&rsquo;s a quick rundown of the equipment we worked with:</p>
+<h3 id="-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)<a class="anchor" href="#-multimeter-zoyi-zt301">#</a></h3>
+<p>The multimeter was used for the basics — checking continuity across PCB traces, measuring voltage on the 3.3V and 5V rails, and verifying resistor values. Honestly one of the most useful tools in the lab because it&rsquo;s so fast to grab and check if something is actually connected or powered.</p>
+<p>Key tests we ran:</p>
 <ul>
-<li><strong>Multimeter (ZOYI ZT301)</strong> — continuity checks, voltage measurements (3.3V/5V rails), resistance verification</li>
-<li><strong>Oscilloscope (OWON TAO3104A)</strong> — captured PWM waveforms (sine, square, triangle, sawtooth) from a XIAO RP2040 acting as a function generator</li>
-<li><strong>Logic Analyser (Saleae Logic 8)</strong> — decoded UART and I²C communication protocols in real-time</li>
-<li><strong>Bench Power Supply</strong> — provided regulated DC power with current limiting for safe testing</li>
+<li><strong>Continuity check</strong> — to verify traces and solder joints before powering anything up (beep = connected, no beep = check your soldering lol)</li>
+<li><strong>Voltage measurement</strong> — confirmed 3.3V and 5V rails were correct on the microcontroller board</li>
+<li><strong>Resistance measurement</strong> — verified component values matched what was on the schematic</li>
 </ul>
-<p>Check out the full group documentation for waveform captures and protocol decoding breakdowns:<br>
+<h3 id="-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)<a class="anchor" href="#-oscilloscope-owon-tao3104a">#</a></h3>
+<p>This is where it got really interesting. We used a <strong>Seeed Studio XIAO RP2040</strong> as a software-defined function generator to output different waveforms via PWM, and then observed them live on the oscilloscope.</p>
+<p>Waveforms we generated and captured:</p>
+<ul>
+<li>Sine wave</li>
+<li>Square wave (50% duty cycle)</li>
+<li>Triangle wave</li>
+<li>Sawtooth / Ramp</li>
+<li>Pulse 25% and Pulse 10%</li>
+</ul>
+<blockquote class='book-hint '>
+<p><strong>Important note:</strong> Since the RP2040 outputs digital PWM signals, waveforms like sine and triangle are <em>approximations</em> — the shape is created by rapidly varying the pulse width over time. You need to zoom out on the time/div scale to see the overall envelope rather than individual pulses.</p>
+</blockquote><h3 id="-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)<a class="anchor" href="#-logic-analyser-saleae-logic-8">#</a></h3>
+<p>We also used the <strong>Saleae Logic 8</strong> to capture and decode real communication protocols from the RP2040. This was genuinely eye-opening — seeing actual bytes being transmitted and automatically decoded in the software is a completely different experience from just reading about protocols in theory.</p>
+<ul>
+<li><strong>UART capture</strong> — decoded &ldquo;hello world!&rdquo; transmitted via Serial1 at 9600 baud</li>
+<li><strong>I²C capture</strong> — captured the communication between the RP2040 and an SSD1306 OLED display, including the START condition, 7-bit device address (0x3C → 0x78 on the bus), ACK bits, and data bytes</li>
+</ul>
+<h3 id="-bench-power-supply">⚡ Bench Power Supply<a class="anchor" href="#-bench-power-supply">#</a></h3>
+<p>Used to provide clean, regulated DC power to circuits during testing — set the voltage, set a current limit to protect the board, and you&rsquo;re good to go. Way safer than just plugging things into USB when you&rsquo;re not sure if your circuit is correct yet.</p>
+<hr>
+<p>Check out the full group documentation for all the waveform captures, code, and protocol decoding breakdowns:<br>
 🔗 <a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week06/">https://fabacademy.org/2026/labs/kochi/group_assignmetns/week06/</a></p>
 <hr>
 <h1 id="part-1--circuit-simulation-with-wokwi">Part 1 – Circuit Simulation with Wokwi<a class="anchor" href="#part-1--circuit-simulation-with-wokwi">#</a></h1>
@@ -1785,7 +1816,14 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
-    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a></li>
+    <li><a href="#group-assignment---test-equipment-and-observations">Group Assignment - Test Equipment and Observations</a>
+      <ul>
+        <li><a href="#-multimeter-zoyi-zt301">🔬 Multimeter (ZOYI ZT301)</a></li>
+        <li><a href="#-oscilloscope-owon-tao3104a">📡 Oscilloscope (OWON TAO3104A)</a></li>
+        <li><a href="#-logic-analyser-saleae-logic-8">🔌 Logic Analyser (Saleae Logic 8)</a></li>
+        <li><a href="#-bench-power-supply">⚡ Bench Power Supply</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
