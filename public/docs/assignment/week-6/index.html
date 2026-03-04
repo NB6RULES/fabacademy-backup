@@ -25,7 +25,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
   <meta itemprop="name" content="Week 06 - Electronics Design">
   <meta itemprop="description" content="Week 06 – Electronics Design#Week 6 is all about Electronics Design — which basically means this is the week where we stop connecting stuff on breadboards and start actually designing the circuits ourselves. The goal was to understand how to simulate circuits, draw proper schematics, and route a real PCB.
 I tied this week directly into the NB6-Boy project I built during the Embedded Programming week, so this was super relevant for me.">
-  <meta itemprop="wordCount" content="4400">
+  <meta itemprop="wordCount" content="4617">
 
 <title>Week 06 - Electronics Design | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.f9afa6fbfdcdb2b9f226c61c280ec6eeaa4ba67cd608596a636fcaeb017cf351.js" integrity="sha256-&#43;a&#43;m&#43;/3NsrnyJsYcKA7G7qpLpnzWCFlqY2/K6wF881E=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.4fd71a13b0854326faace27290695efeb451c1fc449584b7343d58881cf43e5e.js" integrity="sha256-T9caE7CFQyb6rOJykGle/rRRwfxElYS3ND1YiBz0Pl4=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -977,6 +977,16 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
         <li><a href="#files-youll-typically-convert">Files You&rsquo;ll Typically Convert:</a></li>
       </ul>
     </li>
+  </ul>
+
+  <ul>
+    <li><a href="#simple-xiao-esp32-c6-with-rgb-led-circuit">Simple XIAO ESP32-C6 with RGB LED Circuit</a>
+      <ul>
+        <li><a href="#schematic-1">Schematic</a></li>
+        <li><a href="#pcb-layout-1">PCB Layout</a></li>
+        <li><a href="#3d-view-1">3D View</a></li>
+      </ul>
+    </li>
     <li><a href="#helpful-websites">Helpful Websites</a></li>
   </ul>
 </nav>
@@ -1531,8 +1541,9 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 <p><img src="../../../images/week-6/kicad-drc.jpg" alt="KiCad DRC" /></p>
 <p><strong>About the warnings:</strong> The warnings shown in DRC were related to <strong>silkscreen</strong> elements — text and labels overlapping pads or being too close to board edges. Since we&rsquo;re <strong>milling our boards</strong> in the lab, we won&rsquo;t have a silkscreen layer at all, so these warnings can be safely ignored.</p>
 <p><strong>About the excluded errors:</strong> Some errors flagged the <strong>JST connectors being too close to the board edge</strong>. These were <strong>intentionally placed</strong> that way — the connectors need to be at the edge so cables can plug in easily from the side of the enclosure. I reviewed these and excluded them from the error list since the placement was a deliberate design choice, not a mistake.</p>
+<p>Another error was related to the <strong>XIAO footprint not matching the library</strong>. This happened because I <strong>modified the footprint hole size from 0.8 mm to 0.85 mm</strong> to match the drill bit available in my lab. The default 0.8 mm holes wouldn&rsquo;t work with our tooling, so this was a necessary adjustment — not an actual design error.</p>
 <hr>
-<h1 id="part-5--3d-visualisation-and-casing-design">Part 5 – 3D Visualisation and Casing Design<a class="anchor" href="#part-5--3d-visualisation-and-casing-design">#</a></h1>
+<h1 id="part-5--3d-visualisation-and-casing-design-extra-credit">Part 5 – 3D Visualisation and Casing Design (Extra Credit)<a class="anchor" href="#part-5--3d-visualisation-and-casing-design-extra-credit">#</a></h1>
 <h2 id="-viewing-the-pcb-in-3d">🖼️ Viewing the PCB in 3D<a class="anchor" href="#-viewing-the-pcb-in-3d">#</a></h2>
 <p>Before doing anything else, I wanted to see what the board actually looked like physically.</p>
 <ol>
@@ -1710,6 +1721,25 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
 </table>
 <blockquote class='book-hint '>
 <p><strong>Why this matters:</strong> The mods project software we use in the lab for PCB milling requires PNG input — not Gerber. This tool bridges that gap perfectly and is a real time-saver compared to manually exporting and processing images in image editing software.</p>
+</blockquote><hr>
+<h1 id="extra-credit--using-a-different-eda-tool-easyeda">Extra Credit – Using a Different EDA Tool: EasyEDA<a class="anchor" href="#extra-credit--using-a-different-eda-tool-easyeda">#</a></h1>
+<p>To try a different workflow, I also explored <strong><a href="https://easyeda.com/">EasyEDA</a></strong> — a free, browser-based EDA tool that&rsquo;s beginner-friendly and doesn&rsquo;t require any software installation. It&rsquo;s a great alternative to KiCad for quick prototypes or simpler boards.</p>
+<h2 id="simple-xiao-esp32-c6-with-rgb-led-circuit">Simple XIAO ESP32-C6 with RGB LED Circuit<a class="anchor" href="#simple-xiao-esp32-c6-with-rgb-led-circuit">#</a></h2>
+<p>I designed a minimal circuit featuring:</p>
+<ul>
+<li><strong>XIAO ESP32-C6</strong> — the same microcontroller used in my NB6-Boy project</li>
+<li><strong>RGB LED</strong> — a common cathode RGB LED for visual output</li>
+<li><strong>Current-limiting resistor</strong> — to protect the LED from overcurrent</li>
+</ul>
+<p>The circuit is straightforward: each colour channel of the RGB LED connects to a GPIO pin on the XIAO through a resistor, allowing independent PWM control of red, green, and blue to create any colour.</p>
+<h3 id="schematic-1">Schematic<a class="anchor" href="#schematic-1">#</a></h3>
+<p><img src="../../../images/week-6/easy-eda-schematic.jpg" alt="EasyEDA Schematic" /></p>
+<h3 id="pcb-layout-1">PCB Layout<a class="anchor" href="#pcb-layout-1">#</a></h3>
+<p><img src="../../../images/week-6/easy-eda-pcb.jpg" alt="EasyEDA PCB" /></p>
+<h3 id="3d-view-1">3D View<a class="anchor" href="#3d-view-1">#</a></h3>
+<p><img src="../../../images/week-6/easy-eda-3d.jpg" alt="EasyEDA 3D View" /></p>
+<blockquote class='book-hint '>
+<p>EasyEDA&rsquo;s interface is more intuitive for beginners compared to KiCad, and the integrated parts library makes finding components quick. However, KiCad offers more control and flexibility for complex designs.</p>
 </blockquote><hr>
 <h2 id="helpful-websites">Helpful Websites<a class="anchor" href="#helpful-websites">#</a></h2>
 <ul>
@@ -1910,6 +1940,16 @@ I tied this week directly into the NB6-Boy project I built during the Embedded P
       <ul>
         <li><a href="#how-to-use-gerber2png">How to Use Gerber2PNG:</a></li>
         <li><a href="#files-youll-typically-convert">Files You&rsquo;ll Typically Convert:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#simple-xiao-esp32-c6-with-rgb-led-circuit">Simple XIAO ESP32-C6 with RGB LED Circuit</a>
+      <ul>
+        <li><a href="#schematic-1">Schematic</a></li>
+        <li><a href="#pcb-layout-1">PCB Layout</a></li>
+        <li><a href="#3d-view-1">3D View</a></li>
       </ul>
     </li>
     <li><a href="#helpful-websites">Helpful Websites</a></li>
