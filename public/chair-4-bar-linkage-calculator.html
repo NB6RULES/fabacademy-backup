@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4-Bar Linkage Simulator — Recliner Chair</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root {
+    --bg:#0e0f11; --panel:#16181c; --border:#2a2d35;
+    --accent:#f0c040; --text:#e8e9ec; --muted:#6b7280;
+    --cyan:#4fc4cf; --yellow:#f0c040; --purple:#a78bfa; --red:#e05a5a;
+    --green:#4ade80;
+  }
+  body {
+    background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif;
+    height:100vh; overflow:hidden;
+    display:grid;
+    grid-template-rows:auto 1fr;
+    grid-template-columns:1fr 316px;
+    grid-template-areas:"hdr hdr" "cvs ctl";
+  }
+  header {
+    grid-area:hdr; padding:13px 22px;
+    border-bottom:1px solid var(--border); background:var(--panel);
+    display:flex; align-items:center; gap:14px;
+  }
+  header h1 { font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); }
+  header p  { font-size:11px; color:var(--muted); font-family:'Space Mono',monospace; }
+  .badge { margin-left:auto; font-family:'Space Mono',monospace; font-size:10px; padding:3px 9px; border:1px solid var(--border); border-radius:3px; color:var(--muted); letter-spacing:.1em; }
+
+  .canvas-area {
+    grid-area:cvs; position:relative; overflow:hidden; cursor:grab;
+    background:var(--bg);
+    background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+    background-size:40px 40px;
+  }
+  .canvas-area.panning { cursor:grabbing; }
+  canvas { display:block; width:100%; height:100%; }
+
+  /* pan hint */
+  .pan-hint {
+    position:absolute; bottom:12px; left:14px;
+    font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.1em;
+    color:rgba(255,255,255,.2); pointer-events:none;
+  }
+
+  .controls {
+    grid-area:ctl; background:var(--panel); border-left:1px solid var(--border);
+    overflow-y:auto; padding:14px; display:flex; flex-direction:column; gap:3px;
+  }
+  .sec { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding:9px 0 5px; border-bottom:1px solid var(--border); margin-bottom:2px; }
+  .row { display:flex; flex-direction:column; gap:4px; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.04); }
+  .rh  { display:flex; align-items:center; justify-content:space-between; gap:6px; }
+  .lbl { font-size:11px; color:var(--text); display:flex; align-items:center; gap:7px; flex:1; min-width:0; }
+  .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+  /* value display: base (yellow) + scaled (green) */
+  .vals { display:flex; align-items:center; gap:5px; flex-shrink:0; }
+  .vbase { font-family:'Space Mono',monospace; font-size:11px; color:var(--accent); }
+  .vsep  { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); }
+  .vscaled { font-family:'Space Mono',monospace; font-size:11px; color:var(--green); font-weight:700; }
+  /* hide scaled badge when scale = 1 */
+  .scale-is-one .vscaled, .scale-is-one .vsep { display:none; }
+
+  input[type=range] { -webkit-appearance:none; width:100%; height:3px; background:var(--border); border-radius:2px; outline:none; cursor:pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:13px; height:13px; border-radius:50%; background:var(--accent); cursor:pointer; transition:transform .1s; }
+  input[type=range]::-webkit-slider-thumb:hover { transform:scale(1.3); }
+  /* lock overlay — only active when show-lock class is present */
+  .slider-lock { position:relative; }
+  .lock-msg { font-size:9px; color:var(--muted); font-family:'Space Mono',monospace; margin-top:1px; display:none; }
+  .show-lock .lock-msg { display:block; }
+  .show-lock input[type=range] { pointer-events:none; opacity:.3; cursor:not-allowed; }
+
+  /* error toast for clicking locked slider */
+  #lockToast {
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:#1e1f23; border:1px solid var(--red); border-radius:6px;
+    padding:9px 16px; font-family:'Space Mono',monospace; font-size:11px;
+    color:var(--red); pointer-events:none; opacity:0;
+    transition:opacity .2s, transform .2s; z-index:999; white-space:nowrap;
+  }
+  #lockToast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  .btns { display:flex; gap:6px; margin-top:6px; }
+  button {
+    flex:1; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.07em;
+    padding:8px 4px; border:1px solid var(--border); border-radius:4px;
+    background:transparent; color:var(--text); cursor:pointer; transition:all .15s; text-transform:uppercase;
+  }
+  button:hover, button.on { background:var(--accent); color:#000; border-color:var(--accent); }
+  .bake-btn {
+    width:100%; margin-top:6px; background:rgba(74,222,128,.08);
+    border-color:rgba(74,222,128,.4); color:var(--green);
+    font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.07em;
+    padding:9px; border-radius:4px; cursor:pointer; transition:all .15s;
+    text-transform:uppercase;
+  }
+  .bake-btn:hover { background:var(--green); color:#000; border-color:var(--green); }
+  .bake-btn:disabled { opacity:.3; cursor:default; }
+
+  .scale-box { background:rgba(74,222,128,.06); border:1px solid rgba(74,222,128,.2); border-radius:5px; padding:10px; margin-top:2px; }
+  .scale-row { display:flex; align-items:center; justify-content:space-between; }
+  .scale-eff { font-family:'Space Mono',monospace; font-size:10px; color:var(--green); margin-top:4px; }
+
+  .arow { display:flex; justify-content:space-between; font-size:11px; font-family:'Space Mono',monospace; padding:3px 0; }
+  /* min/max angle inputs */
+  .angle-range-row { display:flex; align-items:center; gap:6px; padding:5px 0; }
+  .angle-range-row label { font-size:10px; color:var(--muted); font-family:'Space Mono',monospace; letter-spacing:.06em; white-space:nowrap; }
+  .angle-input {
+    width:52px; background:rgba(0,0,0,.35); border:1px solid var(--border);
+    border-radius:4px; color:var(--accent); font-family:'Space Mono',monospace;
+    font-size:12px; font-weight:700; padding:5px 6px; text-align:center;
+    outline:none; transition:border-color .15s;
+  }
+  .angle-input:focus { border-color:var(--accent); }
+  .angle-input::-webkit-inner-spin-button,
+  .angle-input::-webkit-outer-spin-button { -webkit-appearance:none; }
+  .legend { display:flex; flex-direction:column; gap:4px; margin-top:4px; }
+  .pill { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.08em; padding:4px 8px; border-radius:3px; border-left:3px solid; }
+  .info { background:rgba(240,192,64,.05); border:1px solid rgba(240,192,64,.18); border-radius:4px; padding:8px; font-size:11px; color:var(--muted); line-height:1.65; margin-top:4px; }
+
+  ::-webkit-scrollbar { width:4px; }
+  ::-webkit-scrollbar-track { background:var(--bg); }
+  ::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Recliner 4-Bar Simulator</h1>
+    <p>Fab Academy CNC Week · crank 70°–160°</p>
+  </div>
+  <div class="badge">CHAIR LINKAGE</div>
+</header>
+
+<div class="canvas-area" id="canvasArea">
+  <canvas id="c"></canvas>
+  <div class="pan-hint">✥ drag to pan · scroll to zoom</div>
+</div>
+<div id="lockToast">⚠ Set scale to 1.0× or Bake values first</div>
+
+<aside class="controls" id="controls">
+
+  <div class="sec">Link Lengths (mm)</div>
+
+  <!-- L1 -->
+  <div class="row" id="rowL1">
+    <div class="rh">
+      <span class="lbl"><span class="dot" style="background:var(--cyan)"></span>L1 Ground A→D</span>
+      <span class="vals"><span class="vbase" id="v1">471</span><span class="vsep">→</span><span class="vscaled" id="vs1">471</span></span>
+    </div>
+    <div class="slider-lock" id="sl1"><input type="range" id="l1" min="100" max="700" value="471" step="5"><div class="lock-msg">Set scale to 1.0× to edit</div></div>
+  </div>
+  <!-- L2 -->
+  <div class="row" id="rowL2">
+    <div class="rh">
+      <span class="lbl"><span class="dot" style="background:var(--yellow)"></span>L2 Crank A→B (Backrest)</span>
+      <span class="vals"><span class="vbase" id="v2">182</span><span class="vsep">→</span><span class="vscaled" id="vs2">182</span></span>
+    </div>
+    <div class="slider-lock" id="sl2"><input type="range" id="l2" min="40" max="500" value="182" step="5"><div class="lock-msg">Set scale to 1.0× to edit</div></div>
+  </div>
+  <!-- L3 -->
+  <div class="row" id="rowL3">
+    <div class="rh">
+      <span class="lbl"><span class="dot" style="background:var(--purple)"></span>L3 Coupler B→C (Seat)</span>
+      <span class="vals"><span class="vbase" id="v3">450</span><span class="vsep">→</span><span class="vscaled" id="vs3">450</span></span>
+    </div>
+    <div class="slider-lock" id="sl3"><input type="range" id="l3" min="100" max="800" value="450" step="5"><div class="lock-msg">Set scale to 1.0× to edit</div></div>
+  </div>
+  <!-- L4 -->
+  <div class="row" id="rowL4">
+    <div class="rh">
+      <span class="lbl"><span class="dot" style="background:var(--red)"></span>L4 Rocker C→D (Footrest)</span>
+      <span class="vals"><span class="vbase" id="v4">205</span><span class="vsep">→</span><span class="vscaled" id="vs4">205</span></span>
+    </div>
+    <div class="slider-lock" id="sl4"><input type="range" id="l4" min="40" max="500" value="205" step="5"><div class="lock-msg">Set scale to 1.0× to edit</div></div>
+  </div>
+
+  <div class="sec">Scale (keeps ratios)</div>
+  <div class="scale-box">
+    <div class="scale-row">
+      <span class="lbl" style="font-size:11px">Scale ×</span>
+      <span class="vscaled" id="vsc">1.0×</span>
+    </div>
+    <input type="range" id="scl" min="5" max="60" value="10" step="1" style="margin-top:6px">
+    <div class="scale-eff" id="scaleEff">All links × 1.0 — no change</div>
+    <button class="bake-btn" id="btnBake" disabled>⬇ Bake scaled values into links</button>
+  </div>
+
+  <div class="sec">Animation</div>
+  <!-- min / max angle inputs -->
+  <div class="angle-range-row">
+    <label>MIN °</label>
+    <input type="number" class="angle-input" id="crankMin" value="70" min="0" max="359">
+    <label style="margin-left:4px">MAX °</label>
+    <input type="number" class="angle-input" id="crankMax" value="160" min="1" max="360">
+  </div>
+  <div class="row">
+    <div class="rh"><span class="lbl">Crank angle θ</span><span class="vbase" id="vA">95°</span></div>
+    <input type="range" id="crankA" min="70" max="160" value="95" step="1">
+  </div>
+  <div class="row">
+    <div class="rh"><span class="lbl">Speed</span><span class="vbase" id="vSpd">1.0×</span></div>
+    <input type="range" id="spd" min="1" max="10" value="3" step="1">
+  </div>
+  <div class="btns">
+    <button id="btnP">▶ Play</button>
+    <button id="btnT">Trace</button>
+    <button id="btnR">Reset</button>
+  </div>
+
+  <div class="sec">Live Angles</div>
+  <div class="arow"><span style="color:var(--yellow)">θ₂ backrest</span><span id="a2" style="color:var(--yellow)">—</span></div>
+  <div class="arow"><span style="color:var(--purple)">θ₃ seat</span><span id="a3" style="color:var(--purple)">—</span></div>
+  <div class="arow"><span style="color:var(--red)">θ₄ footrest</span><span id="a4" style="color:var(--red)">—</span></div>
+  <div class="arow"><span style="color:var(--muted)">Footrest sweep</span><span id="aswing" style="color:var(--accent)">—</span></div>
+
+  <div class="sec">Legend</div>
+  <div class="legend">
+    <div class="pill" style="border-color:var(--cyan);color:var(--cyan)">CYAN — Base frame (fixed)</div>
+    <div class="pill" style="border-color:var(--yellow);color:var(--yellow)">YELLOW — Backrest (crank A→B)</div>
+    <div class="pill" style="border-color:var(--purple);color:var(--purple)">PURPLE — Seat pan (coupler B→C)</div>
+    <div class="pill" style="border-color:var(--red);color:var(--red)">RED — Footrest (rocker C→D)</div>
+  </div>
+
+  <div class="info">
+    <strong style="color:var(--accent)">Upright ≈ 95°&nbsp;&nbsp;Reclined ≈ 140°</strong><br>
+    Scale × previews all links scaled up proportionally.<br>
+    Green values = effective lengths at current scale.<br>
+    Hit <strong style="color:var(--green)">Bake</strong> to commit scaled values into the sliders.
+  </div>
+
+</aside>
+
+<script>
+// ─── state ─────────────────────────────────────────────────
+const DEF = {L1:471,L2:182,L3:450,L4:205};
+let L1=471, L2=182, L3=450, L4=205;
+let scaleMul = 1.0;
+let crankDeg = 95;
+let animating=false, tracing=false, animDir=1;
+let tracePoints=[], animId=null, speedVal=3;
+let minRocker=null, maxRocker=null;
+
+// pan state
+let panX=0, panY=0, isPanning=false, panStartX=0, panStartY=0, panOriginX=0, panOriginY=0;
+let zoomLevel=1.0;
+
+const canvas     = document.getElementById('c');
+const ctx        = canvas.getContext('2d');
+const canvasArea = document.getElementById('canvasArea');
+const controls   = document.getElementById('controls');
+
+// ─── resize ───────────────────────────────────────────────
+function resize() {
+  const dpr=window.devicePixelRatio||1;
+  canvas.width  = canvasArea.clientWidth  * dpr;
+  canvas.height = canvasArea.clientHeight * dpr;
+  ctx.scale(dpr,dpr);
+  tracePoints=[]; minRocker=null; maxRocker=null;
+}
+resize();
+window.addEventListener('resize',()=>{ resize(); draw(); });
+
+// ─── pan ──────────────────────────────────────────────────
+canvasArea.addEventListener('mousedown',e=>{
+  isPanning=true; canvasArea.classList.add('panning');
+  panStartX=e.clientX; panStartY=e.clientY;
+  panOriginX=panX; panOriginY=panY;
+});
+window.addEventListener('mousemove',e=>{
+  if(!isPanning) return;
+  panX = panOriginX + (e.clientX - panStartX);
+  panY = panOriginY + (e.clientY - panStartY);
+  draw();
+});
+window.addEventListener('mouseup',()=>{ isPanning=false; canvasArea.classList.remove('panning'); });
+
+// touch pan
+canvasArea.addEventListener('touchstart',e=>{
+  if(e.touches.length!==1) return;
+  isPanning=true; panStartX=e.touches[0].clientX; panStartY=e.touches[0].clientY;
+  panOriginX=panX; panOriginY=panY;
+},{passive:true});
+canvasArea.addEventListener('touchmove',e=>{
+  if(!isPanning||e.touches.length!==1) return;
+  panX=panOriginX+(e.touches[0].clientX-panStartX);
+  panY=panOriginY+(e.touches[0].clientY-panStartY);
+  draw();
+},{passive:true});
+canvasArea.addEventListener('touchend',()=>{ isPanning=false; });
+
+// ─── scroll to zoom ────────────────────────────────────────
+canvasArea.addEventListener('wheel', e=>{
+  e.preventDefault();
+  const rect   = canvasArea.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left;
+  const mouseY = e.clientY - rect.top;
+  const factor = e.deltaY < 0 ? 1.1 : 1/1.1;
+  const newZoom = Math.min(8, Math.max(0.2, zoomLevel * factor));
+  // adjust pan so the point under the mouse stays fixed
+  panX = mouseX - (mouseX - panX) * (newZoom / zoomLevel);
+  panY = mouseY - (mouseY - panY) * (newZoom / zoomLevel);
+  zoomLevel = newZoom;
+  tracePoints=[];
+  draw();
+}, { passive: false });
+
+// ─── math ─────────────────────────────────────────────────
+const toR=d=>d*Math.PI/180;
+const toD=r=>r*180/Math.PI;
+
+function solve4bar(l1,l2,l3,l4,theta2deg) {
+  const t2=toR(theta2deg);
+  const Bx=l2*Math.cos(t2), By=l2*Math.sin(t2);
+  const bd=Math.sqrt((l1-Bx)**2+By**2);
+  if(bd>l3+l4||bd<Math.abs(l3-l4)) return null;
+  const gam=Math.atan2(-By,l1-Bx);
+  const cosB=(bd*bd+l3*l3-l4*l4)/(2*bd*l3);
+  if(Math.abs(cosB)>1) return null;
+  const beta=Math.acos(cosB);
+  const t3=gam+beta;
+  const Cx=Bx+l3*Math.cos(t3), Cy=By+l3*Math.sin(t3);
+  const t4=Math.atan2(Cy,Cx-l1);
+  return {Bx,By,Cx,Cy,t3,t4};
+}
+
+// ─── draw helpers ─────────────────────────────────────────
+function rrect(cx,cy,len,thick,angle,fill,stroke) {
+  ctx.save(); ctx.translate(cx,cy); ctx.rotate(angle);
+  const w=len,h=thick,x=-w/2,y=-h/2,r=Math.min(7,h*.44);
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.arcTo(x+w,y,x+w,y+r,r);
+  ctx.lineTo(x+w,y+h-r); ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
+  ctx.lineTo(x+r,y+h); ctx.arcTo(x,y+h,x,y+h-r,r);
+  ctx.lineTo(x,y+r); ctx.arcTo(x,y,x+r,y,r);
+  ctx.closePath();
+  ctx.fillStyle=fill; ctx.fill();
+  ctx.strokeStyle=stroke; ctx.lineWidth=2; ctx.stroke();
+  ctx.restore();
+}
+function slats(cx,cy,len,thick,angle,col,n) {
+  ctx.save(); ctx.translate(cx,cy); ctx.rotate(angle);
+  ctx.strokeStyle=col; ctx.lineWidth=1;
+  for(let i=1;i<n;i++){const x=-len/2+(len/n)*i; ctx.beginPath(); ctx.moveTo(x,-thick/2+3); ctx.lineTo(x,thick/2-3); ctx.stroke();}
+  ctx.restore();
+}
+function springs(cx,cy,len,thick,angle,col,n) {
+  ctx.save(); ctx.translate(cx,cy); ctx.rotate(angle);
+  ctx.strokeStyle=col; ctx.lineWidth=2; ctx.lineCap='round';
+  const mg=thick*.13;
+  for(let i=0;i<n;i++){
+    const y=-thick/2+mg+(thick-mg*2)/(n-1)*i;
+    const half=len*.27, off=(i%2===0)?len*.07:-len*.07;
+    ctx.beginPath(); ctx.moveTo(off-half,y); ctx.lineTo(off+half,y); ctx.stroke();
+  }
+  ctx.restore();
+}
+function rod(x1,y1,x2,y2,col,w) {
+  ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2);
+  ctx.strokeStyle=col; ctx.lineWidth=w; ctx.lineCap='round'; ctx.stroke();
+}
+function pivot(x,y,col,lbl) {
+  ctx.beginPath(); ctx.arc(x,y,7,0,Math.PI*2); ctx.fillStyle=col; ctx.fill();
+  ctx.beginPath(); ctx.arc(x,y,3,0,Math.PI*2); ctx.fillStyle='#0e0f11'; ctx.fill();
+  ctx.font='700 12px Space Mono,monospace'; ctx.fillStyle=col; ctx.fillText(lbl,x+10,y-10);
+}
+function chip(x,y,txt,col) {
+  ctx.font='500 10px DM Sans'; ctx.textAlign='center';
+  const tw=ctx.measureText(txt).width;
+  ctx.fillStyle='rgba(14,15,17,.88)'; ctx.fillRect(x-tw/2-5,y-11,tw+10,15);
+  ctx.fillStyle=col; ctx.fillText(txt,x,y); ctx.textAlign='left';
+}
+function midLabel(x1,y1,x2,y2,txt,col) {
+  ctx.font='500 11px DM Sans'; ctx.fillStyle=col; ctx.textAlign='center';
+  ctx.fillText(txt,(x1+x2)/2,(y1+y2)/2-11); ctx.textAlign='left';
+}
+
+// ─── main draw ────────────────────────────────────────────
+function draw() {
+  const W=canvas.clientWidth, H=canvas.clientHeight;
+  ctx.clearRect(0,0,W,H);
+
+  const l1=L1*scaleMul, l2=L2*scaleMul, l3=L3*scaleMul, l4=L4*scaleMul;
+
+  // pixel-per-mm: fit l1 into ~46% canvas width, then apply zoom
+  const ppm=(W*.46)/l1 * zoomLevel;
+
+  // Base anchor (before pan offset)
+  const baseAx=W*.18+panX, baseAy=H*.68+panY;
+  const Ax=baseAx, Ay=baseAy;
+  const Dx=Ax+l1*ppm, Dy=Ay;
+
+  // mm→px
+  const px=mx=>Ax+mx*ppm;
+  const py=my=>Ay-my*ppm;
+
+  const sol=solve4bar(l1,l2,l3,l4,crankDeg);
+
+  // trace
+  if(tracing&&sol){
+    tracePoints.push([px((sol.Bx+sol.Cx)/2),py((sol.By+sol.Cy)/2)]);
+    if(tracePoints.length>800) tracePoints.shift();
+  }
+  if(tracePoints.length>1){
+    ctx.beginPath(); ctx.moveTo(tracePoints[0][0],tracePoints[0][1]);
+    for(let i=1;i<tracePoints.length;i++) ctx.lineTo(tracePoints[i][0],tracePoints[i][1]);
+    ctx.strokeStyle='rgba(167,139,250,.28)'; ctx.lineWidth=1.5; ctx.stroke();
+  }
+
+  // ground hatch
+  ctx.beginPath(); ctx.moveTo(Ax-50,Ay); ctx.lineTo(Dx+50,Dy);
+  ctx.strokeStyle='rgba(255,255,255,.07)'; ctx.lineWidth=1; ctx.setLineDash([5,5]); ctx.stroke(); ctx.setLineDash([]);
+  for(let x=Ax-20;x<=Dx+20;x+=18){ctx.beginPath(); ctx.moveTo(x,Ay); ctx.lineTo(x-7,Ay+11); ctx.strokeStyle='rgba(255,255,255,.12)'; ctx.lineWidth=1; ctx.stroke();}
+
+  if(!sol){
+    ctx.fillStyle='#e05a5a'; ctx.font='600 14px DM Sans'; ctx.textAlign='center';
+    ctx.fillText('⚠ Unreachable at this crank angle',W/2,H/2); ctx.textAlign='left';
+    pivot(Ax,Ay,'#fff','A'); pivot(Dx,Dy,'#fff','D');
+    updateAngles(null); return;
+  }
+
+  const Bx_=px(sol.Bx), By_=py(sol.By);
+  const Cx_=px(sol.Cx), Cy_=py(sol.Cy);
+
+  const t4d=toD(sol.t4);
+  if(minRocker===null){minRocker=t4d;maxRocker=t4d;}
+  else{minRocker=Math.min(minRocker,t4d);maxRocker=Math.max(maxRocker,t4d);}
+
+  const aBack=Math.atan2(By_-Ay, Bx_-Ax);
+  const aSeat=Math.atan2(Cy_-By_,Cx_-Bx_);
+  const aFoot=Math.atan2(Dy -Cy_,Dx -Cx_);
+
+  const th={back:Math.max(12,l2*ppm*.20), seat:Math.max(12,l3*ppm*.065), foot:Math.max(10,l4*ppm*.17)};
+  const legH=Math.max(24,l2*ppm*.46), lw=Math.max(6,l2*ppm*.09);
+
+  // ── BASE LEGS ──
+  [[Ax,Ay],[Dx,Dy]].forEach(([px_,py_])=>{
+    ctx.beginPath(); ctx.moveTo(px_-lw,py_); ctx.lineTo(px_-lw,py_+legH); ctx.lineTo(px_+lw,py_+legH); ctx.lineTo(px_+lw,py_);
+    ctx.fillStyle='rgba(79,196,207,.13)'; ctx.fill(); ctx.strokeStyle='rgba(79,196,207,.55)'; ctx.lineWidth=1.5; ctx.stroke();
+  });
+  ctx.beginPath(); ctx.moveTo(Ax-lw,Ay+legH); ctx.lineTo(Dx+lw,Dy+legH);
+  ctx.strokeStyle='rgba(79,196,207,.45)'; ctx.lineWidth=2.5; ctx.stroke();
+  chip((Ax+Dx)/2,Ay+legH+15,'BASE FRAME','rgba(79,196,207,.85)');
+
+  // ── BACKREST (yellow, crank A→B) ──
+  const bkLen=l2*ppm*2.7;
+  const bkCx=Ax+Math.cos(aBack)*l2*ppm*.45, bkCy=Ay+Math.sin(aBack)*l2*ppm*.45;
+  rrect(bkCx,bkCy,bkLen,th.back,aBack,'rgba(240,192,64,.16)','rgba(240,192,64,.82)');
+  slats(bkCx,bkCy,bkLen,th.back,aBack,'rgba(240,192,64,.28)',5);
+  const hrX=Ax+Math.cos(aBack)*bkLen*.86, hrY=Ay+Math.sin(aBack)*bkLen*.86;
+  ctx.beginPath(); ctx.arc(hrX,hrY,th.back*.9,0,Math.PI*2); ctx.fillStyle='rgba(240,192,64,.22)'; ctx.fill(); ctx.strokeStyle='rgba(240,192,64,.65)'; ctx.lineWidth=1.5; ctx.stroke();
+  chip(bkCx+Math.cos(aBack-Math.PI/2)*(th.back/2+16),bkCy+Math.sin(aBack-Math.PI/2)*(th.back/2+16),'BACKREST','rgba(240,192,64,.9)');
+
+  // ── SEAT (purple, coupler B→C) ──
+  const stLen=l3*ppm*1.05;
+  const stCx=Bx_+Math.cos(aSeat)*l3*ppm*.5, stCy=By_+Math.sin(aSeat)*l3*ppm*.5;
+  rrect(stCx,stCy,stLen,th.seat,aSeat,'rgba(167,139,250,.16)','rgba(167,139,250,.82)');
+  springs(stCx,stCy,stLen,th.seat,aSeat,'rgba(167,139,250,.95)',7);
+  chip(stCx+Math.cos(aSeat-Math.PI/2)*(th.seat/2+16),stCy+Math.sin(aSeat-Math.PI/2)*(th.seat/2+16),'SEAT + SPRING','rgba(167,139,250,.9)');
+
+  // ── FOOTREST (red, rocker C→D) ──
+  const ftLen=l4*ppm*1.55;
+  const ftCx=Cx_+Math.cos(aFoot)*l4*ppm*.55, ftCy=Cy_+Math.sin(aFoot)*l4*ppm*.55;
+  rrect(ftCx,ftCy,ftLen,th.foot,aFoot,'rgba(224,90,90,.16)','rgba(224,90,90,.82)');
+  slats(ftCx,ftCy,ftLen,th.foot,aFoot,'rgba(224,90,90,.3)',5);
+  chip(ftCx+Math.cos(aFoot+Math.PI/2)*(th.foot/2+16),ftCy+Math.sin(aFoot+Math.PI/2)*(th.foot/2+16),'FOOTREST','rgba(224,90,90,.9)');
+
+  // ── ARMREST ──
+  const armPost=Math.max(18,l3*ppm*.22), armPad=Math.max(18,l3*ppm*.44), armW=Math.max(5,l3*ppm*.055);
+  const perp_=aSeat-Math.PI/2;
+  const pbX=Bx_+Math.cos(aSeat)*l3*ppm*.42+Math.cos(perp_)*th.seat/2;
+  const pbY=By_+Math.sin(aSeat)*l3*ppm*.42+Math.sin(perp_)*th.seat/2;
+  const ptX=pbX+Math.cos(perp_)*armPost, ptY=pbY+Math.sin(perp_)*armPost;
+  rrect((pbX+ptX)/2,(pbY+ptY)/2,armPost,armW,perp_,'rgba(167,139,250,.11)','rgba(167,139,250,.42)');
+  const padCx=ptX+Math.cos(aSeat)*armPad*.5, padCy=ptY+Math.sin(aSeat)*armPad*.5;
+  rrect(padCx,padCy,armPad,armW*1.3,aSeat,'rgba(167,139,250,.14)','rgba(167,139,250,.48)');
+
+  // ── RODS ──
+  rod(Ax,Ay,Dx,Dy,'rgba(79,196,207,.55)',3);
+  rod(Ax,Ay,Bx_,By_,'rgba(240,192,64,.95)',5);
+  rod(Bx_,By_,Cx_,Cy_,'rgba(167,139,250,.95)',5);
+  rod(Cx_,Cy_,Dx,Dy,'rgba(224,90,90,.95)',5);
+
+  // effective mm labels on rods (show scaled values)
+  midLabel(Ax,Ay,Dx,Dy,`L1 = ${Math.round(l1)}mm`,'rgba(79,196,207,.6)');
+  midLabel(Ax,Ay,Bx_,By_,`L2 = ${Math.round(l2)}mm`,'rgba(240,192,64,.8)');
+  midLabel(Bx_,By_,Cx_,Cy_,`L3 = ${Math.round(l3)}mm`,'rgba(167,139,250,.8)');
+  midLabel(Cx_,Cy_,Dx,Dy,`L4 = ${Math.round(l4)}mm`,'rgba(224,90,90,.8)');
+
+  // crank arc
+  ctx.beginPath(); ctx.arc(Ax,Ay,28,0,-toR(crankDeg),true);
+  ctx.strokeStyle='rgba(240,192,64,.42)'; ctx.lineWidth=1.5; ctx.stroke();
+
+  // pivots
+  pivot(Ax,Ay,'#ffffff','A');
+  pivot(Bx_,By_,'rgba(240,192,64,1)','B');
+  pivot(Cx_,Cy_,'rgba(167,139,250,1)','C');
+  pivot(Dx,Dy,'#ffffff','D');
+
+  updateAngles(sol);
+}
+
+function updateAngles(sol) {
+  document.getElementById('vA').textContent=Math.round(crankDeg)+'°';
+  document.getElementById('a2').textContent=Math.round(crankDeg)+'°';
+  if(sol){
+    document.getElementById('a3').textContent=Math.round(toD(sol.t3))+'°';
+    document.getElementById('a4').textContent=Math.round(toD(sol.t4))+'°';
+    document.getElementById('aswing').textContent=minRocker!==null?Math.abs(maxRocker-minRocker).toFixed(1)+'°':'—';
+  }
+}
+
+// ─── scale UI update ───────────────────────────────────────
+function updateScaleUI() {
+  const isOne = Math.abs(scaleMul-1.0)<0.001;
+  const ctrls = document.getElementById('controls');
+
+  // update scaled value badges and lock sliders
+  const links=[L1,L2,L3,L4];
+  for(let i=1;i<=4;i++){
+    const eff = Math.round(links[i-1]*scaleMul);
+    document.getElementById('vs'+i).textContent = eff+'mm';
+    const sl = document.getElementById('sl'+i);
+    if(isOne){ sl.classList.remove('show-lock'); }
+    else { sl.classList.add('show-lock'); }
+  }
+
+  // hide/show scale badge (sep + green value) when scale=1
+  document.querySelectorAll('.vals').forEach(v=>{
+    if(isOne) v.classList.add('scale-is-one');
+    else v.classList.remove('scale-is-one');
+  });
+
+  // scale summary
+  document.getElementById('vsc').textContent=(scaleMul).toFixed(1)+'×';
+  document.getElementById('scaleEff').textContent=`All links × ${scaleMul.toFixed(1)}  →  L1 = ${Math.round(L1*scaleMul)}mm`;
+  document.getElementById('btnBake').disabled = isOne;
+}
+
+// ─── lock toast ────────────────────────────────────────────
+let toastTimer = null;
+function showLockToast() {
+  const t = document.getElementById('lockToast');
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=> t.classList.remove('show'), 2500);
+}
+// intercept clicks on locked slider areas
+['sl1','sl2','sl3','sl4'].forEach(id=>{
+  document.getElementById(id).addEventListener('click', e=>{
+    if(document.getElementById(id).classList.contains('show-lock')) {
+      showLockToast();
+    }
+  });
+});
+
+// ─── slider bindings ───────────────────────────────────────
+function bindLink(id,setter){
+  document.getElementById(id).addEventListener('input',e=>{
+    const v=parseFloat(e.target.value);
+    setter(v);
+    // update base display (vs will update via updateScaleUI)
+    const idx={'l1':1,'l2':2,'l3':3,'l4':4}[id];
+    document.getElementById('v'+idx).textContent=v;
+    updateScaleUI();
+    tracePoints=[]; minRocker=null; maxRocker=null; draw();
+  });
+}
+bindLink('l1',v=>L1=v);
+bindLink('l2',v=>L2=v);
+bindLink('l3',v=>L3=v);
+bindLink('l4',v=>L4=v);
+
+document.getElementById('scl').addEventListener('input',e=>{
+  scaleMul=parseFloat(e.target.value)/10;
+  updateScaleUI(); tracePoints=[]; minRocker=null; maxRocker=null; draw();
+});
+
+let crankMinDeg = 70, crankMaxDeg = 160;
+
+function applyCrankRange() {
+  const slider = document.getElementById('crankA');
+  slider.min = crankMinDeg;
+  slider.max = crankMaxDeg;
+  crankDeg = Math.min(crankMaxDeg, Math.max(crankMinDeg, crankDeg));
+  slider.value = crankDeg;
+  draw();
+}
+
+document.getElementById('crankMin').addEventListener('change', e => {
+  let v = parseInt(e.target.value);
+  if (isNaN(v)) v = 0;
+  v = Math.max(0, Math.min(crankMaxDeg - 1, v));
+  e.target.value = v;
+  crankMinDeg = v;
+  applyCrankRange();
+});
+document.getElementById('crankMax').addEventListener('change', e => {
+  let v = parseInt(e.target.value);
+  if (isNaN(v)) v = 360;
+  v = Math.max(crankMinDeg + 1, Math.min(360, v));
+  e.target.value = v;
+  crankMaxDeg = v;
+  applyCrankRange();
+});
+
+document.getElementById('crankA').addEventListener('input',e=>{
+  crankDeg=parseFloat(e.target.value); draw();
+});
+document.getElementById('spd').addEventListener('input',e=>{
+  speedVal=parseFloat(e.target.value);
+  document.getElementById('vSpd').textContent=(speedVal/3).toFixed(1)+'×';
+});
+
+// ─── BAKE ─────────────────────────────────────────────────
+document.getElementById('btnBake').addEventListener('click',()=>{
+  // commit scaled values as new base values
+  L1=Math.round(L1*scaleMul);
+  L2=Math.round(L2*scaleMul);
+  L3=Math.round(L3*scaleMul);
+  L4=Math.round(L4*scaleMul);
+  scaleMul=1.0;
+
+  // update sliders and labels
+  const ids=['l1','l2','l3','l4'], vals=[L1,L2,L3,L4];
+  // expand slider ranges if needed
+  const maxes=[700,500,800,500];
+  ids.forEach((id,i)=>{
+    const el=document.getElementById(id);
+    if(vals[i]>parseInt(el.max)) el.max=Math.ceil(vals[i]*1.5/50)*50;
+    el.value=vals[i];
+    document.getElementById('v'+(i+1)).textContent=vals[i];
+  });
+  document.getElementById('scl').value=10;
+  updateScaleUI(); draw();
+});
+
+// ─── play / trace / reset ─────────────────────────────────
+const btnP=document.getElementById('btnP');
+btnP.addEventListener('click',()=>{
+  animating=!animating; btnP.textContent=animating?'⏸ Pause':'▶ Play';
+  btnP.classList.toggle('on',animating);
+  if(animating) animate(); else cancelAnimationFrame(animId);
+});
+
+const btnT=document.getElementById('btnT');
+btnT.addEventListener('click',()=>{
+  tracing=!tracing; if(!tracing) tracePoints=[];
+  btnT.classList.toggle('on',tracing);
+  btnT.textContent=tracing?'Clear Trace':'Trace';
+});
+
+document.getElementById('btnR').addEventListener('click',()=>{
+  L1=DEF.L1;L2=DEF.L2;L3=DEF.L3;L4=DEF.L4;
+  crankDeg=95; scaleMul=1.0; panX=0; panY=0; zoomLevel=1.0;
+  crankMinDeg=70; crankMaxDeg=160;
+  document.getElementById('crankMin').value=70;
+  document.getElementById('crankMax').value=160;
+  ['l1','l2','l3','l4'].forEach((id,i)=>{
+    document.getElementById(id).value=[L1,L2,L3,L4][i];
+    document.getElementById('v'+(i+1)).textContent=[L1,L2,L3,L4][i];
+  });
+  document.getElementById('crankA').min=70;
+  document.getElementById('crankA').max=160;
+  document.getElementById('crankA').value=95;
+  document.getElementById('scl').value=10;
+  updateScaleUI(); tracePoints=[]; minRocker=null; maxRocker=null; draw();
+});
+
+function animate(){
+  crankDeg+=animDir*speedVal*.22;
+  if(crankDeg>=crankMaxDeg){crankDeg=crankMaxDeg;animDir=-1;}
+  if(crankDeg<=crankMinDeg){crankDeg=crankMinDeg;animDir= 1;}
+  document.getElementById('crankA').value=crankDeg;
+  draw();
+  if(animating) animId=requestAnimationFrame(animate);
+}
+
+// ─── init ─────────────────────────────────────────────────
+updateScaleUI();
+draw();
+</script>
+</body>
+</html>
