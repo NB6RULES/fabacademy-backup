@@ -25,7 +25,7 @@ I used this week as an opportunity to design something I actually wanted — a L
   <meta itemprop="name" content="Week 07 - Computer Controlled Machining">
   <meta itemprop="description" content="Week 07 - Computer Controlled Machining#Week 7 is all about Computer Controlled Machining — this is the week where we go big. Literally. The brief is to design and fabricate a meter-scale object from sheet material using a CNC router. No more laser-cut cardboard prototypes, this time we’re cutting full sheets of plywood on a ShopBot.
 I used this week as an opportunity to design something I actually wanted — a Lazy Boy–style recliner chair driven by a four-bar linkage mechanism. Mechanical engineering background finally coming in handy 😎">
-  <meta itemprop="wordCount" content="2486">
+  <meta itemprop="wordCount" content="2788">
 
 <title>Week 07 - Computer Controlled Machining | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I used this week as an opportunity to design something I actually wanted — a L
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.36a7db97197536c176b9a961f0c4ca6c0397c38413f36e5038926c322ed9d4b5.js" integrity="sha256-Nqfblxl1NsF2ualh8MTKbAOXw4QT825QOJJsMi7Z1LU=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.c9f49436272065aa82ee9919f3d2c5c33f409592fd1d8351b7f8b6b19cc90282.js" integrity="sha256-yfSUNicgZaqC7pkZ89LFwz9AlZL9HYNRt/i2sZzJAoI=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -898,9 +898,7 @@ I used this week as an opportunity to design something I actually wanted — a L
     <li><a href="#group-assignment--cnc-test-gauge">Group Assignment – CNC Test Gauge</a>
       <ul>
         <li><a href="#understanding-the-shopbot">Understanding the ShopBot</a></li>
-        <li><a href="#machine-setup-workflow">Machine Setup Workflow</a></li>
-        <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
-        <li><a href="#milling-the-test-gauge">Milling the Test Gauge</a></li>
+        <li><a href="#press-fit-tolerance-result">Press-fit tolerance result:</a></li>
       </ul>
     </li>
   </ul>
@@ -918,7 +916,11 @@ I used this week as an opportunity to design something I actually wanted — a L
   <ul>
     <li><a href="#-why-fusion-360">🖥️ Why Fusion 360?</a></li>
     <li><a href="#-building-the-model">📐 Building the Model</a></li>
-    <li><a href="#-press-fit-joinery-details">🔩 Press-Fit Joinery Details</a></li>
+    <li><a href="#-press-fit-joinery-details">🔩 Press-Fit Joinery Details</a>
+      <ul>
+        <li><a href="#-using-the-nifty-dogbone-add-in">🦴 Using the Nifty Dogbone Add-in</a></li>
+      </ul>
+    </li>
     <li><a href="#-arranging-parts-and-exporting-dxf">📦 Arranging Parts and Exporting DXF</a></li>
   </ul>
 
@@ -927,7 +929,12 @@ I used this week as an opportunity to design something I actually wanted — a L
   </ul>
 
   <ul>
-    <li><a href="#-vcarve-pro-cam-setup">🗂️ VCarve Pro CAM Setup</a></li>
+    <li><a href="#-vcarve-pro-cam-setup">🗂️ VCarve Pro CAM Setup</a>
+      <ul>
+        <li><a href="#machine-setup-workflow">Machine Setup Workflow</a></li>
+        <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
+      </ul>
+    </li>
     <li><a href="#-running-the-job">🔧 Running the Job</a></li>
   </ul>
 
@@ -1037,8 +1044,10 @@ I used this week as an opportunity to design something I actually wanted — a L
 <h2 id="group-assignment--cnc-test-gauge">Group Assignment – CNC Test Gauge<a class="anchor" href="#group-assignment--cnc-test-gauge">#</a></h2>
 <p>For the group assignment, we designed and milled a <strong>runoff test gauge</strong> to characterise the ShopBot&rsquo;s capabilities and determine the correct press-fit tolerances for our plywood stock.</p>
 <h3 id="understanding-the-shopbot">Understanding the ShopBot<a class="anchor" href="#understanding-the-shopbot">#</a></h3>
-<p>Our instructor <strong>Mr. Mufeed</strong> introduced us to the ShopBot CNC router available in our lab. The machine has a bed size of <strong>8 feet × 4 feet</strong>, which is large enough to mill full standard sheets of plywood in a single setup.</p>
+<p><img src="../../../images/week-7/shopbot-1.jpg" alt="ShopBot CNC router in the lab" /></p>
+<p>Our instructors <strong><a href="https://fabacademy.org/2023/labs/kochi/students/mufeed-mohamed/">Mr. Mufeed</a></strong> and <strong><a href="https://fabacademy.org/2025/labs/kochi/students/revisankar-s/about.html">Mr. Ravishankar</a></strong> introduced us to the ShopBot CNC router available in our lab. The machine has a bed size of <strong>8 feet × 4 feet</strong>, which is large enough to mill full standard sheets of plywood in a single setup.</p>
 <p>Before touching the machine, we went through the necessary safety briefing.</p>
+<p><img src="../../../images/week-7/safety-briefing.jpg" alt="Safety briefing session before using the ShopBot" /></p>
 <p><strong>PPE required at all times while the machine is running:</strong></p>
 <table>
   <thead>
@@ -1068,69 +1077,24 @@ I used this week as an opportunity to design something I actually wanted — a L
 <li>Long hair must be tied back</li>
 <li>No watches, bracelets, bangles, or dangling accessories</li>
 </ul>
-<p><img src="images/week-7/shopbot-machine.jpg" alt="ShopBot CNC router in the lab — bed size 8ft × 4ft" /></p>
-<p><img src="images/week-7/ppe-safety.jpg" alt="Safety PPE laid out before starting — goggles, mask, ear protection" /></p>
+<p><img src="../../../images/week-7/ppe.jpg" alt="Safety PPE — goggles, mask, ear protection" /></p>
 <hr>
-<h3 id="machine-setup-workflow">Machine Setup Workflow<a class="anchor" href="#machine-setup-workflow">#</a></h3>
-<p>Before running any job, we went through the standard ShopBot setup procedure:</p>
-<ol>
-<li><strong>Set X and Y offsets</strong> — establishing the machine&rsquo;s coordinate reference point on the bed</li>
-<li><strong>Secure the workpiece</strong> — the blank plywood sheet is screwed down to the bed to prevent any movement during machining</li>
-<li><strong>Set X, Y, Z offsets relative to the workpiece</strong> — zeroing out the tool position relative to the top surface of the material</li>
-</ol>
-<p><img src="images/week-7/shopbot-xy-origin.jpg" alt="Setting the XY origin on the ShopBot using the keypad controller" /></p>
-<p><img src="images/week-7/workpiece-secured.jpg" alt="Securing the plywood sheet to the bed with screws at the corners and edges" /></p>
-<p><img src="images/week-7/z-zeroing.jpg" alt="Z-axis zeroing using the touch plate — this sets the cutting depth reference" /></p>
-<hr>
-<h3 id="toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro<a class="anchor" href="#toolpath-generation-in-vcarve-pro">#</a></h3>
-<p>For generating our toolpaths, we used <strong>VCarve Pro</strong> — which is the standard CAM software that ships with the ShopBot system.</p>
-<p><strong>Steps for setting up the toolpaths:</strong></p>
-<ol>
-<li>Import the design file (DXF)</li>
-<li>Set the material dimensions and thickness</li>
-<li>Define the toolpath types:
-<ul>
-<li><strong>Profile (outside)</strong> — cuts the outer profile of parts</li>
-<li><strong>Profile (inside)</strong> — cuts inner slots and pockets</li>
-<li><strong>Pocket</strong> — clears areas of material</li>
-</ul>
-</li>
-<li>Select the tool from the library (end mill size, type)</li>
-<li>Set the cutting parameters:
-<ul>
-<li><strong>Pass depth</strong> — how deep each pass cuts</li>
-<li><strong>Feed rate</strong> — how fast the tool moves horizontally</li>
-<li><strong>Plunge rate</strong> — how fast the tool descends into the material</li>
-<li><strong>Spindle speed</strong> — RPM</li>
-</ul>
-</li>
-<li>Add <strong>tabs</strong> to hold parts in place until the cut is fully complete</li>
-<li>Simulate the toolpath to check for any issues</li>
-<li>Export as a <code>.sbp</code> ShopBot file</li>
-</ol>
-<p><img src="images/week-7/vcarve-toolpaths.jpg" alt="VCarve Pro interface showing the test gauge design with toolpaths set up" /></p>
-<p><img src="images/week-7/vcarve-simulation.jpg" alt="Toolpath simulation in VCarve Pro before sending to the machine" /></p>
-<hr>
-<h3 id="milling-the-test-gauge">Milling the Test Gauge<a class="anchor" href="#milling-the-test-gauge">#</a></h3>
-<p>Once the CAM setup was complete, we sent the file to the ShopBot and ran the job.</p>
-<p><img src="images/week-7/shopbot-milling.jpg" alt="ShopBot milling the test gauge — you can see the router cutting through the plywood" /></p>
-<p><img src="images/week-7/test-gauge-milled.jpg" alt="Milled test gauge pieces still in the sheet — tabs holding everything in place" /></p>
-<p>After milling, we removed the parts from the sheet and measured the slot widths using calipers to determine the exact tolerances needed for a proper press-fit.</p>
-<p><img src="images/week-7/test-gauge-measurement.jpg" alt="Measuring the slot widths on the milled test gauge using digital calipers" /></p>
-<p><strong>Press-fit tolerance result:</strong> The optimal slot width for a snug press-fit with our plywood was determined to be <strong>[X] mm</strong> — slightly less than the nominal material thickness to account for the machine&rsquo;s tolerance and any material variation.</p>
+<h3 id="press-fit-tolerance-result">Press-fit tolerance result:<a class="anchor" href="#press-fit-tolerance-result">#</a></h3>
+<p>The optimal slot width for a snug press-fit with our plywood was determined to be <strong>0.1 mm</strong> — slightly less than the nominal material thickness to account for the machine&rsquo;s tolerance and any material variation.</p>
 <blockquote class='book-hint '>
 <p>Check out the full group documentation for all the test results and measurements:
 🔗 <a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week07/">https://fabacademy.org/2026/labs/kochi/group_assignmetns/week07/</a></p>
 </blockquote><hr>
 <h1 id="part-1--concept-and-mechanism-design">Part 1 – Concept and Mechanism Design<a class="anchor" href="#part-1--concept-and-mechanism-design">#</a></h1>
 <h2 id="-the-idea-a-lazy-boy-recliner">💡 The Idea: A Lazy Boy Recliner<a class="anchor" href="#-the-idea-a-lazy-boy-recliner">#</a></h2>
-<p>For the individual assignment, I wanted to make something that was actually useful — not just a stool or a shelf like you see in a lot of CNC week projects. Since I&rsquo;m a big fan of being lazy, I decided to design a <strong>Lazy Boy–style recliner chair</strong>.</p>
+<p>For the individual assignment, I wanted to make something that was actually useful — not just a stool or a shelf like you see in a lot of CNC week projects. Since I&rsquo;m a big fan of lying down , I decided to design a <strong>Lazy Boy–style recliner chair</strong>.</p>
 <p>The challenge: most commercial recliners use pre-built metal mechanisms that are designed for mass manufacturing, not CNC fabrication from sheet material. I needed a simpler mechanical approach that I could actually mill and assemble.</p>
+<p><img src="../../../images/week-7/recliner.jpg" alt="Reference image of a Lazy Boy recliner chair" /></p>
 <hr>
 <h2 id="-the-four-bar-linkage-solution">⚙️ The Four-Bar Linkage Solution<a class="anchor" href="#-the-four-bar-linkage-solution">#</a></h2>
 <p>After thinking about it for a while, I realized the reclining motion could be replicated using a <strong>four-bar linkage</strong> — a classic mechanism I&rsquo;d studied during my mechanical engineering coursework.</p>
 <p>A four-bar linkage consists of four rigid links connected by pivot joints. By choosing the right link lengths, you can control the path and angle that any point on the mechanism follows — which is exactly what you need to make a seat recline smoothly while also adjusting the footrest.</p>
-<p><img src="images/week-7/four-bar-diagram.jpg" alt="Four-bar linkage diagram — showing the four links and pivot joints" /></p>
+<p><img src="../../../images/week-7/four-bar-diagram.jpg" alt="Four-bar linkage diagram — showing the four links and pivot joints" /></p>
 <h3 id="-resources-for-manual-calculation">📚 Resources for Manual Calculation<a class="anchor" href="#-resources-for-manual-calculation">#</a></h3>
 <p>If you want to understand the underlying math behind four-bar linkage analysis (position, velocity, acceleration), these resources are excellent references:</p>
 <ul>
@@ -1142,13 +1106,14 @@ I used this week as an opportunity to design something I actually wanted — a L
 <p>Manually calculating the correct link lengths for the desired motion would involve a lot of iterative trial-and-error math. I first tried setting up the simulation in <strong>Desmos</strong>, but it quickly got cumbersome with the nested equations involved.</p>
 <iframe src="https://www.desmos.com/calculator/egmi3wr0o7" width="100%" height="500" style="border: 1px solid #ccc; border-radius: 8px;" frameborder="0"></iframe>
 <p>Instead, I used <strong>Claude</strong> (the AI assistant) — I described my design requirements: the range of motion, the seat-to-ground angle constraints, the footrest travel arc. Claude generated a clean <strong>HTML-based four-bar linkage simulator</strong> that let me drag sliders to adjust each link length and see the resulting motion in real time.</p>
-<p><img src="images/week-7/linkage-simulator.jpg" alt="Claude-generated HTML simulator showing the four-bar linkage in motion" /></p>
-<p><img src="images/week-7/linkage-simulator-adjusting.jpg" alt="Adjusting link lengths in the simulator to achieve the desired recliner motion arc" /></p>
-<p>This tool was a huge time-saver — within an hour I had the correct link lengths for both the seat mechanism and the footrest linkage.</p>
-<blockquote class='book-hint '>
-<p>You can try the simulator yourself here:
-🔗 <a href="../chair-4-bar-linkage-calculator/">Chair 4-Bar Linkage Calculator</a></p>
-</blockquote><p><strong>Final link lengths determined from the simulator:</strong></p>
+<iframe src="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/chair-4-bar-linkage-calculator/" width="100%" height="600" style="border: 1px solid #ccc; border-radius: 8px;" frameborder="0"></iframe>
+<div style="text-align: center; margin: 20px 0;">
+  <a href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/chair-4-bar-linkage-calculator/" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #667eea; color: white; font-weight: bold; text-decoration: none; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#764ba2';" onmouseout="this.style.backgroundColor='#667eea';">
+    🔗 Open Simulator in New Tab
+  </a>
+</div>
+<p>This tool was a huge time-saver — within 15 minutes ( wouldve taken 3-4 hpurs manually calculating or creating an excel sheet for the calculation ) I had the correct link lengths for both the seat mechanism and the footrest linkage.</p>
+<p><strong>Final link lengths determined from the simulator:</strong></p>
 <table>
   <thead>
       <tr>
@@ -1159,24 +1124,24 @@ I used this week as an opportunity to design something I actually wanted — a L
   </thead>
   <tbody>
       <tr>
-          <td>Ground link</td>
-          <td>[X] mm</td>
+          <td>L1 Ground (A→D)</td>
+          <td>471 mm</td>
           <td>Fixed base distance between the two ground pivots</td>
       </tr>
       <tr>
-          <td>Crank</td>
-          <td>[X] mm</td>
-          <td>Input link — the seat support arm</td>
+          <td>L2 Crank (A→B)</td>
+          <td>182 mm</td>
+          <td>Backrest support arm</td>
       </tr>
       <tr>
-          <td>Coupler</td>
-          <td>[X] mm</td>
-          <td>Connecting link</td>
+          <td>L3 Coupler (B→C)</td>
+          <td>450 mm</td>
+          <td>Seat connecting link</td>
       </tr>
       <tr>
-          <td>Follower</td>
-          <td>[X] mm</td>
-          <td>Output link — controls backrest angle</td>
+          <td>L4 Rocker (C→D)</td>
+          <td>205 mm</td>
+          <td>Footrest output link</td>
       </tr>
   </tbody>
 </table>
@@ -1193,7 +1158,7 @@ I used this week as an opportunity to design something I actually wanted — a L
 <li>No more: change design → export → open in nesting software → re-nest → re-export → repeat forever</li>
 </ul>
 <p>This made the iteration loop dramatically faster, especially when I was tweaking the linkage geometry.</p>
-<p><img src="images/week-7/fusion-parameters.jpg" alt="Fusion 360 parameter table — material thickness, link lengths, and slot widths all defined as variables" /></p>
+<p><img src="../../../images/week-7/fusion-arranged.jpg" alt="Fusion 360" /></p>
 <hr>
 <h2 id="-building-the-model">📐 Building the Model<a class="anchor" href="#-building-the-model">#</a></h2>
 <p>I started by building sketches using the link lengths from the simulator, then modeled the full chair structure around the four-bar linkage geometry.</p>
@@ -1233,36 +1198,74 @@ I used this week as an opportunity to design something I actually wanted — a L
   </tbody>
 </table>
 <p>The complete model took almost a full day to build — getting all the pivot positions to line up correctly and ensuring the linkage moved through its full range without any part-to-part interference took a lot of back-and-forth.</p>
-<p><img src="images/week-7/fusion-full-assembly.jpg" alt="Fusion 360 full assembly — the complete recliner model in 3D" /></p>
-<p><img src="images/week-7/fusion-exploded-view.jpg" alt="Fusion 360 exploded view showing all individual parts before assembly" /></p>
-<p><img src="images/week-7/fusion-reclined-position.jpg" alt="Fusion 360 showing the linkage in the reclined position — confirming the motion is correct" /></p>
+<p><img src="../../../images/week-7/fusion-full-assembly.jpg" alt="Fusion 360 full assembly — the complete recliner model in 3D" /></p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/fusion-design.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <hr>
 <h2 id="-press-fit-joinery-details">🔩 Press-Fit Joinery Details<a class="anchor" href="#-press-fit-joinery-details">#</a></h2>
-<p>Throughout the design, I incorporated the press-fit tolerances we measured during the group assignment. The joinery uses a combination of:</p>
+<p>Throughout the design, I incorporated the press-fit tolerances we measured during the group assignment. The joinery uses:</p>
 <ul>
-<li><strong>T-slot connections</strong> for the main structural frame joints</li>
+<li><strong>Press-fit slot connections</strong> for the main structural frame joints</li>
 <li><strong>Dogbone fillets</strong> at all interior corners of slots and pockets — essential for CNC work because the router leaves a circular radius at every corner, and without dogbones the mating piece won&rsquo;t seat fully</li>
 </ul>
-<p><img src="images/week-7/dogbone-fillets.jpg" alt="Dogbone fillets visible at the slot corners in the Fusion sketch" /></p>
-<p><img src="images/week-7/tslot-joint-detail.jpg" alt="T-slot joint detail showing how the cross braces lock into the side frames" /></p>
+<h3 id="-using-the-nifty-dogbone-add-in">🦴 Using the Nifty Dogbone Add-in<a class="anchor" href="#-using-the-nifty-dogbone-add-in">#</a></h3>
+<p>Rather than manually sketching dogbone fillets at every interior corner (which would have taken forever with this many slots), I used the <strong>Nifty Dogbone</strong> add-in for Fusion 360. This automatically generates dogbone fillets for all selected edges in one click.</p>
+<p><strong>Step-by-step process:</strong></p>
+<ol>
+<li>
+<p><strong>Install the add-in</strong> — Go to Fusion 360 → Utilities → Add-Ins → Scripts and Add-Ins. Search for &ldquo;Dogbone&rdquo; in the Fusion App Store. Or go directly to <a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=3534533763590670806&amp;appLang=en&amp;os=Win64">https://apps.autodesk.com/FUSION/en/Detail/Index?id=3534533763590670806&appLang=en&os=Win64</a>
+and download and install it</p>
+</li>
+<li>
+<p><strong>Open Add-Ins Manager</strong> — Press <code>Shift + S</code> or go to Utilities → Add-Ins → Scripts and Add-Ins</p>
+</li>
+<li>
+<p><strong>Enable Nifty Dogbone</strong> — Find &ldquo;Nifty Dogbone&rdquo; and enable it.</p>
+</li>
+</ol>
+<p><img src="../../../images/week-7/nifty-enabled.jpg" alt="Nifty Dogbone add-in enabled in Fusion 360" /></p>
+<ol start="4">
+<li><strong>Open Nifty</strong> — With the add-in enabled, you can open it from solid -&gt; modifty -&gt; Nifty Dogbone</li>
+</ol>
+<p><img src="../../../images/week-7/nifty-dialogue-open.jpg" alt="Nifty Dogbone dialog open" /></p>
+<ol start="5">
+<li>
+<p><strong>Select the component</strong> — In the dialog, select the component containing slots that need dogbones. The add-in will automatically find all interior corners on that component.</p>
+</li>
+<li>
+<p><strong>Set the tool diameter</strong> — Enter the diameter of your CNC end mill (this determines the radius of the dogbone fillet). I used the same 6mm end mill diameter we were cutting with on the ShopBot.</p>
+</li>
+<li>
+<p><strong>Click OK</strong> — The add-in automatically finds all interior corners on the selected faces and adds dogbone fillets to each one</p>
+</li>
+</ol>
+<p><img src="../../../images/week-7/nifty-parameters.jpg" alt="Nifty Dogbone parameters and settings" /></p>
+<p>This saved me easily 2+ hours of tedious manual filleting — the chair design had dozens of interior corners across all the slots and joints.</p>
 <hr>
 <h2 id="-arranging-parts-and-exporting-dxf">📦 Arranging Parts and Exporting DXF<a class="anchor" href="#-arranging-parts-and-exporting-dxf">#</a></h2>
 <p>Once the design was finalized, I used Fusion&rsquo;s <strong>Arrange</strong> feature to lay all parts flat on a virtual 8ft × 4ft sheet — mimicking the actual plywood dimensions.</p>
 <p>Then I exported the arranged layout as a <strong>DXF file</strong>, which I could open directly in VCarve Pro for CAM setup.</p>
-<p><img src="images/week-7/fusion-arrange.jpg" alt="Fusion 360 Arrange — all parts laid flat on the virtual sheet" /></p>
-<p><img src="images/week-7/fusion-dxf-export.jpg" alt="DXF export settings in Fusion 360" /></p>
+<p><img src="../../../images/week-7/fusion.jpg" alt="Fusion 360 Arrange feature with all parts laid flat" /></p>
 <hr>
 <h1 id="part-3--cardboard-prototype">Part 3 – Cardboard Prototype<a class="anchor" href="#part-3--cardboard-prototype">#</a></h1>
 <p>Before committing to milling full plywood, I scaled the design down and cut a cardboard prototype to verify that the mechanism actually worked.</p>
 <p><strong>Scaling down the design:</strong></p>
-<p>Since the model is parametric, scaling was simple — I changed the <code>material_thickness</code> parameter from 12 mm (plywood) to 3 mm (cardboard) and updated the scale factor. Fusion automatically updated all the sketches. I exported a new DXF, opened it in Inkscape, and cut it on the <strong>Trotec Speedy 100</strong> laser cutter.</p>
-<p><img src="images/week-7/inkscape-layout.jpg" alt="DXF file opened in Inkscape — parts arranged and ready for laser cutting" /></p>
-<p><img src="images/week-7/laser-cutting-cardboard.jpg" alt="Trotec Speedy 100 laser cutter cutting the scaled-down cardboard parts" /></p>
-<p><img src="images/week-7/cardboard-parts.jpg" alt="Cardboard parts removed from the laser cutter — clean cuts, all dogbones visible" /></p>
+<p>Since I had already arranged the files and exported the DXF for the full-scale plywood version, I used a simpler approach — I opened the DXF in <strong>Inkscape</strong> and used the <strong>Object → Transform → Scale</strong> functionality.</p>
+<p>To calculate the correct scale ratio, I needed to account for both the material thickness change and the kerf difference:</p>
+<ul>
+<li>Original: <strong>17.5 mm plywood</strong></li>
+<li>Target: <strong>3 mm cardboard</strong> with <strong>0.33 mm kerf</strong></li>
+</ul>
+<p>Using the ratio calculation, I scaled the entire design proportionally to fit the cardboard dimensions while maintaining all the joint tolerances. This was much faster than going back to Fusion and re-exporting.</p>
+<p><img src="../../../images/week-7/inkscape-transform.jpg" alt="Using Inkscape&rsquo;s Transform → Scale to resize the DXF" /></p>
 <p><strong>Assembly:</strong></p>
-<p>I assembled the cardboard prototype using small brass paper fasteners as pivot pins — perfect for testing linkage motion at this scale.</p>
-<p><img src="images/week-7/cardboard-upright.jpg" alt="Cardboard prototype assembled — chair in upright position" /></p>
-<p><img src="images/week-7/cardboard-reclined.jpg" alt="Cardboard prototype in reclined position — the linkage works exactly as simulated" /></p>
+<p>I assembled the cardboard prototype using aluminum shielded wire as pivot pins — perfect for testing linkage motion at this scale.</p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/cardboard-prototype.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <p><strong>Result:</strong> The linkage worked perfectly. The backrest reclined smoothly, the footrest extended correctly, and no parts collided throughout the full range of motion. ✅</p>
 <hr>
 <h1 id="part-4--ergonomic-analysis-in-catia">Part 4 – Ergonomic Analysis in CATIA<a class="anchor" href="#part-4--ergonomic-analysis-in-catia">#</a></h1>
@@ -1274,8 +1277,8 @@ I used this week as an opportunity to design something I actually wanted — a L
 <li><strong>REBA (Rapid Entire Body Assessment)</strong> — evaluates whole-body posture including legs, trunk, and upper limbs</li>
 </ul>
 <p>This wasn&rsquo;t my first time running ergonomic analyses on seating designs, so I was familiar with the process. The analysis was run for both the upright seated position and the reclined position.</p>
-<p><img src="images/week-7/catia-rula-upright.jpg" alt="CATIA RULA analysis — upright seated position showing the posture score" /></p>
-<p><img src="images/week-7/catia-reba-reclined.jpg" alt="CATIA REBA analysis — reclined position showing the full-body posture evaluation" /></p>
+<p><img src="../../../images/week-7/catia-rula-upright.jpg" alt="CATIA RULA analysis — upright seated position showing the posture score" /></p>
+<p><img src="../../../images/week-7/catia-reba-reclined.jpg" alt="CATIA REBA analysis — reclined position showing the full-body posture evaluation" /></p>
 <p><strong>Results:</strong></p>
 <table>
   <thead>
@@ -1290,26 +1293,26 @@ I used this week as an opportunity to design something I actually wanted — a L
       <tr>
           <td>RULA</td>
           <td>Upright</td>
-          <td>[X]</td>
-          <td>Acceptable / Investigate further</td>
+          <td></td>
+          <td></td>
       </tr>
       <tr>
           <td>REBA</td>
           <td>Upright</td>
-          <td>[X]</td>
-          <td>Acceptable</td>
+          <td></td>
+          <td></td>
       </tr>
       <tr>
           <td>RULA</td>
           <td>Reclined</td>
-          <td>[X]</td>
-          <td>Low risk</td>
+          <td></td>
+          <td></td>
       </tr>
       <tr>
           <td>REBA</td>
           <td>Reclined</td>
-          <td>[X]</td>
-          <td>Low risk</td>
+          <td></td>
+          <td></td>
       </tr>
   </tbody>
 </table>
@@ -1329,77 +1332,163 @@ I used this week as an opportunity to design something I actually wanted — a L
   <tbody>
       <tr>
           <td>End mill diameter</td>
-          <td>[X] mm</td>
+          <td>mm</td>
       </tr>
       <tr>
           <td>Pass depth</td>
-          <td>[X] mm</td>
+          <td>mm</td>
       </tr>
       <tr>
           <td>Feed rate</td>
-          <td>[X] mm/min</td>
+          <td>mm/min</td>
       </tr>
       <tr>
           <td>Plunge rate</td>
-          <td>[X] mm/min</td>
+          <td>mm/min</td>
       </tr>
       <tr>
           <td>Spindle speed</td>
-          <td>[X] RPM</td>
+          <td>RPM</td>
       </tr>
       <tr>
           <td>Tab width</td>
-          <td>[X] mm</td>
+          <td>mm</td>
       </tr>
       <tr>
           <td>Tab height</td>
-          <td>[X] mm</td>
+          <td>mm</td>
       </tr>
   </tbody>
 </table>
+<h3 id="machine-setup-workflow">Machine Setup Workflow<a class="anchor" href="#machine-setup-workflow">#</a></h3>
+<p>Before running any job, we went through the standard ShopBot setup procedure:</p>
+<ol>
+<li><strong>Set X and Y limits</strong> — establishing the machine&rsquo;s coordinate reference point on the bed</li>
+<li><strong>Secure the workpiece</strong> — the blank plywood sheet is screwed down to the bed to prevent any movement during machining</li>
+<li><strong>Set X, Y, Z offsets relative to the workpiece</strong> — zeroing out the tool position relative to the top surface of the material</li>
+</ol>
+<hr>
+<h3 id="toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro<a class="anchor" href="#toolpath-generation-in-vcarve-pro">#</a></h3>
+<p>For generating our toolpaths, we used <strong>VCarve Pro</strong> — which is the standard CAM software that ships with the ShopBot system.</p>
+<p><strong>Steps for setting up the toolpaths:</strong></p>
+<p><img src="../../../images/week-7/vcarve-1.jpg" alt="VCarve Pro step 1" />
+<img src="../../../images/week-7/vcarve-2.jpg" alt="VCarve Pro step 2" />
+<img src="../../../images/week-7/vcarve-3.jpg" alt="VCarve Pro step 3" />
+<img src="../../../images/week-7/vcarve-4.jpg" alt="VCarve Pro step 4" />
+<img src="../../../images/week-7/vcarve-5.jpg" alt="VCarve Pro step 5" />
+<img src="../../../images/week-7/vcarve-6.jpg" alt="VCarve Pro step 6" />
+<img src="../../../images/week-7/vcarve-7.jpg" alt="VCarve Pro step 7" />
+<img src="../../../images/week-7/vcarve-8.jpg" alt="VCarve Pro step 8" />
+<img src="../../../images/week-7/vcarve-9.jpg" alt="VCarve Pro step 9" />
+<img src="../../../images/week-7/vcarve-10.jpg" alt="VCarve Pro step 10" />
+<img src="../../../images/week-7/vcarve-11.jpg" alt="VCarve Pro step 11" />
+<img src="../../../images/week-7/vcarve-12.jpg" alt="VCarve Pro step 12" />
+<img src="../../../images/week-7/vcarve-13.jpg" alt="VCarve Pro step 13" />
+<img src="../../../images/week-7/vcarve-14.jpg" alt="VCarve Pro step 14" />
+<img src="../../../images/week-7/vcarve-15.jpg" alt="VCarve Pro step 15" />
+<img src="../../../images/week-7/vcarve-16.jpg" alt="VCarve Pro step 16" />
+<img src="../../../images/week-7/vcarve-17.jpg" alt="VCarve Pro step 17" />
+<img src="../../../images/week-7/vcarve-18.jpg" alt="VCarve Pro step 18" />
+<img src="../../../images/week-7/vcarve-19.jpg" alt="VCarve Pro step 19" />
+<img src="../../../images/week-7/vcarve-20.jpg" alt="VCarve Pro step 20" />
+<img src="../../../images/week-7/vcarve-21.jpg" alt="VCarve Pro step 21" />
+<img src="../../../images/week-7/vcarve-22.jpg" alt="VCarve Pro step 22" />
+<img src="../../../images/week-7/vcarve-23.jpg" alt="VCarve Pro step 23" />
+<img src="../../../images/week-7/vcarve-24.jpg" alt="VCarve Pro step 24" />
+<img src="../../../images/week-7/vcarve-25.jpg" alt="VCarve Pro step 25" />
+<img src="../../../images/week-7/vcarve-26.jpg" alt="VCarve Pro step 26" /></p>
+<ol>
+<li>Import the design file (DXF)</li>
+<li>Set the material dimensions and thickness</li>
+<li>Define the toolpath types:
+<ul>
+<li><strong>Profile (outside)</strong> — cuts the outer profile of parts</li>
+<li><strong>Profile (inside)</strong> — cuts inner slots and pockets</li>
+<li><strong>Pocket</strong> — clears areas of material</li>
+</ul>
+</li>
+<li>Select the tool from the library (end mill size, type)</li>
+<li>Set the cutting parameters:
+<ul>
+<li><strong>Pass depth</strong> — how deep each pass cuts</li>
+<li><strong>Feed rate</strong> — how fast the tool moves horizontally</li>
+<li><strong>Plunge rate</strong> — how fast the tool descends into the material</li>
+<li><strong>Spindle speed</strong> — RPM</li>
+</ul>
+</li>
+<li>Add <strong>tabs</strong> to hold parts in place until the cut is fully complete</li>
+<li>Simulate the toolpath to check for any issues</li>
+<li>Export as a <code>.sbp</code> ShopBot file</li>
+</ol>
+<hr>
 <p><strong>Toolpath strategy:</strong></p>
 <ol>
 <li><strong>Pockets first</strong> — cut any recessed areas before profile cuts (so the material is still fully supported)</li>
 <li><strong>Inside profiles</strong> — slots, holes, and inside curves</li>
 <li><strong>Outside profiles last</strong> — final cut to release parts from the sheet, with tabs keeping everything in place</li>
 </ol>
-<p><img src="images/week-7/vcarve-chair-toolpaths.jpg" alt="VCarve Pro with the full chair DXF imported and toolpaths assigned" /></p>
-<p><img src="images/week-7/vcarve-chair-simulation.jpg" alt="VCarve simulation of the full chair cut — checking for any missed areas or toolpath errors" /></p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/simulating-toolpath.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <hr>
 <h2 id="-running-the-job">🔧 Running the Job<a class="anchor" href="#-running-the-job">#</a></h2>
 <p>With the ShopBot set up and the workpiece secured, I sent the toolpath file and ran the job.</p>
-<p><img src="images/week-7/plywood-on-bed.jpg" alt="Full 8×4ft plywood sheet secured to the ShopBot bed" /></p>
-<p><img src="images/week-7/shopbot-cutting-chair.jpg" alt="ShopBot cutting the chair parts — router moving along the side frame profile" /></p>
-<p><img src="images/week-7/shopbot-mid-cut.jpg" alt="Mid-cut — you can see the pocket cuts and slot cuts in progress" /></p>
-<p><img src="images/week-7/parts-in-sheet.jpg" alt="All parts cut — still in the sheet, held by tabs" /></p>
+<p><img src="../../../images/week-7/shopbot-2.jpg" alt="ShopBot setup" />
+<img src="../../../images/week-7/shopbot-3.jpg" alt="ShopBot workpiece secured" />
+<img src="../../../images/week-7/shopbot-4.jpg" alt="ShopBot ready to cut" /></p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/drilling.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video width="100%" controls>
+  <source src="../../../images/week-7/cnc-routing.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <hr>
 <h1 id="part-6--post-processing">Part 6 – Post-Processing<a class="anchor" href="#part-6--post-processing">#</a></h1>
 <h2 id="-tab-removal">✂️ Tab Removal<a class="anchor" href="#-tab-removal">#</a></h2>
 <p>After the CNC job finished, the first step was removing the parts from the sheet by cutting through the tabs.</p>
-<p><img src="images/week-7/tab-removal.jpg" alt="Removing tabs with a flush-cut saw — working carefully to avoid damaging the part edges" /></p>
-<p><img src="images/week-7/parts-laid-out.jpg" alt="All parts removed from the sheet and laid out — checking everything is there before proceeding" /></p>
+<p><img src="../../../images/week-7/shopbot-5.jpg" alt="Parts after CNC cutting" />
+<img src="../../../images/week-7/shopbot-6.jpg" alt="Removing tabs" />
+<img src="../../../images/week-7/shopbot-7.jpg" alt="Parts removed from sheet" />
+<img src="../../../images/week-7/shopbot-8.jpg" alt="All parts laid out" /></p>
 <hr>
 <h2 id="-sanding">🪵 Sanding<a class="anchor" href="#-sanding">#</a></h2>
 <p>Once all the parts were freed, I sanded all surfaces to smooth out any machining marks and rough edges. I worked through grits progressively — starting coarser to remove tool marks, finishing finer for a smooth surface.</p>
-<p><img src="images/week-7/sanding.jpg" alt="Sanding the parts — working along the grain to remove machining marks" /></p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/filing.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <hr>
 <h2 id="-edge-filleting-with-a-wood-router">🔵 Edge Filleting with a Wood Router<a class="anchor" href="#-edge-filleting-with-a-wood-router">#</a></h2>
 <p>To improve both the aesthetics and user comfort of the chair (you don&rsquo;t want sharp plywood edges digging into your legs), I used a <strong>wood router fitted with a fillet / roundover bit</strong> to round off all the exposed edges.</p>
 <p>This step made a huge visible difference — the chair went from looking like a raw CNC project to looking like something deliberately designed.</p>
-<p><img src="images/week-7/router-setup.jpg" alt="Wood router with roundover bit set up for edge filleting" /></p>
-<p><img src="images/week-7/router-filleting.jpg" alt="Running the router along the seat edge — smooth, rounded profile forming" /></p>
-<p><img src="images/week-7/edge-comparison.jpg" alt="Before and after comparison — sharp edge vs. rounded edge" /></p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/sanding.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <hr>
 <h1 id="part-7--assembly">Part 7 – Assembly<a class="anchor" href="#part-7--assembly">#</a></h1>
 <p>With all parts post-processed, it was time to put it all together.</p>
 <p>The press-fit joints assembled without any glue — the tolerances from the group assignment test gauge meant everything locked together firmly with hand pressure.</p>
 <p>The pivot joints for the four-bar linkage were assembled using bolts and locking nuts, allowing the linkage to rotate freely while staying tight enough not to wobble.</p>
-<p><img src="images/week-7/assembly-start.jpg" alt="Starting assembly — connecting the cross braces to the first side frame" /></p>
-<p><img src="images/week-7/linkage-assembled.jpg" alt="Four-bar linkage assembled — pivot bolts installed and linkage moving smoothly" /></p>
-<p><img src="images/week-7/backrest-attached.jpg" alt="Backrest attached to the linkage — testing the reclining motion before adding the seat" /></p>
-<p><img src="images/week-7/chair-upright-final.jpg" alt="Full chair assembled — upright position" /></p>
-<p><img src="images/week-7/chair-reclined-final.jpg" alt="Full chair assembled — reclined position" /></p>
-<p><img src="images/week-7/chair-in-use.jpg" alt="Sitting in the finished recliner — because you have to test it" /></p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/final-assembly.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p><img src="../../../images/week-7/hero-1.jpg" alt="Hero shot 1" />
+<img src="../../../images/week-7/hero-2.jpg" alt="Hero shot 2" />
+<img src="../../../images/week-7/hero-3.jpg" alt="Hero shot 3" />
+<img src="../../../images/week-7/hero-4.jpg" alt="Hero shot 4" />
+<img src="../../../images/week-7/hero-5.jpg" alt="Hero shot 5" />
+<img src="../../../images/week-7/hero-6.jpg" alt="Hero shot 6" />
+<img src="../../../images/week-7/hero-7.jpg" alt="Hero shot 7" />
+<img src="../../../images/week-7/hero-8.jpg" alt="Hero shot 8" /></p>
+<video width="100%" controls>
+  <source src="../../../images/week-7/hero.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <hr>
 <h2 id="helpful-websites">Helpful Websites<a class="anchor" href="#helpful-websites">#</a></h2>
 <ul>
@@ -1505,9 +1594,7 @@ I used this week as an opportunity to design something I actually wanted — a L
     <li><a href="#group-assignment--cnc-test-gauge">Group Assignment – CNC Test Gauge</a>
       <ul>
         <li><a href="#understanding-the-shopbot">Understanding the ShopBot</a></li>
-        <li><a href="#machine-setup-workflow">Machine Setup Workflow</a></li>
-        <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
-        <li><a href="#milling-the-test-gauge">Milling the Test Gauge</a></li>
+        <li><a href="#press-fit-tolerance-result">Press-fit tolerance result:</a></li>
       </ul>
     </li>
   </ul>
@@ -1525,7 +1612,11 @@ I used this week as an opportunity to design something I actually wanted — a L
   <ul>
     <li><a href="#-why-fusion-360">🖥️ Why Fusion 360?</a></li>
     <li><a href="#-building-the-model">📐 Building the Model</a></li>
-    <li><a href="#-press-fit-joinery-details">🔩 Press-Fit Joinery Details</a></li>
+    <li><a href="#-press-fit-joinery-details">🔩 Press-Fit Joinery Details</a>
+      <ul>
+        <li><a href="#-using-the-nifty-dogbone-add-in">🦴 Using the Nifty Dogbone Add-in</a></li>
+      </ul>
+    </li>
     <li><a href="#-arranging-parts-and-exporting-dxf">📦 Arranging Parts and Exporting DXF</a></li>
   </ul>
 
@@ -1534,7 +1625,12 @@ I used this week as an opportunity to design something I actually wanted — a L
   </ul>
 
   <ul>
-    <li><a href="#-vcarve-pro-cam-setup">🗂️ VCarve Pro CAM Setup</a></li>
+    <li><a href="#-vcarve-pro-cam-setup">🗂️ VCarve Pro CAM Setup</a>
+      <ul>
+        <li><a href="#machine-setup-workflow">Machine Setup Workflow</a></li>
+        <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
+      </ul>
+    </li>
     <li><a href="#-running-the-job">🔧 Running the Job</a></li>
   </ul>
 
