@@ -25,7 +25,7 @@ I used this week as an opportunity to design something I actually wanted — a L
   <meta itemprop="name" content="Week 07 - Computer Controlled Machining">
   <meta itemprop="description" content="Week 07 - Computer Controlled Machining#Week 7 is all about Computer Controlled Machining — this is the week where we go big. Literally. The brief is to design and fabricate a meter-scale object from sheet material using a CNC router. No more laser-cut cardboard prototypes, this time we’re cutting full sheets of plywood on a ShopBot.
 I used this week as an opportunity to design something I actually wanted — a Lazy Boy–style recliner chair driven by a four-bar linkage mechanism. Mechanical engineering background finally coming in handy 😎">
-  <meta itemprop="wordCount" content="2766">
+  <meta itemprop="wordCount" content="3041">
 
 <title>Week 07 - Computer Controlled Machining | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I used this week as an opportunity to design something I actually wanted — a L
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.8557134578c0a09d7b000770e4c577999908ce2679b6bcbbf96312787185eb76.js" integrity="sha256-hVcTRXjAoJ17AAdw5MV3mZkIziZ5try7&#43;WMSeHGF63Y=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.5adebbf042aaf7171c0b98f812fe31c0e8a2e061c0d43a6c31b47c088e483194.js" integrity="sha256-Wt678EKq9xccC5j4Ev4xwOii4GHA1DpsMbR8CI5IMZQ=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -894,6 +894,7 @@ I used this week as an opportunity to design something I actually wanted — a L
     <li><a href="#individual-assignment">Individual Assignment</a></li>
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
+    <li><a href="#tools-used">Tools Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
     <li><a href="#group-assignment--cnc-test-gauge">Group Assignment – CNC Test Gauge</a>
       <ul>
@@ -933,6 +934,11 @@ I used this week as an opportunity to design something I actually wanted — a L
       <ul>
         <li><a href="#machine-setup-workflow">Machine Setup Workflow</a></li>
         <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
+      </ul>
+    </li>
+    <li><a href="#vcarve-pro--setting-pass-depth-and-feed-rates"><img src="../../../images/week-7/vcarve-16.jpg"> <img src="../../../images/week-7/vcarve-17.jpg"> <img src="../../../images/week-7/vcarve-19.jpg"> <img src="../../../images/week-7/vcarve-20.jpg"></a>
+      <ul>
+        <li></li>
       </ul>
     </li>
     <li><a href="#-running-the-job">🔧 Running the Job</a></li>
@@ -1000,6 +1006,62 @@ I used this week as an opportunity to design something I actually wanted — a L
 <li><strong>Inkscape</strong> — opening and preparing DXF files for laser cutter prototype</li>
 <li><strong>ShopBot Software</strong> — machine control and file sending</li>
 </ul>
+<hr>
+<h2 id="tools-used">Tools Used<a class="anchor" href="#tools-used">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Tool</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Cordless drill</td>
+          <td>Screwing the plywood to the CNC bed</td>
+      </tr>
+      <tr>
+          <td>Screws</td>
+          <td>Securing plywood to the</td>
+      </tr>
+      <tr>
+          <td>Mallet</td>
+          <td>Assembling press-fit joints</td>
+      </tr>
+      <tr>
+          <td>Chisel</td>
+          <td>Removing tabs and cleaning edges</td>
+      </tr>
+      <tr>
+          <td>Hammer</td>
+          <td>General assembly work</td>
+      </tr>
+      <tr>
+          <td>Sandpaper (80 grit)</td>
+          <td>Rough sanding and smoothing surfaces</td>
+      </tr>
+      <tr>
+          <td>Rasp file</td>
+          <td>Shaping and removing material from edges</td>
+      </tr>
+      <tr>
+          <td>Half-round file</td>
+          <td>Smoothing curved surfaces and slots</td>
+      </tr>
+      <tr>
+          <td>Reciprocating sander</td>
+          <td>Faster surface finishing</td>
+      </tr>
+      <tr>
+          <td>Wood router</td>
+          <td>Edge filleting and chamfering</td>
+      </tr>
+      <tr>
+          <td>F-clamp</td>
+          <td>Holding pieces during assembly and gluing</td>
+      </tr>
+  </tbody>
+</table>
 <hr>
 <h2 id="weekly-schedule">Weekly Schedule<a class="anchor" href="#weekly-schedule">#</a></h2>
 <table>
@@ -1247,7 +1309,7 @@ and download and install it</p>
 <h2 id="-arranging-parts-and-exporting-dxf">📦 Arranging Parts and Exporting DXF<a class="anchor" href="#-arranging-parts-and-exporting-dxf">#</a></h2>
 <p>Once the design was finalized, I used Fusion&rsquo;s <strong>Arrange</strong> feature to lay all parts flat on a virtual 8ft × 4ft sheet — mimicking the actual plywood dimensions.</p>
 <p>Then I exported the arranged layout as a <strong>DXF file</strong>, which I could open directly in VCarve Pro for CAM setup.</p>
-<p><img src="../../../images/week-7/fusion.jpg" alt="Fusion 360 Arrange feature with all parts laid flat" /></p>
+<p><img src="../../../images/week-7/fusion-arranged.jpg" alt="Fusion 360 Arrange feature with all parts laid flat" /></p>
 <hr>
 <h1 id="part-3--cardboard-prototype">Part 3 – Cardboard Prototype<a class="anchor" href="#part-3--cardboard-prototype">#</a></h1>
 <p>Before committing to milling full plywood, I scaled the design down and cut a cardboard prototype to verify that the mechanism actually worked.</p>
@@ -1307,31 +1369,31 @@ and download and install it</p>
   <tbody>
       <tr>
           <td>End mill diameter</td>
-          <td>mm</td>
+          <td>6 mm</td>
       </tr>
       <tr>
           <td>Pass depth</td>
-          <td>mm</td>
+          <td>4.5 mm</td>
       </tr>
       <tr>
           <td>Feed rate</td>
-          <td>mm/min</td>
+          <td>1200.2 mm/min</td>
       </tr>
       <tr>
           <td>Plunge rate</td>
-          <td>mm/min</td>
+          <td>1200 mm/min</td>
       </tr>
       <tr>
           <td>Spindle speed</td>
-          <td>RPM</td>
+          <td>1200 RPM</td>
       </tr>
       <tr>
           <td>Tab width</td>
-          <td>mm</td>
+          <td>5 mm</td>
       </tr>
       <tr>
           <td>Tab height</td>
-          <td>mm</td>
+          <td>3 mm</td>
       </tr>
   </tbody>
 </table>
@@ -1344,62 +1406,88 @@ and download and install it</p>
 </ol>
 <hr>
 <h3 id="toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro<a class="anchor" href="#toolpath-generation-in-vcarve-pro">#</a></h3>
-<p>For generating our toolpaths, we used <strong>VCarve Pro</strong> — which is the standard CAM software that ships with the ShopBot system.</p>
-<p><strong>Steps for setting up the toolpaths:</strong></p>
-<p><img src="../../../images/week-7/vcarve-1.jpg" alt="VCarve Pro step 1" />
-<img src="../../../images/week-7/vcarve-2.jpg" alt="VCarve Pro step 2" />
-<img src="../../../images/week-7/vcarve-3.jpg" alt="VCarve Pro step 3" />
-<img src="../../../images/week-7/vcarve-4.jpg" alt="VCarve Pro step 4" />
-<img src="../../../images/week-7/vcarve-5.jpg" alt="VCarve Pro step 5" />
-<img src="../../../images/week-7/vcarve-6.jpg" alt="VCarve Pro step 6" />
-<img src="../../../images/week-7/vcarve-7.jpg" alt="VCarve Pro step 7" />
-<img src="../../../images/week-7/vcarve-8.jpg" alt="VCarve Pro step 8" />
-<img src="../../../images/week-7/vcarve-9.jpg" alt="VCarve Pro step 9" />
-<img src="../../../images/week-7/vcarve-10.jpg" alt="VCarve Pro step 10" />
-<img src="../../../images/week-7/vcarve-11.jpg" alt="VCarve Pro step 11" />
-<img src="../../../images/week-7/vcarve-12.jpg" alt="VCarve Pro step 12" />
-<img src="../../../images/week-7/vcarve-13.jpg" alt="VCarve Pro step 13" />
-<img src="../../../images/week-7/vcarve-14.jpg" alt="VCarve Pro step 14" />
-<img src="../../../images/week-7/vcarve-15.jpg" alt="VCarve Pro step 15" />
-<img src="../../../images/week-7/vcarve-16.jpg" alt="VCarve Pro step 16" />
-<img src="../../../images/week-7/vcarve-17.jpg" alt="VCarve Pro step 17" />
-<img src="../../../images/week-7/vcarve-19.jpg" alt="VCarve Pro step 19" />
-<img src="../../../images/week-7/vcarve-20.jpg" alt="VCarve Pro step 20" />
-<img src="../../../images/week-7/vcarve-21.jpg" alt="VCarve Pro step 21" />
-<img src="../../../images/week-7/vcarve-22.jpg" alt="VCarve Pro step 22" />
-<img src="../../../images/week-7/vcarve-23.jpg" alt="VCarve Pro step 23" />
-<img src="../../../images/week-7/vcarve-24.jpg" alt="VCarve Pro step 24" />
-<img src="../../../images/week-7/vcarve-25.jpg" alt="VCarve Pro step 25" />
-<img src="../../../images/week-7/vcarve-26.jpg" alt="VCarve Pro step 26" /></p>
-<ol>
-<li>Import the design file (DXF)</li>
-<li>Set the material dimensions and thickness</li>
-<li>Define the toolpath types:
-<ul>
-<li><strong>Profile (outside)</strong> — cuts the outer profile of parts</li>
-<li><strong>Profile (inside)</strong> — cuts inner slots and pockets</li>
-<li><strong>Pocket</strong> — clears areas of material</li>
-</ul>
-</li>
-<li>Select the tool from the library (end mill size, type)</li>
-<li>Set the cutting parameters:
-<ul>
-<li><strong>Pass depth</strong> — how deep each pass cuts</li>
-<li><strong>Feed rate</strong> — how fast the tool moves horizontally</li>
-<li><strong>Plunge rate</strong> — how fast the tool descends into the material</li>
-<li><strong>Spindle speed</strong> — RPM</li>
-</ul>
-</li>
-<li>Add <strong>tabs</strong> to hold parts in place until the cut is fully complete</li>
-<li>Simulate the toolpath to check for any issues</li>
-<li>Export as a <code>.sbp</code> ShopBot file</li>
-</ol>
+<p>For generating toolpaths, we used <strong>VCarve Pro</strong> — the standard CAM software that ships with the ShopBot system. Here&rsquo;s the complete workflow I followed to prepare my design for machining.</p>
 <hr>
-<p><strong>Toolpath strategy:</strong></p>
+<h4 id="step-1-create-a-new-project">Step 1: Create a New Project<a class="anchor" href="#step-1-create-a-new-project">#</a></h4>
+<p>Open VCarve Pro and select <strong>Create New File</strong> to start a new project.</p>
+<p><img src="../../../images/week-7/vcarve-1.jpg" alt="VCarve Pro — Creating a new file" /></p>
+<hr>
+<h4 id="step-2-set-material-dimensions">Step 2: Set Material Dimensions<a class="anchor" href="#step-2-set-material-dimensions">#</a></h4>
+<p>Configure the job setup by entering the material dimensions and thickness. For my project, I set the sheet size to match the 8ft × 4ft plywood sheet with a thickness of 17.5 mm.</p>
+<p><img src="../../../images/week-7/vcarve-3.jpg" alt="VCarve Pro — Setting material dimensions and thickness" /></p>
+<hr>
+<h4 id="step-3-import-the-vector-file">Step 3: Import the Vector File<a class="anchor" href="#step-3-import-the-vector-file">#</a></h4>
+<p>Import the DXF file exported from Fusion 360. Go to <strong>File → Import → Import Vectors</strong> and select your DXF file.</p>
+<p><img src="../../../images/week-7/vcarve-4.jpg" alt="VCarve Pro — Importing vectors (part 1)" />
+<img src="../../../images/week-7/vcarve-5.jpg" alt="VCarve Pro — Importing vectors (part 2)" />
+<img src="../../../images/week-7/vcarve-6.jpg" alt="VCarve Pro — Vectors imported successfully" /></p>
+<hr>
+<h4 id="step-4-position-the-design">Step 4: Position the Design<a class="anchor" href="#step-4-position-the-design">#</a></h4>
+<p>Move and align the imported vectors to fit properly on the workpiece canvas. Use the <strong>Move</strong> and <strong>Align</strong> tools to position all parts within the material boundaries.</p>
+<p><img src="../../../images/week-7/vcarve-7.jpg" alt="VCarve Pro — Positioning vectors on the canvas" /></p>
+<p>Click <strong>Apply and Close</strong> to confirm the positioning.</p>
+<p><img src="../../../images/week-7/vcarve-9.jpg" alt="VCarve Pro — Apply and close the positioning dialog" /></p>
+<hr>
+<h4 id="step-5-create-screw-hole-markers">Step 5: Create Screw Hole Markers<a class="anchor" href="#step-5-create-screw-hole-markers">#</a></h4>
+<p>Before cutting any parts, we need to secure the workpiece to the spoil board. Create circles at strategic locations (corners and center areas away from parts) to mark where screws will be drilled.</p>
+<p><img src="../../../images/week-7/vcarve-10.jpg" alt="VCarve Pro — Creating circles for screw hole positions" />
+<img src="../../../images/week-7/vcarve-11.jpg" alt="VCarve Pro — Selecting Drilling Toolpath from the menu" />
+<img src="../../../images/week-7/vcarve-12.jpg" alt="VCarve Pro — Selecting the drill bit" /></p>
+<hr>
+<h4 id="step-6-set-up-the-drilling-toolpath">Step 6: Set Up the Drilling Toolpath<a class="anchor" href="#step-6-set-up-the-drilling-toolpath">#</a></h4>
+<p>Navigate to the <strong>Toolpath</strong> menu and select <strong>Drilling Toolpath</strong>. This will create the toolpath for drilling the screw holes.</p>
+<p><img src="../../../images/week-7/vcarve-13.jpg" alt="VCarve Pro — Configuring drilling parameters (part 1)" />
+<img src="../../../images/week-7/vcarve-14.jpg" alt="VCarve Pro — Configuring drilling parameters (part 2)" /></p>
+<p>Select the appropriate drill bit from the tool library and configure the drilling parameters:</p>
+<p><img src="../../../images/week-7/vcarve-15.jpg" alt="VCarve Pro — Drilling toolpath complete" /></p>
+<h2 id="vcarve-pro--setting-pass-depth-and-feed-rates"><img src="../../../images/week-7/vcarve-16.jpg" alt="VCarve Pro — Selecting vectors for inside cuts" />
+<img src="../../../images/week-7/vcarve-17.jpg" alt="VCarve Pro — Profile toolpath settings for inside cuts" />
+<img src="../../../images/week-7/vcarve-19.jpg" alt="VCarve Pro — Configuring the end mill parameters" />
+<img src="../../../images/week-7/vcarve-20.jpg" alt="VCarve Pro — Setting pass depth and feed rates" /><a class="anchor" href="#vcarve-pro--setting-pass-depth-and-feed-rates">#</a></h2>
+<h4 id="step-7-create-inside-profile-toolpaths">Step 7: Create Inside Profile Toolpaths<a class="anchor" href="#step-7-create-inside-profile-toolpaths">#</a></h4>
+<p>Select all vectors representing internal cuts (slots, holes, and interior pockets). Apply the <strong>Profile Toolpath</strong> with the <strong>Inside/Left</strong> cutting direction. This ensures the tool cuts on the inside of closed shapes.</p>
+<p><img src="../../../images/week-7/vcarve-21.jpg" alt="VCarve Pro — Adding tabs to hold parts in place" />
+<img src="../../../images/week-7/vcarve-22.jpg" alt="VCarve Pro — Tab configuration settings" />
+<img src="../../../images/week-7/vcarve-23.jpg" alt="VCarve Pro — Inside profile toolpath preview" />
+<img src="../../../images/week-7/vcarve-24.jpg" alt="VCarve Pro — Selecting vectors for outside cuts" />
+<img src="../../../images/week-7/vcarve-25.jpg" alt="VCarve Pro — Outside profile toolpath configuration" />
+<img src="../../../images/week-7/vcarve-26.jpg" alt="VCarve Pro — Final toolpath overview" /></p>
+<hr>
+<h4 id="toolpath-types-summary">Toolpath Types Summary<a class="anchor" href="#toolpath-types-summary">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Toolpath Type</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Drilling</strong></td>
+          <td>Creates screw holes to secure the workpiece</td>
+      </tr>
+      <tr>
+          <td><strong>Profile (Inside)</strong></td>
+          <td>Cuts internal slots, holes, and interior shapes</td>
+      </tr>
+      <tr>
+          <td><strong>Profile (Outside)</strong></td>
+          <td>Cuts the outer contour of parts to release them</td>
+      </tr>
+      <tr>
+          <td><strong>Pocket</strong></td>
+          <td>Clears material from enclosed areas</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="recommended-cutting-order">Recommended Cutting Order<a class="anchor" href="#recommended-cutting-order">#</a></h4>
+<p>The sequence of operations matters for successful CNC machining:</p>
 <ol>
-<li><strong>Pockets first</strong> — cut any recessed areas before profile cuts (so the material is still fully supported)</li>
-<li><strong>Inside profiles</strong> — slots, holes, and inside curves</li>
-<li><strong>Outside profiles last</strong> — final cut to release parts from the sheet, with tabs keeping everything in place</li>
+<li><strong>Drilling first</strong> — Secure the workpiece with screws before any cutting begins</li>
+<li><strong>Pockets second</strong> — Clear any recessed areas while the material is still fully supported</li>
+<li><strong>Inside profiles third</strong> — Cut all internal features (slots, holes)</li>
+<li><strong>Outside profiles last</strong> — Final cuts to release parts, with tabs keeping everything in place until the job completes</li>
 </ol>
 <video width="100%" controls>
   <source src="../../../images/week-7/simulating-toolpath.mp4" type="video/mp4">
@@ -1452,15 +1540,21 @@ and download and install it</p>
   Your browser does not support the video tag.
 </video>
 <h1 id="hero-shots">Hero Shots<a class="anchor" href="#hero-shots">#</a></h1>
-<p><img src="../../../images/week-7/hero-2.jpg" alt="Hero shot 2" />
-<img src="../../../images/week-7/hero-3.jpg" alt="Hero shot 3" />
-<img src="../../../images/week-7/hero-4.jpg" alt="Hero shot 4" />
-<img src="../../../images/week-7/hero-6.jpg" alt="Hero shot 6" />
-<img src="../../../images/week-7/hero-8.jpg" alt="Hero shot 8" /></p>
-<video width="100%" controls>
-  <source src="../../../images/week-7/hero.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
+  <img src="../../../images/week-7/hero-2.jpg" alt="Hero shot 2" style="width: 100%; border-radius: 8px;">
+  <img src="../../../images/week-7/hero-3.jpg" alt="Hero shot 3" style="width: 100%; border-radius: 8px;">
+  <img src="../../../images/week-7/hero-4.jpg" alt="Hero shot 4" style="width: 100%; border-radius: 8px;">
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 66%; margin: 0 auto 15px auto;">
+  <img src="../../../images/week-7/hero-6.jpg" alt="Hero shot 6" style="width: 100%; border-radius: 8px;">
+  <img src="../../../images/week-7/hero-8.jpg" alt="Hero shot 8" style="width: 100%; border-radius: 8px;">
+</div>
+<div style="text-align: center;">
+  <video width="60%" controls>
+    <source src="../../../images/week-7/hero.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 <hr>
 <h2 id="helpful-websites">Helpful Websites<a class="anchor" href="#helpful-websites">#</a></h2>
 <ul>
@@ -1562,6 +1656,7 @@ and download and install it</p>
     <li><a href="#individual-assignment">Individual Assignment</a></li>
     <li><a href="#what-i-learned">What I Learned</a></li>
     <li><a href="#software-used">Software Used</a></li>
+    <li><a href="#tools-used">Tools Used</a></li>
     <li><a href="#weekly-schedule">Weekly Schedule</a></li>
     <li><a href="#group-assignment--cnc-test-gauge">Group Assignment – CNC Test Gauge</a>
       <ul>
@@ -1601,6 +1696,11 @@ and download and install it</p>
       <ul>
         <li><a href="#machine-setup-workflow">Machine Setup Workflow</a></li>
         <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
+      </ul>
+    </li>
+    <li><a href="#vcarve-pro--setting-pass-depth-and-feed-rates"><img src="../../../images/week-7/vcarve-16.jpg"> <img src="../../../images/week-7/vcarve-17.jpg"> <img src="../../../images/week-7/vcarve-19.jpg"> <img src="../../../images/week-7/vcarve-20.jpg"></a>
+      <ul>
+        <li></li>
       </ul>
     </li>
     <li><a href="#-running-the-job">🔧 Running the Job</a></li>
