@@ -25,7 +25,7 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
   <meta itemprop="name" content="Week 08 - Electronics Production">
   <meta itemprop="description" content="Week 08 – Electronics Production#Week 8 is where everything from the previous weeks starts to become real. We stop designing PCBs and actually make them — mill the copper, solder the components, program the board, and test that it works. The goal was to take the PCB I designed back in Week 6 and produce a fully functional board out of it.
 This week was guided by Saheen, Sibin, and Ravisankar.">
-  <meta itemprop="wordCount" content="2703">
+  <meta itemprop="wordCount" content="2708">
 
 <title>Week 08 - Electronics Production | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.46fb8a8f6712673a4f20bb91ba3878346c8850826abb58395a9b747d8ac4ea79.js" integrity="sha256-RvuKj2cSZzpPILuRujh4NGyIUIJqu1g5Wpt0fYrE6nk=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.3b2110fe27128a11d98eed4b2ff0892d4cdd6ad228d619ca561ba17d2dc5c1fe.js" integrity="sha256-OyEQ/icSihHZju1LL/CJLUzdatIo1hnKVhuhfS3Fwf4=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-8/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -920,6 +920,7 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
         <li><a href="#v-bit-settings-in-mods">V-bit settings in Mods:</a></li>
       </ul>
     </li>
+    <li><a href="#mods-2"><img src="../../../images/week-8/mods1.jpg" alt="Mods Project Interface"> <img src="../../../images/week-8/mods-2.jpg" alt="Mods 2"></a></li>
   </ul>
 
   <ul>
@@ -1083,6 +1084,7 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
       </tr>
   </tbody>
 </table>
+<p>INSERT group-assignment.jpg</p>
 <p>These numbers became the constraints I used when checking my own PCB design before fabrication.</p>
 <p>Check out the full group documentation here:
 🔗 <a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week08/">https://fabacademy.org/2026/labs/kochi/group_assignmetns/week08/</a></p>
@@ -1161,7 +1163,8 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
 <p><img src="../../../images/week-6/generate-drill-files.jpg" alt="Generate Drill Files" /></p>
 <h3 id="creating-zip-files">Creating Zip Files:<a class="anchor" href="#creating-zip-files">#</a></h3>
 <ol>
-<li>Navigate to your <code>gerber/</code> output folder</li>
+<li>Navigate to your <code>gerber/</code> output folder
+<img src="../../../images/week-8/gerbers.jpg" alt="Gerber Files" /></li>
 <li>Select all the generated files (<code>.gbr</code>, <code>.drl</code>, etc.)</li>
 <li>Right-click and <strong>Compress to ZIP</strong></li>
 </ol>
@@ -1170,7 +1173,8 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
 <p>The milling pipeline in our lab doesn&rsquo;t read Gerber files directly — <strong>Mods Project</strong> requires <strong>PNG images</strong>. FabLab Kerala built a dedicated tool for this conversion: <strong><a href="https://gerber2png.fablabkerala.in/">gerber2png.fablabkerala.in</a></strong>.</p>
 <blockquote class='book-hint '>
 <p>There&rsquo;s also a KiCad plugin version of Gerber2PNG — I installed that as well so I can generate PNGs directly from inside KiCad without going to the browser. The plugin repo is linked in the references at the bottom of this page.</p>
-</blockquote><h3 id="files-generated">Files generated:<a class="anchor" href="#files-generated">#</a></h3>
+</blockquote><p>insert gerber2png-kicad-plugin.jpg</p>
+<h3 id="files-generated">Files generated:<a class="anchor" href="#files-generated">#</a></h3>
 <table>
   <thead>
       <tr>
@@ -1213,7 +1217,7 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
 <li>Download the generated PNGs</li>
 </ol>
 <p><img src="../../../images/week-8/gerber2png.jpg" alt="Gerber2PNG Tool" /></p>
-<p><img src="../../../images/week-8/gerber2png-output.jpg" alt="Gerber2PNG Output" /></p>
+<p><img src="../../../images/week-8/generating-png.jpg" alt="Gerber2PNG Output" /></p>
 <hr>
 <h2 id="-generating-toolpaths-in-mods-project">🗺️ Generating Toolpaths in Mods Project<a class="anchor" href="#-generating-toolpaths-in-mods-project">#</a></h2>
 <p>With the PNGs ready, the next step was to generate the actual machine instructions — toolpaths — using <strong><a href="https://modsproject.org/">Mods Project</a></strong>.</p>
@@ -1261,9 +1265,8 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
       </tr>
   </tbody>
 </table>
-<p><img src="../../../images/week-8/mods-interface.jpg" alt="Mods Project Interface" /></p>
-<p><img src="../../../images/week-8/mods-toolpath.jpg" alt="Mods Toolpath Preview" /></p>
-<hr>
+<h2 id="mods-2"><img src="../../../images/week-8/mods1.jpg" alt="Mods Project Interface" />
+<img src="../../../images/week-8/mods-2.jpg" alt="Mods 2" /><a class="anchor" href="#mods-2">#</a></h2>
 <h1 id="part-2--pcb-milling">Part 2 – PCB Milling<a class="anchor" href="#part-2--pcb-milling">#</a></h1>
 <h2 id="-machine-setup--roland-modela-mdx-20">⚙️ Machine Setup — Roland Modela MDX-20<a class="anchor" href="#-machine-setup--roland-modela-mdx-20">#</a></h2>
 <p>The <strong>Roland Modela MDX-20</strong> is the PCB milling machine we use in the lab — a small desktop CNC that&rsquo;s accurate enough for 0.4 mm trace widths.</p>
@@ -1679,6 +1682,7 @@ This week was guided by Saheen, Sibin, and Ravisankar.">
         <li><a href="#v-bit-settings-in-mods">V-bit settings in Mods:</a></li>
       </ul>
     </li>
+    <li><a href="#mods-2"><img src="../../../images/week-8/mods1.jpg" alt="Mods Project Interface"> <img src="../../../images/week-8/mods-2.jpg" alt="Mods 2"></a></li>
   </ul>
 
   <ul>
