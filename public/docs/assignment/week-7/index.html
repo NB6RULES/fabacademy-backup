@@ -25,7 +25,7 @@ I used this week as an opportunity to design something I actually wanted — a L
   <meta itemprop="name" content="Week 07 - Computer Controlled Machining">
   <meta itemprop="description" content="Week 07 - Computer Controlled Machining#Week 7 is all about Computer Controlled Machining — this is the week where we go big. Literally. The brief is to design and fabricate a meter-scale object from sheet material using a CNC router. No more laser-cut cardboard prototypes, this time we’re cutting full sheets of plywood on a ShopBot.
 I used this week as an opportunity to design something I actually wanted — a Lazy Boy–style recliner chair driven by a four-bar linkage mechanism. Mechanical engineering background finally coming in handy 😎">
-  <meta itemprop="wordCount" content="3061">
+  <meta itemprop="wordCount" content="3077">
 
 <title>Week 07 - Computer Controlled Machining | Nadec FAB Academy Portfolio</title>
 <link rel="icon" href="/2026/labs/kochi/students/nadec-biju/favicon.ico" sizes="any">
@@ -39,7 +39,7 @@ I used this week as an opportunity to design something I actually wanted — a L
 
 
   <script defer src="/2026/labs/kochi/students/nadec-biju/fuse.min.js"></script>
-  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.3b2110fe27128a11d98eed4b2ff0892d4cdd6ad228d619ca561ba17d2dc5c1fe.js" integrity="sha256-OyEQ/icSihHZju1LL/CJLUzdatIo1hnKVhuhfS3Fwf4=" crossorigin="anonymous"></script>
+  <script defer src="/2026/labs/kochi/students/nadec-biju/en.search.min.72dc326b2b91781b3df56985a054b639051b5eea8a9f10656872439a5c136481.js" integrity="sha256-ctwyayuReBs99WmFoFS2OQUbXuqKnxBlaHJDmlwTZIE=" crossorigin="anonymous"></script>
 
 
 <link rel="alternate" type="application/rss+xml" href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/index.xml" title="Nadec FAB Academy Portfolio" />
@@ -936,11 +936,6 @@ I used this week as an opportunity to design something I actually wanted — a L
         <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
       </ul>
     </li>
-    <li><a href="#vcarve-pro--setting-pass-depth-and-feed-rates"><img src="../../../images/week-7/vcarve-16.jpg"> <img src="../../../images/week-7/vcarve-17.jpg"> <img src="../../../images/week-7/vcarve-19.jpg"> <img src="../../../images/week-7/vcarve-20.jpg"></a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
     <li><a href="#-running-the-job">🔧 Running the Job</a></li>
   </ul>
 
@@ -1437,20 +1432,19 @@ and download and install it</p>
 <hr>
 <h4 id="step-6-set-up-the-drilling-toolpath">Step 6: Set Up the Drilling Toolpath<a class="anchor" href="#step-6-set-up-the-drilling-toolpath">#</a></h4>
 <p>Navigate to the <strong>Toolpath</strong> menu and select <strong>Drilling Toolpath</strong>. This will create the toolpath for drilling the screw holes.</p>
-<p><img src="../../../images/week-7/vcarve-13.jpg" alt="VCarve Pro — Configuring drilling parameters (part 1)" />
-<img src="../../../images/week-7/vcarve-14.jpg" alt="VCarve Pro — Configuring drilling parameters (part 2)" /></p>
+<p><img src="../../../images/week-7/vcarve-13.jpg" alt="VCarve Pro — Configuring drilling parameters (part 1)" /></p>
 <p>Select the appropriate drill bit from the tool library and configure the drilling parameters:</p>
 <p><img src="../../../images/week-7/vcarve-15.jpg" alt="VCarve Pro — Drilling toolpath complete" /></p>
-<h2 id="vcarve-pro--setting-pass-depth-and-feed-rates"><img src="../../../images/week-7/vcarve-16.jpg" alt="VCarve Pro — Selecting vectors for inside cuts" />
+<p><img src="../../../images/week-7/vcarve-16.jpg" alt="VCarve Pro — Selecting vectors for inside cuts" />
 <img src="../../../images/week-7/vcarve-17.jpg" alt="VCarve Pro — Profile toolpath settings for inside cuts" />
-<img src="../../../images/week-7/vcarve-19.jpg" alt="VCarve Pro — Configuring the end mill parameters" />
-<img src="../../../images/week-7/vcarve-20.jpg" alt="VCarve Pro — Setting pass depth and feed rates" /><a class="anchor" href="#vcarve-pro--setting-pass-depth-and-feed-rates">#</a></h2>
-<h4 id="step-7-create-inside-profile-toolpaths">Step 7: Create Inside Profile Toolpaths<a class="anchor" href="#step-7-create-inside-profile-toolpaths">#</a></h4>
-<p>Select all vectors representing internal cuts (slots, holes, and interior pockets). Apply the <strong>Profile Toolpath</strong> with the <strong>Inside/Left</strong> cutting direction. This ensures the tool cuts on the inside of closed shapes.</p>
-<p><img src="../../../images/week-7/vcarve-21.jpg" alt="VCarve Pro — Adding tabs to hold parts in place" />
+<img src="../../../images/week-7/vcarve-19.jpg" alt="VCarve Pro — Configuring the end mill parameters" /></p>
+<hr>
+<h4 id="step-7-create-inside-and-outside-profile-toolpaths">Step 7: Create Inside and Outside Profile Toolpaths<a class="anchor" href="#step-7-create-inside-and-outside-profile-toolpaths">#</a></h4>
+<p>Select all vectors representing internal cuts (slots, holes, and interior pockets). Apply the <strong>Profile Toolpath</strong> with the <strong>Inside/Left</strong> cutting direction. This ensures the tool cuts on the inside of closed shapes followed by the <strong>Outside/Right</strong> cutting direction for the outer contours as a second profile toolpath.</p>
+<p><img src="../../../images/week-7/vcarve-20.jpg" alt="VCarve Pro — Setting pass depth and feed rates" />
+<img src="../../../images/week-7/vcarve-21.jpg" alt="VCarve Pro — Adding tabs to hold parts in place" />
 <img src="../../../images/week-7/vcarve-22.jpg" alt="VCarve Pro — Tab configuration settings" />
 <img src="../../../images/week-7/vcarve-23.jpg" alt="VCarve Pro — Inside profile toolpath preview" />
-<img src="../../../images/week-7/vcarve-24.jpg" alt="VCarve Pro — Selecting vectors for outside cuts" />
 <img src="../../../images/week-7/vcarve-25.jpg" alt="VCarve Pro — Outside profile toolpath configuration" />
 <img src="../../../images/week-7/vcarve-26.jpg" alt="VCarve Pro — Final toolpath overview" /></p>
 <hr>
@@ -1587,7 +1581,7 @@ and download and install it</p>
 <p>Next up: Electronics Production week. Time to actually mill the PCB I designed in Week 6 😎</p>
 <hr>
 <div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
-  <a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: white; color: #667eea; font-weight: bold; font-size: 16px; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.25);'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15);'">
+  <a href="/files/week-7.rar" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: white; color: #667eea; font-weight: bold; font-size: 16px; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.25);'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15);'">
     ⬇️ Download All Files from Week 7
   </a>
 </div>
@@ -1710,11 +1704,6 @@ and download and install it</p>
       <ul>
         <li><a href="#machine-setup-workflow">Machine Setup Workflow</a></li>
         <li><a href="#toolpath-generation-in-vcarve-pro">Toolpath Generation in VCarve Pro</a></li>
-      </ul>
-    </li>
-    <li><a href="#vcarve-pro--setting-pass-depth-and-feed-rates"><img src="../../../images/week-7/vcarve-16.jpg"> <img src="../../../images/week-7/vcarve-17.jpg"> <img src="../../../images/week-7/vcarve-19.jpg"> <img src="../../../images/week-7/vcarve-20.jpg"></a>
-      <ul>
-        <li></li>
       </ul>
     </li>
     <li><a href="#-running-the-job">🔧 Running the Job</a></li>
