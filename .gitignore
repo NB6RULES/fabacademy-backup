@@ -5,12 +5,15 @@
 !public/
 !public/**
 
-# Allow themes
+# Allow themes (Hugo requires this to mount assets)
 !themes/
 !themes/**
 
-# Allow CI and README
-!.gitlab-ci.yml
+# Allow YAML files
+!*.yml
+!*.yaml
+
+# Allow README
 !README.md
 
 # Allow directories to be traversed
