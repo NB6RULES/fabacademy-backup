@@ -1,0 +1,12 @@
+baseURL = 'https://fabacademy.org/2026/labs/kochi/students/nadec-biju/'
+languageCode = 'en-us'
+title = 'Nadec FAB Academy Portfolio'
+enableGitInfo = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

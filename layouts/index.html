@@ -1,0 +1,232 @@
+{{ define "main" }}
+{{- $bp := (urls.Parse site.BaseURL).Path | strings.TrimSuffix "/" -}}
+
+<!-- ════════ HOME PAGE ════════ -->
+<div class="overflow-x-hidden">
+
+  <!-- ── Hero Section ── -->
+  <section class="relative px-8 lg:px-16 pt-16 pb-20 grid lg:grid-cols-2 gap-12 items-center max-w-[1400px] mx-auto min-h-[600px]">
+
+    <!-- Ambient glows -->
+    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <!-- Left: Copy -->
+    <div class="z-10">
+      <div class="inline-flex items-center gap-2 bg-secondary-container/15 border border-secondary/20 rounded-full px-4 py-1.5 mb-6">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="text-secondary text-[11px] font-bold tracking-[0.15em] uppercase">Student @ Fab Academy 2026 · Kochi</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-headline font-extrabold text-on-background leading-[0.9] tracking-tighter mb-6">
+        Nadec's <span class="text-primary italic">Fab Academy</span> Journey
+      </h1>
+
+      <p class="text-on-surface-variant text-lg max-w-xl mb-8 leading-relaxed font-body">
+        A technical odyssey exploring the boundaries of digital fabrication, engineering precision, and creative prototyping — from CAD to circuits to final builds.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="{{ $bp }}/docs/assignment/week-9/"
+           class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed px-7 py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all shadow-lg"
+           style="box-shadow:0 8px 24px rgba(121,176,255,0.2);">
+          View This Week's Documentation
+          <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+        </a>
+        <a href="{{ $bp }}/docs/final-project/"
+           class="inline-flex items-center gap-2 bg-surface-container-high border border-outline-variant/20 text-on-surface px-7 py-3.5 rounded-xl font-bold text-sm hover:bg-surface-variant transition-all">
+          Final Project
+          <span class="material-symbols-outlined" style="font-size:18px;">rocket_launch</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Profile image + chip -->
+    <div class="relative flex justify-center lg:justify-end z-10">
+      <div class="absolute -top-10 right-0 w-72 h-72 bg-primary/8 blur-[80px] rounded-full pointer-events-none"></div>
+      <div class="absolute -bottom-10 left-0 w-72 h-72 bg-secondary/8 blur-[80px] rounded-full pointer-events-none"></div>
+
+      <!-- Gradient ring + photo -->
+      <div class="relative w-72 h-72 md:w-[400px] md:h-[400px] rounded-full p-[3px]"
+           style="background:linear-gradient(135deg,#79b0ff,#ea73fb,#ffac54);">
+        <div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low">
+          <img src="{{ $bp }}/images/about-me/dp.jpeg"
+               alt="Nadec Biju"
+               class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+               loading="eager"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Floating chip -->
+      <div class="absolute bottom-8 right-0 md:-right-4 bg-surface-container-highest/90 backdrop-blur-md px-4 py-3 rounded-2xl flex items-center gap-3"
+           style="border:1px solid rgba(255,255,255,0.06); box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+        <div class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined" style="font-size:20px;">precision_manufacturing</span>
+        </div>
+        <div>
+          <p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Active Week</p>
+          <p class="text-sm font-bold text-on-surface">Week 08 – Electronics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Bento Grid Cards ── -->
+  <section class="px-8 lg:px-16 pb-16 max-w-[1400px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Weekly Assignments Card -->
+      <a href="{{ $bp }}/docs/assignment/"
+         class="group relative bg-surface-container-high rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 block"
+         style="box-shadow:0 0 0 1px rgba(255,255,255,0.04);">
+        <div class="h-44 relative overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2e5yBPJTelUOzM1E0q3bka_B2piyKBSfIKed1egZbZvrnIdm2TK4XxIXNdAa2cHUSEUPNWIow7DjtqMmFSUH6BrWesfWpBj4RkTcimz8SO_hevWXdz14pCuAtYrOw914UM__DniyarcbAJmCEQbjkbmPrZHzwLkO6EFgZsi7Q4J1UcVzAXq5qMFp998kWcmtafiMS3Zfo_5CbhoCSz-mu945WZY319bTYko77QP5p-9ygQ2d_0De-6d5mV2IqI7DRB8ZNNZHMJKmg"
+               alt="Electronics Lab"
+               class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-500"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-surface-container-high/20 to-transparent"></div>
+        </div>
+        <div class="p-7">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-2.5 bg-primary/10 rounded-xl text-primary">
+              <span class="material-symbols-outlined" style="font-size:22px;">event_list</span>
+            </div>
+            <span class="text-on-surface-variant text-[10px] font-mono uppercase tracking-widest">20 WEEKS</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold mb-2">Weekly Assignments</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-5 font-body">Full log of technical documentation from CAD design to embedded programming.</p>
+          <span class="inline-flex items-center gap-1.5 text-primary font-bold text-sm group-hover:translate-x-2 transition-transform duration-300">
+            Explore Logs
+            <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Final Project Card -->
+      <a href="{{ $bp }}/docs/final-project/"
+         class="group relative bg-surface-container-high rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 block"
+         style="box-shadow:0 0 0 1px rgba(255,255,255,0.04);">
+        <div class="h-44 relative overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9IEsWbW7zDPdlROB8gwDZGwxI08-cV58-xqtPCpv2tRLWqGkig_goBvhDvrLUFrEoLsvMC7H34-r93jdpOnWgRzxfh-2Hk2qPWFMW27d3mZJPqsX1YQRn5m4Cff_o35mBdZ_7wU5zEhCad7N2-7_54HWfw-i-wNqEHxqryK0f4SCDJMQ22f-5H72fmiPefDYJxD8Y7kF5eBCy2sYEJGegCaelGer7a_aZD2K_VEEoOMjJrS-dI3Jhv6Piao0m-pQpTA-mUFUEvS1S"
+               alt="Final Project"
+               class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-500"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-surface-container-high/20 to-transparent"></div>
+        </div>
+        <div class="p-7">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-2.5 bg-secondary/10 rounded-xl text-secondary">
+              <span class="material-symbols-outlined" style="font-size:22px;">rocket_launch</span>
+            </div>
+            <span class="text-secondary text-[10px] font-bold px-2 py-0.5 rounded bg-secondary/10 uppercase tracking-tight">In Progress</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold mb-2">Final Project</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-5 font-body">The culmination of the course: a Smart Tool Cabinet with IoT and biometric access.</p>
+          <span class="inline-flex items-center gap-1.5 text-secondary font-bold text-sm group-hover:translate-x-2 transition-transform duration-300">
+            Development Phase
+            <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- About Me Card -->
+      <a href="{{ $bp }}/docs/about-me/"
+         class="group relative bg-surface-container-high rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 block"
+         style="box-shadow:0 0 0 1px rgba(255,255,255,0.04);">
+        <div class="h-44 relative overflow-hidden">
+          <img src="{{ $bp }}/images/about-me/dp.jpeg"
+               alt="Nadec Biju"
+               class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-500"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-surface-container-high/20 to-transparent"></div>
+        </div>
+        <div class="p-7">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-2.5 bg-tertiary/10 rounded-xl text-tertiary">
+              <span class="material-symbols-outlined" style="font-size:22px;">person_search</span>
+            </div>
+            <span class="text-on-surface-variant text-[10px] font-mono uppercase tracking-widest">PROFILE</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold mb-2">About Me</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-5 font-body">Mechanical Engineering student at CUSAT exploring digital fabrication and robotics.</p>
+          <span class="inline-flex items-center gap-1.5 text-tertiary font-bold text-sm group-hover:translate-x-2 transition-transform duration-300">
+            My Story
+            <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Interactive Tools ── -->
+  <section class="px-8 lg:px-16 pb-12 max-w-[1400px] mx-auto">
+    <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-5">Interactive Tools</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+      <a href="{{ $bp }}/docs/assignment/week-3/laser-gauge-tool/"
+         class="group flex items-center gap-4 p-5 rounded-2xl hover:brightness-110 transition-all"
+         style="background:rgba(121,176,255,0.12); border:1px solid rgba(121,176,255,0.25);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(121,176,255,0.2); color:#79b0ff;">
+          <span class="material-symbols-outlined" style="font-size:20px;">straighten</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-bold" style="color:#79b0ff;">Laser Kerf Calculator</p>
+          <p class="text-[11px] text-white/60">Week 3 – CNC Cutting</p>
+        </div>
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-all flex-shrink-0" style="font-size:16px; color:#79b0ff;">arrow_forward</span>
+      </a>
+
+      <a href="{{ $bp }}/docs/assignment/week-4/nb6-boy/"
+         class="group flex items-center gap-4 p-5 rounded-2xl hover:brightness-110 transition-all"
+         style="background:rgba(234,115,251,0.12); border:1px solid rgba(234,115,251,0.25);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(234,115,251,0.2); color:#ea73fb;">
+          <span class="material-symbols-outlined" style="font-size:20px;">sports_esports</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-bold" style="color:#ea73fb;">NB6-Boy Highscores</p>
+          <p class="text-[11px] text-white/60">Week 4 – Embedded Programming</p>
+        </div>
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-all flex-shrink-0" style="font-size:16px; color:#ea73fb;">arrow_forward</span>
+      </a>
+
+      <a href="{{ $bp }}/docs/assignment/week-7/chair-4-bar-linkage-calculator/"
+         class="group flex items-center gap-4 p-5 rounded-2xl hover:brightness-110 transition-all"
+         style="background:rgba(255,172,84,0.12); border:1px solid rgba(255,172,84,0.25);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,172,84,0.2); color:#ffac54;">
+          <span class="material-symbols-outlined" style="font-size:20px;">settings_motion_mode</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-bold" style="color:#ffac54;">4-Bar Linkage Calculator</p>
+          <p class="text-[11px] text-white/60">Week 7 – CNC Milling</p>
+        </div>
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-all flex-shrink-0" style="font-size:16px; color:#ffac54;">arrow_forward</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Stats Strip ── -->
+  <section class="px-8 lg:px-16 pb-20 max-w-[1400px] mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 bg-surface-container-low rounded-3xl overflow-hidden"
+         style="border:1px solid rgba(255,255,255,0.04);">
+      <div class="text-center p-8 md:p-10">
+        <div class="text-4xl font-headline font-black text-primary mb-1">08</div>
+        <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Weeks Done</div>
+      </div>
+      <div class="text-center p-8 md:p-10" style="border-left:1px solid rgba(255,255,255,0.05);">
+        <div class="text-4xl font-headline font-black text-secondary mb-1">20+</div>
+        <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Project Logs</div>
+      </div>
+      <div class="text-center p-8 md:p-10" style="border-left:1px solid rgba(255,255,255,0.05); border-top:1px solid rgba(255,255,255,0.05);">
+        <div class="text-4xl font-headline font-black text-tertiary mb-1">06</div>
+        <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Machines Used</div>
+      </div>
+      <div class="text-center p-8 md:p-10" style="border-left:1px solid rgba(255,255,255,0.05); border-top:1px solid rgba(255,255,255,0.05);">
+        <div class="text-4xl font-headline font-black text-on-surface mb-1">01</div>
+        <div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Dream Project</div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+{{ end }}

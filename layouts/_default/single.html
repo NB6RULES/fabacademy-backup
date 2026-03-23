@@ -1,0 +1,172 @@
+{{ define "main" }}
+{{- $bp := (urls.Parse site.BaseURL).Path | strings.TrimSuffix "/" -}}
+
+<!-- ════════ SINGLE / DOCUMENTATION PAGE ════════ -->
+<div class="flex min-h-screen">
+
+  <!-- ── Main article column ── -->
+  <div class="flex-1 min-w-0 xl:pr-72">
+    <div class="max-w-3xl mx-auto px-8 py-12">
+
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-1.5 text-[11px] text-on-surface-variant mb-8 uppercase tracking-tight flex-wrap">
+        <a href="{{ $bp }}/" class="hover:text-primary transition-colors">Home</a>
+        {{ range .Ancestors.Reverse }}
+          {{ if and (ne .Kind "home") (ne .RelPermalink (printf "%s/docs/" $bp)) }}
+          <span class="material-symbols-outlined" style="font-size:11px;">chevron_right</span>
+          <a href="{{ .RelPermalink }}" class="hover:text-primary transition-colors">{{ .Title }}</a>
+          {{ end }}
+        {{ end }}
+        <span class="material-symbols-outlined" style="font-size:11px;">chevron_right</span>
+        <span class="text-secondary font-bold">{{ .Title }}</span>
+      </nav>
+
+      <!-- Hero header -->
+      <header class="mb-12">
+        <!-- Tags / badges -->
+        {{ with .Params.tags }}
+        <div class="flex flex-wrap gap-2 mb-5">
+          {{ range . }}
+          <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest"
+                style="background:rgba(234,115,251,0.12); color:#ea73fb; border:1px solid rgba(234,115,251,0.2);">
+            {{ . }}
+          </span>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-background mb-4 leading-tight">
+          {{ .Title }}
+        </h1>
+
+        {{ with .Description }}
+        <p class="text-xl text-on-surface-variant font-light leading-relaxed max-w-2xl">{{ . }}</p>
+        {{ end }}
+
+        <!-- Meta row -->
+        <div class="flex flex-wrap items-center gap-4 mt-6 pt-6" style="border-top:1px solid rgba(72,72,71,0.4);">
+          {{ with .Date }}
+          <div class="flex items-center gap-1.5 text-on-surface-variant text-xs">
+            <span class="material-symbols-outlined" style="font-size:14px;">calendar_today</span>
+            <time>{{ .Format "Jan 02, 2006" }}</time>
+          </div>
+          {{ end }}
+          {{ if .ReadingTime }}
+          <div class="flex items-center gap-1.5 text-on-surface-variant text-xs">
+            <span class="material-symbols-outlined" style="font-size:14px;">schedule</span>
+            <span>{{ .ReadingTime }} min read</span>
+          </div>
+          {{ end }}
+          {{ with .GitInfo }}
+          <div class="flex items-center gap-1.5 text-on-surface-variant text-xs">
+            <span class="material-symbols-outlined" style="font-size:14px;">edit</span>
+            <span>Updated {{ .AuthorDate.Format "Jan 02" }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </header>
+
+      <!-- ── Article Content ── -->
+      <article class="prose-neon">
+        {{- .Content | replaceRE `src="(/images/[^"]*)"` (printf `src="%s$1"` $bp) | safeHTML -}}
+      </article>
+
+      <!-- ── Prev / Next Navigation ── -->
+      <footer class="mt-16 pt-8" style="border-top:1px solid rgba(72,72,71,0.4);">
+        <div class="flex flex-col sm:flex-row justify-between gap-4">
+
+          {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}"
+             class="group flex flex-col gap-1.5 p-5 rounded-xl hover:bg-surface-container-low transition-all flex-1"
+             style="border:1px solid rgba(72,72,71,0.3);">
+            <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest flex items-center gap-1">
+              <span class="material-symbols-outlined" style="font-size:12px;">arrow_back</span> Previous
+            </span>
+            <span class="text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">{{ .Title }}</span>
+          </a>
+          {{ end }}
+
+          {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}"
+             class="group flex flex-col gap-1.5 p-5 rounded-xl hover:bg-surface-container-low transition-all text-right flex-1"
+             style="border:1px solid rgba(72,72,71,0.3);">
+            <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest flex items-center gap-1 justify-end">
+              Next <span class="material-symbols-outlined" style="font-size:12px;">arrow_forward</span>
+            </span>
+            <span class="text-base font-bold text-on-surface group-hover:text-secondary transition-colors leading-snug">{{ .Title }}</span>
+          </a>
+          {{ end }}
+
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- ── Right: Table of Contents (fixed, desktop only) ── -->
+  {{ if .TableOfContents }}
+  <aside class="hidden xl:block fixed right-0 top-[57px] bottom-0 w-72 p-8 overflow-y-auto z-30"
+         style="background:#0e0e0e; border-left:1px solid rgba(72,72,71,0.3);">
+    <div class="sticky top-6">
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-5">On This Page</p>
+      <div class="toc-nav text-sm">
+        {{ .TableOfContents }}
+      </div>
+
+      <!-- Resources widget (if any files) -->
+      {{ with .Params.resources }}
+      <div class="mt-8 p-5 rounded-xl bg-surface-container-high" style="border:1px solid rgba(121,176,255,0.1);">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-3">Resources</p>
+        <ul class="space-y-2">
+          {{ range . }}
+          <li>
+            <a href="{{ . }}" class="text-[11px] text-on-surface-variant hover:text-white flex items-center gap-2 transition-colors">
+              <span class="material-symbols-outlined" style="font-size:14px;">download</span>
+              {{ . | path.Base }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+    </div>
+  </aside>
+  {{ end }}
+
+</div>
+
+<style>
+  /* ── TOC sidebar link styling ── */
+  .toc-nav nav ul { list-style: none; padding: 0; margin: 0; }
+  .toc-nav nav ul li { margin-bottom: 0.25rem; }
+  .toc-nav nav ul a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #adaaaa;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.3rem 0;
+    transition: color 0.15s;
+  }
+  .toc-nav nav ul a::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #484847;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .toc-nav nav ul a:hover { color: #79b0ff; }
+  .toc-nav nav ul a:hover::before { background: #79b0ff; }
+  /* nested TOC */
+  .toc-nav nav ul ul { padding-left: 1rem; }
+  .toc-nav nav ul ul a { font-size: 0.75rem; color: #767575; }
+  .toc-nav nav ul ul a:hover { color: #ea73fb; }
+  .toc-nav nav ul ul a:hover::before { background: #ea73fb; }
+</style>
+
+{{ end }}

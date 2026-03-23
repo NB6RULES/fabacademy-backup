@@ -1,0 +1,178 @@
+{{ define "main" }}
+{{- $bp := (urls.Parse site.BaseURL).Path | strings.TrimSuffix "/" -}}
+
+<!-- ════════ ABOUT ME PAGE ════════ -->
+<div class="flex min-h-screen">
+
+  <!-- ── Main column ── -->
+  <div class="flex-1 min-w-0 xl:pr-80">
+    <div class="max-w-3xl mx-auto px-8 py-12">
+
+      <!-- Profile Hero -->
+      <header class="mb-12">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8 mb-8">
+
+          <!-- Avatar with gradient ring -->
+          <div class="relative flex-shrink-0">
+            <div class="w-32 h-32 rounded-full p-[3px]"
+                 style="background:linear-gradient(135deg,#79b0ff,#ea73fb,#ffac54);">
+              <div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low">
+                <img src="{{ $bp }}/images/about-me/dp.jpeg"
+                     alt="Nadec Biju"
+                     class="w-full h-full object-cover"/>
+              </div>
+            </div>
+            <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center border-2 border-background"
+                 style="color:#ea73fb;">
+              <span class="material-symbols-outlined" style="font-size:14px;">verified</span>
+            </div>
+          </div>
+
+          <!-- Identity -->
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-3"
+                 style="background:rgba(234,115,251,0.1); border:1px solid rgba(234,115,251,0.2);">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              <span class="text-[10px] font-bold text-secondary uppercase tracking-[0.15em]">Student @ Fab Academy 2026 · Kochi</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-background mb-3 leading-tight">
+              Nadec <span class="text-primary italic">Biju</span>
+            </h1>
+            <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">
+              Mechanical Engineering student at CUSAT (2022–2026), exploring digital fabrication, robotics, and building things that actually work.
+            </p>
+
+            <!-- Quick stat chips -->
+            <div class="flex flex-wrap gap-3 mt-4">
+              <div class="flex items-center gap-1.5 text-xs text-on-surface-variant px-3 py-1.5 rounded-lg bg-surface-container-high">
+                <span class="material-symbols-outlined" style="font-size:14px; color:#79b0ff;">school</span>
+                CUSAT · B.Tech ME
+              </div>
+              <div class="flex items-center gap-1.5 text-xs text-on-surface-variant px-3 py-1.5 rounded-lg bg-surface-container-high">
+                <span class="material-symbols-outlined" style="font-size:14px; color:#ea73fb;">location_on</span>
+                Kochi, Kerala
+              </div>
+              <div class="flex items-center gap-1.5 text-xs text-on-surface-variant px-3 py-1.5 rounded-lg bg-surface-container-high">
+                <span class="material-symbols-outlined" style="font-size:14px; color:#ffac54;">precision_manufacturing</span>
+                Week 08 Active
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="height:1px; background:linear-gradient(90deg,rgba(121,176,255,0.3),rgba(234,115,251,0.3),transparent);"></div>
+      </header>
+
+      <!-- Page Content -->
+      <article class="prose-neon">
+        {{- .Content | replaceRE `src="(/images/[^"]*)"` (printf `src="%s$1"` $bp) | safeHTML -}}
+      </article>
+
+    </div>
+  </div>
+
+  <!-- ── Right Sidebar ── -->
+  <aside class="hidden xl:flex flex-col fixed right-0 top-[57px] bottom-0 w-80 p-8 overflow-y-auto"
+         style="border-left:1px solid rgba(72,72,71,0.3);">
+
+    <!-- Skills -->
+    <div class="mb-8">
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-5">Skills</p>
+      <div class="space-y-4">
+
+        {{ $skills := slice
+            (dict "name" "CAD / CAM" "pct" 85 "color" "#79b0ff")
+            (dict "name" "Electronics" "pct" 72 "color" "#ea73fb")
+            (dict "name" "Digital Fabrication" "pct" 78 "color" "#ffac54")
+            (dict "name" "Embedded Systems" "pct" 65 "color" "#79b0ff")
+            (dict "name" "3D Printing" "pct" 80 "color" "#ea73fb")
+        }}
+        {{ range $skills }}
+        <div>
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="text-xs text-on-surface font-medium">{{ .name }}</span>
+            <span class="text-[11px] text-on-surface-variant font-mono">{{ .pct }}%</span>
+          </div>
+          <div class="h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-700"
+                 style="width:{{ .pct }}%; background:{{ .color }};"></div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="mb-8" style="height:1px; background:rgba(72,72,71,0.4);"></div>
+
+    <!-- Tools & Tech -->
+    <div class="mb-8">
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Tools & Tech</p>
+      <div class="flex flex-wrap gap-2">
+        {{ $tools := slice "Fusion 360" "KiCad" "FreeCAD" "Arduino" "GIMP" "VS Code" "Git" "Hugo" "Laser Cutter" "CNC Mill" }}
+        {{ range $tools }}
+        <span class="px-2.5 py-1 rounded-lg text-[11px] font-medium text-on-surface-variant"
+              style="background:rgba(255,255,255,0.04); border:1px solid rgba(72,72,71,0.4);">
+          {{ . }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="mb-8" style="height:1px; background:rgba(72,72,71,0.4);"></div>
+
+    <!-- Quick Stats -->
+    <div class="mb-8">
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Quick Stats</p>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="p-3 rounded-xl bg-surface-container-high text-center">
+          <div class="text-2xl font-black font-headline text-primary">08</div>
+          <div class="text-[10px] text-on-surface-variant mt-0.5">Weeks Done</div>
+        </div>
+        <div class="p-3 rounded-xl bg-surface-container-high text-center">
+          <div class="text-2xl font-black font-headline text-secondary">20+</div>
+          <div class="text-[10px] text-on-surface-variant mt-0.5">Logs</div>
+        </div>
+        <div class="p-3 rounded-xl bg-surface-container-high text-center">
+          <div class="text-2xl font-black font-headline text-tertiary">06</div>
+          <div class="text-[10px] text-on-surface-variant mt-0.5">Machines</div>
+        </div>
+        <div class="p-3 rounded-xl bg-surface-container-high text-center">
+          <div class="text-2xl font-black font-headline text-on-surface">01</div>
+          <div class="text-[10px] text-on-surface-variant mt-0.5">Dream Build</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="mb-8" style="height:1px; background:rgba(72,72,71,0.4);"></div>
+
+    <!-- Certifications -->
+    <div>
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Certifications</p>
+      <div class="space-y-3">
+        {{ $certs := slice
+            (dict "name" "B.Tech Mechanical Eng." "org" "CUSAT · 2022–2026" "color" "#ea73fb")
+        }}
+        {{ range $certs }}
+        <div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-high">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+               style="background:{{ .color }}20;">
+            <span class="material-symbols-outlined" style="font-size:16px; color:{{ .color }};">workspace_premium</span>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-surface">{{ .name }}</p>
+            <p class="text-[11px] text-on-surface-variant">{{ .org }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+{{ end }}

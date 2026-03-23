@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__stitch__get_screen",
+      "WebFetch(domain:contribution.usercontent.google.com)",
+      "Bash(curl -s \"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2JiNTJlNjFiMWQ5MjQ1ZDI5ZGNmZjU1NmYxNWVhYzgwEgsSBxCpl96yzwYYAZIBJAoKcHJvamVjdF9pZBIWQhQxMzI3MDA5NTQzMzUxNzkxODUwNA&filename=&opi=89354086\" -o /tmp/final_project.html)",
+      "Bash(curl -s \"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzdmZWEwMWI2Mzg2ZjQzNzJiYmRjZGVhODEyYzgxNjY3EgsSBxCpl96yzwYYYAZIBJAoKcHJvamVjdF9pZBIWQhQxMzI3MDA5NTQzMzUxNzkxODUwNA&filename=&opi=89354086\" -o /tmp/documentation.html)",
+      "Read(//tmp/**)",
+      "Bash(hugo --minify)",
+      "Bash(for i:*)",
+      "Bash(do)",
+      "Bash(echo \"=== week-$i ===\")",
+      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/content/docs/assignment/week-$i/**)",
+      "Bash(done)",
+      "Bash(tasklist*)",
+      "Bash(find 'C:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/' -maxdepth 2 -name *.toml -o -name config.toml -o -name config.yaml)",
+      "Bash(hugo version:*)",
+      "Bash(for f:*)",
+      "Bash(echo \"=== $f.html ===\")",
+      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/themes/hugo-book/layouts/_markup/**)",
+      "Bash(for dir:*)",
+      "Bash(do echo:*)",
+      "Bash(echo \"=== $dir ===\")",
+      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/content/docs/assignment/**)",
+      "Bash(echo -n \"$dir/index.html: \")",
+      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/public/docs/assignment/$dir/**)",
+      "Bash(wc -l \"c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/public/docs/assignment/week-\"*/index.html)",
+      "Bash(grep -o href=\"\"[^\"\"]*week-[^\"\"]*\"\" 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/public/docs/assignment/index.html')",
+      "Bash(find 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/layouts/shortcodes' -name NB6-boy*)",
+      "Bash(head -1 grep -o 'src=[^>]*Fusion-Cup[^>]*' \"c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/public/docs/assignment/week-2/index.html\")",
+      "Bash(python3 -c \":*)",
+      "Bash(grep -r asciinema 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju' --include=*.html --include=*.md)",
+      "Bash(grep -r book.min 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju' --include=*.html --include=*.md)",
+      "Bash(grep -r en.search.min 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju' --include=*.html --include=*.md)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"C:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju\" && hugo --minify 2>/dev/null; tasklist 2>/dev/null | grep -qi \"hugo.exe\" || hugo server --disableFastRender &",
+            "timeout": 60,
+            "statusMessage": "Building site & starting live server...",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

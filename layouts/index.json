@@ -1,0 +1,12 @@
+{{- $pages := slice -}}
+{{- range .Site.Pages -}}
+  {{- if and (ne .Kind "home") (ne .Kind "taxonomy") (ne .Kind "term") (ne .Kind "sitemap") -}}
+    {{- $pages = $pages | append (dict
+      "title"   .Title
+      "url"     .RelPermalink
+      "section" .Section
+      "summary" (.Summary | plainify | truncate 160)
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages | jsonify -}}
