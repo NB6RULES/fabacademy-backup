@@ -1403,7 +1403,7 @@ This decision was made after careful consideration of:
 
 The Smart Tool Box checks all these boxes and presents an exciting opportunity to dive deep into RFID technology, microcontroller programming, sensor integration, and custom enclosure design. I'm particularly drawn to this project because it addresses a real problem in collaborative maker spaces: tool tracking and usage management.
 
-{{< button relref="/" >}}View Final Project Details{{< /button >}}
+{{< button relref="/docs/final-project" >}}View Final Project Details{{< /button >}}
 
 ---
 

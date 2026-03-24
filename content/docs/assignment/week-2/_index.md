@@ -813,13 +813,5 @@ HandBrake allowed me to significantly reduce video file sizes while keeping the 
 This week helped me build a strong foundation in understanding **how design files are created and prepared for fabrication**.  
 I learned the clear difference between raster and vector graphics, explored multiple 3D tools, and realized the importance of choosing the right software for the right purpose.
 
----
-
-<div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
-  <a href="/files/week-2.rar" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: white; color: #667eea; font-weight: bold; font-size: 16px; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.25);'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15);'">
-    ⬇️ Download All Files from Week 2
-  </a>
-</div>
-
----
+------
 

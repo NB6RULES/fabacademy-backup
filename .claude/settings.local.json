@@ -31,7 +31,12 @@
       "Bash(python3 -c \":*)",
       "Bash(grep -r asciinema 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju' --include=*.html --include=*.md)",
       "Bash(grep -r book.min 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju' --include=*.html --include=*.md)",
-      "Bash(grep -r en.search.min 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju' --include=*.html --include=*.md)"
+      "Bash(grep -r en.search.min 'c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju' --include=*.html --include=*.md)",
+      "Bash(ssh -T git@gitlab.fabcloud.org)",
+      "Read(//c/Users/nadec/.ssh/**)",
+      "Bash(ssh-add ~/.ssh/id_ed25519)",
+      "Bash(ssh-add -l)",
+      "Bash(ssh -vT git@gitlab.fabcloud.org)"
     ]
   },
   "hooks": {

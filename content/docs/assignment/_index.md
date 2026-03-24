@@ -15,7 +15,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-1/week-1.jpg" alt="Week 1" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 1</span>
     </div>
@@ -25,7 +25,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-2/week-2.jpg" alt="Week 2" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 2</span>
     </div>
@@ -35,7 +35,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-3/week-3.jpg" alt="Week 3" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 3</span>
     </div>
@@ -45,7 +45,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-4/week-4.jpg" alt="Week 4" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 4</span>
     </div>
@@ -55,7 +55,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-5/week-5.jpg" alt="Week 5" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 5</span>
     </div>
@@ -65,7 +65,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-6/week-6.jpg" alt="Week 6" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 6</span>
     </div>
@@ -75,7 +75,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-7/week-07.jpg" alt="Week 7" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 7</span>
     </div>
@@ -85,7 +85,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-8/week-8.jpg" alt="Week 8" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 8</span>
     </div>
@@ -95,7 +95,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-9/week-9.jpg" alt="Week 9" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 9</span>
     </div>
@@ -105,7 +105,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-10/week-10.jpg" alt="Week 10" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 10</span>
     </div>
@@ -115,7 +115,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-11/week-11.jpg" alt="Week 11" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 11</span>
     </div>
@@ -125,7 +125,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-12/week-12.jpg" alt="Week 12" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 12</span>
     </div>
@@ -135,7 +135,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-13/week-13.jpg" alt="Week 13" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 13</span>
     </div>
@@ -145,7 +145,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-14/week-14.jpg" alt="Week 14" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 14</span>
     </div>
@@ -155,7 +155,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-15/week-15.jpg" alt="Week 15" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 15</span>
     </div>
@@ -165,7 +165,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-16/week-16.jpg" alt="Week 16" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 16</span>
     </div>
@@ -175,7 +175,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-17/week-17.jpg" alt="Week 17" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 17</span>
     </div>
@@ -185,7 +185,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-18/week-18.jpg" alt="Week 18" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 18</span>
     </div>
@@ -195,7 +195,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-19/week-19.jpg" alt="Week 19" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 19</span>
     </div>
@@ -205,7 +205,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
     <div class="assignment-square">
       <div class="image-area">
         <img src="/images/week-20/week-20.jpg" alt="Week 20" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <svg class="placeholder-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
       <span class="week-number">Week 20</span>
     </div>
@@ -235,25 +235,38 @@ Welcome to the assignments section. Click on any week to view the assignment det
   aspect-ratio: 1;
   background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  overflow: hidden;
 }
 
 .assignment-card:hover .assignment-square {
   box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-  background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
 }
 
+/* Image fills the entire square, sits on top */
+.card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Fallback (icon + label) sits behind the image */
 .image-area {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
 }
 
 .placeholder-icon {
@@ -264,31 +277,17 @@ Welcome to the assignments section. Click on any week to view the assignment det
 }
 
 .week-number {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: white;
   font-weight: 700;
   font-size: 1.1em;
   text-align: center;
-  padding: 12px;
-  flex-shrink: 0;
-}
-
-/* Dark mode support */
-:root.dark .assignment-square,
-.dark .assignment-square {
-  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-:root.dark .assignment-card:hover .assignment-square,
-.dark .assignment-card:hover .assignment-square {
-  background: linear-gradient(135deg, #0b5ed7 0%, #084298 100%);
-  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.5);
-}
-
-:root.dark .image-area,
-.dark .image-area {
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  padding: 14px 12px 12px;
+  z-index: 1;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
 }
 
 /* Responsive design */
@@ -317,3 +316,17 @@ Welcome to the assignments section. Click on any week to view the assignment det
   }
 }
 </style>
+
+<script>
+document.querySelectorAll('.card-image').forEach(function(img) {
+  function hideLabel() {
+    var wn = img.closest('.assignment-square').querySelector('.week-number');
+    if (wn) wn.style.display = 'none';
+  }
+  if (img.complete && img.naturalWidth > 0) {
+    hideLabel();
+  } else {
+    img.addEventListener('load', hideLabel);
+  }
+});
+</script>
