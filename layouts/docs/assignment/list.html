@@ -1,0 +1,125 @@
+{{ define "main" }}
+{{- $bp := (urls.Parse site.BaseURL).Path | strings.TrimSuffix "/" -}}
+
+{{ if strings.Contains .RelPermalink "/week-" }}
+
+  <!-- ── Week page: content + right ToC sidebar ── -->
+  <div class="flex min-h-screen">
+
+    <!-- Main content -->
+    <div class="flex-1 min-w-0 xl:pr-72">
+      <div class="max-w-4xl mx-auto px-8 py-12 prose-neon">
+        {{- .Content | replaceRE `src="(/images/[^"]*)"` (printf `src="%s$1"` $bp) | safeHTML -}}
+      </div>
+
+      {{/* ── Dynamic download button ── */}}
+      {{- $weekSlug := .File.Dir | path.Base -}}
+      {{- $rarFile := printf "static/files/%s.rar" $weekSlug -}}
+      {{- $hasRar := os.FileExists $rarFile -}}
+      <div class="max-w-4xl mx-auto px-8 pb-16">
+        {{ if $hasRar }}
+        <a href="{{ $bp }}/files/{{ $weekSlug }}.rar"
+           download
+           class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200"
+           style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; box-shadow:0 4px 20px rgba(102,126,234,0.35);"
+           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.5)';"
+           onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.35)';">
+          <span class="material-symbols-outlined" style="font-size:20px;">download</span>
+          Download All Files — {{ .Title }}
+        </a>
+        {{ else }}
+          {{ if eq $weekSlug "week-1" }}
+          <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju"
+             target="_blank" rel="noopener"
+             class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200"
+             style="background:#20201f; color:#adaaaa; border:1px solid #484847;"
+             onmouseover="this.style.color='#ffffff'; this.style.borderColor='#767575';"
+             onmouseout="this.style.color='#adaaaa'; this.style.borderColor='#484847';">
+            <span class="material-symbols-outlined" style="font-size:20px;">open_in_new</span>
+            View Source Files on GitLab
+          </a>
+          {{ else }}
+          <a href="https://github.com/NB6RULES/Nadec-Biju-Fabacademy-Files"
+             target="_blank" rel="noopener"
+             class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200"
+             style="background:#20201f; color:#adaaaa; border:1px solid #484847;"
+             onmouseover="this.style.color='#ffffff'; this.style.borderColor='#767575';"
+             onmouseout="this.style.color='#adaaaa'; this.style.borderColor='#484847';">
+            <span class="material-symbols-outlined" style="font-size:20px;">open_in_new</span>
+            View Source Files on GitHub
+          </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Right ToC sidebar -->
+    <aside id="toc-sidebar"
+           class="hidden xl:flex flex-col fixed right-0 top-[57px] bottom-0 w-72 overflow-y-auto hide-scrollbar py-8 px-5"
+           style="border-left:1px solid rgba(72,72,71,0.3); background:#0e0e0e;">
+
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4 px-1">On this page</p>
+
+      <nav id="toc-nav" class="toc-nav flex-1">
+        {{ .TableOfContents }}
+      </nav>
+
+    </aside>
+  </div>
+
+  <style>
+    /* ToC nav styling */
+    .toc-nav ul { list-style: none; padding: 0; margin: 0; }
+    .toc-nav li { margin: 0; }
+    .toc-nav a {
+      display: block;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      color: #767575;
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      border-radius: 0 0.25rem 0.25rem 0;
+      transition: color 0.15s, border-color 0.15s;
+      line-height: 1.4;
+    }
+    .toc-nav a:hover { color: #ffffff; border-left-color: #484847; }
+    .toc-nav a.active { color: #79b0ff; border-left-color: #79b0ff; font-weight: 600; }
+    /* Indent nested levels */
+    .toc-nav ul ul a { padding-left: 1.25rem; font-size: 0.7rem; }
+    .toc-nav ul ul ul a { padding-left: 2rem; }
+  </style>
+
+  <script>
+    (function() {
+      const tocLinks = document.querySelectorAll('#toc-nav a');
+      if (!tocLinks.length) return;
+
+      const headings = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { a, el: document.getElementById(id) };
+      }).filter(x => x.el);
+
+      function onScroll() {
+        const scrollY = window.scrollY + 100;
+        let active = headings[0];
+        for (const h of headings) {
+          if (h.el.offsetTop <= scrollY) active = h;
+        }
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.a.classList.add('active');
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+{{ else }}
+
+  <!-- ── Assignments index page ── -->
+  <div class="max-w-5xl mx-auto px-8 py-12 prose-neon">
+    {{- .Content | replaceRE `src="(/images/[^"]*)"` (printf `src="%s$1"` $bp) | safeHTML -}}
+  </div>
+
+{{ end }}
+{{ end }}

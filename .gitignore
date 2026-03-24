@@ -1,20 +1,5 @@
-# Ignore everything
-*
-
-# Allow public folder
-!public/
-!public/**
-
-# Allow themes (Hugo requires this to mount assets)
-!themes/
-!themes/**
-
-# Allow YAML files
-!*.yml
-!*.yaml
-
-# Allow README
-!README.md
-
-# Allow directories to be traversed
-!*/
+node_modules/
+resources/
+.hugo_build.lock
+error_log*.txt
+tmp_local*.html

@@ -1,18 +1,741 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Week 04 - Embedded Programming on Nadec FAB Academy Portfolio</title>
-    <link>https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/</link>
-    <description>Recent content in Week 04 - Embedded Programming on Nadec FAB Academy Portfolio</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>NB6-Boy Highscores</title>
-      <link>https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/</guid>
-      <description>&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html lang=&#34;en&#34;&gt;&#xD;&#xA;&lt;head&gt;&#xD;&#xA;  &lt;meta charset=&#34;UTF-8&#34; /&gt;&#xD;&#xA;  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34; /&gt;&#xD;&#xA;  &lt;meta name=&#34;color-scheme&#34; content=&#34;dark&#34; /&gt;&#xD;&#xA;  &lt;title&gt;NB6BOY — Leaderboard&lt;/title&gt;&#xD;&#xA;  &lt;link href=&#34;https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Share+Tech+Mono&amp;display=swap&#34; rel=&#34;stylesheet&#34; /&gt;&#xD;&#xA;  &lt;style&gt;&#xD;&#xA;     &#xD;&#xA;    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    :root {&#xD;&#xA;      color-scheme: dark;&#xD;&#xA;      --green:   #00ff88;&#xD;&#xA;      --green2:  #00cc66;&#xD;&#xA;      --green3:  #004422;&#xD;&#xA;      --amber:   #ffcc00;&#xD;&#xA;      --red:     #ff3355;&#xD;&#xA;      --dim:     #002211;&#xD;&#xA;      --bg:      #050e08;&#xD;&#xA;      --card:    #080f0b;&#xD;&#xA;      --border:  #00331a;&#xD;&#xA;      --glow:    0 0 8px #00ff8866, 0 0 24px #00ff8822;&#xD;&#xA;      --glow-lg: 0 0 16px #00ff88aa, 0 0 48px #00ff8833;&#xD;&#xA;      --scan-size: 3px;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    html {&#xD;&#xA;      scroll-behavior: smooth;&#xD;&#xA;      background: #050e08;  &#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    body {&#xD;&#xA;      background: var(--bg);&#xD;&#xA;      color: var(--green);&#xD;&#xA;      font-family: &#39;Share Tech Mono&#39;, monospace;&#xD;&#xA;      min-height: 100vh;&#xD;&#xA;      overflow-x: hidden;&#xD;&#xA;      position: relative;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    body::before {&#xD;&#xA;      content: &#39;&#39;;&#xD;&#xA;      position: fixed;&#xD;&#xA;      inset: 0;&#xD;&#xA;      background: repeating-linear-gradient(&#xD;&#xA;        to bottom,&#xD;&#xA;        transparent 0px,&#xD;&#xA;        transparent calc(var(--scan-size) - 1px),&#xD;&#xA;        rgba(0,0,0,0.18) calc(var(--scan-size) - 1px),&#xD;&#xA;        rgba(0,0,0,0.18) var(--scan-size)&#xD;&#xA;      );&#xD;&#xA;      pointer-events: none;&#xD;&#xA;      z-index: 1000;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    body::after {&#xD;&#xA;      content: &#39;&#39;;&#xD;&#xA;      position: fixed;&#xD;&#xA;      inset: 0;&#xD;&#xA;      background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.75) 100%);&#xD;&#xA;      pointer-events: none;&#xD;&#xA;      z-index: 999;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    header {&#xD;&#xA;      text-align: center;&#xD;&#xA;      padding: 3rem 1rem 1.5rem;&#xD;&#xA;      position: relative;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .logo {&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      font-size: clamp(1.2rem, 4vw, 2.4rem);&#xD;&#xA;      color: var(--green);&#xD;&#xA;      text-shadow: var(--glow-lg);&#xD;&#xA;      letter-spacing: 0.08em;&#xD;&#xA;      animation: flicker 8s infinite;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .logo span {&#xD;&#xA;      color: var(--amber);&#xD;&#xA;      text-shadow: 0 0 12px #ffcc00aa, 0 0 40px #ffcc0033;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .tagline {&#xD;&#xA;      font-size: 0.7rem;&#xD;&#xA;      color: var(--green2);&#xD;&#xA;      margin-top: 0.8rem;&#xD;&#xA;      letter-spacing: 0.3em;&#xD;&#xA;      text-transform: uppercase;&#xD;&#xA;      opacity: 0.7;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .status-bar {&#xD;&#xA;      display: flex;&#xD;&#xA;      justify-content: center;&#xD;&#xA;      gap: 2rem;&#xD;&#xA;      margin-top: 1.4rem;&#xD;&#xA;      font-size: 0.6rem;&#xD;&#xA;      color: var(--green2);&#xD;&#xA;      letter-spacing: 0.12em;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .status-dot {&#xD;&#xA;      display: inline-block;&#xD;&#xA;      width: 7px; height: 7px;&#xD;&#xA;      border-radius: 50%;&#xD;&#xA;      background: var(--green);&#xD;&#xA;      box-shadow: var(--glow);&#xD;&#xA;      margin-right: 6px;&#xD;&#xA;      animation: pulse 2s infinite;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .status-dot.amber { background: var(--amber); box-shadow: 0 0 8px #ffcc0088; }&#xD;&#xA;    .status-dot.red   { background: var(--red);   box-shadow: 0 0 8px #ff335588; }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    .divider {&#xD;&#xA;      width: 90%;&#xD;&#xA;      max-width: 1000px;&#xD;&#xA;      margin: 1rem auto;&#xD;&#xA;      height: 1px;&#xD;&#xA;      background: linear-gradient(to right, transparent, var(--green2), transparent);&#xD;&#xA;      box-shadow: 0 0 8px #00ff8844;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    .controls {&#xD;&#xA;      display: flex;&#xD;&#xA;      flex-wrap: wrap;&#xD;&#xA;      justify-content: center;&#xD;&#xA;      gap: 0.6rem;&#xD;&#xA;      padding: 0.8rem 1rem;&#xD;&#xA;      max-width: 1100px;&#xD;&#xA;      margin: 0 auto;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .filter-btn {&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      font-size: 0.45rem;&#xD;&#xA;      padding: 0.5rem 0.85rem;&#xD;&#xA;      background: transparent;&#xD;&#xA;      color: var(--green2);&#xD;&#xA;      border: 1px solid var(--border);&#xD;&#xA;      cursor: pointer;&#xD;&#xA;      letter-spacing: 0.05em;&#xD;&#xA;      text-transform: uppercase;&#xD;&#xA;      transition: all 0.15s;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .filter-btn:hover,&#xD;&#xA;    .filter-btn.active {&#xD;&#xA;      background: var(--green3);&#xD;&#xA;      color: var(--green);&#xD;&#xA;      border-color: var(--green2);&#xD;&#xA;      box-shadow: var(--glow);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .search-wrap {&#xD;&#xA;      position: relative;&#xD;&#xA;      flex: 1 1 200px;&#xD;&#xA;      max-width: 300px;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .search-wrap::before {&#xD;&#xA;      content: &#39;▶&#39;;&#xD;&#xA;      position: absolute;&#xD;&#xA;      left: 10px;&#xD;&#xA;      top: 50%;&#xD;&#xA;      transform: translateY(-50%);&#xD;&#xA;      font-size: 0.5rem;&#xD;&#xA;      color: var(--green2);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .search-input {&#xD;&#xA;      width: 100%;&#xD;&#xA;      font-family: &#39;Share Tech Mono&#39;, monospace;&#xD;&#xA;      font-size: 0.7rem;&#xD;&#xA;      padding: 0.5rem 0.5rem 0.5rem 1.6rem;&#xD;&#xA;      background: var(--card);&#xD;&#xA;      color: var(--green);&#xD;&#xA;      border: 1px solid var(--border);&#xD;&#xA;      outline: none;&#xD;&#xA;      letter-spacing: 0.06em;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .search-input:focus {&#xD;&#xA;      border-color: var(--green2);&#xD;&#xA;      box-shadow: var(--glow);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .search-input::placeholder { color: var(--green3); opacity: 1; }&#xD;&#xA;&#xD;&#xA;    .refresh-btn {&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      font-size: 0.45rem;&#xD;&#xA;      padding: 0.5rem 0.9rem;&#xD;&#xA;      background: var(--green3);&#xD;&#xA;      color: var(--green);&#xD;&#xA;      border: 1px solid var(--green2);&#xD;&#xA;      cursor: pointer;&#xD;&#xA;      letter-spacing: 0.05em;&#xD;&#xA;      transition: all 0.15s;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .refresh-btn:hover { box-shadow: var(--glow-lg); }&#xD;&#xA;    .refresh-btn:active { transform: scale(0.96); }&#xD;&#xA;    .refresh-btn.spinning { animation: spin 0.6s linear; }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    .grid {&#xD;&#xA;      display: grid;&#xD;&#xA;      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));&#xD;&#xA;      gap: 1.2rem;&#xD;&#xA;      max-width: 1100px;&#xD;&#xA;      margin: 0.5rem auto 3rem;&#xD;&#xA;      padding: 0 1.2rem;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    .card {&#xD;&#xA;      background: var(--card);&#xD;&#xA;      border: 1px solid var(--border);&#xD;&#xA;      position: relative;&#xD;&#xA;      overflow: hidden;&#xD;&#xA;      cursor: default;&#xD;&#xA;      transition: border-color 0.2s, transform 0.2s;&#xD;&#xA;      animation: fadeIn 0.4s both;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .card::before {&#xD;&#xA;      content: &#39;&#39;;&#xD;&#xA;      position: absolute;&#xD;&#xA;      top: 0; left: 0; right: 0;&#xD;&#xA;      height: 2px;&#xD;&#xA;      background: linear-gradient(to right, transparent, var(--green2), transparent);&#xD;&#xA;      opacity: 0;&#xD;&#xA;      transition: opacity 0.2s;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .card:hover {&#xD;&#xA;      border-color: var(--green2);&#xD;&#xA;      transform: translateY(-3px);&#xD;&#xA;      box-shadow: 0 8px 32px rgba(0,255,136,0.08);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .card:hover::before { opacity: 1; }&#xD;&#xA;&#xD;&#xA;    .card-header {&#xD;&#xA;      display: flex;&#xD;&#xA;      align-items: center;&#xD;&#xA;      justify-content: space-between;&#xD;&#xA;      padding: 0.85rem 1rem 0.6rem;&#xD;&#xA;      border-bottom: 1px solid var(--border);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .game-icon {&#xD;&#xA;      font-size: 1.2rem;&#xD;&#xA;      width: 2rem;&#xD;&#xA;      text-align: center;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .game-name {&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      font-size: 0.42rem;&#xD;&#xA;      color: var(--green);&#xD;&#xA;      letter-spacing: 0.04em;&#xD;&#xA;      flex: 1;&#xD;&#xA;      padding: 0 0.6rem;&#xD;&#xA;      line-height: 1.6;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .game-tag {&#xD;&#xA;      font-size: 0.5rem;&#xD;&#xA;      padding: 0.2rem 0.4rem;&#xD;&#xA;      border: 1px solid;&#xD;&#xA;      letter-spacing: 0.08em;&#xD;&#xA;      text-transform: uppercase;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .game-tag.solo  { color: #00aaff; border-color: #00aaff44; }&#xD;&#xA;    .game-tag.vs    { color: var(--amber); border-color: #ffcc0044; }&#xD;&#xA;    .game-tag.hard  { color: var(--red); border-color: #ff335544; }&#xD;&#xA;&#xD;&#xA;    .card-body {&#xD;&#xA;      padding: 1rem;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-row {&#xD;&#xA;      display: flex;&#xD;&#xA;      align-items: baseline;&#xD;&#xA;      gap: 0.5rem;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-label {&#xD;&#xA;      font-size: 0.55rem;&#xD;&#xA;      color: var(--green2);&#xD;&#xA;      letter-spacing: 0.12em;&#xD;&#xA;      opacity: 0.7;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-value {&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      font-size: 1.3rem;&#xD;&#xA;      color: var(--green);&#xD;&#xA;      text-shadow: var(--glow);&#xD;&#xA;      letter-spacing: 0.04em;&#xD;&#xA;      transition: all 0.3s;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-value.zero {&#xD;&#xA;      color: var(--green3);&#xD;&#xA;      text-shadow: none;&#xD;&#xA;      font-size: 1rem;&#xD;&#xA;      opacity: 0.5;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-value.loading {&#xD;&#xA;      animation: blink 1s step-end infinite;&#xD;&#xA;      font-size: 0.7rem;&#xD;&#xA;      opacity: 0.5;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-bar-wrap {&#xD;&#xA;      margin-top: 0.8rem;&#xD;&#xA;      height: 4px;&#xD;&#xA;      background: var(--dim);&#xD;&#xA;      position: relative;&#xD;&#xA;      overflow: hidden;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-bar {&#xD;&#xA;      height: 100%;&#xD;&#xA;      background: linear-gradient(to right, var(--green3), var(--green2));&#xD;&#xA;      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);&#xD;&#xA;      width: 0%;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .card-footer {&#xD;&#xA;      padding: 0.5rem 1rem 0.7rem;&#xD;&#xA;      display: flex;&#xD;&#xA;      justify-content: space-between;&#xD;&#xA;      align-items: center;&#xD;&#xA;      border-top: 1px solid var(--border);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .ts-label {&#xD;&#xA;      font-size: 0.45rem;&#xD;&#xA;      color: var(--green3);&#xD;&#xA;      letter-spacing: 0.08em;&#xD;&#xA;      opacity: 0.6;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .rank-badge {&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      font-size: 0.35rem;&#xD;&#xA;      padding: 0.25rem 0.5rem;&#xD;&#xA;      background: var(--green3);&#xD;&#xA;      color: var(--green2);&#xD;&#xA;      letter-spacing: 0.06em;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .rank-badge.gold   { background: #332200; color: var(--amber); }&#xD;&#xA;    .rank-badge.silver { background: #1a1a22; color: #aaaacc; }&#xD;&#xA;    .rank-badge.bronze { background: #221100; color: #cc8833; }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    .state-box {&#xD;&#xA;      grid-column: 1 / -1;&#xD;&#xA;      text-align: center;&#xD;&#xA;      padding: 4rem 1rem;&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      font-size: 0.6rem;&#xD;&#xA;      color: var(--green2);&#xD;&#xA;      letter-spacing: 0.1em;&#xD;&#xA;      line-height: 2.5;&#xD;&#xA;      opacity: 0.6;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .state-box .icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    .stats-row {&#xD;&#xA;      display: flex;&#xD;&#xA;      flex-wrap: wrap;&#xD;&#xA;      justify-content: center;&#xD;&#xA;      gap: 2rem;&#xD;&#xA;      max-width: 1100px;&#xD;&#xA;      margin: 0 auto 0.5rem;&#xD;&#xA;      padding: 0.6rem 1.2rem;&#xD;&#xA;      font-size: 0.55rem;&#xD;&#xA;      color: var(--green2);&#xD;&#xA;      letter-spacing: 0.12em;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .stat-item strong {&#xD;&#xA;      font-family: &#39;Press Start 2P&#39;, monospace;&#xD;&#xA;      color: var(--green);&#xD;&#xA;      font-size: 0.7rem;&#xD;&#xA;      display: block;&#xD;&#xA;      text-shadow: var(--glow);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    footer {&#xD;&#xA;      text-align: center;&#xD;&#xA;      padding: 2rem 1rem;&#xD;&#xA;      font-size: 0.5rem;&#xD;&#xA;      color: var(--green3);&#xD;&#xA;      letter-spacing: 0.15em;&#xD;&#xA;      opacity: 0.5;&#xD;&#xA;      border-top: 1px solid var(--border);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    @keyframes flicker {&#xD;&#xA;      0%,95%,97%,100% { opacity:1; }&#xD;&#xA;      96%             { opacity:0.85; }&#xD;&#xA;      96.5%           { opacity:1; }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    @keyframes pulse {&#xD;&#xA;      0%,100% { opacity:1; }&#xD;&#xA;      50%     { opacity:0.3; }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    @keyframes blink {&#xD;&#xA;      0%,100% { opacity:1; }&#xD;&#xA;      50%     { opacity:0; }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    @keyframes spin {&#xD;&#xA;      from { transform: rotate(0deg); }&#xD;&#xA;      to   { transform: rotate(360deg); }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    @keyframes fadeIn {&#xD;&#xA;      from { opacity:0; transform: translateY(12px); }&#xD;&#xA;      to   { opacity:1; transform: translateY(0); }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    @keyframes scoreUp {&#xD;&#xA;      0%   { transform: scale(1); }&#xD;&#xA;      50%  { transform: scale(1.18); color: var(--amber); text-shadow: 0 0 16px #ffcc00; }&#xD;&#xA;      100% { transform: scale(1); }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    .score-updated { animation: scoreUp 0.6s ease; }&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;    @media (max-width: 480px) {&#xD;&#xA;      .logo { font-size: 1rem; }&#xD;&#xA;      .grid { grid-template-columns: 1fr; }&#xD;&#xA;    }&#xD;&#xA;  &lt;/style&gt;&#xD;&#xA;&lt;/head&gt;&#xD;&#xA;&lt;body&gt;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &lt;header&gt;&#xD;&#xA;    &lt;div class=&#34;logo&#34;&gt;NB6&lt;span&gt;BOY&lt;/span&gt;&lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;tagline&#34;&gt;High Score Leaderboard — Live&lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;status-bar&#34;&gt;&#xD;&#xA;      &lt;span id=&#34;conn-status&#34;&gt;&lt;span class=&#34;status-dot amber&#34; id=&#34;conn-dot&#34;&gt;&lt;/span&gt;&lt;span id=&#34;conn-text&#34;&gt;CONNECTING...&lt;/span&gt;&lt;/span&gt;&#xD;&#xA;      &lt;span&gt;&lt;span class=&#34;status-dot&#34; id=&#34;live-dot&#34;&gt;&lt;/span&gt;LIVE DATA&lt;/span&gt;&#xD;&#xA;      &lt;span id=&#34;last-update-wrap&#34; style=&#34;display:none&#34;&gt;&lt;span class=&#34;status-dot&#34;&gt;&lt;/span&gt;&lt;span id=&#34;last-update-text&#34;&gt;—&lt;/span&gt;&lt;/span&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;  &lt;/header&gt;&#xD;&#xA;&#xD;&#xA;  &lt;div class=&#34;divider&#34;&gt;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &lt;div class=&#34;stats-row&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;stat-item&#34;&gt;&lt;strong id=&#34;stat-games&#34;&gt;—&lt;/strong&gt;GAMES TRACKED&lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;stat-item&#34;&gt;&lt;strong id=&#34;stat-scores&#34;&gt;—&lt;/strong&gt;SCORES SET&lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;stat-item&#34;&gt;&lt;strong id=&#34;stat-top&#34;&gt;—&lt;/strong&gt;TOP SCORE&lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;stat-item&#34;&gt;&lt;strong id=&#34;stat-top-game&#34;&gt;—&lt;/strong&gt;BEST GAME&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &lt;div class=&#34;controls&#34;&gt;&#xD;&#xA;    &lt;button class=&#34;filter-btn active&#34; data-filter=&#34;all&#34;&gt;ALL&lt;/button&gt;&#xD;&#xA;    &lt;button class=&#34;filter-btn&#34; data-filter=&#34;solo&#34;&gt;SOLO&lt;/button&gt;&#xD;&#xA;    &lt;button class=&#34;filter-btn&#34; data-filter=&#34;vs&#34;&gt;2P&lt;/button&gt;&#xD;&#xA;    &lt;button class=&#34;filter-btn&#34; data-filter=&#34;set&#34;&gt;SCORE SET&lt;/button&gt;&#xD;&#xA;    &lt;input class=&#34;search-input&#34; type=&#34;text&#34; placeholder=&#34;SEARCH GAMES...&#34; id=&#34;search&#34; /&gt;&#xD;&#xA;    &lt;button class=&#34;refresh-btn&#34; id=&#34;refresh-btn&#34;&gt;↻ REFRESH&lt;/button&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;  &lt;div class=&#34;grid&#34; id=&#34;grid&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;state-box&#34;&gt;&lt;span class=&#34;icon&#34;&gt;◈&lt;/span&gt;LOADING SCORES...&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;  &lt;div class=&#34;divider&#34;&gt;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;  &lt;footer&gt;NB6BOY MULTI-GAME CONSOLE &amp;nbsp;|&amp;nbsp; SCORES UPDATED IN REAL-TIME &amp;nbsp;|&amp;nbsp; BUILT BY FABLAB&lt;/footer&gt;&#xD;&#xA;&#xD;&#xA;  &lt;script&gt;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    const FIREBASE_HOST = &#39;https://nb6boy-scores-default-rtdb.asia-southeast1.firebasedatabase.app&#39;;&#xD;&#xA;&#xD;&#xA;    const GAMES = [&#xD;&#xA;      { key: &#39;snake_wall&#39;,    name: &#39;Snake (Wall)&#39;,       icon: &#39;🐍&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;snake_wrap&#39;,    name: &#39;Snake (Wrap)&#39;,       icon: &#39;🐍&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;tetris&#39;,        name: &#39;Tetris&#39;,             icon: &#39;🟦&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;flappy_easy&#39;,   name: &#39;Flappy Bird Easy&#39;,  icon: &#39;🐤&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;flappy_hard&#39;,   name: &#39;Flappy Bird Hard&#39;,  icon: &#39;🐦&#39;, tag: &#39;hard&#39; },&#xD;&#xA;      { key: &#39;asteroids&#39;,     name: &#39;Asteroids Hard&#39;,    icon: &#39;☄️&#39;, tag: &#39;hard&#39; },&#xD;&#xA;      { key: &#39;pacman_easy&#39;,   name: &#39;Pac-Man Easy&#39;,      icon: &#39;👻&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;pacman_hard&#39;,   name: &#39;Pac-Man Hard&#39;,      icon: &#39;👾&#39;, tag: &#39;hard&#39; },&#xD;&#xA;      { key: &#39;space_shooter&#39;, name: &#39;Space Shooter&#39;,     icon: &#39;🚀&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;breakout&#39;,      name: &#39;Breakout&#39;,          icon: &#39;🧱&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;tictactoe_ai&#39;,  name: &#39;TicTacToe vs AI&#39;,  icon: &#39;🤖&#39;, tag: &#39;hard&#39; },&#xD;&#xA;      { key: &#39;tictactoe_2p&#39;,  name: &#39;TicTacToe 2P&#39;,     icon: &#39;❌&#39;, tag: &#39;vs&#39;   },&#xD;&#xA;      { key: &#39;pong&#39;,          name: &#39;Pong&#39;,              icon: &#39;🏓&#39;, tag: &#39;vs&#39;   },&#xD;&#xA;      { key: &#39;tug_of_war&#39;,    name: &#39;Tug of War 2P&#39;,    icon: &#39;🪢&#39;, tag: &#39;vs&#39;   },&#xD;&#xA;      { key: &#39;checkers_ai&#39;,   name: &#39;Checkers vs AI&#39;,   icon: &#39;♟️&#39;, tag: &#39;hard&#39; },&#xD;&#xA;      { key: &#39;checkers_2p&#39;,   name: &#39;Checkers 2P&#39;,      icon: &#39;🔲&#39;, tag: &#39;vs&#39;   },&#xD;&#xA;      { key: &#39;minesweeper&#39;,   name: &#39;Minesweeper&#39;,      icon: &#39;💣&#39;, tag: &#39;solo&#39; },&#xD;&#xA;      { key: &#39;dino_run&#39;,      name: &#39;Dino Run&#39;,         icon: &#39;🦕&#39;, tag: &#39;solo&#39; },&#xD;&#xA;    ];&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    let scores = {};           &#xD;&#xA;    let currentFilter = &#39;all&#39;;&#xD;&#xA;    let currentSearch  = &#39;&#39;;&#xD;&#xA;    let prevScores = {};&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    async function fetchScores() {&#xD;&#xA;      try {&#xD;&#xA;        const res = await fetch(`${FIREBASE_HOST}/scores.json`);&#xD;&#xA;        if (!res.ok) throw new Error(`HTTP ${res.status}`);&#xD;&#xA;        const data = await res.json();&#xD;&#xA;&#xD;&#xA;        setConnStatus(&#39;online&#39;);&#xD;&#xA;        document.getElementById(&#39;last-update-wrap&#39;).style.display = &#39;&#39;;&#xD;&#xA;        document.getElementById(&#39;last-update-text&#39;).textContent =&#xD;&#xA;          &#39;UPDATED &#39; + new Date().toLocaleTimeString([], { hour: &#39;2-digit&#39;, minute: &#39;2-digit&#39;, second: &#39;2-digit&#39; });&#xD;&#xA;&#xD;&#xA;        prevScores = { ...scores };&#xD;&#xA;        scores = data || {};&#xD;&#xA;        render();&#xD;&#xA;        updateStats();&#xD;&#xA;      } catch (err) {&#xD;&#xA;        setConnStatus(&#39;error&#39;);&#xD;&#xA;        console.error(&#39;Firebase fetch error:&#39;, err);&#xD;&#xA;      }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    function setConnStatus(state) {&#xD;&#xA;      const dot  = document.getElementById(&#39;conn-dot&#39;);&#xD;&#xA;      const text = document.getElementById(&#39;conn-text&#39;);&#xD;&#xA;      if (state === &#39;online&#39;) {&#xD;&#xA;        dot.className  = &#39;status-dot&#39;;&#xD;&#xA;        text.textContent = &#39;CONNECTED&#39;;&#xD;&#xA;      } else if (state === &#39;error&#39;) {&#xD;&#xA;        dot.className  = &#39;status-dot red&#39;;&#xD;&#xA;        text.textContent = &#39;OFFLINE&#39;;&#xD;&#xA;      } else {&#xD;&#xA;        dot.className  = &#39;status-dot amber&#39;;&#xD;&#xA;        text.textContent = &#39;CONNECTING...&#39;;&#xD;&#xA;      }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    function updateStats() {&#xD;&#xA;      const tracked  = GAMES.length;&#xD;&#xA;      const set      = GAMES.filter(g =&gt; getScore(g.key) &gt; 0).length;&#xD;&#xA;      const allVals  = GAMES.map(g =&gt; getScore(g.key));&#xD;&#xA;      const topScore = Math.max(...allVals, 0);&#xD;&#xA;      const topGame  = GAMES.find(g =&gt; getScore(g.key) === topScore);&#xD;&#xA;&#xD;&#xA;      document.getElementById(&#39;stat-games&#39;).textContent  = tracked;&#xD;&#xA;      document.getElementById(&#39;stat-scores&#39;).textContent = set;&#xD;&#xA;      document.getElementById(&#39;stat-top&#39;).textContent    = topScore &gt; 0 ? topScore : &#39;—&#39;;&#xD;&#xA;      document.getElementById(&#39;stat-top-game&#39;).textContent = topGame &amp;&amp; topScore &gt; 0 ? topGame.name.toUpperCase() : &#39;—&#39;;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    function getScore(key) {&#xD;&#xA;      const entry = scores[key];&#xD;&#xA;      if (!entry) return 0;&#xD;&#xA;      if (typeof entry === &#39;number&#39;) return entry;&#xD;&#xA;      return entry.highScore ?? entry.score ?? 0;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    function getTimestamp(key) {&#xD;&#xA;      const entry = scores[key];&#xD;&#xA;      if (!entry || typeof entry === &#39;number&#39;) return null;&#xD;&#xA;      return entry.timestamp ?? null;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    function formatTs(ts) {&#xD;&#xA;      if (!ts) return &#39;NO RECORD&#39;;&#xD;&#xA;      &#xD;&#xA;      &#xD;&#xA;      return &#39;RECORDED&#39;;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    function scoresByRank() {&#xD;&#xA;      return GAMES&#xD;&#xA;        .map(g =&gt; ({ ...g, score: getScore(g.key) }))&#xD;&#xA;        .filter(g =&gt; g.score &gt; 0)&#xD;&#xA;        .sort((a, b) =&gt; b.score - a.score);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    function getRankBadge(key) {&#xD;&#xA;      const ranked = scoresByRank();&#xD;&#xA;      const idx = ranked.findIndex(g =&gt; g.key === key);&#xD;&#xA;      if (idx === 0) return { label: &#39;🥇 #1&#39;,  cls: &#39;gold&#39;   };&#xD;&#xA;      if (idx === 1) return { label: &#39;🥈 #2&#39;,  cls: &#39;silver&#39; };&#xD;&#xA;      if (idx === 2) return { label: &#39;🥉 #3&#39;,  cls: &#39;bronze&#39; };&#xD;&#xA;      if (idx &gt;= 0)  return { label: `#${idx + 1}`, cls: &#39;&#39; };&#xD;&#xA;      return null;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    function globalMax() {&#xD;&#xA;      return Math.max(...GAMES.map(g =&gt; getScore(g.key)), 1);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    function render() {&#xD;&#xA;      const grid  = document.getElementById(&#39;grid&#39;);&#xD;&#xA;      const max   = globalMax();&#xD;&#xA;&#xD;&#xA;      const filtered = GAMES.filter(g =&gt; {&#xD;&#xA;        if (currentFilter === &#39;solo&#39; &amp;&amp; g.tag !== &#39;solo&#39;) return false;&#xD;&#xA;        if (currentFilter === &#39;vs&#39;   &amp;&amp; g.tag !== &#39;vs&#39;)   return false;&#xD;&#xA;        if (currentFilter === &#39;hard&#39; &amp;&amp; g.tag !== &#39;hard&#39;) return false;&#xD;&#xA;        if (currentFilter === &#39;set&#39;  &amp;&amp; getScore(g.key) === 0) return false;&#xD;&#xA;        if (currentSearch) {&#xD;&#xA;          const q = currentSearch.toLowerCase();&#xD;&#xA;          if (!g.name.toLowerCase().includes(q) &amp;&amp; !g.key.includes(q)) return false;&#xD;&#xA;        }&#xD;&#xA;        return true;&#xD;&#xA;      });&#xD;&#xA;&#xD;&#xA;      if (filtered.length === 0) {&#xD;&#xA;        grid.innerHTML = `&lt;div class=&#34;state-box&#34;&gt;&lt;span class=&#34;icon&#34;&gt;◉&lt;/span&gt;NO GAMES FOUND&lt;/div&gt;`;&#xD;&#xA;        return;&#xD;&#xA;      }&#xD;&#xA;&#xD;&#xA;      grid.innerHTML = filtered.map((g, idx) =&gt; {&#xD;&#xA;        const s      = getScore(g.key);&#xD;&#xA;        const ts     = getTimestamp(g.key);&#xD;&#xA;        const rank   = getRankBadge(g.key);&#xD;&#xA;        const pct    = Math.round((s / max) * 100);&#xD;&#xA;        const isNew  = prevScores[g.key] !== undefined &amp;&amp; getScore(g.key) !== (typeof prevScores[g.key] === &#39;object&#39; ? (prevScores[g.key]?.highScore ?? 0) : 0);&#xD;&#xA;&#xD;&#xA;        const tagLabel = g.tag === &#39;solo&#39; ? &#39;SOLO&#39; : g.tag === &#39;vs&#39; ? &#39;2P&#39; : &#39;HARD&#39;;&#xD;&#xA;        const delay    = Math.min(idx * 40, 400);&#xD;&#xA;&#xD;&#xA;        return `&#xD;&#xA;        &lt;div class=&#34;card&#34; style=&#34;animation-delay:${delay}ms&#34; data-key=&#34;${g.key}&#34;&gt;&#xD;&#xA;          &lt;div class=&#34;card-header&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;game-icon&#34;&gt;${g.icon}&lt;/div&gt;&#xD;&#xA;            &lt;div class=&#34;game-name&#34;&gt;${g.name}&lt;/div&gt;&#xD;&#xA;            &lt;div class=&#34;game-tag ${g.tag}&#34;&gt;${tagLabel}&lt;/div&gt;&#xD;&#xA;          &lt;/div&gt;&#xD;&#xA;          &lt;div class=&#34;card-body&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;score-row&#34;&gt;&#xD;&#xA;              &lt;div class=&#34;score-label&#34;&gt;HIGH SCORE&lt;/div&gt;&#xD;&#xA;            &lt;/div&gt;&#xD;&#xA;            &lt;div class=&#34;score-value ${s === 0 ? &#39;zero&#39; : &#39;&#39;} ${isNew ? &#39;score-updated&#39; : &#39;&#39;}&#34; id=&#34;sv-${g.key}&#34;&gt;&#xD;&#xA;              ${s === 0 ? &#39;- - -&#39; : s}&#xD;&#xA;            &lt;/div&gt;&#xD;&#xA;            &lt;div class=&#34;score-bar-wrap&#34;&gt;&#xD;&#xA;              &lt;div class=&#34;score-bar&#34; id=&#34;bar-${g.key}&#34; style=&#34;width:0%&#34;&gt;&lt;/div&gt;&#xD;&#xA;            &lt;/div&gt;&#xD;&#xA;          &lt;/div&gt;&#xD;&#xA;          &lt;div class=&#34;card-footer&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;ts-label&#34;&gt;${formatTs(ts)}&lt;/div&gt;&#xD;&#xA;            ${rank ? `&lt;div class=&#34;rank-badge ${rank.cls}&#34;&gt;${rank.label}&lt;/div&gt;` : &#39;&#39;}&#xD;&#xA;          &lt;/div&gt;&#xD;&#xA;        &lt;/div&gt;`;&#xD;&#xA;      }).join(&#39;&#39;);&#xD;&#xA;&#xD;&#xA;      &#xD;&#xA;      requestAnimationFrame(() =&gt; {&#xD;&#xA;        filtered.forEach(g =&gt; {&#xD;&#xA;          const s   = getScore(g.key);&#xD;&#xA;          const pct = Math.round((s / max) * 100);&#xD;&#xA;          const bar = document.getElementById(`bar-${g.key}`);&#xD;&#xA;          if (bar) setTimeout(() =&gt; { bar.style.width = pct + &#39;%&#39;; }, 60);&#xD;&#xA;        });&#xD;&#xA;      });&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    document.querySelectorAll(&#39;.filter-btn&#39;).forEach(btn =&gt; {&#xD;&#xA;      btn.addEventListener(&#39;click&#39;, () =&gt; {&#xD;&#xA;        document.querySelectorAll(&#39;.filter-btn&#39;).forEach(b =&gt; b.classList.remove(&#39;active&#39;));&#xD;&#xA;        btn.classList.add(&#39;active&#39;);&#xD;&#xA;        currentFilter = btn.dataset.filter;&#xD;&#xA;        render();&#xD;&#xA;      });&#xD;&#xA;    });&#xD;&#xA;&#xD;&#xA;    document.getElementById(&#39;search&#39;).addEventListener(&#39;input&#39;, e =&gt; {&#xD;&#xA;      currentSearch = e.target.value.trim();&#xD;&#xA;      render();&#xD;&#xA;    });&#xD;&#xA;&#xD;&#xA;    const refreshBtn = document.getElementById(&#39;refresh-btn&#39;);&#xD;&#xA;    refreshBtn.addEventListener(&#39;click&#39;, () =&gt; {&#xD;&#xA;      refreshBtn.classList.add(&#39;spinning&#39;);&#xD;&#xA;      setTimeout(() =&gt; refreshBtn.classList.remove(&#39;spinning&#39;), 600);&#xD;&#xA;      fetchScores();&#xD;&#xA;    });&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    &#xD;&#xA;    fetchScores();&#xD;&#xA;    setInterval(fetchScores, 30000);&#xD;&#xA;  &lt;/script&gt;&#xD;&#xA;&lt;/body&gt;&#xD;&#xA;&lt;/html&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Week 04 - Embedded Programming on Nadec FAB Academy Portfolio</title><link>https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/</link><description>Recent content in Week 04 - Embedded Programming on Nadec FAB Academy Portfolio</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/index.xml" rel="self" type="application/rss+xml"/><item><title>NB6-Boy Highscores</title><link>https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/</guid><description>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8" /&gt;
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+ &lt;meta name="color-scheme" content="dark" /&gt;
+ &lt;title&gt;NB6BOY — Leaderboard&lt;/title&gt;
+ &lt;link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet" /&gt;
+ &lt;style&gt;
+ 
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+ 
+ :root {
+ color-scheme: dark;
+ --green: #00ff88;
+ --green2: #00cc66;
+ --green3: #004422;
+ --amber: #ffcc00;
+ --red: #ff3355;
+ --dim: #002211;
+ --bg: #050e08;
+ --card: #080f0b;
+ --border: #00331a;
+ --glow: 0 0 8px #00ff8866, 0 0 24px #00ff8822;
+ --glow-lg: 0 0 16px #00ff88aa, 0 0 48px #00ff8833;
+ --scan-size: 3px;
+ }
+
+ html {
+ scroll-behavior: smooth;
+ background: #050e08; 
+ }
+
+ body {
+ background: var(--bg);
+ color: var(--green);
+ font-family: 'Share Tech Mono', monospace;
+ min-height: 100vh;
+ overflow-x: hidden;
+ position: relative;
+ }
+
+ 
+ body::before {
+ content: '';
+ position: fixed;
+ inset: 0;
+ background: repeating-linear-gradient(
+ to bottom,
+ transparent 0px,
+ transparent calc(var(--scan-size) - 1px),
+ rgba(0,0,0,0.18) calc(var(--scan-size) - 1px),
+ rgba(0,0,0,0.18) var(--scan-size)
+ );
+ pointer-events: none;
+ z-index: 1000;
+ }
+
+ 
+ body::after {
+ content: '';
+ position: fixed;
+ inset: 0;
+ background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.75) 100%);
+ pointer-events: none;
+ z-index: 999;
+ }
+
+ 
+ header {
+ text-align: center;
+ padding: 3rem 1rem 1.5rem;
+ position: relative;
+ }
+
+ .logo {
+ font-family: 'Press Start 2P', monospace;
+ font-size: clamp(1.2rem, 4vw, 2.4rem);
+ color: var(--green);
+ text-shadow: var(--glow-lg);
+ letter-spacing: 0.08em;
+ animation: flicker 8s infinite;
+ }
+
+ .logo span {
+ color: var(--amber);
+ text-shadow: 0 0 12px #ffcc00aa, 0 0 40px #ffcc0033;
+ }
+
+ .tagline {
+ font-size: 0.7rem;
+ color: var(--green2);
+ margin-top: 0.8rem;
+ letter-spacing: 0.3em;
+ text-transform: uppercase;
+ opacity: 0.7;
+ }
+
+ .status-bar {
+ display: flex;
+ justify-content: center;
+ gap: 2rem;
+ margin-top: 1.4rem;
+ font-size: 0.6rem;
+ color: var(--green2);
+ letter-spacing: 0.12em;
+ }
+
+ .status-dot {
+ display: inline-block;
+ width: 7px; height: 7px;
+ border-radius: 50%;
+ background: var(--green);
+ box-shadow: var(--glow);
+ margin-right: 6px;
+ animation: pulse 2s infinite;
+ }
+
+ .status-dot.amber { background: var(--amber); box-shadow: 0 0 8px #ffcc0088; }
+ .status-dot.red { background: var(--red); box-shadow: 0 0 8px #ff335588; }
+
+ 
+ .divider {
+ width: 90%;
+ max-width: 1000px;
+ margin: 1rem auto;
+ height: 1px;
+ background: linear-gradient(to right, transparent, var(--green2), transparent);
+ box-shadow: 0 0 8px #00ff8844;
+ }
+
+ 
+ .controls {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 0.6rem;
+ padding: 0.8rem 1rem;
+ max-width: 1100px;
+ margin: 0 auto;
+ }
+
+ .filter-btn {
+ font-family: 'Press Start 2P', monospace;
+ font-size: 0.45rem;
+ padding: 0.5rem 0.85rem;
+ background: transparent;
+ color: var(--green2);
+ border: 1px solid var(--border);
+ cursor: pointer;
+ letter-spacing: 0.05em;
+ text-transform: uppercase;
+ transition: all 0.15s;
+ }
+
+ .filter-btn:hover,
+ .filter-btn.active {
+ background: var(--green3);
+ color: var(--green);
+ border-color: var(--green2);
+ box-shadow: var(--glow);
+ }
+
+ .search-wrap {
+ position: relative;
+ flex: 1 1 200px;
+ max-width: 300px;
+ }
+
+ .search-wrap::before {
+ content: '▶';
+ position: absolute;
+ left: 10px;
+ top: 50%;
+ transform: translateY(-50%);
+ font-size: 0.5rem;
+ color: var(--green2);
+ }
+
+ .search-input {
+ width: 100%;
+ font-family: 'Share Tech Mono', monospace;
+ font-size: 0.7rem;
+ padding: 0.5rem 0.5rem 0.5rem 1.6rem;
+ background: var(--card);
+ color: var(--green);
+ border: 1px solid var(--border);
+ outline: none;
+ letter-spacing: 0.06em;
+ }
+
+ .search-input:focus {
+ border-color: var(--green2);
+ box-shadow: var(--glow);
+ }
+
+ .search-input::placeholder { color: var(--green3); opacity: 1; }
+
+ .refresh-btn {
+ font-family: 'Press Start 2P', monospace;
+ font-size: 0.45rem;
+ padding: 0.5rem 0.9rem;
+ background: var(--green3);
+ color: var(--green);
+ border: 1px solid var(--green2);
+ cursor: pointer;
+ letter-spacing: 0.05em;
+ transition: all 0.15s;
+ }
+
+ .refresh-btn:hover { box-shadow: var(--glow-lg); }
+ .refresh-btn:active { transform: scale(0.96); }
+ .refresh-btn.spinning { animation: spin 0.6s linear; }
+
+ 
+ .grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+ gap: 1.2rem;
+ max-width: 1100px;
+ margin: 0.5rem auto 3rem;
+ padding: 0 1.2rem;
+ }
+
+ 
+ .card {
+ background: var(--card);
+ border: 1px solid var(--border);
+ position: relative;
+ overflow: hidden;
+ cursor: default;
+ transition: border-color 0.2s, transform 0.2s;
+ animation: fadeIn 0.4s both;
+ }
+
+ .card::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0;
+ height: 2px;
+ background: linear-gradient(to right, transparent, var(--green2), transparent);
+ opacity: 0;
+ transition: opacity 0.2s;
+ }
+
+ .card:hover {
+ border-color: var(--green2);
+ transform: translateY(-3px);
+ box-shadow: 0 8px 32px rgba(0,255,136,0.08);
+ }
+
+ .card:hover::before { opacity: 1; }
+
+ .card-header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0.85rem 1rem 0.6rem;
+ border-bottom: 1px solid var(--border);
+ }
+
+ .game-icon {
+ font-size: 1.2rem;
+ width: 2rem;
+ text-align: center;
+ }
+
+ .game-name {
+ font-family: 'Press Start 2P', monospace;
+ font-size: 0.42rem;
+ color: var(--green);
+ letter-spacing: 0.04em;
+ flex: 1;
+ padding: 0 0.6rem;
+ line-height: 1.6;
+ }
+
+ .game-tag {
+ font-size: 0.5rem;
+ padding: 0.2rem 0.4rem;
+ border: 1px solid;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ }
+
+ .game-tag.solo { color: #00aaff; border-color: #00aaff44; }
+ .game-tag.vs { color: var(--amber); border-color: #ffcc0044; }
+ .game-tag.hard { color: var(--red); border-color: #ff335544; }
+
+ .card-body {
+ padding: 1rem;
+ }
+
+ .score-row {
+ display: flex;
+ align-items: baseline;
+ gap: 0.5rem;
+ }
+
+ .score-label {
+ font-size: 0.55rem;
+ color: var(--green2);
+ letter-spacing: 0.12em;
+ opacity: 0.7;
+ }
+
+ .score-value {
+ font-family: 'Press Start 2P', monospace;
+ font-size: 1.3rem;
+ color: var(--green);
+ text-shadow: var(--glow);
+ letter-spacing: 0.04em;
+ transition: all 0.3s;
+ }
+
+ .score-value.zero {
+ color: var(--green3);
+ text-shadow: none;
+ font-size: 1rem;
+ opacity: 0.5;
+ }
+
+ .score-value.loading {
+ animation: blink 1s step-end infinite;
+ font-size: 0.7rem;
+ opacity: 0.5;
+ }
+
+ .score-bar-wrap {
+ margin-top: 0.8rem;
+ height: 4px;
+ background: var(--dim);
+ position: relative;
+ overflow: hidden;
+ }
+
+ .score-bar {
+ height: 100%;
+ background: linear-gradient(to right, var(--green3), var(--green2));
+ transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+ width: 0%;
+ }
+
+ .card-footer {
+ padding: 0.5rem 1rem 0.7rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-top: 1px solid var(--border);
+ }
+
+ .ts-label {
+ font-size: 0.45rem;
+ color: var(--green3);
+ letter-spacing: 0.08em;
+ opacity: 0.6;
+ }
+
+ .rank-badge {
+ font-family: 'Press Start 2P', monospace;
+ font-size: 0.35rem;
+ padding: 0.25rem 0.5rem;
+ background: var(--green3);
+ color: var(--green2);
+ letter-spacing: 0.06em;
+ }
+
+ .rank-badge.gold { background: #332200; color: var(--amber); }
+ .rank-badge.silver { background: #1a1a22; color: #aaaacc; }
+ .rank-badge.bronze { background: #221100; color: #cc8833; }
+
+ 
+ .state-box {
+ grid-column: 1 / -1;
+ text-align: center;
+ padding: 4rem 1rem;
+ font-family: 'Press Start 2P', monospace;
+ font-size: 0.6rem;
+ color: var(--green2);
+ letter-spacing: 0.1em;
+ line-height: 2.5;
+ opacity: 0.6;
+ }
+
+ .state-box .icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+
+ 
+ .stats-row {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 2rem;
+ max-width: 1100px;
+ margin: 0 auto 0.5rem;
+ padding: 0.6rem 1.2rem;
+ font-size: 0.55rem;
+ color: var(--green2);
+ letter-spacing: 0.12em;
+ }
+
+ .stat-item strong {
+ font-family: 'Press Start 2P', monospace;
+ color: var(--green);
+ font-size: 0.7rem;
+ display: block;
+ text-shadow: var(--glow);
+ }
+
+ 
+ footer {
+ text-align: center;
+ padding: 2rem 1rem;
+ font-size: 0.5rem;
+ color: var(--green3);
+ letter-spacing: 0.15em;
+ opacity: 0.5;
+ border-top: 1px solid var(--border);
+ }
+
+ 
+ @keyframes flicker {
+ 0%,95%,97%,100% { opacity:1; }
+ 96% { opacity:0.85; }
+ 96.5% { opacity:1; }
+ }
+
+ @keyframes pulse {
+ 0%,100% { opacity:1; }
+ 50% { opacity:0.3; }
+ }
+
+ @keyframes blink {
+ 0%,100% { opacity:1; }
+ 50% { opacity:0; }
+ }
+
+ @keyframes spin {
+ from { transform: rotate(0deg); }
+ to { transform: rotate(360deg); }
+ }
+
+ @keyframes fadeIn {
+ from { opacity:0; transform: translateY(12px); }
+ to { opacity:1; transform: translateY(0); }
+ }
+
+ @keyframes scoreUp {
+ 0% { transform: scale(1); }
+ 50% { transform: scale(1.18); color: var(--amber); text-shadow: 0 0 16px #ffcc00; }
+ 100% { transform: scale(1); }
+ }
+
+ .score-updated { animation: scoreUp 0.6s ease; }
+
+ 
+ @media (max-width: 480px) {
+ .logo { font-size: 1rem; }
+ .grid { grid-template-columns: 1fr; }
+ }
+ &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+ 
+ &lt;header&gt;
+ &lt;div class="logo"&gt;NB6&lt;span&gt;BOY&lt;/span&gt;&lt;/div&gt;
+ &lt;div class="tagline"&gt;High Score Leaderboard — Live&lt;/div&gt;
+ &lt;div class="status-bar"&gt;
+ &lt;span id="conn-status"&gt;&lt;span class="status-dot amber" id="conn-dot"&gt;&lt;/span&gt;&lt;span id="conn-text"&gt;CONNECTING...&lt;/span&gt;&lt;/span&gt;
+ &lt;span&gt;&lt;span class="status-dot" id="live-dot"&gt;&lt;/span&gt;LIVE DATA&lt;/span&gt;
+ &lt;span id="last-update-wrap" style="display:none"&gt;&lt;span class="status-dot"&gt;&lt;/span&gt;&lt;span id="last-update-text"&gt;—&lt;/span&gt;&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/header&gt;
+
+ &lt;div class="divider"&gt;&lt;/div&gt;
+
+ 
+ &lt;div class="stats-row"&gt;
+ &lt;div class="stat-item"&gt;&lt;strong id="stat-games"&gt;—&lt;/strong&gt;GAMES TRACKED&lt;/div&gt;
+ &lt;div class="stat-item"&gt;&lt;strong id="stat-scores"&gt;—&lt;/strong&gt;SCORES SET&lt;/div&gt;
+ &lt;div class="stat-item"&gt;&lt;strong id="stat-top"&gt;—&lt;/strong&gt;TOP SCORE&lt;/div&gt;
+ &lt;div class="stat-item"&gt;&lt;strong id="stat-top-game"&gt;—&lt;/strong&gt;BEST GAME&lt;/div&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;div class="controls"&gt;
+ &lt;button class="filter-btn active" data-filter="all"&gt;ALL&lt;/button&gt;
+ &lt;button class="filter-btn" data-filter="solo"&gt;SOLO&lt;/button&gt;
+ &lt;button class="filter-btn" data-filter="vs"&gt;2P&lt;/button&gt;
+ &lt;button class="filter-btn" data-filter="set"&gt;SCORE SET&lt;/button&gt;
+ &lt;input class="search-input" type="text" placeholder="SEARCH GAMES..." id="search" /&gt;
+ &lt;button class="refresh-btn" id="refresh-btn"&gt;↻ REFRESH&lt;/button&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;div class="grid" id="grid"&gt;
+ &lt;div class="state-box"&gt;&lt;span class="icon"&gt;◈&lt;/span&gt;LOADING SCORES...&lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="divider"&gt;&lt;/div&gt;
+
+ &lt;footer&gt;NB6BOY MULTI-GAME CONSOLE &amp;nbsp;|&amp;nbsp; SCORES UPDATED IN REAL-TIME &amp;nbsp;|&amp;nbsp; BUILT BY FABLAB&lt;/footer&gt;
+
+ &lt;script&gt;
+ 
+ 
+ 
+ const FIREBASE_HOST = 'https://nb6boy-scores-default-rtdb.asia-southeast1.firebasedatabase.app';
+
+ const GAMES = [
+ { key: 'snake_wall', name: 'Snake (Wall)', icon: '🐍', tag: 'solo' },
+ { key: 'snake_wrap', name: 'Snake (Wrap)', icon: '🐍', tag: 'solo' },
+ { key: 'tetris', name: 'Tetris', icon: '🟦', tag: 'solo' },
+ { key: 'flappy_easy', name: 'Flappy Bird Easy', icon: '🐤', tag: 'solo' },
+ { key: 'flappy_hard', name: 'Flappy Bird Hard', icon: '🐦', tag: 'hard' },
+ { key: 'asteroids', name: 'Asteroids Hard', icon: '☄️', tag: 'hard' },
+ { key: 'pacman_easy', name: 'Pac-Man Easy', icon: '👻', tag: 'solo' },
+ { key: 'pacman_hard', name: 'Pac-Man Hard', icon: '👾', tag: 'hard' },
+ { key: 'space_shooter', name: 'Space Shooter', icon: '🚀', tag: 'solo' },
+ { key: 'breakout', name: 'Breakout', icon: '🧱', tag: 'solo' },
+ { key: 'tictactoe_ai', name: 'TicTacToe vs AI', icon: '🤖', tag: 'hard' },
+ { key: 'tictactoe_2p', name: 'TicTacToe 2P', icon: '❌', tag: 'vs' },
+ { key: 'pong', name: 'Pong', icon: '🏓', tag: 'vs' },
+ { key: 'tug_of_war', name: 'Tug of War 2P', icon: '🪢', tag: 'vs' },
+ { key: 'checkers_ai', name: 'Checkers vs AI', icon: '♟️', tag: 'hard' },
+ { key: 'checkers_2p', name: 'Checkers 2P', icon: '🔲', tag: 'vs' },
+ { key: 'minesweeper', name: 'Minesweeper', icon: '💣', tag: 'solo' },
+ { key: 'dino_run', name: 'Dino Run', icon: '🦕', tag: 'solo' },
+ ];
+
+ 
+ 
+ 
+ let scores = {}; 
+ let currentFilter = 'all';
+ let currentSearch = '';
+ let prevScores = {};
+
+ 
+ 
+ 
+ async function fetchScores() {
+ try {
+ const res = await fetch(`${FIREBASE_HOST}/scores.json`);
+ if (!res.ok) throw new Error(`HTTP ${res.status}`);
+ const data = await res.json();
+
+ setConnStatus('online');
+ document.getElementById('last-update-wrap').style.display = '';
+ document.getElementById('last-update-text').textContent =
+ 'UPDATED ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+ prevScores = { ...scores };
+ scores = data || {};
+ render();
+ updateStats();
+ } catch (err) {
+ setConnStatus('error');
+ console.error('Firebase fetch error:', err);
+ }
+ }
+
+ function setConnStatus(state) {
+ const dot = document.getElementById('conn-dot');
+ const text = document.getElementById('conn-text');
+ if (state === 'online') {
+ dot.className = 'status-dot';
+ text.textContent = 'CONNECTED';
+ } else if (state === 'error') {
+ dot.className = 'status-dot red';
+ text.textContent = 'OFFLINE';
+ } else {
+ dot.className = 'status-dot amber';
+ text.textContent = 'CONNECTING...';
+ }
+ }
+
+ 
+ 
+ 
+ function updateStats() {
+ const tracked = GAMES.length;
+ const set = GAMES.filter(g =&gt; getScore(g.key) &gt; 0).length;
+ const allVals = GAMES.map(g =&gt; getScore(g.key));
+ const topScore = Math.max(...allVals, 0);
+ const topGame = GAMES.find(g =&gt; getScore(g.key) === topScore);
+
+ document.getElementById('stat-games').textContent = tracked;
+ document.getElementById('stat-scores').textContent = set;
+ document.getElementById('stat-top').textContent = topScore &gt; 0 ? topScore : '—';
+ document.getElementById('stat-top-game').textContent = topGame &amp;&amp; topScore &gt; 0 ? topGame.name.toUpperCase() : '—';
+ }
+
+ 
+ 
+ 
+ function getScore(key) {
+ const entry = scores[key];
+ if (!entry) return 0;
+ if (typeof entry === 'number') return entry;
+ return entry.highScore ?? entry.score ?? 0;
+ }
+
+ function getTimestamp(key) {
+ const entry = scores[key];
+ if (!entry || typeof entry === 'number') return null;
+ return entry.timestamp ?? null;
+ }
+
+ function formatTs(ts) {
+ if (!ts) return 'NO RECORD';
+ 
+ 
+ return 'RECORDED';
+ }
+
+ function scoresByRank() {
+ return GAMES
+ .map(g =&gt; ({ ...g, score: getScore(g.key) }))
+ .filter(g =&gt; g.score &gt; 0)
+ .sort((a, b) =&gt; b.score - a.score);
+ }
+
+ function getRankBadge(key) {
+ const ranked = scoresByRank();
+ const idx = ranked.findIndex(g =&gt; g.key === key);
+ if (idx === 0) return { label: '🥇 #1', cls: 'gold' };
+ if (idx === 1) return { label: '🥈 #2', cls: 'silver' };
+ if (idx === 2) return { label: '🥉 #3', cls: 'bronze' };
+ if (idx &gt;= 0) return { label: `#${idx + 1}`, cls: '' };
+ return null;
+ }
+
+ 
+ function globalMax() {
+ return Math.max(...GAMES.map(g =&gt; getScore(g.key)), 1);
+ }
+
+ 
+ 
+ 
+ function render() {
+ const grid = document.getElementById('grid');
+ const max = globalMax();
+
+ const filtered = GAMES.filter(g =&gt; {
+ if (currentFilter === 'solo' &amp;&amp; g.tag !== 'solo') return false;
+ if (currentFilter === 'vs' &amp;&amp; g.tag !== 'vs') return false;
+ if (currentFilter === 'hard' &amp;&amp; g.tag !== 'hard') return false;
+ if (currentFilter === 'set' &amp;&amp; getScore(g.key) === 0) return false;
+ if (currentSearch) {
+ const q = currentSearch.toLowerCase();
+ if (!g.name.toLowerCase().includes(q) &amp;&amp; !g.key.includes(q)) return false;
+ }
+ return true;
+ });
+
+ if (filtered.length === 0) {
+ grid.innerHTML = `&lt;div class="state-box"&gt;&lt;span class="icon"&gt;◉&lt;/span&gt;NO GAMES FOUND&lt;/div&gt;`;
+ return;
+ }
+
+ grid.innerHTML = filtered.map((g, idx) =&gt; {
+ const s = getScore(g.key);
+ const ts = getTimestamp(g.key);
+ const rank = getRankBadge(g.key);
+ const pct = Math.round((s / max) * 100);
+ const isNew = prevScores[g.key] !== undefined &amp;&amp; getScore(g.key) !== (typeof prevScores[g.key] === 'object' ? (prevScores[g.key]?.highScore ?? 0) : 0);
+
+ const tagLabel = g.tag === 'solo' ? 'SOLO' : g.tag === 'vs' ? '2P' : 'HARD';
+ const delay = Math.min(idx * 40, 400);
+
+ return `
+ &lt;div class="card" style="animation-delay:${delay}ms" data-key="${g.key}"&gt;
+ &lt;div class="card-header"&gt;
+ &lt;div class="game-icon"&gt;${g.icon}&lt;/div&gt;
+ &lt;div class="game-name"&gt;${g.name}&lt;/div&gt;
+ &lt;div class="game-tag ${g.tag}"&gt;${tagLabel}&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="card-body"&gt;
+ &lt;div class="score-row"&gt;
+ &lt;div class="score-label"&gt;HIGH SCORE&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="score-value ${s === 0 ? 'zero' : ''} ${isNew ? 'score-updated' : ''}" id="sv-${g.key}"&gt;
+ ${s === 0 ? '- - -' : s}
+ &lt;/div&gt;
+ &lt;div class="score-bar-wrap"&gt;
+ &lt;div class="score-bar" id="bar-${g.key}" style="width:0%"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="card-footer"&gt;
+ &lt;div class="ts-label"&gt;${formatTs(ts)}&lt;/div&gt;
+ ${rank ? `&lt;div class="rank-badge ${rank.cls}"&gt;${rank.label}&lt;/div&gt;` : ''}
+ &lt;/div&gt;
+ &lt;/div&gt;`;
+ }).join('');
+
+ 
+ requestAnimationFrame(() =&gt; {
+ filtered.forEach(g =&gt; {
+ const s = getScore(g.key);
+ const pct = Math.round((s / max) * 100);
+ const bar = document.getElementById(`bar-${g.key}`);
+ if (bar) setTimeout(() =&gt; { bar.style.width = pct + '%'; }, 60);
+ });
+ });
+ }
+
+ 
+ 
+ 
+ document.querySelectorAll('.filter-btn').forEach(btn =&gt; {
+ btn.addEventListener('click', () =&gt; {
+ document.querySelectorAll('.filter-btn').forEach(b =&gt; b.classList.remove('active'));
+ btn.classList.add('active');
+ currentFilter = btn.dataset.filter;
+ render();
+ });
+ });
+
+ document.getElementById('search').addEventListener('input', e =&gt; {
+ currentSearch = e.target.value.trim();
+ render();
+ });
+
+ const refreshBtn = document.getElementById('refresh-btn');
+ refreshBtn.addEventListener('click', () =&gt; {
+ refreshBtn.classList.add('spinning');
+ setTimeout(() =&gt; refreshBtn.classList.remove('spinning'), 600);
+ fetchScores();
+ });
+
+ 
+ 
+ 
+ fetchScores();
+ setInterval(fetchScores, 30000);
+ &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</description></item></channel></rss>
