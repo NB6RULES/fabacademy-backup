@@ -602,7 +602,7 @@ Then:
 To check if SSH was set up right, I typed:
 
 ```bash
-ssh -T git@gitlab.com
+ssh -T git@gitlab.fabcloud.org
 ```
 ---
 

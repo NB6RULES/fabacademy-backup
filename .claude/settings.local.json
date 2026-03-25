@@ -36,7 +36,8 @@
       "Read(//c/Users/nadec/.ssh/**)",
       "Bash(ssh-add ~/.ssh/id_ed25519)",
       "Bash(ssh-add -l)",
-      "Bash(ssh -vT git@gitlab.fabcloud.org)"
+      "Bash(ssh -vT git@gitlab.fabcloud.org)",
+      "Bash(xargs grep:*)"
     ]
   },
   "hooks": {
