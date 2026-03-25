@@ -7,6 +7,9 @@
   <!-- ── Hero Section ── -->
   <section class="relative px-8 lg:px-16 pt-16 pb-20 grid lg:grid-cols-2 gap-12 items-center max-w-[1400px] mx-auto min-h-[600px]">
 
+    <!-- Letter Glitch Background -->
+    <canvas id="letter-glitch-canvas" class="absolute inset-0 w-full h-full pointer-events-none" style="opacity:0.18;"></canvas>
+
     <!-- Ambient glows -->
     <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -230,4 +233,66 @@
 
 
 </div>
+<script>
+(function () {
+  const canvas = document.getElementById('letter-glitch-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
+  const FONT_SIZE = 14;
+  const COLORS = ['#79b0ff', '#ea73fb', '#ffac54'];
+  const GLITCH_INTERVAL = 50;   // ms between updates
+  const GLITCH_CHANCE = 0.03;   // fraction of cells that change each tick
+
+  let cols, rows, grid;
+
+  function resize() {
+    const section = canvas.parentElement;
+    canvas.width  = section.offsetWidth;
+    canvas.height = section.offsetHeight;
+    cols = Math.ceil(canvas.width  / FONT_SIZE);
+    rows = Math.ceil(canvas.height / FONT_SIZE);
+    grid = Array.from({ length: rows }, () =>
+      Array.from({ length: cols }, () => ({
+        char:  CHARS[Math.floor(Math.random() * CHARS.length)],
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        opacity: Math.random() * 0.5 + 0.1,
+      }))
+    );
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${FONT_SIZE}px monospace`;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const cell = grid[r][c];
+        ctx.globalAlpha = cell.opacity;
+        ctx.fillStyle   = cell.color;
+        ctx.fillText(cell.char, c * FONT_SIZE, (r + 1) * FONT_SIZE);
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function glitch() {
+    const total = cols * rows;
+    const count = Math.floor(total * GLITCH_CHANCE);
+    for (let i = 0; i < count; i++) {
+      const r = Math.floor(Math.random() * rows);
+      const c = Math.floor(Math.random() * cols);
+      grid[r][c].char    = CHARS[Math.floor(Math.random() * CHARS.length)];
+      grid[r][c].color   = COLORS[Math.floor(Math.random() * COLORS.length)];
+      grid[r][c].opacity = Math.random() * 0.5 + 0.1;
+    }
+    draw();
+  }
+
+  resize();
+  draw();
+  window.addEventListener('resize', () => { resize(); draw(); });
+  setInterval(glitch, GLITCH_INTERVAL);
+})();
+</script>
 {{ end }}
