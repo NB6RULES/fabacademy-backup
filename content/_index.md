@@ -151,7 +151,7 @@ bookToC = false
           <img src="images/about-me/dp.jpeg" alt="Nadec Biju" loading="eager" decoding="async">
         </a>
         <div class="home-mini">
-          <a class="home-mini-card home-mini-card--now" href="docs/assignment/week-8/">Now: Week 08</a>
+          <a class="home-mini-card home-mini-card--now" href="docs/assignment/week-10/">Now: Week 10</a>
           <a class="home-mini-card home-mini-card--agreement" href="docs/agreement/">Student Agreement</a>
           <a class="home-mini-card home-mini-card--cool" href="docs/assignment/week-3/laser-gauge-tool/">Laser Gauge Tool</a>
           <a class="home-mini-card home-mini-card--cool" href="docs/assignment/week-3/#glasses">Neil Statue</a>
