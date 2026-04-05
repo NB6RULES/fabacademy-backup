@@ -73,7 +73,11 @@ We tested a range of sensors available in the lab, including a **rotary encoder*
 - **Digital sensors** — produced discrete HIGH/LOW transitions. 
 - We compared signals at **different supply voltages** (3.3 V vs 5 V logic) and noted how the logic HIGH threshold shifted accordingly.
 
+![Group Assignment](../../../images/week-9/group-1.jpg)
+
 The oscilloscope exercise gave a concrete feel for signal integrity, noise floors, and the difference between a "clean" digital edge and a slow analog ramp.
+
+https://fabacademy.org/2026/labs/kochi/group_assignmetns/week09/
 
 ---
 
@@ -271,12 +275,10 @@ Both boards were designed in **KiCad**, then fabricated using the lab's PCB mill
 
 ### Manufacturing
 
-> *(To be filled with process photos and milling parameters after fabrication)*
-
 - Milling machine: Roland MDX-20
 - Substrate: FR1 single-sided copper clad
 - Trace width / clearance: 0.4 mm / 0.4 mm
-- Tool: 1/64" flat end mill (traces), 1/32" flat end mill (outline)
+- Tool: 0.2mm 60 degree v-bit (traces), 1/32" flat end mill (outline)
 - Software: Mods CE
 
 #### Sensor Board
@@ -314,6 +316,6 @@ Both boards were designed in **KiCad**, then fabricated using the lab's PCB mill
 
 ## Reflections
 
-- The initial STM32 idea was over-engineered for this week's intent. The constraint of using a minimal MCU like the ATtiny1624 actually makes the sensor interfacing problem more interesting — you have to think about bus loading, I²C pull-ups, voltage domains, and interrupt handling explicitly, rather than having a big SDK paper over them.
+- The initial STM32 idea was over-engineered for this week's intent. The constraint of using a minimal MCU like the ATtiny1624 actually makes the sensor interfacing problem more interesting .
 - Splitting into two boards keeps the sensor breakout swappable independently of the MCU board — useful if a sensor gets damaged or needs to be replaced.
 - The RCWL's 4 V minimum supply was the main electrical design challenge this week. The level shifter decision came directly from that constraint.
