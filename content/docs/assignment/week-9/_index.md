@@ -77,7 +77,7 @@ We tested a range of sensors available in the lab, including a **rotary encoder*
 
 The oscilloscope exercise gave a concrete feel for signal integrity, noise floors, and the difference between a "clean" digital edge and a slow analog ramp.
 
-https://fabacademy.org/2026/labs/kochi/group_assignmetns/week09/
+[Group Assignment Page — Fab Academy Kochi Week 09](https://fabacademy.org/2026/labs/kochi/group_assignmetns/week09/)
 
 ---
 
@@ -303,6 +303,48 @@ Both boards were designed in **KiCad**, then fabricated using the lab's PCB mill
 
 ---
 
+### Components collected from FabStash
+
+![Components collected from FabStash](../../../images/week-9/input-1.jpg)
+
+## Soldering
+
+<video controls width="100%">
+  <source src="../../../images/week-9/input-2.mp4" type="video/mp4">
+</video>
+
+---
+
+### Programming — Flashing the ATtiny1624 via UPDI
+
+The ATtiny1624 is programmed using **UPDI** (Unified Program and Debug Interface), a single-wire protocol on pin PA0.
+
+**Tools used:**
+- Programmer: 
+- Software:
+- Connection: 
+
+**Steps:**
+1. 
+2. 
+
+---
+
+### Code
+
+The firmware reads all three sensors and prints the values over UART (serial monitor).
+
+```cpp
+need to add code
+```
+
+---
+
+### Results — Sensor Readings
+
+
+---
+
 ## Files
 
 | File | Description |
@@ -316,6 +358,6 @@ Both boards were designed in **KiCad**, then fabricated using the lab's PCB mill
 
 ## Reflections
 
-- The initial STM32 idea was over-engineered for this week's intent. The constraint of using a minimal MCU like the ATtiny1624 actually makes the sensor interfacing problem more interesting .
+- The initial SAMD21 idea was over-engineered for this week's intent. The constraint of using a minimal MCU like the ATtiny1624 actually makes the sensor interfacing problem more interesting.
 - Splitting into two boards keeps the sensor breakout swappable independently of the MCU board — useful if a sensor gets damaged or needs to be replaced.
 - The RCWL's 4 V minimum supply was the main electrical design challenge this week. The level shifter decision came directly from that constraint.
