@@ -313,6 +313,9 @@ Both boards were designed in **KiCad**, then fabricated using the lab's PCB mill
   <source src="../../../images/week-9/input-2.mp4" type="video/mp4">
 </video>
 
+![mcu](../../../images/week-9/mcu.jpg)
+![sensor](../../../images/week-9/sensor.jpg)
+
 ---
 
 ### Programming — Flashing the ATtiny1624 via UPDI
