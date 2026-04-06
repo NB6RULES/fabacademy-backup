@@ -7,7 +7,7 @@
   <div class="flex min-h-screen">
 
     <!-- Main content -->
-    <div class="flex-1 min-w-0 xl:pr-72">
+    <div class="flex-1 min-w-0 xl:pr-72" style="overflow-x:clip;">
       <div class="max-w-4xl mx-auto px-8 py-12 prose-neon">
         {{- .Content | replaceRE `src="(/images/[^"]*)"` (printf `src="%s$1"` $bp) | safeHTML -}}
       </div>

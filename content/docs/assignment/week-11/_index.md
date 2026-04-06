@@ -236,6 +236,8 @@ SCR_KEYBOARD (0) ──long-press SEND──▶ SCR_STATUS (1) ──long-press 
       └───────────────────────────long-press SEND─────────────────────────────────┘
 ```
 
+<video src="../../../images/week-11/Display-States.mp4" controls width="100%"></video>
+
 #### Button input system
 
 All 6 buttons on the Week 8 PCB use `INPUT_PULLUP` (active LOW). The firmware reads each button every loop and applies a 50ms debounce — a state change only registers after the pin has been stable for 50ms. This stops a single press from registering as multiple.

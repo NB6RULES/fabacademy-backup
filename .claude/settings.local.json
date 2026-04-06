@@ -39,7 +39,8 @@
       "Bash(ssh -vT git@gitlab.fabcloud.org)",
       "Bash(xargs grep:*)",
       "Skill(humanizer)",
-      "Skill(humanizer:*)"
+      "Skill(humanizer:*)",
+      "Bash(hugo)"
     ]
   },
   "hooks": {
