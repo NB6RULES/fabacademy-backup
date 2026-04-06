@@ -37,7 +37,9 @@
       "Bash(ssh-add ~/.ssh/id_ed25519)",
       "Bash(ssh-add -l)",
       "Bash(ssh -vT git@gitlab.fabcloud.org)",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Skill(humanizer)",
+      "Skill(humanizer:*)"
     ]
   },
   "hooks": {
