@@ -396,3 +396,146 @@ Everything adjustable is a `#define` at the top of each file:
 #define CHAR_DELAY_MS      20       // ms between keystrokes
 #define RECONNECT_INTERVAL 5000    // ms between reconnect attempts
 ```
+
+---
+
+## ⚙️ Phase 2 — Two Targets, One Keyboard
+
+The extra credit goal was more than two nodes. Phase 1 was already two devices, but they were asymmetric — one sender, one receiver. For Phase 2 I added a third: a Raspberry Pi Pico 2W, its own static IP, its own USB connection to a second PC. Same keyboard, two machines.
+
+The ESP32-C6 side barely changes — it already runs an AP and fires UDP packets, so you basically just give it a second destination IP to aim at. The real work was on the keyboard side: the OLED needed a client picker screen, the web UI needed target selection buttons, and the numbers row was lowkey long overdue anyway.
+
+```
+┌─────────────────────────────────┐        Wi-Fi UDP         ┌──────────────────────────┐
+│       XIAO ESP32-C6             │ ───────────────────────▶ │   Raspberry Pi Pico W    │
+│                                 │     → 192.168.4.2:4210   │  • USB HID to PC #1      │
+│  • OLED QWERTY + Numbers KB     │                          └──────────────────────────┘
+│  • Client select screen         │
+│  • WiFi Access Point (AP)       │        Wi-Fi UDP         ┌──────────────────────────┐
+│  • Web server on port 80        │ ───────────────────────▶ │   Raspberry Pi Pico 2W   │
+│                                 │     → 192.168.4.3:4210   │  • USB HID to PC #2      │
+└─────────────────────────────────┘                          └──────────────────────────┘
+```
+
+---
+
+### New Hardware — Device 3
+
+| Component | Role |
+|-----------|------|
+| Raspberry Pi Pico 2W (RP2350) | Second USB HID target — static IP 192.168.4.3 |
+
+No extra wiring. Flash `pico2w_hid.ino`, plug into a second PC via USB, done.
+
+---
+
+### Static IP Assignments
+
+| Device   | IP            | UDP Port |
+|----------|---------------|----------|
+| ESP32-C6 | 192.168.4.1   | — |
+| Pico W   | 192.168.4.2   | 4210 |
+| Pico 2W  | 192.168.4.3   | 4210 |
+
+Both Picos listen on port 4210 — different IPs, no conflict.
+
+---
+
+### What Changed on the ESP32-C6
+
+#### Numbers row added
+
+The keyboard now has five rows. `1 2 3 4 5 6 7 8 9 0` sits above the Q-row. Numbers are always numeric — CAPS doesn't touch them, only letters.
+
+```
+Y= 0  1 2 3 4 5 6 7 8 9 0
+Y= 8  Q W E R T Y U I O P
+Y=16  A S D F G H J K L
+Y=24  Z X C V B N M
+Y=32  [CAP]  [BKS]  [SND]
+Y=40  ────────────────────
+Y=42  text buffer
+Y=55  Len:xx
+```
+
+#### Screen cycle — down to two
+
+The Mode screen is gone. Long-pressing SEND now just toggles between the keyboard and the status screen. Honestly two states are way easier to track when you're mid-typing and can't look at code.
+
+| Screen | What it shows |
+|--------|---------------|
+| 0 — QWERTY | Keyboard + text buffer |
+| 1 — Status | AP IP, STA IP, client count, last sent |
+
+#### Client select screen (new)
+
+Short-pressing SEND no longer sends immediately — it opens a picker first. This was necessary because with two possible targets, "send" on its own is ambiguous.
+
+```
+┌─────────────────────────────┐
+│         Send to:            │
+├─────────────────────────────┤
+│  >      Pico W              │  ← highlighted when selected
+│         Pico 2W             │
+│  ^v:sel  SND/SPC:ok  L:bk  │
+└─────────────────────────────┘
+```
+
+| Button | What it does |
+|--------|--------------|
+| UP / DOWN | Toggle between Pico W and Pico 2W |
+| SEND or SPACE | Confirm — fires UDP to the selected device |
+| LEFT | Cancel — back to keyboard, nothing sent |
+| Long-press SEND | Skip the picker, jump straight to Status screen |
+
+The on-screen **[SND]** key and the physical SEND button both open the same picker.
+
+---
+
+### What Changed on the Web UI
+
+Two toggle buttons now sit above the Send button — click one to pick your target before sending. **Pico W** (192.168.4.2) is the default. The POST body now includes `&client=0` or `&client=1` so the ESP32 knows which IP to use.
+
+---
+
+### New File: `pico2w_hid/pico2w_hid.ino`
+
+This is basically `pico_hid.ino` with one line changed. Literally one constant is different:
+
+```cpp
+#define STATIC_IP  "192.168.4.3"   // Pico 2W — Pico W stays on .2
+```
+
+Everything else — WiFi connection logic, UDP listener, USB HID output, reconnect handling — is identical. The RP2350 (Pico 2W chip) is backwards compatible with the RP2040 for this use case, so no firmware changes were needed beyond the IP.
+
+#### Arduino IDE settings — Pico 2W
+
+| Setting | Value |
+|---------|-------|
+| Board | `Raspberry Pi Pico 2 W` |
+| USB Stack | **Adafruit TinyUSB** ← same requirement as Pico W |
+| Flash Size | 4MB |
+
+---
+
+### Updated Configuration Constants
+
+#### `esp32_keyboard.ino` (Phase 2)
+```cpp
+#define AP_SSID    "ESP_KB"
+#define AP_PASS    "12345678"
+#define PICO_IP    "192.168.4.2"   // Pico W
+#define PICO2_IP   "192.168.4.3"   // Pico 2W
+#define PICO_PORT  4210
+```
+
+#### `pico2w_hid.ino`
+```cpp
+#define AP_SSID            "ESP_KB"
+#define AP_PASS            "12345678"
+#define STATIC_IP          "192.168.4.3"
+#define GATEWAY            "192.168.4.1"
+#define UDP_PORT           4210
+#define CHAR_DELAY_MS      20
+#define RECONNECT_INTERVAL 5000
+```
