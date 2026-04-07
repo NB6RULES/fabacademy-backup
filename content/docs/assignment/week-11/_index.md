@@ -68,22 +68,7 @@ A two-device wireless text input system. You type on a physical QWERTY keyboard 
 
 ## How it works — big picture
 
-```
-┌─────────────────────────────────┐        Wi-Fi UDP         ┌──────────────────────────┐
-│       XIAO ESP32-C6             │ ───────────────────────▶ │   Raspberry Pi Pico W    │
-│    (custom Week 8 PCB)          │     192.168.4.1          │                          │
-│                                 │     → 192.168.4.2:4210   │  • Receives UDP packet   │
-│  • OLED QWERTY keyboard         │                          │  • Types text via USB HID │
-│  • 6 navigation buttons         │                          │  • Connected to PC by USB │
-│  • WiFi Access Point (AP)       │                          │                          │
-│  • Web server on port 80        │                          └──────────────────────────┘
-└─────────────────────────────────┘
-          ▲
-          │  HTTP (browser)
-          │
-   Any phone/laptop
-   connected to ESP_KB
-```
+![bd-1](../../../images/week-11/bd-1.jpg)
 
 ---
 
@@ -405,17 +390,7 @@ The extra credit goal was more than two nodes. Phase 1 was already two devices, 
 
 The ESP32-C6 side barely changes — it already runs an AP and fires UDP packets, so you basically just give it a second destination IP to aim at. The real work was on the keyboard side: the OLED needed a client picker screen, the web UI needed target selection buttons, and the numbers row was lowkey long overdue anyway.
 
-```
-┌─────────────────────────────────┐        Wi-Fi UDP         ┌──────────────────────────┐
-│       XIAO ESP32-C6             │ ───────────────────────▶ │   Raspberry Pi Pico W    │
-│                                 │     → 192.168.4.2:4210   │  • USB HID to PC #1      │
-│  • OLED QWERTY + Numbers KB     │                          └──────────────────────────┘
-│  • Client select screen         │
-│  • WiFi Access Point (AP)       │        Wi-Fi UDP         ┌──────────────────────────┐
-│  • Web server on port 80        │ ───────────────────────▶ │   Raspberry Pi Pico 2W   │
-│                                 │     → 192.168.4.3:4210   │  • USB HID to PC #2      │
-└─────────────────────────────────┘                          └──────────────────────────┘
-```
+![bd-2](../../../images/week-11/bd-2.jpg)
 
 ---
 
@@ -518,6 +493,10 @@ Everything else — WiFi connection logic, UDP listener, USB HID output, reconne
 
 ---
 
+## Hero Shots
+
+<video src="../../../images/week-11/Hero-2.mp4" controls width="100%"></video>
+
 ### Updated Configuration Constants
 
 #### `esp32_keyboard.ino` (Phase 2)
@@ -539,3 +518,5 @@ Everything else — WiFi connection logic, UDP listener, USB HID output, reconne
 #define CHAR_DELAY_MS      20
 #define RECONNECT_INTERVAL 5000
 ```
+
+
