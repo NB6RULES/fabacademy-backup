@@ -155,6 +155,11 @@
       color: #adaaaa;
       font-size: 0.875rem;
     }
+    /* cpp code blocks: max 10 lines visible, scroll for the rest */
+    .prose-neon pre:has(code.language-cpp) {
+      max-height: 16.5rem;
+      overflow-y: auto;
+    }
     .prose-neon ul { padding-left: 0; margin-bottom: 1rem; }
     .prose-neon ul li {
       color: #adaaaa;

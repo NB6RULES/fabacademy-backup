@@ -215,12 +215,6 @@ Why the Pico W and not the ESP32-C6 for this? The ESP32-C6 has no USB OTG hardwa
 
 The OLED cycles through 3 screens with a long-press of SEND (≥1 second):
 
-```
-SCR_KEYBOARD (0) ──long-press SEND──▶ SCR_STATUS (1) ──long-press SEND──▶ SCR_MODE (2)
-      ▲                                                                           │
-      └───────────────────────────long-press SEND─────────────────────────────────┘
-```
-
 <video src="../../../images/week-11/Display-States.mp4" controls width="100%"></video>
 
 #### Button input system
@@ -384,7 +378,7 @@ Everything adjustable is a `#define` at the top of each file:
 
 ---
 
-## ⚙️ Phase 2 — Two Targets, One Keyboard
+## Phase 2 — Two Targets, One Keyboard
 
 The extra credit goal was more than two nodes. Phase 1 was already two devices, but they were asymmetric — one sender, one receiver. For Phase 2 I added a third: a Raspberry Pi Pico 2W, its own static IP, its own USB connection to a second PC. Same keyboard, two machines.
 
@@ -470,6 +464,8 @@ The on-screen **[SND]** key and the physical SEND button both open the same pick
 ### What Changed on the Web UI
 
 Two toggle buttons now sit above the Send button — click one to pick your target before sending. **Pico W** (192.168.4.2) is the default. The POST body now includes `&client=0` or `&client=1` so the ESP32 knows which IP to use.
+
+![ui](../../../images/week-11/phase-2-ui.jpg)
 
 ---
 
