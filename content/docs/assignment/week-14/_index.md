@@ -25,7 +25,9 @@ That's the whole Doc Hudson lesson playing out in real time. Winning isn't every
 That movie was genuinely my introduction to motorsport and cars. It shaped how I think about racing. Building the Piston Cup for Fab Academy Week 14 felt like the only correct choice. 🏆
 
 I was so confident I had the design memorized from childhood that I didn't even want to look up a reference image. I did eventually pull one up and import it into Fusion just for scale reference — but the geometry was entirely from memory. No regrets.
+
 ![safety gear](../../../images/week-14/mcqueen.jpg)
+
 ---
 
 ## Group Assignment
