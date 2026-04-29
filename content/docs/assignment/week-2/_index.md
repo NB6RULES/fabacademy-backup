@@ -205,6 +205,12 @@ As a fun and relatable exercise, I decided to create a **meme related to Formula
 
 I downloaded a few reference images from the internet and experimented with:
 - **Trace Bitmap**
+Open your image in Inkscape → go to Path > Trace Bitmap, choose Brightness Cutoff (or Edge Detection), adjust threshold, then click Apply to vectorize.
+
+![alt text](../../../images/week-2/1.jpg)
+![alt text](../../../images/week-2/2.jpg)
+![alt text](../../../images/week-2/3.jpg)
+
 - Adjusting thresholds
 - Cleaning up paths and nodes
 
