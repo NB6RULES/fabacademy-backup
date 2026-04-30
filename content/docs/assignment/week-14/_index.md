@@ -84,6 +84,14 @@ Key things I picked up:
 
 ---
 
+## Group Assignment Summary
+
+For the group assignment, we went through the safety stuff for all the materials we'd be using this week. Basically, we checked out the datasheets for everything — Aditya Silicone Rubber (2.5–3% hardener, 12–24 hour cure), the clear epoxy (100:50 ratio, super easy), mold release spray, and polyurethane rubber. We also made some test casts to see how the materials actually behave and what happens when they cure. The process was pretty straightforward: measure the volume with water, mix it carefully without making a vortex (that traps air), put it in the vacuum chamber to pull out bubbles, then pour it slowly so nothing gets trapped. For safety, we just wore gloves, didn't eat near the chemicals, cleaned up spills right away, and stored everything in a cool spot. Getting all this done first meant we knew exactly how the materials worked before we started designing our actual molds.
+
+https://fabacademy.org/2026/labs/kochi/group_assignmetns/week13/
+
+---
+
 ## Part 1 – Concept and Mold Design
 
 ### 💡 Starting with the Bounding Box
