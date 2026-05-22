@@ -40,7 +40,10 @@
       "Bash(xargs grep:*)",
       "Skill(humanizer)",
       "Skill(humanizer:*)",
-      "Bash(hugo)"
+      "Bash(hugo)",
+      "Bash(dir /B \"c:\\\\Users\\\\nadec\\\\OneDrive\\\\Desktop\\\\FAB Academy - Nadec Biju\\\\Git pushes\\\\nadec-biju\\\\static\")",
+      "Bash(find \"c:\\\\Users\\\\nadec\\\\OneDrive\\\\Desktop\\\\FAB Academy - Nadec Biju\" -iname \"capcut*\" -o -iname \"handbrake-1*\" -o -iname \"handbrake-2*\" -o -iname \"fab-schedule*\" 2>/dev/null | head -20)",
+      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/**)"
     ]
   },
   "hooks": {
