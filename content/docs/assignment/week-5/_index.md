@@ -197,16 +197,42 @@ By keeping within limits:
 
 ### Printing Process
 
-- Imported into **Bambu Studio**
-https://bambulab.com/en-in/download/studio
-- Arranged model on build plate
+Bambu Studio is the slicer software made by Bambu Lab. A slicer takes a 3D model (STL/3MF) and converts it into G-code, which is just a list of instructions the printer understands — where to move, how fast, when to push out filament, when to heat up, etc. Without slicing, the printer has no idea what to do with a 3D model.
+
+🔗 https://bambulab.com/en-in/download/studio
+
+**Step 1 — Setting up the project**
+
+When I opened Bambu Studio, the first thing I did was select my printer (**Bambu Lab A1**) and the filament I had loaded (**Generic PLA**). These two settings tell the slicer what kind of bed size to work with and how to behave thermally (nozzle temperature, bed temperature, cooling fan curves, retraction, etc.).
+
+**Step 2 — Importing the model**
+
+I dragged my exported **lattice STL file** straight into the Bambu Studio window. It dropped onto the virtual build plate as an *object*. In Bambu Studio, anything you drop onto the plate becomes an object — you can have multiple objects on one plate, move them around, rotate them, scale them, or duplicate them. Each object on the plate gets sliced together as one print job.
+
 ![Lattice on Build Plate 1](/images/week-5/lattice-01.jpg)
-- Sliced using:
-  - **0.2 mm layer height**
-  - **No supports**
-- Sent to printer via **Print Plate**
+
+**Step 3 — Orienting the model**
+
+I positioned the lattice flat on the bed so the largest face was touching the build plate. This matters because the first layer is what holds everything else up, and a wider base = more grip + less chance of the print peeling off mid-job. I also made sure no overhangs exceeded the ~45° rule I tested earlier, so I wouldn't need supports.
+
+**Step 4 — Slice settings**
+
+For this print I used:
+
+- **Layer height: 0.2 mm** — a good balance between speed and surface quality. Bigger numbers = faster but rougher; smaller = slow but smoother.
+- **Infill:** kept at Bambu's default for the Generic PLA preset, since the lattice geometry is mostly hollow by design.
+- **Supports: OFF** — the design was specifically built to stay within self-supporting overhang angles.
+- **Build plate: Cool Plate / Textured PEI** (Bambu A1 default).
+
+**Step 5 — Slicing**
+
+I clicked the **"Slice plate"** button. Bambu Studio chewed through the model and showed the layer-by-layer toolpath preview — every move the nozzle would make, color-coded by feature (wall, infill, support, travel, etc.). I scrubbed through the layers using the slider on the right side to sanity-check that nothing weird was happening — no missing layers, no floating islands, no over-aggressive bridging.
+
 ![Lattice Build Plate Setup](/images/week-5/lattice-02.jpg)
-- Print started
+
+**Step 6 — Sending to the printer**
+
+I hit **"Print Plate"** which uploads the sliced job (now a `.3mf` / G-code bundle) straight to the printer over Wi-Fi. The A1 picked it up, ran its auto bed-leveling routine, and started the print.
 
 ### Hero Shots
 ![Lattice Printing 1](/images/week-5/lattice-03.jpg)
@@ -245,9 +271,14 @@ I decided to convert the **Goblin model I created in Week 2 (Blender)** into a f
 
   - Cutter → **Negative body**
 ![Goblin Model 2](/images/week-5/goblin-2.jpg)
+
+Placing the cutter in the correct position to create the flex channels
 ![Goblin Model 3](/images/week-5/goblin-3.jpg)
+Right click on the cutter and select change type
 ![Goblin Model 4](/images/week-5/goblin-4.jpg)
+In types select negative part
 ![Goblin Model 5](/images/week-5/goblin-5.jpg)
+Then click slice and the software will automatically perform the boolean operation to create the flex channels in the goblin model
 ![Goblin Model 6](/images/week-5/goblin-6.jpg)
 - Performed boolean merge
 
@@ -490,7 +521,41 @@ https://www.artec3d.com/portable-3d-scanners/artec-leo/
 ![Artec Scan 4](/images/week-5/scan-4.jpg)
 5. Completed scan
 6. Exported to **Artec Studio** for post-processing https://www.artec3d.com/3d-software/artec-studio
-![Artec Studio Post-processing](/images/week-5/artec-1.jpg)
+
+#### Post-processing in Artec Studio
+
+**Step 1** — Loaded the project in Artec Studio 15. Two Leo scans sitting in the workspace — **Leo 1.1 (361 frames)** and **Leo 1.2 (413 frames)**.
+
+![Artec Studio Step 1 - project loaded](/images/week-5/artec-1.jpg)
+
+**Step 2** — Hit **Autopilot**. It gave a quick overview of what it's about to do — editing, alignment, then model creation.
+
+![Artec Studio Step 2 - Autopilot overview](/images/week-5/artec-2.jpg)
+
+**Step 3** — Selected both scans to feed into the model creation pipeline.
+
+![Artec Studio Step 3 - selecting scans](/images/week-5/artec-3.jpg)
+
+**Step 4** — Set the parameters. **Quality: Good**, **size: Medium**, **hole-filling: Watertight**, everything else on **Auto**. **Texture enabled**.
+
+![Artec Studio Step 4 - parameters](/images/week-5/artec-4.jpg)
+
+**Step 5** — Pipeline started. **Global Registration** running first — aligning all the frames together.
+
+![Artec Studio Step 5 - Global Registration](/images/week-5/artec-5.jpg)
+
+**Step 6** — Steps 1–5 done. **Texturing in progress**, mesh already looking clean in the viewport.
+
+![Artec Studio Step 6 - texturing in progress](/images/week-5/artec-6.jpg)
+
+**Step 7** — Texturing done (took **124 seconds**). Now on the last step — **texture optimization**.
+
+![Artec Studio Step 7 - texture optimization](/images/week-5/artec-7.jpg)
+
+**Step 8** — **"Model is ready!"** All 7 steps done, final textured model looks solid.
+
+![Artec Studio Step 8 - model ready](/images/week-5/artec-8.jpg)
+
 ### Object Scanned
 
 - Stool

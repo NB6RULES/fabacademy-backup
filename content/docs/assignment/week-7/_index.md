@@ -274,7 +274,15 @@ This saved me easily 2+ hours of tedious manual filleting — the chair design h
 
 Once the design was finalized, I used Fusion's **Arrange** feature to lay all parts flat on a virtual 8ft × 4ft sheet — mimicking the actual plywood dimensions.
 
-Then I exported the arranged layout as a **DXF file**, which I could open directly in VCarve Pro for CAM setup.
+1. From the toolbar, I went to **Modify → Arrange**. Fusion opens a dialog asking which bodies/components to arrange and what surface they should be laid down on.
+3. **Arrange Plane:** This tells Fusion plane to lay everything flat onto .
+4. **Objects:** Select every in the assembly. Fusion automatically rotates each one to find the flattest orientation that fits, then packs them onto the chosen plane with the spacing I set.
+5. **Spacing:** I left a small gap between parts so the CNC bit's kerf wouldn't merge neighbouring cuts.
+6. Hit **OK** and Fusion solved the layout in a couple of seconds.
+
+![Fusion 360 Arrange dialog — selecting bodies and the layout plane](../../../images/week-7/arrange-1.jpg)
+
+![Fusion 360 Arrange result — all parts auto-packed flat on the sheet](../../../images/week-7/arrange-2.jpg)
 
 ![Fusion 360 Arrange feature with all parts laid flat](../../../images/week-7/fusion-arranged.jpg)
 

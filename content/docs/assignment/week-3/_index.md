@@ -447,7 +447,7 @@ The design was fully parametric so it could adapt to:
 
 **Laser Cutting Process:**
 
-<video autoplay loop width="50%" height="auto" controls style="display: block;">
+<video autoplay loop muted playsinline width="50%" height="auto" controls style="display: block;">
   <source src="/images/week-3/laser.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
