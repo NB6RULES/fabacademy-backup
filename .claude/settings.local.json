@@ -43,7 +43,12 @@
       "Bash(hugo)",
       "Bash(dir /B \"c:\\\\Users\\\\nadec\\\\OneDrive\\\\Desktop\\\\FAB Academy - Nadec Biju\\\\Git pushes\\\\nadec-biju\\\\static\")",
       "Bash(find \"c:\\\\Users\\\\nadec\\\\OneDrive\\\\Desktop\\\\FAB Academy - Nadec Biju\" -iname \"capcut*\" -o -iname \"handbrake-1*\" -o -iname \"handbrake-2*\" -o -iname \"fab-schedule*\" 2>/dev/null | head -20)",
-      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/**)"
+      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/**)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $dir = \"c:\\\\Users\\\\nadec\\\\OneDrive\\\\Desktop\\\\FAB Academy - Nadec Biju\\\\Git pushes\\\\nadec-biju\\\\static\\\\images\\\\week-3\"; foreach \\($name in @\\(\"neil-11.jpg\",\"neil-12.jpg\"\\)\\) { $path = Join-Path $dir $name; $img = [System.Drawing.Image]::FromFile\\($path\\); $img.RotateFlip\\([System.Drawing.RotateFlipType]::Rotate90FlipNone\\); $tmp = Join-Path $dir \\(\"_rot_\" + $name\\); $img.Save\\($tmp, [System.Drawing.Imaging.ImageFormat]::Jpeg\\); $img.Dispose\\(\\); Move-Item -Force $tmp $path; Write-Output \"$name rotated\" })",
+      "Bash(ffmpeg -version)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $path = \"c:\\\\Users\\\\nadec\\\\OneDrive\\\\Desktop\\\\FAB Academy - Nadec Biju\\\\Git pushes\\\\nadec-biju\\\\static\\\\images\\\\week-3\\\\neil-11.jpg\"; $img = [System.Drawing.Image]::FromFile\\($path\\); Write-Output \\(\"Current dimensions: \" + $img.Width + \" x \" + $img.Height\\); $hasOrient = $img.PropertyIdList -contains 0x0112; if \\($hasOrient\\) { $orient = $img.GetPropertyItem\\(0x0112\\).Value[0]; Write-Output \\(\"EXIF Orientation flag: $orient \\(1=normal, 6=rotate 90CW, 8=rotate 90CCW, 3=180\\)\"\\) } else { Write-Output \"No EXIF orientation tag\" }; $img.Dispose\\(\\))",
+      "Bash(stat -c '%n %y %s' \"c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/static/images/week-3/neil-11.jpg\" \"c:/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/static/images/week-3/neil-12.jpg\")",
+      "Read(//c/Users/nadec/OneDrive/Desktop/FAB Academy - Nadec Biju/Git pushes/nadec-biju/**)"
     ]
   },
   "hooks": {

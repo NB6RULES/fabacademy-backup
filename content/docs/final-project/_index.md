@@ -82,6 +82,9 @@ This is lowkey a pretty big project, so I'm breaking it down:
 1. **Week 1-2**: Gather components, test RFID reader with microcontroller,Design the enclosure, start 3D printing
 2. **Week 3-4**: Integrate sensors and solenoid locks , Build the software/firmware
 3. **Week 5-6**: Put it all together and test everything , Fix bugs, add features, polish it up
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQd4QJIY-qwwxRDOcN8cfK8kzYhXXSCJxN_sq5hL_5EuqFRIKBJW4ukexAZ-MGphuN_HvaJz50p7CyA/pubhtml?gid=265539544&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>
+
 ---
 
 ## Challenges I'm Expecting

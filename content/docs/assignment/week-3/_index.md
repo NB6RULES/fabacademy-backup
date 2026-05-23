@@ -20,6 +20,8 @@ This week built naturally on **Week 1 (principles, tools, documentation)** and *
   <img src="/images/week-3/hero-cyberpunk-2.jpg" alt="Computer Controlled Cutting Setup 2" style="flex: 1; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block;">
 </div>
 
+ > AI PROMPT : https://fabacademy.org/2026/labs/kochi/students/nadec-biju/images/week-3/neil-glasses-1.jpg  change the background to look cool , i want to , make a hero shot
+
 ---
 
 ## Group Assignment
@@ -89,11 +91,36 @@ This week built naturally on **Week 1 (principles, tools, documentation)** and *
 
 ---
 
-## Lab Safety Training
+# Group Assignment : Lab Safety Training
 
 I’m adding the group assignment page here for reference:
 
 🔗 https://fabacademy.org/2026/labs/kochi/group_assignmetns/week03/
+
+> The final values we figured for the parametric press-fit pieces for Cardboard are:
+>
+> - **Thickness:** 3 mm
+> - **Compression:** 0.2 mm
+> - **Kerf:** 0.3 mm
+>
+> The effective kerf was found to be approximately:
+>
+> - **0.14 mm** for wood
+> - **0.1 mm** for acrylic
+
+**Group's Final Results — Kerf Finding & Press-Fit Comb:**
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0;">
+  <figure style="margin: 0; max-width: 100%;">
+    <img src="/images/week-3/group-kerf-finding.jpg" alt="Group kerf finding test result" style="max-height: 420px; width: auto; max-width: 100%; border-radius: 6px;">
+    <figcaption style="text-align: center; font-size: 0.9em; opacity: 0.8; margin-top: 6px;">Kerf finding test</figcaption>
+  </figure>
+  <figure style="margin: 0; max-width: 100%;">
+    <img src="/images/week-3/group-press-fit-comb.jpg" alt="Group press-fit comb test result" style="max-height: 420px; width: auto; max-width: 100%; border-radius: 6px;">
+    <figcaption style="text-align: center; font-size: 0.9em; opacity: 0.8; margin-top: 6px;">Press-fit comb test</figcaption>
+  </figure>
+</div>
+
 
 ---
 
@@ -104,8 +131,6 @@ They are powerful tools that can hurt you in very serious ways if you’re carel
 So you need to treat the machines with **mutual respect** and be extremely alert while working with them.
 
 ---
-
-## Lab Safety Training (Individual Understanding)
 
 ### General Lab Safety
 
@@ -172,6 +197,7 @@ The vinyl cutter also requires careful handling:
 - Excess vinyl should be removed carefully using a weeding tool  
 
 ---
+# Indivisual Assignment
 
 ## Vinyl Cutting
 
@@ -186,7 +212,7 @@ https://www.rolanddga.com/support/products/cutting/camm-1-gx-24-24-vinyl-cutter
 - Roll or sheet selection  
 - Maximum cutting force  
 - Cutting tool and blade depth  
-![Vinyl controls](/images/week-3/roland-1.jpg)
+<img src="/images/week-3/roland-1.jpg" alt="Vinyl controls" style="max-height: 480px; width: auto; max-width: 100%; display: block; margin: 16px auto; border-radius: 6px;">
 
 ### Setup Process
 - Load vinyl by releasing the loading lever  
@@ -224,6 +250,8 @@ For sending the vinyl cutting job to the machine, I used the **Mods Project** we
 I first opened the Mods Project website:
 
 https://modsproject.org/
+
+Mods is a browser-based, tool that allows one to control many of the machine that are used the fabacademy workflow . In this week im using it to convert svg to the required Gcode for the vinyl cutter.
 
 ![Mods Project Website](/images/week-3/vinyl-mods-1.jpg)
 
@@ -264,6 +292,11 @@ Next steps:
 
 ![File Loading and Calculation](/images/week-3/vinyl-mods-5.jpg)
 
+> Force and speed values used:
+>
+> Speed : 2 cm/s 
+> Force : 100 gf
+
 ---
 
 The cutting process completed successfully after verifying the test cut, and the final vinyl output was obtained.
@@ -278,12 +311,16 @@ The cutting process completed successfully after verifying the test cut, and the
 Final output after cutting:  
 ![Vinyl Cutting Result](/images/week-3/vinyl-8.jpg)
 
-Transfer paper was applied so the stickers could be mounted easily:  
-![Transfer Paper](/images/week-3/vinyl-9.jpg)
+Transfer paper was applied so the stickers could be mounted easily (I've use the cooling film used for window panes as the trasnfer paper and it worked perfectly):
 
-Final hero shots:  
-![Final Sticker 1](/images/week-3/vinyl-10.jpg)
-![Final Sticker 2](/images/week-3/vinyl-11.jpg)
+<img src="/images/week-3/vinyl-9.jpg" alt="Transfer Paper" style="max-height: 480px; width: auto; max-width: 100%; display: block; margin: 16px auto; border-radius: 6px;">
+
+Final hero shots:
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0;">
+  <img src="/images/week-3/vinyl-10.jpg" alt="Final Sticker 1" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+  <img src="/images/week-3/vinyl-11.jpg" alt="Final Sticker 2" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+</div>
 
 ---
 
@@ -308,7 +345,12 @@ https://www.troteclaser.com/en/laser-machines/laser-engravers-speedy-series
 - Air assist and exhaust control  
 - Job origin and alignment  
 ![Machine Controls 1](/images/week-3/trotec-5.jpg)
+this is the material database where the different power and speed values for different materials are stored. you can select the material you are cutting and the machine will automatically set the required power and speed values for that material. you can also create custom presets for new materials or specific cutting requirements.
+
 ![Machine Controls 2](/images/week-3/trotec-4.jpg)
+
+Machine movement control can be done using these buttons on the control panel, which allow you to move the laser head and adjust the z-axis position of the material on the bed.
+
 ---
 
 ### Setup Process  
@@ -395,6 +437,26 @@ The design was fully parametric so it could adapt to:
 
 ---
 
+### Laser Cutting
+
+- Imported the nested SVG into **Trotec Job Control** and set the required power and speed values
+
+<img src="/images/week-3/cardboard-power-values.jpg" alt="Trotec Job Control - cardboard power and speed values" style="max-height: 480px; width: auto; max-width: 100%; display: block; margin: 16px auto; border-radius: 6px;">
+
+- Started the laser cutting process  
+
+**Laser Cutting Process:**
+
+<video autoplay loop width="50%" height="auto" controls style="display: block;">
+  <source src="/images/week-3/laser.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+**Hero shot of the testcut construction kit:**  
+![Construction Kit Final](/images/week-3/construction-kit-19.jpg)
+
+---
+
 ### Nesting Using Deepnest
 
 - Exported the file and opened it in **Deepnest** for nesting  
@@ -415,35 +477,17 @@ The design was fully parametric so it could adapt to:
 
 ---
 
-### Laser Cutting
+## Hero Shots of the Construction Kit
 
-- Imported the nested SVG into **Trotec Job Control** and set the required power and speed values  
-  
-
-- Started the laser cutting process  
-
-**Laser Cutting Process:**
-
-<video autoplay loop width="50%" height="auto" controls style="display: block;">
-  <source src="/images/week-3/laser.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
----
-
-### Final Output
-
-**Hero shot of the completed construction kit:**  
-![Construction Kit Final](/images/week-3/construction-kit-19.jpg)
-
-**Hero shots of the assembled construction kit:**  
 Take a look at what i had build
 
 ![Construction Kit artillery gun](/images/week-3/construction-kit-191.jpg)
+
+> Source : https://medium.com/indian-defence/terrible-state-of-indian-artillery-a849f763c837
+
 ![Construction Kit Assembled 1](/images/week-3/construction-kit-20.jpg)
 ![Construction Kit Assembled 2](/images/week-3/construction-kit-21.jpg)
 ![Construction Kit Assembled 3](/images/week-3/construction-kit-22.jpg)
-![Construction Kit Assembled 2](/images/week-3/construction-kit-23.jpg)
 ![Construction Kit Assembled 3](/images/week-3/construction-kit-24.jpg)
 
 ## Compression Testing Comb (Fusion 360)
@@ -475,7 +519,7 @@ In Inkscape, I ensured:
 
 I then sent the file to the **Trotec laser cutter**, adjusted power and speed values in the Job Control software, and completed the cut and engraving.
 
-![Parametric Inkscape](/images/week-3/kerf-test.jpg)
+<img src="/images/week-3/kerf-test.jpg" alt="Kerf test result" style="max-height: 480px; width: auto; max-width: 100%; display: block; margin: 16px auto; border-radius: 6px;">
 
 ---
 ## Making a Laser Cut Layered Statue
@@ -494,7 +538,9 @@ I searched online and found a suitable image of him.
 
 Then I opened **Bambu Studio**, navigated to the **Maker Lab** section, and selected the **“Make My Statue”** option. I uploaded the image of Neil into the tool.
 
-![Neil Upload](/images/week-3/neil-1.jpg)
+> Image Source : Interview with Neil Gershenfeld Director of MIT's Center for Bits and Atoms https://www.youtube.com/watch?v=6hwdLf-sL8Y
+
+<img src="/images/week-3/neil-1.jpg" alt="Neil Upload" style="max-height: 480px; width: auto; max-width: 100%; display: block; margin: 16px auto; border-radius: 6px;">
 
 The software then began processing the image into a 3D model.
 
@@ -509,7 +555,7 @@ After processing, it generated a rendered 3D output, which I exported as an **ST
 
 ### Step 2 – Modifying the Model in 3D Builder
 
-Next, I imported the STL file into **3D Builder** (which I had previously used in Week 2).
+Next, I imported the STL file into **3D Builder** (which I had previously used in [Week 2 — Creating a Model in 3D Builder](../week-2/#creating-a-model-in-3d-builder)).
 
 To allow structural support during assembly, I created:
 
@@ -529,6 +575,8 @@ After completing this modification, I saved the updated STL file.
 ---
 
 ### Step 3 – Slicing for Laser Cutting (Kiri:Moto)
+
+🔗 [Kiri:Moto — https://grid.space/kiri/](https://grid.space/kiri/)
 
 I then imported the modified STL into **Kiri:Moto** and switched to **Laser Mode**.
 
@@ -586,11 +634,11 @@ After cutting all the layers, the pieces were stacked in order and aligned using
 
 Final assembled layered statue:
 
-![Final Statue 1](/images/week-3/neil-13.jpg)  
-![Final Statue 2](/images/week-3/neil-14.jpg)  
-![Final Statue 3](/images/week-3/neil-15.jpg)
-
----
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0;">
+  <img src="/images/week-3/neil-13.jpg" alt="Final Statue 1" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+  <img src="/images/week-3/neil-14.jpg" alt="Final Statue 2" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+  <img src="/images/week-3/neil-15.jpg" alt="Final Statue 3" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+</div>
 
 ---
 
@@ -639,9 +687,11 @@ After cutting:
 
 ### Final Base + Statue – Hero Shots
 
-![Statue Base 1](/images/week-3/neil-hero-1.jpg)  
-![Statue Base 2](/images/week-3/neil-hero-2.jpg)  
-![Statue Base 3](/images/week-3/neil-hero-3.jpg)
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0;">
+  <img src="/images/week-3/neil-hero-1.jpg" alt="Statue Base 1" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+  <img src="/images/week-3/neil-hero-2.jpg" alt="Statue Base 2" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+  <img src="/images/week-3/neil-hero-3.jpg" alt="Statue Base 3" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+</div>
 
 ---
 
@@ -649,8 +699,10 @@ After cutting:
 
 So instead of redesigning anything fancy, I just bent some solder wire and made the glasses manually and attached them to the statue 😌🔥  
 
-![Neil Glasses 1](/images/week-3/neil-glasses-1.jpg)  
-![Neil Glasses 2](/images/week-3/neil-glasses-2.jpg)
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0;">
+  <img src="/images/week-3/neil-glasses-1.jpg" alt="Neil Glasses 1" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+  <img src="/images/week-3/neil-glasses-2.jpg" alt="Neil Glasses 2" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 6px;">
+</div>
 
 
 ## Final Reflection
