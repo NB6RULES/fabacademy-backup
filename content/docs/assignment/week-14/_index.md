@@ -311,17 +311,18 @@ I ran a full second pour after troubleshooting — more careful with the ratio m
 
 ---
 
-## Part 5 – Acrylic Casting
-
-*(In progress — will update once the pour is done)*
+## Part 5 – Epoxy Casting
 
 Once both silicone mold halves had fully cured and were demolded from the wax, the two halves were joined together and **epoxy resin** poured in at the required mixing ratio.
+
+![safety gear](../../../images/week-14/38.jpg)
+![safety gear](../../../images/week-14/39.jpg)
 
 ---
 
 ## Hero Shots
 
-*(Photos coming — will update post-assembly)*
+![safety gear](../../../images/week-14/40.jpg)
 
 ---
 
