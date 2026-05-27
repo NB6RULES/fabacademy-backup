@@ -38,14 +38,6 @@ This week was lowkey a different vibe compared to the rest of Fab Academy — mo
 
 ---
 
-## Software Used
-- **Programming language** (Python, JavaScript, etc.)
-- **UI framework** (Processing, p5.js, PyQt, web technologies, etc.)
-- **Serial communication** libraries
-- **Browser + Git** for documentation
-
----
-
 ## Weekly Schedule
 
 | Day | What I Did |
