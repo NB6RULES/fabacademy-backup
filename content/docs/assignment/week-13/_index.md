@@ -1,54 +1,20 @@
 +++
-title = "Week 13 - Machine Design"
+title = "Week 13 - Midterm Review"
 weight = 113
 bookCollapseSection = true
 +++
 
-# Week 13 - Machine Design (Machine Week - Part 2)
+# Week 13 - Midterm Review
 
-Week 13 focused on **machine design**, completing the machine building project by adding actuation and automation.  
-The aim was to integrate electronics, programming, and mechanical systems into a working automated machine.
+Week 13 is the **midterm review** — the checkpoint where the final project stops being "an idea" and starts being a plan with deadlines, deliverables, and instructor sign-off. No new fabrication this week. Instead, everything I've been doing in parallel during the assignment weeks gets pulled together and put in front of my instructors for a graded review.
 
-This is the second part of the two-week machine design project.
+The assignment is straightforward, but it's the first time I have to make the final project *concrete*:
 
----
+- Post a **system diagram** for the final project
+- List the **tasks** to be completed
+- Make a **schedule** for doing them
+- Schedule a **meeting with the instructors** for a graded review of these and the weekly assignments so far
 
-## Group Assignment
-- **Actuate and automate** your machine
-- Document the group project and your **individual contribution**
-- Prepare a **demonstration** of your machines
-
-## Individual Contribution
-- Document your specific role in automation and integration
-- Explain the electronics and programming you contributed
-
----
-
-## What I Learned
-
-
-
-
----
-
-## Software Used
-- **Arduino IDE** or development environment
-- **Motor control software**
-- **CAD Software** for any design updates
-- **Browser + Git** for documentation
-
----
-
-## Weekly Schedule
-
-| Day | What I Did |
-|-----|-----------|
-| WED | Machine integration and testing |
-| THU |  |
-| FRI |  |
-| SAT |  |
-| SUN |  |
-| MON |  |
-| TUE | Machine demonstrations |
+All of this lives on the [final project page](../../final-project/) — week 13 is the documentation of *that* review process.
 
 ---

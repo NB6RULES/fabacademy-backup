@@ -14,13 +14,23 @@ This is the first part of the two-week machine design project.
 ---
 
 ## Group Assignment
-- Design a machine that includes **mechanism + actuation + automation**
-- Build the **mechanical parts** and operate it manually
-- Document the group project and your **individual contribution**
 
-## Individual Contribution
-- Document your specific role in the group project
-- Explain the mechanical concepts you implemented
+### Part 1 — [Machine Design](https://fabacademy.org/2026/classes/machine_design/index.html)
+- **Actuate and automate** your machine
+- Document the **group project** and your **individual contribution**
+
+### Part 2 — [Mechanical Design](https://fabacademy.org/2026/classes/mechanical_design/index.html)
+- Design a machine that includes **mechanism + actuation + automation + function + user interface**
+- Build the **mechanical parts** and operate it manually
+- Document the **group project** and your **individual contribution**
+
+## Individual Assignment
+
+### Part 1 — Machine Design
+- Document your individual contribution to the **actuation and automation** of the machine
+
+### Part 2 — Mechanical Design
+- Document your individual contribution to the **mechanism, mechanical parts, function and user interface** of the machine
 
 ---
 
