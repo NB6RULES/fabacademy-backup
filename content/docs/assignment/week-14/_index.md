@@ -118,6 +118,11 @@ Design constraints I kept in mind throughout:
 
 Getting all of this right while also making the thing actually look like the Piston Cup took a fair bit of iteration. Turns out childhood memory is slightly optimistic about how much detail fits in a 38 mm height envelope. But it's recognizable, and that's all that matters.
 
+<video controls width="100%" style="max-width: 600px; margin: 20px 0;">
+  <source src="../../../images/week-14/fusion-design.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ---
 
 ## Part 2 – CAM Setup in Fusion 360
@@ -134,6 +139,38 @@ With the mold geometry locked in, I switched to the **Manufacturing workspace** 
 The reason for starting with the 6 mm tool is purely efficiency — it removes material much faster, so you use it to eliminate the bulk, then bring in the 3.175 mm for detail and semi-finish work. The final operation is a **flow clearing pass using a ball end mill** — the ball nose follows the contour of the geometry more accurately than a flat endmill, which is what gives you a smooth enough surface for casting without having to hand-sand the entire wax mold afterward.
 
 After running the simulation and confirming nothing was going to collide catastrophically with the stock, I exported the G-code for the TRAK machine.
+
+![fusion cam setup](../../../images/week-14/fusion-1.jpg)
+![fusion cam setup](../../../images/week-14/fusion-2.jpg)
+![fusion cam setup](../../../images/week-14/fusion-3.jpg)
+![fusion cam setup](../../../images/week-14/fusion-4.jpg)
+![fusion cam setup](../../../images/week-14/fusion-5.jpg)
+![fusion cam setup](../../../images/week-14/fusion-6.jpg)
+![fusion cam setup](../../../images/week-14/fusion-7.jpg)
+![fusion cam setup](../../../images/week-14/fusion-8.jpg)
+![fusion cam setup](../../../images/week-14/fusion-9.jpg)
+![fusion cam setup](../../../images/week-14/fusion-10.jpg)
+![fusion cam setup](../../../images/week-14/fusion-11.jpg)
+![fusion cam setup](../../../images/week-14/fusion-12.jpg)
+![fusion cam setup](../../../images/week-14/fusion-13.jpg)
+![fusion cam setup](../../../images/week-14/fusion-14.jpg)
+![fusion cam setup](../../../images/week-14/fusion-15.jpg)
+![fusion cam setup](../../../images/week-14/fusion-16.jpg)
+![fusion cam setup](../../../images/week-14/fusion-17.jpg)
+![fusion cam setup](../../../images/week-14/fusion-18.jpg)
+![fusion cam setup](../../../images/week-14/fusion-19.jpg)
+![fusion cam setup](../../../images/week-14/fusion-20.jpg)
+![fusion cam setup](../../../images/week-14/fusion-21.jpg)
+![fusion cam setup](../../../images/week-14/fusion-22.jpg)
+
+### Post Processing
+
+![post processing](../../../images/week-14/fusion-23.jpg)
+![post processing](../../../images/week-14/fusion-24.jpg)
+![post processing](../../../images/week-14/fusion-25.jpg)
+![post processing](../../../images/week-14/fusion-26.jpg)
+![post processing](../../../images/week-14/fusion-27.jpg)
+![post processing](../../../images/week-14/fusion-28.jpg)
 
 ---
 

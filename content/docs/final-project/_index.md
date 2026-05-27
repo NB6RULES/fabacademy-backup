@@ -14,7 +14,6 @@ I'm building a **Smart Tool Cabinet** that tracks tools using RFID cards for acc
 
 - **RFID Access Control** - Each person gets an RFID card to unlock drawers they're trained to use
 - **Tool Tracking** - Mini switches in each tool slot log when tools are taken and returned
-- **Real-Time Display** - LCD screen shows which tools are checked out and who has them
 - **Automatic Alerts** - System alerts if tools aren't returned on time
 - **Usage Logging** - Tracks who used what and when
 
@@ -47,14 +46,13 @@ Here's how someone actually uses the Smart Tool Cabinet from start to finish —
 - RFID reader & cards
 - Mini switch sensors (one per tool slot)
 - Solenoid locks
-- Microcontroller (Arduino/STM32)
-- LCD screen & buzzer
-- 3D-printed custom enclosure
+- XIAO ESP32C6 and CH32V003J4M6 microcontrollers
+- Buzzer
+- Custom-fabricated enclosure
 
 **Software:**
 - RFID authentication system
 - Switch monitoring & data logging
-- Real-time display updates
 - Alert system
 
 ---
@@ -71,11 +69,11 @@ It solves a real problem (tools going missing), teaches me RFID + electronics + 
 
 ✅ **Sensor Integration** - Reading multiple sensors and processing the data
 
-✅ **Electronics & Circuits** - Wiring up solenoid locks, buzzers, LCD screens
+✅ **Electronics & Circuits** - Wiring up solenoid locks and buzzers
 
 ✅ **Microcontroller Programming** - The actual code to make it work
 
-✅ **3D Design & Printing** - Designing the enclosure and printing custom parts
+✅ **3D Design & Fabrication** - Designing and fabricating the enclosure
 
 ✅ **System Integration** - Making all these different parts work together
 
@@ -87,9 +85,6 @@ It solves a real problem (tools going missing), teaches me RFID + electronics + 
 
 This is lowkey a pretty big project, so I'm breaking it down:
 
-1. **Week 1-2**: Gather components, test RFID reader with microcontroller,Design the enclosure, start 3D printing
-2. **Week 3-4**: Integrate sensors and solenoid locks , Build the software/firmware
-3. **Week 5-6**: Put it all together and test everything , Fix bugs, add features, polish it up
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQd4QJIY-qwwxRDOcN8cfK8kzYhXXSCJxN_sq5hL_5EuqFRIKBJW4ukexAZ-MGphuN_HvaJz50p7CyA/pubhtml?gid=265539544&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>
 
