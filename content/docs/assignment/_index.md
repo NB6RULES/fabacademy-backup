@@ -201,6 +201,16 @@ Welcome to the assignments section. Click on any week to view the assignment det
     </div>
   </a>
   
+  <a href="project-development/" class="assignment-card">
+    <div class="assignment-square">
+      <div class="image-area">
+        <img src="/images/project-development/project-development.jpg" alt="Project Development" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26H22L17.55 12.5L20.09 18.74H12L7.45 12.5L10.09 8.26H2L7.45 12.5L4.91 18.74H13M7.45 12.5L12 8.26L16.55 12.5L12 16.74L7.45 12.5Z"></path></svg>
+      </div>
+      <span class="week-number">Project Dev</span>
+    </div>
+  </a>
+  
 </div>
 
 <style>
