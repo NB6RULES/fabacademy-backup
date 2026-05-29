@@ -290,10 +290,15 @@ Then click slice and the software will automatically perform the boolean operati
 - Print started
 
 ### Hero Shots
+
 ![Goblin Printing 1](/images/week-5/goblin-7.jpg)
+
 ![Goblin Printing 2](/images/week-5/goblin-8.jpg)
+
 ![Goblin Printing 3](/images/week-5/goblin-9.jpg)
+
 ![Goblin Printing 4](/images/week-5/goblin-10.jpg)
+
 ---
 
 ## Item 3 – Print-in-Place Engine Model

@@ -115,3 +115,10 @@ At the end of the day, this project is:
 ✅ **Educational** - I'm gonna learn SO much doing this
 
 I'm lowkey really hyped about this project. Let's get it done! 🚀
+
+---
+
+<a href="../assignment/project-development/" class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200" style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; box-shadow:0 4px 20px rgba(102,126,234,0.35);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.5)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.35);'">
+  <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
+  View Project Development
+</a>

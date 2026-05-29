@@ -5,7 +5,7 @@
 <div class="flex min-h-screen">
 
   <!-- ── Main column ── -->
-  <div class="flex-1 min-w-0 xl:pr-80">
+  <div class="flex-1 min-w-0">
     <div class="px-8 py-12 max-w-4xl mx-auto">
 
       <!-- Hero -->
@@ -92,80 +92,6 @@
 
     </div>
   </div>
-
-  <!-- ── Right Sidebar: Tech Specs ── -->
-  <aside class="hidden xl:flex flex-col fixed right-0 top-[57px] bottom-0 w-80 p-8 overflow-y-auto"
-         style="border-left:1px solid rgba(72,72,71,0.3);">
-
-    <!-- Status card -->
-    <div class="p-5 rounded-2xl mb-6"
-         style="background:linear-gradient(135deg,rgba(234,115,251,0.08),rgba(121,176,255,0.05)); border:1px solid rgba(234,115,251,0.15);">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-        <span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Active Development</span>
-      </div>
-      <p class="text-sm text-on-surface-variant leading-relaxed">Progressing through fabrication milestones each week at FabLab Kochi.</p>
-    </div>
-
-    <!-- Tech Stack -->
-    <div class="mb-8">
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Tech Stack</p>
-      <div class="space-y-2.5">
-        {{ $stack := slice
-            (dict "label" "Microcontroller"  "value" "ATtiny1624"            "color" "#79b0ff")
-            (dict "label" "Microcontroller"  "value" "SAMD21"                "color" "#79b0ff")
-            (dict "label" "Connectivity"     "value" "XIAO ESP32 C6"        "color" "#ea73fb")
-            (dict "label" "RFID Module"      "value" "RC522 / MFRC522"      "color" "#ffac54")
-            (dict "label" "Biometrics"       "value" "R307 Fingerprint"     "color" "#79b0ff")
-            (dict "label" "Structure"        "value" "CNC-milled MDF"       "color" "#ea73fb")
-            (dict "label" "CAD"              "value" "Fusion 360"           "color" "#ffac54")
-        }}
-        {{ range $stack }}
-        <div class="flex items-start gap-2.5">
-          <div class="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style="background:{{ .color }};"></div>
-          <div>
-            <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">{{ .label }}</p>
-            <p class="text-xs font-medium text-on-surface">{{ .value }}</p>
-          </div>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-
-    <div class="mb-8" style="height:1px; background:rgba(72,72,71,0.4);"></div>
-
-    <!-- Timeline -->
-    <div>
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Milestones</p>
-      <div class="space-y-4">
-        {{ $milestones := slice
-            (dict "week" "Wk 02" "label" "Concept & CAD"        "done" true)
-            (dict "week" "Wk 04" "label" "PCB Design"           "done" true)
-            (dict "week" "Wk 06" "label" "Electronics Prod."    "done" true)
-            (dict "week" "Wk 08" "label" "Embedded Programming" "done" false)
-            (dict "week" "Wk 14" "label" "Integration"          "done" false)
-            (dict "week" "Wk 20" "label" "Final Presentation"   "done" false)
-        }}
-        {{ range $milestones }}
-        <div class="flex items-start gap-3">
-          <div class="flex flex-col items-center">
-            <div class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                 style="{{ if .done }}background:#79b0ff20; border:1px solid #79b0ff;{{ else }}background:rgba(72,72,71,0.3); border:1px solid rgba(72,72,71,0.5);{{ end }}">
-              {{ if .done }}
-              <span class="material-symbols-outlined" style="font-size:10px; color:#79b0ff;">check</span>
-              {{ end }}
-            </div>
-          </div>
-          <div>
-            <span class="text-[10px] font-mono text-on-surface-variant">{{ .week }}</span>
-            <p class="text-xs {{ if .done }}text-on-surface font-medium{{ else }}text-on-surface-variant{{ end }}">{{ .label }}</p>
-          </div>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-
-  </aside>
 
 </div>
 
