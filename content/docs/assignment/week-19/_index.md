@@ -148,3 +148,13 @@ Smart Tool Tracking Toolbox © 2026 by Nadec Biju is licensed under Creative Com
 Smart Tool Tracking Toolbox  © 2026 by Nadec Biju is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ---
+
+> The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
+>
+> AI PROMPT USED: "Proofread the following text and correct any grammatical errors and spelling mistakes."
+
+<a href="../assignment/project-development/" class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200" style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; box-shadow:0 4px 20px rgba(102,126,234,0.35);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.5)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.35);'">
+  <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
+  View Project Development
+</a>
+

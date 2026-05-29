@@ -147,7 +147,33 @@
       padding: 1.25rem;
       overflow-x: auto;
       margin: 1.5rem 0;
+      position: relative;
     }
+    /* ── Code block copy button ──────────────────────── */
+    .code-copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.6rem;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.7rem;
+      color: #adaaaa;
+      background: #1a1a1a;
+      border: 1px solid #484847;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+      z-index: 2;
+    }
+    .prose-neon pre:hover .code-copy-btn,
+    .code-copy-btn:focus { opacity: 1; }
+    .code-copy-btn:hover { color: #79b0ff; border-color: #79b0ff; }
+    .code-copy-btn.copied { color: #4ade80; border-color: #4ade80; }
+    .code-copy-btn .material-symbols-outlined { font-size: 14px; }
     .prose-neon pre code {
       background: none;
       border: none;
@@ -479,6 +505,36 @@
     if (mobileBtn && mobileNav) {
       mobileBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
     }
+
+    // Copy button on code blocks
+    document.querySelectorAll('.prose-neon pre').forEach(pre => {
+      const code = pre.querySelector('code');
+      if (!code) return;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'code-copy-btn';
+      btn.setAttribute('aria-label', 'Copy code');
+      btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span>Copy';
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(code.innerText);
+        } catch (e) {
+          const r = document.createRange();
+          r.selectNodeContents(code);
+          const sel = window.getSelection();
+          sel.removeAllRanges(); sel.addRange(r);
+          document.execCommand('copy');
+          sel.removeAllRanges();
+        }
+        btn.classList.add('copied');
+        btn.innerHTML = '<span class="material-symbols-outlined">check</span>Copied';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span>Copy';
+        }, 1800);
+      });
+      pre.appendChild(btn);
+    });
   </script>
 
   <!-- Search (Fuse.js) -->
