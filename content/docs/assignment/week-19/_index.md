@@ -111,6 +111,15 @@ This one's the opposite of strict — it's basically you saying "I give up all m
 **Good for:** When you don't care about credit and just want your work to be useful to as many people as possible.
 
 ---
+## Software Licenses — GPL and MIT
+
+Creative Commons is great for stuff like pictures, writing, and designs. But when it comes to code, people usually use different licenses made just for software. The two big ones are GPL and MIT.
+
+The **GPL (GNU General Public License)** is the strict one. If you use GPL code in your own project, you have to share your code too, with the same license. So the code stays open and free forever, and nobody can lock it up and keep it for themselves. It's kind of like the "pay it forward" rule but for code.
+
+The **MIT License** is the chill one. It basically says "do whatever you want with my code, just keep my name on it." People can use it, change it, and even put it in something they sell. There are barely any rules, which is why a ton of projects use it.
+
+---
 
 ## Which License Did I Choose?
 
@@ -147,13 +156,30 @@ Smart Tool Tracking Toolbox © 2026 by Nadec Biju is licensed under Creative Com
 ### Print Work or Media — Plain Text
 Smart Tool Tracking Toolbox  © 2026 by Nadec Biju is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
 
+
+![My license added to the site](/images/week-19/19-3.jpg)
+
+---
+
+## Dissemination Plan
+
+A dissemination plan is just my plan for how I'm going to share my project and keep it going after Fab Academy is over. I don't want it to just sit on my laptop and get forgotten.
+
+So here's my plan: I'm going to leave my project at the **Super Fab Lab Kochi**. That way the new Fab students who come after me can see it, learn from it, and maybe even build their own version or make it better. All my design files, code, and notes are already on my site under my Creative Commons license, so anyone can use them too.
+
+On top of that, I'm really interested in taking this further and building something like it at [Tinkerspace](https://tinkerhub.org/tinkerspace). It's a cool maker space where I could keep working on the idea, meet other makers, and grow my toolbox into something even bigger.
+
+I could also take the product route and turn it into a real thing I could sell. I could even register it as a startup and use the grants the Kerala government gives to new startups to build it out more. Most of these come from the [Kerala Startup Mission (KSUM)](https://startupmission.kerala.gov.in/), which is the government group that helps young makers and founders. 
+
+But that's just an option I have right now, I'm not actually planning to do that for now.
+
 ---
 
 > The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
 >
 > AI PROMPT USED: "Proofread the following text and correct any grammatical errors and spelling mistakes."
 
-<a href="../assignment/project-development/" class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200" style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; box-shadow:0 4px 20px rgba(102,126,234,0.35);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.5)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.35);'">
+<a href="../project-development/" class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200" style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; box-shadow:0 4px 20px rgba(102,126,234,0.35);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.5)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.35);'">
   <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
   View Project Development
 </a>
