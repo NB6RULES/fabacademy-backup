@@ -5,7 +5,6 @@ title = 'Assignments'
 weight = 10
 bookCollapseSection = true
 +++
-cc
 # Assignments
 
 Welcome to the assignments section. Click on any week to view the assignment details.
