@@ -303,7 +303,7 @@ The cutting process completed successfully after verifying the test cut, and the
 
 **Vinyl Cutting Process:**
 
-<video autoplay loop width="100%" height="auto" controls style="display: block;">
+<video autoplay loop muted playsinline width="100%" height="auto" controls style="display: block;">
   <source src="/images/week-3/vinyl.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
