@@ -134,7 +134,7 @@ as long as i can tap anrfid, have the box unlock, take a tool out, see that refl
 
 For the slide I just opened up **Google Slides**, set the canvas to **1920×1080**, and put together a quick draft with the title, subtitle, logos, and placeholders for the images I'll swap in later. Exported it as `presentation.png`, dropped it into the `public` folder, and committed it.
 
-![Presentation slide draft](../../../presentation.png)
+![Presentation slide draft](../../../presentation-v1.png)
 
 ### Video Draft
 
@@ -153,7 +153,7 @@ Compression was handled by **HandBrake**. I imported the preset file Fab Academy
 Renamed the output to `presentation.mp4` and dropped it into the `public` folder of the repo.
 
 <video controls width="100%" style="max-width: 600px; margin: 20px 0; border-radius: 6px;">
-  <source src="../../../presentation.mp4" type="video/mp4">
+  <source src="../../../presentation-v1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
