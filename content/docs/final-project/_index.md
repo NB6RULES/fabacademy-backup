@@ -12,7 +12,7 @@ I'm building a **Smart Tool Cabinet** that tracks tools using RFID cards for acc
 ![Presentation slide draft](../../presentation.png)
 
 <video controls width="100%" style="max-width: 600px; margin: 20px 0; border-radius: 6px;">
-  <source src="../../presentation-v1.mp4" type="video/mp4">
+  <source src="../../presentation.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
