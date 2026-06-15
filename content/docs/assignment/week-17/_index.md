@@ -28,8 +28,7 @@ This week allows for creative exploration and learning beyond the standard Fab A
 
 ## What I Learned
 
-
-
+This week I learned that you don't need fancy tools to make something cool. All you need is a phone camera, a piece of paper, and a good idea. Using Tool Trace to turn pictures of my tools into outlines was way easier than I thought, and it saved me a lot of time compared to drawing everything by hand. I also learned how a waterjet machine works, which was really cool. I didn't know water could cut through tough stuff like metal just by shooting out super fast with some sand mixed in. Doing a test cut first also taught me why it's smart to check your settings before the real cut. It helps you catch mistakes early instead of messing up your final piece.
 
 ---
 

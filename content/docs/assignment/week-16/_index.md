@@ -28,8 +28,21 @@ This week marks the beginning of intensive final project development.
 
 ## What I Learned
 
+### ESP32 Working Flow Diagram
 
+<iframe frameborder="0" style="width:100%;height:293px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G1pPmlwLtXil4tTwG-lcMuywVTpCToYOYN"></iframe>
 
+### Initial Tool Tracking System Idea
+
+<iframe frameborder="0" style="width:100%;height:667px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G1q-estxswjusMATe9681WYgEpVFHpnR_N"></iframe>
+
+### User Flow Diagram
+
+<iframe frameborder="0" style="width:100%;height:523px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G12Lt91IxLzvEm7zurL1nan2CEzJJ0zwae"></iframe>
+
+### Final Tool Tracking System Idea
+
+<iframe frameborder="0" style="width:100%;height:523px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&dark=auto#G1SIiehCA1AwBM-1trgGkQsIXP_2JkJJuI"></iframe>
 
 ---
 
