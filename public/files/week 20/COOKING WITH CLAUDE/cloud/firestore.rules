@@ -1,0 +1,43 @@
+rules_version = '2';
+
+// Smart Tool Box security rules.
+// Single-admin / single-device model: roles are decided by the signed-in email.
+// >>> Replace ADMIN_EMAIL and DEVICE_EMAIL with the two accounts you made in setup step 5.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() { return request.auth != null; }
+    function isAdmin()  { return isSignedIn() && request.auth.token.email == 'nadecbiju6@gmail.com'; }
+    function isDevice() { return isSignedIn() && request.auth.token.email == 'device@smarttoolbox.local'; }
+
+    // RFID users + their per-drawer access. Admin manages; device reads to enforce.
+    match /users/{uid} {
+      allow read:  if isAdmin() || isDevice();
+      allow write: if isAdmin();
+    }
+
+    // Live tool state (present / holder). Device patches it; admin can edit; anyone signed-in reads.
+    match /tools/{toolId} {
+      allow read:  if isSignedIn();
+      allow write: if isAdmin() || isDevice();
+    }
+
+    // Append-only event log. Device + admin create; only admin may edit/delete.
+    match /events/{eventId} {
+      allow read:   if isSignedIn();
+      allow create: if isDevice() || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // Device heartbeat / status.
+    match /devices/{deviceId} {
+      allow read:  if isSignedIn();
+      allow write: if isAdmin() || isDevice();
+    }
+
+    // Deny everything else.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

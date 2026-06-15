@@ -1,0 +1,2 @@
+# Never commit real device credentials — only the template ships.
+cloud_secrets.h
