@@ -437,7 +437,8 @@
   </main>
 
   <!-- ════════════════ FOOTER ════════════════ -->
-  <footer class="{{ if not .IsHome }}lg:ml-64{{ end }} py-10 mt-8" style="border-top:1px solid rgba(38,38,38,0.5); background:#0e0e0e;">
+  {{ $hasToc := strings.Contains .RelPermalink "/week-" }}
+  <footer class="{{ if not .IsHome }}lg:ml-64{{ end }} {{ if $hasToc }}xl:pr-72{{ end }} py-10 mt-8" style="border-top:1px solid rgba(38,38,38,0.5); background:#0e0e0e;">
     <div class="max-w-5xl mx-auto px-8 flex flex-col lg:flex-row items-center gap-6">
 
       {{ if .IsHome }}

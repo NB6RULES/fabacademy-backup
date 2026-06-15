@@ -52,6 +52,13 @@ This week I learned that you don't need fancy tools to make something cool. All 
 | TUE | Regional review |
 
 ---
+# Waterjet Cutting Foam Tool Cutouts
+
+## Introduction
+
+Waterjet cutting is a way of cutting materials using a thin, high-pressure stream of water, often mixed with a sand-like material called garnet to help it cut through tougher stuff. The water shoots out so fast that it can slice through metal, foam, plastic, and more without using any heat, so the material doesn't melt or warp.
+
+Out of all the weeks in Fab Academy, this is the only one where I get to use a waterjet cutter. None of the other assignments cover it, so this was my one chance to learn how it works and try it out for myself.
 
 This week, I wanted to do something connected to my final project. I thought about it and decided to make tool cutouts for my drawer, cut out of foam. I talked to my instructors about it, and they said using the waterjet to cut foam would be a good idea. So that's what I planned to do this week. Let's get started.
 
