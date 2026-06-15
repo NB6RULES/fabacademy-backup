@@ -28,7 +28,7 @@ This week marks the beginning of intensive final project development.
 
 ## What I Learned
 
-
+This week I learned that building a big project means putting a lot of small pieces together so they all work as one system. I had to think about the electronics, the programming, and the physical design all at the same time, instead of working on just one part. I also learned that picking the right microcontroller matters a lot, since it needs to have enough pins and features for everything I want to do, without costing too much. Planning ahead with flow diagrams and sketches before building anything also helped me figure out problems early, before they became big issues.
 
 ---
 
@@ -44,11 +44,11 @@ This week marks the beginning of intensive final project development.
 | Day | What I Did |
 |-----|-----------|
 | WED | System integration session |
-| THU |  |
-| FRI |  |
-| SAT |  |
-| SUN |  |
-| MON |  |
+| THU | Drew out flow diagrams and planned how the tool tracking system would work |
+| FRI | Looked for design ideas and sketched out what the cabinet should look like |
+| SAT | Designed the enclosure, handle, and solenoid latch parts |
+| SUN | Worked out where the electronics go and planned the programming logic |
+| MON | Picked the microcontroller and thought about repair and lifecycle |
 | TUE | Regional review |
 
 ---
