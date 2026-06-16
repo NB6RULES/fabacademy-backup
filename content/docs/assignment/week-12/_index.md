@@ -239,3 +239,9 @@ Final CAD Assembly of the CoreXY mechanism with all the parts in place and the b
 
 ![week-12 image 30](/images/week-12/30.jpg)
 
+---
+
+## Design Files
+
+<button onclick="(function(){var files=['/files/week-12/Assem1.zip','/files/week-12/Assem2.zip','/files/week-12/neopi design.f3z','/files/week-12/stl.zip'];files.forEach(function(f,i){setTimeout(function(){var a=document.createElement('a');a.href=f;a.download=f.split('/').pop();document.body.appendChild(a);a.click();document.body.removeChild(a);},i*600);});})();" style="display:inline-block; padding:0.6em 1.4em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em; cursor:pointer; border:none;">Download All Design Files ↓</button>
+
