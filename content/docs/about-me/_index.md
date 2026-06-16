@@ -319,24 +319,6 @@ document.addEventListener('DOMContentLoaded', initProjectCarousels);
   <div class="timeline-item" data-year="2025">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
-      <span class="timeline-date">Apr 2025 - Present</span>
-      <h3>Team Captain — Tarusa Motorsports</h3>
-      <p>Leading 30+ member team designing Hydrogen Baja vehicles. Overseeing CAD, vehicle dynamics, and manufacturing.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item" data-year="2025">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
-      <span class="timeline-date">Aug 2025 - Present</span>
-      <h3>Trackside Intern — Indian Motorsports Academy</h3>
-      <p>Working with professional race engineers in Formula 4 and Indian Racing League championships.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item" data-year="2025">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
       <span class="timeline-date">Jan 2025 - Present</span>
       <h3>Founder — Layer6</h3>
       <p>Founded CAD design and 3D printing consultancy for prototyping and product design services.</p>
@@ -346,9 +328,27 @@ document.addEventListener('DOMContentLoaded', initProjectCarousels);
   <div class="timeline-item" data-year="2025">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
-      <span class="timeline-date">Jan 2025 - Aug 2025</span>
+      <span class="timeline-date">Aug 2025 - Dec 2025</span>
+      <h3>Trackside Intern — Indian Motorsports Academy</h3>
+      <p>Working with professional race engineers in Formula 4 and Indian Racing League championships.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-year="2025">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <span class="timeline-date">Apr 2025 - Feb 2026</span>
+      <h3>Team Captain — Tarusa Motorsports</h3>
+      <p>Leading 30+ member team designing Hydrogen Baja vehicles. Overseeing CAD, vehicle dynamics, and manufacturing.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-year="2025">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <span class="timeline-date">Jan 2025 - Dec 2025</span>
       <h3>Intern — Pre6 Tech</h3>
-      <p>Founding team intern at AI startup by Amod Malviya (Founder of Udaan, ex-CTO Flipkart).</p>
+      <p>Intern at AI startup by Amod Malviya (Founder of Udaan, ex-CTO Flipkart).</p>
     </div>
   </div>
 
@@ -373,15 +373,6 @@ document.addEventListener('DOMContentLoaded', initProjectCarousels);
   <div class="timeline-item" data-year="2023">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
-      <span class="timeline-date">Sep 2023 - Feb 2024</span>
-      <h3>Design Lead — Hermes CUSAT</h3>
-      <p>Led design for SAE Bicycle Challenge. Secured <strong>AIR 5</strong> and <strong>1st Place Best Design</strong>.</p>
-    </div>
-  </div>
-
-  <div class="timeline-item" data-year="2023">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
       <span class="timeline-date">Dec 2023 - Feb 2025</span>
       <h3>Resident Maker & Intern — TinkerHub</h3>
       <p>Managed 3D printers, mentored students on hardware projects, conducted maker events.</p>
@@ -394,6 +385,15 @@ document.addEventListener('DOMContentLoaded', initProjectCarousels);
       <span class="timeline-date">Nov 2023 - Nov 2024</span>
       <h3>Intern — CUSAT Fablab</h3>
       <p>Developed solid-state fan using piezoelectric crystals. Applied rapid prototyping techniques.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item" data-year="2023">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <span class="timeline-date">Sep 2023 - Feb 2024</span>
+      <h3>Design Lead — Hermes CUSAT</h3>
+      <p>Led design for SAE Bicycle Challenge. Secured <strong>AIR 5</strong> and <strong>1st Place Best Design</strong>.</p>
     </div>
   </div>
 
