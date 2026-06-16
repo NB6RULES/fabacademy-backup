@@ -32,38 +32,10 @@ The aim was to understand mechanism design, motion systems, and structural consi
 
 ---
 
-## What I Learned
-
-
-
-
----
-
 ## Software Used
 - **SolidWorks** for mechanism design
 - **Bambustudio** for 3d printed arts slicing and printing
 - **Browser + Git** for documentation
-
----
-
-## Schedule for the next 2 Weeks
-
-| Day | What I Did |
-|-----|-----------|
-| WED | Lecture on mechanical design |
-| THU |  |
-| FRI |  |
-| SAT |  |
-| SUN |  |
-| MON |  |
-| TUE |  |
-| WED |  |
-| THU |  |
-| FRI |  |
-| SAT |  |
-| SUN |  |
-| MON |  |
-| TUE |  Regional Review |
 
 ---
 
@@ -86,6 +58,8 @@ From there we had to set some rules for ourselves so things didn't get out of ha
 We landed on a **400mm × 400mm** working area. Then came the question of what the "pixels" would actually be. We went with small jewellery beads they're uniform, easy to handle, and look clean. The machine would place them one by one using an end effector on a CoreXY motion system.
 
 After that we split up the work so everyone had something to own. I got assigned the CoreXY mechanism design so that's what this documentation is about. Let's get into it.
+
+![Brainstorming](/images/week-12/01.jpg)
 
 ## Core XY
 
@@ -153,11 +127,15 @@ I had used solidworks for the design of the machine as i am very familiar with t
 
 <div class="sketchfab-embed-wrapper"> <iframe title="pixel art first draft" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="900" height="550" src="https://sketchfab.com/models/e8df2f01db034dc6a11d05934eb7d457/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/pixel-art-first-draft-e8df2f01db034dc6a11d05934eb7d457?utm_medium=embed&utm_campaign=share-popup&utm_content=e8df2f01db034dc6a11d05934eb7d457" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> pixel art first draft </a> by <a href="https://sketchfab.com/Nb6_rules?utm_medium=embed&utm_campaign=share-popup&utm_content=e8df2f01db034dc6a11d05934eb7d457" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Nb6_rules </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=e8df2f01db034dc6a11d05934eb7d457" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/02.mp4" type="video/mp4">
+</video>
+
 ![first design 1](/images/week-12/2.jpg)
 
 ![first design 1](/images/week-12/3.jpg)
 
-After this deign was made , i had spoken to my team and the intructors [Mr Jogin Francis](http://fabacademy.org/2018/labs/fablabkochi/students/[Jogin](http://fabacademy.org/2018/labs/fablabkochi/students/jogin-francis/)-francis/) and [Mr Sreyas George](https://fabacademy.org/2023/labs/kochi/students/[Sreyas](https://fabacademy.org/2023/labs/kochi/students/sreyas-george/about.html)-george/about.html) who gave a lot of expeirnce in building machines and they gave me a lot of feedback on the design and how to improve it. They also helped me understand the limitations of the parts we had and how to work around them.
+After this deign was made , i had spoken to my team and the intructors [Mr Jogin Francis](http://fabacademy.org/2018/labs/fablabkochi/students/jogin-francis/) and [Mr Sreyas George](https://fabacademy.org/2023/labs/kochi/students/sreyas-george/about.html) who gave a lot of expeirnce in building machines and they gave me a lot of feedback on the design and how to improve it. They also helped me understand the limitations of the parts we had and how to work around them.
 
 they had made be realise that the current deign i had in mind for the gantry system ( i had drawn isnpiration from the x axis gantry sustem used by creality ender 3 s1 pro which was a 3d printed i had a lot of experience playing around with) would be too much of an overcomplication  and had suggesed a gantry design that was created by jake read https://github.com/jakeread https://uwaterloo.ca/architecture/jake-read which was a much simpler design and would be easier to build.
 
@@ -173,8 +151,91 @@ Initial design by sreyas based on jakes design
 ![New design](/images/week-12/7.jpg)
 Design Adjusted by me inorder to fit the 20x40 aluminum extrusions we had planned on using.
 
-
 after the gantry got sorted i moved ahead with the design of the entire machine for which first i drew a sketch with the belt loops
 ![loop1](/images/week-12/8.jpg)
 ![loop2](/images/week-12/9.jpg)
-### Conclusion
+
+Then i had placed the bottom Base and the aluminum extrusions at the required positions with the gantry which was designed earlier 
+
+The height for the x akis gantry placement was decided after discussion with my teammate [Kevin Jijo](https://fabacademy.org/2026/labs/kochi/students/kevin-jijo/) who was in charge of the end effector design and he had told me the height at which the end effector would be able to place the beads properly without any issues. 
+
+![loop2](/images/week-12/10.jpg)
+
+then i moved onto the design of the 4 corner bloacks which would hold the aluminum extrusions in place and the pulley and motors would be mounted on top of these blocks. I had designed these blocks in such a way that they would be easy to print and would also be strong enough to hold the aluminum extrusions in place.
+
+![week-12 image 11](/images/week-12/11.jpg)
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/11.5.mp4" type="video/mp4">
+</video>
+
+![week-12 image 12](/images/week-12/12.jpg)
+
+![week-12 image 13](/images/week-12/13.jpg)
+
+after this i had moved onto the design of the blocks that woud hold the pulleysand the x gantry aluminum extrusions in place .
+
+![week-12 image 14](/images/week-12/14.jpg)
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/14.5.mp4" type="video/mp4">
+</video>
+
+then i had modified the design of the x gantry so that it can be used to tighten the belt of the pulley by tightly pulling the belt and using the ba cap to screw them into place
+
+![week-12 image 15](/images/week-12/15.jpg)
+
+Final CAD Assembly of the CoreXY mechanism with all the parts in place and the belt loops in place.
+
+![week-12 image 16](/images/week-12/16.jpg)
+
+## 3D Printing
+
+### Gantry System
+![week-12 image 17](/images/week-12/17.jpg)
+![week-12 image 18](/images/week-12/18.jpg)
+![week-12 image 19](/images/week-12/21.jpg)
+
+### Corner Blocks 
+![week-12 image 20](/images/week-12/20.jpg)
+![week-12 image 21](/images/week-12/19.jpg)
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/22.mp4" type="video/mp4">
+</video>
+
+## Assembly
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/23.mp4" type="video/mp4">
+</video>
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/24.mp4" type="video/mp4">
+</video>
+
+## Finally Assembled Machine
+
+![week-12 image 25](/images/week-12/25.jpg)
+
+![week-12 image 26](/images/week-12/26.jpg)
+
+## Sorting Beads of a Specific Size
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/27.mp4" type="video/mp4">
+</video>
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/28.mp4" type="video/mp4">
+</video>
+
+## Machine Movement Test
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/29.mp4" type="video/mp4">
+</video>
+
+## Our Team 
+
+![week-12 image 30](/images/week-12/30.jpg)
+
