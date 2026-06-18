@@ -6,9 +6,9 @@ bookCollapseSection = true
 
 # Week 10 - Output Devices
 
-Week 10 was all about **output devices** — the flip side of last week. If Week 9 was about sensing the world, this week was about *acting* on it. Motors, drivers, power management, and actually making something move.
+Week 10 was all about **output devices**, the flip side of last week. If Week 9 was about sensing the world, this week was about *acting* on it. Motors, drivers, power management, and actually making something move.
 
-The assignment: design a board with an output device, program it to do something.
+The assignment: design a board with an output device, then program it to do something.
 
 ---
 
@@ -31,10 +31,10 @@ The assignment: design a board with an output device, program it to do something
 ---
 
 ## Software Used
-- **KiCad** — schematic + PCB layout
-- **Arduino IDE** — firmware
-- **Mods CE** — CAM for PCB milling
-- **Browser + Git** — documentation
+- **KiCad**: schematic + PCB layout
+- **Arduino IDE**: firmware
+- **Mods CE**: CAM for PCB milling
+- **Browser + Git**: documentation
 
 ---
 
@@ -43,10 +43,10 @@ The assignment: design a board with an output device, program it to do something
 | Day | What I Did |
 |-----|-----------|
 | WED | Lecture on output devices |
-| THU | Group Assignment — power measurement |
+| THU | Group Assignment, power measurement |
 | FRI | Selecting output devices, reading ESP32-WROOM-32E datasheet |
 | SAT | DRV8825 datasheet deep-dive, schematic design in KiCad |
-| SUN | PCB layout — single DRV design, then redesigned to five DRV |
+| SUN | PCB layout, single DRV design|
 | MON | Milling, soldering, testing |
 | TUE | Regional review |
 
@@ -54,7 +54,9 @@ The assignment: design a board with an output device, program it to do something
 
 ## Output Device Selection
 
-The goal for this week was to drive a **stepper motor**. Specifically I wanted a setup that could control motor position precisely — relevant to my final project — rather than just blinking an LED or driving a buzzer.
+This week's goal was to build a stepper motor tester. I got the idea from my instructor [Sibin K S](https://fabacademy.org/2023/labs/kochi/students/sibin-ks/). He told me that servo testers already exist, little tools that let you check if a servo works without hooking it up to a microcontroller, running jumper wires, and writing Arduino code just to find out if it's dead. We didn't have anything like that at our lab for stepper motors. So he suggested building a stepper motor tester that could do the same job: quickly check if a stepper motor works, with no microcontroller wiring or code needed on the spot.
+
+For a future version, I'm planning to add an INA219 chip so I can graph things like current draw versus RPM on a web app.
 
 The stack I landed on:
 
@@ -64,18 +66,26 @@ The stack I landed on:
 | Motor driver | DRV8825 |
 | Motor | NEMA 17 bipolar stepper |
 
+I picked the ESP32-WROOM-32E because it has WiFi, which means I could control the stepper motor wirelessly down the road, and it has plenty of GPIO pins to run more than one DRV8825 driver if I want to grow this project later. I picked the DRV8825 because it's a well-known stepper motor driver that can handle what a NEMA 17 motor needs, and it has microstepping built in. I picked the NEMA 17 motor because it's a common size for hobby projects and gives a good mix of torque and speed for testing.
+
 ---
 
 ## The Components
 
 ### ESP32-WROOM-32E — Microcontroller Module
 
-The **ESP32-WROOM-32E** is a surface-mount WiFi + Bluetooth module from Espressif built around the ESP32-D0WD-V3 chip. I chose this over the XIAO or ATtiny because:
+<div style="display: flex; gap: 10px;">
+  <img src="../../../images/week-10/1.jpg" alt="ESP32-WROOM-32E module" style="width: 50%;">
+  <img src="../../../images/week-10/2.jpg" alt="ESP32-WROOM-32E pinout" style="width: 50%;">
+</div>
 
-- It has enough GPIO to run five DRV8825 drivers simultaneously (STEP, DIR, ENABLE per driver = 15 pins minimum)
-- Built-in WiFi opens up wireless control options for the final project
-- Strong Arduino/ESP-IDF ecosystem — libraries for everything
-- It's what the final project will likely use anyway, so this week is good practice
+
+The **ESP32-WROOM-32E** is a surface-mount WiFi + Bluetooth module from Espressif, built around the ESP32-D0WD-V3 chip. I picked it over the XIAO or ATtiny for a few reasons:
+
+- It has enough GPIO to run five DRV8825 drivers at once (STEP, DIR, ENABLE per driver means 15 pins minimum)
+- Built-in WiFi gives me wireless control options for the final project
+- It has a strong Arduino/ESP-IDF ecosystem, with libraries for almost everything
+- It's likely what the final project will use anyway, so this week doubles as practice
 
 **Key specs:**
 
@@ -92,17 +102,19 @@ The **ESP32-WROOM-32E** is a surface-mount WiFi + Bluetooth module from Espressi
 | Supply voltage | 3.0 – 3.6 V (module) |
 | Programming | USB-UART bridge + EN/IO0 boot pins |
 
+> The above specs are found from the ESP32-WROOM-32E datasheet and curated using Claude by Anthropic.
+
 **Minimum circuit:**
 
-Going through the ESP32-WROOM-32E datasheet properly — not just the pinout, but the *application circuit* section — the minimum circuit requires:
+I went through the ESP32-WROOM-32E datasheet properly, not just the pinout but the *application circuit* section too. The minimum circuit needs:
 
 - **3.3 V regulated supply** with bulk and bypass decoupling (100 µF + 100 nF on VDD)
-- **EN pin** pulled HIGH via 10 kΩ resistor (module won't boot if EN floats)
-- **IO0 pin** pulled HIGH via 10 kΩ for normal boot, pulled LOW to enter download mode
-- **UART0** (TX = GPIO1, RX = GPIO3) brought out for programming via USB-UART bridge (CP2102 or CH340)
-- **Boot button** on IO0 and **Reset button** on EN — both needed for reliable programming
+- **EN pin** pulled HIGH through a 10 kΩ resistor (the module won't boot if EN is left floating)
+- **IO0 pin** pulled HIGH through a 10 kΩ resistor for normal boot, or pulled LOW to enter download mode
+- **UART0** (TX = GPIO1, RX = GPIO3) brought out for programming through a USB-UART bridge (CP2102 or CH340)
+- **Boot button** on IO0 and a **Reset button** on EN, both needed for programming to work reliably
 
-This is the stuff that gets skipped when you use a pre-made dev board. Designing it from scratch forces you to understand what the chip actually needs to run.
+This is the stuff that gets skipped when you use a ready-made dev board. Building it from scratch forces you to actually understand what the chip needs to run.
 
 ![ESP32-WROOM-32E minimum circuit schematic](../../../images/week-10/esp-minimum-circuit.jpg)
 
@@ -110,7 +122,9 @@ This is the stuff that gets skipped when you use a pre-made dev board. Designing
 
 ### DRV8825 — Stepper Motor Driver
 
-The **DRV8825** is a bipolar stepper motor driver IC from Texas Instruments. It handles all the H-bridge switching internally — you just send STEP pulses and a DIR signal from the microcontroller, and the IC drives the motor coils at whatever current you've set.
+![DRV8825 stepper motor driver module](../../../images/week-10/3.jpg)
+
+The **DRV8825** is a bipolar stepper motor driver IC from Texas Instruments. It handles all the H-bridge switching on its own. You just send STEP pulses and a DIR signal from the microcontroller, and the IC drives the motor coils at whatever current you've set.
 
 **Key specs:**
 
@@ -124,11 +138,13 @@ The **DRV8825** is a bipolar stepper motor driver IC from Texas Instruments. It 
 | Thermal shutdown | Yes |
 | Overcurrent protection | Yes |
 
+> The above specs are found from the DRV8825 datasheet and curated using Claude by Anthropic.
+
 **How it works:**
 
-The DRV8825 has two H-bridge outputs — one per motor coil (coil A and coil B). Each H-bridge can source and sink current, which is what bipolar stepper control requires. You set the **current limit** by adjusting a potentiometer on the VREF pin — the formula is:
+The DRV8825 has two H-bridge outputs, one for each motor coil (coil A and coil B). Each H-bridge can push and pull current, which is exactly what bipolar stepper control needs. You set the **current limit** by turning a potentiometer on the VREF pin.
 
-The **microstepping** resolution is set via three pins: MODE0, MODE1, MODE2. Tying them LOW/HIGH in different combinations selects full-step through 1/32 step.
+The **microstepping** resolution is set with three pins: MODE0, MODE1, MODE2. Setting them LOW or HIGH in different combinations selects anything from full-step to 1/32 step.
 
 **Pin connections from datasheet:**
 
@@ -147,15 +163,17 @@ The **microstepping** resolution is set via three pins: MODE0, MODE1, MODE2. Tyi
 | B2, B1 | Coil B outputs |
 | A2, A1 | Coil A outputs |
 
-> ⚠️ **The 100 µF capacitor on VMOT is not optional.** The DRV8825 datasheet explicitly states it — when the motor decelerates, it acts as a generator and dumps current back into VMOT. Without the cap, this voltage spike can exceed the driver's absolute maximum rating and kill the IC instantly.
+> ⚠️ **The 100 µF capacitor on VMOT is not optional.** The DRV8825 datasheet says so directly. When the motor slows down, it acts like a generator and pushes current back into VMOT. Without the cap, that voltage spike can go past the driver's absolute maximum rating and kill the IC instantly.
 
 ---
 
 ### NEMA 17 — Bipolar Stepper Motor
 
+![NEMA 17 motor](../../../images/week-10/4.jpg)
+
 **What is a stepper motor?**
 
-A stepper motor is a brushless DC motor that divides a full rotation into a fixed number of discrete steps. Unlike a regular DC motor that just spins when you apply voltage, a stepper motor moves in precise, repeatable increments — making it ideal for position control without a feedback sensor.
+A stepper motor is a brushless DC motor that splits a full rotation into a fixed number of steps. A regular DC motor just spins when you give it voltage, but a stepper motor moves in small, repeatable steps, which makes it great for position control without needing a feedback sensor.
 
 **Types of stepper motors:**
 
@@ -168,16 +186,16 @@ A stepper motor is a brushless DC motor that divides a full rotation into a fixe
 
 **Why NEMA 17?**
 
-NEMA 17 is a mechanical frame standard — it defines the faceplate dimensions (42.3 × 42.3 mm, 4 mounting holes on a 31 mm bolt circle). It doesn't define the motor's electrical specs, but in practice NEMA 17 motors are almost always bipolar hybrid steppers with the following characteristics that made it the right choice:
+NEMA 17 is just a mechanical frame standard. It sets the faceplate size (42.3 × 42.3 mm, 4 mounting holes on a 31 mm bolt circle), not the motor's electrical specs. But in practice, NEMA 17 motors are almost always bipolar hybrid steppers, and that combination is what made it the right pick:
 
-- **1.8° per step** (200 steps per revolution) — standard resolution, compatible with DRV8825 microstepping
-- **High torque-to-size ratio** — enough torque for most mechanical applications without going to a bulkier NEMA 23
-- **Widely available, cheap, well-documented** — huge ecosystem of mounts, pulleys, couplers
-- **4-wire bipolar** — directly compatible with the DRV8825, no center tap complications
+- **1.8° per step** (200 steps per revolution), a standard resolution that works well with DRV8825 microstepping
+- **High torque-to-size ratio**, enough torque for most mechanical jobs without jumping up to a bulkier NEMA 23
+- **Widely available, cheap, well-documented**, with a huge ecosystem of mounts, pulleys, and couplers
+- **4-wire bipolar**, which plugs straight into the DRV8825 with no center tap to worry about
 
 **The four wires — coil identification:**
 
-A bipolar NEMA 17 has four wires corresponding to two coils:
+A bipolar NEMA 17 has four wires that make up two coils:
 
 | Wire | Label | Function |
 |---|---|---|
@@ -186,50 +204,32 @@ A bipolar NEMA 17 has four wires corresponding to two coils:
 | **Coil B+** | B1 | One end of coil B |
 | **Coil B−** | B2 | Other end of coil B |
 
-The driver energizes coil A and coil B in sequence, and the interaction between the rotor magnets and the energized coils pulls the rotor to each new step position. Direction is controlled by reversing the current sequence through the coils — which is what the DIR pin on the DRV8825 does.
+The driver fires coil A and coil B in sequence, and the pull between the rotor magnets and the energized coils drags the rotor into each new step position. Direction is set by reversing the order the coils are fired in, which is exactly what the DIR pin on the DRV8825 controls.
 
-To identify which wires form a coil pair: use a multimeter in continuity or resistance mode. Wire pairs that show low resistance (~1–5 Ω typically) are the same coil. Pairs with no continuity are from different coils.
+To figure out which wires belong to the same coil, I used a multimeter set to continuity or resistance mode. Wire pairs with low resistance (around 1–5 Ω) are the same coil. Pairs with no continuity belong to different coils.
 
 ---
 
 ## Board Design
-
-### The Plan — Why It Changed
-
-I started the design with **one DRV8825 and one NEMA 17** — simple, straightforward, enough to meet the assignment.
-
-After going through the schematic and verifying everything was correct, I reconsidered. My final project is going to need multiple motors running simultaneously. If I'm already designing a board this week, why not scale it up to something actually useful — a **five-DRV8825 board** capable of driving five NEMA 17 motors independently?
-
-So I redesigned.
-
-**Five-driver board spec:**
-- ESP32-WROOM-32E as the main controller
-- Five DRV8825 driver slots — plug-in module footprint (standard 2×4 pin header)
-- Shared VMOT rail (12 V) with individual 100 µF caps per driver
-- Shared 3.3 V logic rail from onboard LDO
-- STEP, DIR, ENABLE lines from ESP32 GPIOs to each driver
-- Screw terminal connectors for each motor's four wires
-- UPDI-style programming header (UART TX, RX, EN, IO0, GND, 3V3)
-
 ### Schematic
 
-![KiCad schematic — ESP32 + five DRV8825 drivers](../../../images/week-10/    .jpg)
+![KiCad schematic — ESP32 + five DRV8825 drivers](../../../images/week-10/5.jpg)
 
 ### PCB Layout
 
-![PCB layout — five DRV8825 board](../../../images/week-10/output-   .jpg)
+![PCB layout — five DRV8825 board](../../../images/week-10/6.jpg)
 
 ### 3D View
 
-![3D view of the board](../../../images/week-10/output   .jpg)
+![3D view of the board](../../../images/week-10/7.jpg)
 
 ---
 
 ## Manufacturing
 
-- Milling machine: Roland MDX-20
-- Substrate: FR1 single-sided copper clad
-- Trace width / clearance: 0.4 mm / 0.4 mm (logic), 0.8 mm (motor power traces)
+- Milling machine: Carvera
+- Substrate: FR1 double-sided copper clad
+- Trace width / clearance: 0.6 mm / 0.4 mm (logic), 1.1 mm (motor power traces)
 - Tool: 0.2 mm 60° V-bit (traces), 1/32" flat end mill (outline)
 - Software: Mods CE
 
@@ -275,7 +275,7 @@ So I redesigned.
 
 ## Reflections
 
-- Scaling from one DRV to five mid-design was the right call — the routing got more complex but the result is actually useful hardware, not just a week assignment.
-- The minimum circuit section of the ESP32-WROOM-32E datasheet is genuinely non-obvious. The EN and IO0 pull-up resistors are the kind of thing that bites you if you skip them — the module just won't boot reliably.
-- The 100 µF cap on VMOT isn't just a suggestion. The motor-as-generator behaviour during deceleration is real and the voltage spike is fast enough that you'd never catch it with a scope in time to save the driver.
-- Identifying coil pairs on the NEMA 17 with a multimeter before wiring anything up is a two-minute step that saves a lot of frustration.
+- Scaling from one DRV to five partway through the design was the right call. The routing got trickier, but the end result is real, useful hardware, not just a week assignment.
+- The minimum circuit section of the ESP32-WROOM-32E datasheet is easy to miss but really important. Skipping the EN and IO0 pull-up resistors is the kind of mistake that comes back to bite you, since the module just won't boot reliably without them.
+- The 100 µF cap on VMOT isn't just a nice-to-have. The motor really does act like a generator when it slows down, and the voltage spike happens too fast to catch with a scope in time to save the driver.
+- Figuring out which wires belong to which coil on the NEMA 17 with a multimeter, before wiring anything up, takes two minutes and saves a lot of frustration later.
