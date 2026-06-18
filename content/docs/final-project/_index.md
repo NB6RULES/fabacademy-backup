@@ -6,12 +6,16 @@ bookCollapseSection = true
 
 # Final Project - Smart Tool Cabinet with RFID Tracking
 
-I'm building a **Smart Tool Cabinet** that tracks tools using RFID cards for access control and mini switches in each tool slot to detect when tools are removed.
+I build a **Smart Tool Cabinet** that tracks tools using RFID cards for access control and mini switches with individual microcontrollers in each tool slot to detect when tools are removed.
 
 ---
+
+## Presentation Slides
 ![Presentation slide draft](../../presentation.png)
 
-<video controls width="100%" style="max-width: 600px; margin: 20px 0; border-radius: 6px;">
+
+## Presentation Video
+<video controls width="100%" style="margin: 20px 0; border-radius: 6px;">
   <source src="../../presentation.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -45,13 +49,13 @@ This Smart Tool Box is designed for **anyone working in a collaborative maker sp
 - Mini switch sensors (one per tool slot)
 - Solenoid locks
 - XIAO ESP32C6 and CH32V003J4M6 microcontrollers
-- Buzzer
 - Custom-fabricated enclosure
 
 **Software:**
 - RFID authentication system
 - Switch monitoring & data logging
 - Alert system
+- Mobile App (IOS and Android) for notifications and tool status
 
 ---
 
@@ -112,21 +116,127 @@ At the end of the day, this project is:
 
 ✅ **Educational** - I'm gonna learn SO much doing this
 
-I'm lowkey really hyped about this project. Let's get it done! 🚀
-
 ---
 
 <a href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/final-project/">Smart Tool Tracking Toolbox</a> © 2026 by <a href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/">Nadec Biju</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;">
 
 ---
 
-<a href="../assignment/project-development/" class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200" style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; box-shadow:0 4px 20px rgba(102,126,234,0.35);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.5)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.35);'">
-  <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
-  View Project Development
-</a>
+<div class="related-links-grid">
+  <a href="../assignment/project-development/" class="related-link-card">
+    <div class="related-link-square">
+      <div class="image-area">
+        <img src="/images/week-20/project-development.jpg" alt="Project Development" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      </div>
+    </div>
+    <span class="related-link-label">Project Development</span>
+  </a>
 
-<a href="../assignment/week-16/" class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200" style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; box-shadow:0 4px 20px rgba(102,126,234,0.35); margin-top: 12px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.5)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.35);'">
-  <span class="material-symbols-outlined" style="font-size:20px;">arrow_forward</span>
-  View System Integration
-</a>
+  <a href="../assignment/week-16/" class="related-link-card">
+    <div class="related-link-square">
+      <div class="image-area">
+        <img src="/images/week-16/week-16.jpg" alt="System Integration" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      </div>
+    </div>
+    <span class="related-link-label">System Integration</span>
+  </a>
+
+  <a href="../assignment/week-18/" class="related-link-card">
+    <div class="related-link-square">
+      <div class="image-area">
+        <img src="/images/week-18/week-18.jpg" alt="Applications and Implications" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      </div>
+    </div>
+    <span class="related-link-label">Applications and Implications</span>
+  </a>
+</div>
+
+<style>
+.related-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.related-link-card {
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.related-link-card:hover {
+  transform: translateY(-8px);
+}
+
+.related-link-square {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.related-link-card:hover .related-link-square {
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.related-link-square .card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.related-link-square .image-area {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.related-link-square .placeholder-icon {
+  width: 50px;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.6;
+}
+
+.related-link-label {
+  display: block;
+  margin-top: 10px;
+  color: var(--body-color, inherit);
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .related-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .related-links-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+</style>
 
