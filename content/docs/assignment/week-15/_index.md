@@ -51,8 +51,14 @@ This week was lowkey a different vibe compared to the rest of Fab Academy — mo
 | TUE | Regional review |
 
 ---
+# Group Assignment
+The link to our group assignment is below:
+[Group Assignment](https://fabacademy.org/2026/labs/kochi/group_assignmetns/week15/)
 
-# Planning
+---
+
+# Individual Assignment
+## Planning
 
 For this project, I am planning to build a smart toolbox that can track whether tools are present or missing. Each tool will be placed on a switch, so when a tool is removed, the system can detect it. I will also use RFID to identify who is opening the toolbox and taking tools. Along with the hardware, I plan to develop a simple web app that shows all tools in real time, highlighting missing ones. There will also be an admin view to see who took which tool and when. This project is being developed at Super Fablab Kerala to make tool management easier and more organized.
 

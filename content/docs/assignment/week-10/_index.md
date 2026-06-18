@@ -51,6 +51,42 @@ The assignment: design a board with an output device, then program it to do some
 | TUE | Regional review |
 
 ---
+# Group Assignment
+
+For this group assignment, we measured power consumption hands-on instead of just trusting the numbers in a datasheet. We hooked up a bench power supply and a digital multimeter to a couple of output devices and read off the actual current they pulled while running.
+
+The math behind it is simple Ohm's law territory:
+
+Power (W) = Voltage (V) × Current (A)
+
+**NeoPixel:**
+
+| Measurement | Value |
+|---|---|
+| Supply Voltage | 5 V |
+| Measured Current | 0.0337 A |
+| Power | 5 × 0.0337 = 0.1685 W |
+
+![NeoPixel power measurement setup](../../../images/week-10/01.jpg)
+
+**Stepper motor:**
+
+| Measurement | Value |
+|---|---|
+| Supply Voltage | 5 V |
+| Measured Current | 0.011 A |
+| Power | 5 × 0.011 = 0.055 W |
+
+![Stepper motor power measurement setup](../../../images/week-10/02.jpg)
+
+
+The main thing I took from this is how to hook a multimeter in series to get a real current reading, and how that one number turns into a power figure once you multiply it by the voltage. Knowing the actual draw of a part, not just the datasheet guess, matters a lot when you're picking a battery or sizing a power supply for an embedded project. Get it wrong and you either run out of juice fast or carry around a way bigger battery than you need.
+
+Source: https://fabacademy.org/2026/labs/kochi/group_assignmetns/week10/
+
+---
+
+# Individual Assignment
 
 ## Output Device Selection
 

@@ -58,8 +58,15 @@ Extra Credit Goals:
 | TUE | Regional review |
 
 ---
+# Group Assignment
+The link to our group assignment is below:
+[Group Assignment](https://fabacademy.org/2026/labs/kochi/group_assignmetns/week11/)
 
-# Wireless QWERTY Keyboard System
+---
+
+# Individual Assignment
+
+## Wireless QWERTY Keyboard System
 ### XIAO ESP32-C6 (custom Week 8 PCB) + Raspberry Pi Pico W
 
 A two-device wireless text input system. You type on a physical QWERTY keyboard rendered on an OLED display (or via a web browser), and the text gets wirelessly transmitted to a Raspberry Pi Pico W which types it on your PC as if it were a real USB keyboard.
