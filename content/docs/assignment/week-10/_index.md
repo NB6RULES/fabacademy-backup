@@ -118,7 +118,7 @@ I picked the ESP32-WROOM-32E because it has WiFi, which means I could control th
 
 The **ESP32-WROOM-32E** is a surface-mount WiFi + Bluetooth module from Espressif, built around the ESP32-D0WD-V3 chip. I picked it over the XIAO or ATtiny for a few reasons:
 
-- It has enough GPIO to run five DRV8825 drivers at once (STEP, DIR, ENABLE per driver means 15 pins minimum)
+- It has enough GPIO to run five DRV8825 drivers at once (STEP, DIR, ENABLE per driver means 15 pins minimum). For me this was relevant as i wanted to built a wroom based board in the future to control five stepper motors at once, for a future project . Shhh.......
 - Built-in WiFi gives me wireless control options for the final project
 - It has a strong Arduino/ESP-IDF ecosystem, with libraries for almost everything
 - It's likely what the final project will use anyway, so this week doubles as practice
@@ -199,7 +199,7 @@ The **microstepping** resolution is set with three pins: MODE0, MODE1, MODE2. Se
 | B2, B1 | Coil B outputs |
 | A2, A1 | Coil A outputs |
 
-> ⚠️ **The 100 µF capacitor on VMOT is not optional.** The DRV8825 datasheet says so directly. When the motor slows down, it acts like a generator and pushes current back into VMOT. Without the cap, that voltage spike can go past the driver's absolute maximum rating and kill the IC instantly.
+> ⚠️ **The 100 µF capacitor on VMOT is not optional.** The DRV8825 datasheet says so directly. When the motor slows down, it acts like a generator and pushes current back into VMOT. Without the cap, that voltage spike can go past the driver's absolute maximum rating and kill the IC instantly. (**I'm using a 470uf cap on my board, just to be safe.**)
 
 ---
 
@@ -247,6 +247,9 @@ To figure out which wires belong to the same coil, I used a multimeter set to co
 ---
 
 ## Board Design
+
+Once I understood all my parts and how they worked, I moved on to actually designing the board. I used KiCad to draw the schematic, lay out the PCB, and check the 3D model before sending it off to be milled.
+
 ### Schematic
 
 ![KiCad schematic — ESP32 + five DRV8825 drivers](../../../images/week-10/5.jpg)
@@ -272,16 +275,25 @@ To figure out which wires belong to the same coil, I used a multimeter set to co
 **Bill of Materials:**
 
 | Component | Value | Qty |
-|---|---|---|
-| ESP32-WROOM-32E | — | 1 |
-| DRV8825 module | — | 5 |
-| Capacitor, electrolytic | 100 µF / 35 V | 5 (one per VMOT) |
-| Capacitor, ceramic | 100 nF | multiple (decoupling) |
-| Resistor | 10 kΩ | 2 (EN, IO0 pull-ups) |
-| LDO regulator | 3.3 V | 1 |
-| Screw terminals | 4-pin | 5 (one per motor) |
-| Pin headers | 2×4 | 5 (DRV8825 sockets) |
-| USB-UART bridge | CP2102 or CH340 | 1 |
+|-----------|-------|-----|
+| C1, C5 | 4.7uF | 2 |
+| C2, C4, C7 | 0.1uF | 3 |
+| C3 | 10uF | 1 |
+| C6 | 1uF | 1 |
+| C8 | 100uF | 1 |
+| D1, D2, D3 | LED | 3 |
+| J1 | PROG header (2x03) | 1 |
+| J2 | 1x04 header | 1 |
+| J3 | Screw terminal 1x02 | 1 |
+| R1, R3, R4 | 10K | 3 |
+| R2, R6 | 1k | 2 |
+| R5 | R220 | 1 |
+| R7, R8 | 4.7K | 2 |
+| SW1 | Push button | 1 |
+| SW2 | NDS-03V switch | 1 |
+| U1 | AMS1117-3.3 | 1 |
+| U2 | ESP32-WROOM-32E | 1 |
+| U3 | DRV8825 carrier | 1 |
 
 ---
 
@@ -311,7 +323,6 @@ To figure out which wires belong to the same coil, I used a multimeter set to co
 
 ## Reflections
 
-- Scaling from one DRV to five partway through the design was the right call. The routing got trickier, but the end result is real, useful hardware, not just a week assignment.
 - The minimum circuit section of the ESP32-WROOM-32E datasheet is easy to miss but really important. Skipping the EN and IO0 pull-up resistors is the kind of mistake that comes back to bite you, since the module just won't boot reliably without them.
-- The 100 µF cap on VMOT isn't just a nice-to-have. The motor really does act like a generator when it slows down, and the voltage spike happens too fast to catch with a scope in time to save the driver.
+- The 100 µF (470 µF in my case) cap on VMOT isn't just a nice-to-have. The motor really does act like a generator when it slows down, and the voltage spike happens too fast to catch with a scope in time to save the driver.
 - Figuring out which wires belong to which coil on the NEMA 17 with a multimeter, before wiring anything up, takes two minutes and saves a lot of frustration later.
