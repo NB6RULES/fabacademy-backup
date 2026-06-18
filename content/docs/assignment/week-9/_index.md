@@ -75,6 +75,10 @@ We tested a range of sensors available in the lab, including a **rotary encoder*
 
 The oscilloscope exercise gave a concrete feel for signal integrity, noise floors, and the difference between a "clean" digital edge and a slow analog ramp.
 
+Check out the full group documentation here:
+🔗 [https://fabacademy.org/2026/labs/kochi/group_assignmetns/week09/](https://fabacademy.org/2026/labs/kochi/group_assignmetns/week09/)
+
+
 ---
 
 ## Individual Assignment

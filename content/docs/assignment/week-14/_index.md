@@ -140,28 +140,45 @@ The reason for starting with the 6 mm tool is purely efficiency — it removes m
 
 After running the simulation and confirming nothing was going to collide catastrophically with the stock, I exported the G-code for the TRAK machine.
 
+### Setting the Work Coordinate System
 ![fusion cam setup](../../../images/week-14/fusion-1.jpg)
+
+### Setting up the Stock Size
 ![fusion cam setup](../../../images/week-14/fusion-2.jpg)
+
+### Configuring Parameters for Adaptive Clearing (Using 6mm flat endmill)
 ![fusion cam setup](../../../images/week-14/fusion-3.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-4.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-5.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-6.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-7.jpg)
+
+### Configuring Parameters for Adaptive Clearing (Using 3.175mm flat endmill)
 ![fusion cam setup](../../../images/week-14/fusion-8.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-9.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-10.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-11.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-12.jpg)
+
+### Configuring Parameters for Pocket Clearing (Using 3.175mm flat endmill)
 ![fusion cam setup](../../../images/week-14/fusion-13.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-14.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-15.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-16.jpg)
+
+### Configuring Parameters for Flow Clearing (Using 3.175mm ball endmill)
 ![fusion cam setup](../../../images/week-14/fusion-17.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-18.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-19.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-20.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-21.jpg)
 ![fusion cam setup](../../../images/week-14/fusion-22.jpg)
+
+## Simulating ToolPath and the Material Removal Process
+<video controls width="100%" style="max-width: 600px; margin: 20px 0;">
+  <source src="../../../images/week-14/simulate.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ### Post Processing
 
