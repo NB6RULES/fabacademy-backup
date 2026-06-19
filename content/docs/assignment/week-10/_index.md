@@ -326,3 +326,12 @@ Once I understood all my parts and how they worked, I moved on to actually desig
 - The minimum circuit section of the ESP32-WROOM-32E datasheet is easy to miss but really important. Skipping the EN and IO0 pull-up resistors is the kind of mistake that comes back to bite you, since the module just won't boot reliably without them.
 - The 100 µF (470 µF in my case) cap on VMOT isn't just a nice-to-have. The motor really does act like a generator when it slows down, and the voltage spike happens too fast to catch with a scope in time to save the driver.
 - Figuring out which wires belong to which coil on the NEMA 17 with a multimeter, before wiring anything up, takes two minutes and saves a lot of frustration later.
+
+---
+
+## References
+
+- [Microcontroller interfaces: stepper motors — RS DesignSpark](https://www.rs-online.com/designspark/microcontroller-interfaces-stepper-motors)
+- [DRV8825 Stepper Motor Driver Arduino Tutorial — Last Minute Engineers](https://lastminuteengineers.com/drv8825-stepper-motor-driver-arduino-tutorial/)
+- [DRV8825 Datasheet — Texas Instruments](https://www.ti.com/lit/ds/symlink/drv8825.pdf)
+- [INA225 Datasheet — Texas Instruments](https://www.ti.com/lit/ds/symlink/ina225.pdf)
