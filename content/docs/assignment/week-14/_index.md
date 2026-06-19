@@ -148,31 +148,52 @@ After running the simulation and confirming nothing was going to collide catastr
 
 ### Configuring Parameters for Adaptive Clearing (Using 6mm flat endmill)
 ![fusion cam setup](../../../images/week-14/fusion-3.jpg)
+Tool, feed and speed
 ![fusion cam setup](../../../images/week-14/fusion-4.jpg)
+Geometry and Stock definition
 ![fusion cam setup](../../../images/week-14/fusion-5.jpg)
+Heights Setup
 ![fusion cam setup](../../../images/week-14/fusion-6.jpg)
+Passes Parameters
 ![fusion cam setup](../../../images/week-14/fusion-7.jpg)
+Ramp type setup
 
 ### Configuring Parameters for Adaptive Clearing (Using 3.175mm flat endmill)
 ![fusion cam setup](../../../images/week-14/fusion-8.jpg)
+Tool, feed and speed
 ![fusion cam setup](../../../images/week-14/fusion-9.jpg)
+Geometry and Stock definition
 ![fusion cam setup](../../../images/week-14/fusion-10.jpg)
+Heights Setup
 ![fusion cam setup](../../../images/week-14/fusion-11.jpg)
+Passes Parameters
 ![fusion cam setup](../../../images/week-14/fusion-12.jpg)
+Ramp type setup
 
 ### Configuring Parameters for Pocket Clearing (Using 3.175mm flat endmill)
 ![fusion cam setup](../../../images/week-14/fusion-13.jpg)
+Tool, feed and speed
 ![fusion cam setup](../../../images/week-14/fusion-14.jpg)
+Geometry and Stock definition
 ![fusion cam setup](../../../images/week-14/fusion-15.jpg)
+Heights Setup
 ![fusion cam setup](../../../images/week-14/fusion-16.jpg)
+Passes Parameters
+![fusion cam setup](../../../images/week-14/fusion-17.jpg)
+Ramp type setup
 
 ### Configuring Parameters for Flow Clearing (Using 3.175mm ball endmill)
-![fusion cam setup](../../../images/week-14/fusion-17.jpg)
+
 ![fusion cam setup](../../../images/week-14/fusion-18.jpg)
+Tool, feed and speed
 ![fusion cam setup](../../../images/week-14/fusion-19.jpg)
+Geometry and Stock definition
 ![fusion cam setup](../../../images/week-14/fusion-20.jpg)
+Heights Setup
 ![fusion cam setup](../../../images/week-14/fusion-21.jpg)
+Passes Parameters
 ![fusion cam setup](../../../images/week-14/fusion-22.jpg)
+Ramp type setup
 
 ## Simulating ToolPath and the Material Removal Process
 <video controls width="100%" style="max-width: 600px; margin: 20px 0;">
@@ -180,14 +201,20 @@ After running the simulation and confirming nothing was going to collide catastr
   Your browser does not support the video tag.
 </video>
 
-### Post Processing
+### Exporting G-Code for TRAK Machine
 
 ![post processing](../../../images/week-14/fusion-23.jpg)
+Selecting operations using the 6mm flat endmill
 ![post processing](../../../images/week-14/fusion-24.jpg)
+Post processing operations using the 6mm flat endmill for TRAK machine
 ![post processing](../../../images/week-14/fusion-25.jpg)
+Selecting operations using the 3.175mm flat endmill
 ![post processing](../../../images/week-14/fusion-26.jpg)
+Post processing operations using the 3.175mm flat endmill for TRAK machine
 ![post processing](../../../images/week-14/fusion-27.jpg)
+Selecting operations using the 3.175mm ball endmill
 ![post processing](../../../images/week-14/fusion-28.jpg)
+Post processing operations using the 3.175mm ball endmill for TRAK machine
 
 ---
 
@@ -218,10 +245,6 @@ The TRAK setup process is more involved than something like the ShopBot because 
 **Step 1 — Secure the stock**  
 The wax blank is clamped into the vise on the TRAK bed. **Parallel blocks** were placed under the wax to lift it to the correct height in the vise — this ensures the top surface of the stock is at a consistent, known height and that the vise jaws clamp on solid material rather than air. Make sure the blank is fully seated on the parallels and the vise is properly torqued — any movement during cutting ruins the job and your day.
 
-![safety gear](../../../images/week-14/1.jpg)
-
-![safety gear](../../../images/week-14/2.1.jpg)
-
 ![safety gear](../../../images/week-14/2.jpg)
 
 ![safety gear](../../../images/week-14/3.jpg)
@@ -249,7 +272,9 @@ Install the edge finder in the spindle. Jog to the X edge of the wax, touch off,
 Swap the edge finder for the **6 mm endmill**. Jog down carefully to the top surface of the wax, touch off, and zero Z from there.
 
 ![safety gear](../../../images/week-14/8.jpg)
+Fixing endmill inside the chuck
 ![safety gear](../../../images/week-14/9.jpg)
+Measuring if there is suffiencent lenght of the endmill outside the chuck
 
 
 **Step 5 — Set a reference Z (this step matters more than you think)**  
@@ -267,10 +292,7 @@ After the 6 mm adaptive clearing completes, swap to the **3.175 mm endmill**, re
   Your browser does not support the video tag.
 </video>
 
-![safety gear](../../../images/week-14/11.jpg)
-![safety gear](../../../images/week-14/12.jpg)
-![safety gear](../../../images/week-14/13.jpg)
-![safety gear](../../../images/week-14/14.jpg)
+
 ![safety gear](../../../images/week-14/15.1.jpg)
 ![safety gear](../../../images/week-14/15.jpg)
 ![safety gear](../../../images/week-14/16.jpg)
@@ -288,8 +310,11 @@ In trying to recover, I needed to move the Z axis. Completely reasonable. What I
 Snapped the endmill clean off.
 
 ![safety gear](../../../images/week-14/warning.jpg)
+Error code shown
 ![safety gear](../../../images/week-14/warning-1.jpg)
+Endmill inside wax block after the incident
 ![safety gear](../../../images/week-14/warning-2.jpg)
+Broken endmill after removal from the wax block
 
 > 🔴 **Lesson learned the expensive way:** When recovering from a mid-job stop and moving Z, **always press Z up first** to clear the workpiece. Z down near the stock with the spindle off is just a slow-motion endmill sacrifice.
 
@@ -336,6 +361,11 @@ Process:
 5. Place in the **vacuum chamber** to pull out trapped air bubbles
 6. Pour the degassed silicone slowly into the wax cavity, pouring from one edge so it rises and pushes air ahead of it rather than trapping bubbles
 7. Leave to cure fully before demolding
+
+> Measured weight of silicone **121.3**
+>
+> Hardener weight at **22:1000 ratio = 121.3 * 22 / 1000 = 2.67 g**
+
 
 ![safety gear](../../../images/week-14/26.jpg)
 ![safety gear](../../../images/week-14/27.jpg)
