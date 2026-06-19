@@ -175,6 +175,39 @@ But that's just an option I have right now, I'm not actually planning to do that
 
 ---
 
+## Patenting in India (just in case I ever go that route)
+
+I'm not filing a patent right now, but I looked into how it would work in India in case I ever want to protect something I build later.
+
+### The Patenting Process
+1. **Search** — first check if your invention already exists (prior art search) so you don't waste money on something already patented.
+2. **Draft the application** — write up the patent specification, basically a detailed technical description of how your invention works.
+3. **File** — submit it to the **Indian Patent Office** with the application form and fee.
+4. **Publication** — your application gets published after 18 months.
+5. **Examination request** — you have to separately request examination, it doesn't happen automatically.
+6. **Respond to objections** — the examiner usually raises objections, you reply and clear them up.
+7. **Grant** — if everything checks out, the patent gets granted. The whole process usually takes a couple of years.
+
+### Design Patents
+In India this isn't actually called a "patent," it's called a **Design Registration**. It protects how something **looks** (shape, pattern, ornamentation) rather than how it **works**. So if my toolbox had a unique shape or look, I'd register the design separately from any patent on its function. It's filed under the Designs Act, 2000.
+
+### Where to Apply
+You can file patents (and designs) online through the official Indian Patent Office portal here: https://ipindiaonline.gov.in/
+
+### Filing Patents Outside India
+If I want protection in other countries too, filing separately in each country gets expensive and slow. The easier route is the **PCT (Patent Cooperation Treaty)** — you file one international application and it reserves your right to file in over 150 member countries later. India is part of the PCT, so I could start there.
+
+### Company Structure in India (Startups Included)
+If I ever turn this into a real product, here's roughly how companies can be structured in India:
+
+- **Sole Proprietorship** — just me, simplest option, but no separation between my personal and business liability.
+- **Partnership / LLP** — for when you're building with co-founders, LLP gives limited liability so personal assets are safer.
+- **Private Limited Company (Pvt Ltd)** — the most common structure for startups, gives limited liability and makes it easier to raise funding later.
+
+For startups specifically, India has a **Startup India** scheme that gives tax benefits, easier compliance, and funding support if you register under it. Kerala also has its own version through **KSUM** (mentioned above in my dissemination plan), which is what I'd probably look into first since I'm based here.
+
+---
+
 > The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
 >
 > AI PROMPT USED: "Proofread the following text and correct any grammatical errors and spelling mistakes."
