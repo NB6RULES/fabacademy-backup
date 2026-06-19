@@ -590,14 +590,14 @@ function clearLog(){ document.getElementById("log").innerHTML=""; }
 /* ============ request helper with button spinner ============ */
 async function withBusy(btn, url){
   if(btn){ btn.classList.add("loading"); btn.disabled=true; }
-  log(`&rarr; ${url}`);
+  log(`→ ${url}`);
   try{
     const r = await fetch(url, {cache:"no-store"});
     const t = await r.text();
     logResponse(url, t);
     return t;
   }catch(err){
-    log(`&#10007; ${url} &mdash; ${err.message}`, "err");
+    log(`✕ ${url} — ${err.message}`, "err");
   }finally{
     if(btn){ btn.classList.remove("loading"); btn.disabled=false; }
   }
