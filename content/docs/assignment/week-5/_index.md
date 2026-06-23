@@ -571,6 +571,14 @@ https://www.artec3d.com/portable-3d-scanners/artec-leo/
 - Scan complete  
 - Post-processing pending  
 
+### Limitations and Observations
+
+The Leo gave a pretty clean model, but it wasn't perfect. **Surfaces that weren't smooth**, like the stool's rough seat part, were harder for the scanner to read than flat or curved parts. Those spots needed more passes to clean up, and you could still see extra bumpy noise there compared to the smooth legs.
+
+**Shiny surfaces were really annoying.** The scanner shoots light at the object to figure out its shape, and shiny stuff bounces that light around weird, so you end up with holes or messed up shapes right where it's shiniest. **Tiny objects** had a similar problem: there's just not enough surface for the scanner to grab good data from, so the small parts came out less detailed than the bigger stool.
+
+Basically: the Leo works great when the object is matte, big enough, and has simple smooth shapes. But it's not magic. Give it a bad surface and it gives you a bad scan, kind of like taking a photo in bad lighting.
+
 ---
 
 ## Workflow 2 – Kiri Engine (Mobile)
@@ -610,6 +618,18 @@ https://www.artec3d.com/portable-3d-scanners/artec-leo/
 - Clean the mesh  
 - Fix artifacts  
 - **3D print a scaled model**
+
+### Limitations and Observations
+
+Kiri Engine had the same rough-surface problem as the Leo. Bumpy or textured spots came out noisier and needed more cleanup. Also, **Kiri was way less accurate than the Artec Leo.** That makes sense once you think about it: the Leo is a real scanner made just for this job, while Kiri is using a phone's camera and LiDAR to guess the shape. Less fancy hardware, less accurate result.
+
+Shiny surfaces and tiny objects gave it trouble too, for the same reasons as the Leo. Shiny stuff confuses the sensor, and tiny objects just don't give it enough to work with.
+
+### Artec Leo vs Kiri Engine — Which One Would I Actually Use?
+
+If we're only talking about accuracy, the **Leo wins easily.** But accuracy isn't the only thing that matters. If I think about how easy it is to get the hardware, how easy it is to use, and how good the accuracy needs to be for most jobs, I'd actually pick **Kiri Engine** most of the time.
+
+The Leo is expensive scanner equipment that's stuck in the lab, and you need to learn the Artec Studio software to get good results out of it. Kiri Engine is just an app on the phone I already carry around. Yeah, it's less accurate, but for most jobs, like getting a rough model to clean up and print, that's totally fine. The Leo is the better choice when you really need scan-level accuracy. For everything else, the phone in my pocket beats a fancy scanner I have to go track down and learn.
 
 ---
 
