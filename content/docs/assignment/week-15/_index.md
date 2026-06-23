@@ -662,6 +662,12 @@ Claude generated the entire file structure and asked me to push it to GitHub, an
 </div>
 {{< /rawhtml >}}
 
+## Final Interface after some Aesthetic tweaks
+
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-15/working.mp4" type="video/mp4">
+</video>
+
 ---
 
 ## Reflection
