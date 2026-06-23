@@ -247,6 +247,10 @@ Final CAD Assembly of the CoreXY mechanism with all the parts in place and the b
 ## Machine Movement Test
 
 <video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-12/001.mp4" type="video/mp4">
+</video>
+
+<video controls muted style="width:100%; border-radius:8px;">
   <source src="/images/week-12/29.mp4" type="video/mp4">
 </video>
 
