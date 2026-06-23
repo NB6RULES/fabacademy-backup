@@ -60,6 +60,7 @@ We landed on a **400mm × 400mm** working area. Then came the question of what t
 After that we split up the work so everyone had something to own. I got assigned the CoreXY mechanism design so that's what this documentation is about. Let's get into it.
 
 ![Brainstorming](/images/week-12/01.jpg)
+Sketching out ideas for the machine and how it would work. The final design ended up being quite different from this, but this was a good starting point.
 
 ## Core XY
 
@@ -131,6 +132,8 @@ I had used solidworks for the design of the machine as i am very familiar with t
   <source src="/images/week-12/02.mp4" type="video/mp4">
 </video>
 
+
+### First design 
 ![first design 1](/images/week-12/2.jpg)
 
 ![first design 1](/images/week-12/3.jpg)
@@ -147,13 +150,17 @@ they had made be realise that the current deign i had in mind for the gantry sys
 After that i had redesigned the gantry system based on jakes design with the help of my instructor [Sreyas](https://fabacademy.org/2023/labs/kochi/students/sreyas-george/about.html) and then we had a final design that we were happy with and that we could actually build with the parts we had.
 
 ![Sreyas design](/images/week-12/6.jpg)
-Initial design by sreyas based on jakes design
-![New design](/images/week-12/7.jpg)
-Design Adjusted by me inorder to fit the 20x40 aluminum extrusions we had planned on using.
+> Initial design by sreyas based on jakes design
 
-after the gantry got sorted i moved ahead with the design of the entire machine for which first i drew a sketch with the belt loops
+![New design](/images/week-12/7.jpg)
+> Design Adjusted by me inorder to fit the 20x40 aluminum extrusions we had planned on using.
+
+After the gantry got sorted i moved ahead with the design of the entire machine for which first i drew a sketch with the belt loops
 ![loop1](/images/week-12/8.jpg)
+> Left belt loop
+
 ![loop2](/images/week-12/9.jpg)
+> Right belt loop
 
 Then i had placed the bottom Base and the aluminum extrusions at the required positions with the gantry which was designed earlier 
 
@@ -165,17 +172,23 @@ then i moved onto the design of the 4 corner bloacks which would hold the alumin
 
 ![week-12 image 11](/images/week-12/11.jpg)
 
+> Corner block
+
 <video controls muted style="width:100%; border-radius:8px;">
   <source src="/images/week-12/11.5.mp4" type="video/mp4">
 </video>
 
+
 ![week-12 image 12](/images/week-12/12.jpg)
 
 ![week-12 image 13](/images/week-12/13.jpg)
+> Motor Block
 
 after this i had moved onto the design of the blocks that woud hold the pulleysand the x gantry aluminum extrusions in place .
 
 ![week-12 image 14](/images/week-12/14.jpg)
+
+> Gantry block
 
 <video controls muted style="width:100%; border-radius:8px;">
   <source src="/images/week-12/14.5.mp4" type="video/mp4">
@@ -184,6 +197,8 @@ after this i had moved onto the design of the blocks that woud hold the pulleysa
 then i had modified the design of the x gantry so that it can be used to tighten the belt of the pulley by tightly pulling the belt and using the ba cap to screw them into place
 
 ![week-12 image 15](/images/week-12/15.jpg)
+
+>belt tightening mechanism
 
 Final CAD Assembly of the CoreXY mechanism with all the parts in place and the belt loops in place.
 
@@ -243,5 +258,8 @@ Final CAD Assembly of the CoreXY mechanism with all the parts in place and the b
 
 ## Design Files
 
-<button onclick="(function(){var files=['/files/week-12/Assem1.zip','/files/week-12/Assem2.zip','/files/week-12/neopi design.f3z','/files/week-12/stl.zip'];files.forEach(function(f,i){setTimeout(function(){var a=document.createElement('a');a.href=f;a.download=f.split('/').pop();document.body.appendChild(a);a.click();document.body.removeChild(a);},i*600);});})();" style="display:inline-block; padding:0.6em 1.4em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em; cursor:pointer; border:none;">Download All Design Files ↓</button>
+<a href="/files/week-12/Assem1.zip" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">Assem1.zip ↓</a>
+<a href="/files/week-12/Assem2.zip" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">Assem2.zip ↓</a>
+<a href="/files/week-12/neopi design.f3z" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">neopi design.f3z ↓</a>
+<a href="/files/week-12/stl.zip" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">stl.zip ↓</a>
 
