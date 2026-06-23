@@ -22,12 +22,17 @@
 #define DIR_PIN 4
 #define STEP_PIN 16
 #define EN_PIN 17
+#define LED_PIN 26
 
 #define DEFAULT_STEPS_PER_REV 200
 #define MIN_STEP_HIGH_US 2
 #define MIN_RPM 1
 #define MAX_RPM 300
 #define MAX_STEPS 100000
+
+#define LED_IDLE_PERIOD_MS 1000
+#define LED_BUSY_PERIOD_MS 80
+#define STATUS_PRINT_PERIOD_MS 3000
 
 const char *AP_SSID = "StepperTester";
 const IPAddress AP_IP(192, 168, 4, 1);
@@ -38,9 +43,46 @@ WebServer server(80);
 bool driverEnabled = false;
 volatile bool busy = false;
 
+unsigned long ledLastToggle = 0;
+bool ledState = false;
+
+unsigned long statusLastPrint = 0;
+
 void setEnabled(bool en) {
   driverEnabled = en;
   digitalWrite(EN_PIN, en ? LOW : HIGH);
+  Serial.print("Driver: ");
+  Serial.println(en ? "ENABLED" : "disabled");
+}
+
+// Periodic heartbeat over Serial: WiFi AP state + driver/motor state
+void printStatusLine() {
+  Serial.print("[status] WiFi AP: ");
+  Serial.print(WiFi.softAPgetStationNum());
+  Serial.print(" client(s) connected, IP=");
+  Serial.print(WiFi.softAPIP());
+  Serial.print(" | Driver: ");
+  Serial.print(driverEnabled ? "ENABLED" : "disabled");
+  Serial.print(" | Motor: ");
+  Serial.println(busy ? "MOVING" : "idle");
+}
+
+void updateStatusPrint() {
+  unsigned long now = millis();
+  if (now - statusLastPrint >= STATUS_PRINT_PERIOD_MS) {
+    statusLastPrint = now;
+    printStatusLine();
+  }
+}
+
+// Slow heartbeat blink while idle - called from loop()
+void updateIdleLed() {
+  unsigned long now = millis();
+  if (now - ledLastToggle >= LED_IDLE_PERIOD_MS) {
+    ledLastToggle = now;
+    ledState = !ledState;
+    digitalWrite(LED_PIN, ledState);
+  }
 }
 
 unsigned long computeStepDelayUs(int rpm, int stepsPerRev) {
@@ -53,13 +95,38 @@ void runSteps(long steps, bool cw, int rpm, int stepsPerRev) {
   setEnabled(true);
   digitalWrite(DIR_PIN, cw ? HIGH : LOW);
   unsigned long d = computeStepDelayUs(rpm, stepsPerRev);
+
+  Serial.print("Motor: MOVING ");
+  Serial.print(steps);
+  Serial.print(" steps ");
+  Serial.print(cw ? "CW" : "CCW");
+  Serial.print(" @ ");
+  Serial.print(rpm);
+  Serial.print(" RPM (spr=");
+  Serial.print(stepsPerRev);
+  Serial.println(")");
+
+  unsigned long ledLast = millis();
+  bool fastLedState = false;
   for (long i = 0; i < steps; i++) {
     digitalWrite(STEP_PIN, HIGH);
     delayMicroseconds(d);
     digitalWrite(STEP_PIN, LOW);
     delayMicroseconds(d);
     if (i % 1000 == 0) yield();
+    unsigned long now = millis();
+    if (now - ledLast >= LED_BUSY_PERIOD_MS) {
+      ledLast = now;
+      fastLedState = !fastLedState;
+      digitalWrite(LED_PIN, fastLedState);
+    }
   }
+  // hand the LED back to the idle heartbeat in loop()
+  digitalWrite(LED_PIN, LOW);
+  ledState = false;
+  ledLastToggle = millis();
+
+  Serial.println("Motor: idle");
 }
 
 int clampInt(long v, int lo, int hi) {
@@ -700,12 +767,20 @@ void handleNotFound() {
 }
 
 void setup() {
+  Serial.begin(115200);
+  Serial.println("\nstepper_tester booting");
+
   pinMode(DIR_PIN, OUTPUT);
   pinMode(STEP_PIN, OUTPUT);
   pinMode(EN_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
   setEnabled(false);
 
-  WiFi.softAP(AP_SSID, NULL);
+  bool apOk = WiFi.softAP(AP_SSID, NULL);
+  Serial.print("softAP started: ");
+  Serial.println(apOk ? "OK" : "FAILED");
+  Serial.print("AP IP: ");
+  Serial.println(WiFi.softAPIP());
   delay(100);
 
   dnsServer.start(53, "*", AP_IP);
@@ -718,9 +793,12 @@ void setup() {
   server.on("/status", handleStatus);
   server.onNotFound(handleNotFound);
   server.begin();
+  Serial.println("HTTP server started, setup complete");
 }
 
 void loop() {
   dnsServer.processNextRequest();
   server.handleClient();
+  updateIdleLed();
+  updateStatusPrint();
 }

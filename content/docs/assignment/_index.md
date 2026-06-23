@@ -16,7 +16,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-1/week-1.jpg" alt="Week 1" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 1</span>
+      <span class="week-number">Week 1<br><span class="week-name">Principles and Practices, Project Management</span></span>
     </div>
   </a>
   
@@ -26,7 +26,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-2/week-2.jpg" alt="Week 2" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 2</span>
+      <span class="week-number">Week 2<br><span class="week-name">Computer Aided Design</span></span>
     </div>
   </a>
   
@@ -36,7 +36,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-3/week-3.jpg" alt="Week 3" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 3</span>
+      <span class="week-number">Week 3<br><span class="week-name">Computer Controlled Cutting</span></span>
     </div>
   </a>
   
@@ -46,7 +46,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-4/week-4.jpg" alt="Week 4" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 4</span>
+      <span class="week-number">Week 4<br><span class="week-name">Embedded Programming</span></span>
     </div>
   </a>
   
@@ -56,7 +56,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-5/week-5.jpg" alt="Week 5" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 5</span>
+      <span class="week-number">Week 5<br><span class="week-name">3D Scanning and Printing</span></span>
     </div>
   </a>
   
@@ -66,7 +66,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-6/week-6.jpg" alt="Week 6" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 6</span>
+      <span class="week-number">Week 6<br><span class="week-name">Electronics Design</span></span>
     </div>
   </a>
   
@@ -76,7 +76,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-7/week-07.jpg" alt="Week 7" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 7</span>
+      <span class="week-number">Week 7<br><span class="week-name">Computer Controlled Machining</span></span>
     </div>
   </a>
   
@@ -86,7 +86,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-8/week-8.jpg" alt="Week 8" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 8</span>
+      <span class="week-number">Week 8<br><span class="week-name">Electronics Production</span></span>
     </div>
   </a>
   
@@ -96,7 +96,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-9/week-9.jpg" alt="Week 9" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 9</span>
+      <span class="week-number">Week 9<br><span class="week-name">Input Devices</span></span>
     </div>
   </a>
   
@@ -106,7 +106,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-10/week-10.jpg" alt="Week 10" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 10</span>
+      <span class="week-number">Week 10<br><span class="week-name">Output Devices</span></span>
     </div>
   </a>
   
@@ -116,7 +116,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-11/week-11.jpg" alt="Week 11" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 11</span>
+      <span class="week-number">Week 11<br><span class="week-name">Networking and Communications</span></span>
     </div>
   </a>
   
@@ -126,7 +126,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-12/week-12.jpg" alt="Week 12" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 12</span>
+      <span class="week-number">Week 12<br><span class="week-name">Mechanical Design</span></span>
     </div>
   </a>
   
@@ -136,7 +136,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-13/week-13.jpg" alt="Week 13" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 13</span>
+      <span class="week-number">Week 13<br><span class="week-name">Midterm Review</span></span>
     </div>
   </a>
   
@@ -146,7 +146,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-14/week-14.jpg" alt="Week 14" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 14</span>
+      <span class="week-number">Week 14<br><span class="week-name">Molding and Casting</span></span>
     </div>
   </a>
   
@@ -156,7 +156,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-15/week-15.jpg" alt="Week 15" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 15</span>
+      <span class="week-number">Week 15<br><span class="week-name">Interface and Application Programming</span></span>
     </div>
   </a>
   
@@ -166,7 +166,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-16/week-16.jpg" alt="Week 16" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 16</span>
+      <span class="week-number">Week 16<br><span class="week-name">System Integration</span></span>
     </div>
   </a>
   
@@ -176,7 +176,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-17/week-17.jpg" alt="Week 17" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 17</span>
+      <span class="week-number">Week 17<br><span class="week-name">Wildcard Week</span></span>
     </div>
   </a>
   
@@ -186,7 +186,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-18/week-18.jpg" alt="Week 18" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 18</span>
+      <span class="week-number">Week 18<br><span class="week-name">Applications and Implications</span></span>
     </div>
   </a>
   
@@ -196,7 +196,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-19/week-19.jpg" alt="Week 19" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Week 19</span>
+      <span class="week-number">Week 19<br><span class="week-name">Invention, IP, and Income</span></span>
     </div>
   </a>
   
@@ -206,7 +206,7 @@ Welcome to the assignments section. Click on any week to view the assignment det
         <img src="/images/week-20/project-development.jpg" alt="Project Development" class="card-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
       </div>
-      <span class="week-number">Project Dev</span>
+      <span class="week-number">Project Dev<br><span class="week-name">Project Development</span></span>
     </div>
   </a>
   
@@ -287,7 +287,15 @@ Welcome to the assignments section. Click on any week to view the assignment det
   text-align: center;
   padding: 14px 12px 12px;
   z-index: 1;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7) 40%);
+}
+
+.week-name {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75em;
+  margin-top: 2px;
+  line-height: 1.2;
 }
 
 /* Responsive design */
