@@ -93,6 +93,11 @@ Reference docs:
 - The **firmware** for the microcontrollers in PlatformIO, with Claude helping me write it
 - The **mobile app** in Flutter, tested through Codemagic and the Android SDK
 
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-18/0.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ### What materials and components will be used? / Where will they come from? / How much will they cost?
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQd4QJIY-qwwxRDOcN8cfK8kzYhXXSCJxN_sq5hL_5EuqFRIKBJW4ukexAZ-MGphuN_HvaJz50p7CyA/pubhtml?gid=277059155&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="500" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px; margin: 12px 0;"></iframe>
@@ -114,6 +119,48 @@ systems
 - **Electronics production** for the main PCB and breakout boards: soldering, assembly, component integration
 - **Embedded programming** for the XIAO ESP32C6 handling the RFID, NeoPixels, buttons, and solenoid lock. Arduino IDE for testing.
 - **Mobile app development** using Flutter, with Claude Code for the coding side and **Firebase** for the real-time database
+
+![Daisy chain limit switch system](/images/week-20/daisy-2.jpg)
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-20/1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-20/2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-20/3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-18/1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-18/2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-18/3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-18/4.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-18/5.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ### What questions need to be answered?
 
