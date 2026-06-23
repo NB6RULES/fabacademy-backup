@@ -1180,7 +1180,7 @@ A solenoid lock is an electromechanical device that uses a solenoid to control t
 i will be  3 of such locks for my tool box for the 3 individual drawers
 
 ### Main xiao Board 
-This is the borad with the microcontroller and it is connected to a sister board which has a mosfet to control the high amperage switching of the solenoid lock.
+This is the board with the microcontroller and it is connected to a sister board which has a mosfet to control the high amperage switching of the solenoid lock.
 ![3D view of the board](../../../images/week-10/12.jpg)
 
 ### Sister Board

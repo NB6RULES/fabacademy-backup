@@ -662,8 +662,19 @@ Claude generated the entire file structure and asked me to push it to GitHub, an
 </div>
 {{< /rawhtml >}}
 
-## Final Interface after some Aesthetic tweaks
+### Main xiao Board 
+This is the board with the microcontroller and it is connected to a sister board which has a mosfet to control the high amperage switching of the solenoid lock.
 
+![3D view of the board](../../../images/week-10/12.jpg)
+
+Rfid Reader is connected to the board and it is used to read the RFID tags of the users and the data is sent to the firebase firestore database which is then read by the app to update the status of the tools.
+<video controls muted style="width:100%; border-radius:8px;">
+  <source src="/images/week-15/rfid.mp4" type="video/mp4">
+</video>
+
+
+
+## Final Interface after some Aesthetic tweaks
 <video controls muted style="width:100%; border-radius:8px;">
   <source src="/images/week-15/working.mp4" type="video/mp4">
 </video>
