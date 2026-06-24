@@ -73,6 +73,8 @@ We tested a range of sensors available in the lab, including a **rotary encoder*
 - **Digital sensors** — produced discrete HIGH/LOW transitions. 
 - We compared signals at **different supply voltages** (3.3 V vs 5 V logic) and noted how the logic HIGH threshold shifted accordingly.
 
+![Oscilloscope capture of rotary encoder quadrature signals, clockwise vs anticlockwise](../../../images/week-9/group-1.jpg)
+
 The oscilloscope exercise gave a concrete feel for signal integrity, noise floors, and the difference between a "clean" digital edge and a slow analog ramp.
 
 Check out the full group documentation here:
@@ -275,8 +277,6 @@ Both boards were designed in **KiCad**, then fabricated using the lab's PCB mill
 
 ### Manufacturing
 
-> *(To be filled with process photos and milling parameters after fabrication)*
-
 - Milling machine: Roland MDX-20
 - Substrate: FR1 single-sided copper clad
 - Trace width / clearance: 0.4 mm / 0.4 mm
@@ -305,16 +305,154 @@ Both boards were designed in **KiCad**, then fabricated using the lab's PCB mill
 
 ---
 
-## Files
+#### Component Checklist
+ 
+All the required componenets have been sourced and then the board was soldered. The checklist below shows the components used for both the sensor and MCU boards.
+![Component checklist for the sensor and MCU boards](../../../images/week-9/input-1.jpg)
 
-| File | Description |
-|---|---|
-| `sensor-board.kicad_sch` | Sensor board schematic |
-| `sensor-board.kicad_pcb` | Sensor board layout |
-| `attiny1624-board.kicad_sch` | MCU board schematic |
-| `attiny1624-board.kicad_pcb` | MCU board layout |
 
----
+#### Soldering Boards
+
+<video controls width="100%">
+  <source src="../../../images/week-9/input-2.mp4" type="video/mp4">
+</video>
+
+![Assembled ATtiny1624 MCU board](../../../images/week-9/mcu.jpg)
+
+![Assembled sensor breakout board with RCWL-0516, APDS-9960, and VL53L0X wired up](../../../images/week-9/sensor.jpg)
+
+### Arduino IDE Setup for ATtiny1624
+
+![Installing megaTinyCore in the Arduino IDE Boards Manager](../../../images/week-9/1.jpg)
+Installing megaTinyCore in the Arduino IDE Boards Manager
+![Adding the megaTinyCore board URL under Additional Boards Manager URLs](../../../images/week-9/2.jpg)
+Adding the megaTinyCore board URL under Additional Boards Manager URLs
+![Selecting the ATtiny3224/1624/824 board from the Tools menu](../../../images/week-9/3.jpg)
+Selecting the ATtiny3224/1624/824 board from the Tools menu
+![Selecting the ATtiny1624 chip variant](../../../images/week-9/4.jpg)
+Selecting the ATtiny1624 chip variant
+![Selecting the clock speed (20 MHz internal)](../../../images/week-9/5.jpg)
+Selecting the clock speed (20 MHz internal)
+![Arduino IDE Tools menu with programmer and serial settings](../../../images/week-9/6.jpg)
+Arduino IDE Tools menu with programmer and serial settings
+![Burn Bootloader option in the Tools menu](../../../images/week-9/7.jpg)
+Burn Bootloader option in the Tools menu
+
+
+### Code Snippet for ATtiny1624
+
+```cpp
+// ATtiny1624 - read APDS-9960 (gesture/proximity/color/ALS), VL53L0X (distance),
+// and RCWL-0516 (microwave motion) and print results over Serial.
+//
+// Board: megaTinyCore, "ATtiny1624" (atxy4), default I2C pins: SDA=PB1, SCL=PB0
+// Serial1 (USB/debug) pins: TX=PA1, RX=PA2
+// RCWL-0516 OUT pin: PA4 (digital, HIGH while motion detected)
+// Libraries: "SparkFun APDS9960 RGB and Gesture Sensor", "VL53L0X" (Pololu)
+
+#include <Wire.h>
+#include <SparkFun_APDS9960.h>
+#include <VL53L0X.h>
+
+const uint8_t RCWL_PIN = PIN_PA4;
+
+SparkFun_APDS9960 apds = SparkFun_APDS9960();
+VL53L0X tof;
+bool apdsReady = false;
+
+void setup() {
+  Serial1.begin(115200);
+  Wire.begin();
+
+  pinMode(PIN_PA3, OUTPUT); // heartbeat LED
+  pinMode(RCWL_PIN, INPUT);
+
+  Serial1.println(F("Initializing sensors..."));
+
+  apdsReady = apds.init();
+  if (apdsReady) {
+    Serial1.println(F("APDS-9960 init OK"));
+    apds.enableLightSensor(false);
+    apds.enableProximitySensor(false);
+    apds.enableGestureSensor(false);
+  } else {
+    Serial1.println(F("APDS-9960 init FAILED - skipping APDS reads"));
+  }
+
+  tof.setTimeout(500);
+  if (tof.init()) {
+    Serial1.println(F("VL53L0X init OK"));
+  } else {
+    Serial1.println(F("VL53L0X init FAILED"));
+  }
+}
+
+void loop() {
+  digitalWrite(PIN_PA3, !digitalRead(PIN_PA3));
+
+  if (apdsReady) {
+    uint16_t ambient, red, green, blue;
+    if (apds.readAmbientLight(ambient) && apds.readRedLight(red) &&
+        apds.readGreenLight(green) && apds.readBlueLight(blue)) {
+      Serial1.print(F("ALS:"));
+      Serial1.print(ambient);
+      Serial1.print(F(" R:"));
+      Serial1.print(red);
+      Serial1.print(F(" G:"));
+      Serial1.print(green);
+      Serial1.print(F(" B:"));
+      Serial1.println(blue);
+    }
+
+    uint8_t proximity;
+    if (apds.readProximity(proximity)) {
+      Serial1.print(F("Proximity:"));
+      Serial1.println(proximity);
+    }
+
+    if (apds.isGestureAvailable()) {
+      switch (apds.readGesture()) {
+        case DIR_UP:    Serial1.println(F("Gesture: UP"));    break;
+        case DIR_DOWN:  Serial1.println(F("Gesture: DOWN"));  break;
+        case DIR_LEFT:  Serial1.println(F("Gesture: LEFT"));  break;
+        case DIR_RIGHT: Serial1.println(F("Gesture: RIGHT")); break;
+        case DIR_NEAR:  Serial1.println(F("Gesture: NEAR"));  break;
+        case DIR_FAR:   Serial1.println(F("Gesture: FAR"));   break;
+        default: break;
+      }
+    }
+  }
+
+  uint16_t distance = tof.readRangeSingleMillimeters();
+  if (tof.timeoutOccurred()) {
+    Serial1.println(F("VL53L0X: TIMEOUT"));
+  } else {
+    Serial1.print(F("Distance:"));
+    Serial1.print(distance);
+    Serial1.println(F("mm"));
+  }
+
+  Serial1.print(F("Motion:"));
+  Serial1.println(digitalRead(RCWL_PIN) ? F("DETECTED") : F("clear"));
+
+  Serial1.println(F("------"));
+  delay(300);
+}
+
+
+```
+
+
+## Issues Faced
+
+I tried flashing the code and the LED blinked fine, but I couldn't get any output in the serial monitor. So I asked my instructor [Sibin](https://fabacademy.org/2023/labs/kochi/students/sibin-ks/) for help. We checked my circuit for any shorts or wiring mistakes, but everything looked fine. Next, we hooked up an oscilloscope to see if any signal was even coming out of the MCU, and there was nothing. After looking closer, I realized I had used an AMS1117 ADJ (adjustable voltage) regulator instead of the 3.3 V version. Because of this, the ATtiny was only getting about 1.8 V, which is why the serial communication wasn't working. Once I swapped in the correct 3.3 V regulator, the serial monitor started working properly and I could finally see the sensor readings.
+
+
+## Sensor Testing (with Serial Monitor)
+
+<video controls width="100%">
+  <source src="../../../images/week-9/hero.mp4" type="video/mp4">
+</video>
 
 ## Reflections
 

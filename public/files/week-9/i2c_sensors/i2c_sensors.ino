@@ -1,84 +1,96 @@
-// ATtiny1624 - read APDS-9960 (gesture/proximity/color/ALS) and VL53L0X (distance)
-// over I2C and print results over Serial.
+// ATtiny1624 - read APDS-9960 (gesture/proximity/color/ALS), VL53L0X (distance),
+// and RCWL-0516 (microwave motion) and print results over Serial.
 //
 // Board: megaTinyCore, "ATtiny1624" (atxy4), default I2C pins: SDA=PB1, SCL=PB0
+// Serial1 (USB/debug) pins: TX=PA1, RX=PA2
+// RCWL-0516 OUT pin: PA4 (digital, HIGH while motion detected)
 // Libraries: "SparkFun APDS9960 RGB and Gesture Sensor", "VL53L0X" (Pololu)
 
 #include <Wire.h>
 #include <SparkFun_APDS9960.h>
 #include <VL53L0X.h>
 
+const uint8_t RCWL_PIN = PIN_PA4;
+
 SparkFun_APDS9960 apds = SparkFun_APDS9960();
 VL53L0X tof;
+bool apdsReady = false;
 
 void setup() {
-  Serial.begin(115200);
+  Serial1.begin(115200);
   Wire.begin();
 
   pinMode(PIN_PA3, OUTPUT); // heartbeat LED
+  pinMode(RCWL_PIN, INPUT);
 
-  Serial.println(F("Initializing sensors..."));
+  Serial1.println(F("Initializing sensors..."));
 
-  if (apds.init()) {
-    Serial.println(F("APDS-9960 init OK"));
+  apdsReady = apds.init();
+  if (apdsReady) {
+    Serial1.println(F("APDS-9960 init OK"));
+    apds.enableLightSensor(false);
+    apds.enableProximitySensor(false);
+    apds.enableGestureSensor(false);
   } else {
-    Serial.println(F("APDS-9960 init FAILED"));
+    Serial1.println(F("APDS-9960 init FAILED - skipping APDS reads"));
   }
-  apds.enableLightSensor(false);
-  apds.enableProximitySensor(false);
-  apds.enableGestureSensor(false);
 
   tof.setTimeout(500);
   if (tof.init()) {
-    Serial.println(F("VL53L0X init OK"));
+    Serial1.println(F("VL53L0X init OK"));
   } else {
-    Serial.println(F("VL53L0X init FAILED"));
+    Serial1.println(F("VL53L0X init FAILED"));
   }
 }
 
 void loop() {
   digitalWrite(PIN_PA3, !digitalRead(PIN_PA3));
 
-  uint16_t ambient, red, green, blue;
-  if (apds.readAmbientLight(ambient) && apds.readRedLight(red) &&
-      apds.readGreenLight(green) && apds.readBlueLight(blue)) {
-    Serial.print(F("ALS:"));
-    Serial.print(ambient);
-    Serial.print(F(" R:"));
-    Serial.print(red);
-    Serial.print(F(" G:"));
-    Serial.print(green);
-    Serial.print(F(" B:"));
-    Serial.println(blue);
-  }
+  if (apdsReady) {
+    uint16_t ambient, red, green, blue;
+    if (apds.readAmbientLight(ambient) && apds.readRedLight(red) &&
+        apds.readGreenLight(green) && apds.readBlueLight(blue)) {
+      Serial1.print(F("ALS:"));
+      Serial1.print(ambient);
+      Serial1.print(F(" R:"));
+      Serial1.print(red);
+      Serial1.print(F(" G:"));
+      Serial1.print(green);
+      Serial1.print(F(" B:"));
+      Serial1.println(blue);
+    }
 
-  uint8_t proximity;
-  if (apds.readProximity(proximity)) {
-    Serial.print(F("Proximity:"));
-    Serial.println(proximity);
-  }
+    uint8_t proximity;
+    if (apds.readProximity(proximity)) {
+      Serial1.print(F("Proximity:"));
+      Serial1.println(proximity);
+    }
 
-  if (apds.isGestureAvailable()) {
-    switch (apds.readGesture()) {
-      case DIR_UP:    Serial.println(F("Gesture: UP"));    break;
-      case DIR_DOWN:  Serial.println(F("Gesture: DOWN"));  break;
-      case DIR_LEFT:  Serial.println(F("Gesture: LEFT"));  break;
-      case DIR_RIGHT: Serial.println(F("Gesture: RIGHT")); break;
-      case DIR_NEAR:  Serial.println(F("Gesture: NEAR"));  break;
-      case DIR_FAR:   Serial.println(F("Gesture: FAR"));   break;
-      default: break;
+    if (apds.isGestureAvailable()) {
+      switch (apds.readGesture()) {
+        case DIR_UP:    Serial1.println(F("Gesture: UP"));    break;
+        case DIR_DOWN:  Serial1.println(F("Gesture: DOWN"));  break;
+        case DIR_LEFT:  Serial1.println(F("Gesture: LEFT"));  break;
+        case DIR_RIGHT: Serial1.println(F("Gesture: RIGHT")); break;
+        case DIR_NEAR:  Serial1.println(F("Gesture: NEAR"));  break;
+        case DIR_FAR:   Serial1.println(F("Gesture: FAR"));   break;
+        default: break;
+      }
     }
   }
 
   uint16_t distance = tof.readRangeSingleMillimeters();
   if (tof.timeoutOccurred()) {
-    Serial.println(F("VL53L0X: TIMEOUT"));
+    Serial1.println(F("VL53L0X: TIMEOUT"));
   } else {
-    Serial.print(F("Distance:"));
-    Serial.print(distance);
-    Serial.println(F("mm"));
+    Serial1.print(F("Distance:"));
+    Serial1.print(distance);
+    Serial1.println(F("mm"));
   }
 
-  Serial.println(F("------"));
+  Serial1.print(F("Motion:"));
+  Serial1.println(digitalRead(RCWL_PIN) ? F("DETECTED") : F("clear"));
+
+  Serial1.println(F("------"));
   delay(300);
 }

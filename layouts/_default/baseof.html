@@ -249,9 +249,66 @@
     .prose-neon table tr:last-child td { border-bottom: none; }
     .prose-neon table tr:hover td { background: #131313; }
     .prose-neon hr { border: none; border-top: 1px solid #484847; margin: 2rem 0; }
-    .prose-neon details { margin: 1rem 0; }
-    .prose-neon summary { color: #79b0ff; cursor: pointer; font-weight: 600; margin-bottom: 0.5rem; }
     .prose-neon video, .prose-neon iframe { max-width: 100%; border-radius: 0.75rem; margin: 1.5rem 0; border: 1px solid #484847; }
+
+    /* ── Accordion (details/summary) ─────────────────── */
+    .prose-neon details {
+      margin: 0.85rem 0;
+      border: 1px solid #484847;
+      border-radius: 0.75rem;
+      background: #131313;
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .prose-neon details[open] {
+      border-color: #79b0ff;
+      box-shadow: 0 0 0 1px rgba(121,176,255,0.15), 0 8px 28px rgba(121,176,255,0.10);
+    }
+    .prose-neon summary {
+      list-style: none;
+      cursor: pointer;
+      margin: 0;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #ffffff;
+      transition: background 0.2s ease;
+    }
+    .prose-neon summary::-webkit-details-marker { display: none; }
+    .prose-neon summary::marker { content: ""; }
+    .prose-neon summary:hover { background: #1a1a1a; }
+    .prose-neon summary::after {
+      content: "expand_more";
+      font-family: "Material Symbols Outlined";
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      font-size: 22px;
+      line-height: 1;
+      color: #79b0ff;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    .prose-neon details[open] summary::after { transform: rotate(180deg); }
+    .prose-neon details[open] summary {
+      border-bottom: 1px solid #262626;
+    }
+    .prose-neon details > summary ~ * {
+      margin-left: 1.25rem !important;
+      margin-right: 1.25rem !important;
+    }
+    .prose-neon details > summary ~ *:first-of-type { margin-top: 1rem !important; }
+    .prose-neon details > summary ~ *:last-of-type { margin-bottom: 1.25rem !important; }
+    .prose-neon details summary + * {
+      animation: accordion-fade-in 0.25s ease;
+    }
+    @keyframes accordion-fade-in {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
     /* ── ToC sidebar nav ─────────────────────────────── */
     .toc-nav ul { list-style: none; padding: 0; margin: 0; }
