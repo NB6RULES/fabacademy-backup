@@ -222,14 +222,29 @@
       border: 1px solid #484847;
     }
     .prose-neon blockquote {
-      border-left: 3px solid #79b0ff;
-      padding: 0.75rem 1.25rem;
-      margin: 1.5rem 0;
-      background: #131313;
+      position: relative;
+      border-left: 4px solid #ffac54;
+      padding: 1rem 1.5rem 1rem 3.25rem;
+      margin: 1.75rem 0;
+      background: linear-gradient(90deg, rgba(255,172,84,0.12), rgba(255,172,84,0.03));
       border-radius: 0 0.5rem 0.5rem 0;
-      font-style: italic;
-      color: #c0c0c0;
+      font-style: normal;
+      color: #f0f0f0;
+      font-weight: 500;
+      box-shadow: 0 4px 20px rgba(255,172,84,0.08);
     }
+    .prose-neon blockquote::before {
+      content: "format_quote";
+      font-family: "Material Symbols Outlined";
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      position: absolute;
+      left: 1rem;
+      top: 0.9rem;
+      font-size: 20px;
+      color: #ffac54;
+    }
+    .prose-neon blockquote p { margin-bottom: 0.5rem; }
+    .prose-neon blockquote p:last-child { margin-bottom: 0; }
     .prose-neon table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; overflow: hidden; border-radius: 0.5rem; }
     .prose-neon table th {
       background: #20201f;
