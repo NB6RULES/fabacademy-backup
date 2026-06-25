@@ -513,7 +513,7 @@
   </main>
 
   <!-- ════════════════ FOOTER ════════════════ -->
-  {{ $hasToc := strings.Contains .RelPermalink "/week-" }}
+  {{ $hasToc := or (strings.Contains .RelPermalink "/week-") (strings.Contains .RelPermalink "/project-development") }}
   <footer class="{{ if not .IsHome }}lg:ml-64{{ end }} {{ if $hasToc }}xl:pr-72{{ end }} py-10 mt-8" style="border-top:1px solid rgba(38,38,38,0.5); background:#0e0e0e;">
     <div class="{{ if .IsHome }}max-w-[1400px] px-8 lg:px-16{{ else }}max-w-5xl px-8{{ end }} mx-auto flex flex-col lg:flex-row items-center gap-6">
 

@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- $bp := (urls.Parse site.BaseURL).Path | strings.TrimSuffix "/" -}}
 
-{{ if strings.Contains .RelPermalink "/week-" }}
+{{ if or (strings.Contains .RelPermalink "/week-") (strings.Contains .RelPermalink "/project-development") }}
 
   <!-- ── Week page: content + right ToC sidebar ── -->
   <div class="flex">
