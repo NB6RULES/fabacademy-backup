@@ -523,3 +523,8 @@ Everything else — WiFi connection logic, UDP listener, USB HID output, reconne
 ```
 
 
+>The above code was written with the assistance of Claude by Anthropic.
+>
+>The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
+>
+>AI PROMPT USED: “Proofread the following text and correct any grammatical errors and spelling mistakes.”

@@ -459,3 +459,9 @@ I tried flashing the code and the LED blinked fine, but I couldn't get any outpu
 - The initial STM32 idea was over-engineered for this week's intent. The constraint of using a minimal MCU like the ATtiny1624 actually makes the sensor interfacing problem more interesting — you have to think about bus loading, I²C pull-ups, voltage domains, and interrupt handling explicitly, rather than having a big SDK paper over them.
 - Splitting into two boards keeps the sensor breakout swappable independently of the MCU board — useful if a sensor gets damaged or needs to be replaced.
 - The RCWL's 4 V minimum supply was the main electrical design challenge this week. The level shifter decision came directly from that constraint.
+
+>The above code was written with the assistance of Claude by Anthropic.
+>
+>The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
+>
+>AI PROMPT USED: “Proofread the following text and correct any grammatical errors and spelling mistakes.”

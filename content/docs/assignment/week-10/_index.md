@@ -1216,3 +1216,10 @@ For more details on the solenoid locks and the toolbox project, check out my Pro
 - [DRV8825 Stepper Motor Driver Arduino Tutorial — Last Minute Engineers](https://lastminuteengineers.com/drv8825-stepper-motor-driver-arduino-tutorial/)
 - [DRV8825 Datasheet — Texas Instruments](https://www.ti.com/lit/ds/symlink/drv8825.pdf)
 - [INA225 Datasheet — Texas Instruments](https://www.ti.com/lit/ds/symlink/ina225.pdf)
+
+
+>The above code was written with the assistance of Claude by Anthropic.
+>
+>The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
+>
+>AI PROMPT USED: “Proofread the following text and correct any grammatical errors and spelling mistakes.”

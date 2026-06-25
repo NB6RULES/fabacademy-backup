@@ -1507,3 +1507,9 @@ I also realized that there is no single “correct” workflow in embedded progr
 Overall, this week made me more confident in experimenting with embedded systems, trying out unconventional setups, and thinking beyond basic examples towards building complete, standalone systems.
 
 ------
+
+>The above code was written with the assistance of Claude by Anthropic.
+>
+>The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
+>
+>AI PROMPT USED: “Proofread the following text and correct any grammatical errors and spelling mistakes.”
