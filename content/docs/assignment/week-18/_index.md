@@ -173,6 +173,14 @@ systems
 ### How will it be evaluated?
 as long as i can tap anrfid, have the box unlock, take a tool out, see that reflected in the app, put it back, and have it show as available again, i will consider this a success. if all the tools are tracked correctly and the system is stable enough to run for a few days without breaking, that would be a win.
 
+### Project Tracking / Schedule
+I have created a schedule with dates for trackig what to be done and b when so i can complete the project well in advance .
+
+<div style="position:relative; width:100%; overflow:hidden; border:1px solid #e2e2e2; border-radius:8px; margin:16px 0;">
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQd4QJIY-qwwxRDOcN8cfK8kzYhXXSCJxN_sq5hL_5EuqFRIKBJW4ukexAZ-MGphuN_HvaJz50p7CyA/pubhtml?gid=265539544&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%; height:600px; border:0;" loading="lazy"></iframe>
+</div>
+
+
 ---
 
 ## Assignment II: Preparing the Presentation Draft
