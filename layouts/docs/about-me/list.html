@@ -5,7 +5,7 @@
 <div class="flex min-h-screen">
 
   <!-- ── Main column ── -->
-  <div class="flex-1 min-w-0 xl:pr-80">
+  <div class="flex-1 min-w-0">
     <div class="max-w-3xl mx-auto px-8 py-12">
 
       <!-- Profile Hero -->
@@ -71,107 +71,6 @@
 
     </div>
   </div>
-
-  <!-- ── Right Sidebar ── -->
-  <aside class="hidden xl:flex flex-col fixed right-0 top-[57px] bottom-0 w-80 p-8 overflow-y-auto"
-         style="border-left:1px solid rgba(72,72,71,0.3);">
-
-    <!-- Skills -->
-    <div class="mb-4">
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-5">Skills</p>
-      <div class="space-y-4">
-
-        {{ $skills := slice
-            (dict "name" "CAD / CAM" "pct" 85 "color" "#79b0ff")
-            (dict "name" "Electronics" "pct" 72 "color" "#ea73fb")
-            (dict "name" "Digital Fabrication" "pct" 78 "color" "#ffac54")
-            (dict "name" "Embedded Systems" "pct" 65 "color" "#79b0ff")
-            (dict "name" "3D Printing" "pct" 80 "color" "#ea73fb")
-        }}
-        {{ range $skills }}
-        <div>
-          <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xs text-on-surface font-medium">{{ .name }}</span>
-            <span class="text-[11px] text-on-surface-variant font-mono">{{ .pct }}%</span>
-          </div>
-          <div class="h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-            <div class="h-full rounded-full transition-all duration-700"
-                 style="width:{{ .pct }}%; background:{{ .color }};"></div>
-          </div>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-
-    <!-- Divider -->
-    <div class="mb-4" style="height:1px; background:rgba(72,72,71,0.4);"></div>
-
-    <!-- Tools & Tech -->
-    <div class="mb-6">
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Tools & Tech</p>
-      <div class="flex flex-wrap gap-2">
-        {{ $tools := slice "Fusion 360" "KiCad" "FreeCAD" "Arduino" "GIMP" "VS Code" "Git" "Hugo" "Laser Cutter" "CNC Mill" }}
-        {{ range $tools }}
-        <span class="px-2.5 py-1 rounded-lg text-[11px] font-medium text-on-surface-variant"
-              style="background:rgba(255,255,255,0.04); border:1px solid rgba(72,72,71,0.4);">
-          {{ . }}
-        </span>
-        {{ end }}
-      </div>
-    </div>
-
-    <!-- Divider -->
-    <div class="mb-4" style="height:1px; background:rgba(72,72,71,0.4);"></div>
-
-    <!-- Quick Stats -->
-    <div class="mb-8">
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Quick Stats</p>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="p-3 rounded-xl bg-surface-container-high text-center">
-          <div class="text-2xl font-black font-headline text-primary">20</div>
-          <div class="text-[10px] text-on-surface-variant mt-0.5">Weeks Done</div>
-        </div>
-        <div class="p-3 rounded-xl bg-surface-container-high text-center">
-          <div class="text-2xl font-black font-headline text-secondary">20+</div>
-          <div class="text-[10px] text-on-surface-variant mt-0.5">Logs</div>
-        </div>
-        <div class="p-3 rounded-xl bg-surface-container-high text-center">
-          <div class="text-2xl font-black font-headline text-tertiary">06</div>
-          <div class="text-[10px] text-on-surface-variant mt-0.5">Machines</div>
-        </div>
-        <div class="p-3 rounded-xl bg-surface-container-high text-center">
-          <div class="text-2xl font-black font-headline text-on-surface">01</div>
-          <div class="text-[10px] text-on-surface-variant mt-0.5">Dream Build</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Divider -->
-    <div class="mb-8" style="height:1px; background:rgba(72,72,71,0.4);"></div>
-
-    <!-- Certifications -->
-    <div>
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4">Certifications</p>
-      <div class="space-y-3">
-        {{ $certs := slice
-            (dict "name" "B.Tech Mechanical Eng." "org" "CUSAT · 2022–2026" "color" "#ea73fb")
-        }}
-        {{ range $certs }}
-        <div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-high">
-          <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-               style="background:{{ .color }}20;">
-            <span class="material-symbols-outlined" style="font-size:16px; color:{{ .color }};">workspace_premium</span>
-          </div>
-          <div>
-            <p class="text-xs font-bold text-on-surface">{{ .name }}</p>
-            <p class="text-[11px] text-on-surface-variant">{{ .org }}</p>
-          </div>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-
-  </aside>
 
 </div>
 

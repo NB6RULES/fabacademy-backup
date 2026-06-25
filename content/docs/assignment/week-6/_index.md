@@ -781,4 +781,9 @@ Also, designing a board that I *actually want* — one directly tied to the NB6-
 Next up: actually fabricating this board during Electronics Production week. Cannot wait to see this thing as a physical PCB 😎
 
 -----
+
+> The Above documentation was proofread and grammatical errors were corrected by Claude by Anthropic.
+>
+> AI PROMPT USED: "Proofread the following text and correct any grammatical errors and spelling mistakes."
+
 ------
