@@ -28,6 +28,14 @@ if exist "%MAIN_REPO%\public" (
     echo       Public folder not found, skipping.
 )
 
+:: ── Refresh zip-download manifest so the download button never goes stale ──
+echo.
+echo [*] Refreshing zip-download manifest from static/files/week-20...
+python scripts\generate_zip_manifest.py week-20
+if errorlevel 1 (
+    echo       WARNING: manifest refresh failed ^(python/pathspec missing?^). Using existing manifest.
+)
+
 :: ── 3. Build site ────────────────────────────────
 echo.
 echo [2/6] Building Hugo site...

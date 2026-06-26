@@ -3,16 +3,21 @@ languageCode = 'en-us'
 title = 'Nadec FAB Academy Portfolio'
 enableGitInfo = true
 
-# Never publish real device credentials, even though they sit in static/files/.
-ignoreFiles = ['cloud_secrets\.h$']
+# Never publish real credentials / project config, even though they sit in static/files/.
+ignoreFiles = ['cloud_secrets\.h$', 'google-services\.json$', 'firebase_options\.dart$', '\.firebaserc$']
 
-# Never publish real device credentials. ignoreFiles alone doesn't cover the static
-# mount, so this is the part that actually keeps it out of public/.
+# ignoreFiles alone doesn't cover the static mount, so this is the part that actually
+# keeps these out of public/. Patterns are globs (** spans directories).
 [module]
   [[module.mounts]]
     source = "static"
     target = "static"
-    excludeFiles = ["files/week-20/COOKING WITH CLAUDE/SmartToolBox/cloud_secrets.h"]
+    excludeFiles = [
+      "**/cloud_secrets.h",
+      "**/google-services.json",
+      "**/firebase_options.dart",
+      "**/.firebaserc",
+    ]
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
