@@ -268,16 +268,25 @@
 
     /* ── Accordion (details/summary) ─────────────────── */
     .prose-neon details {
+      --accent: #79b0ff;
       margin: 0.85rem 0;
-      border: 1px solid #484847;
+      border: 1px solid color-mix(in srgb, var(--accent) 38%, #484847);
       border-radius: 0.75rem;
-      background: #131313;
+      background: color-mix(in srgb, var(--accent) 7%, #131313);
       overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
+    /* Cycle accent colors per accordion, matching the homepage tool cards */
+    .prose-neon details:nth-of-type(5n+1) { --accent: #5da2ff; } /* blue   */
+    .prose-neon details:nth-of-type(5n+2) { --accent: #ea73fb; } /* purple */
+    .prose-neon details:nth-of-type(5n+3) { --accent: #ffac54; } /* orange */
+    .prose-neon details:nth-of-type(5n+4) { --accent: #34d399; } /* green  */
+    .prose-neon details:nth-of-type(5n)   { --accent: #f87171; } /* red    */
     .prose-neon details[open] {
-      border-color: #79b0ff;
-      box-shadow: 0 0 0 1px rgba(121,176,255,0.15), 0 8px 28px rgba(121,176,255,0.10);
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 4%, #131313);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent),
+                  0 8px 28px color-mix(in srgb, var(--accent) 18%, transparent);
     }
     .prose-neon summary {
       list-style: none;
@@ -291,19 +300,19 @@
       font-family: "Plus Jakarta Sans", sans-serif;
       font-weight: 700;
       font-size: 0.95rem;
-      color: #ffffff;
+      color: var(--accent);
       transition: background 0.2s ease;
     }
     .prose-neon summary::-webkit-details-marker { display: none; }
     .prose-neon summary::marker { content: ""; }
-    .prose-neon summary:hover { background: #1a1a1a; }
+    .prose-neon summary:hover { background: color-mix(in srgb, var(--accent) 10%, #1a1a1a); }
     .prose-neon summary::after {
       content: "expand_more";
       font-family: "Material Symbols Outlined";
       font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
       font-size: 22px;
       line-height: 1;
-      color: #79b0ff;
+      color: var(--accent);
       flex-shrink: 0;
       transition: transform 0.25s ease;
     }
