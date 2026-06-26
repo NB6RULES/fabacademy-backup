@@ -4,6 +4,14 @@
 
 ---
 
+## 🎬 Final Project Presentation
+
+[![Presentation slide](static/presentation.png)](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/final-project/)
+
+▶️ **[Watch the presentation video](static/presentation.mp4)** — also embedded live on the [Final Project page](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/final-project/)
+
+---
+
 ## 👨‍🔧 About Me
 
 Hey! I'm **Nadec Biju**, a Mechanical Engineering student at CUSAT (2022–2026), passionate about:
@@ -34,134 +42,99 @@ This portfolio documents my **weekly progress, builds, failures, and learnings**
 
 ---
 
+## 🧰 Interactive Tools — Built Along the Way
+
+These are the highlight of this portfolio — actual working tools I built as part of weekly assignments, not just documentation.
+
+| Tool | From | Description |
+|---|---|---|
+| 📏 **[Laser Kerf Calculator](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/)** | Week 3 – CNC Cutting | Calculates laser kerf compensation for precision press-fit joints |
+| 🎮 **[NB6-Boy Highscores](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/)** | Week 4 – Embedded Programming | Online highscore board for the NB6-Boy handheld game console |
+| ⚙️ **[4-Bar Linkage Calculator](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/chair-4-bar-linkage-calculator/)** | Week 7 – CNC Milling | Solves four-bar linkage geometry for the recliner chair mechanism |
+| 👁️ **[Urumi Vision](https://nb6rules.github.io/Urumi-Vision-Web/)** | Computer Vision | Browser-based computer vision web tool |
+| 📥 **[Dogbone Plugin Installer](static/files/week-20/Install-Dogbone.bat)** | Week 20 – Fusion CAM | One-click installer for an open-source Fusion 360 dogbone plugin |
+
+---
+
 ## 📅 Weekly Assignments
 
-### 🟢 Week 01 – Principles & Project Management  
-- Introduction to Fab Academy workflow  
-- Git version control and documentation practices  
-- Hugo static site setup  
-- Project planning and ideation  
+### ✅ Week 01 – Principles & Practices, Project Management
+Setting up the tools and systems used for the rest of the program — Git, documentation workflow, and Hugo static site setup.
 
-### 🟢 Week 02 – Computer Aided Design  
-- Parametric modeling in Fusion 360  
-- 2D design with Inkscape  
-- 3D modeling workflows  
-- Rendering and visualization  
+### ✅ Week 02 – Computer Aided Design
+Explored how designs move from 2D to 3D, the difference between raster and vector images, and 3D modeling approaches like B-Rep and F-Rep.
 
-### 🟢 Week 03 – Computer Controlled Cutting  
-- Laser cutting & vinyl cutting  
-- Kerf testing and press-fit design  
-- Parametric construction kit  
-- **Key Learning:** Machine parameters directly affect precision  
+### ✅ Week 03 – Computer Controlled Cutting
+Laser cutting and vinyl cutting, kerf testing, and a parametric press-fit construction kit. Built the **Laser Kerf Calculator** tool.
 
-### 🟢 Week 04 – Embedded Programming  
-- NB6-Boy handheld game console project  
-- XIAO ESP32-C6 microcontroller programming  
-- OLED display, buttons, buzzer, NeoPixel integration  
-- Custom game development in Arduino  
+### ✅ Week 04 – Embedded Programming
+Programming the XIAO ESP32-C6 for the **NB6-Boy** handheld game console — OLED display, buttons, buzzer, and NeoPixel integration with a custom game in Arduino.
 
-### 🟢 Week 05 – 3D Scanning & Printing  
-- FDM 3D printing with Creality Ender  
-- Print parameter optimization  
-- 3D scanning workflows  
-- Designing for additive manufacturing  
+### ✅ Week 05 – 3D Scanning & Printing
+Additive manufacturing and reverse engineering through scanning — design rules for 3D printing, printer capability testing, and scanning workflows.
 
-### 🟢 Week 06 – Electronics Design  
-- Circuit simulation with Wokwi (browser + VS Code)  
-- KiCad schematic and PCB design for NB6-Boy  
-- Custom footprint import from SnapMagic  
-- ERC/DRC validation and Gerber export  
-- **Extra Credit:** 3D casing design in Fusion 360, EasyEDA workflow  
+### ✅ Week 06 – Electronics Design
+Circuit simulation and schematic/PCB design in KiCad for the NB6-Boy board, including custom footprint import and ERC/DRC validation.
 
-### ⏳ Week 07 – Computer Controlled Machining  
-- CNC machining basics  
-- *Coming soon*  
+### ✅ Week 07 – Computer Controlled Machining
+Designed and fabricated a meter-scale object on a ShopBot CNC router — a Lazy Boy–style recliner chair driven by a four-bar linkage mechanism. Built the **4-Bar Linkage Calculator** tool.
 
-### ⏳ Week 08 – Electronics Production  
-- PCB fabrication & soldering  
-- *Coming soon*  
+### ✅ Week 08 – Electronics Production
+Milled, soldered, programmed, and tested the PCB designed in Week 06 — taking it from design file to a fully functional board.
 
-### ⏳ Week 09 – Input Devices  
-- Sensor integration  
-- *Coming soon*  
+### ✅ Week 09 – Input Devices
+Interfacing sensors with microcontrollers — sensor types, signal conditioning, and data acquisition.
 
-### ⏳ Week 10 – Output Devices  
-- Actuators and display systems  
-- *Coming soon*  
+### ✅ Week 10 – Output Devices
+Designing a board around an output device — motors, drivers, and power management to make something move.
 
-### ⏳ Week 11 – Networking & Communications  
-- Device communication protocols  
-- *Coming soon*  
+### ✅ Week 11 – Networking and Communications
+Built a wireless QWERTY keyboard system — wired/wireless nodes with network addressing and local I/O.
 
-### ⏳ Week 12 – Mechanical Design  
-- Mechanisms and assemblies  
-- *Coming soon*  
+### ✅ Week 12 – Mechanical Design (Machine Week, Part 1)
+Designing mechanisms and motion systems as part of the machine-building project.
 
-### ⏳ Week 13 – Machine Design  
-- System-level mechanical design  
-- *Coming soon*  
+### ✅ Week 13 – Midterm Review
+Final project checkpoint — turning the project idea into a concrete plan with deliverables for instructor review.
 
-### ⏳ Week 14 – Molding & Casting  
-- Mold design and material workflows  
-- *Coming soon*  
+### ✅ Week 14 – Molding and Casting
+Designed a mold, machined it into wax, cast a silicone negative, and produced a final resin part.
 
-### ⏳ Week 15 – Interface & Application Programming  
-- UI + software integration  
-- *Coming soon*  
+### ✅ Week 15 – Interface and Application Programming
+Building user interfaces that communicate with embedded systems.
 
-### ⏳ Week 16 – System Integration  
-- Combining electronics, mechanics, and software  
-- *Coming soon*  
+### ✅ Week 16 – System Integration
+Bringing together electronics, programming, and fabrication into a cohesive functional system.
 
-### ⏳ Week 17 – Wildcard Week  
-- Exploration and experimentation  
-- *Coming soon*  
+### ✅ Week 17 – Wildcard Week
+Exploring a fabrication process outside the regular curriculum to support the final project. Includes the **Tool Trace** foam cutout workflow.
 
-### ⏳ Week 18 – Applications & Implications  
-- Final project planning  
-- System architecture and feasibility  
-- *Coming soon*  
+### ✅ Week 18 – Applications and Implications
+Detailed planning of the final project and its broader impact.
 
-### ⏳ Week 19 – Invention, IP & Income  
-- Product thinking  
-- Intellectual property  
-- *Coming soon*  
+### ✅ Week 19 – Invention, Intellectual Property, and Income
+Figuring out IP, licensing, and how the final project design could (or couldn't) be used by others.
+
+### 🔧 Project Development (Weeks 18–20)
+The full build log for the final project — mechanical design of the tool cabinet, 5 custom PCBs (XIAO main board, XIAO sister board, drawer board, NEOBUTTON and NEOHALL-EFFECT nodes), Carvera CNC milling, foam tool cutouts, and ShopBot routing of the plywood cabinet structure. Built the **Dogbone Plugin Installer** tool along the way.
 
 ---
 
-## 🛠️ Key Projects
+## 🚧 Final Project — Smart Tool Cabinet with RFID Tracking
 
-### 🔹 NB6-Boy Handheld Game Console  
-- Custom handheld gaming device built on XIAO ESP32-C6  
-- Features: OLED display, 6-button input, buzzer audio, NeoPixel LED matrix  
-- Full PCB design in KiCad with custom enclosure  
+A **Smart Tool Cabinet** that tracks tools using RFID cards for access control, with mini switches and individual microcontrollers in each tool slot to detect when tools are removed.
 
-### 🔹 Laser Gauge Tool  
-- Precision measurement tool using digital fabrication  
+### What It Does
+- **RFID Access Control** – Each person gets an RFID card to unlock drawers they're trained to use
+- **Tool Tracking** – Mini switches in each tool slot log when tools are taken and returned
+- **Automatic Alerts** – System alerts if tools aren't returned on time
+- **Usage Logging** – Tracks who used what and when
 
-### 🔹 Parametric Construction Kit  
-- Laser-cut modular design system with press-fit joints  
+### Components
+**Hardware:** RFID reader & cards, mini switch sensors, solenoid locks, XIAO ESP32-C6 + CH32V003J4M6 microcontrollers, custom-fabricated enclosure
+**Software:** RFID authentication, switch monitoring & data logging, alert system, mobile app (iOS and Android)
 
----
-
-## 🚧 Final Project
-
-Currently in progress.
-
-### 💡 Idea
-A **multi-disciplinary system** integrating:
-
-- Mechanical Design  
-- Electronics  
-- Embedded Systems  
-- Fabrication  
-
-### ⚙️ Expected Features
-
-- Custom hardware system  
-- Sensor + actuator integration  
-- Fully fabricated structure  
-- Real-world application  
+Full build log: [Project Development](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/project-development/) · Full writeup: [Final Project page](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/final-project/)
 
 ---
 
