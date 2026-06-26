@@ -18,3 +18,6 @@
 
 # Allow directories to be traversed
 !*/
+
+# Never track the real device credentials, even though public/** is allowed above
+public/**/cloud_secrets.h

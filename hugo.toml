@@ -3,6 +3,17 @@ languageCode = 'en-us'
 title = 'Nadec FAB Academy Portfolio'
 enableGitInfo = true
 
+# Never publish real device credentials, even though they sit in static/files/.
+ignoreFiles = ['cloud_secrets\.h$']
+
+# Never publish real device credentials. ignoreFiles alone doesn't cover the static
+# mount, so this is the part that actually keeps it out of public/.
+[module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+    excludeFiles = ["files/week-20/COOKING WITH CLAUDE/SmartToolBox/cloud_secrets.h"]
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
