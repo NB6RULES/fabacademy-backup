@@ -262,8 +262,5 @@ Final CAD Assembly of the CoreXY mechanism with all the parts in place and the b
 
 ## Design Files
 
-<a href="/files/week-12/Assem1.zip" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">Assem1.zip ↓</a>
-<a href="/files/week-12/Assem2.zip" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">Assem2.zip ↓</a>
-<a href="/files/week-12/neopi design.f3z" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">neopi design.f3z ↓</a>
-<a href="/files/week-12/stl.zip" download style="display:inline-block; padding:0.6em 1.4em; margin:0.2em; background:#79b0ff; color:#0e0e0e; font-weight:700; font-size:0.85rem; border-radius:10px; text-decoration:none; letter-spacing:0.03em;">stl.zip ↓</a>
-
+{{< zipdownload dir="week-12" label="Download All Project Files" >}}
+  
