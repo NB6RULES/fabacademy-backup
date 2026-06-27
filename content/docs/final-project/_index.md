@@ -154,6 +154,9 @@ At the end of the day, this project is:
   </a>
 </div>
 
+{{< zipdownload dir="week-20" label="Download All The Files For Building This Project" >}}
+
+
 <style>
 .related-links-grid {
   display: grid;
