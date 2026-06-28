@@ -7,6 +7,13 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}"/>
 
+  {{ if .IsHome }}
+  <!-- Returning dev-mode visitors land in the terminal (cleared by "Exit to site") -->
+  <script>
+    try { if (localStorage.getItem('nb-view') === 'terminal') location.replace('{{ $bp }}/terminal/'); } catch (e) {}
+  </script>
+  {{ end }}
+
   <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -435,6 +442,14 @@
                style="background:#131313; border:1px solid rgba(72,72,71,0.5); box-shadow:0 8px 32px rgba(0,0,0,0.6);">
           </div>
         </div>
+        <!-- Terminal (dev) mode toggle -->
+        <a href="{{ $bp }}/terminal/" id="terminal-toggle" title="Switch to terminal mode (for devs)"
+           onclick="try{localStorage.setItem('nb-view','terminal')}catch(e){}"
+           class="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-on-surface-variant hover:text-[#79b0ff] transition-all"
+           style="border:1px solid rgba(72,72,71,0.5);">
+          <span class="material-symbols-outlined" style="font-size:18px;">terminal</span>
+          <span class="hidden sm:inline font-mono text-[11px] tracking-tight">dev mode</span>
+        </a>
         <!-- Mobile hamburger -->
         <button id="mobile-menu-btn" class="md:hidden hover:bg-surface-container-high rounded-lg p-2 text-on-surface transition-all">
           <span class="material-symbols-outlined" style="font-size:22px;">menu</span>

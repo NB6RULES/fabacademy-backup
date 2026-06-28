@@ -1,6 +1,6 @@
 {{- $pages := slice -}}
 {{- range .Site.Pages -}}
-  {{- if and (ne .Kind "home") (ne .Kind "taxonomy") (ne .Kind "term") (ne .Kind "sitemap") -}}
+  {{- if and (ne .Kind "home") (ne .Kind "taxonomy") (ne .Kind "term") (ne .Kind "sitemap") (ne .Section "terminal") -}}
     {{- $pages = $pages | append (dict
       "title"   .Title
       "url"     .RelPermalink
