@@ -26,7 +26,7 @@ ignoreFiles = ['cloud_secrets\.h$', 'google-services\.json$', 'firebase_options\
   # false → the normal Hugo site is the default home; only people who opt into
   #         "dev mode" land in the terminal.
   # Flip this one value and push to swap which experience is the front door.
-  terminalAsHome = false
+  terminalAsHome = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
