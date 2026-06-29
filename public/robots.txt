@@ -1,0 +1,6 @@
+# Welcome all crawlers, including AI ones (GPTBot, ClaudeBot, PerplexityBot, CCBot, Google-Extended).
+# This is a public Fab Academy portfolio — discovery and citation are the goal.
+User-agent: *
+Allow: /
+
+Sitemap: https://fabacademy.org/2026/labs/kochi/students/nadec-biju/sitemap.xml
