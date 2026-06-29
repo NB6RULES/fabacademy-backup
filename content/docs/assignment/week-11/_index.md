@@ -1735,6 +1735,64 @@ void updateLED() {
 
 ---
 
+## Testing Methodology
+
+I tested in layers, bottom-up, and only moved on once the layer below worked. That way, when something broke, the broken part was almost always the layer I just added.
+
+| # | Layer | Pass looks like |
+|---|-------|-----------------|
+| 1 | OLED over I2C | Boot screen, then the QWERTY grid (else `display.begin()` failed at `0x3C`) |
+| 2 | Buttons | Cursor moves one cell per press, letters land in the buffer |
+| 3 | WiFi join | Pico's Serial Monitor prints `[WiFi] Connected` and `[UDP] Listening` |
+| 4 | UDP path | Pico prints `[UDP] Received (n bytes): <text>` |
+| 5 | USB HID | Text types itself into Notepad |
+
+Two extra checks let me test without the buttons: sending from the **web UI** uses the same UDP path, so if web works but the OLED doesn't, the bug is in my button code; and the **Status screen** shows the live client count, so I can confirm a Pico joined without plugging the ESP32 into a PC. For Phase 2 I ran layers 3 to 5 once per Pico, then checked that "send to Pico W" only typed on PC 1, to prove the picker routes correctly.
+
+---
+
+## Failures and How I Fixed Them
+
+Nothing worked first try. Each fix is still sitting in the final code.
+
+| Failure | Cause | Fix |
+|---------|-------|-----|
+| ESP32-C6 couldn't be the keyboard at all | No USB OTG, only Serial/JTAG | Split the job: ESP32 does the network, a Pico W does the USB typing. This is why it's a two-board design. |
+| Fast typing dropped letters ("Helo Word") | Pico typed faster than the OS could read | 20ms gap between keys (`CHAR_DELAY_MS`) |
+| Pico went deaf after the ESP32 rebooted | Old UDP socket leaked on reconnect | `udp.stop()` before `udp.begin()`, plus a 5s auto-reconnect timer |
+| One press counted as several | Switch bounce | 50ms debounce (pin must hold steady before it counts) |
+| SPACE did the wrong thing | One button, two jobs | One tap selects a letter, two taps (within 300ms) types a space |
+| "Send" went to the wrong Pico | Two targets, no way to choose | Client picker on the OLED + two target buttons on the web UI |
+| HID typed nothing even though packets arrived | Wrong IDE setting | Set USB Stack to **Adafruit TinyUSB**, re-flash |
+| (Group) Nothing came through | Both sides didn't agree on SSID/IP/port | Match all three exactly, then it works every time |
+
+The two that taught me the most: **not every bug is in your code** (the TinyUSB setting), and **reconnecting isn't just connecting again** (you have to free the old socket first, or it silently breaks).
+
+---
+
+## How I Debugged
+
+You can't put a breakpoint on a wireless packet, so I used four things, and each one answers one yes/no question that cuts the system in half:
+
+- **Tagged Serial logs** (`[WiFi]`, `[UDP]`, `[HID]`, `[SEND→PicoW]`): the last tag printed shows how far the data got before it stopped.
+- **The Pico's LED**, which blinks the instant a packet arrives, before typing: LED blinks but no text means the bug is in the typing; no blink means the packet never arrived.
+- **The web UI**, which shares the UDP path: web works but OLED doesn't means the bug is in the buttons, not the network.
+- **The Status screen**, which shows the client count and last sent, so I can read the ESP32's state without a cable.
+
+---
+
+## AI Usage and Credits
+
+Being honest about where AI helped is part of documenting this properly.
+
+**Used AI for:** the two block diagrams (prompts shown next to each), a first version of the firmware (prompt shown in Software Architecture), and proofreading this page. Tool used: Claude by Anthropic.
+
+**Did myself:** all the hardware (the Week 8 PCB, soldering, wiring, the two and three board setup), every test and fix in the Failures section (those bugs only showed up on real boards), and the design choices (AP mode, UDP over TCP, two chips because of the USB limit, the SPACE tap timing).
+
+> Note: the AI prompts shown were rebuilt from the finished diagrams and code after the fact, not saved when they were first written.
+
+---
+
 # Group Assignment
 
 The link to our group assignment is below:

@@ -1180,12 +1180,24 @@ A solenoid lock is an electromechanical device that uses a solenoid to control t
 i will be  3 of such locks for my tool box for the 3 individual drawers
 
 ### Main xiao Board 
-This is the board with the microcontroller and it is connected to a sister board which has a mosfet to control the high amperage switching of the solenoid lock.
+This is the board with the microcontroller and it is connected to a sister board which has a MOSFET to control the high amperage switching of the solenoid lock.
 ![3D view of the board](../../../images/week-10/12.jpg)
 
 ### Sister Board
-This is the board which has the mosfet and the solenoid lock connected to it.
+This is the board which has the MOSFET and the solenoid lock connected to it.
 ![3D view of the board](../../../images/week-10/13.jpg)
+
+### How the Solenoid is Driven
+
+The solenoid lock is not wired straight to the microcontroller. It runs through a **MOSFET** on the sister board, which acts as the switch in between.
+
+**The MOSFET I used: NDS355AN** — a small N-channel MOSFET (SOT-23, 30 V, ~1.7 A). The key word is **logic-level**: it turns fully ON from the low 3.3 V a microcontroller pin gives out. A normal MOSFET would need about 10 V on its gate, so it would barely switch on from 3.3 V and just get hot. [Part link](https://www.digikey.in/en/products/detail/onsemi/NDS355AN/459000)
+
+**Why a GPIO pin can't drive the solenoid:** a pin is made for sending *signals*, not *power*. It only pushes out 10–20 mA at 3.3 V, but the solenoid runs on 12 V and pulls far more current to move its plunger. Wire it straight to a pin and either the lock never moves, or the pin tries to pull too much current and burns out, which can damage the whole microcontroller.
+
+**Why the MOSFET is required:** it acts as an electronic switch the microcontroller controls. The tiny signal from the GPIO pin goes to the MOSFET's **gate**, and the MOSFET itself carries the big current, pulling it straight from the 12 V supply instead of from the pin. It is like a wall light switch: your finger uses almost no effort, but it controls a much bigger flow of electricity.
+
+**Why a flyback diode is needed:** a solenoid is a coil of wire, which makes it an **inductor**, and inductors hate sudden current changes. When the MOSFET switches OFF, the coil throws back a high-voltage spike (**back-EMF**) that can be far above 12 V — enough to kill the MOSFET. My sister board has a **flyback diode** across the solenoid, fitted backwards to normal current. It does nothing during normal use, but when the spike appears it gives that energy a safe loop to circle the coil and fade away, protecting the MOSFET every time the lock turns off.
 
 ### Solenoid Lock
 ![3D view of the board](../../../images/week-10/14.jpg)
@@ -1195,6 +1207,20 @@ This is the board which has the mosfet and the solenoid lock connected to it.
   Your browser does not support the video tag.
 </video>
 
+---
+
+## Output Demonstration
+
+A short clip of the full flow working on real hardware:
+
+**RFID scan → Solenoid unlocking → Toolbox opening**
+
+A valid RFID tag is scanned, the microcontroller drives the GPIO pin HIGH, the NDS355AN MOSFET switches 12 V to the solenoid, the plunger pulls back, and the drawer pops open.
+
+<video controls width="100%" style="max-width: 600px; margin: 12px 0; border-radius: 6px;">
+  <source src="/images/week-10/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 For more details on the solenoid locks and the toolbox project, check out my Project Development page.
 
