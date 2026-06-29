@@ -12,7 +12,10 @@
        "Exit to site" sets nb-view=gui, the dev-mode toggle sets nb-view=terminal. -->
   <script>
     try {
-      var v = localStorage.getItem('nb-view');
+      // Per-session preference: resets each new visit so the terminal stays the
+      // default first impression. (Clear any stale persistent value from before.)
+      var v = sessionStorage.getItem('nb-view');
+      try { if (localStorage.getItem('nb-view')) localStorage.removeItem('nb-view'); } catch (e) {}
       var terminalDefault = {{ if site.Params.terminalAsHome }}true{{ else }}false{{ end }};
       var isMobile = matchMedia('(max-width: 820px)').matches || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
       // the terminal is never the auto-default on mobile (opt-in only, via the dev-mode link)
@@ -451,7 +454,7 @@
         </div>
         <!-- Terminal (dev) mode toggle -->
         <a href="{{ $bp }}/terminal/" id="terminal-toggle" title="Switch to terminal mode (for devs)"
-           onclick="try{localStorage.setItem('nb-view','terminal')}catch(e){}"
+           onclick="try{sessionStorage.setItem('nb-view','terminal');localStorage.removeItem('nb-view')}catch(e){}"
            class="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-on-surface-variant hover:text-[#79b0ff] transition-all"
            style="border:1px solid rgba(72,72,71,0.5);">
           <span class="material-symbols-outlined" style="font-size:18px;">terminal</span>

@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Nadec FAB Academy Portfolio'
 enableGitInfo = true
 
+# No taxonomies are used on this site, so drop the empty categories/tags pages
+# entirely — keeps them out of the build and the sitemap.
+disableKinds = ['taxonomy', 'term']
+
 # Never publish real credentials / project config, even though they sit in static/files/.
 ignoreFiles = ['cloud_secrets\.h$', 'google-services\.json$', 'firebase_options\.dart$', '\.firebaserc$']
 
