@@ -8,9 +8,16 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}"/>
 
   {{ if .IsHome }}
-  <!-- Returning dev-mode visitors land in the terminal (cleared by "Exit to site") -->
+  <!-- Front-door routing. terminalAsHome (hugo.toml) decides the default;
+       "Exit to site" sets nb-view=gui, the dev-mode toggle sets nb-view=terminal. -->
   <script>
-    try { if (localStorage.getItem('nb-view') === 'terminal') location.replace('{{ $bp }}/terminal/'); } catch (e) {}
+    try {
+      var v = localStorage.getItem('nb-view');
+      var terminalDefault = {{ if site.Params.terminalAsHome }}true{{ else }}false{{ end }};
+      var isMobile = matchMedia('(max-width: 820px)').matches || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+      // the terminal is never the auto-default on mobile (opt-in only, via the dev-mode link)
+      if (!isMobile && (terminalDefault ? v !== 'gui' : v === 'terminal')) location.replace('{{ $bp }}/terminal/');
+    } catch (e) {}
   </script>
   {{ end }}
 
