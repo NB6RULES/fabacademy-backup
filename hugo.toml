@@ -27,6 +27,7 @@ ignoreFiles = ['cloud_secrets\.h$', 'google-services\.json$', 'firebase_options\
     ]
 
 [params]
+  description = "Nadec Biju's Fab Academy 2026 portfolio — digital fabrication, electronics, programming, and final project documentation from Fab Lab Kochi."
   # ── MASTER SWITCH ──────────────────────────────────────────────────────────
   # true  → the terminal/OS is the default home: anyone landing on the site is
   #         sent to /terminal/ (they can still hit "Exit to site" to browse normally).

@@ -17,9 +17,9 @@
       var v = sessionStorage.getItem('nb-view');
       try { if (localStorage.getItem('nb-view')) localStorage.removeItem('nb-view'); } catch (e) {}
       var terminalDefault = {{ if site.Params.terminalAsHome }}true{{ else }}false{{ end }};
+      var isBot = /bot|crawl|spider|slurp|Googlebot|Bingbot|DuckDuckBot|Yandex|Baidu/i.test(navigator.userAgent);
       var isMobile = matchMedia('(max-width: 820px)').matches || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-      // the terminal is never the auto-default on mobile (opt-in only, via the dev-mode link)
-      if (!isMobile && (terminalDefault ? v !== 'gui' : v === 'terminal')) location.replace('{{ $bp }}/terminal/');
+      if (!isBot && !isMobile && (terminalDefault ? v !== 'gui' : v === 'terminal')) location.replace('{{ $bp }}/terminal/');
     } catch (e) {}
   </script>
   {{ end }}
