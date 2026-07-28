@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html class="dark" lang="en-us">
-<head><script src="/2026/labs/kochi/students/nadec-biju/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=2026/labs/kochi/students/nadec-biju/livereload" data-no-instant defer></script>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Week 15 - Interface and Application Programming | Nadec FAB Academy Portfolio</title>
-  <meta name="description" content="Week 15 - Interface and Application Programming#
+<!doctype html><html class=dark lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Week 15 - Interface and Application Programming | Nadec Biju | Fab Academy 2026 Portfolio</title><meta name=description content="Week 15 - Interface and Application Programming#
 Week 15 focused on interface and application programming, learning to create user interfaces that communicate with embedded systems.
 The aim was to develop applications that provide meaningful interaction between users and fabricated devices.
 This week brought together the hardware skills with software development for complete interactive systems.
@@ -15,1263 +9,150 @@ Compare as many tool options as possible for interface development
 
 Individual Assignment#
 
-Write an application that interfaces a user with an input &amp;/or output device that you made
-
-Extra Credit Goals"/>
-
-  
-
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-
-  
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
-  
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "background":                "#0e0e0e",
-            "surface":                   "#0e0e0e",
-            "surface-dim":               "#0e0e0e",
-            "surface-bright":            "#2c2c2c",
-            "surface-container-lowest":  "#000000",
-            "surface-container-low":     "#131313",
-            "surface-container":         "#1a1a1a",
-            "surface-container-high":    "#20201f",
-            "surface-container-highest": "#262626",
-            "surface-variant":           "#262626",
-            "surface-tint":              "#79b0ff",
-            "on-background":             "#ffffff",
-            "on-surface":                "#ffffff",
-            "on-surface-variant":        "#adaaaa",
-            "outline":                   "#767575",
-            "outline-variant":           "#484847",
-            "primary":                   "#79b0ff",
-            "primary-container":         "#5da2ff",
-            "primary-dim":               "#569fff",
-            "primary-fixed":             "#5da2ff",
-            "primary-fixed-dim":         "#3894ff",
-            "on-primary":                "#002e5c",
-            "on-primary-container":      "#002348",
-            "on-primary-fixed":          "#000000",
-            "inverse-primary":           "#005fb2",
-            "secondary":                 "#ea73fb",
-            "secondary-container":       "#8f15a4",
-            "secondary-dim":             "#e46df5",
-            "secondary-fixed":           "#fcbcff",
-            "secondary-fixed-dim":       "#f9a7ff",
-            "on-secondary":              "#450051",
-            "on-secondary-container":    "#ffddfd",
-            "on-secondary-fixed":        "#5d006d",
-            "tertiary":                  "#ffac54",
-            "tertiary-container":        "#ff9800",
-            "tertiary-dim":              "#ec8c00",
-            "on-tertiary":               "#583100",
-            "on-tertiary-container":     "#4a2800",
-            "on-tertiary-fixed":         "#271300",
-            "error":                     "#ff716c",
-            "error-container":           "#9f0519",
-            "on-error":                  "#490006",
-            "on-error-container":        "#ffa8a3",
-            "inverse-surface":           "#fcf9f8",
-            "inverse-on-surface":        "#565555",
-          },
-          fontFamily: {
-            "headline": ['"Plus Jakarta Sans"', "sans-serif"],
-            "body":     ["Inter", "sans-serif"],
-            "label":    ["Inter", "sans-serif"],
-            "mono":     ['"JetBrains Mono"', "monospace"],
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg":      "0.5rem",
-            "xl":      "0.75rem",
-            "2xl":     "1rem",
-            "3xl":     "1.5rem",
-            "full":    "9999px",
-          },
-        },
-      },
-    }
-  </script>
-
-  <style>
-     
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background-color: #0e0e0e;
-      color: #ffffff;
-      font-family: Inter, sans-serif;
-    }
-
-     
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      vertical-align: middle;
-      line-height: 1;
-    }
-
-     
-    .hide-scrollbar::-webkit-scrollbar { display: none; }
-    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-     
-    .prose-neon { color: #adaaaa; line-height: 1.75; }
-    .prose-neon h1,
-    .prose-neon h2,
-    .prose-neon h3,
-    .prose-neon h4,
-    .prose-neon h5 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.02em;
-      margin: 2rem 0 0.75rem;
-    }
-    .prose-neon h1 { font-size: 2.25rem; margin-top: 0; }
-    .prose-neon h2 { font-size: 1.6rem; margin-top: 1.5rem; }
-    .prose-neon h3 { font-size: 1.25rem; }
-    .prose-neon h4 { font-size: 1.05rem; }
-    .prose-neon p  { margin-bottom: 1rem; }
-    .prose-neon a  { color: #79b0ff; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    .prose-neon a:hover { color: #5da2ff; }
-    .prose-neon strong { color: #ffffff; font-weight: 600; }
-    .prose-neon em { color: #c0c0c0; }
-    .prose-neon code {
-      font-family: "JetBrains Mono", monospace;
-      background: #131313;
-      color: #79b0ff;
-      padding: 0.15em 0.45em;
-      border-radius: 0.25rem;
-      font-size: 0.875em;
-      border: 1px solid #484847;
-    }
-    .prose-neon pre {
-      background: #000000;
-      border: 1px solid #484847;
-      border-radius: 0.5rem;
-      padding: 1.25rem;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      position: relative;
-    }
-     
-    .code-copy-btn {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.3rem 0.6rem;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.7rem;
-      color: #adaaaa;
-      background: #1a1a1a;
-      border: 1px solid #484847;
-      border-radius: 0.375rem;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.2s, color 0.2s, border-color 0.2s;
-      z-index: 2;
-    }
-    .prose-neon pre:hover .code-copy-btn,
-    .code-copy-btn:focus { opacity: 1; }
-    .code-copy-btn:hover { color: #79b0ff; border-color: #79b0ff; }
-    .code-copy-btn.copied { color: #4ade80; border-color: #4ade80; }
-    .code-copy-btn .material-symbols-outlined { font-size: 14px; }
-    .prose-neon pre code {
-      background: none;
-      border: none;
-      padding: 0;
-      color: #adaaaa;
-      font-size: 0.875rem;
-    }
-     
-    .prose-neon pre:has(code.language-cpp) {
-      max-height: 16.5rem;
-      overflow-y: auto;
-    }
-    .prose-neon ul { padding-left: 0; margin-bottom: 1rem; }
-    .prose-neon ul li {
-      color: #adaaaa;
-      padding: 0.2rem 0 0.2rem 1.25rem;
-      position: relative;
-      list-style: none;
-    }
-    .prose-neon ul li::before {
-      content: "—";
-      color: #79b0ff;
-      position: absolute;
-      left: 0;
-      font-weight: 700;
-    }
-    .prose-neon ol { padding-left: 0; margin-bottom: 1rem; counter-reset: ol-counter; }
-    .prose-neon ol li {
-      color: #adaaaa;
-      padding: 0.2rem 0 0.2rem 1.75rem;
-      position: relative;
-      list-style: none;
-      counter-increment: ol-counter;
-    }
-    .prose-neon ol li::before {
-      content: counter(ol-counter) ".";
-      color: #79b0ff;
-      position: absolute;
-      left: 0;
-      font-weight: 700;
-    }
-    .prose-neon img {
-      max-width: 100%;
-      border-radius: 0.75rem;
-      margin: 1.5rem 0;
-      border: 1px solid #484847;
-    }
-    .prose-neon blockquote {
-      position: relative;
-      border-left: 4px solid #ffac54;
-      padding: 1rem 1.5rem 1rem 3.25rem;
-      margin: 1.75rem 0;
-      background: linear-gradient(90deg, rgba(255,172,84,0.12), rgba(255,172,84,0.03));
-      border-radius: 0 0.5rem 0.5rem 0;
-      font-style: normal;
-      color: #f0f0f0;
-      font-weight: 500;
-      box-shadow: 0 4px 20px rgba(255,172,84,0.08);
-    }
-    .prose-neon blockquote::before {
-      content: "format_quote";
-      font-family: "Material Symbols Outlined";
-      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
-      position: absolute;
-      left: 1rem;
-      top: 0.9rem;
-      font-size: 20px;
-      color: #ffac54;
-    }
-    .prose-neon blockquote p { margin-bottom: 0.5rem; }
-    .prose-neon blockquote p:last-child { margin-bottom: 0; }
-    .prose-neon table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; overflow: hidden; border-radius: 0.5rem; }
-    .prose-neon table th {
-      background: #20201f;
-      color: #ffffff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .prose-neon table td {
-      padding: 0.75rem 1rem;
-      color: #adaaaa;
-      border-bottom: 1px solid #262626;
-    }
-    .prose-neon table tr:last-child td { border-bottom: none; }
-    .prose-neon table tr:hover td { background: #131313; }
-    .prose-neon hr { border: none; border-top: 1px solid #484847; margin: 2rem 0; }
-    .prose-neon video, .prose-neon iframe { max-width: 100%; border-radius: 0.75rem; margin: 1.5rem 0; border: 1px solid #484847; }
-
-     
-    .prose-neon details {
-      --accent: #79b0ff;
-      margin: 0.85rem 0;
-      border: 1px solid color-mix(in srgb, var(--accent) 38%, #484847);
-      border-radius: 0.75rem;
-      background: color-mix(in srgb, var(--accent) 7%, #131313);
-      overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-     
-    .prose-neon details:nth-of-type(5n+1) { --accent: #5da2ff; }  
-    .prose-neon details:nth-of-type(5n+2) { --accent: #ea73fb; }  
-    .prose-neon details:nth-of-type(5n+3) { --accent: #ffac54; }  
-    .prose-neon details:nth-of-type(5n+4) { --accent: #34d399; }  
-    .prose-neon details:nth-of-type(5n)   { --accent: #f87171; }  
-    .prose-neon details[open] {
-      border-color: var(--accent);
-      background: color-mix(in srgb, var(--accent) 4%, #131313);
-      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent),
-                  0 8px 28px color-mix(in srgb, var(--accent) 18%, transparent);
-    }
-    .prose-neon summary {
-      list-style: none;
-      cursor: pointer;
-      margin: 0;
-      padding: 1rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--accent);
-      transition: background 0.2s ease;
-    }
-    .prose-neon summary::-webkit-details-marker { display: none; }
-    .prose-neon summary::marker { content: ""; }
-    .prose-neon summary:hover { background: color-mix(in srgb, var(--accent) 10%, #1a1a1a); }
-    .prose-neon summary::after {
-      content: "expand_more";
-      font-family: "Material Symbols Outlined";
-      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
-      font-size: 22px;
-      line-height: 1;
-      color: var(--accent);
-      flex-shrink: 0;
-      transition: transform 0.25s ease;
-    }
-    .prose-neon details[open] summary::after { transform: rotate(180deg); }
-    .prose-neon details[open] summary {
-      border-bottom: 1px solid #262626;
-    }
-    .prose-neon details > summary ~ * {
-      margin-left: 1.25rem !important;
-      margin-right: 1.25rem !important;
-    }
-    .prose-neon details > summary ~ *:first-of-type { margin-top: 1rem !important; }
-    .prose-neon details > summary ~ *:last-of-type { margin-bottom: 1.25rem !important; }
-    .prose-neon details summary + * {
-      animation: accordion-fade-in 0.25s ease;
-    }
-    @keyframes accordion-fade-in {
-      from { opacity: 0; transform: translateY(-4px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-     
-    .toc-nav ul { list-style: none; padding: 0; margin: 0; }
-    .toc-nav li { margin: 0; }
-    .toc-nav a {
-      display: block;
-      padding: 0.3rem 0.6rem;
-      font-size: 0.75rem;
-      color: #767575;
-      text-decoration: none;
-      border-left: 2px solid transparent;
-      border-radius: 0 0.25rem 0.25rem 0;
-      transition: color 0.15s, border-color 0.15s;
-      line-height: 1.4;
-    }
-    .toc-nav a:hover { color: #ffffff; border-left-color: #484847; }
-    .toc-nav a.active { color: #79b0ff; border-left-color: #79b0ff; font-weight: 600; }
-    .toc-nav ul ul a { padding-left: 1.25rem; font-size: 0.7rem; }
-    .toc-nav ul ul ul a { padding-left: 2rem; }
-
-     
-    #back-to-top {
-      position: fixed;
-      bottom: 1.75rem;
-      right: 1.75rem;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 0.75rem;
-      background: #20201f;
-      border: 1px solid #484847;
-      color: #79b0ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s, transform 0.3s;
-      z-index: 9999;
-    }
-    #back-to-top.visible { opacity: 1; pointer-events: auto; }
-    #back-to-top:hover { background: #262626; transform: translateY(-3px); }
-  </style>
-
-  
-  <link rel="icon" type="image/png" href="/2026/labs/kochi/students/nadec-biju/favicon.png"/>
-</head>
-
-<body class="bg-background text-on-surface font-body antialiased">
-
-  
-  <nav id="top-nav" class="fixed top-0 left-0 right-0 z-50 bg-[#0e0e0e]/85 backdrop-blur-xl shadow-[0_4px_40px_rgba(121,176,255,0.06)]"
-       style="border-bottom:1px solid rgba(72,72,71,0.4);">
-    <div class="flex items-center justify-between w-full px-6 lg:px-8 py-3 max-w-[1600px] mx-auto">
-
-      
-      <a href="/2026/labs/kochi/students/nadec-biju/" class="text-xl font-black tracking-tighter text-[#79b0ff] font-headline uppercase hover:opacity-75 transition-opacity shrink-0">
-        FAB ACADEMY
-      </a>
-
-      
-      
-      
-      
-      
-
-      <div class="hidden md:flex items-center gap-6">
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/"
-           class="font-headline uppercase tracking-widest text-xs font-bold transition-colors text-gray-400 hover:text-white">
-          About Me
-        </a>
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/"
-           class="font-headline uppercase tracking-widest text-xs font-bold transition-colors text-[#ea73fb] border-b-2 border-[#ea73fb] pb-0.5">
-          Assignments
-        </a>
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/"
-           class="font-headline uppercase tracking-widest text-xs font-bold transition-colors text-gray-400 hover:text-white">
-          Final Project
-        </a>
-        <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju"
-           target="_blank" rel="noopener"
-           class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors flex items-center gap-1">
-          GitLab
-          <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-        </a>
-      </div>
-
-      
-      <div class="flex items-center gap-3">
-        <div class="hidden lg:block relative" id="search-wrapper">
-          <div class="flex items-center bg-surface-container-highest rounded-full px-4 py-1.5 gap-2">
-            <span class="material-symbols-outlined text-on-surface-variant" style="font-size:16px;">search</span>
-            <input id="search-input"
-                   class="bg-transparent border-none focus:ring-0 text-sm w-44 placeholder:text-on-surface-variant outline-none"
-                   placeholder="Search..." type="text" autocomplete="off"/>
-          </div>
-          
-          <div id="search-results"
-               class="hidden absolute right-0 top-full mt-2 w-80 rounded-2xl overflow-hidden z-50"
-               style="background:#131313; border:1px solid rgba(72,72,71,0.5); box-shadow:0 8px 32px rgba(0,0,0,0.6);">
-          </div>
-        </div>
-        
-        <a href="/2026/labs/kochi/students/nadec-biju/terminal/" id="terminal-toggle" title="Switch to terminal mode (for devs)"
-           onclick="try{sessionStorage.setItem('nb-view','terminal');localStorage.removeItem('nb-view')}catch(e){}"
-           class="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-on-surface-variant hover:text-[#79b0ff] transition-all"
-           style="border:1px solid rgba(72,72,71,0.5);">
-          <span class="material-symbols-outlined" style="font-size:18px;">terminal</span>
-          <span class="hidden sm:inline font-mono text-[11px] tracking-tight">dev mode</span>
-        </a>
-        
-        <button id="mobile-menu-btn" class="md:hidden hover:bg-surface-container-high rounded-lg p-2 text-on-surface transition-all">
-          <span class="material-symbols-outlined" style="font-size:22px;">menu</span>
-        </button>
-      </div>
-    </div>
-
-    
-    <div id="mobile-nav" class="hidden md:hidden border-t border-outline-variant/30 bg-[#0e0e0e]/95 px-6 py-4 flex flex-col gap-3">
-      <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/"   class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">About Me</a>
-      <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/"  class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">Assignments</a>
-      <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">Final Project</a>
-      <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju"
-         target="_blank" rel="noopener"
-         class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">GitLab</a>
-    </div>
-  </nav>
-
-  
-  
-  
-  
-  
-
-  
-  <aside class="hidden lg:flex flex-col w-64 fixed left-0 top-0 bottom-0 pt-[57px] bg-[#131313] z-40 overflow-y-auto hide-scrollbar"
-         style="border-right:1px solid rgba(72,72,71,0.35);">
-    <div class="flex flex-col gap-1 p-5 flex-1">
-
-      
-      <div class="mb-5 px-3 pt-3">
-        <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary mb-0.5">Project Navigator</p>
-        <p class="text-[10px] text-on-surface-variant uppercase font-medium tracking-widest">Technical Index</p>
-      </div>
-
-      
-      <nav class="flex flex-col gap-0.5">
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/"
-           class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
-                  text-gray-500 hover:text-gray-200 hover:translate-x-0.5">
-          <span class="material-symbols-outlined shrink-0" style="font-size:18px;">person</span>
-          <span class="font-body">About Me</span>
-        </a>
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/"
-           class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
-                  bg-[#262626] text-[#ea73fb] font-semibold shadow-[0_0_12px_rgba(234,115,251,0.15)]
-                  ">
-          <span class="material-symbols-outlined shrink-0" style="font-size:18px;">event_note</span>
-          <span class="font-body">Weekly Logs</span>
-        </a>
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/"
-           class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
-                  text-gray-500 hover:text-gray-200 hover:translate-x-0.5">
-          <span class="material-symbols-outlined shrink-0" style="font-size:18px;">rocket_launch</span>
-          <span class="font-body">Final Project</span>
-        </a>
-        <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju"
-           target="_blank" rel="noopener"
-           class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-500 hover:text-gray-200 hover:translate-x-0.5 transition-all duration-200 text-sm">
-          <span class="material-symbols-outlined shrink-0" style="font-size:18px;">terminal</span>
-          <span class="font-body">GitLab Files</span>
-        </a>
-        <a href="/2026/labs/kochi/students/nadec-biju/docs/agreement/"
-           class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
-                  text-gray-500 hover:text-gray-200 hover:translate-x-0.5">
-          <span class="material-symbols-outlined shrink-0" style="font-size:18px;">description</span>
-          <span class="font-body">Agreement</span>
-        </a>
-      </nav>
-
-      
-      
-      <div class="mt-4 pt-4" style="border-top:1px solid rgba(72,72,71,0.4);">
-        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant mb-2 px-3">Weeks</p>
-        <div class="flex flex-col gap-0.5">
-          
-          
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 01 - Principles and Practices , Project management
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-2/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 02 - Computer Aided design
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 03 - Computer Controlled Cutting
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 04 - Embedded Programming
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 05 - 3D Scanning and Printing
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 06 - Electronics Design
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 07 - Computer Controlled Machining
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-8/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 08 - Electronics Production
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-9/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 09 - Input Devices
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-10/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 10 - Output Devices
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-11/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 11 - Networking and Communications
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-12/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 12 - Mechanical Design
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 13 - Midterm Review
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-14/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 14 - Molding and Casting
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-15/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-primary font-semibold bg-surface-container-high">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-primary"></span>
-              Week 15 - Interface and Application Programming
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-16/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 16 - System Integration
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-17/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 17 - Wildcard Week
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-18/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 18 - Applications and Implications
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-19/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Week 19 - Invention, Intellectual Property, And Income
-            </a>
-            
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/project-development/"
-               class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
-                      text-gray-500 hover:text-gray-300">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
-              Project Development
-            </a>
-            
-          
-        </div>
-      </div>
-      
-
-    </div>
-  </aside>
-  
-
-  
-  <main class="lg:ml-64 pt-[57px]">
-    
-
-  
-  <div class="flex">
-
-    
-    <div class="flex-1 min-w-0 xl:pr-72" style="overflow-x:clip;">
-      <div class="max-w-4xl mx-auto px-8 py-12 prose-neon"><h1 id="week-15---interface-and-application-programming">Week 15 - Interface and Application Programming<a class="anchor" href="#week-15---interface-and-application-programming">#</a></h1>
-<p>Week 15 focused on <strong>interface and application programming</strong>, learning to create user interfaces that communicate with embedded systems.<br>
-The aim was to develop applications that provide meaningful interaction between users and fabricated devices.</p>
-<p>This week brought together the hardware skills with software development for complete interactive systems.</p>
-<hr>
-<h2 id="group-assignment">Group Assignment<a class="anchor" href="#group-assignment">#</a></h2>
-<ul>
-<li>Compare as many <strong>tool options</strong> as possible for interface development</li>
-</ul>
-<h2 id="individual-assignment">Individual Assignment<a class="anchor" href="#individual-assignment">#</a></h2>
-<ul>
-<li>Write an <strong>application</strong> that interfaces a user with an input &amp;/or output device that you made</li>
-</ul>
-<p><strong>Extra Credit Goals</strong></p>
-<ul>
-<li>Try <strong>multiple programming languages</strong> or frameworks</li>
-<li>Implement <strong>real-time data visualization</strong></li>
-<li>Create a <strong>mobile or web application</strong></li>
-</ul>
-<hr>
-<h2 id="what-i-learned">What I Learned<a class="anchor" href="#what-i-learned">#</a></h2>
-<p>This week was lowkey a different vibe compared to the rest of Fab Academy — most weeks are about <em>making the hardware</em>, this one was about putting a usable interface on top of hardware. Also the first week where I leaned heavily on AI design tools end-to-end, which was a workflow I hadn&rsquo;t really tried before.</p>
-<ul>
-<li>How to actually plan a UI before opening any design tool — the Claude web interface walked me through the right questions (audience, core jobs, screens, fidelity) and that planning step did most of the work</li>
-<li><strong>Google Stitch</strong> for going from a rough idea to a mockup in minutes — uploading the first prototype and getting back a designed-out version felt basically like sketching with a much faster pencil</li>
-<li><strong>Claude Design</strong> for taking the Stitch mockup further into an actual clickable Flutter prototype — the &ldquo;handoff to Claude Code&rdquo; flow was new to me and genuinely useful</li>
-<li>How to use <strong>Codemagic</strong> to take a Flutter repo on GitHub and build a real <code>.ipa</code> for iOS — no Mac, no Xcode, no Apple Developer account dance, just point it at the repo and let it build</li>
-<li>Most importantly — the AI-design tool chain isn&rsquo;t a replacement for design thinking, it&rsquo;s a speed multiplier on top of it. The hours I would&rsquo;ve spent fighting Figma went into actually deciding what the app <em>should do</em> 🤌</li>
-</ul>
-<hr>
-<h2 id="weekly-schedule">Weekly Schedule<a class="anchor" href="#weekly-schedule">#</a></h2>
-<table>
-  <thead>
-      <tr>
-          <th>Day</th>
-          <th>What I Did</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>WED</td>
-          <td>Lecture on interface and application programming</td>
-      </tr>
-      <tr>
-          <td>THU</td>
-          <td>Local Lecture at Superfablab Kochi</td>
-      </tr>
-      <tr>
-          <td>FRI</td>
-          <td>UI planning with the Claude web interface — web app prototype</td>
-      </tr>
-      <tr>
-          <td>SAT</td>
-          <td>Google Stitch — mobile mockup from the web prototype</td>
-      </tr>
-      <tr>
-          <td>SUN</td>
-          <td>Claude Design — Flutter prototype + handoff to Claude Code</td>
-      </tr>
-      <tr>
-          <td>MON</td>
-          <td>Push to GitHub + Codemagic build → working iOS app</td>
-      </tr>
-      <tr>
-          <td>TUE</td>
-          <td>Regional review</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h1 id="group-assignment-1">Group Assignment<a class="anchor" href="#group-assignment-1">#</a></h1>
-<p>The link to our group assignment is below:
-<a href="https://fabacademy.org/2026/labs/kochi/group_assignmetns/week15/">Group Assignment</a>
-</p>
-<hr>
-<h1 id="individual-assignment-1">Individual Assignment<a class="anchor" href="#individual-assignment-1">#</a></h1>
-<h2 id="planning">Planning<a class="anchor" href="#planning">#</a></h2>
-<p>For this project, I am planning to build a smart toolbox that can track whether tools are present or missing. Each tool will be placed on a switch, so when a tool is removed, the system can detect it. I will also use RFID to identify who is opening the toolbox and taking tools. Along with the hardware, I plan to develop a simple web app that shows all tools in real time, highlighting missing ones. There will also be an admin view to see who took which tool and when. This project is being developed at Super Fablab Kerala to make tool management easier and more organized.</p>
-<!--
-  ╔══════════════════════════════════════════════════════════════╗
-  ║  SUPER FABLAB KERALA — TOOL CABINET WIDGET (FULL)           ║
-  ║  Hugo embed snippet — Tool Status + Admin Panel             ║
-  ║                                                              ║
-  ║  SETUP:                                                      ║
-  ║  1. Replace SUPABASE_URL and SUPABASE_ANON_KEY below        ║
-  ║  2. In Hugo, paste inside a raw HTML block:                 ║
-  ║      ... 
-                    ║
-  ╚══════════════════════════════════════════════════════════════╝
--->
- 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap');
-
-  .sfl-widget * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  .sfl-widget {
-    --bg:      #0e0f11;
-    --bg2:     #161719;
-    --bg3:     #1e1f22;
-    --border:  #2a2b2f;
-    --green:   #22c55e;
-    --red:     #f43f5e;
-    --amber:   #f59e0b;
-    --text:    #e4e4e7;
-    --muted:   #71717a;
-    --accent:  #a78bfa;
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    max-width: 540px;
-    color: var(--text);
-    font-size: 13px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.55);
-  }
-
-  /* ── Header ── */
-  .sfl-header {
-    padding: 14px 18px 10px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--bg2);
-  }
-  .sfl-brand-name {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-  }
-  .sfl-brand-sub { font-size: 10px; color: var(--muted); margin-top: 1px; }
-  .sfl-live {
-    display: flex; align-items: center; gap: 5px;
-    font-family: 'Space Mono', monospace;
-    font-size: 9px; font-weight: 700;
-    letter-spacing: .1em; color: var(--green); text-transform: uppercase;
-  }
-  .sfl-live-dot {
-    width: 6px; height: 6px; border-radius: 50%; background: var(--green);
-    animation: sfl-pulse 2s ease-in-out infinite;
-  }
-  @keyframes sfl-pulse {
-    0%,100% { opacity:1; transform:scale(1); }
-    50%      { opacity:.4; transform:scale(.8); }
-  }
-
-  /* ── Tabs ── */
-  .sfl-tabs {
-    display: flex;
-    padding: 10px 14px 0;
-    gap: 6px;
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-  }
-  .sfl-tab {
-    padding: 6px 14px;
-    border-radius: 7px 7px 0 0;
-    font-size: 11px; font-weight: 600;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-bottom: none;
-    color: var(--muted);
-    background: transparent;
-    transition: color .15s, background .15s;
-  }
-  .sfl-tab.active {
-    background: var(--bg);
-    border-color: var(--border);
-    color: var(--text);
-    margin-bottom: -1px;
-  }
-  .sfl-tab:not(.active):hover { color: var(--text); }
-
-  /* ── Panel ── */
-  .sfl-panel { display: none; }
-  .sfl-panel.active { display: block; }
-
-  /* ── Stats ── */
-  .sfl-stats {
-    display: grid; grid-template-columns: repeat(3,1fr);
-    border-bottom: 1px solid var(--border);
-  }
-  .sfl-stat {
-    padding: 12px 0; text-align: center;
-    border-right: 1px solid var(--border);
-  }
-  .sfl-stat:last-child { border-right: none; }
-  .sfl-stat-num {
-    font-family: 'Space Mono', monospace;
-    font-size: 22px; font-weight: 700; line-height: 1; margin-bottom: 3px;
-  }
-  .sfl-stat-label { font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-  .sfl-stat.total   .sfl-stat-num { color: var(--text); }
-  .sfl-stat.present .sfl-stat-num { color: var(--green); }
-  .sfl-stat.missing .sfl-stat-num { color: var(--red); }
-
-  /* ── Alert ── */
-  .sfl-alert {
-    margin: 10px 14px;
-    padding: 8px 12px;
-    background: rgba(244,63,94,.08);
-    border: 1px solid rgba(244,63,94,.25);
-    border-radius: 8px;
-    font-size: 11px; color: var(--red);
-    display: flex; align-items: center; gap: 7px;
-  }
-  .sfl-alert.hidden { display: none; }
-
-  /* ── Tool grid ── */
-  .sfl-grid {
-    display: grid; grid-template-columns: repeat(4,1fr);
-    gap: 6px; padding: 10px 14px 14px;
-  }
-  .sfl-slot {
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 8px; padding: 8px 6px;
-    display: flex; flex-direction: column; gap: 4px;
-    transition: border-color .2s;
-  }
-  .sfl-slot.present { border-left: 2px solid var(--green); }
-  .sfl-slot.missing { border-left: 2px solid var(--red); background: rgba(244,63,94,.04); }
-  .sfl-slot-id { font-family: 'Space Mono', monospace; font-size: 8px; color: var(--muted); }
-  .sfl-slot-name { font-size: 10px; font-weight: 600; line-height: 1.3; word-break: break-word; }
-  .sfl-slot-status { display: flex; align-items: center; gap: 3px; margin-top: 2px; }
-  .sfl-dot { width: 5px; height: 5px; border-radius: 50%; }
-  .sfl-dot.green { background: var(--green); }
-  .sfl-dot.red   { background: var(--red); animation: sfl-pulse 2s ease-in-out infinite; }
-  .sfl-slot-who { font-size: 9px; color: var(--red); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-  /* ── Admin: Filters ── */
-  .sfl-filters {
-    padding: 12px 14px;
-    display: flex; flex-direction: column; gap: 7px;
-    border-bottom: 1px solid var(--border);
-  }
-  .sfl-select {
-    width: 100%;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    padding: 8px 12px;
-    appearance: none;
-    cursor: pointer;
-    outline: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    padding-right: 30px;
-  }
-  .sfl-select:focus { border-color: var(--accent); }
-
-  /* ── Admin: Log ── */
-  .sfl-log { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 6px; max-height: 340px; overflow-y: auto; }
-  .sfl-log::-webkit-scrollbar { width: 4px; }
-  .sfl-log::-webkit-scrollbar-track { background: transparent; }
-  .sfl-log::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-  .sfl-log-row {
-    display: flex; align-items: center; gap: 10px;
-    padding: 9px 10px;
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 9px;
-    transition: border-color .15s;
-  }
-  .sfl-log-row:hover { border-color: #3f3f46; }
-
-  .sfl-avatar {
-    width: 30px; height: 30px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 700; flex-shrink: 0;
-    font-family: 'Space Mono', monospace;
-  }
-
-  .sfl-log-info { flex: 1; min-width: 0; }
-  .sfl-log-name { font-size: 12px; font-weight: 600; }
-  .sfl-log-tool { font-size: 10px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-  .sfl-badge {
-    font-size: 9px; font-weight: 700; letter-spacing: .05em;
-    padding: 3px 7px; border-radius: 5px;
-    text-transform: uppercase; white-space: nowrap;
-  }
-  .sfl-badge.out      { background: rgba(244,63,94,.15); color: var(--red); border: 1px solid rgba(244,63,94,.25); }
-  .sfl-badge.returned { background: rgba(34,197,94,.12); color: var(--green); border: 1px solid rgba(34,197,94,.2); }
-
-  .sfl-log-meta { text-align: right; flex-shrink: 0; }
-  .sfl-log-slot { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--muted); }
-  .sfl-log-time { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--muted); margin-top: 2px; }
-
-  .sfl-empty {
-    text-align: center; padding: 28px 0;
-    font-size: 11px; color: var(--muted);
-  }
-
-  /* ── Footer ── */
-  .sfl-footer {
-    padding: 8px 14px; border-top: 1px solid var(--border);
-    background: var(--bg2); display: flex; align-items: center; justify-content: space-between;
-  }
-  .sfl-footer-link {
-    font-size: 9px; color: var(--muted); text-decoration: none;
-    font-family: 'Space Mono', monospace; letter-spacing: .04em;
-    transition: color .2s;
-  }
-  .sfl-footer-link:hover { color: var(--accent); }
-  .sfl-updated { font-size: 9px; color: var(--muted); font-family: 'Space Mono', monospace; }
-</style>
-
-<div class="sfl-widget">
-
-  <!-- Header -->
-  <div class="sfl-header">
-    <div>
-      <div class="sfl-brand-name">Tool Cabinet</div>
-      <div class="sfl-brand-sub">Super Fablab Kerala · Kochi, India</div>
-    </div>
-    <div class="sfl-live"><span class="sfl-live-dot"></span>Live</div>
-  </div>
-
-  <!-- Tabs -->
-  <div class="sfl-tabs">
-    <button class="sfl-tab active" onclick="sflTab('status', this)">Tool status</button>
-    <button class="sfl-tab"        onclick="sflTab('admin',  this)">Admin panel</button>
-  </div>
-
-  <!-- ══ TOOL STATUS PANEL ══ -->
-  <div class="sfl-panel active" id="sfl-panel-status">
-    <div class="sfl-stats">
-      <div class="sfl-stat total">
-        <div class="sfl-stat-num" id="sfl-total">—</div>
-        <div class="sfl-stat-label">Total tools</div>
-      </div>
-      <div class="sfl-stat present">
-        <div class="sfl-stat-num" id="sfl-present">—</div>
-        <div class="sfl-stat-label">Present</div>
-      </div>
-      <div class="sfl-stat missing">
-        <div class="sfl-stat-num" id="sfl-missing">—</div>
-        <div class="sfl-stat-label">Missing</div>
-      </div>
-    </div>
-
-    <div class="sfl-alert hidden" id="sfl-alert">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-      </svg>
-      <span id="sfl-alert-text"></span>
-    </div>
-
-    <div class="sfl-grid" id="sfl-grid"></div>
-  </div>
-
-  <!-- ══ ADMIN PANEL ══ -->
-  <div class="sfl-panel" id="sfl-panel-admin">
-    <div class="sfl-filters">
-      <select class="sfl-select" id="sfl-filter-member" onchange="sflRenderLog()">
-        <option value="">All members</option>
-        <option>Abhishek Shah</option>
-        <option>Ali Abdul Gafoor</option>
-        <option>Archita B K</option>
-        <option>Ardradevi K</option>
-        <option>Ashtami P S</option>
-        <option>Kevin Jijo</option>
-        <option>Kurian Jacob</option>
-        <option>Merin Cyriac</option>
-        <option>Mishael Sharaf</option>
-        <option>Nadec Biju</option>
-      </select>
-      <select class="sfl-select" id="sfl-filter-action" onchange="sflRenderLog()">
-        <option value="">All actions</option>
-        <option value="out">Checked out</option>
-        <option value="returned">Returned</option>
-      </select>
-    </div>
-    <div class="sfl-log" id="sfl-log"></div>
-  </div>
-
-  <!-- Footer -->
-  <div class="sfl-footer">
-    <a class="sfl-footer-link" href="https://fabacademy.org/2026/labs/kochi/" target="_blank" rel="noopener">
-      fabacademy.org/2026/labs/kochi ↗
-    </a>
-    <span class="sfl-updated" id="sfl-updated"></span>
-  </div>
-
-</div> <!-- End .sfl-widget -->
-
-<script>
-(function () {
-  // ── CONFIG ─────────────────────────────────────
-  const SUPABASE_URL      = 'https://YOUR_PROJECT.supabase.co';
-  const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
-
-  // ── AVATAR COLOURS per member ──────────────────
-  const COLORS = {
-    'Abhishek Shah':    ['#f97316','#431407'],
-    'Ali Abdul Gafoor': ['#a78bfa','#2e1065'],
-    'Archita B K':      ['#f43f5e','#4c0519'],
-    'Ardradevi K':      ['#06b6d4','#083344'],
-    'Ashtami P S':      ['#84cc16','#1a2e05'],
-    'Kevin Jijo':       ['#22c55e','#052e16'],
-    'Kurian Jacob':     ['#f59e0b','#451a03'],
-    'Merin Cyriac':     ['#ec4899','#500724'],
-    'Mishael Sharaf':   ['#38bdf8','#082f49'],
-    'Nadec Biju':       ['#e879f9','#3b0764'],
-  };
-
-  function initials(name) {
-    return name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
-  }
-  function avatar(name) {
-    const c = COLORS[name] || ['#71717a','#18181b'];
-    return `<div class="sfl-avatar" style="background:${c[1]};color:${c[0]}">${initials(name)}</div>`;
-  }
-
-  // ── DEMO DATA ──────────────────────────────────
-  const DEMO_TOOLS = [
-    { slot_id:'S-01', name:'Digital calipers',   present:true,  user:null },
-    { slot_id:'S-02', name:'Soldering iron',      present:false, user:'Kevin Jijo' },
-    { slot_id:'S-03', name:'Wire stripper',       present:true,  user:null },
-    { slot_id:'S-04', name:'Multimeter',          present:false, user:'Nadec Biju' },
-    { slot_id:'S-05', name:'Hex key set',         present:true,  user:null },
-    { slot_id:'S-06', name:'Oscilloscope probe',  present:true,  user:null },
-    { slot_id:'S-07', name:'Flush cutters',       present:true,  user:null },
-    { slot_id:'S-08', name:'Heat gun',            present:false, user:'Archita B K' },
-    { slot_id:'S-09', name:'Label maker',         present:true,  user:null },
-    { slot_id:'S-10', name:'Breadboard kit',      present:true,  user:null },
-    { slot_id:'S-11', name:'Crimping tool',       present:false, user:'Mishael Sharaf' },
-    { slot_id:'S-12', name:'Torque screwdriver',  present:true,  user:null },
-    { slot_id:'S-13', name:'PCB holder',          present:true,  user:null },
-    { slot_id:'S-14', name:'USB power meter',     present:false, user:'Ali Abdul Gafoor' },
-    { slot_id:'S-15', name:'Tweezers set',        present:true,  user:null },
-    { slot_id:'S-16', name:'Step drill bits',     present:true,  user:null },
-  ];
-
-  const DEMO_LOG = [
-    { user:'Ali Abdul Gafoor', tool:'USB power meter',    action:'out',      slot:'S-14', time:'10:42 AM' },
-    { user:'Mishael Sharaf',   tool:'Crimping tool',       action:'out',      slot:'S-11', time:'10:31 AM' },
-    { user:'Nadec Biju',       tool:'Multimeter',          action:'out',      slot:'S-04', time:'10:17 AM' },
-    { user:'Archita B K',      tool:'Heat gun',            action:'out',      slot:'S-08', time:'9:58 AM'  },
-    { user:'Kevin Jijo',       tool:'Soldering iron',      action:'out',      slot:'S-02', time:'9:45 AM'  },
-    { user:'Ashtami P S',      tool:'Oscilloscope probe',  action:'returned', slot:'S-06', time:'9:30 AM'  },
-    { user:'Ardradevi K',      tool:'Digital calipers',    action:'returned', slot:'S-01', time:'9:12 AM'  },
-    { user:'Kurian Jacob',     tool:'Hex key set',         action:'returned', slot:'S-05', time:'9:05 AM'  },
-    { user:'Abhishek Shah',    tool:'PCB holder',          action:'returned', slot:'S-13', time:'8:55 AM'  },
-    { user:'Merin Cyriac',     tool:'Step drill bits',     action:'returned', slot:'S-16', time:'8:47 AM'  },
-  ];
-
-  // ── expose log globally for filter callbacks ───
-  window._sflLog = DEMO_LOG;
-
-  // ── RENDER STATUS ──────────────────────────────
-  function renderStatus(tools) {
-    const total   = tools.length;
-    const present = tools.filter(t => t.present).length;
-    const missing = total - present;
-
-    document.getElementById('sfl-total').textContent   = total;
-    document.getElementById('sfl-present').textContent = present;
-    document.getElementById('sfl-missing').textContent = missing;
-
-    const alertEl = document.getElementById('sfl-alert');
-    if (missing > 0) {
-      alertEl.classList.remove('hidden');
-      document.getElementById('sfl-alert-text').textContent =
-        `${missing} tool${missing > 1 ? 's are' : ' is'} currently checked out`;
-    } else {
-      alertEl.classList.add('hidden');
-    }
-
-    document.getElementById('sfl-grid').innerHTML = tools.map(t => `
-      <div class="sfl-slot ${t.present ? 'present' : 'missing'}">
-        <span class="sfl-slot-id">${t.slot_id}</span>
-        <span class="sfl-slot-name">${t.name}</span>
+Write an application that interfaces a user with an input &/or output device that you made
+
+Extra Credit Goals"><link rel=canonical href=https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-15/><meta property="og:title" content="Week 15 - Interface and Application Programming | Nadec Biju | Fab Academy 2026 Portfolio"><meta property="og:description" content="Week 15 - Interface and Application Programming#
+Week 15 focused on interface and application programming, learning to create user interfaces that communicate with embedded systems.
+The aim was to develop applications that provide meaningful interaction between users and fabricated devices.
+This week brought together the hardware skills with software development for complete interactive systems.
+
+Group Assignment#
+
+Compare as many tool options as possible for interface development
+
+Individual Assignment#
+
+Write an application that interfaces a user with an input &/or output device that you made
+
+Extra Credit Goals"><meta property="og:type" content="website"><meta property="og:url" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-15/"><meta property="og:image" content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/images/about-me/dp.jpeg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Week 15 - Interface and Application Programming | Nadec Biju | Fab Academy 2026 Portfolio"><meta name=twitter:description content="Week 15 - Interface and Application Programming#
+Week 15 focused on interface and application programming, learning to create user interfaces that communicate with embedded systems.
+The aim was to develop applications that provide meaningful interaction between users and fabricated devices.
+This week brought together the hardware skills with software development for complete interactive systems.
+
+Group Assignment#
+
+Compare as many tool options as possible for interface development
+
+Individual Assignment#
+
+Write an application that interfaces a user with an input &/or output device that you made
+
+Extra Credit Goals"><meta name=twitter:image content="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/images/about-me/dp.jpeg"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel=stylesheet><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script>tailwind.config={darkMode:"class",theme:{extend:{colors:{background:"#0e0e0e",surface:"#0e0e0e","surface-dim":"#0e0e0e","surface-bright":"#2c2c2c","surface-container-lowest":"#000000","surface-container-low":"#131313","surface-container":"#1a1a1a","surface-container-high":"#20201f","surface-container-highest":"#262626","surface-variant":"#262626","surface-tint":"#79b0ff","on-background":"#ffffff","on-surface":"#ffffff","on-surface-variant":"#adaaaa",outline:"#767575","outline-variant":"#484847",primary:"#79b0ff","primary-container":"#5da2ff","primary-dim":"#569fff","primary-fixed":"#5da2ff","primary-fixed-dim":"#3894ff","on-primary":"#002e5c","on-primary-container":"#002348","on-primary-fixed":"#000000","inverse-primary":"#005fb2",secondary:"#ea73fb","secondary-container":"#8f15a4","secondary-dim":"#e46df5","secondary-fixed":"#fcbcff","secondary-fixed-dim":"#f9a7ff","on-secondary":"#450051","on-secondary-container":"#ffddfd","on-secondary-fixed":"#5d006d",tertiary:"#ffac54","tertiary-container":"#ff9800","tertiary-dim":"#ec8c00","on-tertiary":"#583100","on-tertiary-container":"#4a2800","on-tertiary-fixed":"#271300",error:"#ff716c","error-container":"#9f0519","on-error":"#490006","on-error-container":"#ffa8a3","inverse-surface":"#fcf9f8","inverse-on-surface":"#565555"},fontFamily:{headline:['"Plus Jakarta Sans"',"sans-serif"],body:["Inter","sans-serif"],label:["Inter","sans-serif"],mono:['"JetBrains Mono"',"monospace"]},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem","2xl":"1rem","3xl":"1.5rem",full:"9999px"}}}}</script><style>*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{background-color:#0e0e0e;color:#fff;font-family:Inter,sans-serif}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;line-height:1}.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}.prose-neon{color:#adaaaa;line-height:1.75}.prose-neon h1,.prose-neon h2,.prose-neon h3,.prose-neon h4,.prose-neon h5{font-family:plus jakarta sans,sans-serif;font-weight:700;color:#fff;letter-spacing:-.02em;margin:2rem 0 .75rem}.prose-neon h1{font-size:2.25rem;margin-top:0}.prose-neon h2{font-size:1.6rem;margin-top:1.5rem}.prose-neon h3{font-size:1.25rem}.prose-neon h4{font-size:1.05rem}.prose-neon p{margin-bottom:1rem}.prose-neon a{color:#79b0ff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.prose-neon a:hover{color:#5da2ff}.prose-neon strong{color:#fff;font-weight:600}.prose-neon em{color:silver}.prose-neon code{font-family:jetbrains mono,monospace;background:#131313;color:#79b0ff;padding:.15em .45em;border-radius:.25rem;font-size:.875em;border:1px solid #484847}.prose-neon pre{background:#000;border:1px solid #484847;border-radius:.5rem;padding:1.25rem;overflow-x:auto;margin:1.5rem 0;position:relative}.code-copy-btn{position:absolute;top:.5rem;right:.5rem;display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .6rem;font-family:jetbrains mono,monospace;font-size:.7rem;color:#adaaaa;background:#1a1a1a;border:1px solid #484847;border-radius:.375rem;cursor:pointer;opacity:0;transition:opacity .2s,color .2s,border-color .2s;z-index:2}.prose-neon pre:hover .code-copy-btn,.code-copy-btn:focus{opacity:1}.code-copy-btn:hover{color:#79b0ff;border-color:#79b0ff}.code-copy-btn.copied{color:#4ade80;border-color:#4ade80}.code-copy-btn .material-symbols-outlined{font-size:14px}.prose-neon pre code{background:0 0;border:none;padding:0;color:#adaaaa;font-size:.875rem}.prose-neon pre:has(code.language-cpp){max-height:16.5rem;overflow-y:auto}.prose-neon ul{padding-left:0;margin-bottom:1rem}.prose-neon ul li{color:#adaaaa;padding:.2rem 0 .2rem 1.25rem;position:relative;list-style:none}.prose-neon ul li::before{content:"—";color:#79b0ff;position:absolute;left:0;font-weight:700}.prose-neon ol{padding-left:0;margin-bottom:1rem;counter-reset:ol-counter}.prose-neon ol li{color:#adaaaa;padding:.2rem 0 .2rem 1.75rem;position:relative;list-style:none;counter-increment:ol-counter}.prose-neon ol li::before{content:counter(ol-counter)".";color:#79b0ff;position:absolute;left:0;font-weight:700}.prose-neon img{max-width:100%;border-radius:.75rem;margin:1.5rem 0;border:1px solid #484847}.prose-neon blockquote{position:relative;border-left:4px solid #ffac54;padding:1rem 1.5rem 1rem 3.25rem;margin:1.75rem 0;background:linear-gradient(90deg,rgba(255,172,84,.12),rgba(255,172,84,3%));border-radius:0 .5rem .5rem 0;font-style:normal;color:#f0f0f0;font-weight:500;box-shadow:0 4px 20px rgba(255,172,84,8%)}.prose-neon blockquote::before{content:"format_quote";font-family:material symbols outlined;font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24;position:absolute;left:1rem;top:.9rem;font-size:20px;color:#ffac54}.prose-neon blockquote p{margin-bottom:.5rem}.prose-neon blockquote p:last-child{margin-bottom:0}.prose-neon table{width:100%;border-collapse:collapse;margin-bottom:1.5rem;overflow:hidden;border-radius:.5rem}.prose-neon table th{background:#20201f;color:#fff;padding:.75rem 1rem;text-align:left;font-family:plus jakarta sans,sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}.prose-neon table td{padding:.75rem 1rem;color:#adaaaa;border-bottom:1px solid #262626}.prose-neon table tr:last-child td{border-bottom:none}.prose-neon table tr:hover td{background:#131313}.prose-neon hr{border:none;border-top:1px solid #484847;margin:2rem 0}.prose-neon video,.prose-neon iframe{max-width:100%;border-radius:.75rem;margin:1.5rem 0;border:1px solid #484847}.prose-neon details{--accent:#79b0ff;margin:.85rem 0;border:1px solid color-mix(in srgb,var(--accent) 38%,#484847);border-radius:.75rem;background:color-mix(in srgb,var(--accent) 7%,#131313);overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}.prose-neon details:nth-of-type(5n+1){--accent:#5da2ff}.prose-neon details:nth-of-type(5n+2){--accent:#ea73fb}.prose-neon details:nth-of-type(5n+3){--accent:#ffac54}.prose-neon details:nth-of-type(5n+4){--accent:#34d399}.prose-neon details:nth-of-type(5n){--accent:#f87171}.prose-neon details[open]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 4%,#131313);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 25%,transparent),0 8px 28px color-mix(in srgb,var(--accent) 18%,transparent)}.prose-neon summary{list-style:none;cursor:pointer;margin:0;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:plus jakarta sans,sans-serif;font-weight:700;font-size:.95rem;color:var(--accent);transition:background .2s ease}.prose-neon summary::-webkit-details-marker{display:none}.prose-neon summary::marker{content:""}.prose-neon summary:hover{background:color-mix(in srgb,var(--accent) 10%,#1a1a1a)}.prose-neon summary::after{content:"expand_more";font-family:material symbols outlined;font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;font-size:22px;line-height:1;color:var(--accent);flex-shrink:0;transition:transform .25s ease}.prose-neon details[open] summary::after{transform:rotate(180deg)}.prose-neon details[open] summary{border-bottom:1px solid #262626}.prose-neon details>summary~*{margin-left:1.25rem!important;margin-right:1.25rem!important}.prose-neon details>summary~*:first-of-type{margin-top:1rem!important}.prose-neon details>summary~*:last-of-type{margin-bottom:1.25rem!important}.prose-neon details summary+*{animation:accordion-fade-in .25s ease}@keyframes accordion-fade-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}.toc-nav ul{list-style:none;padding:0;margin:0}.toc-nav li{margin:0}.toc-nav a{display:block;padding:.3rem .6rem;font-size:.75rem;color:#767575;text-decoration:none;border-left:2px solid transparent;border-radius:0 .25rem .25rem 0;transition:color .15s,border-color .15s;line-height:1.4}.toc-nav a:hover{color:#fff;border-left-color:#484847}.toc-nav a.active{color:#79b0ff;border-left-color:#79b0ff;font-weight:600}.toc-nav ul ul a{padding-left:1.25rem;font-size:.7rem}.toc-nav ul ul ul a{padding-left:2rem}#back-to-top{position:fixed;bottom:1.75rem;right:1.75rem;width:3rem;height:3rem;border-radius:.75rem;background:#20201f;border:1px solid #484847;color:#79b0ff;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:9999}#back-to-top.visible{opacity:1;pointer-events:auto}#back-to-top:hover{background:#262626;transform:translateY(-3px)}</style><link rel=icon type=image/png href=/2026/labs/kochi/students/nadec-biju/favicon.png></head><body class="bg-background text-on-surface font-body antialiased"><nav id=top-nav class="fixed top-0 left-0 right-0 z-50 bg-[#0e0e0e]/85 backdrop-blur-xl shadow-[0_4px_40px_rgba(121,176,255,0.06)]" style="border-bottom:1px solid rgba(72,72,71,.4)"><div class="flex items-center justify-between w-full px-6 lg:px-8 py-3 max-w-[1600px] mx-auto"><a href=/2026/labs/kochi/students/nadec-biju/ class="text-xl font-black tracking-tighter text-[#79b0ff] font-headline uppercase hover:opacity-75 transition-opacity shrink-0">FAB ACADEMY</a><div class="hidden md:flex items-center gap-6"><a href=/2026/labs/kochi/students/nadec-biju/docs/about-me/ class="font-headline uppercase tracking-widest text-xs font-bold transition-colors text-gray-400 hover:text-white">About Me
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/ class="font-headline uppercase tracking-widest text-xs font-bold transition-colors text-[#ea73fb] border-b-2 border-[#ea73fb] pb-0.5">Assignments
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/final-project/ class="font-headline uppercase tracking-widest text-xs font-bold transition-colors text-gray-400 hover:text-white">Final Project
+</a><a href=https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju target=_blank rel=noopener class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors flex items-center gap-1">GitLab
+<span class="material-symbols-outlined text-[14px]">open_in_new</span></a></div><div class="flex items-center gap-3"><div class="hidden lg:block relative" id=search-wrapper><div class="flex items-center bg-surface-container-highest rounded-full px-4 py-1.5 gap-2"><span class="material-symbols-outlined text-on-surface-variant" style=font-size:16px>search</span>
+<input id=search-input class="bg-transparent border-none focus:ring-0 text-sm w-44 placeholder:text-on-surface-variant outline-none" placeholder=Search... type=text autocomplete=off></div><div id=search-results class="hidden absolute right-0 top-full mt-2 w-80 rounded-2xl overflow-hidden z-50" style="background:#131313;border:1px solid rgba(72,72,71,.5);box-shadow:0 8px 32px rgba(0,0,0,.6)"></div></div><a href=/2026/labs/kochi/students/nadec-biju/terminal/ id=terminal-toggle title="Switch to terminal mode (for devs)" onclick='try{sessionStorage.setItem("nb-view","terminal"),localStorage.removeItem("nb-view")}catch{}' class="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-on-surface-variant hover:text-[#79b0ff] transition-all" style="border:1px solid rgba(72,72,71,.5)"><span class=material-symbols-outlined style=font-size:18px>terminal</span>
+<span class="hidden sm:inline font-mono text-[11px] tracking-tight">dev mode</span>
+</a><button id=mobile-menu-btn class="md:hidden hover:bg-surface-container-high rounded-lg p-2 text-on-surface transition-all">
+<span class=material-symbols-outlined style=font-size:22px>menu</span></button></div></div><div id=mobile-nav class="hidden md:hidden border-t border-outline-variant/30 bg-[#0e0e0e]/95 px-6 py-4 flex flex-col gap-3"><a href=/2026/labs/kochi/students/nadec-biju/docs/about-me/ class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">About Me</a>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/ class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">Assignments</a>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/final-project/ class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">Final Project</a>
+<a href=https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju target=_blank rel=noopener class="font-headline uppercase tracking-widest text-xs font-bold text-gray-400 hover:text-white transition-colors">GitLab</a></div></nav><aside class="hidden lg:flex flex-col w-64 fixed left-0 top-0 bottom-0 pt-[57px] bg-[#131313] z-40 overflow-y-auto hide-scrollbar" style="border-right:1px solid rgba(72,72,71,.35)"><div class="flex flex-col gap-1 p-5 flex-1"><div class="mb-5 px-3 pt-3"><p class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary mb-0.5">Project Navigator</p><p class="text-[10px] text-on-surface-variant uppercase font-medium tracking-widest">Technical Index</p></div><nav class="flex flex-col gap-0.5"><a href=/2026/labs/kochi/students/nadec-biju/docs/about-me/ class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
+text-gray-500 hover:text-gray-200 hover:translate-x-0.5"><span class="material-symbols-outlined shrink-0" style=font-size:18px>person</span>
+<span class=font-body>About Me</span>
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/ class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
+bg-[#262626] text-[#ea73fb] font-semibold shadow-[0_0_12px_rgba(234,115,251,0.15)]"><span class="material-symbols-outlined shrink-0" style=font-size:18px>event_note</span>
+<span class=font-body>Weekly Logs</span>
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/final-project/ class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
+text-gray-500 hover:text-gray-200 hover:translate-x-0.5"><span class="material-symbols-outlined shrink-0" style=font-size:18px>rocket_launch</span>
+<span class=font-body>Final Project</span>
+</a><a href=https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju target=_blank rel=noopener class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-500 hover:text-gray-200 hover:translate-x-0.5 transition-all duration-200 text-sm"><span class="material-symbols-outlined shrink-0" style=font-size:18px>terminal</span>
+<span class=font-body>GitLab Files</span>
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/agreement/ class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-sm
+text-gray-500 hover:text-gray-200 hover:translate-x-0.5"><span class="material-symbols-outlined shrink-0" style=font-size:18px>description</span>
+<span class=font-body>Agreement</span></a></nav><div class="mt-4 pt-4" style="border-top:1px solid rgba(72,72,71,.4)"><p class="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant mb-2 px-3">Weeks</p><div class="flex flex-col gap-0.5"><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-1/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 01 - Principles and Practices , Project management
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-2/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 02 - Computer Aided design
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 03 - Computer Controlled Cutting
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 04 - Embedded Programming
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-5/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 05 - 3D Scanning and Printing
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-6/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 06 - Electronics Design
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 07 - Computer Controlled Machining
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-8/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 08 - Electronics Production
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-9/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 09 - Input Devices
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-10/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 10 - Output Devices
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-11/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 11 - Networking and Communications
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-12/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 12 - Mechanical Design
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-13/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 13 - Midterm Review
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-14/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 14 - Molding and Casting
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-15/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-primary font-semibold bg-surface-container-high"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-primary"></span>
+Week 15 - Interface and Application Programming
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-16/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 16 - System Integration
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-17/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 17 - Wildcard Week
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-18/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 18 - Applications and Implications
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-19/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Week 19 - Invention, Intellectual Property, And Income
+</a><a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/project-development/ class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs transition-all duration-150
+text-gray-500 hover:text-gray-300"><span class="shrink-0 w-1.5 h-1.5 rounded-full bg-gray-600"></span>
+Project Development</a></div></div></div></aside><main class="lg:ml-64 pt-[57px]"><div class=flex><div class="flex-1 min-w-0 xl:pr-72" style=overflow-x:clip><div class="max-w-4xl mx-auto px-8 py-12 prose-neon"><h1 id=week-15---interface-and-application-programming>Week 15 - Interface and Application Programming<a class=anchor href=#week-15---interface-and-application-programming>#</a></h1><p>Week 15 focused on <strong>interface and application programming</strong>, learning to create user interfaces that communicate with embedded systems.<br>The aim was to develop applications that provide meaningful interaction between users and fabricated devices.</p><p>This week brought together the hardware skills with software development for complete interactive systems.</p><hr><h2 id=group-assignment>Group Assignment<a class=anchor href=#group-assignment>#</a></h2><ul><li>Compare as many <strong>tool options</strong> as possible for interface development</li></ul><h2 id=individual-assignment>Individual Assignment<a class=anchor href=#individual-assignment>#</a></h2><ul><li>Write an <strong>application</strong> that interfaces a user with an input &/or output device that you made</li></ul><p><strong>Extra Credit Goals</strong></p><ul><li>Try <strong>multiple programming languages</strong> or frameworks</li><li>Implement <strong>real-time data visualization</strong></li><li>Create a <strong>mobile or web application</strong></li></ul><hr><h2 id=what-i-learned>What I Learned<a class=anchor href=#what-i-learned>#</a></h2><p>This week was lowkey a different vibe compared to the rest of Fab Academy — most weeks are about <em>making the hardware</em>, this one was about putting a usable interface on top of hardware. Also the first week where I leaned heavily on AI design tools end-to-end, which was a workflow I hadn&rsquo;t really tried before.</p><ul><li>How to actually plan a UI before opening any design tool — the Claude web interface walked me through the right questions (audience, core jobs, screens, fidelity) and that planning step did most of the work</li><li><strong>Google Stitch</strong> for going from a rough idea to a mockup in minutes — uploading the first prototype and getting back a designed-out version felt basically like sketching with a much faster pencil</li><li><strong>Claude Design</strong> for taking the Stitch mockup further into an actual clickable Flutter prototype — the &ldquo;handoff to Claude Code&rdquo; flow was new to me and genuinely useful</li><li>How to use <strong>Codemagic</strong> to take a Flutter repo on GitHub and build a real <code>.ipa</code> for iOS — no Mac, no Xcode, no Apple Developer account dance, just point it at the repo and let it build</li><li>Most importantly — the AI-design tool chain isn&rsquo;t a replacement for design thinking, it&rsquo;s a speed multiplier on top of it. The hours I would&rsquo;ve spent fighting Figma went into actually deciding what the app <em>should do</em> 🤌</li></ul><hr><h2 id=weekly-schedule>Weekly Schedule<a class=anchor href=#weekly-schedule>#</a></h2><table><thead><tr><th>Day</th><th>What I Did</th></tr></thead><tbody><tr><td>WED</td><td>Lecture on interface and application programming</td></tr><tr><td>THU</td><td>Local Lecture at Superfablab Kochi</td></tr><tr><td>FRI</td><td>UI planning with the Claude web interface — web app prototype</td></tr><tr><td>SAT</td><td>Google Stitch — mobile mockup from the web prototype</td></tr><tr><td>SUN</td><td>Claude Design — Flutter prototype + handoff to Claude Code</td></tr><tr><td>MON</td><td>Push to GitHub + Codemagic build → working iOS app</td></tr><tr><td>TUE</td><td>Regional review</td></tr></tbody></table><hr><h1 id=group-assignment-1>Group Assignment<a class=anchor href=#group-assignment-1>#</a></h1><p>The link to our group assignment is below:
+<a href=https://fabacademy.org/2026/labs/kochi/group_assignmetns/week15/>Group Assignment</a></p><hr><h1 id=individual-assignment-1>Individual Assignment<a class=anchor href=#individual-assignment-1>#</a></h1><h2 id=planning>Planning<a class=anchor href=#planning>#</a></h2><p>For this project, I am planning to build a smart toolbox that can track whether tools are present or missing. Each tool will be placed on a switch, so when a tool is removed, the system can detect it. I will also use RFID to identify who is opening the toolbox and taking tools. Along with the hardware, I plan to develop a simple web app that shows all tools in real time, highlighting missing ones. There will also be an admin view to see who took which tool and when. This project is being developed at Super Fablab Kerala to make tool management easier and more organized.</p><style>@import 'https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap';.sfl-widget *{box-sizing:border-box;margin:0;padding:0}.sfl-widget{--bg:#0e0f11;--bg2:#161719;--bg3:#1e1f22;--border:#2a2b2f;--green:#22c55e;--red:#f43f5e;--amber:#f59e0b;--text:#e4e4e7;--muted:#71717a;--accent:#a78bfa;font-family:dm sans,sans-serif;background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;max-width:540px;color:var(--text);font-size:13px;box-shadow:0 8px 40px rgba(0,0,0,.55)}.sfl-header{padding:14px 18px 10px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg2)}.sfl-brand-name{font-family:space mono,monospace;font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}.sfl-brand-sub{font-size:10px;color:var(--muted);margin-top:1px}.sfl-live{display:flex;align-items:center;gap:5px;font-family:space mono,monospace;font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--green);text-transform:uppercase}.sfl-live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:sfl-pulse 2s ease-in-out infinite}@keyframes sfl-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}.sfl-tabs{display:flex;padding:10px 14px 0;gap:6px;background:var(--bg2);border-bottom:1px solid var(--border)}.sfl-tab{padding:6px 14px;border-radius:7px 7px 0 0;font-size:11px;font-weight:600;cursor:pointer;border:1px solid transparent;border-bottom:none;color:var(--muted);background:0 0;transition:color .15s,background .15s}.sfl-tab.active{background:var(--bg);border-color:var(--border);color:var(--text);margin-bottom:-1px}.sfl-tab:not(.active):hover{color:var(--text)}.sfl-panel{display:none}.sfl-panel.active{display:block}.sfl-stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border)}.sfl-stat{padding:12px 0;text-align:center;border-right:1px solid var(--border)}.sfl-stat:last-child{border-right:none}.sfl-stat-num{font-family:space mono,monospace;font-size:22px;font-weight:700;line-height:1;margin-bottom:3px}.sfl-stat-label{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.sfl-stat.total .sfl-stat-num{color:var(--text)}.sfl-stat.present .sfl-stat-num{color:var(--green)}.sfl-stat.missing .sfl-stat-num{color:var(--red)}.sfl-alert{margin:10px 14px;padding:8px 12px;background:rgba(244,63,94,8%);border:1px solid rgba(244,63,94,.25);border-radius:8px;font-size:11px;color:var(--red);display:flex;align-items:center;gap:7px}.sfl-alert.hidden{display:none}.sfl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 14px 14px}.sfl-slot{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 6px;display:flex;flex-direction:column;gap:4px;transition:border-color .2s}.sfl-slot.present{border-left:2px solid var(--green)}.sfl-slot.missing{border-left:2px solid var(--red);background:rgba(244,63,94,4%)}.sfl-slot-id{font-family:space mono,monospace;font-size:8px;color:var(--muted)}.sfl-slot-name{font-size:10px;font-weight:600;line-height:1.3;word-break:break-word}.sfl-slot-status{display:flex;align-items:center;gap:3px;margin-top:2px}.sfl-dot{width:5px;height:5px;border-radius:50%}.sfl-dot.green{background:var(--green)}.sfl-dot.red{background:var(--red);animation:sfl-pulse 2s ease-in-out infinite}.sfl-slot-who{font-size:9px;color:var(--red);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sfl-filters{padding:12px 14px;display:flex;flex-direction:column;gap:7px;border-bottom:1px solid var(--border)}.sfl-select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:dm sans,sans-serif;font-size:12px;padding:8px 12px;appearance:none;cursor:pointer;outline:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:30px}.sfl-select:focus{border-color:var(--accent)}.sfl-log{padding:0 14px 14px;display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto}.sfl-log::-webkit-scrollbar{width:4px}.sfl-log::-webkit-scrollbar-track{background:0 0}.sfl-log::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}.sfl-log-row{display:flex;align-items:center;gap:10px;padding:9px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;transition:border-color .15s}.sfl-log-row:hover{border-color:#3f3f46}.sfl-avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:space mono,monospace}.sfl-log-info{flex:1;min-width:0}.sfl-log-name{font-size:12px;font-weight:600}.sfl-log-tool{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sfl-badge{font-size:9px;font-weight:700;letter-spacing:.05em;padding:3px 7px;border-radius:5px;text-transform:uppercase;white-space:nowrap}.sfl-badge.out{background:rgba(244,63,94,.15);color:var(--red);border:1px solid rgba(244,63,94,.25)}.sfl-badge.returned{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.2)}.sfl-log-meta{text-align:right;flex-shrink:0}.sfl-log-slot{font-family:space mono,monospace;font-size:9px;color:var(--muted)}.sfl-log-time{font-family:space mono,monospace;font-size:9px;color:var(--muted);margin-top:2px}.sfl-empty{text-align:center;padding:28px 0;font-size:11px;color:var(--muted)}.sfl-footer{padding:8px 14px;border-top:1px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:space-between}.sfl-footer-link{font-size:9px;color:var(--muted);text-decoration:none;font-family:space mono,monospace;letter-spacing:.04em;transition:color .2s}.sfl-footer-link:hover{color:var(--accent)}.sfl-updated{font-size:9px;color:var(--muted);font-family:space mono,monospace}</style><div class=sfl-widget><div class=sfl-header><div><div class=sfl-brand-name>Tool Cabinet</div><div class=sfl-brand-sub>Super Fablab Kerala · Kochi, India</div></div><div class=sfl-live><span class=sfl-live-dot></span>Live</div></div><div class=sfl-tabs><button class="sfl-tab active" onclick='sflTab("status",this)'>Tool status</button>
+<button class=sfl-tab onclick='sflTab("admin",this)'>Admin panel</button></div><div class="sfl-panel active" id=sfl-panel-status><div class=sfl-stats><div class="sfl-stat total"><div class=sfl-stat-num id=sfl-total>—</div><div class=sfl-stat-label>Total tools</div></div><div class="sfl-stat present"><div class=sfl-stat-num id=sfl-present>—</div><div class=sfl-stat-label>Present</div></div><div class="sfl-stat missing"><div class=sfl-stat-num id=sfl-missing>—</div><div class=sfl-stat-label>Missing</div></div></div><div class="sfl-alert hidden" id=sfl-alert><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+<span id=sfl-alert-text></span></div><div class=sfl-grid id=sfl-grid></div></div><div class=sfl-panel id=sfl-panel-admin><div class=sfl-filters><select class=sfl-select id=sfl-filter-member onchange=sflRenderLog()><option value>All members</option><option>Abhishek Shah</option><option>Ali Abdul Gafoor</option><option>Archita B K</option><option>Ardradevi K</option><option>Ashtami P S</option><option>Kevin Jijo</option><option>Kurian Jacob</option><option>Merin Cyriac</option><option>Mishael Sharaf</option><option>Nadec Biju</option></select>
+<select class=sfl-select id=sfl-filter-action onchange=sflRenderLog()><option value>All actions</option><option value=out>Checked out</option><option value=returned>Returned</option></select></div><div class=sfl-log id=sfl-log></div></div><div class=sfl-footer><a class=sfl-footer-link href=https://fabacademy.org/2026/labs/kochi/ target=_blank rel=noopener>fabacademy.org/2026/labs/kochi ↗
+</a><span class=sfl-updated id=sfl-updated></span></div></div><script>(function(){const e="https://YOUR_PROJECT.supabase.co",t="YOUR_ANON_KEY",o={"Abhishek Shah":["#f97316","#431407"],"Ali Abdul Gafoor":["#a78bfa","#2e1065"],"Archita B K":["#f43f5e","#4c0519"],"Ardradevi K":["#06b6d4","#083344"],"Ashtami P S":["#84cc16","#1a2e05"],"Kevin Jijo":["#22c55e","#052e16"],"Kurian Jacob":["#f59e0b","#451a03"],"Merin Cyriac":["#ec4899","#500724"],"Mishael Sharaf":["#38bdf8","#082f49"],"Nadec Biju":["#e879f9","#3b0764"]};function i(e){return e.split(" ").slice(0,2).map(e=>e[0]).join("").toUpperCase()}function a(e){const t=o[e]||["#71717a","#18181b"];return`<div class="sfl-avatar" style="background:${t[1]};color:${t[0]}">${i(e)}</div>`}const r=[{slot_id:"S-01",name:"Digital calipers",present:!0,user:null},{slot_id:"S-02",name:"Soldering iron",present:!1,user:"Kevin Jijo"},{slot_id:"S-03",name:"Wire stripper",present:!0,user:null},{slot_id:"S-04",name:"Multimeter",present:!1,user:"Nadec Biju"},{slot_id:"S-05",name:"Hex key set",present:!0,user:null},{slot_id:"S-06",name:"Oscilloscope probe",present:!0,user:null},{slot_id:"S-07",name:"Flush cutters",present:!0,user:null},{slot_id:"S-08",name:"Heat gun",present:!1,user:"Archita B K"},{slot_id:"S-09",name:"Label maker",present:!0,user:null},{slot_id:"S-10",name:"Breadboard kit",present:!0,user:null},{slot_id:"S-11",name:"Crimping tool",present:!1,user:"Mishael Sharaf"},{slot_id:"S-12",name:"Torque screwdriver",present:!0,user:null},{slot_id:"S-13",name:"PCB holder",present:!0,user:null},{slot_id:"S-14",name:"USB power meter",present:!1,user:"Ali Abdul Gafoor"},{slot_id:"S-15",name:"Tweezers set",present:!0,user:null},{slot_id:"S-16",name:"Step drill bits",present:!0,user:null}],c=[{user:"Ali Abdul Gafoor",tool:"USB power meter",action:"out",slot:"S-14",time:"10:42 AM"},{user:"Mishael Sharaf",tool:"Crimping tool",action:"out",slot:"S-11",time:"10:31 AM"},{user:"Nadec Biju",tool:"Multimeter",action:"out",slot:"S-04",time:"10:17 AM"},{user:"Archita B K",tool:"Heat gun",action:"out",slot:"S-08",time:"9:58 AM"},{user:"Kevin Jijo",tool:"Soldering iron",action:"out",slot:"S-02",time:"9:45 AM"},{user:"Ashtami P S",tool:"Oscilloscope probe",action:"returned",slot:"S-06",time:"9:30 AM"},{user:"Ardradevi K",tool:"Digital calipers",action:"returned",slot:"S-01",time:"9:12 AM"},{user:"Kurian Jacob",tool:"Hex key set",action:"returned",slot:"S-05",time:"9:05 AM"},{user:"Abhishek Shah",tool:"PCB holder",action:"returned",slot:"S-13",time:"8:55 AM"},{user:"Merin Cyriac",tool:"Step drill bits",action:"returned",slot:"S-16",time:"8:47 AM"}];window._sflLog=c;function n(e){const n=e.length,s=e.filter(e=>e.present).length,t=n-s;document.getElementById("sfl-total").textContent=n,document.getElementById("sfl-present").textContent=s,document.getElementById("sfl-missing").textContent=t;const o=document.getElementById("sfl-alert");t>0?(o.classList.remove("hidden"),document.getElementById("sfl-alert-text").textContent=`${t} tool${t>1?"s are":" is"} currently checked out`):o.classList.add("hidden"),document.getElementById("sfl-grid").innerHTML=e.map(e=>`
+      <div class="sfl-slot ${e.present?"present":"missing"}">
+        <span class="sfl-slot-id">${e.slot_id}</span>
+        <span class="sfl-slot-name">${e.name}</span>
         <div class="sfl-slot-status">
-          <span class="sfl-dot ${t.present ? 'green' : 'red'}"></span>
-          ${t.present
-            ? '<span style="font-size:9px;color:var(--green)">Present</span>'
-            : `<span class="sfl-slot-who">${t.user || 'Unknown'}</span>`}
+          <span class="sfl-dot ${e.present?"green":"red"}"></span>
+          ${e.present?'<span style="font-size:9px;color:var(--green)">Present</span>':`<span class="sfl-slot-who">${e.user||"Unknown"}</span>`}
         </div>
-      </div>`).join('');
-
-    document.getElementById('sfl-updated').textContent =
-      new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-  }
-
-  // ── RENDER LOG (called on filter change too) ───
-  window.sflRenderLog = function() {
-    const memberFilter = document.getElementById('sfl-filter-member').value;
-    const actionFilter = document.getElementById('sfl-filter-action').value;
-
-    let rows = window._sflLog;
-    if (memberFilter) rows = rows.filter(r => r.user === memberFilter);
-    if (actionFilter) rows = rows.filter(r => r.action === actionFilter);
-
-    const logEl = document.getElementById('sfl-log');
-    if (rows.length === 0) {
-      logEl.innerHTML = '<div class="sfl-empty">No activity found</div>';
-      return;
-    }
-
-    logEl.innerHTML = rows.map(r => `
+      </div>`).join(""),document.getElementById("sfl-updated").textContent=(new Date).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}if(window.sflRenderLog=function(){const t=document.getElementById("sfl-filter-member").value,n=document.getElementById("sfl-filter-action").value;let e=window._sflLog;t&&(e=e.filter(e=>e.user===t)),n&&(e=e.filter(e=>e.action===n));const s=document.getElementById("sfl-log");if(e.length===0){s.innerHTML='<div class="sfl-empty">No activity found</div>';return}s.innerHTML=e.map(e=>`
       <div class="sfl-log-row">
-        ${avatar(r.user)}
+        ${a(e.user)}
         <div class="sfl-log-info">
-          <div class="sfl-log-name">${r.user}</div>
-          <div class="sfl-log-tool">${r.tool}</div>
+          <div class="sfl-log-name">${e.user}</div>
+          <div class="sfl-log-tool">${e.tool}</div>
         </div>
-        <span class="sfl-badge ${r.action === 'out' ? 'out' : 'returned'}">
-          ${r.action === 'out' ? 'Checked out' : 'Returned'}
+        <span class="sfl-badge ${e.action==="out"?"out":"returned"}">
+          ${e.action==="out"?"Checked out":"Returned"}
         </span>
         <div class="sfl-log-meta">
-          <div class="sfl-log-slot">${r.slot}</div>
-          <div class="sfl-log-time">${r.time}</div>
+          <div class="sfl-log-slot">${e.slot}</div>
+          <div class="sfl-log-time">${e.time}</div>
         </div>
-      </div>`).join('');
-  };
-
-  // ── TAB SWITCHER ───────────────────────────────
-  window.sflTab = function(name, btn) {
-    document.querySelectorAll('.sfl-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.sfl-panel').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('sfl-panel-' + name).classList.add('active');
-  };
-
-  // ── INIT ───────────────────────────────────────
-  renderStatus(DEMO_TOOLS);
-  sflRenderLog();
-
-  // ── Supabase fetch (swap in when ready) ────────
-  if (!SUPABASE_URL.includes('YOUR_PROJECT')) {
-    const headers = {
-      'apikey': SUPABASE_ANON_KEY,
-      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-    };
-    async function fetchAll() {
-      const [tRes, lRes] = await Promise.all([
-        fetch(`${SUPABASE_URL}/rest/v1/tools?select=slot_id,name,present,checked_out_by`, { headers }),
-        fetch(`${SUPABASE_URL}/rest/v1/activity_log?select=user_name,tool_name,action,slot_id,created_at&order=created_at.desc&limit=50`, { headers }),
-      ]);
-      const tools = await tRes.json();
-      const log   = await lRes.json();
-      renderStatus(tools.map(t => ({ ...t, user: t.checked_out_by })));
-      window._sflLog = log.map(r => ({
-        user: r.user_name, tool: r.tool_name, action: r.action,
-        slot: r.slot_id,
-        time: new Date(r.created_at).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
-      }));
-      sflRenderLog();
-    }
-    fetchAll();
-    setInterval(fetchAll, 15000);
-  }
-})();
-</script>
-
-
-<blockquote>
-<p><strong>AI PROMPT USED WITH THE CLAUDE WEB INTERFACE</strong></p>
-<p>Let&rsquo;s plan a UI application. I&rsquo;m building a smart toolbox that tracks the tools.
+      </div>`).join("")},window.sflTab=function(e,t){document.querySelectorAll(".sfl-tab").forEach(e=>e.classList.remove("active")),document.querySelectorAll(".sfl-panel").forEach(e=>e.classList.remove("active")),t.classList.add("active"),document.getElementById("sfl-panel-"+e).classList.add("active")},n(r),sflRenderLog(),!e.includes("YOUR_PROJECT")){const o={apikey:t,Authorization:`Bearer ${t}`};async function s(){const[t,s]=await Promise.all([fetch(`${e}/rest/v1/tools?select=slot_id,name,present,checked_out_by`,{headers:o}),fetch(`${e}/rest/v1/activity_log?select=user_name,tool_name,action,slot_id,created_at&order=created_at.desc&limit=50`,{headers:o})]),i=await t.json(),a=await s.json();n(i.map(e=>({...e,user:e.checked_out_by}))),window._sflLog=a.map(e=>({user:e.user_name,tool:e.tool_name,action:e.action,slot:e.slot_id,time:new Date(e.created_at).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})})),sflRenderLog()}s(),setInterval(s,15e3)}})()</script><blockquote><p><strong>AI PROMPT USED WITH THE CLAUDE WEB INTERFACE</strong></p><p>Let&rsquo;s plan a UI application. I&rsquo;m building a smart toolbox that tracks the tools.
 I want a webapp that displays all the tools that are currently present in the toolbox and what all are the tools that are missing.
-There should also be an admin panel to view who all took what all tools.</p>
-<p>Q: How does the tool tracking work on the hardware side?
-A: Switches on top of which the tools would be placed.</p>
-<p>Q: Who uses the main display?
-A: Anyone with an RFID tag can open the toolbox and take the items.</p>
-<p>Q: What stack are you thinking?
-A: Doesn&rsquo;t matter, you pick.</p>
-<p>Names: Super Fablab Kerala (Kochi, India)</p>
-<p>Abhishek Shah ,
+There should also be an admin panel to view who all took what all tools.</p><p>Q: How does the tool tracking work on the hardware side?
+A: Switches on top of which the tools would be placed.</p><p>Q: Who uses the main display?
+A: Anyone with an RFID tag can open the toolbox and take the items.</p><p>Q: What stack are you thinking?
+A: Doesn&rsquo;t matter, you pick.</p><p>Names: Super Fablab Kerala (Kochi, India)</p><p>Abhishek Shah ,
 Ali Abdul Gafoor ,
 Archita B K ,
 Ardradevi K ,
@@ -1280,336 +161,33 @@ Kevin Jijo ,
 Kurian Jacob ,
 Merin Cyriac ,
 Mishael Sharaf ,
-Nadec Biju</p>
-</blockquote>
-<p>This was the initial mockup I&rsquo;ve used to get an idea of what I&rsquo;m doing and how I want to get things done. After this I had gotten somewhat ready and I wanted to move to the next level and create a mobile application, for which I have switched to the Google Stitch AI platform. I have moved to Google Stitch and uploaded the screenshot of this UI and asked it to create a mockup design of how the UI can be, and this is what it came up with.</p>
-<p><img src="../../../images/week-15/stitch.jpg" alt="google stitch mockup"/>
-</p>
-<p><a href="https://stitch.withgoogle.com/preview/5073354264278421526?node-id=375809142c504fa6b4a50e605eb24d67">🔗 Open the live Stitch preview</a>
-</p>
-<p><a href="https://stitch.withgoogle.com/projects/5073354264278421526">Project link</a>
- if you want to explore more and see the design in detail.</p>
-<p>I wasn&rsquo;t much keen on this design by Google Stitch and I had wanted to do it in a different way and thought I would try out Claude Design. I have gone onto Claude Design and uploaded the designs by Google Stitch and asked it to create a design for the same, and this is what it came up with.
-<img src="../../../images/week-15/claude-design.jpg" alt="claude design"/>
-</p>
-<h3 id="claude-generated-prototype">Claude-generated prototype<a class="anchor" href="#claude-generated-prototype">#</a></h3>
-
-<iframe
-  src="../../../files/smart-tool-box-standalone.html"
-  width="100%"
-  height="820"
-  style="border: 1px solid #2a2b2f; border-radius: 12px; display: block; margin: 20px 0;"
-  loading="lazy"
-  allowfullscreen>
-</iframe>
-<p style="font-size: 13px; color: #666; margin-top: 6px;">
-  <a href="../../../files/smart-tool-box-standalone.html" target="_blank" rel="noopener">↗ Open the prototype in a new tab</a>
-</p>
-
-
-<blockquote>
-<p><strong>AI PROMPT USED WITH THE CLAUDE DESIGN INTERFACE</strong></p>
-<p>I wanna build a flutter app for my smart tool box ,  (Inserted Screenshot of the UI design I have created in google stitch)</p>
-<p><strong>Questions answered:</strong></p>
-<ul>
-<li><strong>Audience:</strong> Hobbyists / makers</li>
-<li><strong>Core jobs:</strong> See what&rsquo;s in the box (inventory), Check tools out / in, Track who has what, Get alerts when tools missing</li>
-<li><strong>Fidelity:</strong> High-fidelity clickable prototype (recommended)</li>
-<li><strong>Screens:</strong> Cabinet inventory grid, Admin, Tool detail, Activity feed</li>
-<li><strong>Variations:</strong> Just one solid direction</li>
-<li><strong>Aesthetic:</strong> Light + orange (workshop)</li>
-<li><strong>Tweaks:</strong> Inventory layout (grid vs list), Card style, Density (compact vs roomy)</li>
-<li><strong>Device:</strong> Both side-by-side</li>
-<li><strong>Novelty:</strong> Mix of familiar + a few novel ideas</li>
-<li><strong>Scanning:</strong> by separate hardware that sends data of tool being present and checked out to a Firebase Firestore from which the app will be reading</li>
-</ul>
-</blockquote>
-<h3 id="handoff-to-claude-code">Handoff to Claude Code<a class="anchor" href="#handoff-to-claude-code">#</a></h3>
-<p>The next step involved clicking the share button within Claude Design and clicking the handoff to Claude Code button.</p>
-<p><img src="../../../images/week-15/sharing.jpg" alt="sharing the claude design"/>
-</p>
-<p>Then I copy the text shown and paste into Claude Code and let it handle the rest.</p>
-<p><img src="../../../images/week-15/handing-off-to-claude.jpg" alt="handing off to claude code"/>
-</p>
-<h3 id="building-the-ios-app-with-codemagic">Building the iOS App with Codemagic<a class="anchor" href="#building-the-ios-app-with-codemagic">#</a></h3>
-<p>Claude generated the entire file structure and asked me to push it to GitHub, and I had pushed it to my personal GitHub repository and used Codemagic to build the IPA file for the iOS app.</p>
-<p><img src="../../../images/week-15/github-1.jpg" alt="github repository"/>
-
-<img src="../../../images/week-15/github-2.jpg" alt="github repository"/>
-</p>
-<p><img src="../../../images/week-15/codemagic-1.jpg" alt="codemagic build"/>
-
-<img src="../../../images/week-15/codemagic-2.jpg" alt="codemagic build"/>
-
-<img src="../../../images/week-15/codemagic-3.jpg" alt="codemagic build"/>
-
-<img src="../../../images/week-15/codemagic-4.jpg" alt="codemagic build"/>
-
-<img src="../../../images/week-15/codemagic-5.jpg" alt="codemagic build"/>
-
-<img src="../../../images/week-15/codemagic-6.jpg" alt="codemagic build"/>
-</p>
-<h2 id="hero-shots">Hero Shots<a class="anchor" href="#hero-shots">#</a></h2>
-
-<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: flex-start; margin: 20px 0;">
-  <img src="../../../images/week-15/ios-app-1.jpg" alt="ios app" style="flex: 1 1 0; min-width: 0; max-width: 32%; height: auto; object-fit: contain; border-radius: 8px;" />
-  <img src="../../../images/week-15/ios-app-2.jpg" alt="ios app" style="flex: 1 1 0; min-width: 0; max-width: 32%; height: auto; object-fit: contain; border-radius: 8px;" />
-  <img src="../../../images/week-15/ios-app-3.jpg" alt="ios app" style="flex: 1 1 0; min-width: 0; max-width: 32%; height: auto; object-fit: contain; border-radius: 8px;" />
-</div>
-
-
-<h3 id="main-xiao-board">Main xiao Board<a class="anchor" href="#main-xiao-board">#</a></h3>
-<p>This is the board with the microcontroller and it is connected to a sister board which has a mosfet to control the high amperage switching of the solenoid lock.</p>
-<p><img src="../../../images/week-10/12.jpg" alt="3D view of the board"/>
-</p>
-<p>Rfid Reader is connected to the board and it is used to read the RFID tags of the users and the data is sent to the firebase firestore database which is then read by the app to update the status of the tools.
-<video controls muted style="width:100%; border-radius:8px;">
-<source src="/2026/labs/kochi/students/nadec-biju/images/week-15/rfid.mp4" type="video/mp4">
-</video></p>
-<h2 id="final-interface-after-some-aesthetic-tweaks">Final Interface after some Aesthetic tweaks<a class="anchor" href="#final-interface-after-some-aesthetic-tweaks">#</a></h2>
-<video controls muted style="width:100%; border-radius:8px;">
-  <source src="/2026/labs/kochi/students/nadec-biju/images/week-15/working.mp4" type="video/mp4">
-</video>
-<hr>
-<h2 id="reflection">Reflection<a class="anchor" href="#reflection">#</a></h2>
-<p>I am very amused by the capabilities of the AI tools that I have used this week. Me being someone from the mechanical engineering background, I have never thought that I would be able to create a software tool or an Android app — not even 1/10 of this scale — but these tools have enabled me to create such things, and I am very keen on discovering what more AI can do after my Fab Academy journey is complete.</p>
-</div>
-
-      <div class="max-w-4xl mx-auto px-8 pb-16">
-        
-          
-          <a href="https://github.com/NB6RULES/Tool-Track"
-             target="_blank" rel="noopener"
-             class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200"
-             style="background:#20201f; color:#adaaaa; border:1px solid #484847;"
-             onmouseover="this.style.color='#ffffff'; this.style.borderColor='#767575';"
-             onmouseout="this.style.color='#adaaaa'; this.style.borderColor='#484847';">
-            <span class="material-symbols-outlined" style="font-size:20px;">open_in_new</span>
-            View Source Files on GitHub
-          </a>
-          
-        
-      </div>
-    </div>
-
-    
-    <aside id="toc-sidebar"
-           class="hidden xl:flex flex-col fixed right-0 top-[57px] bottom-0 w-72 overflow-y-auto hide-scrollbar py-8 px-5"
-           style="border-left:1px solid rgba(72,72,71,0.3); background:#0e0e0e;">
-
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4 px-1">On this page</p>
-
-      <nav id="toc-nav" class="toc-nav flex-1">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#week-15---interface-and-application-programming">Week 15 - Interface and Application Programming</a>
-      <ul>
-        <li><a href="#group-assignment">Group Assignment</a></li>
-        <li><a href="#individual-assignment">Individual Assignment</a></li>
-        <li><a href="#what-i-learned">What I Learned</a></li>
-        <li><a href="#weekly-schedule">Weekly Schedule</a></li>
-      </ul>
-    </li>
-    <li><a href="#group-assignment-1">Group Assignment</a></li>
-    <li><a href="#individual-assignment-1">Individual Assignment</a>
-      <ul>
-        <li><a href="#planning">Planning</a>
-          <ul>
-            <li><a href="#claude-generated-prototype">Claude-generated prototype</a></li>
-            <li><a href="#handoff-to-claude-code">Handoff to Claude Code</a></li>
-            <li><a href="#building-the-ios-app-with-codemagic">Building the iOS App with Codemagic</a></li>
-          </ul>
-        </li>
-        <li><a href="#hero-shots">Hero Shots</a>
-          <ul>
-            <li><a href="#main-xiao-board">Main xiao Board</a></li>
-          </ul>
-        </li>
-        <li><a href="#final-interface-after-some-aesthetic-tweaks">Final Interface after some Aesthetic tweaks</a></li>
-        <li><a href="#reflection">Reflection</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </nav>
-
-    </aside>
-  </div>
-
-  <script>
-    (function() {
-      const tocLinks = document.querySelectorAll('#toc-nav a');
-      if (!tocLinks.length) return;
-
-      const headings = Array.from(tocLinks).map(a => {
-        const id = a.getAttribute('href').slice(1);
-        return { a, el: document.getElementById(id) };
-      }).filter(x => x.el);
-
-      function onScroll() {
-        const scrollY = window.scrollY + 100;
-        let active = headings[0];
-        for (const h of headings) {
-          if (h.el.offsetTop <= scrollY) active = h;
-        }
-        tocLinks.forEach(a => a.classList.remove('active'));
-        if (active) active.a.classList.add('active');
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
-  </script>
-
-
-
-  </main>
-
-  
-  
-  <footer class="lg:ml-64 xl:pr-72 py-10 mt-8" style="border-top:1px solid rgba(38,38,38,0.5); background:#0e0e0e;">
-    <div class="max-w-5xl px-8 mx-auto flex flex-col lg:flex-row items-center gap-6">
-
-      
-
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6 w-full">
-        <div class="flex flex-col gap-1">
-          <a href="/2026/labs/kochi/students/nadec-biju/" class="text-[#79b0ff] font-bold text-base tracking-tighter uppercase font-headline hover:opacity-75 transition-opacity">
-            FAB ACADEMY
-          </a>
-          <p class="font-body text-xs text-gray-500">© 2026 This work by <a href="https://fabacademy.org/2026/labs/kochi/students/nadec-biju/" class="hover:text-gray-300 transition-colors">Nadec Biju</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="hover:text-gray-300 transition-colors">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="display: inline-block; vertical-align: middle; max-width: 1em; max-height: 1em; margin-left: .2em;"></p>
-        </div>
-        <nav class="flex flex-col items-center gap-3">
-          <div class="flex flex-wrap gap-6 justify-center">
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/about-me/"     class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">About Me</a>
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/"    class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">Assignments</a>
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/final-project/" class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">Final Project</a>
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/agreement/"     class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">Agreement</a>
-          </div>
-          <div class="flex flex-wrap gap-6 justify-center">
-            <span class="font-body text-[10px] text-gray-700 uppercase tracking-widest">Tools:</span>
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/"               class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">Laser Gauge</a>
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/"                        class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">NB6-Boy Highscores</a>
-            <a href="/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/chair-4-bar-linkage-calculator/" class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">4-Bar Linkage Calc</a>
-            <a href="https://nb6rules.github.io/Urumi-Vision-Web/" target="_blank" rel="noopener" class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">Urumi Vision</a>
-            <a href="/2026/labs/kochi/students/nadec-biju/files/week%2020/Install-Dogbone.bat" download class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">Dogbone Installer</a>
-          </div>
-        </nav>
-        <div class="flex gap-3">
-          <a href="https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju"
-             target="_blank" rel="noopener"
-             class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary transition-all">
-            <span class="material-symbols-outlined" style="font-size:18px;">code</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </footer>
-
-  
-  <button id="back-to-top" aria-label="Back to top">
-    <span class="material-symbols-outlined" style="font-size:20px;">keyboard_arrow_up</span>
-  </button>
-
-  <script>
-    
-    const btt = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400), { passive: true });
-    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    if (mobileBtn && mobileNav) {
-      mobileBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-    }
-
-    
-    document.querySelectorAll('.prose-neon pre').forEach(pre => {
-      const code = pre.querySelector('code');
-      if (!code) return;
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'code-copy-btn';
-      btn.setAttribute('aria-label', 'Copy code');
-      btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span>Copy';
-      btn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(code.innerText);
-        } catch (e) {
-          const r = document.createRange();
-          r.selectNodeContents(code);
-          const sel = window.getSelection();
-          sel.removeAllRanges(); sel.addRange(r);
-          document.execCommand('copy');
-          sel.removeAllRanges();
-        }
-        btn.classList.add('copied');
-        btn.innerHTML = '<span class="material-symbols-outlined">check</span>Copied';
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          btn.innerHTML = '<span class="material-symbols-outlined">content_copy</span>Copy';
-        }, 1800);
-      });
-      pre.appendChild(btn);
-    });
-  </script>
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js"></script>
-  <script>
-  (function() {
-    const input   = document.getElementById('search-input');
-    const results = document.getElementById('search-results');
-    if (!input || !results) return;
-
-    const bp = '\/2026\/labs\/kochi\/students\/nadec-biju';
-    let fuse = null;
-
-    
-    input.addEventListener('focus', function loadIndex() {
-      if (fuse) return;
-      fetch(bp + '/index.json')
-        .then(r => r.json())
-        .then(data => {
-          fuse = new Fuse(data, {
-            keys: ['title', 'summary'],
-            threshold: 0.35,
-            includeScore: true,
-            minMatchCharLength: 2,
-          });
-        });
-      input.removeEventListener('focus', loadIndex);
-    }, { once: true });
-
-    input.addEventListener('input', function() {
-      const q = this.value.trim();
-      if (!q || !fuse) { results.classList.add('hidden'); results.innerHTML = ''; return; }
-      const hits = fuse.search(q).slice(0, 7);
-      if (!hits.length) {
-        results.innerHTML = '<p class="p-4 text-xs text-on-surface-variant">No results found</p>';
-        results.classList.remove('hidden');
-        return;
-      }
-      results.innerHTML = hits.map(({ item }) => `
-        <a href="${item.url}" class="flex flex-col gap-1 px-5 py-3 hover:bg-surface-container-high transition-colors border-b border-outline-variant last:border-0">
-          <span class="text-xs font-bold text-on-surface">${item.title}</span>
-          <span class="text-[11px] text-on-surface-variant line-clamp-1">${item.summary || ''}</span>
-        </a>`).join('');
-      results.classList.remove('hidden');
-    });
-
-    
-    document.addEventListener('click', e => {
-      if (!document.getElementById('search-wrapper').contains(e.target)) {
-        results.classList.add('hidden');
-      }
-    });
-  })();
-  </script>
-</body>
-</html>
-
-
-
+Nadec Biju</p></blockquote><p>This was the initial mockup I&rsquo;ve used to get an idea of what I&rsquo;m doing and how I want to get things done. After this I had gotten somewhat ready and I wanted to move to the next level and create a mobile application, for which I have switched to the Google Stitch AI platform. I have moved to Google Stitch and uploaded the screenshot of this UI and asked it to create a mockup design of how the UI can be, and this is what it came up with.</p><p><img src=../../../images/week-15/stitch.jpg alt="google stitch mockup"></p><p><a href="https://stitch.withgoogle.com/preview/5073354264278421526?node-id=375809142c504fa6b4a50e605eb24d67">🔗 Open the live Stitch preview</a></p><p><a href=https://stitch.withgoogle.com/projects/5073354264278421526>Project link</a>
+if you want to explore more and see the design in detail.</p><p>I wasn&rsquo;t much keen on this design by Google Stitch and I had wanted to do it in a different way and thought I would try out Claude Design. I have gone onto Claude Design and uploaded the designs by Google Stitch and asked it to create a design for the same, and this is what it came up with.
+<img src=../../../images/week-15/claude-design.jpg alt="claude design"></p><h3 id=claude-generated-prototype>Claude-generated prototype<a class=anchor href=#claude-generated-prototype>#</a></h3><iframe src=../../../files/smart-tool-box-standalone.html width=100% height=820 style="border:1px solid #2a2b2f;border-radius:12px;display:block;margin:20px 0" loading=lazy allowfullscreen></iframe><p style=font-size:13px;color:#666;margin-top:6px><a href=../../../files/smart-tool-box-standalone.html target=_blank rel=noopener>↗ Open the prototype in a new tab</a></p><blockquote><p><strong>AI PROMPT USED WITH THE CLAUDE DESIGN INTERFACE</strong></p><p>I wanna build a flutter app for my smart tool box , (Inserted Screenshot of the UI design I have created in google stitch)</p><p><strong>Questions answered:</strong></p><ul><li><strong>Audience:</strong> Hobbyists / makers</li><li><strong>Core jobs:</strong> See what&rsquo;s in the box (inventory), Check tools out / in, Track who has what, Get alerts when tools missing</li><li><strong>Fidelity:</strong> High-fidelity clickable prototype (recommended)</li><li><strong>Screens:</strong> Cabinet inventory grid, Admin, Tool detail, Activity feed</li><li><strong>Variations:</strong> Just one solid direction</li><li><strong>Aesthetic:</strong> Light + orange (workshop)</li><li><strong>Tweaks:</strong> Inventory layout (grid vs list), Card style, Density (compact vs roomy)</li><li><strong>Device:</strong> Both side-by-side</li><li><strong>Novelty:</strong> Mix of familiar + a few novel ideas</li><li><strong>Scanning:</strong> by separate hardware that sends data of tool being present and checked out to a Firebase Firestore from which the app will be reading</li></ul></blockquote><h3 id=handoff-to-claude-code>Handoff to Claude Code<a class=anchor href=#handoff-to-claude-code>#</a></h3><p>The next step involved clicking the share button within Claude Design and clicking the handoff to Claude Code button.</p><p><img src=../../../images/week-15/sharing.jpg alt="sharing the claude design"></p><p>Then I copy the text shown and paste into Claude Code and let it handle the rest.</p><p><img src=../../../images/week-15/handing-off-to-claude.jpg alt="handing off to claude code"></p><h3 id=building-the-ios-app-with-codemagic>Building the iOS App with Codemagic<a class=anchor href=#building-the-ios-app-with-codemagic>#</a></h3><p>Claude generated the entire file structure and asked me to push it to GitHub, and I had pushed it to my personal GitHub repository and used Codemagic to build the IPA file for the iOS app.</p><p><img src=../../../images/week-15/github-1.jpg alt="github repository">
+<img src=../../../images/week-15/github-2.jpg alt="github repository"></p><p><img src=../../../images/week-15/codemagic-1.jpg alt="codemagic build">
+<img src=../../../images/week-15/codemagic-2.jpg alt="codemagic build">
+<img src=../../../images/week-15/codemagic-3.jpg alt="codemagic build">
+<img src=../../../images/week-15/codemagic-4.jpg alt="codemagic build">
+<img src=../../../images/week-15/codemagic-5.jpg alt="codemagic build">
+<img src=../../../images/week-15/codemagic-6.jpg alt="codemagic build"></p><h2 id=hero-shots>Hero Shots<a class=anchor href=#hero-shots>#</a></h2><div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:flex-start;margin:20px 0"><img src=../../../images/week-15/ios-app-1.jpg alt="ios app" style=flex:1;min-width:0;max-width:32%;height:auto;object-fit:contain;border-radius:8px>
+<img src=../../../images/week-15/ios-app-2.jpg alt="ios app" style=flex:1;min-width:0;max-width:32%;height:auto;object-fit:contain;border-radius:8px>
+<img src=../../../images/week-15/ios-app-3.jpg alt="ios app" style=flex:1;min-width:0;max-width:32%;height:auto;object-fit:contain;border-radius:8px></div><h3 id=main-xiao-board>Main xiao Board<a class=anchor href=#main-xiao-board>#</a></h3><p>This is the board with the microcontroller and it is connected to a sister board which has a mosfet to control the high amperage switching of the solenoid lock.</p><p><img src=../../../images/week-10/12.jpg alt="3D view of the board"></p><p>Rfid Reader is connected to the board and it is used to read the RFID tags of the users and the data is sent to the firebase firestore database which is then read by the app to update the status of the tools.
+<video controls muted style=width:100%;border-radius:8px>
+<source src=/2026/labs/kochi/students/nadec-biju/images/week-15/rfid.mp4 type=video/mp4></video></p><h2 id=final-interface-after-some-aesthetic-tweaks>Final Interface after some Aesthetic tweaks<a class=anchor href=#final-interface-after-some-aesthetic-tweaks>#</a></h2><video controls muted style=width:100%;border-radius:8px>
+<source src=/2026/labs/kochi/students/nadec-biju/images/week-15/working.mp4 type=video/mp4></video><hr><h2 id=reflection>Reflection<a class=anchor href=#reflection>#</a></h2><p>I am very amused by the capabilities of the AI tools that I have used this week. Me being someone from the mechanical engineering background, I have never thought that I would be able to create a software tool or an Android app — not even 1/10 of this scale — but these tools have enabled me to create such things, and I am very keen on discovering what more AI can do after my Fab Academy journey is complete.</p></div><div class="max-w-4xl mx-auto px-8 pb-16"><a href=https://github.com/NB6RULES/Tool-Track target=_blank rel=noopener class="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl font-headline font-bold text-sm uppercase tracking-widest transition-all duration-200" style="background:#20201f;color:#adaaaa;border:1px solid #484847" onmouseover='this.style.color="#ffffff",this.style.borderColor="#767575"' onmouseout='this.style.color="#adaaaa",this.style.borderColor="#484847"'><span class=material-symbols-outlined style=font-size:20px>open_in_new</span>
+View Source Files on GitHub</a></div></div><aside id=toc-sidebar class="hidden xl:flex flex-col fixed right-0 top-[57px] bottom-0 w-72 overflow-y-auto hide-scrollbar py-8 px-5" style="border-left:1px solid rgba(72,72,71,.3);background:#0e0e0e"><p class="text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-4 px-1">On this page</p><nav id=toc-nav class="toc-nav flex-1"><nav id=TableOfContents><ul><li><a href=#week-15---interface-and-application-programming>Week 15 - Interface and Application Programming</a><ul><li><a href=#group-assignment>Group Assignment</a></li><li><a href=#individual-assignment>Individual Assignment</a></li><li><a href=#what-i-learned>What I Learned</a></li><li><a href=#weekly-schedule>Weekly Schedule</a></li></ul></li><li><a href=#group-assignment-1>Group Assignment</a></li><li><a href=#individual-assignment-1>Individual Assignment</a><ul><li><a href=#planning>Planning</a><ul><li><a href=#claude-generated-prototype>Claude-generated prototype</a></li><li><a href=#handoff-to-claude-code>Handoff to Claude Code</a></li><li><a href=#building-the-ios-app-with-codemagic>Building the iOS App with Codemagic</a></li></ul></li><li><a href=#hero-shots>Hero Shots</a><ul><li><a href=#main-xiao-board>Main xiao Board</a></li></ul></li><li><a href=#final-interface-after-some-aesthetic-tweaks>Final Interface after some Aesthetic tweaks</a></li><li><a href=#reflection>Reflection</a></li></ul></li></ul></nav></nav></aside></div><script>(function(){const e=document.querySelectorAll("#toc-nav a");if(!e.length)return;const t=Array.from(e).map(e=>{const t=e.getAttribute("href").slice(1);return{a:e,el:document.getElementById(t)}}).filter(e=>e.el);function n(){const s=window.scrollY+100;let n=t[0];for(const e of t)e.el.offsetTop<=s&&(n=e);e.forEach(e=>e.classList.remove("active")),n&&n.a.classList.add("active")}window.addEventListener("scroll",n,{passive:!0}),n()})()</script></main><footer class="lg:ml-64 xl:pr-72 py-10 mt-8" style="border-top:1px solid rgba(38,38,38,.5);background:#0e0e0e"><div class="max-w-5xl px-8 mx-auto flex flex-col lg:flex-row items-center gap-6"><div class="flex flex-col md:flex-row justify-between items-center gap-6 w-full"><div class="flex flex-col gap-1"><a href=/2026/labs/kochi/students/nadec-biju/ class="text-[#79b0ff] font-bold text-base tracking-tighter uppercase font-headline hover:opacity-75 transition-opacity">FAB ACADEMY</a><p class="font-body text-xs text-gray-500">© 2026 This work by <a href=https://fabacademy.org/2026/labs/kochi/students/nadec-biju/ class="hover:text-gray-300 transition-colors">Nadec Biju</a> is licensed under <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/ class="hover:text-gray-300 transition-colors">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a><img src=https://mirrors.creativecommons.org/presskit/icons/cc.svg alt style=display:inline-block;vertical-align:middle;max-width:1em;max-height:1em;margin-left:.2em><img src=https://mirrors.creativecommons.org/presskit/icons/by.svg alt style=display:inline-block;vertical-align:middle;max-width:1em;max-height:1em;margin-left:.2em><img src=https://mirrors.creativecommons.org/presskit/icons/nc.svg alt style=display:inline-block;vertical-align:middle;max-width:1em;max-height:1em;margin-left:.2em><img src=https://mirrors.creativecommons.org/presskit/icons/sa.svg alt style=display:inline-block;vertical-align:middle;max-width:1em;max-height:1em;margin-left:.2em></p></div><nav class="flex flex-col items-center gap-3"><div class="flex flex-wrap gap-6 justify-center"><a href=/2026/labs/kochi/students/nadec-biju/docs/about-me/ class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">About Me</a>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/ class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">Assignments</a>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/final-project/ class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">Final Project</a>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/agreement/ class="font-body text-xs text-gray-600 hover:text-gray-300 transition-colors">Agreement</a></div><div class="flex flex-wrap gap-6 justify-center"><span class="font-body text-[10px] text-gray-700 uppercase tracking-widest">Tools:</span>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/ class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">Laser Gauge</a>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/ class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">NB6-Boy Highscores</a>
+<a href=/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/chair-4-bar-linkage-calculator/ class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">4-Bar Linkage Calc</a>
+<a href=https://nb6rules.github.io/Urumi-Vision-Web/ target=_blank rel=noopener class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">Urumi Vision</a>
+<a href=/2026/labs/kochi/students/nadec-biju/files/week%2020/Install-Dogbone.bat download class="font-body text-xs text-gray-600 hover:text-[#ea73fb] transition-colors">Dogbone Installer</a></div></nav><div class="flex gap-3"><a href=https://gitlab.fabcloud.org/academany/fabacademy/2026/labs/kochi/students/nadec-biju target=_blank rel=noopener class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-secondary transition-all"><span class=material-symbols-outlined style=font-size:18px>code</span></a></div></div></div></footer><button id=back-to-top aria-label="Back to top">
+<span class=material-symbols-outlined style=font-size:20px>keyboard_arrow_up</span>
+</button>
+<script>const btt=document.getElementById("back-to-top");window.addEventListener("scroll",()=>btt.classList.toggle("visible",window.scrollY>400),{passive:!0}),btt.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));const mobileBtn=document.getElementById("mobile-menu-btn"),mobileNav=document.getElementById("mobile-nav");mobileBtn&&mobileNav&&mobileBtn.addEventListener("click",()=>mobileNav.classList.toggle("hidden")),document.querySelectorAll(".prose-neon pre").forEach(e=>{const n=e.querySelector("code");if(!n)return;const t=document.createElement("button");t.type="button",t.className="code-copy-btn",t.setAttribute("aria-label","Copy code"),t.innerHTML='<span class="material-symbols-outlined">content_copy</span>Copy',t.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(n.innerText)}catch{const t=document.createRange();t.selectNodeContents(n);const e=window.getSelection();e.removeAllRanges(),e.addRange(t),document.execCommand("copy"),e.removeAllRanges()}t.classList.add("copied"),t.innerHTML='<span class="material-symbols-outlined">check</span>Copied',setTimeout(()=>{t.classList.remove("copied"),t.innerHTML='<span class="material-symbols-outlined">content_copy</span>Copy'},1800)}),e.appendChild(t)})</script><script src=https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.min.js></script><script>(function(){const t=document.getElementById("search-input"),e=document.getElementById("search-results");if(!t||!e)return;const s="/2026/labs/kochi/students/nadec-biju";let n=null;t.addEventListener("focus",function e(){if(n)return;fetch(s+"/index.json").then(e=>e.json()).then(e=>{n=new Fuse(e,{keys:["title","summary"],threshold:.35,includeScore:!0,minMatchCharLength:2})}),t.removeEventListener("focus",e)},{once:!0}),t.addEventListener("input",function(){const t=this.value.trim();if(!t||!n){e.classList.add("hidden"),e.innerHTML="";return}const s=n.search(t).slice(0,7);if(!s.length){e.innerHTML='<p class="p-4 text-xs text-on-surface-variant">No results found</p>',e.classList.remove("hidden");return}e.innerHTML=s.map(({item:e})=>`
+        <a href="${e.url}" class="flex flex-col gap-1 px-5 py-3 hover:bg-surface-container-high transition-colors border-b border-outline-variant last:border-0">
+          <span class="text-xs font-bold text-on-surface">${e.title}</span>
+          <span class="text-[11px] text-on-surface-variant line-clamp-1">${e.summary||""}</span>
+        </a>`).join(""),e.classList.remove("hidden")}),document.addEventListener("click",t=>{document.getElementById("search-wrapper").contains(t.target)||e.classList.add("hidden")})})()</script></body></html>

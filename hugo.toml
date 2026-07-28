@@ -1,6 +1,6 @@
 baseURL = 'https://fabacademy.org/2026/labs/kochi/students/nadec-biju/'
 languageCode = 'en-us'
-title = 'Nadec FAB Academy Portfolio'
+title = 'Nadec Biju | Fab Academy 2026 Portfolio'
 enableGitInfo = true
 
 # Emit a robots.txt (rendered from layouts/robots.txt) so crawlers find the sitemap.
