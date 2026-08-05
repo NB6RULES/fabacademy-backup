@@ -163,6 +163,10 @@ bookToC = false
     </div>
   </section>
   <section class="home-grid" aria-label="Quick links">
+    <a class="home-card" href="images/diploma.pdf" target="_blank" style="border: 2px solid #ff3355; box-shadow: 0 0 15px rgba(255, 51, 85, 0.4); background: linear-gradient(145deg, rgba(255,51,85,0.05) 0%, transparent 100%);">
+      <div class="home-card__title" style="color: #ff3355;">🎓 Fab Academy Diploma</div>
+      <div class="home-card__meta">Graduated July 2026!</div>
+    </a>
     <a class="home-card" href="docs/assignment/">
       <div class="home-card__title">Weekly Assignments</div>
       <div class="home-card__meta">Documentation + weekly builds</div>

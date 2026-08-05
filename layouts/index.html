@@ -65,7 +65,33 @@
 
   <!-- ── Bento Grid Cards ── -->
   <section class="px-8 lg:px-16 pb-16 max-w-[1400px] mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Diploma Card -->
+      <a href="{{ $bp }}/images/diploma.pdf" target="_blank"
+         class="group relative bg-surface-container-high rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 block"
+         style="box-shadow:0 0 0 2px rgba(234,115,251,0.5), 0 8px 24px rgba(234,115,251,0.2);">
+        <div class="h-44 relative overflow-hidden">
+          <img src="{{ $bp }}/images/graduation.jpg"
+               alt="Graduation"
+               class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-500"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-surface-container-high/20 to-transparent"></div>
+        </div>
+        <div class="p-7">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-2.5 bg-secondary/10 rounded-xl text-secondary">
+              <span class="material-symbols-outlined" style="font-size:22px;">workspace_premium</span>
+            </div>
+            <span class="text-secondary text-[10px] font-bold px-2 py-0.5 rounded bg-secondary/10 uppercase tracking-tight">Graduated!</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold mb-2">Fab Academy Diploma</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-5 font-body">Officially completed the Fab Academy 2026 program in digital fabrication.</p>
+          <span class="inline-flex items-center gap-1.5 text-secondary font-bold text-sm group-hover:translate-x-2 transition-transform duration-300">
+            View Certificate
+            <span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
+          </span>
+        </div>
+      </a>
 
       <!-- Weekly Assignments Card -->
       <a href="{{ $bp }}/docs/assignment/"
