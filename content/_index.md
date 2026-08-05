@@ -171,9 +171,9 @@ bookToC = false
       <div class="home-card__title">Weekly Assignments</div>
       <div class="home-card__meta">Documentation + weekly builds</div>
     </a>
-    <a class="home-card" href="docs/final-project/">
-      <div class="home-card__title">Final Project</div>
-      <div class="home-card__meta">Idea, planning, and progress</div>
+    <a class="home-card" href="docs/final-project/" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/final-project/project-1.jpg'); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,0.1);">
+      <div class="home-card__title" style="color: #ffffff; text-shadow: 0 2px 5px rgba(0,0,0,0.9);">Final Project</div>
+      <div class="home-card__meta" style="color: #e0e0e0; text-shadow: 0 1px 4px rgba(0,0,0,0.9);">Completed!</div>
     </a>
     <a class="home-card" href="docs/about-me/">
       <div class="home-card__title">About Me</div>

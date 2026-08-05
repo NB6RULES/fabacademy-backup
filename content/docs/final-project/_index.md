@@ -20,6 +20,12 @@ I build a **Smart Tool Cabinet** that tracks tools using RFID cards for access c
   Your browser does not support the video tag.
 </video>
 
+## Hero Shots 
+
+![hero](/images/final-project/project-1.jpg)
+![hero](/images/final-project/project-2.jpg)
+![hero](/images/final-project/project-3.jpg)
+
 ## What It Does
 
 - **RFID Access Control** - Each person gets an RFID card to unlock drawers they're trained to use
