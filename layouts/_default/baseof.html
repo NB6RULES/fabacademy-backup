@@ -7,8 +7,42 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}"/>
   <link rel="canonical" href="{{ .Permalink }}"/>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
   <meta name="keywords" content="Nadec Biju, Fab Academy, NB6, NB6_RULES, nb6rules, Kochi" />
   <meta name="google-site-verification" content="gf6wqY-a5HvgcyXuBIEiXGaDgG7t94SsSgmoAG1HMoA" />
+
+  <!-- Schema.org JSON-LD Structured Data for Google Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ .Site.BaseURL }}#website",
+        "url": "{{ .Site.BaseURL }}",
+        "name": "Nadec Biju | Fab Academy 2026 Portfolio",
+        "description": "{{ .Site.Params.description }}",
+        "publisher": {
+          "@type": "Person",
+          "name": "Nadec Biju",
+          "url": "{{ .Site.BaseURL }}docs/about-me/"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "{{ .Site.BaseURL }}#person",
+        "name": "Nadec Biju",
+        "url": "{{ .Site.BaseURL }}",
+        "image": "{{ .Site.BaseURL }}images/about-me/dp.jpeg",
+        "jobTitle": "Mechanical Engineer & Digital Fabrication Student",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Fab Academy Kochi"
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
