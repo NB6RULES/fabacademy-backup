@@ -51,6 +51,7 @@ These are the highlight of this portfolio — actual working tools I built as pa
 | 📏 **[Laser Kerf Calculator](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-3/laser-gauge-tool/)** | Week 3 – CNC Cutting | Calculates laser kerf compensation for precision press-fit joints |
 | 🎮 **[NB6-Boy Highscores](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-4/nb6-boy/)** | Week 4 – Embedded Programming | Online highscore board for the NB6-Boy handheld game console |
 | ⚙️ **[4-Bar Linkage Calculator](https://fabacademy.org/2026/labs/kochi/students/nadec-biju/docs/assignment/week-7/chair-4-bar-linkage-calculator/)** | Week 7 – CNC Milling | Solves four-bar linkage geometry for the recliner chair mechanism |
+| 📐 **[Linkage Designer](https://nb6rules.github.io/Linkage-Designer/)** | Mechanism Design | Kinematic linkage design and simulation web tool |
 | 👁️ **[Urumi Vision](https://nb6rules.github.io/Urumi-Vision-Web/)** | Computer Vision | Browser-based computer vision web tool |
 | 📥 **[Dogbone Plugin Installer](static/files/week-20/Install-Dogbone.bat)** | Week 20 – Fusion CAM | One-click installer for an open-source Fusion 360 dogbone plugin |
 

@@ -1,0 +1,137 @@
+{{- /*
+  Usage: {{< zipdownload dir="week-20" label="Download All Project Files" >}}
+  Zips (client-side, via JSZip) every file listed in data/zipmanifests/<dir>.json and
+  downloads it as <dir>.zip. That manifest is precomputed by
+  scripts/generate_zip_manifest.py, which walks static/files/<dir>, applies every nested
+  .gitignore it finds (so build junk and anything gitignored, like real credentials,
+  never ends up in the manifest), and writes the surviving relative paths. Re-run that
+  script whenever files are added to/removed from the folder, then rebuild.
+*/ -}}
+{{- $dir := .Get "dir" -}}
+{{- $label := .Get "label" | default (printf "Download All Files (%s)" $dir) -}}
+{{- $files := index site.Data.zipmanifests $dir -}}
+{{- $bp := (urls.Parse site.BaseURL).Path | strings.TrimSuffix "/" -}}
+{{- $webBase := printf "%s/files/%s" $bp $dir -}}
+{{- $id := printf "zipdl-%d" (now.UnixNano) -}}
+
+<div class="not-prose" style="margin:1.25rem 0; max-width:420px;">
+  <button type="button" id="{{ $id }}" class="zip-download-btn group flex items-center gap-4 p-5 rounded-2xl hover:brightness-110 transition-all w-full text-left"
+          data-web-base="{{ $webBase }}"
+          data-zip-name="{{ $dir }}.zip"
+          style="background:rgba(121,176,255,0.12); border:1px solid rgba(121,176,255,0.25); cursor:pointer;">
+    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 zip-icon" style="background:rgba(121,176,255,0.2); color:#79b0ff;">
+      <span class="material-symbols-outlined" style="font-size:20px;">folder_zip</span>
+    </div>
+    <div class="flex-1 min-w-0">
+      <p class="text-sm font-bold zip-label" style="color:#79b0ff; margin:0;">{{ $label }}</p>
+      <p class="text-[11px] zip-status" style="color:rgba(255,255,255,0.6); margin:0;">{{ len $files }} files</p>
+    </div>
+    <span class="material-symbols-outlined group-hover:translate-x-1 transition-all flex-shrink-0 zip-arrow" style="font-size:16px; color:#79b0ff;">download</span>
+  </button>
+  {{- /* safeJS stops Go's html/template from JS-escaping (double-encoding) the
+     array into a quoted string inside this <script>; we want the raw JSON. */ -}}
+  <script type="application/json" data-zip-manifest-for="{{ $id }}">{{ $files | jsonify | safeJS }}</script>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" defer onload="window.__jsZipReady && window.__jsZipReady()"></script>
+<script>
+(function() {
+  function init() {
+    var btn = document.getElementById("{{ $id }}");
+    if (!btn || btn.dataset.zipBound) return;
+    btn.dataset.zipBound = "1";
+
+    var manifestEl = document.querySelector('script[data-zip-manifest-for="{{ $id }}"]');
+    // Be tolerant of a double-encoded manifest (a JSON *string* of JSON, which
+    // some build setups produce). A plain JSON.parse would then hand back a
+    // string, and the worker's queue.shift() would throw -- which surfaced as
+    // the "Download failed" bug. Keep parsing until we actually have the array.
+    var files = JSON.parse(manifestEl.textContent);
+    while (typeof files === "string") files = JSON.parse(files);
+    if (!Array.isArray(files)) files = [];
+    var webBase = btn.dataset.webBase;
+    var zipName = btn.dataset.zipName;
+
+    // Fetch one file, retrying transient failures with a small backoff. A single
+    // dropped request must never abort the whole batch -- that fail-fast behaviour
+    // (old code: one rejected fetch killed Promise.all) was the "Download failed,
+    // try again" bug, since across hundreds of requests one blip is near-certain.
+    async function fetchFile(relPath) {
+      var url = webBase + "/" + relPath.split("/").map(encodeURIComponent).join("/");
+      for (var attempt = 1; attempt <= 4; attempt++) {
+        try {
+          var res = await fetch(url);
+          if (res.ok) return await res.arrayBuffer();
+          if (res.status === 404) return null;   // genuinely gone -> skip quietly
+        } catch (e) { /* network blip -> fall through and retry */ }
+        await new Promise(function(r) { setTimeout(r, 250 * attempt); });
+      }
+      return undefined;                          // gave up after all retries
+    }
+
+    btn.addEventListener("click", async function() {
+      if (typeof JSZip === "undefined") { alert("Still loading the zip library, try again in a second."); return; }
+      var statusEl = btn.querySelector(".zip-status");
+      var originalStatus = statusEl.textContent;
+      btn.disabled = true;
+
+      try {
+        var zip = new JSZip();
+        var done = 0, added = 0, failed = [];
+        var CONCURRENCY = 6;
+        var queue = files.slice();
+
+        async function worker() {
+          while (queue.length) {
+            var relPath = queue.shift();
+            var buf = await fetchFile(relPath);
+            done++;
+            statusEl.textContent = "Fetching " + done + " / " + files.length + "...";
+            if (buf === null) continue;           // 404, skip
+            if (buf === undefined) { failed.push(relPath); continue; }
+            // STORE, not DEFLATE: these are already-compressed binaries
+            // (images, video, models), so compressing again just burns CPU for no size win.
+            zip.file(relPath, buf, { compression: "STORE" });
+            added++;
+          }
+        }
+        await Promise.all(Array.from({ length: Math.min(CONCURRENCY, files.length) }, worker));
+
+        if (added === 0) throw new Error("no files could be fetched");
+
+        statusEl.textContent = "Zipping...";
+        var blob = await zip.generateAsync({ type: "blob", compression: "STORE" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = zipName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        if (failed.length) {
+          console.warn("zipdownload: skipped after retries", failed);
+          statusEl.textContent = added + " files zipped (" + failed.length + " skipped)";
+          setTimeout(function() { statusEl.textContent = originalStatus; }, 6000);
+        } else {
+          statusEl.textContent = originalStatus;
+        }
+      } catch (e) {
+        console.error(e);
+        statusEl.textContent = "Download failed, try again.";
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+
+  if (typeof JSZip !== "undefined") {
+    init();
+  } else {
+    window.__jsZipReady = init;
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() { if (typeof JSZip !== "undefined") init(); }, 0);
+    });
+  }
+})();
+</script>

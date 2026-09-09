@@ -9,15 +9,31 @@
 !themes/
 !themes/**
 
+# Allow Hugo source files
+!layouts/
+!layouts/**
+!content/
+!content/**
+!hugo.toml
+!scripts/
+!scripts/**
+!archetypes/
+!archetypes/**
+!data/
+!data/**
+
 # Allow YAML files
 !*.yml
 !*.yaml
 
 # Allow README
 !README.md
+!gpush.bat
 
 # Allow directories to be traversed
 !*/
 
 # Never track the real device credentials, even though public/** is allowed above
 public/**/cloud_secrets.h
+static/**/cloud_secrets.h
+
